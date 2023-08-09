@@ -186,7 +186,7 @@
       "bus_stop_sign": {"categories": ["public transport", "highway"], "name": "small bus stop sign"},
       "city_limit_sign": {"name": "city limit sign"},
       "no_traffic_signals": {"name": "crossed out traffic signals"},
-      "speed_limit_mph": {"name": "speed limit box for mph"},
+      "speed_limit_mph": {"name": "speed limit box for mph", "is_part": true},
       "stop": {"emoji": ["🛑", "⛔️"], "categories": ["highway"], "name": "stop sign"},
       "traffic_signals": {"emoji": "🚦", "name": "traffic signals"}
     },
@@ -356,7 +356,7 @@
     "globe": {"name": "globe"},
     "government": {"name": "building with dome and flag"},
     "guidepost": {"directed": "right", "name": "guidepost"},
-    "guys": {"name": "guys"},
+    "guys": {"name": "guys", "is_part": true},
     "human_on_ferry": {"name": "human over water"},
     "human": {"name": "human"},
     "hunting_stand": {"name": "hunting stand"},
