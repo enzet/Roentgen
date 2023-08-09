@@ -590,19 +590,3 @@ class Icon:
         return "".join(
             [x.shape.get_full_id() for x in self.shape_specifications]
         ) < "".join([x.shape.get_full_id() for x in other.shape_specifications])
-
-
-@dataclass
-class IconSet:
-    """Node representation: icons and color."""
-
-    main_icon: Icon
-    extra_icons: list[Icon]
-
-    # Icon to use if the point is hidden by overlapped icons but still need to
-    # be shown.
-    default_icon: Optional[Icon]
-
-    # Tag keys that were processed to create icon set (other tag keys should be
-    # displayed by text or ignored)
-    processed: set[str]
