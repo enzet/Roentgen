@@ -17,3 +17,16 @@ All icons tend to support a common design style, which is heavily inspired by
 [Temaki](https://github.com/ideditor/temaki).
 
 Feel free to request new icons via issues on GitHub.
+
+## Generation
+
+Röntgen icons may be drawn by hand in vector redactor and stored as optimized
+SVG files, but also the project has two more options for icons extraction and
+generation.
+
+### Extraction from the monolith SVG file
+
+It may be useful to have one SVG file for a set of SVG icons.
+
+In the Röntgen project there is a file [`icons.svg`](data/icons.svg), that
+contains the majority of the icons in set.
