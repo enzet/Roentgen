@@ -160,7 +160,7 @@ class IconCollection:
                 height += step * scale
 
         with file_name.open("w", encoding="utf-8") as output_file:
-            svg.write(output_file)
+            svg.write(output_file, pretty=True, indent=4)
 
     def __len__(self) -> int:
         return len(self.icons)

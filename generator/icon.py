@@ -419,9 +419,9 @@ class ShapeSpecification:
         path.update({"fill": self.color.hex})
 
         if outline and self.use_outline:
-            bright: bool = is_bright(self.color)
-            color: Color = Color("black") if bright else Color("white")
-
+            color: Color = (
+                Color("black") if is_bright(self.color) else Color("white")
+            )
             style: dict[str, Any] = {
                 "fill": color.hex,
                 "stroke": color.hex,
