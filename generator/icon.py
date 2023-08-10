@@ -34,8 +34,14 @@ USED_ICON_COLOR: str = "#000000"
 UNUSED_ICON_COLORS: list[str] = ["#0000ff", "#ff0000"]
 
 
-def is_bright(_) -> bool:
-    return True
+def is_bright(color: Color) -> bool:
+    """
+    Check whether color is bright enough to have black outline instead of white.
+    """
+    return (
+        0.2126 * color.red + 0.7152 * color.green + 0.0722 * color.blue
+        > 0.78125
+    )
 
 
 @dataclass
