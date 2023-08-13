@@ -25,8 +25,7 @@ Feel free to request new icons via issues on GitHub.
 ## Generation
 
 Röntgen icons may be drawn by hand in vector redactor and stored as optimized
-SVG files, but also the project has two more options for icons extraction and
-generation.
+SVG files, but also the project has one more option for icons extraction.
 
 ### Extraction from the monolith SVG file
 
