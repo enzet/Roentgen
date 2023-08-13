@@ -8,8 +8,11 @@ Röntgen was created for [Map Machine](http://github.com/enzet/map-machine)
 project to represent different map features from the OpenStreetMap database.
 However, it can be easily used for any map project or even for not map-related
 projects. Also, some icons can be used as emoji symbols.
-
-![Icons](doc/grid.svg)
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/enzet/Roentgen/main/doc/grid_white.svg">
+    <img src="https://raw.githubusercontent.com/enzet/Roentgen/main/doc/grid_black.svg"
+        alt="Röntgen icons">
+</picture>
 
 All icons tend to support a common design style, which is heavily inspired by
 [Maki](https://github.com/mapbox/maki),

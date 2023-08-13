@@ -10,7 +10,7 @@ def draw_icons(
     root_path: Path,
     icons_path: Path,
     icons_config_path: Path,
-    grid_path: Path,
+    doc_path: Path,
     output_path: Path,
 ) -> None:
     """
@@ -38,10 +38,16 @@ def draw_icons(
     # Draw grid.
 
     for icon in collection.icons:
-        icon.recolor(Color("#444444"))
+        icon.recolor(Color("#000000"))
+    collection.draw_grid(
+        doc_path / "grid_black.svg", background_color=None, scale=2.0
+    )
 
-    collection.draw_grid(grid_path, scale=2.0)
-    logging.info(f"Icon grid is written to {output_path}.")
+    for icon in collection.icons:
+        icon.recolor(Color("#FFFFFF"))
+    collection.draw_grid(
+        doc_path / "grid_white.svg", background_color=None, scale=2.0
+    )
 
 
 if __name__ == "__main__":
@@ -49,6 +55,6 @@ if __name__ == "__main__":
         Path("."),
         Path("data") / "icons.svg",
         Path("data") / "config.json",
-        Path("doc") / "grid.svg",
+        Path("doc"),
         Path("."),
     )
