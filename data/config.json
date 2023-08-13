@@ -463,6 +463,9 @@
     "telephone": {"emoji": "☎️", "name": "telephone"},
     "tv": {"name": "monitor", "emoji": "🖥"}
   },
+  "electric": {
+    "connector_type_2": {"name": "type 2 connector"}
+  },
   "car_part": {
     "engine": {"name": "engine"},
     "tyre": {"name": "tyre"}
