@@ -15,6 +15,7 @@ from svgwrite import Drawing
 from svgwrite.base import BaseElement
 from svgwrite.container import Group
 from svgwrite.path import Path as SVGPath
+from svgpathtools import Path as ToolsPath, parse_path
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
@@ -44,6 +45,10 @@ def is_bright(color: Color) -> bool:
     )
 
 
+def round_complex(value: complex, precision: int) -> complex:
+    return round(value.real, precision) + round(value.imag, precision) * 1j
+
+
 @dataclass
 class Shape:
     """SVG icon path description."""
@@ -51,7 +56,7 @@ class Shape:
     # String representation of SVG path commands.
     path: str
 
-    # Vector that should be used to shift the path.
+    # Shape place in the monolith SVG file.
     offset: np.ndarray
 
     # Shape unique string identifier, e.g. `tree`.
@@ -135,6 +140,7 @@ class Shape:
         point: np.ndarray,
         offset: np.ndarray = np.array((0.0, 0.0)),
         scale: np.ndarray = np.array((1.0, 1.0)),
+        use_transform: bool = False,
     ) -> SVGPath:
         """
         Draw icon into SVG file.
@@ -142,20 +148,47 @@ class Shape:
         :param point: icon position
         :param offset: additional offset
         :param scale: scale resulting image
+        :param use_transform: use SVG `translate` method instead of rewriting
+            path
         """
-        transformations: list[str] = []
         shift: np.ndarray = point + offset
 
-        transformations.append(f"translate({shift[0]},{shift[1]})")
+        if use_transform:
+            path = svgwrite.path.Path(d=self.path)
+            if not np.allclose(shift, np.array((0.0, 0.0))):
+                path.translate(shift[0], shift[1])
+            if not np.allclose(scale, np.array((1.0, 1.0))):
+                path.scale(scale[0], scale[1])
+            if not np.allclose(self.offset, np.array((0.0, 0.0))):
+                path.translate(self.offset[0], self.offset[1])
+        else:
+            parsed_path: ToolsPath = parse_path(self.path)
+            if not np.allclose(self.offset, np.array((0.0, 0.0))):
+                parsed_path = parsed_path.translated(
+                    self.offset[0] + self.offset[1] * 1j
+                )
+            if not np.allclose(scale, np.array((1.0, 1.0))):
+                parsed_path = parsed_path.scaled(scale[0], scale[1])
+            if not np.allclose(shift, np.array((0.0, 0.0))):
+                parsed_path = parsed_path.translated(shift[0] + shift[1] * 1j)
 
-        if not np.allclose(scale, np.array((1.0, 1.0))):
-            transformations.append(f"scale({scale[0]},{scale[1]})")
+            for element in parsed_path:
+                for attribute in (
+                    "start",
+                    "end",
+                    "control1",
+                    "control2",
+                    "radius",
+                ):
+                    if hasattr(element, attribute):
+                        setattr(
+                            element,
+                            attribute,
+                            round_complex(getattr(element, attribute), 4),
+                        )
+            path = svgwrite.path.Path(d=parsed_path.d())
 
-        transformations.append(f"translate({self.offset[0]},{self.offset[1]})")
-
-        return svgwrite.path.Path(
-            d=self.path, transform=" ".join(transformations)
-        )
+        return path
 
     def get_full_id(self) -> str:
         """Compute full shape identifier with group for sorting."""
@@ -336,7 +369,7 @@ class ShapeExtractor:
                     -int(float(value) / GRID_STEP) * GRID_STEP - GRID_STEP / 2.0
                 )
 
-            point: np.ndarray = np.array(
+            offset: np.ndarray = np.array(
                 (get_offset(matcher.group(1)), get_offset(matcher.group(2)))
             )
             for child_node in node:
@@ -354,7 +387,7 @@ class ShapeExtractor:
                 logging.warning(f"Shape `{id_}` doesn't have configuration.")
 
             self.shapes[id_] = Shape.from_structure(
-                configuration, path, point, id_, name
+                configuration, path, offset, id_, name
             )
         else:
             logging.error(f"Not standard ID {id_}.")
