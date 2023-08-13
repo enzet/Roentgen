@@ -559,10 +559,13 @@ class Icon:
                 )
             svg.add(outline_group)
         else:
-            group: Group = Group(opacity=self.opacity)
-            for shape_specification in self.shape_specifications:
-                shape_specification.draw(group, point, tags, scale=scale)
-            svg.add(group)
+            if len(self.shape_specifications) > 1 or self.opacity != 1:
+                group: Group = Group(opacity=self.opacity)
+                for shape_specification in self.shape_specifications:
+                    shape_specification.draw(group, point, tags, scale=scale)
+                svg.add(group)
+            else:
+                self.shape_specifications[0].draw(svg, point, tags, scale=scale)
 
     def draw_to_file(
         self,

@@ -38,13 +38,13 @@ def draw_icons(
     # Draw grid.
 
     for icon in collection.icons:
-        icon.recolor(Color("#404040"))
+        icon.recolor(Color("#444"))
     collection.draw_grid(
         doc_path / "grid_black.svg", background_color=None, scale=2.0
     )
 
     for icon in collection.icons:
-        icon.recolor(Color("#A0B0B0"))
+        icon.recolor(Color("#ABB"))
     collection.draw_grid(
         doc_path / "grid_white.svg", background_color=None, scale=2.0
     )
