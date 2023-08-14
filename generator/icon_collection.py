@@ -1,4 +1,5 @@
 """Icon grid drawing."""
+import math
 import shutil
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -32,7 +33,7 @@ class IconCollection:
         color: Color = Color("black"),
         add_unused: bool = False,
         add_all: bool = False,
-    ) -> None:
+    ) -> "IconCollection":
         """
         Collect all possible icon combinations.
 
@@ -78,6 +79,8 @@ class IconCollection:
                 icon: Icon = Icon([ShapeSpecification(shape, color)])
                 icon.recolor(color, white=background_color)
                 self.icons.append(icon)
+
+        return self
 
     def draw_icons(
         self,
@@ -139,7 +142,7 @@ class IconCollection:
         point: np.ndarray = np.array((step / 2.0 * scale, step / 2.0 * scale))
         width: float = step * columns * scale
 
-        height: int = int(int(len(self.icons) / columns + 1.0) * step * scale)
+        height: int = int(math.ceil(len(self.icons) / columns) * step * scale)
         svg: Drawing = Drawing(str(file_name), (width, height))
         if background_color is not None:
             svg.add(
