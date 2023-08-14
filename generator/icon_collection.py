@@ -1,6 +1,6 @@
 """Icon grid drawing."""
 import shutil
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
@@ -23,17 +23,16 @@ __email__ = "me@enzet.ru"
 class IconCollection:
     """Collection of icons."""
 
-    icons: list[Icon]
+    icons: list[Icon] = field(default_factory=list)
 
-    @classmethod
-    def from_scheme(
-        cls,
+    def add_from_scheme(
+        self,
         extractor: ShapeExtractor,
         background_color: Color = Color("white"),
         color: Color = Color("black"),
         add_unused: bool = False,
         add_all: bool = False,
-    ) -> "IconCollection":
+    ) -> None:
         """
         Collect all possible icon combinations.
 
@@ -47,22 +46,21 @@ class IconCollection:
             tags
         :param add_all: create icons from all possible shapes including parts
         """
-        icons: list[Icon] = []
-
         for key, value in extractor.configuration.items():
             if "is_part" in value and value["is_part"]:
                 continue
-            specifications: list[ShapeSpecification] = [
-                ShapeSpecification(extractor.get_shape(key), color)
-            ]
-            constructed_icon: Icon = Icon(specifications)
-            constructed_icon.recolor(color, white=background_color)
-            if constructed_icon not in icons:
-                icons.append(constructed_icon)
+            if extractor.has_shape(key):
+                specifications: list[ShapeSpecification] = [
+                    ShapeSpecification(extractor.get_shape(key), color)
+                ]
+                constructed_icon: Icon = Icon(specifications)
+                constructed_icon.recolor(color, white=background_color)
+                if constructed_icon not in self.icons:
+                    self.icons.append(constructed_icon)
 
         specified_ids: set[str] = set()
 
-        for icon in icons:
+        for icon in self.icons:
             specified_ids |= set(icon.get_shape_ids())
 
         if add_unused:
@@ -72,16 +70,14 @@ class IconCollection:
                     continue
                 icon: Icon = Icon([ShapeSpecification(shape, color)])
                 icon.recolor(color, white=background_color)
-                icons.append(icon)
+                self.icons.append(icon)
 
         if add_all:
             for shape_id in extractor.shapes.keys():
                 shape: Shape = extractor.get_shape(shape_id)
                 icon: Icon = Icon([ShapeSpecification(shape, color)])
                 icon.recolor(color, white=background_color)
-                icons.append(icon)
-
-        return cls(icons)
+                self.icons.append(icon)
 
     def draw_icons(
         self,

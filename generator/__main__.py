@@ -8,7 +8,7 @@ from generator.icon_collection import ShapeExtractor, IconCollection
 
 def draw_icons(
     root_path: Path,
-    icons_path: Path,
+    icon_paths: list[Path],
     icons_config_path: Path,
     doc_path: Path,
     output_path: Path,
@@ -17,8 +17,10 @@ def draw_icons(
     Draw all possible icon shapes combinations as grid in one SVG file and as
     individual SVG files.
     """
-    extractor: ShapeExtractor = ShapeExtractor(icons_path, icons_config_path)
-    collection: IconCollection = IconCollection.from_scheme(extractor)
+    collection: IconCollection = IconCollection()
+    for path in icon_paths:
+        extractor: ShapeExtractor = ShapeExtractor(path, icons_config_path)
+        collection.add_from_scheme(extractor)
     collection.sort()
 
     license_path: Path = root_path / "LICENSE"
@@ -53,7 +55,7 @@ def draw_icons(
 if __name__ == "__main__":
     draw_icons(
         Path("."),
-        Path("data") / "icons.svg",
+        [Path("data") / "icons.svg", Path("data") / "connectors.svg"],
         Path("data") / "config.json",
         Path("doc"),
         Path("."),

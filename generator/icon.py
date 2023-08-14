@@ -324,12 +324,6 @@ class ShapeExtractor:
         root: Element = ElementTree.parse(svg_file_name).getroot()
         self.parse(root)
 
-        for shape_id in self.configuration:
-            if shape_id not in self.shapes:
-                logging.warning(
-                    f"Configuration for unknown shape `{shape_id}`."
-                )
-
     def parse(self, node: Element) -> None:
         """
         Extract icon paths into a map.
@@ -391,6 +385,9 @@ class ShapeExtractor:
             )
         else:
             logging.error(f"Not standard ID {id_}.")
+
+    def has_shape(self, id_: str) -> bool:
+        return id_ in self.shapes
 
     def get_shape(self, id_: str) -> Shape:
         """
