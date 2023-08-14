@@ -464,7 +464,12 @@
     "tv": {"name": "monitor", "emoji": "🖥"}
   },
   "electric": {
-    "connector_type_2": {"name": "type 2 connector"}
+    "connector_type_1": {"name": "type 1 connector"},
+    "connector_type_2": {"name": "type 2 connector"},
+    "connector_type_e": {"name": "type E connector"},
+    "connector_tesla": {"name": "Tesla connector"},
+    "connector_schuko": {"name": "schuko connector"},
+    "connector_chademo": {"name": "CHAdeMO connector"}
   },
   "car_part": {
     "engine": {"name": "engine"},
