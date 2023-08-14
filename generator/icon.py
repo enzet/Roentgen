@@ -24,7 +24,7 @@ DEFAULT_SHAPE_ID: str = "default"
 DEFAULT_SMALL_SHAPE_ID: str = "default_small"
 
 STANDARD_INKSCAPE_ID_MATCHER: re.Pattern = re.compile(
-    "^((circle|defs|ellipse|grid|guide|marker|metadata|path|rect|use)"
+    "^((circle|defs|ellipse|grid|guide|marker|metadata|namedview|path|rect|use)"
     "[\\d-]+|base)$"
 )
 PATH_MATCHER: re.Pattern = re.compile("[Mm] ([0-9.e-]*)[, ]([0-9.e-]*)")
