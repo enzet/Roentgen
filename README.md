@@ -29,7 +29,7 @@ SVG files, but also the project has one more option for icons extraction.
 
 ### Extraction from the monolith SVG file
 
-It may be useful to have one SVG file for a set of SVG icons.
+It may be useful to have one SVG file for a set of SVG icons along with sketches
+and components that icons consist of.
 
-In the Röntgen project there is a file [`icons.svg`](data/icons.svg), that
-contains the majority of the icons in set.
+In the Röntgen project these files located in  [`data`](data) directory.
