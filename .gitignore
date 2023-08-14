@@ -1,0 +1,6 @@
+.DS_Store
+.idea/
+__pycache__
+icons/LICENSE
+icons_by_name/
+work/
