@@ -166,3 +166,25 @@ class IconCollection:
     def sort(self) -> None:
         """Sort icon list."""
         self.icons = sorted(self.icons)
+
+    def add_combinations(self, combinations, shapes: dict[str, Shape]):
+        color = Color("black")  # FIXME
+        background_color = Color("white")  # FIXME
+
+        for elements in combinations:
+            specifications: list[ShapeSpecification] = []
+
+            for element in elements:
+                specification = ShapeSpecification(
+                    shapes[element["id"]],
+                    offset=np.array(element.get("offset", [0, 0])),
+                    flip_horizontally=element.get("flip_horizontally", False),
+                    flip_vertically=element.get("flip_vertically", False),
+                    color=color,
+                )
+                specifications.append(specification)
+
+            constructed_icon: Icon = Icon(specifications)
+            constructed_icon.recolor(color, white=background_color)
+            if constructed_icon not in self.icons:
+                self.icons.append(constructed_icon)

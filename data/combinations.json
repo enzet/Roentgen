@@ -1,0 +1,241 @@
+[
+    [
+        {"id": "bus_stop_sign"},
+        {"id": "bus_stop_shelter"}
+    ], [
+        {"id": "bus_stop_sign"},
+        {"id": "bus_stop_bench"},
+        {"id": "bus_stop_shelter"}
+    ], [
+        {"id": "bus_stop_sign"},
+        {"id": "platform"},
+        {"id": "bus_stop_shelter"}
+    ], [
+        {"id": "bus_stop_sign"},
+        {"id": "bus_stop_bench"},
+        {"id": "platform"},
+        {"id": "bus_stop_shelter"}
+    ], [
+        {"id": "bus_stop_sign"},
+        {"id": "bus_stop_bench"}
+    ], [
+        {"id": "bus_stop_sign"},
+        {"id": "platform"},
+        {"id": "bus_stop_bench"}
+    ], [
+        {"id": "stratovolcano"},
+        {"id": "smoke_2", "offset": [0, -3]}
+    ], [
+        {"id": "shield_volcano"},
+        {"id": "smoke_2", "offset": [0, -1]}
+    ], [
+        {"id": "volcanic_cone"},
+        {"id": "smoke_2", "offset": [0, -2]}
+    ], [
+        {"id": "stratovolcano"},
+        {"id": "lava", "offset": [0, -3]}
+    ], [
+        {"id": "stratovolcano"},
+        {"id": "smoke", "offset": [1, -3]}
+    ], [
+        {"id": "shield_volcano"},
+        {"id": "lava", "offset": [0, -1]}
+    ], [
+        {"id": "volcanic_cone"},
+        {"id": "lava", "offset": [0, -2]}
+    ], [
+        {"id": "shield_volcano"},
+        {"id": "smoke", "offset": [1, -1]}
+    ], [
+        {"id": "volcanic_cone"},
+        {"id": "smoke", "offset": [1, -2]}
+    ], [
+        {"id": "car", "offset": [0, 4]},
+        {"id": "bed", "offset": [0, -2]}
+    ], [
+        {"id": "car", "offset": [0, 3]},
+        {"id": "wrench", "offset": [0, -4]}
+    ], [
+        {"id": "car", "offset": [0, 3]},
+        {"id": "key", "offset": [1, -3]}
+    ], [
+        {"id": "car", "offset": [0, 3]},
+        {"id": "sharing", "offset": [0, -4]}
+    ], [
+        {"id": "car", "offset": [0, 3]},
+        {"id": "shower_head", "offset": [0, -4]}
+    ], [
+        {"id": "maze", "offset": [-2,  0]},
+        {"id": "arrow_right_short", "offset": [5, -1]}
+    ], [
+        {"id": "table_and_two_chairs"},
+        {"id": "umbrella"}
+    ], [
+        {"id": "table_and_two_chairs"},
+        {"id": "roof"}
+    ], [
+        {"id": "table_and_two_chairs"},
+        {"id": "awning"}
+    ], [
+        {"id": "table_and_two_chairs"},
+        {"id": "roof_and_walls"}
+    ], [
+        {"id": "table_and_two_chairs"},
+        {"id": "pergola"}
+    ], [
+        {"id": "bicycle", "offset": [0, 2]},
+        {"id": "wrench", "offset": [1, -5]}
+    ], [
+        {"id": "bicycle", "offset": [0, 2]},
+        {"id": "key", "offset": [1, -4]}
+    ], [
+        {"id": "car", "offset": [0, 4]},
+        {"id": "car", "offset": [0, -3]}
+    ], [
+        {"id": "exchange"},
+        {"id": "dollar", "offset": [-4,  3]},
+        {"id": "pound", "offset": [5, -2]}
+    ], [
+        {"id": "tube"},
+        {"id": "light_left", "offset": [-3, -3]},
+        {"id": "light_right", "offset": [3, -3]}
+    ], [
+        {"id": "tube"},
+        {"id": "wave_left", "offset": [-3, -3]},
+        {"id": "wave_right", "offset": [3, -3]}
+    ], [
+        {"id": "tube"},
+        {"id": "siren_left", "offset": [-3, -3]},
+        {"id": "siren_right", "offset": [3, -3]}
+    ], [
+        {"id": "tube"},
+        {"id": "dish_antenna_left", "offset": [-3, -3]},
+        {"id": "dish_antenna_right", "offset": [3, -3]}
+    ], [
+        {"id": "tube_guyed"},
+        {"id": "light_left", "offset": [-3, -3]},
+        {"id": "light_right", "offset": [3, -3]}
+    ], [
+        {"id": "tube_guyed"},
+        {"id": "wave_left", "offset": [-3, -3]},
+        {"id": "wave_right", "offset": [3, -3]}
+    ], [
+        {"id": "tube_guyed"},
+        {"id": "siren_left", "offset": [-3, -3]},
+        {"id": "siren_right", "offset": [3, -3]}
+    ], [
+        {"id": "tube_guyed"},
+        {"id": "dish_antenna_left", "offset": [-3, -3]},
+        {"id": "dish_antenna_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice_guyed"},
+        {"id": "light_left", "offset": [-4, -3]},
+        {"id": "light_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice_guyed"},
+        {"id": "wave_left", "offset": [-4, -3]},
+        {"id": "wave_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice_guyed"},
+        {"id": "siren_left", "offset": [-4, -3]},
+        {"id": "siren_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice_guyed"},
+        {"id": "dish_antenna_left", "offset": [-4, -3]},
+        {"id": "dish_antenna_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice"},
+        {"id": "light_left", "offset": [-4, -3]},
+        {"id": "light_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice"},
+        {"id": "wave_left", "offset": [-4, -3]},
+        {"id": "wave_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice"},
+        {"id": "siren_left", "offset": [-4, -3]},
+        {"id": "siren_right", "offset": [3, -3]}
+    ], [
+        {"id": "lattice"},
+        {"id": "dish_antenna_left", "offset": [-4, -3]},
+        {"id": "dish_antenna_right", "offset": [3, -3]}
+    ], [
+        {"id": "bicycle", "offset": [0, 2]},
+        {"id": "p_small", "offset": [-6, -3]}
+    ], [
+        {"id": "p_small", "offset": [-5, -3]},
+        {"id": "bicycle_parking_stand"}
+    ], [
+        {"id": "p_small", "offset": [-5, -3]},
+        {"id": "bicycle_parking_wall_loops"}
+    ], [
+        {"id": "p_small", "offset": [-5, -3]},
+        {"id": "bicycle_parking_rack"}
+    ], [
+        {"id": "p", "offset": [1,  0]},
+        {"id": "arrow_right", "offset": [4, 5]}
+    ], [
+        {"id": "p", "offset": [1,  0]},
+        {"id": "arrow_down", "offset": [4, 5]}
+    ], [
+        {"id": "p", "offset": [1,  0]},
+        {"id": "arrow_up", "offset": [4, 5]}
+    ], [
+        {"id": "clock"},
+        {"id": "support_pole"}
+    ], [
+        {"id": "i_in_square"},
+        {"id": "support_pole"}
+    ], [
+        {"id": "clock"},
+        {"id": "support_wall"}
+    ], [
+        {"id": "i_in_square"},
+        {"id": "support_wall"}
+    ], [
+        {"id": "clock"},
+        {"id": "support_column"}
+    ], [
+        {"id": "i_in_square"},
+        {"id": "support_column"}
+    ], [
+        {"id": "tree"},
+        {"id": "urban_tree_pot"}
+    ], [
+        {"id": "tree_with_leaf"},
+        {"id": "urban_tree_pot"}
+    ], [
+        {"id": "needleleaved_tree"},
+        {"id": "urban_tree_pot"}
+    ], [
+        {"id": "betula"},
+        {"id": "urban_tree_pot"}
+    ], [
+        {"id": "palm"},
+        {"id": "urban_tree_pot"}
+    ], [
+        {"id": "tree"},
+        {"id": "bottom_right_horizontal_line"}
+    ], [
+        {"id": "tree_with_leaf"},
+        {"id": "bottom_right_horizontal_line"}
+    ], [
+        {"id": "needleleaved_tree"},
+        {"id": "bottom_right_horizontal_line"}
+    ], [
+        {"id": "betula"},
+        {"id": "bottom_right_horizontal_line"}
+    ], [
+        {"id": "palm"},
+        {"id": "bottom_right_horizontal_line"}
+    ], [
+        {"id": "bicycle", "offset": [0, 2]},
+        {"id": "x_4", "offset": [-5, -4]}
+    ], [
+        {"id": "wlan", "offset": [0, -3]},
+        {"id": "free", "offset": [0, 5]}
+    ], [
+        {"id": "tactile_paving", "offset": [0, 2]},
+        {"id": "x_5", "offset": [0, -3]}
+    ]
+]

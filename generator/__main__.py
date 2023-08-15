@@ -1,8 +1,10 @@
+import json
 import logging
 from pathlib import Path
 
 from colour import Color
 
+from generator.icon import Shape
 from generator.icon_collection import ShapeExtractor, IconCollection
 
 
@@ -10,6 +12,7 @@ def draw_icons(
     root_path: Path,
     icon_paths: list[Path],
     icons_config_path: Path,
+    combinations_path: Path,
     doc_path: Path,
     output_path: Path,
 ) -> None:
@@ -18,10 +21,19 @@ def draw_icons(
     individual SVG files.
     """
     collection: IconCollection = IconCollection()
+    shapes: dict[str, Shape] = {}
     for path in icon_paths:
         extractor: ShapeExtractor = ShapeExtractor(path, icons_config_path)
+        shapes |= extractor.shapes
         collection.add_from_scheme(extractor)
+
+    with combinations_path.open() as input_file:
+        combinations = json.load(input_file)
+
+    collection.add_combinations(combinations, shapes)
     collection.sort()
+
+    print(len(collection))
 
     license_path: Path = root_path / "LICENSE"
 
@@ -51,12 +63,17 @@ def draw_icons(
         doc_path / "grid_white.svg", background_color=None, scale=2.0
     )
 
+    IconCollection().add_from_scheme(
+        ShapeExtractor(Path("data") / "connectors.svg", icons_config_path)
+    ).draw_grid(Path("doc") / "connectors.svg", scale=8.0, columns=6)
+
 
 if __name__ == "__main__":
     draw_icons(
         Path("."),
         [Path("data") / "icons.svg", Path("data") / "connectors.svg"],
         Path("data") / "config.json",
+        Path("data") / "combinations.json",
         Path("doc"),
         Path("."),
     )
