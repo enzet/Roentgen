@@ -295,7 +295,7 @@
     "curtains": {"name": "curtains"},
     "elevator": {"name": "elevator"},
     "fireplace": {"name": "fireplace"},
-    "shower_head": {"name": "shower head"},
+    "shower_head": {"is_part": true, "name": "shower head"},
     "washing_machine": {"name": "washing machine"}
   },
   "technique": {
