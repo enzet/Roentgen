@@ -4,8 +4,8 @@ from pathlib import Path
 
 from colour import Color
 
-from generator.icon import Shape
-from generator.icon_collection import ShapeExtractor, IconCollection
+from roentgen.icon import Shape
+from roentgen.icon_collection import ShapeExtractor, IconCollection
 
 
 def draw_icons(
@@ -68,7 +68,7 @@ def draw_icons(
     ).draw_grid(Path("doc") / "connectors.svg", scale=8.0, columns=6)
 
 
-if __name__ == "__main__":
+def main() -> None:
     draw_icons(
         Path("."),
         [Path("data") / "icons.svg", Path("data") / "connectors.svg"],
@@ -77,3 +77,7 @@ if __name__ == "__main__":
         Path("doc"),
         Path("."),
     )
+
+
+if __name__ == "__main__":
+    main()
