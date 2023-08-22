@@ -41,6 +41,7 @@ def draw_icons(
     collection.draw_icons(icons_by_id_path, license_path)
 
     icons_by_name_path: Path = output_path / "icons_by_name"
+    icons_by_name_path.mkdir(exist_ok=True)
     collection.draw_icons(icons_by_name_path, license_path, by_name=True)
 
     logging.info(
