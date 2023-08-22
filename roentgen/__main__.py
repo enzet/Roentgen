@@ -33,8 +33,6 @@ def draw_icons(
     collection.add_combinations(combinations, shapes)
     collection.sort()
 
-    print(len(collection))
-
     license_path: Path = root_path / "LICENSE"
 
     # Draw individual icons.
