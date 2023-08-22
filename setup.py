@@ -40,8 +40,8 @@ setup(
     python_requires=">=3.9",
     install_requires=[
         "colour~=0.1.5",
-        "svgwrite~=1.4.3",
         "numpy~=1.25.2",
         "svgpathtools~=1.6.1",
+        "svgwrite~=1.4.3",
     ]
 )
