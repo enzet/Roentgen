@@ -25,12 +25,30 @@ All icons tend to support a common design style, which is heavily inspired by
 
 Feel free to request new icons via issues on GitHub.
 
+## Design Principles
+
+### Requirements
+
+- Icons must be __monochrome__, meaning they cannot have parts in different
+  colors. This ensures they can be recolored without losing their meaning.
+- Icons must be __14 × 14 px__ in size (equivalent to 16 × 16 px with one pixel
+  padding).
+
+### Recommendations
+
+- Icon parts should be __pixel-aligned__ for better rendering.
+- Icons should __avoid perspective__ when possible.
+- Lines should have __rounded caps__ if it doesn't affect shape recognition.
+
+Individual icons should be in the form of a single SVG `path` element. Icon
+combinations are combinations of individual icons.
+
 ## Generation
 
 Röntgen icons may be drawn by hand in a vector editor and stored as optimized
 SVG files, but the project also has one more option for icon extraction.
 
-### Extraction from the monolith SVG file
+### Extraction from the Monolith SVG File
 
 It may be useful to have one SVG file for a set of SVG icons along with sketches
 and components that the icons consist of.
