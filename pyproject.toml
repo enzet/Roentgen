@@ -42,8 +42,6 @@ allow-direct-references = true
 [tool.ruff]
 lint.select = ["ALL"]
 lint.ignore = [
-    "ANN101",  # Rule is deleted, type of `self` can be inferred.
-    "ANN102",  # Type of `self` can be inferred.
     "C901",  # Too complex functions are allowed.
     "COM812",  # Trailing comma not in Black style.
     "D105",  # Missing docstring in magic method is allowed.
@@ -56,6 +54,8 @@ lint.ignore = [
     "PLR0912",  # Too many branches are allowed.
     "PLR0913",  # Too many arguments are allowed.
     "PLR0915",  # Too many statements are allowed.
+    "RUF001",  # Ambiguous symbols are allowed.
+    "RUF002",  # Ambiguous symbols are allowed.
     "S101",  # Asserts are allowed in tests.
     "TD003",  # Issues for todos are not required.
 ]

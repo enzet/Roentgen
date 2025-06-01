@@ -16,6 +16,8 @@ from roentgen.icon import Icon, Shape, ShapeExtractor, ShapeSpecification
 if TYPE_CHECKING:
     from pathlib import Path
 
+    from numpy.typing import NDArray
+
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
 
@@ -144,7 +146,7 @@ class IconCollection:
         :param background_color: background color
         :param scale: scale icon by the magnitude
         """
-        point: np.ndarray = np.array((step / 2.0 * scale, step / 2.0 * scale))
+        point: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
         width: float = step * columns * scale
 
         height: int = int(math.ceil(len(self.icons) / columns) * step * scale)

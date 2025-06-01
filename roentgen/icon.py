@@ -22,6 +22,7 @@ from svgwrite.container import Group
 if TYPE_CHECKING:
     from pathlib import Path
 
+    from numpy.typing import NDArray
     from svgwrite.base import BaseElement
     from svgwrite.path import Path as SVGPath
 
@@ -46,14 +47,19 @@ UNUSED_ICON_COLORS: list[str] = ["#0000ff", "#ff0000"]
 
 
 def is_bright(color: Color) -> bool:
-    """Check whether color is bright enough to have black outline instead of white."""
+    """Check whether color is bright.
+
+    Meaning that the color is bright enough to have black outline instead of
+    white.
+    """
     return (
         0.2126 * color.red + 0.7152 * color.green + 0.0722 * color.blue
-        > 0.78125
+        > 0.78125  # noqa: PLR2004
     )
 
 
 def round_complex(value: complex, precision: int) -> complex:
+    """Round complex number to the given precision."""
     return round(value.real, precision) + round(value.imag, precision) * 1j
 
 
@@ -64,7 +70,7 @@ class Shape:
     path: str
     """String representation of SVG path commands."""
 
-    offset: np.ndarray
+    offset: NDArray
     """Shape place in the monolith SVG file."""
 
     id_: str
@@ -109,7 +115,7 @@ class Shape:
         cls,
         structure: dict[str, Any],
         path: str,
-        offset: np.ndarray,
+        offset: NDArray,
         id_: str,
         name: str | None = None,
     ) -> Shape:
@@ -151,9 +157,9 @@ class Shape:
     def get_path(
         self,
         *,
-        point: np.ndarray,
-        offset: np.ndarray = np.array((0.0, 0.0)),
-        scale: np.ndarray = np.array((1.0, 1.0)),
+        point: NDArray,
+        offset: NDArray,
+        scale: NDArray,
         use_transform: bool = False,
     ) -> SVGPath:
         """Draw icon into SVG file.
@@ -164,7 +170,7 @@ class Shape:
         :param use_transform: use SVG `translate` method instead of rewriting
             path
         """
-        shift: np.ndarray = point + offset
+        shift: NDArray = point + offset
 
         if use_transform:
             path = svgwrite.path.Path(d=self.path)
@@ -311,7 +317,7 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
 class ShapeExtractor:
     """Extract shapes from SVG file.
 
-    Shape is a single path with "id" attribute that aligned to 16×16 grid.
+    Shape is a single path with "id" attribute that aligned to 16 × 16 grid.
     """
 
     def __init__(
@@ -332,7 +338,7 @@ class ShapeExtractor:
             self.configuration,
             "root",
         )
-        root: Element = ET.parse(svg_file_name).getroot()
+        root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
         self.parse(root)
 
     def parse(self, node: Element) -> None:
@@ -373,7 +379,7 @@ class ShapeExtractor:
                     -int(float(value) / GRID_STEP) * GRID_STEP - GRID_STEP / 2.0
                 )
 
-            offset: np.ndarray = np.array(
+            offset: NDArray = np.array(
                 (get_offset(matcher.group(1)), get_offset(matcher.group(2)))
             )
             for child_node in node:
@@ -418,7 +424,7 @@ class ShapeSpecification:
 
     shape: Shape
     color: Color
-    offset: np.ndarray = field(default_factory=lambda: np.array((0.0, 0.0)))
+    offset: NDArray = field(default_factory=lambda: np.array((0.0, 0.0)))
     flip_horizontally: bool = False
     flip_vertically: bool = False
     use_outline: bool = True
@@ -430,7 +436,7 @@ class ShapeSpecification:
     def draw(
         self,
         svg: BaseElement,
-        point: np.ndarray,
+        point: NDArray,
         tags: dict[str, Any] | None = None,
         *,
         outline: bool = False,
@@ -447,13 +453,13 @@ class ShapeSpecification:
         :param outline_opacity: opacity of the outline
         :param scale: scale icon by the magnitude
         """
-        scale_vector: np.ndarray = np.array((scale, scale))
+        scale_vector: NDArray = np.array((scale, scale))
         if self.flip_vertically:
             scale_vector = np.array((scale, -scale))
         if self.flip_horizontally:
             scale_vector = np.array((-scale, scale))
 
-        point: np.ndarray = np.array(list(map(int, point)))
+        point: NDArray = np.array(list(map(int, point)))
         path: SVGPath = self.shape.get_path(
             point=point,
             offset=self.offset * scale,
@@ -545,7 +551,7 @@ class Icon:
     def draw(
         self,
         svg: svgwrite.Drawing,
-        point: np.ndarray,
+        point: NDArray,
         tags: dict[str, Any] | None = None,
         *,
         outline: bool = False,
