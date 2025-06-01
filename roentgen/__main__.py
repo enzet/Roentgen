@@ -12,6 +12,8 @@ from roentgen.icon_collection import IconCollection, ShapeExtractor
 if TYPE_CHECKING:
     from roentgen.icon import Shape
 
+logger: logging.Logger = logging.getLogger(__name__)
+
 
 def draw_icons(
     root_path: Path,
@@ -51,8 +53,8 @@ def draw_icons(
     icons_by_name_path.mkdir(exist_ok=True)
     collection.draw_icons(icons_by_name_path, license_path, by_name=True)
 
-    logging.info(
-        f"Icons are written to {icons_by_name_path} and {icons_by_id_path}."
+    logger.info(
+        "Icons are written to %s and %s.", icons_by_name_path, icons_by_id_path
     )
 
     # Draw grid.

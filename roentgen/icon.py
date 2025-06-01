@@ -23,6 +23,8 @@ from svgwrite.path import Path as SVGPath
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
 
+logger: logging.Logger = logging.getLogger(__name__)
+
 DEFAULT_SHAPE_ID: str = "default"
 DEFAULT_SMALL_SHAPE_ID: str = "default_small"
 
@@ -346,7 +348,9 @@ class ShapeExtractor:
                 path_part = ""
                 with contextlib.suppress(KeyError, ValueError):
                     path_part = f", {node.attrib['d'].split(' ')[:3]}."
-                logging.warning(f"Not verified SVG element `{id_}`{path_part}")
+                logger.warning(
+                    "Not verified SVG element `%s`%s", id_, path_part
+                )
             return
 
         if node.attrib.get("d"):
@@ -376,15 +380,15 @@ class ShapeExtractor:
             if id_ in self.configuration:
                 configuration = self.configuration[id_]
                 if "name" not in configuration:
-                    logging.warning(f"Shape `{id_}` doesn't have name.")
+                    logger.warning("Shape `%s` doesn't have name.", id_)
             else:
-                logging.warning(f"Shape `{id_}` doesn't have configuration.")
+                logger.warning("Shape `%s` doesn't have configuration.", id_)
 
             self.shapes[id_] = Shape.from_structure(
                 configuration, path, offset, id_, name
             )
         else:
-            logging.error(f"Not standard ID {id_}.")
+            logger.error("Not standard ID %s.", id_)
 
     def has_shape(self, id_: str) -> bool:
         return id_ in self.shapes
