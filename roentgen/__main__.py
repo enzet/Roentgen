@@ -1,11 +1,16 @@
+"""Main module."""
+
 import json
 import logging
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from colour import Color
 
-from roentgen.icon import Shape
-from roentgen.icon_collection import ShapeExtractor, IconCollection
+from roentgen.icon_collection import IconCollection, ShapeExtractor
+
+if TYPE_CHECKING:
+    from roentgen.icon import Shape
 
 
 def draw_icons(
@@ -72,12 +77,12 @@ def draw_icons(
 def main() -> None:
     """Run the main function."""
     draw_icons(
-        Path("."),
+        Path(),
         [Path("data") / "icons.svg", Path("data") / "connectors.svg"],
         Path("data") / "config.json",
         Path("data") / "combinations.json",
         Path("doc"),
-        Path("."),
+        Path(),
     )
 
 

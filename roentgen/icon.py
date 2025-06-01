@@ -1,21 +1,24 @@
 """Extract icons from SVG file."""
+
+import contextlib
 import json
 import logging
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Optional
-from xml.etree import ElementTree
+from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element
 
 import numpy as np
 import svgwrite
 from colour import Color
+from svgpathtools import Path as ToolsPath
+from svgpathtools import parse_path
 from svgwrite import Drawing
 from svgwrite.base import BaseElement
 from svgwrite.container import Group
 from svgwrite.path import Path as SVGPath
-from svgpathtools import Path as ToolsPath, parse_path
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
@@ -36,9 +39,7 @@ UNUSED_ICON_COLORS: list[str] = ["#0000ff", "#ff0000"]
 
 
 def is_bright(color: Color) -> bool:
-    """
-    Check whether color is bright enough to have black outline instead of white.
-    """
+    """Check whether color is bright enough to have black outline instead of white."""
     return (
         0.2126 * color.red + 0.7152 * color.green + 0.0722 * color.blue
         > 0.78125
@@ -113,7 +114,7 @@ class Shape:
         :param id_: shape unique identifier
         :param name: shape text description
         """
-        shape: "Shape" = cls(path, offset, id_, name)
+        shape: Shape = cls(path, offset, id_, name)
 
         if "name" in structure:
             shape.name = structure["name"]
@@ -201,8 +202,7 @@ class Shape:
 
 def parse_length(text: str) -> float:
     """Parse length from SVG attribute."""
-    if text.endswith("px"):
-        text = text[:-2]
+    text = text.removesuffix("px")
     return float(text)
 
 
@@ -217,10 +217,10 @@ def verify_sketch_element(element: Element, id_: str) -> bool:
     if "style" not in element.attrib or not element.attrib["style"]:
         return True
 
-    style: dict[str, str] = dict(
-        (x.split(":")[0], x.split(":")[1])
+    style: dict[str, str] = {
+        x.split(":")[0]: x.split(":")[1]
         for x in element.attrib["style"].split(";")
-    )
+    }
 
     # Sketch element (black 0.1 px stroke, no fill).
 
@@ -258,10 +258,7 @@ def verify_sketch_element(element: Element, id_: str) -> bool:
     ):
         return True
 
-    if style and not id_.startswith("use"):
-        return False
-
-    return True
+    return not (style and not id_.startswith("use"))
 
 
 def parse_configuration(root: dict, configuration: dict, group: str) -> None:
@@ -327,7 +324,7 @@ class ShapeExtractor:
             self.configuration,
             "root",
         )
-        root: Element = ElementTree.parse(svg_file_name).getroot()
+        root: Element = ET.parse(svg_file_name).getroot()
         self.parse(root)
 
     def parse(self, node: Element) -> None:
@@ -347,14 +344,12 @@ class ShapeExtractor:
         if STANDARD_INKSCAPE_ID_MATCHER.match(id_) is not None:
             if not verify_sketch_element(node, id_):
                 path_part = ""
-                try:
+                with contextlib.suppress(KeyError, ValueError):
                     path_part = f", {node.attrib['d'].split(' ')[:3]}."
-                except (KeyError, ValueError):
-                    pass
                 logging.warning(f"Not verified SVG element `{id_}`{path_part}")
             return
 
-        if "d" in node.attrib and node.attrib["d"]:
+        if node.attrib.get("d"):
             path: str = node.attrib["d"]
             matcher = PATH_MATCHER.match(path)
             if not matcher:
@@ -402,7 +397,8 @@ class ShapeExtractor:
         if id_ in self.shapes:
             return self.shapes[id_]
 
-        assert False, f"no shape with id {id_} in icons file"
+        msg = f"no shape with id {id_} in icons file"
+        raise AssertionError(msg)
 
 
 @dataclass
@@ -424,7 +420,7 @@ class ShapeSpecification:
         self,
         svg: BaseElement,
         point: np.ndarray,
-        tags: dict[str, Any] = None,
+        tags: Optional[dict[str, Any]] = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
         scale: float = 1.0,
@@ -464,7 +460,7 @@ class ShapeSpecification:
             }
             path.update(style)
         if tags:
-            title: str = "\n".join(map(lambda x: x + ": " + tags[x], tags))
+            title: str = "\n".join(x + ": " + tags[x] for x in tags)
             path.set_desc(title=title)
 
         svg.add(path)
@@ -536,7 +532,7 @@ class Icon:
         self,
         svg: svgwrite.Drawing,
         point: np.ndarray,
-        tags: dict[str, Any] = None,
+        tags: Optional[dict[str, Any]] = None,
         outline: bool = False,
         scale: float = 1.0,
     ) -> None:
@@ -557,14 +553,13 @@ class Icon:
                     outline_group, point, tags, True, scale=scale
                 )
             svg.add(outline_group)
+        elif len(self.shape_specifications) > 1 or self.opacity != 1:
+            group: Group = Group(opacity=self.opacity)
+            for shape_specification in self.shape_specifications:
+                shape_specification.draw(group, point, tags, scale=scale)
+            svg.add(group)
         else:
-            if len(self.shape_specifications) > 1 or self.opacity != 1:
-                group: Group = Group(opacity=self.opacity)
-                for shape_specification in self.shape_specifications:
-                    shape_specification.draw(group, point, tags, scale=scale)
-                svg.add(group)
-            else:
-                self.shape_specifications[0].draw(svg, point, tags, scale=scale)
+            self.shape_specifications[0].draw(svg, point, tags, scale=scale)
 
     def draw_to_file(
         self,

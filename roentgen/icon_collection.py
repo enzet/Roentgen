@@ -1,4 +1,5 @@
 """Icon grid drawing."""
+
 import math
 import shutil
 from dataclasses import dataclass, field
@@ -9,12 +10,7 @@ import numpy as np
 from colour import Color
 from svgwrite import Drawing
 
-from roentgen.icon import (
-    Icon,
-    Shape,
-    ShapeExtractor,
-    ShapeSpecification,
-)
+from roentgen.icon import Icon, Shape, ShapeExtractor, ShapeSpecification
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
@@ -47,7 +43,7 @@ class IconCollection:
         :param add_all: create icons from all possible shapes including parts
         """
         for key, value in extractor.configuration.items():
-            if "is_part" in value and value["is_part"]:
+            if value.get("is_part"):
                 continue
             if extractor.has_shape(key):
                 specifications: list[ShapeSpecification] = [
@@ -73,7 +69,7 @@ class IconCollection:
                 self.icons.append(icon)
 
         if add_all:
-            for shape_id in extractor.shapes.keys():
+            for shape_id in extractor.shapes:
                 shape: Shape = extractor.get_shape(shape_id)
                 icon: Icon = Icon([ShapeSpecification(shape, color)])
                 icon.recolor(color, white=background_color)
@@ -166,7 +162,7 @@ class IconCollection:
         """Sort icon list."""
         self.icons = sorted(self.icons)
 
-    def add_combinations(self, combinations, shapes: dict[str, Shape]):
+    def add_combinations(self, combinations, shapes: dict[str, Shape]) -> None:
         """Add combinations of shapes to the collection."""
 
         # TODO(enzet): use color from the configuration.

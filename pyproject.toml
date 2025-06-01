@@ -59,3 +59,4 @@ lint.ignore = [
     "S101",  # Asserts are allowed in tests.
     "TD003",  # Issues for todos are not required.
 ]
+line-length = 80
