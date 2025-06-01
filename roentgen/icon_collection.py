@@ -29,8 +29,9 @@ class IconCollection:
     def add_from_scheme(
         self,
         extractor: ShapeExtractor,
-        background_color: Color = Color("white"),
-        color: Color = Color("black"),
+        *,
+        background_color: Color,
+        color: Color,
         add_unused: bool = False,
         add_all: bool = False,
     ) -> IconCollection:
@@ -129,6 +130,7 @@ class IconCollection:
     def draw_grid(
         self,
         file_name: Path,
+        *,
         columns: int = 16,
         step: float = 24.0,
         background_color: Color | None = None,

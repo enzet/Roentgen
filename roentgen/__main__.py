@@ -34,7 +34,11 @@ def draw_icons(
     for path in icon_paths:
         extractor: ShapeExtractor = ShapeExtractor(path, icons_config_path)
         shapes |= extractor.shapes
-        collection.add_from_scheme(extractor)
+        collection.add_from_scheme(
+            extractor,
+            background_color=Color("white"),
+            color=Color("black"),
+        )
 
     with combinations_path.open() as input_file:
         combinations = json.load(input_file)
@@ -72,7 +76,9 @@ def draw_icons(
     )
 
     IconCollection().add_from_scheme(
-        ShapeExtractor(Path("data") / "connectors.svg", icons_config_path)
+        ShapeExtractor(Path("data") / "connectors.svg", icons_config_path),
+        background_color=Color("white"),
+        color=Color("black"),
     ).draw_grid(
         Path("doc") / "connectors.svg",
         background_color=Color("white"),

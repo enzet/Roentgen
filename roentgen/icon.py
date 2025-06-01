@@ -150,6 +150,7 @@ class Shape:
 
     def get_path(
         self,
+        *,
         point: np.ndarray,
         offset: np.ndarray = np.array((0.0, 0.0)),
         scale: np.ndarray = np.array((1.0, 1.0)),
@@ -396,6 +397,7 @@ class ShapeExtractor:
             logger.error("Not standard ID %s.", id_)
 
     def has_shape(self, id_: str) -> bool:
+        """Check whether shape with such identifier exists."""
         return id_ in self.shapes
 
     def get_shape(self, id_: str) -> Shape:
@@ -430,6 +432,7 @@ class ShapeSpecification:
         svg: BaseElement,
         point: np.ndarray,
         tags: dict[str, Any] | None = None,
+        *,
         outline: bool = False,
         outline_opacity: float = 1.0,
         scale: float = 1.0,
@@ -452,7 +455,9 @@ class ShapeSpecification:
 
         point: np.ndarray = np.array(list(map(int, point)))
         path: SVGPath = self.shape.get_path(
-            point, self.offset * scale, scale_vector
+            point=point,
+            offset=self.offset * scale,
+            scale=scale_vector,
         )
         path.update({"fill": self.color.hex})
 
@@ -542,6 +547,7 @@ class Icon:
         svg: svgwrite.Drawing,
         point: np.ndarray,
         tags: dict[str, Any] | None = None,
+        *,
         outline: bool = False,
         scale: float = 1.0,
     ) -> None:
@@ -559,7 +565,7 @@ class Icon:
             outline_group: Group = Group(opacity=opacity)
             for shape_specification in self.shape_specifications:
                 shape_specification.draw(
-                    outline_group, point, tags, True, scale=scale
+                    outline_group, point, tags, outline=True, scale=scale
                 )
             svg.add(outline_group)
         elif len(self.shape_specifications) > 1 or self.opacity != 1:
@@ -573,6 +579,7 @@ class Icon:
     def draw_to_file(
         self,
         file_name: Path,
+        *,
         color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
