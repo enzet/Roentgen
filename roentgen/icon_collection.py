@@ -1,16 +1,20 @@
 """Icon grid drawing."""
 
+from __future__ import annotations
+
 import math
 import shutil
 from dataclasses import dataclass, field
-from pathlib import Path
-from typing import Optional
+from typing import TYPE_CHECKING, Any
 
 import numpy as np
 from colour import Color
 from svgwrite import Drawing
 
 from roentgen.icon import Icon, Shape, ShapeExtractor, ShapeSpecification
+
+if TYPE_CHECKING:
+    from pathlib import Path
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
@@ -29,7 +33,7 @@ class IconCollection:
         color: Color = Color("black"),
         add_unused: bool = False,
         add_all: bool = False,
-    ) -> "IconCollection":
+    ) -> IconCollection:
         """Collect all possible icon combinations.
 
         This collection won't contain icons for tags matched with regular
@@ -56,22 +60,25 @@ class IconCollection:
 
         specified_ids: set[str] = set()
 
+        icon: Icon
+        shape: Shape
+
         for icon in self.icons:
             specified_ids |= set(icon.get_shape_ids())
 
         if add_unused:
             for shape_id in extractor.shapes.keys() - specified_ids:
-                shape: Shape = extractor.get_shape(shape_id)
+                shape = extractor.get_shape(shape_id)
                 if shape.is_part:
                     continue
-                icon: Icon = Icon([ShapeSpecification(shape, color)])
+                icon = Icon([ShapeSpecification(shape, color)])
                 icon.recolor(color, white=background_color)
                 self.icons.append(icon)
 
         if add_all:
             for shape_id in extractor.shapes:
-                shape: Shape = extractor.get_shape(shape_id)
-                icon: Icon = Icon([ShapeSpecification(shape, color)])
+                shape = extractor.get_shape(shape_id)
+                icon = Icon([ShapeSpecification(shape, color)])
                 icon.recolor(color, white=background_color)
                 self.icons.append(icon)
 
@@ -81,8 +88,9 @@ class IconCollection:
         self,
         output_directory: Path,
         license_path: Path,
+        *,
         by_name: bool = False,
-        color: Optional[Color] = None,
+        color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
     ) -> None:
@@ -123,7 +131,7 @@ class IconCollection:
         file_name: Path,
         columns: int = 16,
         step: float = 24.0,
-        background_color: Optional[Color] = Color("white"),
+        background_color: Color | None = None,
         scale: float = 1.0,
     ) -> None:
         """Draw icons in the form of a table.
@@ -150,7 +158,7 @@ class IconCollection:
             if point[0] > width - 8.0:
                 point[0] = step / 2.0 * scale
                 point += np.array((0.0, step * scale))
-                height += step * scale
+                height += int(step * scale)
 
         with file_name.open("w", encoding="utf-8") as output_file:
             svg.write(output_file, pretty=True, indent=4)
@@ -162,7 +170,11 @@ class IconCollection:
         """Sort icon list."""
         self.icons = sorted(self.icons)
 
-    def add_combinations(self, combinations, shapes: dict[str, Shape]) -> None:
+    def add_combinations(
+        self,
+        combinations: list[list[dict[str, Any]]],
+        shapes: dict[str, Shape],
+    ) -> None:
         """Add combinations of shapes to the collection."""
 
         # TODO(enzet): use color from the configuration.

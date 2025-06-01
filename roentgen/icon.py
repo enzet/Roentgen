@@ -1,12 +1,13 @@
 """Extract icons from SVG file."""
 
+from __future__ import annotations
+
 import contextlib
 import json
 import logging
 import re
 from dataclasses import dataclass, field
-from pathlib import Path
-from typing import Any, Optional
+from typing import TYPE_CHECKING, Any
 from xml.etree import ElementTree as ET
 from xml.etree.ElementTree import Element
 
@@ -16,9 +17,13 @@ from colour import Color
 from svgpathtools import Path as ToolsPath
 from svgpathtools import parse_path
 from svgwrite import Drawing
-from svgwrite.base import BaseElement
 from svgwrite.container import Group
-from svgwrite.path import Path as SVGPath
+
+if TYPE_CHECKING:
+    from pathlib import Path
+
+    from svgwrite.base import BaseElement
+    from svgwrite.path import Path as SVGPath
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
@@ -65,10 +70,10 @@ class Shape:
     id_: str
     """Shape unique string identifier, e.g. `tree`."""
 
-    name: Optional[str] = None
+    name: str | None = None
     """Shape human-readable description."""
 
-    is_right_directed: Optional[bool] = None
+    is_right_directed: bool | None = None
     """If shape is directed.
 
     If value is `None`, shape doesn't have distinct direction or its
@@ -106,8 +111,8 @@ class Shape:
         path: str,
         offset: np.ndarray,
         id_: str,
-        name: Optional[str] = None,
-    ) -> "Shape":
+        name: str | None = None,
+    ) -> Shape:
         """Parse shape description from structure.
 
         :param structure: input structure
@@ -359,7 +364,7 @@ class ShapeExtractor:
             if not matcher:
                 return
 
-            name: Optional[str] = None
+            name: str | None = None
 
             def get_offset(value: str) -> float:
                 """Get negated icon offset from the origin."""
@@ -424,7 +429,7 @@ class ShapeSpecification:
         self,
         svg: BaseElement,
         point: np.ndarray,
-        tags: Optional[dict[str, Any]] = None,
+        tags: dict[str, Any] | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
         scale: float = 1.0,
@@ -469,14 +474,14 @@ class ShapeSpecification:
 
         svg.add(path)
 
-    def __eq__(self, other: "ShapeSpecification") -> bool:
+    def __eq__(self, other: ShapeSpecification) -> bool:
         return (
             self.shape == other.shape
             and self.color == other.color
             and np.allclose(self.offset, other.offset)
         )
 
-    def __lt__(self, other: "ShapeSpecification") -> bool:
+    def __lt__(self, other: ShapeSpecification) -> bool:
         return self.shape.id_ < other.shape.id_
 
 
@@ -536,7 +541,7 @@ class Icon:
         self,
         svg: svgwrite.Drawing,
         point: np.ndarray,
-        tags: Optional[dict[str, Any]] = None,
+        tags: dict[str, Any] | None = None,
         outline: bool = False,
         scale: float = 1.0,
     ) -> None:
@@ -568,7 +573,7 @@ class Icon:
     def draw_to_file(
         self,
         file_name: Path,
-        color: Optional[Color] = None,
+        color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
     ) -> None:
@@ -607,7 +612,7 @@ class Icon:
             and self.shape_specifications[0].is_default()
         )
 
-    def recolor(self, color: Color, white: Optional[Color] = None) -> None:
+    def recolor(self, color: Color, white: Color | None = None) -> None:
         """Paint all shapes in the color."""
         for shape_specification in self.shape_specifications:
             if shape_specification.color == Color("white") and white:
@@ -621,12 +626,12 @@ class Icon:
         """Add shape specifications to the icon."""
         self.shape_specifications += specifications
 
-    def __eq__(self, other: "Icon") -> bool:
+    def __eq__(self, other: Icon) -> bool:
         return sorted(self.shape_specifications) == sorted(
             other.shape_specifications
         )
 
-    def __lt__(self, other: "Icon") -> bool:
+    def __lt__(self, other: Icon) -> bool:
         return "".join(
             [x.shape.get_full_id() for x in self.shape_specifications]
         ) < "".join([x.shape.get_full_id() for x in other.shape_specifications])

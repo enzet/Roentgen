@@ -57,7 +57,7 @@ def draw_icons(
         "Icons are written to %s and %s.", icons_by_name_path, icons_by_id_path
     )
 
-    # Draw grid.
+    # Draw grids.
 
     for icon in collection.icons:
         icon.recolor(Color("#444"))
@@ -73,7 +73,12 @@ def draw_icons(
 
     IconCollection().add_from_scheme(
         ShapeExtractor(Path("data") / "connectors.svg", icons_config_path)
-    ).draw_grid(Path("doc") / "connectors.svg", scale=8.0, columns=6)
+    ).draw_grid(
+        Path("doc") / "connectors.svg",
+        background_color=Color("white"),
+        scale=8.0,
+        columns=6,
+    )
 
 
 def main() -> None:
