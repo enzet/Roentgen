@@ -16,9 +16,11 @@ def draw_icons(
     doc_path: Path,
     output_path: Path,
 ) -> None:
-    """
-    Draw all possible icon shapes combinations as grid in one SVG file and as
-    individual SVG files.
+    """Draw all possible icon shapes combinations.
+
+    Draw them
+      - as grid in one SVG file and
+      - as individual SVG files.
     """
     collection: IconCollection = IconCollection()
     shapes: dict[str, Shape] = {}
@@ -68,6 +70,7 @@ def draw_icons(
 
 
 def main() -> None:
+    """Run the main function."""
     draw_icons(
         Path("."),
         [Path("data") / "icons.svg", Path("data") / "connectors.svg"],

@@ -34,8 +34,7 @@ class IconCollection:
         add_unused: bool = False,
         add_all: bool = False,
     ) -> "IconCollection":
-        """
-        Collect all possible icon combinations.
+        """Collect all possible icon combinations.
 
         This collection won't contain icons for tags matched with regular
         expressions. E.g. traffic_sign=maxspeed; maxspeed=42.
@@ -91,7 +90,8 @@ class IconCollection:
         outline: bool = False,
         outline_opacity: float = 1.0,
     ) -> None:
-        """
+        """Draw individual icons.
+
         :param output_directory: path to the directory to store individual SVG
             files for icons
         :param license_path: path to the file with license
@@ -130,8 +130,7 @@ class IconCollection:
         background_color: Optional[Color] = Color("white"),
         scale: float = 1.0,
     ) -> None:
-        """
-        Draw icons in the form of table.
+        """Draw icons in the form of a table.
 
         :param file_name: output SVG file name
         :param columns: number of columns in grid
@@ -168,8 +167,11 @@ class IconCollection:
         self.icons = sorted(self.icons)
 
     def add_combinations(self, combinations, shapes: dict[str, Shape]):
-        color = Color("black")  # FIXME
-        background_color = Color("white")  # FIXME
+        """Add combinations of shapes to the collection."""
+
+        # TODO(enzet): use color from the configuration.
+        color = Color("black")
+        background_color = Color("white")
 
         for elements in combinations:
             specifications: list[ShapeSpecification] = []

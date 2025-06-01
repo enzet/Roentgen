@@ -53,40 +53,48 @@ def round_complex(value: complex, precision: int) -> complex:
 class Shape:
     """SVG icon path description."""
 
-    # String representation of SVG path commands.
     path: str
+    """String representation of SVG path commands."""
 
-    # Shape place in the monolith SVG file.
     offset: np.ndarray
+    """Shape place in the monolith SVG file."""
 
-    # Shape unique string identifier, e.g. `tree`.
     id_: str
+    """Shape unique string identifier, e.g. `tree`."""
 
-    # Shape human-readable description.
     name: Optional[str] = None
+    """Shape human-readable description."""
 
-    # If value is `None`, shape doesn't have distinct direction or its
-    # direction doesn't make sense.  Shape is directed to the right if value is
-    # `True` and to the left if value is `False`.
-    #
-    # E.g. CCTV camera shape has direction and may be flipped horizontally to
-    # follow surveillance direction, whereas car shape has direction but
-    # flipping icon doesn't make any sense.
     is_right_directed: Optional[bool] = None
+    """If shape is directed.
 
-    # Set of emojis that represent the same entity.  E.g. 🍐 (pear) for `pear`;
-    # 🍏 (green apple) and 🍎 (red apple) for `apple`.
+    If value is `None`, shape doesn't have distinct direction or its
+    direction doesn't make sense.  Shape is directed to the right if value is
+    `True` and to the left if value is `False`.
+
+    E.g. CCTV camera shape has direction and may be flipped horizontally to
+    follow surveillance direction, whereas car shape has direction but
+    flipping icon doesn't make any sense.
+    """
+
     emojis: set[str] = field(default_factory=set)
+    """Set of emojis that represent the same entity.
 
-    # If shape is used only as a part of other icons.
+    E.g. 🍐 (pear) for `pear`; 🍏 (green apple) and 🍎 (red apple) for `apple`.
+    """
+
     is_part: bool = False
+    """If shape is used only as a part of other icons."""
 
-    # Hierarchical icon group.  Is used for icon sorting.
     group: str = ""
+    """Hierarchical icon group.  Is used for icon sorting."""
 
-    # Icon categories that is used in OpenStreetMap wiki.  E.g. `barrier` means
-    # https://wiki.openstreetmap.org/wiki/Category:Barrier_icons.
     categories: set[str] = field(default_factory=set)
+    """Icon categories that is used in OpenStreetMap wiki.
+
+    E.g. `barrier` means
+    https://wiki.openstreetmap.org/wiki/Category:Barrier_icons.
+    """
 
     @classmethod
     def from_structure(
@@ -97,8 +105,7 @@ class Shape:
         id_: str,
         name: Optional[str] = None,
     ) -> "Shape":
-        """
-        Parse shape description from structure.
+        """Parse shape description from structure.
 
         :param structure: input structure
         :param path: SVG path commands in string form
@@ -130,9 +137,7 @@ class Shape:
         return shape
 
     def is_default(self) -> bool:
-        """
-        Return true if icon has a default shape that doesn't represent anything.
-        """
+        """Return true if the shape doesn't represent anything."""
         return self.id_ in [DEFAULT_SHAPE_ID, DEFAULT_SMALL_SHAPE_ID]
 
     def get_path(
@@ -142,8 +147,7 @@ class Shape:
         scale: np.ndarray = np.array((1.0, 1.0)),
         use_transform: bool = False,
     ) -> SVGPath:
-        """
-        Draw icon into SVG file.
+        """Draw icon into SVG file.
 
         :param point: icon position
         :param offset: additional offset
@@ -203,8 +207,7 @@ def parse_length(text: str) -> float:
 
 
 def verify_sketch_element(element: Element, id_: str) -> bool:
-    """
-    Verify sketch SVG element from icon file.
+    """Verify sketch SVG element from icon file.
 
     :param element: sketch SVG element (element with standard Inkscape
         identifier)
@@ -262,12 +265,14 @@ def verify_sketch_element(element: Element, id_: str) -> bool:
 
 
 def parse_configuration(root: dict, configuration: dict, group: str) -> None:
-    """
+    """Parse shape configuration.
+
     Shape description is a probably empty dictionary with optional fields
     `name`, `emoji`, `is_part`, `directed`, and `categories`.  Shape
     configuration is a dictionary that contains shape descriptions.  Shape
     descriptions may be grouped and the nesting level may be arbitrary:
 
+    ```json
     {
         <shape id>: {<shape description>},
         <shape id>: {<shape description>},
@@ -282,6 +287,7 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
             }
         }
     }
+    ```
     """
     for key, value in root.items():
         if (
@@ -298,8 +304,7 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
 
 
 class ShapeExtractor:
-    """
-    Extract shapes from SVG file.
+    """Extract shapes from SVG file.
 
     Shape is a single path with "id" attribute that aligned to 16×16 grid.
     """
@@ -307,7 +312,8 @@ class ShapeExtractor:
     def __init__(
         self, svg_file_name: Path, configuration_file_name: Path
     ) -> None:
-        """
+        """Initialize shape extractor.
+
         :param svg_file_name: input SVG file name with icons.  File may contain
             any other irrelevant graphics.
         :param configuration_file_name: JSON file with grouped shape
@@ -325,8 +331,7 @@ class ShapeExtractor:
         self.parse(root)
 
     def parse(self, node: Element) -> None:
-        """
-        Extract icon paths into a map.
+        """Extract icon paths into a map.
 
         :param node: XML node that contains icon
         """
@@ -390,8 +395,7 @@ class ShapeExtractor:
         return id_ in self.shapes
 
     def get_shape(self, id_: str) -> Shape:
-        """
-        Get shape or None if there is no shape with such identifier.
+        """Get shape or `None` if there is no shape with such identifier.
 
         :param id_: string icon identifier
         """
@@ -425,8 +429,7 @@ class ShapeSpecification:
         outline_opacity: float = 1.0,
         scale: float = 1.0,
     ) -> None:
-        """
-        Draw icon shape into SVG file.
+        """Draw icon shape into SVG file.
 
         :param svg: output SVG file
         :param point: 2D position of the shape centre
@@ -537,8 +540,7 @@ class Icon:
         outline: bool = False,
         scale: float = 1.0,
     ) -> None:
-        """
-        Draw icon to SVG.
+        """Draw icon to SVG.
 
         :param svg: output SVG file
         :param point: 2D position of the icon centre
@@ -571,8 +573,7 @@ class Icon:
         outline: bool = False,
         outline_opacity: float = 1.0,
     ) -> None:
-        """
-        Draw icon to the SVG file.
+        """Draw icon to the SVG file.
 
         :param file_name: output SVG file name
         :param color: fill color
