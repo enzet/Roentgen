@@ -24,7 +24,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "ruff~=0.4.2",
+    "ruff~=0.11.12",
 ]
 
 [project.urls]
@@ -42,8 +42,6 @@ allow-direct-references = true
 [tool.ruff]
 lint.select = ["ALL"]
 lint.ignore = [
-    "ANN101",  # Rule is deleted, type of `self` can be inferred.
-    "ANN102",  # Rule is deleted, type of `cls` can be inferred.
     "C901",  # Too complex functions are allowed.
     "COM812",  # Trailing comma not in Black style.
     "D105",  # Missing docstring in magic method is allowed.
