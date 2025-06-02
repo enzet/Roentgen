@@ -8,7 +8,7 @@ import logging
 import re
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
-from xml.etree import ElementTree as ET
+from xml.etree import ElementTree
 from xml.etree.ElementTree import Element
 
 import numpy as np
@@ -338,7 +338,7 @@ class ShapeExtractor:
             self.configuration,
             "root",
         )
-        root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
+        root: Element = ElementTree.parse(svg_file_name).getroot()  # noqa: S314
         self.parse(root)
 
     def parse(self, node: Element) -> None:
