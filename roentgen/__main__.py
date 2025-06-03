@@ -45,7 +45,6 @@ def draw_icons(
     collection: IconCollection,
     *,
     root_path: Path,
-    icons_config_path: Path,
     doc_path: Path,
     output_path: Path,
 ) -> None:
@@ -85,17 +84,6 @@ def draw_icons(
         doc_path / "grid_white.svg", background_color=None, scale=2.0
     )
 
-    IconCollection().add_from_scheme(
-        ShapeExtractor(Path("data") / "connectors.svg", icons_config_path),
-        background_color=Color("white"),
-        color=Color("black"),
-    ).draw_grid(
-        Path("doc") / "connectors.svg",
-        background_color=Color("white"),
-        scale=8.0,
-        columns=6,
-    )
-
 
 def main() -> None:
     """Run the main function."""
@@ -122,7 +110,6 @@ def main() -> None:
         draw_icons(
             main_collection,
             root_path=Path(),
-            icons_config_path=Path("data") / "config.json",
             doc_path=Path("doc"),
             output_path=Path(),
         )
