@@ -206,7 +206,7 @@
         {"id": "urban_tree_pot"}
     ], [
         {"id": "needleleaved_tree"},
-        {"id": "urban_tree_pot"}
+        {"id": "urban_tree_pot", "offset": [-0.5, 0]}
     ], [
         {"id": "betula"},
         {"id": "urban_tree_pot"}
@@ -221,13 +221,13 @@
         {"id": "bottom_right_horizontal_line"}
     ], [
         {"id": "needleleaved_tree"},
-        {"id": "bottom_right_horizontal_line"}
+        {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
     ], [
         {"id": "betula"},
         {"id": "bottom_right_horizontal_line"}
     ], [
         {"id": "palm"},
-        {"id": "bottom_right_horizontal_line"}
+        {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
     ], [
         {"id": "bicycle", "offset": [0, 2]},
         {"id": "x_4", "offset": [-5, -4]}
