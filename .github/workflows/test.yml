@@ -22,7 +22,7 @@ jobs:
         pip install -e .
     - name: Generate icons
       run: |
-        roentgen
+        roentgen generate
 
   check:
     name: Static Analysis, Code Style, Linting

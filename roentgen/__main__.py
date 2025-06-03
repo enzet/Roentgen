@@ -1,9 +1,10 @@
 """Main module."""
 
+import argparse
 import json
 import logging
 from pathlib import Path
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Any
 
 from colour import Color
 
@@ -15,20 +16,14 @@ if TYPE_CHECKING:
 logger: logging.Logger = logging.getLogger(__name__)
 
 
-def draw_icons(
-    root_path: Path,
+def get_main_collection(
+    *,
     icon_paths: list[Path],
     icons_config_path: Path,
-    combinations_path: Path,
-    doc_path: Path,
-    output_path: Path,
-) -> None:
-    """Draw all possible icon shapes combinations.
+    combinations: list[list[dict[str, Any]]],
+) -> IconCollection:
+    """Get main collection of icons."""
 
-    Draw them
-      - as grid in one SVG file and
-      - as individual SVG files.
-    """
     collection: IconCollection = IconCollection()
     shapes: dict[str, Shape] = {}
     for path in icon_paths:
@@ -40,11 +35,26 @@ def draw_icons(
             color=Color("black"),
         )
 
-    with combinations_path.open() as input_file:
-        combinations = json.load(input_file)
-
     collection.add_combinations(combinations, shapes)
     collection.sort()
+
+    return collection
+
+
+def draw_icons(
+    collection: IconCollection,
+    *,
+    root_path: Path,
+    icons_config_path: Path,
+    doc_path: Path,
+    output_path: Path,
+) -> None:
+    """Draw all possible icon shapes combinations.
+
+    Draw them
+      - as grid in one SVG file and
+      - as individual SVG files.
+    """
 
     license_path: Path = root_path / "LICENSE"
 
@@ -89,14 +99,33 @@ def draw_icons(
 
 def main() -> None:
     """Run the main function."""
-    draw_icons(
-        Path(),
-        [Path("data") / "icons.svg", Path("data") / "connectors.svg"],
-        Path("data") / "config.json",
-        Path("data") / "combinations.json",
-        Path("doc"),
-        Path(),
-    )
+
+    logging.basicConfig(level=logging.INFO)
+
+    parser: argparse.ArgumentParser = argparse.ArgumentParser()
+    parser.add_argument("command", choices=["generate"])
+
+    arguments: argparse.Namespace = parser.parse_args()
+
+    with (Path("data") / "combinations.json").open() as input_file:
+        combinations: list[list[dict[str, Any]]] = json.load(input_file)
+
+    if arguments.command == "generate":
+        main_collection: IconCollection = get_main_collection(
+            icon_paths=[
+                Path("data") / "icons.svg",
+                Path("data") / "connectors.svg",
+            ],
+            icons_config_path=Path("data") / "config.json",
+            combinations=combinations,
+        )
+        draw_icons(
+            main_collection,
+            root_path=Path(),
+            icons_config_path=Path("data") / "config.json",
+            doc_path=Path("doc"),
+            output_path=Path(),
+        )
 
 
 if __name__ == "__main__":

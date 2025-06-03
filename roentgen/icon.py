@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import contextlib
 import json
-import logging
 import re
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
@@ -28,8 +27,6 @@ if TYPE_CHECKING:
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
-
-logger: logging.Logger = logging.getLogger(__name__)
 
 DEFAULT_SHAPE_ID: str = "default"
 DEFAULT_SMALL_SHAPE_ID: str = "default_small"
@@ -360,9 +357,8 @@ class ShapeExtractor:
                 path_part = ""
                 with contextlib.suppress(KeyError, ValueError):
                     path_part = f", {node.attrib['d'].split(' ')[:3]}."
-                logger.warning(
-                    "Not verified SVG element `%s`%s", id_, path_part
-                )
+                message: str = f"Not verified SVG element `{id_}`{path_part}"
+                raise ValueError(message)
             return
 
         if node.attrib.get("d"):
@@ -392,15 +388,18 @@ class ShapeExtractor:
             if id_ in self.configuration:
                 configuration = self.configuration[id_]
                 if "name" not in configuration:
-                    logger.warning("Shape `%s` doesn't have name.", id_)
+                    message = f"Shape `{id_}` doesn't have name."
+                    raise ValueError(message)
             else:
-                logger.warning("Shape `%s` doesn't have configuration.", id_)
+                message = f"Shape `{id_}` doesn't have configuration."
+                raise ValueError(message)
 
             self.shapes[id_] = Shape.from_structure(
                 configuration, path, offset, id_, name
             )
         else:
-            logger.error("Not standard ID %s.", id_)
+            message = f"Not standard ID `{id_}`."
+            raise ValueError(message)
 
     def has_shape(self, id_: str) -> bool:
         """Check whether shape with such identifier exists."""
@@ -414,8 +413,8 @@ class ShapeExtractor:
         if id_ in self.shapes:
             return self.shapes[id_]
 
-        msg = f"no shape with id {id_} in icons file"
-        raise AssertionError(msg)
+        message: str = f"no shape with id `{id_}` in icons file"
+        raise AssertionError(message)
 
 
 @dataclass
