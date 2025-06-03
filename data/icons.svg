@@ -151,9 +151,9 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="129.42895"
-     inkscape:cx="199.91315"
-     inkscape:zoom="4.8095885"
+     inkscape:cy="58.896606"
+     inkscape:cx="48.290396"
+     inkscape:zoom="6.2227694"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -6653,9 +6653,9 @@
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        inkscape:label="#rect5647"
-       id="medicine_bottle"
+       id="rect5647"
        d="M 4.5,50 C 4.223,50 4,50.223 4,50.5 V 52 h 8 V 50.5 C 12,50.223 11.777,50 11.5,50 Z M 4,53 v 8.5 C 4,61.777 4.223,62 4.5,62 h 7 C 11.777,62 12,61.777 12,61.5 V 53 Z m 3,1 h 2 v 2 h 2 v 2 H 9 v 2 H 7 V 58 H 5 v -2 h 2 z"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:connector-curvature="0">
       <title
          id="title6008">medicine bottle</title>
@@ -23372,52 +23372,6 @@
        style="color:#000000;opacity:1;fill:#000000;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none"
        d="m 249.49609,341.00195 c -0.13051,6.3e-4 -0.256,0.0515 -0.34961,0.14453 -1.45158,1.4516 -2.24818,1.84862 -3.62109,1.85352 -0.009,3e-5 -0.0167,0 -0.0254,0 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 c 1.38889,0 2.18577,0.3928 3.64648,1.85352 0.37309,0.37358 0.99533,-0.0109 0.82813,-0.51172 -0.47892,-1.43676 -0.47892,-2.24684 0,-3.6836 0.10014,-0.30272 -0.10481,-0.62058 -0.42188,-0.65429 -0.0187,-0.002 -0.038,-0.002 -0.0566,-0.002 z" />
     <path
-       id="path5"
-       style="opacity:1;fill:#0000ff;stroke:none;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
-       d="m 215,113 v 1.29297 l -3.85352,3.85351 C 211.05611,118.23686 211,118.3615 211,118.5 v 1.5 0.5 5.5 h 9 v -5.5 -0.5 -1.5 c 0,-0.0213 -0.001,-0.0419 -0.004,-0.0625 0,0 0,-0.002 0,-0.002 a 0.5,0.5 0 0 0 0,-0.002 c -0.003,-0.0214 -0.008,-0.0421 -0.0137,-0.0625 -0.008,-0.03 -0.0201,-0.0584 -0.0332,-0.0859 a 0.5,0.5 0 0 0 -0.0332,-0.0625 0.5,0.5 0 0 0 -0.002,-0.002 c 0,0 -0.002,-0.002 -0.002,-0.002 a 0.5,0.5 0 0 0 -0.0586,-0.0723 l -1.02149,-1.02148 0.70703,-0.70703 -2.12109,-2.12109 -0.35352,0.35351 -0.35351,0.35352 L 216,114.29297 V 113 Z m 0.5,2.20703 0.50391,0.50391 2.12109,2.12109 0.16797,0.16797 h -5.58594 z M 212.5,121 h 6 c 0.277,0 0.5,0.223 0.5,0.5 v 1 c 0,0.277 -0.223,0.5 -0.5,0.5 h -6 c -0.277,0 -0.5,-0.223 -0.5,-0.5 v -1 c 0,-0.277 0.223,-0.5 0.5,-0.5 z" />
-    <rect
-       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect87263"
-       width="9"
-       height="6"
-       x="211"
-       y="104" />
-    <rect
-       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect87265"
-       width="1"
-       height="2"
-       x="215"
-       y="97" />
-    <path
-       style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-       d="m 211.5,102.5 4,-4 4,4"
-       id="path87267"
-       sodipodi:nodetypes="ccc" />
-    <rect
-       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect87269"
-       width="9"
-       height="3"
-       x="211"
-       y="102"
-       ry="0.5"
-       rx="0.5" />
-    <path
-       style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-       d="m 217.41805,99.00383 -0.70711,0.70711 1.41421,1.41421 0.70711,-0.70711 z"
-       id="path87271"
-       sodipodi:nodetypes="ccccc" />
-    <rect
-       style="opacity:1;fill:none;stroke:#000000;stroke-width:0.1;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect87273"
-       width="7"
-       height="2"
-       x="212"
-       y="105"
-       rx="0.5"
-       ry="0.5" />
-    <path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 263.56351,328 c 0,0 -1.06351,-0.5 -2.06351,-0.5 1,0 2.06351,-0.5 2.06351,-0.5"
        id="path105291"
@@ -32674,8 +32628,8 @@
        d="m 55.5,38.5 h 1 v 2 h 2 v 1 h -2 v 2 h -1 v -2 h -2 v -1 h 2 z"
        id="path379" />
     <path
-       id="rect379"
-       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="medicine_bottle"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="M 52.5,50 C 52.223,50 52,50.223 52,50.5 V 52 h 8 V 50.5 C 60,50.223 59.776999,50 59.5,50 Z M 52,53 v 8.5 c 0,0.277 0.223,0.5 0.5,0.5 h 7 C 59.776999,62 60,61.777 60,61.5 V 53 Z m 3.5,1 h 1 c 0.276131,2.8e-5 0.499972,0.223869 0.5,0.5 V 56 h 1.5 c 0.276131,2.8e-5 0.499972,0.223869 0.5,0.5 v 1 c -2.8e-5,0.276131 -0.223869,0.499972 -0.5,0.5 H 57 v 1.5 c -2.8e-5,0.276131 -0.223869,0.499972 -0.5,0.5 h -1 C 55.223869,59.999972 55.000028,59.776131 55,59.5 V 58 h -1.5 c -0.276131,-2.8e-5 -0.499972,-0.223869 -0.5,-0.5 v -1 c 2.8e-5,-0.276131 0.223869,-0.499972 0.5,-0.5 H 55 v -1.5 c 2.8e-5,-0.276131 0.223869,-0.499972 0.5,-0.5 z"
        sodipodi:nodetypes="ssccssscssssccccccccccccccccccccccc" />
     <rect
