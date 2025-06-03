@@ -1,3 +1,40 @@
+## 0.2.0
+
+4 June 2025. 515 icons.
+
+Redraw icons:
+  - `car_on_ferry`,
+  - `gift`,
+  - `human_on_ferry`,
+  - `seasaw`,
+  - `tree_with_leaf`,
+  - `tree`.
+
+Make icons smoother and make corners round:
+  - `aseptic_carton`,
+  - `card_and_dice`,
+  - `defensive_tower`,
+  - `drawer`,
+  - `lock_unlocked`,
+  - `medicine_bottle`,
+  - `needleleaved_tree`,
+  - `palm`,
+  - `sheets`,
+  - `solar_panel`,
+  - `supermarket_cart`,
+  - `taxi`,
+  - `waterfall`.
+
+Changes on trees also influence their combinations with
+`bottom_right_horizontal_line` and `urban_tree_pot`.
+
+Unify style for water in different icons:
+    - `car_on_ferry`,
+    - `crane_travel_lift`,
+    - `human_on_ferry`,
+    - `waterfall`.
+
+
 ## 0.1.0
 
 29 August 2023. This is the first version after migrating the Röntgen project
