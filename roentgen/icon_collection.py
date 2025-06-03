@@ -90,8 +90,9 @@ class IconCollection:
     def draw_icons(
         self,
         output_directory: Path,
-        license_path: Path,
         *,
+        license_path: Path,
+        version_path: Path,
         by_name: bool = False,
         color: Color | None = None,
         outline: bool = False,
@@ -102,6 +103,7 @@ class IconCollection:
         :param output_directory: path to the directory to store individual SVG
             files for icons
         :param license_path: path to the file with license
+        :param version_path: path to the file with version number
         :param by_name: use names instead of identifiers
         :param color: fill color
         :param outline: if true, draw outline beneath the icon
@@ -128,6 +130,7 @@ class IconCollection:
             )
 
         shutil.copy(license_path, output_directory / "LICENSE")
+        shutil.copy(version_path, output_directory / "VERSION")
 
     def draw_grid(
         self,

@@ -56,15 +56,25 @@ def draw_icons(
     """
 
     license_path: Path = root_path / "LICENSE"
+    version_path: Path = root_path / "VERSION"
 
     # Draw individual icons.
 
     icons_by_id_path: Path = output_path / "icons"
-    collection.draw_icons(icons_by_id_path, license_path)
+    collection.draw_icons(
+        output_directory=icons_by_id_path,
+        license_path=license_path,
+        version_path=version_path,
+    )
 
     icons_by_name_path: Path = output_path / "icons_by_name"
     icons_by_name_path.mkdir(exist_ok=True)
-    collection.draw_icons(icons_by_name_path, license_path, by_name=True)
+    collection.draw_icons(
+        output_directory=icons_by_name_path,
+        license_path=license_path,
+        version_path=version_path,
+        by_name=True,
+    )
 
     logger.info(
         "Icons are written to %s and %s.", icons_by_name_path, icons_by_id_path
