@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+if [ -d ".venv" ]; then
+    source .venv/bin/activate
+else
+    echo "No virtual environment found."
+    exit 1
+fi
+
+python_files="roentgen/"
+
+echo "Checking Format with Ruff..."
+if ! ruff format --check; then
+    echo "FAIL"
+    exit 1
+fi
+
+echo "Linting with Ruff..."
+if ! ruff check; then
+    echo "FAIL"
+    exit 1
+fi
+
+echo "OK"
