@@ -1,6 +1,10 @@
 .DS_Store
 .idea/
+.venv/
 __pycache__
 icons/LICENSE
 icons_by_name/
+out/
+roentgen.egg-info/
+uv.lock
 work/
