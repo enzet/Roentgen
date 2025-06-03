@@ -3,7 +3,7 @@
 files=`git status --porcelain | wc -l`
 if [ ${files} == 0 ] ; then
     echo "No changes detected. Running pre-push hooks..."
-    data/githooks/pre-commit || { echo "FAIL"; exit 1; }
+    .githooks/pre-commit || { echo "FAIL"; exit 1; }
 else
     echo "Changes detected. Please commit or stash them."
     git status
