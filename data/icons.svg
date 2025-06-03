@@ -151,9 +151,9 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="383.91115"
-     inkscape:cx="542.58855"
-     inkscape:zoom="7.9406393"
+     inkscape:cy="548.56477"
+     inkscape:cx="302.13409"
+     inkscape:zoom="10.331506"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -10262,9 +10262,9 @@
        inkscape:label="#path6150"
        inkscape:connector-curvature="0" />
     <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        d="m 307.5,533 c -0.2047,-2.1e-4 -0.38886,0.12437 -0.46484,0.31445 l -2,5 c -0.13127,0.32862 0.11097,0.68588 0.46484,0.68555 h 13 c 0.35387,3.3e-4 0.59611,-0.35693 0.46484,-0.68555 l -2,-5 C 316.88886,533.12437 316.7047,532.99979 316.5,533 Z m 1.5,1 h 2 v 2 h 2 v -2 h 2 v 2 h 2 v 2 h -2 v -2 h -2 v 2 h -2 v -2 h -2 v 2 h -2 v -2 h 2 z"
-       id="taxi"
+       id="path6159"
        inkscape:connector-curvature="0"
        inkscape:label="#path6159" />
     <circle
@@ -32100,8 +32100,8 @@
        y="520"
        ry="0.5" />
     <path
-       id="path109"
-       style="color:#000000;opacity:1;fill:#0000ff;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;fill-opacity:1;stroke:none"
+       id="taxi"
+       style="color:#000000;opacity:1;fill:#000000;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;fill-opacity:1;stroke:none"
        d="M 291.5 533 C 291.2953 532.99979 291.11114 533.12437 291.03516 533.31445 L 289.03516 538.31445 C 288.90389 538.64307 289.14613 539.00033 289.5 539 L 302.5 539 C 302.85387 539.00033 303.09611 538.64307 302.96484 538.31445 L 300.96484 533.31445 C 300.88886 533.12437 300.7047 532.99979 300.5 533 L 291.5 533 z M 293.5 534 L 294.5 534 C 294.777 534 295 534.223 295 534.5 L 295 535.5 C 295 535.777 294.777 536 294.5 536 L 293.5 536 C 293.223 536 293 535.777 293 535.5 L 293 534.5 C 293 534.223 293.223 534 293.5 534 z M 297.5 534 L 298.5 534 C 298.777 534 299 534.223 299 534.5 L 299 535.5 C 299 535.777 298.777 536 298.5 536 L 297.5 536 C 297.223 536 297 535.777 297 535.5 L 297 534.5 C 297 534.223 297.223 534 297.5 534 z M 291.5 536 L 292.5 536 C 292.777 536 293 536.223 293 536.5 L 293 537.5 C 293 537.777 292.777 538 292.5 538 L 291.5 538 C 291.223 538 291 537.777 291 537.5 L 291 536.5 C 291 536.223 291.223 536 291.5 536 z M 295.5 536 L 296.5 536 C 296.777 536 297 536.223 297 536.5 L 297 537.5 C 297 537.777 296.777 538 296.5 538 L 295.5 538 C 295.223 538 295 537.777 295 537.5 L 295 536.5 C 295 536.223 295.223 536 295.5 536 z M 299.5 536 L 300.5 536 C 300.777 536 301 536.223 301 536.5 L 301 537.5 C 301 537.777 300.777 538 300.5 538 L 299.5 538 C 299.223 538 299 537.777 299 537.5 L 299 536.5 C 299 536.223 299.223 536 299.5 536 z " />
     <path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
