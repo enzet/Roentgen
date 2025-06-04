@@ -432,6 +432,16 @@ class ShapeSpecification:
         """Check whether shape is default."""
         return self.shape.id_ == DEFAULT_SHAPE_ID
 
+    def get_path(self, point: NDArray, scale: float) -> str:
+        """Get string representation of the SVG path of the shape."""
+        path: SVGPath = self.shape.get_path(
+            point=point,
+            offset=self.offset * scale,
+            scale=np.array((scale, scale)),
+        )
+        path.update({"fill": self.color.hex})
+        return path.get_xml().attrib["d"]
+
     def draw(
         self,
         svg: BaseElement,
@@ -458,7 +468,7 @@ class ShapeSpecification:
         if self.flip_horizontally:
             scale_vector = np.array((-scale, scale))
 
-        point: NDArray = np.array(list(map(int, point)))
+        point = np.array(list(map(int, point)))
         path: SVGPath = self.shape.get_path(
             point=point,
             offset=self.offset * scale,
@@ -599,6 +609,22 @@ class Icon:
         :param outline: if true, draw outline beneath the icon
         :param outline_opacity: opacity of the outline
         """
+        if not outline:
+            # If we don't need outline, we draw the icon the simplest way
+            # possible.
+            with file_name.open("w", encoding="utf-8") as output_file:
+                output_file.write(
+                    '<svg xmlns="http://www.w3.org/2000/svg" '
+                    'width="16" height="16">'
+                )
+                for shape_specification in self.shape_specifications:
+                    path: str = shape_specification.get_path(
+                        np.array((8.0, 8.0)), 1.0
+                    )
+                    output_file.write(f'<path d="{path}" fill="#000" />')
+                output_file.write("</svg>")
+            return
+
         svg: Drawing = Drawing(str(file_name), (16, 16))
 
         if outline:
