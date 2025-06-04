@@ -185,8 +185,8 @@ class IconCollection:
         """Add combinations of shapes to the collection."""
 
         # TODO(enzet): use color from the configuration.
-        color = Color("black")
-        background_color = Color("white")
+        color: Color = Color("black")
+        background_color: Color = Color("white")
 
         for elements in combinations:
             specifications: list[ShapeSpecification] = []
