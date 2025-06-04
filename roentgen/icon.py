@@ -484,7 +484,10 @@ class ShapeSpecification:
 
         svg.add(path)
 
-    def __eq__(self, other: ShapeSpecification) -> bool:
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, ShapeSpecification):
+            return False
+
         return (
             self.shape == other.shape
             and self.color == other.color
@@ -638,7 +641,10 @@ class Icon:
         """Add shape specifications to the icon."""
         self.shape_specifications += specifications
 
-    def __eq__(self, other: Icon) -> bool:
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Icon):
+            return False
+
         return sorted(self.shape_specifications) == sorted(
             other.shape_specifications
         )
