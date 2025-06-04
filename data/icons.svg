@@ -151,9 +151,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="86.992394"
-     inkscape:cx="658.92111"
-     inkscape:zoom="8.6444339"
+     inkscape:cy="372.82206"
+     inkscape:cx="70.455277"
+     inkscape:zoom="10.999886"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -2054,9 +2054,9 @@
     <path
        inkscape:connector-curvature="0"
        inkscape:label="#path3275"
-       id="pole_lamp"
+       id="path3275"
        d="m 107,370 v 1 c 0,0.554 -0.446,1 -1,1 h -1 c -0.54314,0 -0.98298,-0.42989 -1,-0.96875 -0.63691,0.0664 -1.10058,0.25683 -1.40625,0.5625 C 102.2116,371.9759 102,372.58333 102,373.5 v 9.5 h -1 v -9.5 c 0,-1.08333 0.2884,-1.9759 0.90625,-2.59375 C 102.5241,370.2884 103.41667,370 104.5,370 h 0.5 1 z"
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;marker:none;enable-background:accumulate">
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:Sans;-inkscape-font-specification:Sans;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1px;marker:none;enable-background:accumulate">
       <title
          id="title6152">pole lamp</title>
     </path>
@@ -32787,8 +32787,8 @@
        d="m 35.5,364.5 v 2 h 2 v -2 l -1,-2 z"
        id="path491" />
     <path
-       id="path492"
-       style="color:#000000;fill:#0000ff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;-inkscape-stroke:none;opacity:1;stroke:none;fill-opacity:1"
+       id="pole_lamp"
+       style="color:#000000;fill:#000002;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;-inkscape-stroke:none;opacity:1;stroke:none;fill-opacity:1"
        d="M 42 370.25 C 40.997415 370.25 39.986304 370.43942 39.304688 371.00391 C 38.308085 371.03588 37.476843 371.31613 36.896484 371.89648 C 36.278635 372.51433 36 373.41667 36 374.5 L 36 378.38281 L 35.052734 380.27734 A 0.50005 0.50005 0 0 0 35 380.5 L 35 382.5 A 0.50005 0.50005 0 0 0 35.5 383 L 37.5 383 A 0.50005 0.50005 0 0 0 38 382.5 L 38 380.5 A 0.50005 0.50005 0 0 0 37.947266 380.27734 L 37 378.38281 L 37 374.5 C 37 373.58333 37.221367 372.98566 37.603516 372.60352 C 37.927334 372.2797 38.409194 372.07365 39.105469 372.01758 C 39.531349 373.45585 40.771823 374.25 42 374.25 C 43.34722 374.25 44.708595 373.2953 44.994141 371.58203 A 0.5 0.5 0 0 0 44.996094 371.56055 A 0.5 0.5 0 0 0 44.912109 371.2168 A 0.5 0.5 0 0 0 44.853516 371.14648 C 44.846359 371.13933 44.83928 371.13205 44.832031 371.125 A 0.5 0.5 0 0 0 44.818359 371.11328 C 44.139305 370.46296 43.065098 370.25 42 370.25 z M 40.154297 372 L 43.845703 372 C 43.494908 372.87046 42.752154 373.25 42 373.25 C 41.247846 373.25 40.505092 372.87046 40.154297 372 z " />
     <path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
