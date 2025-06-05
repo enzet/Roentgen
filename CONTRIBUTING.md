@@ -10,8 +10,7 @@ document provides guidelines and instructions for contributing to this project.
 ```shell
 echo "$VERSION_NUMBER" > VERSION
 echo "$VERSION_NUMBER" > icons/VERSION
-echo "$VERSION_NUMBER" > icons_by_name/VERSION
-git add VERSION icons/VERSION icons_by_name/VERSION
+git add VERSION icons/VERSION
 ```
 
 2. Change version in `pyproject.toml`.
