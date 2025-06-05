@@ -215,10 +215,10 @@
         {"id": "urban_tree_pot"}
     ], [
         {"id": "tree"},
-        {"id": "bottom_right_horizontal_line"}
+        {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
     ], [
         {"id": "tree_with_leaf"},
-        {"id": "bottom_right_horizontal_line"}
+        {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
     ], [
         {"id": "needleleaved_tree"},
         {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
