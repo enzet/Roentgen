@@ -10,7 +10,7 @@ However, it can be easily used for any map project or even for non-map-related
 projects. Also, some icons can be used as emoji symbols.
 
 All icons can be found in the [`icons`](icons) directory, where they are stored
-as optimized SVG files with `roentgen_` prefix.
+as optimized SVG files.
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/enzet/Roentgen/main/doc/grid_white.svg">

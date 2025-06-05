@@ -119,7 +119,7 @@ class IconCollection:
 
             def get_file_name(x: Icon) -> str:
                 """Generate file name with unique identifier."""
-                return f"roentgen_{'___'.join(x.get_shape_ids())}.svg"
+                return f"{'___'.join(x.get_shape_ids())}.svg"
 
         for icon in self.icons:
             icon.draw_to_file(
