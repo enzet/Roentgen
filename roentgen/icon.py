@@ -136,8 +136,8 @@ class Shape:
                 shape.is_right_directed = False
 
         if "emoji" in structure:
-            emojis = structure["emoji"]
-            shape.emojis = [emojis] if isinstance(emojis, str) else emojis
+            emojis: str | list[str] = structure["emoji"]
+            shape.emojis = {emojis} if isinstance(emojis, str) else set(emojis)
 
         shape.is_part = structure.get("is_part", False)
         shape.group = structure.get("group", "")
@@ -236,7 +236,8 @@ def verify_sketch_element(element: Element, id_: str) -> bool:
     # Sketch element (black 0.1 px stroke, no fill).
 
     if (
-        style["fill"] == "none"
+        "fill" in style
+        and style["fill"] == "none"
         and style["stroke"] == "#000000"
         and "stroke-width" in style
         and np.allclose(parse_length(style["stroke-width"]), 0.1)
@@ -246,7 +247,8 @@ def verify_sketch_element(element: Element, id_: str) -> bool:
     # Sketch element (black 1 px stroke, no fill, 20% opacity).
 
     if (
-        style["fill"] == "none"
+        "fill" in style
+        and style["fill"] == "none"
         and style["stroke"] == "#000000"
         and "opacity" in style
         and np.allclose(float(style["opacity"]), 0.2)
@@ -263,7 +265,8 @@ def verify_sketch_element(element: Element, id_: str) -> bool:
     # Experimental shape (blue or red fill, no stroke).
 
     if (
-        style["fill"] in UNUSED_ICON_COLORS
+        "fill" in style
+        and style["fill"] in UNUSED_ICON_COLORS
         and "stroke" in style
         and style["stroke"] == "none"
     ):

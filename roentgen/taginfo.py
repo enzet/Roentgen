@@ -16,9 +16,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Final
 
-logger = logging.getLogger(__name__)
-
 import requests
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
