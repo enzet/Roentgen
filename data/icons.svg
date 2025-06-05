@@ -151,8 +151,8 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="37.140009"
-     inkscape:cx="230.15962"
+     inkscape:cy="16.536793"
+     inkscape:cx="382.51499"
      inkscape:zoom="3.6887443"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -6410,9 +6410,9 @@
        id="path5532"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
-       id="cave"
+       id="path010"
        d="m 186,20 h -5 l -2,2 -1,6 h 2 v -0.5 c 0,-1.933 1.567,-3.5 3.5,-3.5 1.933,0 3.5,1.567 3.5,3.5 V 28 h 2 l -1,-6 z"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccssscccc" />
     <path
@@ -33322,9 +33322,9 @@
        id="cliff"
        sodipodi:nodetypes="ccccccccccccccccc" />
     <path
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none;fill-opacity:1"
        d="m 469.5,20 c -0.18961,1.7e-4 -0.36282,0.107573 -0.44727,0.277344 l -0.96289,1.925781 -0.94336,0.943359 c -0.0639,0.0642 -0.10909,0.144529 -0.13086,0.232422 l -1,4 C 465.93698,27.694133 466.17511,27.999481 466.5,28 h 2 c 0.21529,1.13e-4 0.40648,-0.137577 0.47461,-0.341797 l 0.93359,-2.802734 1.49219,-0.748047 1.68945,1.689453 0.96289,1.925781 C 474.13718,27.892428 474.31039,27.99983 474.5,28 h 2 c 0.32488,-5.25e-4 0.56301,-0.305871 0.48437,-0.621094 l -1,-4 c -0.009,-0.0351 -0.0211,-0.06915 -0.0371,-0.101562 l -1,-2 c -0.0485,-0.09729 -0.12732,-0.176142 -0.22461,-0.22461 l -2,-1 C 472.65351,20.018183 472.5773,20.000132 472.5,20 Z"
-       id="path170"
+       id="cave"
        sodipodi:nodetypes="ccccccccccccccccccccccc" />
     <path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
