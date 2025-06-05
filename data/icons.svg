@@ -151,8 +151,8 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="32.80249"
-     inkscape:cx="292.51146"
+     inkscape:cy="37.140009"
+     inkscape:cx="230.15962"
      inkscape:zoom="3.6887443"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -8236,8 +8236,8 @@
        sodipodi:nodetypes="cccccccccc"
        inkscape:connector-curvature="0"
        d="m 162,19 h 9 l 3,2 -1,8 h -1 l -1,-5 -2,-1 -1,6 h -6 z"
-       style="fill:#000000;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
-       id="cliff" />
+       style="fill:#0000ff;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       id="path009" />
     <path
        id="path2145"
        style="fill:none;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none"
@@ -33317,9 +33317,9 @@
        id="path166"
        sodipodi:nodetypes="cccccccccccccc" />
     <path
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none;fill-opacity:1.0"
        d="m 450.5,19 c -0.27613,2.8e-5 -0.49997,0.223869 -0.5,0.5 v 9 c 3e-5,0.276131 0.22387,0.499972 0.5,0.5 h 4 c 0.24482,4.27e-4 0.45395,-0.176467 0.49414,-0.417969 l 0.88867,-5.332031 1.17578,0.587891 0.95118,4.759765 c 0.0466,0.233839 0.2518,0.402257 0.49023,0.402344 h 1 c 0.25197,-1.6e-5 0.46457,-0.187507 0.49609,-0.4375 l 1,-8 c 0.0299,-0.236721 -0.11154,-0.461618 -0.33789,-0.537109 l -3,-1 c -0.051,-0.01691 -0.10444,-0.02549 -0.1582,-0.02539 z"
-       id="path167"
+       id="cliff"
        sodipodi:nodetypes="ccccccccccccccccc" />
     <path
        style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none"
