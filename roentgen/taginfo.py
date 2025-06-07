@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import sys
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -18,6 +19,8 @@ from pathlib import Path
 from typing import Any, Final
 
 import requests
+import yaml
+from lxml import etree, html
 
 logger = logging.getLogger(__name__)
 
@@ -198,36 +201,36 @@ class TagInfoAPI:
             return 0
 
 
-def load_existing_tags(filename: str) -> dict[str, Any]:
+def load_existing_tags(output_path: Path) -> dict[str, Any]:
     """Load existing tags from JSON file.
 
-    :param filename: path to the JSON file
+    :param output_path: path to the JSON file
 
     :returns: dictionary containing existing tags data
     """
     try:
-        with Path(filename).open("r", encoding="utf-8") as f:
+        with output_path.open(encoding="utf-8") as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         return {"timestamp": datetime.now(timezone.utc).isoformat(), "tags": []}
 
 
 def save_tags_to_json(
-    tags: list[TagInfo], filename: str, *, append: bool = True
+    tags: list[TagInfo], output_path: Path, *, append: bool = True
 ) -> None:
     """Save tags to a JSON file with timestamp.
 
     :param tags: list of TagInfo objects to save
-    :param filename: output filename
+    :param output_path: output path
     :param append: whether to append to existing tags or overwrite
     """
     if append:
-        existing_data: dict[str, Any] = load_existing_tags(filename)
+        existing_data: dict[str, Any] = load_existing_tags(output_path)
         existing_tags: dict[str, Any] = {
             f"{tag['key']}={tag['value']}": tag for tag in existing_data["tags"]
         }
 
-        # Update or add new tags
+        # Update or add new tags.
         for tag in tags:
             tag_key: str = f"{tag.key}={tag.value}"
             existing_tags[tag_key] = {
@@ -244,7 +247,7 @@ def save_tags_to_json(
             "tags": list(existing_tags.values()),
         }
     else:
-        data = {
+        data: dict[str, Any] = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "tags": [
                 {
@@ -259,24 +262,170 @@ def save_tags_to_json(
             ],
         }
 
-    with Path(filename).open("w", encoding="utf-8") as f:
+    with output_path.open("w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def main() -> None:
+def save_html_table(
+    tags: list[TagInfo],
+    drawing: dict[str, Any],
+    ignore_keys: set[str],
+    ignore_prefixes: set[str],
+    output_path: Path,
+) -> None:
+    """Save tags to an HTML file with a styled table.
+
+    :param tags: list of TagInfo objects
+    :param drawing: dictionary of drawing rules
+    :param ignore_keys: set of keys to ignore
+    :param ignore_prefixes: set of key prefixes to ignore
+    :param output_path: output path
+    """
+    (doc := html.HtmlElement()).set("lang", "en")
+
+    head: html.Element = html.Element("head")
+    doc.append(head)
+
+    meta_charset = html.Element("meta")
+    meta_charset.set("charset", "UTF-8")
+    head.append(meta_charset)
+
+    meta_viewport = html.Element("meta")
+    meta_viewport.set("name", "viewport")
+    meta_viewport.set("content", "width=device-width, initial-scale=1.0")
+    head.append(meta_viewport)
+
+    link = html.Element("link")
+    link.set("rel", "stylesheet")
+    link.set("href", "style.css")
+    head.append(link)
+
+    body = html.Element("body")
+    doc.append(body)
+
+    container = html.Element("div")
+    container.set("class", "container")
+    body.append(container)
+
+    table = html.Element("table")
+    container.append(table)
+
+    thead = html.Element("thead")
+    table.append(thead)
+    header_row = html.Element("tr")
+    thead.append(header_row)
+
+    for header_text in ["Tags", "Shapes", "Count"]:
+        th = html.Element("th")
+        th.text = header_text
+        header_row.append(th)
+
+    tbody = html.Element("tbody")
+    table.append(tbody)
+
+    for tag in tags:
+        if tag.key in ignore_keys:
+            continue
+        if any(tag.key.startswith(prefix + ":") for prefix in ignore_prefixes):
+            continue
+
+        id_ = f"{tag.key}={tag.value}"
+        row = html.Element("tr")
+        tbody.append(row)
+
+        tag_cell = html.Element("td")
+        tag_cell.set("class", "tag")
+        tag_cell.text = f"{tag.key}={tag.value}"
+        row.append(tag_cell)
+
+        shapes_cell = html.Element("td")
+        row.append(shapes_cell)
+
+        count_cell = html.Element("td")
+        count_cell.set("class", "count")
+        count_cell.text = f"{tag.count_nodes:,}"
+        row.append(count_cell)
+
+        if id_ in drawing:
+            shapes = drawing[id_]["shapes"]
+            add_shapes = drawing[id_]["add_shapes"]
+
+            for shape in shapes:
+                img = html.Element("img")
+                img.set("class", "shape")
+                if isinstance(shape, str):
+                    img.set("src", f"../icons/{shape}.svg")
+                elif isinstance(shape, dict):
+                    img.set("src", f"../icons/{shape['shape']}.svg")
+                shapes_cell.append(img)
+
+            for shape in add_shapes:
+                img = html.Element("img")
+                img.set("class", "shape")
+                img.set("src", f"../icons/{shape}.svg")
+                shapes_cell.append(img)
+        else:
+            no_drawing = html.Element("span")
+            no_drawing.set("class", "no-drawing")
+            no_drawing.text = "No drawing"
+            shapes_cell.append(no_drawing)
+
+    html_content: bytes = etree.tostring(
+        doc,
+        doctype="<!DOCTYPE html>",
+        encoding="utf-8",
+        pretty_print=True,
+        method="html",
+    )
+    with output_path.open("wb") as f:
+        f.write(html_content)
+
+
+def main(scheme_path: Path, *, total_pages: int) -> None:
     """Get the most used tags and save them to a JSON file."""
-    output_file: str = "most_used_tags.json"
+
+    output_directory: Path = Path("out")
+    output_directory.mkdir(exist_ok=True)
+
+    output_json: Path = output_directory / "most_used_tags.json"
+    output_html: Path = output_directory / "most_used_tags.html"
     per_page: int = 100
 
     # Initialize the API client with a 1-second rate limit.
     api: TagInfoAPI = TagInfoAPI(rate_limit=1.0)
 
-    # Total number of pages. Hardcoded. Use `api.get_total_pages(per_page)` to
-    # get the actual number.
-    total_pages: int = 10
-
     logger.info("Found %d pages of tags.", total_pages)
     all_tags: list[TagInfo] = []
+
+    # Load the scheme.
+    with scheme_path.open(encoding="utf-8") as input_file:
+        scheme: dict[str, Any] = yaml.load(input_file, Loader=yaml.SafeLoader)
+
+    ignore_keys: set[str] = (
+        set(scheme.get("keys_to_write", []))
+        | set(scheme.get("keys_to_skip", []))
+        | {"nysgissam:review"}
+    )
+    ignore_prefixes: set[str] = set(scheme.get("prefix_to_write", [])) | set(
+        scheme.get("prefix_to_skip", [])
+    )
+
+    drawing: dict[str, Any] = {}
+
+    for group in scheme.get("node_icons", []):
+        for rule in group.get("tags", []):
+            tags: dict[str, str] = rule["tags"]
+            shapes: list[str | dict[str, str]] = rule.get("shapes", [])
+            add_shapes: list[str] = rule.get("add_shapes", [])
+
+            id_: str = ";".join(f"{k}={v}" for k, v in tags.items())
+            if id_ in drawing:
+                continue
+
+            drawing[id_] = {
+                "shapes": shapes,
+                "add_shapes": add_shapes,
+            }
 
     # Fetch all pages.
     for page in range(1, total_pages + 1):
@@ -293,19 +442,22 @@ def main() -> None:
         logger.info("Found %d tags on page %d.", len(tags), page)
 
         # Save after each page to preserve progress.
-        save_tags_to_json(all_tags, output_file, append=False)
+        save_tags_to_json(all_tags, output_json, append=False)
 
     logger.info("Total tags collected: %d.", len(all_tags))
-    logger.info("Results saved to %s.", output_file)
+    logger.info("Results saved to %s.", output_json)
 
-    # Print summary of top 10 tags.
-    logger.info("Top most used tags:")
-    for index, tag in enumerate(all_tags, 1):
-        logger.info(
-            "%d. %s=%s. (%d)", index, tag.key, tag.value, tag.count_nodes
-        )
+    # Save HTML table
+    save_html_table(
+        all_tags, drawing, ignore_keys, ignore_prefixes, output_html
+    )
+    logger.info("HTML table saved to %s.", output_html)
 
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(message)s")
-    main()
+    scheme_path: Path = Path(sys.argv[1])
+
+    # Total number of pages. Hardcoded. Use `api.get_total_pages(per_page)` to
+    # get the actual number.
+    main(scheme_path, total_pages=20)

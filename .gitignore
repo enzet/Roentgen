@@ -2,8 +2,10 @@
 .idea/
 .venv/
 __pycache__
+cache/
 icons/LICENSE
 icons_by_name/
+osm/
 out/
 roentgen.egg-info/
 uv.lock
