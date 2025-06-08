@@ -1,3 +1,32 @@
+## 0.3.0
+
+8 June 2025. 515 icons.
+
+Break changes: icons in `icons` directory now have no `roentgen_` prefix.
+
+Redraw icons:
+  - `cave`,
+  - `knives`,
+  - `pole_lamp`,
+  - `staircase`.
+
+Make icons smoother and make corners round:
+  - `cliff`,
+  - `cooling_tower`,
+  - `crescent`,
+  - `flag`,
+  - `gate`,
+  - `key`,
+  - `plane`,
+  - `star_of_david`,
+  - `stone`.
+
+Move `bottom_right_horizontal_line` to better fit `tree` and `tree_with_leaf`,
+move `building_construction` and slightly change `diving_4_platform`.
+
+Add script for extracting more popular OpenStreetMap tags from Taginfo and create
+mapping between OpenStreetMap tags and Röntgen icons.
+
 ## 0.2.0
 
 4 June 2025. 515 icons.
