@@ -410,7 +410,7 @@ def save_html_table(
         f.write(html_content)
 
 
-def main(scheme_path: Path, *, total_pages: int) -> None:
+def main(scheme_path: Path, *, total_pages: int = 150) -> None:
     """Get the most used tags and save them to a JSON file.
 
     :param scheme_path: how to draw the tags
@@ -461,7 +461,7 @@ def main(scheme_path: Path, *, total_pages: int) -> None:
 
         if not tags:
             logger.error("Failed to fetch page %d.", page)
-            continue
+            break
 
         all_tags.extend(tags)
         logger.info("Found %d tags on page %d.", len(tags), page)
@@ -482,4 +482,4 @@ if __name__ == "__main__":
 
     # Total number of pages. Hardcoded. Use `api.get_total_pages(per_page)` to
     # get the actual number.
-    main(scheme_path, total_pages=250)
+    main(scheme_path)
