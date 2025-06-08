@@ -19,7 +19,6 @@ from pathlib import Path
 from typing import Any, Final
 
 import requests
-import yaml
 from lxml import etree, html
 
 logger = logging.getLogger(__name__)
@@ -42,7 +41,7 @@ class TagInfoAPI:
 
     BASE_URL: Final[str] = "https://taginfo.openstreetmap.org/api/4"
     CACHE_DIR: Final[Path] = Path("cache")
-    CACHE_EXPIRATION_TIME: Final[int] = 86400  # 24 hours.
+    CACHE_EXPIRATION_TIME: Final[int] = 86400 * 365  # 1 year.
 
     def __init__(self, rate_limit: float = 1.0) -> None:
         """Initialize the API client with rate limiting.
@@ -160,7 +159,7 @@ class TagInfoAPI:
         :returns: list of TagInfo objects sorted by total usage
         """
         params: dict[str, Any] = {
-            "sortname": "count_nodes",
+            "sortname": "count_all",
             "sortorder": "desc",
             "page": page,
             "rp": per_page,
@@ -266,11 +265,48 @@ def save_tags_to_json(
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
-def save_html_table(
+def check_descriptor(tag: TagInfo, descriptor: str) -> bool:
+    """Check if a tag matches a descriptor."""
+    if descriptor.endswith(":"):
+        return tag.key.startswith(descriptor)
+    if "=" in descriptor:
+        return descriptor == f"{tag.key}={tag.value}"
+    return tag.key == descriptor
+
+
+def process_tags(
     tags: list[TagInfo],
-    drawing: dict[str, Any],
-    ignore_keys: set[str],
-    ignore_prefixes: set[str],
+    scheme: dict[str, Any],
+    output_path: Path,
+) -> None:
+    """Process tags and save them to an HTML file."""
+
+    result: list[tuple[str, list[str], int]] = []
+
+    for tag in tags:
+        to_continue: bool = False
+        for descriptor in scheme.get("__ignore", []) + scheme.get(
+            "__only_ways", []
+        ):
+            if check_descriptor(tag, descriptor):
+                to_continue = True
+                break
+        if to_continue:
+            continue
+
+        id_: str = f"{tag.key}={tag.value}"
+
+        shapes: list[str] = []
+        if id_ in scheme and "shapes" in scheme[id_]:
+            shapes = scheme[id_]["shapes"]
+
+        result.append((id_, shapes, tag.total_count))
+
+    save_html_table(result, output_path)
+
+
+def save_html_table(
+    elements: list[tuple[str, list[str], int]],
     output_path: Path,
 ) -> None:
     """Save tags to an HTML file with a styled table.
@@ -279,6 +315,7 @@ def save_html_table(
     :param drawing: dictionary of drawing rules
     :param ignore_keys: set of keys to ignore
     :param ignore_prefixes: set of key prefixes to ignore
+    :param osm_info: external information about the tags
     :param output_path: output path
     """
     (doc := html.HtmlElement()).set("lang", "en")
@@ -323,52 +360,44 @@ def save_html_table(
     tbody = html.Element("tbody")
     table.append(tbody)
 
-    for tag in tags:
-        if tag.key in ignore_keys:
-            continue
-        if any(tag.key.startswith(prefix + ":") for prefix in ignore_prefixes):
-            continue
-
-        id_ = f"{tag.key}={tag.value}"
+    for id_, imgs, count in elements:
         row = html.Element("tr")
         tbody.append(row)
 
+        key, value = id_.split("=")
+
         tag_cell = html.Element("td")
         tag_cell.set("class", "tag")
-        tag_cell.text = f"{tag.key}={tag.value}"
+        a_key = html.Element("a")
+        a_key.set("href", f"https://wiki.openstreetmap.org/wiki/Key:{key}")
+        a_key.text = key
+        a_value = html.Element("a")
+        a_value.set("href", f"https://wiki.openstreetmap.org/wiki/Tag:{id_}")
+        a_value.text = value
+        tag_cell.append(a_key)
+        wbr = html.Element("wbr")
+        equal_sign = html.Element("span")
+        equal_sign.text = "="
+        tag_cell.append(wbr)
+        tag_cell.append(equal_sign)
+        tag_cell.append(wbr)
+        tag_cell.append(a_value)
+
         row.append(tag_cell)
 
-        shapes_cell = html.Element("td")
-        row.append(shapes_cell)
+        imgs_cell = html.Element("td")
+        imgs_cell.set("class", "imgs")
+        row.append(imgs_cell)
+
+        for img in imgs:
+            img_element = html.Element("img")
+            img_element.set("src", f"../icons/{img}.svg")
+            imgs_cell.append(img_element)
 
         count_cell = html.Element("td")
         count_cell.set("class", "count")
-        count_cell.text = f"{tag.count_nodes:,}"
+        count_cell.text = f"{count:,}"
         row.append(count_cell)
-
-        if id_ in drawing:
-            shapes = drawing[id_]["shapes"]
-            add_shapes = drawing[id_]["add_shapes"]
-
-            for shape in shapes:
-                img = html.Element("img")
-                img.set("class", "shape")
-                if isinstance(shape, str):
-                    img.set("src", f"../icons/{shape}.svg")
-                elif isinstance(shape, dict):
-                    img.set("src", f"../icons/{shape['shape']}.svg")
-                shapes_cell.append(img)
-
-            for shape in add_shapes:
-                img = html.Element("img")
-                img.set("class", "shape")
-                img.set("src", f"../icons/{shape}.svg")
-                shapes_cell.append(img)
-        else:
-            no_drawing = html.Element("span")
-            no_drawing.set("class", "no-drawing")
-            no_drawing.text = "No drawing"
-            shapes_cell.append(no_drawing)
 
     html_content: bytes = etree.tostring(
         doc,
@@ -382,7 +411,12 @@ def save_html_table(
 
 
 def main(scheme_path: Path, *, total_pages: int) -> None:
-    """Get the most used tags and save them to a JSON file."""
+    """Get the most used tags and save them to a JSON file.
+
+    :param scheme_path: how to draw the tags
+    :param osm_path: external information about the tags
+    :param total_pages: total number of pages to fetch
+    """
 
     output_directory: Path = Path("out")
     output_directory.mkdir(exist_ok=True)
@@ -399,16 +433,7 @@ def main(scheme_path: Path, *, total_pages: int) -> None:
 
     # Load the scheme.
     with scheme_path.open(encoding="utf-8") as input_file:
-        scheme: dict[str, Any] = yaml.load(input_file, Loader=yaml.SafeLoader)
-
-    ignore_keys: set[str] = (
-        set(scheme.get("keys_to_write", []))
-        | set(scheme.get("keys_to_skip", []))
-        | {"nysgissam:review"}
-    )
-    ignore_prefixes: set[str] = set(scheme.get("prefix_to_write", [])) | set(
-        scheme.get("prefix_to_skip", [])
-    )
+        scheme: dict[str, Any] = json.load(input_file)
 
     drawing: dict[str, Any] = {}
 
@@ -447,10 +472,7 @@ def main(scheme_path: Path, *, total_pages: int) -> None:
     logger.info("Total tags collected: %d.", len(all_tags))
     logger.info("Results saved to %s.", output_json)
 
-    # Save HTML table
-    save_html_table(
-        all_tags, drawing, ignore_keys, ignore_prefixes, output_html
-    )
+    process_tags(all_tags, scheme, output_html)
     logger.info("HTML table saved to %s.", output_html)
 
 
@@ -460,4 +482,4 @@ if __name__ == "__main__":
 
     # Total number of pages. Hardcoded. Use `api.get_total_pages(per_page)` to
     # get the actual number.
-    main(scheme_path, total_pages=20)
+    main(scheme_path, total_pages=250)
