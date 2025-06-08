@@ -1,0 +1,1343 @@
+{
+    "__ignore": [
+        "FIXME",
+        "KSJ2:ODC",
+        "KSJ2:PubFacAdmin",
+        "LINZ:dataset",
+        "LINZ:layer",
+        "LINZ:source_version",
+        "MCC",
+        "NHD:FDate",
+        "STIF:zone",
+        "addr:",
+        "alt_name",
+        "alt_name:",
+        "artist_name",
+        "at_bev:addr_date",
+        "attribution",
+        "bonnet:colour",
+        "booth",
+        "branch",
+        "brand",
+        "brand:",
+        "building:colour",
+        "building:levels",
+        "building:part",
+        "building:usage:",
+        "capacity",
+        "capacity:persons",
+        "check_date",
+        "circumference",
+        "cladr:code",
+        "collection_times",
+        "colour",
+        "colour:",
+        "comment",
+        "contact:",
+        "created_by",
+        "created_by",
+        "cuisine",
+        "curve_geometry",
+        "cyclestreets_id",
+        "demolished:",
+        "description",
+        "description:",
+        "designation",
+        "destination",
+        "diameter",
+        "diameter_crown",
+        "disused:",
+        "editor",
+        "ele",
+        "ele:datum",
+        "email",
+        "end_date",
+        "facebook",
+        "fax",
+        "fhrs:confidence_management",
+        "fhrs:hygiene",
+        "fhrs:id",
+        "fhrs:inspectiondate",
+        "fhrs:local_authority_id",
+        "fhrs:rating",
+        "fhrs:rating_date",
+        "fire_hydrant:description",
+        "fire_hydrant:diameter",
+        "fixme",
+        "flag:name",
+        "flickr",
+        "full_name",
+        "gauge",
+        "genus",
+        "genus:",
+        "height",
+        "heritage",
+        "heritage:operator",
+        "heritage:operator:short",
+        "heritage:operator:wikidata",
+        "heritage:ref",
+        "heritage:since",
+        "heritage:website",
+        "image",
+        "import",
+        "import_ref",
+        "import_uuid",
+        "indoor",
+        "information",
+        "inscription",
+        "inscription:",
+        "int_name",
+        "is_in",
+        "is_in:",
+        "junction",
+        "lanes",
+        "lanes:forward",
+        "last_collection",
+        "layer",
+        "level",
+        "level:ref",
+        "light:colour",
+        "light:colour:2",
+        "local_ref",
+        "location:transition",
+        "manufacturer",
+        "manufacturer:",
+        "mapillary",
+        "mapillary:",
+        "max_age",
+        "maxheight",
+        "maxspeed",
+        "maxspeed:",
+        "maxweight",
+        "media:commons",
+        "min_height",
+        "mml:class",
+        "name",
+        "name:",
+        "naptan:AltCommonName",
+        "naptan:AltStreet",
+        "naptan:AtcoCode",
+        "naptan:Bearing",
+        "naptan:BusStopType",
+        "naptan:CommonName",
+        "naptan:Crossing",
+        "naptan:Indicator",
+        "naptan:Landmark",
+        "naptan:NaptanCode",
+        "naptan:Notes",
+        "naptan:PlusbusZoneRef",
+        "naptan:ShotCommonName",
+        "naptan:Street",
+        "naptan:verified",
+        "naptan:verified:note",
+        "ncat",
+        "network",
+        "network:",
+        "network:wikidata",
+        "nhd:fdate",
+        "notas",
+        "note",
+        "note:",
+        "nysgissam:review",
+        "object:city",
+        "official_name",
+        "old_name",
+        "old_name:",
+        "opening_hours",
+        "opening_hours:url",
+        "operator",
+        "operator:",
+        "osak:identifier",
+        "par",
+        "phone",
+        "phone_1",
+        "place",
+        "platforms",
+        "population",
+        "population:",
+        "postal_code",
+        "project:",
+        "proposed:voltage",
+        "railway:track_ref",
+        "razed:",
+        "ref",
+        "ref:colour",
+        "ref:opendataparis:adresse",
+        "ref:opendataparis:geo_point_2d",
+        "ref_no",
+        "removed:",
+        "roof:colour",
+        "roof:levels",
+        "route_ref",
+        "route_ref:",
+        "royal_cypher",
+        "seamark:buoy_lateral:colour",
+        "seamark:buoy_special_purpose:colour",
+        "seamark:light:colour",
+        "seamark:markings:colour",
+        "seamark:topmark:colour",
+        "seats",
+        "source",
+        "source:",
+        "source_ref",
+        "species",
+        "species:",
+        "start_date",
+        "step_count",
+        "subject:wikidata",
+        "surface:colour",
+        "survey:date",
+        "symbol",
+        "taxon",
+        "taxon:",
+        "telephone",
+        "teryt:rm",
+        "teryt:updated_by",
+        "tiger:",
+        "tracks",
+        "twitter",
+        "uk_postcode_centroid",
+        "uri",
+        "url",
+        "voltage",
+        "voltage:primary",
+        "voltage:secondary",
+        "website",
+        "website:",
+        "website_2",
+        "width",
+        "wikidata",
+        "wikipedia",
+        "wikipedia:",
+        "yh:TYPE"
+    ],
+    "__only_ways": [
+        "highway=footway",
+        "highway=path",
+        "highway=residential",
+        "highway=road",
+        "highway=service",
+        "highway=tertiary",
+        "highway=track",
+        "highway=unclassified",
+        "oneway=yes",
+        "service=driveway",
+        "surface=asphalt",
+        "surface=unpaved",
+        "waterway=stream"
+    ],
+    "natural=tree": {
+        "shapes": ["tree"]
+    },
+    "landuse=forest": {
+        "shapes": ["tree"]
+    },
+    "landuse=farmland": {
+        "shapes": ["apple"]
+    },
+    "shop=agrarian": {
+        "shapes": ["apple"]
+    },
+    "shop=kitchen": {
+        "shapes": ["pan"]
+    },
+    "natural=wood": {
+        "shapes": ["tree"]
+    },
+    "natural=beach": {
+        "shapes": ["beach"]
+    },
+    "payment:debit_cards=yes": {
+        "shapes": ["credit_card"]
+    },
+    "building=kindergarten": {
+        "shapes": ["toy_horse"]
+    },
+    "building=toilets": {
+        "shapes": ["woman_and_man"]
+    },
+    "power=tower": {
+        "shapes": ["power_tower_2_level"]
+    },
+    "power=pole": {
+        "shapes": ["power_pole_2_level"]
+    },
+    "highway=crossing": {
+        "shapes": ["crossing"]
+    },
+    "denomination=russian_orthodox": {
+        "shapes": ["russian_orthodox_cross"]
+    },
+    "leaf_type=broadleaved": {
+        "shapes": ["tree_with_leaf"]
+    },
+    "barrier=gate": {
+        "shapes": ["gate"]
+    },
+    "highway=street_lamp": {
+        "shapes": ["street_lamp"]
+    },
+    "bus=yes": {
+        "shapes": ["bus"]
+    },
+    "highway=bus_stop": {
+        "shapes": ["bus_stop", "bus"]
+    },
+    "public_transport=platform": {
+        "shapes": ["bus_stop_sign"]
+    },
+    "amenity=bench": {
+        "shapes": ["bench"]
+    },
+    "bench=yes": {
+        "shapes": ["bench"]
+    },
+    "generator:source=solar": {
+        "shapes": ["solar_panel"]
+    },
+    "generator:source=wind": {
+        "shapes": ["wind_turbine"]
+    },
+    "generator:method=wind_turbine": {
+        "shapes": ["wind_turbine"]
+    },
+    "generator:method=photovoltaic": {
+        "shapes": ["solar_panel"]
+    },
+    "generator:type=solar_photovoltaic_panel": {
+        "shapes": ["solar_panel"]
+    },
+    "access=yes": {
+        "shapes": ["lock_unlocked"]
+    },
+    "crossing=uncontrolled": {
+        "shapes": ["no_traffic_signals"]
+    },
+    "entrance=yes": {
+        "shapes": ["entrance"]
+    },
+    "highway=turning_circle": {
+        "shapes": ["circle_empty"]
+    },
+    "emergency=fire_hydrant": {
+        "shapes": ["fire_hydrant"]
+    },
+    "noexit=yes": {
+        "shapes": ["t"]
+    },
+    "tactile_paving=no": {
+        "shapes": [
+            {"shape": "tactile_paving", "offset": [0, 2]},
+            {"shape": "x_5", "offset": [0, -3]}
+        ]
+    },
+    "highway=stop": {
+        "shapes": ["stop"]
+    },
+    "material=wood": {
+        "shapes": ["wood"]
+    },
+    "highway=traffic_signals": {
+        "shapes": ["traffic_signals"]
+    },
+    "tactile_paving=yes": {
+        "shapes": ["tactile_paving"]
+    },
+    "access=private": {
+        "shapes": ["lock_with_keyhole"]
+    },
+    "vehicle=private": {
+        "shapes": ["lock_with_keyhole"]
+    },
+    "crossing=marked": {
+        "shapes": ["crossing"]
+    },
+    "direction=forward": {
+        "shapes": ["forward"]
+    },
+    "barrier=kerb": {
+        "shapes": ["kerb"]
+    },
+    "crossing:island=no": {
+        "shapes": ["rectangle_vertical_rounded_crossed"]
+    },
+    "crossing:markings=zebra": {
+        "shapes": ["crossing"]
+    },
+    "backrest=yes": {
+        "shapes": ["bench_backrest"]
+    },
+    "backrest=no": {
+        "shapes": ["bench_no_backrest"]
+    },
+    "crossing=traffic_signals": {
+        "shapes": ["traffic_signals"]
+    },
+    "public_transport=stop_position": {
+        "shapes": ["bus_stop"]
+    },
+    "kerb=lowered": {
+        "shapes": ["lowered_kerb"]
+    },
+    "denotation=avenue": {
+        "shapes": ["tree___bottom_right_horizontal_line"]
+    },
+    "denotation=urban": {
+        "shapes": ["tree___urban_tree_pot"]
+    },
+    "wheelchair=yes": {
+        "shapes": ["wheelchair"]
+    },
+    "highway=give_way": {
+        "shapes": ["triangle_down_hollow"]
+    },
+    "tourism=information": {
+        "shapes": ["i"]
+    },
+    "amenity=restaurant": {
+        "shapes": ["fork_and_knife"]
+    },
+    "ford=yes": {
+        "shapes": ["ford"]
+    },
+    "power=generator": {
+        "shapes": ["power_generator"]
+    },
+    "railway=switch": {
+        "shapes": ["y"]
+    },
+    "natural=peak": {
+        "shapes": ["triangle_small"]
+    },
+    "amenity=waste_basket": {
+        "shapes": ["waste_basket"]
+    },
+    "railway=level_crossing": {
+        "shapes": ["x"]
+    },
+    "bicycle=yes": {
+        "shapes": ["bicycle"]
+    },
+    "entrance=main": {
+        "shapes": ["main_entrance"]
+    },
+    "crossing:markings=yes": {
+        "shapes": ["crossing"]
+    },
+    "barrier=bollard": {
+        "shapes": ["bollard"]
+    },
+    "foot=yes": {
+        "shapes": ["foot"]
+    },
+    "traffic_signals=signal": {
+        "shapes": ["traffic_signals"]
+    },
+    "amenity=bicycle_parking": {
+        "shapes": ["bicycle", "p_small"]
+    },
+    "wheelchair=no": {
+        "shapes": ["no_wheelchair"]
+    },
+    "entrance=staircase": {
+        "shapes": ["staircase"]
+    },
+    "shop=convenience": {
+        "shapes": ["shop_convenience"]
+    },
+    "amenity=school": {
+        "shapes": ["japan_elementary_school"]
+    },
+    "barrier=lift_gate": {
+        "shapes": ["lift_gate"]
+    },
+    "amenity=cafe": {
+        "shapes": ["coffee_cup"]
+    },
+    "amenity=fast_food": {
+        "shapes": ["burger"]
+    },
+    "religion=christian": {
+        "shapes": ["latin_cross"]
+    },
+    "amenity=recycling": {
+        "shapes": ["recycling_container"]
+    },
+    "recycling_type=container": {
+        "shapes": ["recycling_container"]
+    },
+    "man_made=manhole": {
+        "shapes": ["circle_9"]
+    },
+    "design=h-frame": {
+        "shapes": ["power_tower_h_frame"]
+    },
+    "railway=signal": {
+        "shapes": ["signal"]
+    },
+    "man_made=mast": {
+        "shapes": ["tube"]
+    },
+    "traffic_calming=bump": {
+        "shapes": ["bump"]
+    },
+    "leaf_type=needleleaved": {
+        "shapes": ["needleleaved_tree"]
+    },
+    "amenity=parking": {
+        "shapes": ["p"]
+    },
+    "historic=memorial": {
+        "shapes": ["memorial"]
+    },
+    "leisure=picnic_table": {
+        "shapes": ["table"]
+    },
+    "amenity=post_box": {
+        "shapes": ["envelope"]
+    },
+    "man_made=survey_point": {
+        "shapes": ["survey_point"]
+    },
+    "shop=clothes": {
+        "shapes": ["t_shirt"]
+    },
+    "amenity=pharmacy": {
+        "shapes": ["medicine_bottle"]
+    },
+    "traffic_calming=hump": {
+        "shapes": ["hump"]
+    },
+    "amenity=toilets": {
+        "shapes": ["woman_and_man"]
+    },
+    "man_made=tower": {
+        "shapes": ["tower"]
+    },
+    "amenity=drinking_water": {
+        "shapes": ["drinking_water"]
+    },
+    "shop=hairdresser": {
+        "shapes": ["comb_and_scissors"]
+    },
+    "amenity=fuel": {
+        "shapes": ["fuel_station"]
+    },
+    "shop=supermarket": {
+        "shapes": ["supermarket_cart"]
+    },
+    "man_made=surveillance": {
+        "shapes": ["cctv"]
+    },
+    "amenity=vending_machine": {
+        "shapes": ["vending_machine"]
+    },
+    "amenity=bank": {
+        "shapes": ["money"]
+    },
+    "design=three-level": {
+        "shapes": ["power_tower_3_level"]
+    },
+    "crossing:island=yes": {
+        "shapes": ["rectangle_vertical_rounded"]
+    },
+    "tourism=artwork": {
+        "shapes": ["picture"]
+    },
+    "crossing=zebra": {
+        "shapes": ["crossing"]
+    },
+    "crossing_ref=zebra": {
+        "shapes": ["crossing"]
+    },
+    "traffic_sign=city_limit": {
+        "shapes": ["city_limit_sign"]
+    },
+    "amenity=hunting_stand": {
+        "shapes": ["hunting_stand"]
+    },
+    "railway=buffer_stop": {
+        "shapes": ["buffer_stop"]
+    },
+    "tourism=hotel": {
+        "shapes": ["bed"]
+    },
+    "amenity=waste_disposal": {
+        "shapes": ["waste_disposal"]
+    },
+    "tourism=viewpoint": {
+        "shapes": ["binoculars"]
+    },
+    "internet_access=wlan": {
+        "shapes": ["wlan"]
+    },
+    "amenity=parking_entrance": {
+        "shapes": ["p", "arrow_right"]
+    },
+    "manhole=drain": {
+        "shapes": ["manhole_drain"]
+    },
+    "amenity=atm": {
+        "shapes": ["atm"]
+    },
+    "access=no": {
+        "shapes": ["lock"]
+    },
+    "highway=milestone": {
+        "shapes": ["milestone"]
+    },
+    "amenity=shelter": {
+        "shapes": ["shelter"]
+    },
+    "shelter=yes": {
+        "shapes": ["shelter"]
+    },
+    "office=company": {
+        "shapes": ["briefcase"]
+    },
+    "man_made=street_cabinet": {
+        "shapes": ["street_cabinet"]
+    },
+    "bin=yes": {
+        "shapes": ["waste_basket"]
+    },
+    "tower:type=communication": {
+        "shapes": ["tube___wave_left___wave_right"]
+    },
+    "leisure=swimming_pool": {
+        "shapes": ["swimming_area"]
+    },
+    "natural=rock": {
+        "shapes": ["stone"]
+    },
+    "power=portal": {
+        "shapes": ["power_tower_portal"]
+    },
+    "shop=bakery": {
+        "shapes": ["cupcake"]
+    },
+    "power=transformer": {
+        "shapes": ["transformer"]
+    },
+    "traffic_calming=table": {
+        "shapes": ["traffic_table"]
+    },
+    "leisure=playground": {
+        "shapes": ["toy_horse"]
+    },
+    "communication:mobile_phone=yes": {
+        "shapes": ["phone"]
+    },
+    "amenity=bar": {
+        "shapes": ["cocktail_glass"]
+    },
+    "railway=crossing": {
+        "shapes": ["x"]
+    },
+    "natural=spring": {
+        "shapes": ["spring"]
+    },
+    "historic=wayside_cross": {
+        "shapes": ["cross_and_horizontal_bar"]
+    },
+    "payment:credit_cards=yes": {
+        "shapes": ["credit_card"]
+    },
+    "barrier=block": {
+        "shapes": ["block"]
+    },
+    "recycling:glass_bottles=yes": {
+        "shapes": ["bottle"]
+    },
+    "shop=car_repair": {
+        "shapes": ["car", "wrench"]
+    },
+    "design=delta": {
+        "shapes": ["power_tower_delta"]
+    },
+    "bicycle=no": {
+        "shapes": ["bicycle", "x_4"]
+    },
+    "tourism=attraction": {
+        "shapes": ["photo_camera"]
+    },
+    "man_made=flagpole": {
+        "shapes": ["flagpole"]
+    },
+    "highway=turning_loop": {
+        "shapes": ["turning_loop"]
+    },
+    "office=government": {
+        "shapes": ["government"]
+    },
+    "amenity=post_office": {
+        "shapes": ["envelope"]
+    },
+    "amenity=parking_space": {
+        "shapes": ["p_small"]
+    },
+    "amenity=doctors": {
+        "shapes": ["greek_cross_in_box"]
+    },
+    "amenity=kindergarten": {
+        "shapes": ["toy_horse"]
+    },
+    "amenity=charging_station": {
+        "shapes": ["charging_station"]
+    },
+    "amenity=pub": {
+        "shapes": ["beer_mug"]
+    },
+    "historic=archaeological_site": {
+        "shapes": ["amphora"]
+    },
+    "shop=beauty": {
+        "shapes": ["vanity_mirror"]
+    },
+    "power=substation": {
+        "shapes": ["electricity"]
+    },
+    "atm=yes": {
+        "shapes": ["atm"]
+    },
+    "amenity=clinic": {
+        "shapes": ["greek_cross_in_box"]
+    },
+    "motorcar=yes": {
+        "shapes": ["car"]
+    },
+    "recycling:paper=yes": {
+        "shapes": ["gazette"]
+    },
+    "historic=wayside_shrine": {
+        "shapes": ["wayside_shrine"]
+    },
+    "tourism=guest_house": {
+        "shapes": ["bed_and_roof"]
+    },
+    "amenity=fountain": {
+        "shapes": ["fountain"]
+    },
+    "amenity=dentist": {
+        "shapes": ["tooth"]
+    },
+    "design=triangle": {
+        "shapes": ["power_tower_triangle"]
+    },
+    "emergency=defibrillator": {
+        "shapes": ["defibrillator"]
+    },
+    "amenity=hospital": {
+        "shapes": ["greek_cross"]
+    },
+    "entrance=garage": {
+        "shapes": ["garage_door"]
+    },
+    "door=yes": {
+        "shapes": ["entrance"]
+    },
+    "barrier=entrance": {
+        "shapes": ["entrance"]
+    },
+    "tourism=camp_site": {
+        "shapes": ["camp"]
+    },
+    "railway=station": {
+        "shapes": ["train"]
+    },
+    "man_made=chimney": {
+        "shapes": ["chimney"]
+    },
+    "advertising=billboard": {
+        "shapes": ["billboard"]
+    },
+    "amenity=police": {
+        "shapes": ["japan_police_station"]
+    },
+    "vending=parking_tickets": {
+        "shapes": ["vending_p"]
+    },
+    "shop=mobile_phone": {
+        "shapes": ["phone"]
+    },
+    "shop=butcher": {
+        "shapes": ["knives"]
+    },
+    "design=barrel": {
+        "shapes": ["power_tower_barrel"]
+    },
+    "design=asymmetric": {
+        "shapes": ["power_tower_asymmetric"]
+    },
+    "shop=car": {
+        "shapes": ["car"]
+    },
+    "tourism=camp_pitch": {
+        "shapes": ["camp"]
+    },
+    "amenity=telephone": {
+        "shapes": ["telephone"]
+    },
+    "amenity=bicycle_rental": {
+        "shapes": ["bicycle", "key"]
+    },
+    "amenity=social_facility": {
+        "shapes": ["two_people_together"]
+    },
+    "shop=hardware": {
+        "shapes": ["wretch_and_hammer"]
+    },
+    "drinking_water=yes": {
+        "shapes": ["drinking_water"]
+    },
+    "waterway=waterfall": {
+        "shapes": ["waterfall"]
+    },
+    "recycling:clothes=yes": {
+        "shapes": ["t_shirt"]
+    },
+    "amenity=community_centre": {
+        "shapes": ["two_people_together"]
+    },
+    "shop=alcohol": {
+        "shapes": ["bottle"]
+    },
+    "shop=furniture": {
+        "shapes": ["drawer"]
+    },
+    "amenity=townhall": {
+        "shapes": ["townhall"]
+    },
+    "shop=kiosk": {
+        "shapes": ["kiosk"]
+    },
+    "foot=no": {
+        "shapes": ["no_foot"]
+    },
+    "shop=florist": {
+        "shapes": ["flower_in_pot"]
+    },
+    "recycling:glass=yes": {
+        "shapes": ["bottle_and_wine_glass"]
+    },
+    "shop=optician": {
+        "shapes": ["glasses"]
+    },
+    "shop=shoes": {
+        "shapes": ["shoe"]
+    },
+    "natural=saddle": {
+        "shapes": ["saddle"]
+    },
+    "emergency=phone": {
+        "shapes": ["sos_phone"]
+    },
+    "leisure=fitness_centre": {
+        "shapes": ["dumbbell"]
+    },
+    "shop=electronics": {
+        "shapes": ["tv"]
+    },
+    "shop=jewelry": {
+        "shapes": ["diamond"]
+    },
+    "artwork_type=statue": {
+        "shapes": ["statue"]
+    },
+    "natural=cave_entrance": {
+        "shapes": ["cave"]
+    },
+    "entrance=service": {
+        "shapes": ["door_with_keyhole"]
+    },
+    "amenity=library": {
+        "shapes": ["book"]
+    },
+    "shop=car_parts": {
+        "shapes": ["engine"]
+    },
+    "amenity=car_wash": {
+        "shapes": ["car", "shower_head"]
+    },
+    "golf=pin": {
+        "shapes": ["golf_pin"]
+    },
+    "natural=stone": {
+        "shapes": ["stone"]
+    },
+    "shop=variety_store": {
+        "shapes": ["bag_with_percent"]
+    },
+    "historic=monument": {
+        "shapes": ["monument"]
+    },
+    "traffic_calming=cushion": {
+        "shapes": ["traffic_cushion"]
+    },
+    "shop=gift": {
+        "shapes": ["gift"]
+    },
+    "toilets=yes": {
+        "shapes": ["woman_and_man"]
+    },
+    "tourism=apartment": {
+        "shapes": ["bed_with_floor_and_ceiling"]
+    },
+    "barrier=toll_booth": {
+        "shapes": ["toll_booth"]
+    },
+    "amenity=fire_station": {
+        "shapes": ["japan_fire_station"]
+    },
+    "traffic_calming=island": {
+        "shapes": ["rectangle_vertical_rounded"]
+    },
+    "railway=tram_stop": {
+        "shapes": ["tram"]
+    },
+    "vending=excrement_bags": {
+        "shapes": ["vending_excrement_bag"]
+    },
+    "shop=greengrocer": {
+        "shapes": ["apple"]
+    },
+    "leaf_type=palm": {
+        "shapes": ["palm"]
+    },
+    "leisure=fitness_station": {
+        "shapes": ["dumbbell"]
+    },
+    "railway=subway_entrance": {
+        "shapes": ["train"]
+    },
+    "amenity=ice_cream": {
+        "shapes": ["ice_cream"]
+    },
+    "design=one-level": {
+        "shapes": ["power_tower_1_level"]
+    },
+    "shop=books": {
+        "shapes": ["book"]
+    },
+    "shop=bicycle": {
+        "shapes": ["bicycle"]
+    },
+    "office=yes": {
+        "shapes": ["briefcase"]
+    },
+    "trolleybus=yes": {
+        "shapes": ["trolleybus"]
+    },
+    "shop=laundry": {
+        "shapes": ["washing_machine"]
+    },
+    "amenity=veterinary": {
+        "shapes": ["dog_and_cross"]
+    },
+    "shop=travel_agency": {
+        "shapes": ["globe"]
+    },
+    "design=monopolar": {
+        "shapes": ["power_tower_monopolar"]
+    },
+    "amenity=taxi": {
+        "shapes": ["taxi"]
+    },
+    "tourism=hostel": {
+        "shapes": ["two_beds"]
+    },
+    "highway=elevator": {
+        "shapes": ["elevator"]
+    },
+    "entrance=shop": {
+        "shapes": ["entrance"]
+    },
+    "leisure=firepit": {
+        "shapes": ["fire_pit"]
+    },
+    "shop=doityourself": {
+        "shapes": ["wretch_and_hammer"]
+    },
+    "traffic_calming=rumble_strip": {
+        "shapes": ["rumble_strip"]
+    },
+    "amenity=bbq": {
+        "shapes": ["bbq"]
+    },
+    "design=flag": {
+        "shapes": ["power_tower_flag"]
+    },
+    "shop=pet": {
+        "shapes": ["dog"]
+    },
+    "vending=drinks": {
+        "shapes": ["vending_bottle"]
+    },
+    "amenity=marketplace": {
+        "shapes": ["marketplace"]
+    },
+    "shop=sports": {
+        "shapes": ["dumbbell"]
+    },
+    "traffic_sign=stop": {
+        "shapes": ["stop"]
+    },
+    "shop=confectionery": {
+        "shapes": ["cupcake"]
+    },
+    "amenity=public_bookcase": {
+        "shapes": ["books"]
+    },
+    "shop=department_store": {
+        "shapes": ["bag"]
+    },
+    "barrier=chain": {
+        "shapes": ["chain_barrier"]
+    },
+    "amenity=ferry_terminal": {
+        "shapes": ["anchor"]
+    },
+    "shop=cosmetics": {
+        "shapes": ["vanity_mirror"]
+    },
+    "shop=tailor": {
+        "shapes": ["t_shirt_and_scissors"]
+    },
+    "design=donau": {
+        "shapes": ["power_tower_donau"]
+    },
+    "vending=public_transport_tickets": {
+        "shapes": ["vending_tickets"]
+    },
+    "highway=traffic_mirror": {
+        "shapes": ["side_mirror"]
+    },
+    "amenity=clock": {
+        "shapes": ["clock"]
+    },
+    "man_made=cross": {
+        "shapes": ["latin_cross"]
+    },
+    "railway=railway_crossing": {
+        "shapes": ["x"]
+    },
+    "historic=tomb": {
+        "shapes": ["tomb"]
+    },
+    "recycling:shoes=yes": {
+        "shapes": ["shoe"]
+    },
+    "amenity=shower": {
+        "shapes": ["shower"]
+    },
+    "shop=copyshop": {
+        "shapes": ["sheets"]
+    },
+    "shop=dry_cleaning": {
+        "shapes": ["washing_machine"]
+    },
+    "building=apartments": {
+        "shapes": ["apartments_2_story"]
+    },
+    "shop=massage": {
+        "shapes": ["massage"]
+    },
+    "office=telecommunication": {
+        "shapes": ["telephone"]
+    },
+    "advertising=column": {
+        "shapes": ["advertising_column"]
+    },
+    "design=guyed_v-frame": {
+        "shapes": ["power_tower_guyed_v_frame"]
+    },
+    "shop=pastry": {
+        "shapes": ["cupcake"]
+    },
+    "shop=tyres": {
+        "shapes": ["tyre"]
+    },
+    "shop=newsagent": {
+        "shapes": ["gazette"]
+    },
+    "playground=slide": {
+        "shapes": ["slide"]
+    },
+    "amenity=car_rental": {
+        "shapes": ["car___key"]
+    },
+    "tram=yes": {
+        "shapes": ["tram"]
+    },
+    "kerb=yes": {
+        "shapes": ["kerb"]
+    },
+    "surveillance:type=camera": {
+        "shapes": ["cctv"]
+    },
+    "natural=shrub": {
+        "shapes": ["bush"]
+    },
+    "payment:cash=yes": {
+        "shapes": ["money"]
+    },
+    "construction=yes": {
+        "shapes": ["building_construction"]
+    },
+    "tourism=motel": {
+        "shapes": ["car", "bed"]
+    },
+    "aeroway=aerodrome": {
+        "shapes": ["plane"]
+    },
+    "amenity=theatre": {
+        "shapes": ["curtains"]
+    },
+    "shop=farm": {
+        "shapes": ["apple"]
+    },
+    "golf=tee": {
+        "shapes": ["golf_tee"]
+    },
+    "design=guyed_h-frame": {
+        "shapes": ["power_tower_guyed_h_frame"]
+    },
+    "recycling:paper_packaging=yes": {
+        "shapes": ["gazette"]
+    },
+    "shop=toys": {
+        "shapes": ["toy_horse"]
+    },
+    "design=two-level": {
+        "shapes": ["power_tower_2_level"]
+    },
+    "tents=yes": {
+        "shapes": ["camp"]
+    },
+    "shop=ticket": {
+        "shapes": ["ticket"]
+    },
+    "natural=cliff": {
+        "shapes": ["cliff"]
+    },
+    "recycling:green_waste=yes": {
+        "shapes": ["apple"]
+    },
+    "shop=houseware": {
+        "shapes": ["pan"]
+    },
+    "amenity=bureau_de_change": {
+        "shapes": ["exchange", "dollar", "pound"]
+    },
+    "leisure=outdoor_seating": {
+        "shapes": ["table_and_two_chairs", "umbrella"]
+    },
+    "amenity=cinema": {
+        "shapes": ["film"]
+    },
+    "amenity=bicycle_repair_station": {
+        "shapes": ["bicycle", "wrench"]
+    },
+    "recycling:beverage_cartons=yes": {
+        "shapes": ["aseptic_carton"]
+    },
+    "shop=general": {
+        "shapes": ["bag"]
+    },
+    "amenity=nightclub": {
+        "shapes": ["cocktail_glass_with_straw"]
+    },
+    "crossing_ref=toucan": {
+        "shapes": ["toucan_crossing"]
+    },
+    "shop=wine": {
+        "shapes": ["bottle_and_wine_glass"]
+    },
+    "office=it": {
+        "shapes": ["glider"]
+    },
+    "emergency=fire_extinguisher": {
+        "shapes": ["fire_extinguisher"]
+    },
+    "barrier=turnstile": {
+        "shapes": ["turnstile"]
+    },
+    "design=portal": {
+        "shapes": ["power_tower_portal"]
+    },
+    "shop=photo": {
+        "shapes": ["photo_camera"]
+    },
+    "direction=clockwise": {
+        "shapes": ["clockwise"]
+    },
+    "fireplace=yes": {
+        "shapes": ["fireplace"]
+    },
+    "tourism=gallery": {
+        "shapes": ["picture"]
+    },
+    "historic=castle": {
+        "shapes": ["japan_castle"]
+    },
+    "shop=medical_supply": {
+        "shapes": ["medicine_bottle"]
+    },
+    "man_made=crane": {
+        "shapes": ["crane"]
+    },
+    "door=no": {
+        "shapes": ["no_door"]
+    },
+    "entrance=exit": {
+        "shapes": ["exit"]
+    },
+    "shop=art": {
+        "shapes": ["picture"]
+    },
+    "amenity=courthouse": {
+        "shapes": ["gavel"]
+    },
+    "amenity=internet_cafe": {
+        "shapes": ["at_in_square"]
+    },
+    "shop=mall": {
+        "shapes": ["bag"]
+    },
+    "caravans=yes": {
+        "shapes": ["caravan"]
+    },
+    "recycling:newspaper=yes": {
+        "shapes": ["gazette"]
+    },
+    "amenity=arts_centre": {
+        "shapes": ["picture"]
+    },
+    "shop=bed": {
+        "shapes": ["bed"]
+    },
+    "emergency=life_ring": {
+        "shapes": ["life_ring"]
+    },
+    "recycling:magazines=yes": {
+        "shapes": ["gazette"]
+    },
+    "fountain=bubbler": {
+        "shapes": ["fountain_bubbler"]
+    },
+    "leisure=fishing": {
+        "shapes": ["fishing_angle"]
+    },
+    "tourism=caravan_site": {
+        "shapes": ["caravan"]
+    },
+    "barrier=log": {
+        "shapes": ["wood"]
+    },
+    "sport=swimming": {
+        "shapes": ["swimming_area"]
+    },
+    "shop=coffee": {
+        "shapes": ["coffee_cup"]
+    },
+    "shop=antiques": {
+        "shapes": ["amphora"]
+    },
+    "recycling:organic=yes": {
+        "shapes": ["apple"]
+    },
+    "amenity=car_sharing": {
+        "shapes": ["car", "sharing"]
+    },
+    "craft=tailor": {
+        "shapes": ["t_shirt_and_scissors"]
+    },
+    "playground=sandpit": {
+        "shapes": ["sandpit"]
+    },
+    "leisure=sauna": {
+        "shapes": ["sauna"]
+    },
+    "amenity=food_court": {
+        "shapes": ["food_court"]
+    },
+    "aeroway=helipad": {
+        "shapes": ["h"]
+    },
+    "amenity=biergarten": {
+        "shapes": ["beer_mug"]
+    },
+    "amenity=public_bath": {
+        "shapes": ["swimming_area"]
+    },
+    "dog=yes": {
+        "shapes": ["dog"]
+    },
+    "pipeline=substation": {
+        "shapes": ["pipeline"]
+    },
+    "shower=yes": {
+        "shapes": ["shower"]
+    },
+    "building=construction": {
+        "shapes": ["building_construction"]
+    },
+    "sport=skateboard": {
+        "shapes": ["skateboard"]
+    },
+    "leisure=dog_park": {
+        "shapes": ["dog"]
+    },
+    "building=office": {
+        "shapes": ["briefcase"]
+    },
+    "leisure=water_park": {
+        "shapes": ["slide_and_water"]
+    },
+    "building=garage": {
+        "shapes": ["garages"]
+    },
+    "amenity=prison": {
+        "shapes": ["prison"]
+    },
+    "leisure=miniature_golf": {
+        "shapes": ["golf_club_and_ball"]
+    },
+    "leisure=golf_course": {
+        "shapes": ["golf_club_and_ball"]
+    },
+    "attraction=water_slide": {
+        "shapes": ["slide_and_water"]
+    },
+    "leisure=bleachers": {
+        "shapes": ["bleachers"]
+    },
+    "trees=apple_trees": {
+        "shapes": ["apple"]
+    },
+    "building=hotel": {
+        "shapes": ["bed"]
+    },
+    "wall=brick": {
+        "shapes": ["bricks"]
+    },
+    "material=brick": {
+        "shapes": ["bricks"]
+    },
+    "building=garages": {
+        "shapes": ["garages"]
+    },
+    "structure=lattice": {
+        "shapes": ["lattice"]
+    },
+    "building=yes": {
+        "shapes": ["apartments_1_story_gabled_roof"]
+    },
+    "building=house": {
+        "shapes": ["apartments_1_story_gabled_roof"]
+    },
+    "crossing:signals=no": {
+        "shapes": ["no_traffic_signals"]
+    }
+}
+
