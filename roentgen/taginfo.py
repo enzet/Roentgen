@@ -83,8 +83,8 @@ class TagInfoAPI:
             return None
 
         try:
-            with cache_path.open("r", encoding="utf-8") as f:
-                data: dict[str, Any] = json.load(f)
+            with cache_path.open(encoding="utf-8") as input_file:
+                data: dict[str, Any] = json.load(input_file)
                 cache_time: datetime = datetime.fromisoformat(data["timestamp"])
                 if (
                     datetime.now(timezone.utc) - cache_time
@@ -92,8 +92,10 @@ class TagInfoAPI:
                     logger.debug("Cache expired for %s", cache_path)
                     return None
                 return data["response"]
-        except (json.JSONDecodeError, KeyError, ValueError) as e:
-            logger.warning("Failed to load cache from %s: %s", cache_path, e)
+        except (json.JSONDecodeError, KeyError, ValueError) as error:
+            logger.warning(
+                "Failed to load cache from %s: %s", cache_path, error
+            )
             return None
 
     def _save_to_cache(
@@ -108,8 +110,8 @@ class TagInfoAPI:
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "response": response,
         }
-        with cache_path.open("w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
+        with cache_path.open("w", encoding="utf-8") as output_file:
+            json.dump(data, output_file, indent=2, ensure_ascii=False)
 
     def _make_request(
         self, endpoint: str, params: dict[str, Any] | None = None
@@ -410,7 +412,7 @@ def save_html_table(
         f.write(html_content)
 
 
-def main(scheme_path: Path, *, total_pages: int = 150) -> None:
+def main(scheme_path: Path) -> None:
     """Get the most used tags and save them to a JSON file.
 
     :param scheme_path: how to draw the tags
@@ -428,7 +430,9 @@ def main(scheme_path: Path, *, total_pages: int = 150) -> None:
     # Initialize the API client with a 1-second rate limit.
     api: TagInfoAPI = TagInfoAPI(rate_limit=1.0)
 
+    total_pages: int = api.get_total_pages()
     logger.info("Found %d pages of tags.", total_pages)
+
     all_tags: list[TagInfo] = []
 
     # Load the scheme.
@@ -480,6 +484,4 @@ if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     scheme_path: Path = Path(sys.argv[1])
 
-    # Total number of pages. Hardcoded. Use `api.get_total_pages(per_page)` to
-    # get the actual number.
     main(scheme_path)
