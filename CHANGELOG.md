@@ -3,6 +3,9 @@
 Redraw icons:
   - `slide_and_water`.
 
+Make icons smoother and make corners round:
+  - `memorial`.
+
 ## 0.3.0
 
 8 June 2025. 514 icons.
@@ -29,8 +32,8 @@ Make icons smoother and make corners round:
 Move `bottom_right_horizontal_line` to better fit `tree` and `tree_with_leaf`,
 move `building_construction` and slightly change `diving_4_platform`.
 
-Add script for extracting more popular OpenStreetMap tags from Taginfo and create
-mapping between OpenStreetMap tags and Röntgen icons.
+Add script for extracting more popular OpenStreetMap tags from Taginfo and
+create mapping between OpenStreetMap tags and Röntgen icons.
 
 ## 0.2.0
 
