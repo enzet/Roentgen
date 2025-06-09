@@ -4,6 +4,7 @@ Redraw icons:
   - `slide_and_water`.
 
 Make icons smoother and make corners round:
+  - `guidepost`,
   - `memorial`.
 
 ## 0.3.0
