@@ -1,3 +1,8 @@
+## Unreleased
+
+Redraw icons:
+  - `slide_and_water`.
+
 ## 0.3.0
 
 8 June 2025. 514 icons.
