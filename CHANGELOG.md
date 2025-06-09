@@ -4,6 +4,7 @@ Redraw icons:
   - `slide_and_water`.
 
 Make icons smoother and make corners round:
+  - `ear_botany`,
   - `guidepost`,
   - `memorial`,
   - `survey_point`.
