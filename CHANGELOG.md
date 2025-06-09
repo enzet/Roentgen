@@ -1,6 +1,6 @@
 ## 0.3.0
 
-8 June 2025. 515 icons.
+8 June 2025. 514 icons.
 
 Break changes: icons in `icons` directory now have no `roentgen_` prefix.
 
@@ -29,7 +29,7 @@ mapping between OpenStreetMap tags and Röntgen icons.
 
 ## 0.2.0
 
-4 June 2025. 515 icons.
+4 June 2025. 514 icons.
 
 Redraw icons:
   - `car_on_ferry`,
@@ -58,16 +58,16 @@ Changes on trees also influence their combinations with
 `bottom_right_horizontal_line` and `urban_tree_pot`.
 
 Unify style for water in different icons:
-    - `car_on_ferry`,
-    - `crane_travel_lift`,
-    - `human_on_ferry`,
-    - `waterfall`.
+  - `car_on_ferry`,
+  - `crane_travel_lift`,
+  - `human_on_ferry`,
+  - `waterfall`.
 
 
 ## 0.1.0
 
 29 August 2023. This is the first version after migrating the Röntgen project
-from the Map Machine repository to its own repository. This version contains 515
+from the Map Machine repository to its own repository. This version contains 514
 icons, including icon combinations.
 
 This is the first version used in the iD editor. The icons were copied to the
