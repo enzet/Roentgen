@@ -5,7 +5,8 @@ Redraw icons:
 
 Make icons smoother and make corners round:
   - `guidepost`,
-  - `memorial`.
+  - `memorial`,
+  - `survey_point`.
 
 ## 0.3.0
 
