@@ -2,6 +2,7 @@
 
 Redraw icons:
   - `car`,
+  - `car_on_ferry`,
   - `garages`,
   - `slide_and_water`.
 
