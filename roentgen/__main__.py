@@ -9,6 +9,7 @@ from typing import TYPE_CHECKING, Any
 from colour import Color
 
 from roentgen.icon_collection import IconCollection, ShapeExtractor
+from roentgen.taginfo import main as taginfo_main
 
 if TYPE_CHECKING:
     from roentgen.icon import Shape
@@ -98,10 +99,8 @@ def draw_icons(
 def main() -> None:
     """Run the main function."""
 
-    logging.basicConfig(level=logging.INFO)
-
     parser: argparse.ArgumentParser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["generate"])
+    parser.add_argument("command", choices=["generate", "taginfo"])
 
     arguments: argparse.Namespace = parser.parse_args()
 
@@ -109,6 +108,7 @@ def main() -> None:
         combinations: list[list[dict[str, Any]]] = json.load(input_file)
 
     if arguments.command == "generate":
+        logging.basicConfig(level=logging.INFO)
         main_collection: IconCollection = get_main_collection(
             icon_paths=[
                 Path("data") / "icons.svg",
@@ -123,6 +123,12 @@ def main() -> None:
             doc_path=Path("doc"),
             output_path=Path(),
         )
+        return
+
+    if arguments.command == "taginfo":
+        logging.basicConfig(level=logging.INFO, format="%(message)s")
+        taginfo_main(Path("data") / "tags.json")
+        return
 
 
 if __name__ == "__main__":

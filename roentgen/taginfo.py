@@ -11,7 +11,6 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
-import sys
 import time
 from dataclasses import dataclass
 from datetime import datetime, timezone
@@ -693,10 +692,3 @@ def main(scheme_path: Path) -> None:
     output_html: Path = output_directory / "output.html"
     write_html_document(output_html, container)
     logger.info("HTML table saved to %s.", output_html)
-
-
-if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO, format="%(message)s")
-    scheme_path: Path = Path(sys.argv[1])
-
-    main(scheme_path)
