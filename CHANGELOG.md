@@ -1,6 +1,7 @@
 ## Unreleased
 
 Redraw icons:
+  - `garages`,
   - `slide_and_water`.
 
 Make icons smoother and make corners round:
