@@ -6,6 +6,7 @@ Redraw icons:
 
 Make icons smoother and make corners round:
   - `ear_botany`,
+  - `golf_pin`,
   - `guidepost`,
   - `memorial`,
   - `survey_point`.
