@@ -1,8 +1,9 @@
 ## Unreleased
 
 Redraw icons:
-  - `car`,
   - `car_on_ferry`,
+  - `car`,
+  - `caravan`,
   - `garages`,
   - `slide_and_water`.
 
