@@ -23,17 +23,23 @@ from lxml import etree, html
 
 logger = logging.getLogger(__name__)
 
+PER_PAGE: Final[int] = 100
+
+MIN_FREQUENCY_TO_DOWNLOAD: Final[int] = 100
+MIN_FREQUENCY_TO_DISPLAY: Final[int] = 100_000
+
 
 @dataclass
 class TagInfo:
     """Tag information."""
 
     key: str
-    value: str
-    count_nodes: int
-    count_ways: int
-    count_relations: int
-    total_count: int
+    value: str | None
+    total_count: int = 0
+    fraction: float = 0.0
+    count_nodes: int = 0
+    count_ways: int = 0
+    count_relations: int = 0
 
 
 class TagInfoAPI:
@@ -69,7 +75,9 @@ class TagInfoAPI:
             f"{endpoint}:{json.dumps(params or {}, sort_keys=True)}"
         )
         # Create a hash of the key to use as filename.
-        cache_hash: str = hashlib.md5(cache_key.encode()).hexdigest()  # noqa: S324
+        cache_hash: str = hashlib.md5(  # noqa: S324
+            cache_key.encode()
+        ).hexdigest()
         return self.CACHE_DIR / f"{cache_hash}.json"
 
     def _load_from_cache(self, cache_path: Path) -> dict[str, Any] | None:
@@ -188,18 +196,66 @@ class TagInfoAPI:
         else:
             return tags
 
-    def get_total_pages(self, per_page: int = 100) -> int:
-        """Get the total number of pages available.
+    def get_most_used_keys(
+        self, page: int = 1, per_page: int = 100
+    ) -> list[TagInfo]:
+        """Get the most used keys in OpenStreetMap.
 
-        :param per_page: number of tags per page
+        :param per_page: number of keys per page
 
-        :returns: total number of pages
+        :returns: list of keys
         """
-        try:
-            data = self._make_request("tags/popular", {"rp": per_page})
-            return (data.get("total", 0) + per_page - 1) // per_page
-        except requests.exceptions.RequestException:
-            return 0
+        params: dict[str, Any] = {
+            "sortname": "count_all",
+            "sortorder": "desc",
+            "page": page,
+            "rp": per_page,
+            "filter": "all",
+            "lang": "en",
+        }
+        data: dict[str, Any] = self._make_request("keys/all", params)
+        return [
+            TagInfo(
+                key=item["key"],
+                value=None,
+                count_nodes=item["count_nodes"],
+                count_ways=item["count_ways"],
+                count_relations=item["count_relations"],
+                total_count=item["count_all"],
+            )
+            for item in data.get("data", [])
+        ]
+
+    def get_key_values(
+        self, key: TagInfo, page: int = 1, per_page: int = 100
+    ) -> list[TagInfo]:
+        """Get the most used values for a key in OpenStreetMap.
+
+        :param key: key to get values for
+        :param page: page number to fetch (1-based)
+        :param per_page: number of values per page
+
+        :returns: list of TagInfo objects sorted by total usage
+        """
+        params: dict[str, Any] = {
+            "key": key.key,
+            "page": page,
+            "rp": per_page,
+            "sortname": "count_all",
+            "sortorder": "desc",
+            "filter": "all",
+            "lang": "en",
+        }
+        data: dict[str, Any] = self._make_request("key/values", params)
+        return [
+            TagInfo(
+                key=key.key,
+                value=item["value"],
+                total_count=item["count"],
+                fraction=item["fraction"],
+            )
+            for item in data.get("data", [])
+        ]
 
 
 def load_existing_tags(output_path: Path) -> dict[str, Any]:
@@ -248,7 +304,7 @@ def save_tags_to_json(
             "tags": list(existing_tags.values()),
         }
     else:
-        data: dict[str, Any] = {
+        data = {
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "tags": [
                 {
@@ -276,12 +332,16 @@ def check_descriptor(tag: TagInfo, descriptor: str) -> bool:
     return tag.key == descriptor
 
 
-def process_tags(
-    tags: list[TagInfo],
-    scheme: dict[str, Any],
-    output_path: Path,
-) -> None:
-    """Process tags and save them to an HTML file."""
+def construct_table(
+    tags: list[TagInfo], scheme: dict[str, Any]
+) -> list[tuple[str, list[str], int]]:
+    """Construct a table from tags.
+
+    :param tags: list of TagInfo objects
+    :param scheme: scheme to use
+
+    :returns: list of tuples containing tag, shapes, and count
+    """
 
     result: list[tuple[str, list[str], int]] = []
 
@@ -304,21 +364,14 @@ def process_tags(
 
         result.append((id_, shapes, tag.total_count))
 
-    save_html_table(result, output_path)
+    return result
 
 
-def save_html_table(
-    elements: list[tuple[str, list[str], int]],
-    output_path: Path,
-) -> None:
-    """Save tags to an HTML file with a styled table.
+def write_html_document(output_path: Path, container: html.Element) -> None:
+    """Write an HTML document with a container element.
 
-    :param tags: list of TagInfo objects
-    :param drawing: dictionary of drawing rules
-    :param ignore_keys: set of keys to ignore
-    :param ignore_prefixes: set of key prefixes to ignore
-    :param osm_info: external information about the tags
-    :param output_path: output path
+    :param output_path: path to the output file
+    :param container: container element to add to the document
     """
     (doc := html.HtmlElement()).set("lang", "en")
 
@@ -342,9 +395,28 @@ def save_html_table(
     body = html.Element("body")
     doc.append(body)
 
-    container = html.Element("div")
-    container.set("class", "container")
     body.append(container)
+
+    html_content: bytes = etree.tostring(
+        doc,
+        doctype="<!DOCTYPE html>",
+        encoding="utf-8",
+        pretty_print=True,
+        method="html",
+    )
+    with output_path.open("wb") as output_file:
+        output_file.write(html_content)
+
+
+def add_table(
+    container: html.Element,
+    elements: list[tuple[str, list[str], int]],
+) -> None:
+    """Save tags to an HTML file with a styled table.
+
+    :param elements: list of tuples containing tag, shapes, and count
+    :param output_path: output path
+    """
 
     table = html.Element("table")
     container.append(table)
@@ -354,7 +426,7 @@ def save_html_table(
     header_row = html.Element("tr")
     thead.append(header_row)
 
-    for header_text in ["Tags", "Shapes", "Count"]:
+    for header_text in ["Tags", "", "Count"]:
         th = html.Element("th")
         th.text = header_text
         header_row.append(th)
@@ -398,18 +470,147 @@ def save_html_table(
 
         count_cell = html.Element("td")
         count_cell.set("class", "count")
-        count_cell.text = f"{count:,}"
+        count_cell.text = f"{count / 1000:.0f} K"
         row.append(count_cell)
 
-    html_content: bytes = etree.tostring(
-        doc,
-        doctype="<!DOCTYPE html>",
-        encoding="utf-8",
-        pretty_print=True,
-        method="html",
-    )
-    with output_path.open("wb") as f:
-        f.write(html_content)
+
+def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
+    """Load most popular tags.
+
+    :param cache_json: path to the JSON file
+    :param api: API client
+
+    :returns: dictionary containing all tags
+    """
+    if cache_json.exists():
+        with cache_json.open(encoding="utf-8") as input_file:
+            return [
+                TagInfo(
+                    key=item["key"],
+                    value=item["value"],
+                    count_nodes=item["count_nodes"],
+                    count_ways=item["count_ways"],
+                    count_relations=item["count_relations"],
+                    total_count=item["total_count"],
+                )
+                for item in json.load(input_file)["tags"]
+            ]
+
+    all_tags: list[TagInfo] = []
+    for page in range(1, 100):
+        logger.info("Fetching page %d...", page)
+        page_tags = api.get_most_used_tags(page=page, per_page=PER_PAGE)
+
+        if not page_tags:
+            logger.error("Failed to fetch page %d.", page)
+            break
+
+        all_tags.extend(page_tags)
+        logger.info("Found %d tags on page %d.", len(page_tags), page)
+
+        # Save after each page to preserve progress.
+        save_tags_to_json(all_tags, cache_json, append=False)
+
+    logger.info("Total tags collected: %d.", len(all_tags))
+    logger.info("Results saved to %s.", cache_json)
+
+    return all_tags
+
+
+def load_all_keys(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
+    """Load all keys.
+
+    :param cache_json: path to the JSON file
+    :param api: API client
+
+    :returns: dictionary containing all keys
+    """
+    if cache_json.exists():
+        with cache_json.open(encoding="utf-8") as input_file:
+            return [
+                TagInfo(
+                    key=item["key"],
+                    value=None,
+                    count_nodes=item["count_nodes"],
+                    count_ways=item["count_ways"],
+                    count_relations=item["count_relations"],
+                    total_count=item["total_count"],
+                )
+                for item in json.load(input_file)["tags"]
+            ]
+
+    # Fetch the most used keys.
+    all_keys: list[TagInfo] = []
+    for page in range(1, 10):
+        logger.info("Fetching page %d...", page)
+        page_keys = api.get_most_used_keys(page=page, per_page=PER_PAGE)
+
+        if not page_keys:
+            logger.error("Failed to fetch page %d.", page)
+            break
+
+        all_keys.extend(page_keys)
+        logger.info("Found %d keys on page %d.", len(page_keys), page)
+
+        # Save after each page to preserve progress.
+        save_tags_to_json(all_keys, cache_json, append=False)
+
+    logger.info("Total keys collected: %d.", len(all_keys))
+    logger.info("Results saved to %s.", cache_json)
+
+    return all_keys
+
+
+def load_key_values(
+    cache_json: Path, key: TagInfo, api: TagInfoAPI
+) -> list[TagInfo]:
+    """Load key values.
+
+    :param cache_json: path to the JSON file
+    :param key: key to load
+    :param api: API client
+
+    :returns: dictionary containing all key values
+    """
+    if cache_json.exists():
+        with cache_json.open(encoding="utf-8") as input_file:
+            return [
+                TagInfo(
+                    key=item["key"],
+                    value=item["value"],
+                    count_nodes=item["count_nodes"],
+                    count_ways=item["count_ways"],
+                    count_relations=item["count_relations"],
+                    total_count=item["total_count"],
+                )
+                for item in json.load(input_file)["tags"]
+            ]
+
+    all_key_values: list[TagInfo] = []
+    for page in range(1, 10):
+        logger.info("Fetching page %d...", page)
+        page_key_values = api.get_key_values(
+            key=key, page=page, per_page=PER_PAGE
+        )
+        if not page_key_values:
+            logger.error("Failed to fetch page %d.", page)
+            break
+
+        all_key_values.extend(page_key_values)
+        logger.info(
+            "Found %d key values on page %d.", len(page_key_values), page
+        )
+
+        # Save after each page to preserve progress.
+        save_tags_to_json(all_key_values, cache_json, append=False)
+
+        if all_key_values[-1].total_count < MIN_FREQUENCY_TO_DOWNLOAD:
+            break
+
+    logger.info("Total key values collected: %d.", len(all_key_values))
+    logger.info("Results saved to %s.", cache_json)
+
+    return all_key_values
 
 
 def main(scheme_path: Path) -> None:
@@ -423,17 +624,8 @@ def main(scheme_path: Path) -> None:
     output_directory: Path = Path("out")
     output_directory.mkdir(exist_ok=True)
 
-    output_json: Path = output_directory / "most_used_tags.json"
-    output_html: Path = output_directory / "most_used_tags.html"
-    per_page: int = 100
-
     # Initialize the API client with a 1-second rate limit.
     api: TagInfoAPI = TagInfoAPI(rate_limit=1.0)
-
-    total_pages: int = api.get_total_pages()
-    logger.info("Found %d pages of tags.", total_pages)
-
-    all_tags: list[TagInfo] = []
 
     # Load the scheme.
     with scheme_path.open(encoding="utf-8") as input_file:
@@ -456,27 +648,50 @@ def main(scheme_path: Path) -> None:
                 "add_shapes": add_shapes,
             }
 
-    # Fetch all pages.
-    for page in range(1, total_pages + 1):
-        logger.info("Fetching page %d/%d...", page, total_pages)
-        tags: list[TagInfo] = api.get_most_used_tags(
-            page=page, per_page=per_page
+    # Construct the HTML document.
+    container: html.Element = html.Element("div")
+    container.set("class", "container")
+
+    all_keys: list[TagInfo] = load_all_keys(
+        output_directory / "most_used_keys.json", api
+    )
+    for key in all_keys:
+        to_continue: bool = False
+        for descriptor in scheme.get("__ignore", []) + scheme.get(
+            "__only_ways", []
+        ):
+            if check_descriptor(key, descriptor):
+                to_continue = True
+                break
+        if to_continue:
+            continue
+
+        if not (output_directory / f"{key.key}_values.json").exists():
+            answer: str = input(f"Continue with {key.key}? (y/N) ")
+            if answer != "y":
+                break
+
+        values: list[TagInfo] = load_key_values(
+            output_directory / f"{key.key}_values.json", key, api
         )
+        values_to_display: list[TagInfo] = [
+            value
+            for value in values
+            if value.total_count >= MIN_FREQUENCY_TO_DISPLAY
+        ]
+        (h1 := html.Element("h1")).text = f"{key.key}=*"
+        container.append(h1)
+        add_table(container, construct_table(values_to_display, scheme))
 
-        if not tags:
-            logger.error("Failed to fetch page %d.", page)
-            break
+    all_tags: list[TagInfo] = load_all_tags(
+        output_directory / "most_used_tags.json", api
+    )
+    (h1 := html.Element("h1")).text = "All tags"
+    container.append(h1)
+    add_table(container, construct_table(all_tags, scheme))
 
-        all_tags.extend(tags)
-        logger.info("Found %d tags on page %d.", len(tags), page)
-
-        # Save after each page to preserve progress.
-        save_tags_to_json(all_tags, output_json, append=False)
-
-    logger.info("Total tags collected: %d.", len(all_tags))
-    logger.info("Results saved to %s.", output_json)
-
-    process_tags(all_tags, scheme, output_html)
+    output_html: Path = output_directory / "output.html"
+    write_html_document(output_html, container)
     logger.info("HTML table saved to %s.", output_html)
 
 
