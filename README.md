@@ -16,8 +16,11 @@ are single-shaped (e.g. `tree.svg`), some are combinations of multiple shapes
 `___`).
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/enzet/Roentgen/main/doc/grid_white.svg">
-    <img src="https://raw.githubusercontent.com/enzet/Roentgen/main/doc/grid_black.svg"
+    <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://raw.githubusercontent.com/enzet/Roentgen/main/doc/grid_white.svg">
+    <img
+        src="https://raw.githubusercontent.com/enzet/Roentgen/main/doc/grid_black.svg"
         alt="Röntgen icons">
 </picture>
 
@@ -52,6 +55,12 @@ Röntgen icons may be drawn by hand in a vector editor and stored as optimized
 SVG files, but the project also has one more option for icon extraction.
 
 ### Extraction from the Monolith SVG File
+
+To generate icons, run
+
+```shell
+roentgen generate
+```
 
 It may be useful to have one SVG file for a set of SVG icons along with sketches
 and components that the icons consist of.
