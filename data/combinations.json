@@ -51,16 +51,16 @@
         {"id": "smoke", "offset": [1, -2]}
     ], [
         {"id": "car", "offset": [0, 4]},
-        {"id": "bed", "offset": [0, -2]}
+        {"id": "bed", "offset": [0, -3]}
     ], [
         {"id": "car", "offset": [0, 3]},
         {"id": "wrench", "offset": [0, -4]}
     ], [
         {"id": "car", "offset": [0, 3]},
-        {"id": "key", "offset": [1, -3]}
+        {"id": "key", "offset": [1, -4]}
     ], [
         {"id": "car", "offset": [0, 3]},
-        {"id": "sharing", "offset": [0, -4]}
+        {"id": "sharing", "offset": [2, -4]}
     ], [
         {"id": "car", "offset": [0, 3]},
         {"id": "shower_head", "offset": [0, -4]}
