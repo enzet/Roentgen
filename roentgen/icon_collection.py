@@ -140,6 +140,7 @@ class IconCollection:
         step: float = 24.0,
         background_color: Color | None = None,
         scale: float = 1.0,
+        show_boundaries: bool = False,
     ) -> None:
         """Draw icons in the form of a table.
 
@@ -148,6 +149,7 @@ class IconCollection:
         :param step: horizontal and vertical distance between icons in grid
         :param background_color: background color
         :param scale: scale icon by the magnitude
+        :param show_boundaries: if true, draw boundaries around icons
         """
         point: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
         width: float = step * columns * scale
@@ -160,6 +162,14 @@ class IconCollection:
             )
 
         for icon in self.icons:
+            if show_boundaries:
+                svg.add(
+                    svg.rect(
+                        (point[0] - 14, point[1] - 14),
+                        (28, 28),
+                        fill="#DDFFFF",
+                    )
+                )
             icon.draw(svg, point, scale=scale)
             point += np.array((step * scale, 0.0))
             if point[0] > width - 8.0:
