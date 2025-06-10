@@ -200,6 +200,7 @@ class TagInfoAPI:
     ) -> list[TagInfo]:
         """Get the most used keys in OpenStreetMap.
 
+        :param page: page number to fetch (1-based)
         :param per_page: number of keys per page
 
         :returns: list of keys
@@ -408,13 +409,12 @@ def write_html_document(output_path: Path, container: html.Element) -> None:
 
 
 def add_table(
-    container: html.Element,
-    elements: list[tuple[str, list[str], int]],
+    container: html.Element, elements: list[tuple[str, list[str], int]]
 ) -> None:
     """Save tags to an HTML file with a styled table.
 
+    :param container: container element to add the table to
     :param elements: list of tuples containing tag, shapes, and count
-    :param output_path: output path
     """
 
     table = html.Element("table")
@@ -616,8 +616,6 @@ def main(scheme_path: Path) -> None:
     """Get the most used tags and save them to a JSON file.
 
     :param scheme_path: how to draw the tags
-    :param osm_path: external information about the tags
-    :param total_pages: total number of pages to fetch
     """
 
     output_directory: Path = Path("out")
