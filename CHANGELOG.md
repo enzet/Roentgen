@@ -4,6 +4,7 @@ Redraw icons:
   - `car_on_ferry`,
   - `car`,
   - `caravan`,
+  - `ford`,
   - `garages`,
   - `milestone`,
   - `shower_head`,
