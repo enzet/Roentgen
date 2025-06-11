@@ -5,6 +5,7 @@ Redraw icons:
   - `car`,
   - `caravan`,
   - `garages`,
+  - `milestone`,
   - `shower_head`,
   - `slide_and_water`.
 
