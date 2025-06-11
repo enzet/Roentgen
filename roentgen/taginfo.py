@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 PER_PAGE: Final[int] = 100
 
 MIN_FREQUENCY_TO_DOWNLOAD: Final[int] = 100
-MIN_FREQUENCY_TO_DISPLAY: Final[int] = 100_000
+MIN_FREQUENCY_TO_DISPLAY: Final[int] = 4_000_000
 
 
 @dataclass
@@ -332,6 +332,16 @@ def check_descriptor(tag: TagInfo, descriptor: str) -> bool:
     return tag.key == descriptor
 
 
+def is_ignored(tag: TagInfo, scheme: dict[str, Any]) -> bool:
+    """Check if a tag is ignored."""
+    for descriptor in scheme.get("__ignore", []) + scheme.get(
+        "__only_ways", []
+    ):
+        if check_descriptor(tag, descriptor):
+            return True
+    return False
+
+
 def construct_table(
     tags: list[TagInfo], scheme: dict[str, Any]
 ) -> list[tuple[str, list[str], int]]:
@@ -346,14 +356,7 @@ def construct_table(
     result: list[tuple[str, list[str], int]] = []
 
     for tag in tags:
-        to_continue: bool = False
-        for descriptor in scheme.get("__ignore", []) + scheme.get(
-            "__only_ways", []
-        ):
-            if check_descriptor(tag, descriptor):
-                to_continue = True
-                break
-        if to_continue:
+        if is_ignored(tag, scheme):
             continue
 
         id_: str = f"{tag.key}={tag.value}"
@@ -493,6 +496,7 @@ def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
                     total_count=item["total_count"],
                 )
                 for item in json.load(input_file)["tags"]
+                if item["total_count"] >= MIN_FREQUENCY_TO_DISPLAY
             ]
 
     all_tags: list[TagInfo] = []
@@ -513,7 +517,9 @@ def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
     logger.info("Total tags collected: %d.", len(all_tags))
     logger.info("Results saved to %s.", cache_json)
 
-    return all_tags
+    return [
+        tag for tag in all_tags if tag.total_count >= MIN_FREQUENCY_TO_DISPLAY
+    ]
 
 
 def load_all_keys(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
@@ -653,15 +659,11 @@ def main(scheme_path: Path) -> None:
         output_directory / "most_used_keys.json", api
     )
     for key in all_keys:
-        to_continue: bool = False
-        for descriptor in scheme.get("__ignore", []) + scheme.get(
-            "__only_ways", []
-        ):
-            if check_descriptor(key, descriptor):
-                to_continue = True
-                break
-        if to_continue:
+        if is_ignored(key, scheme):
             continue
+
+        if key.total_count < MIN_FREQUENCY_TO_DISPLAY:
+            break
 
         if not (output_directory / f"{key.key}_values.json").exists():
             answer: str = input(f"Continue with {key.key}? (y/N) ")
@@ -675,10 +677,12 @@ def main(scheme_path: Path) -> None:
             value
             for value in values
             if value.total_count >= MIN_FREQUENCY_TO_DISPLAY
+            and not is_ignored(value, scheme)
         ]
-        (h1 := html.Element("h1")).text = f"{key.key}=*"
-        container.append(h1)
-        add_table(container, construct_table(values_to_display, scheme))
+        if len(values_to_display) > 0:
+            (h1 := html.Element("h1")).text = f"{key.key}=*"
+            container.append(h1)
+            add_table(container, construct_table(values_to_display, scheme))
 
     all_tags: list[TagInfo] = load_all_tags(
         output_directory / "most_used_tags.json", api
