@@ -2,8 +2,14 @@
 
 Make icons smoother and make corners round:
   - `japan_castle`,
+  - `japan_court`,
+  - `japan_fire_station`,
+  - `japan_forest_service`,
+  - `japan_koban`,
   - `japan_post`,
-  - `japan_tv_tower`.
+  - `japan_shinto_shrine`,
+  - `japan_tv_tower`,
+  - `japan_well`.
 
 
 ## 0.4.0
