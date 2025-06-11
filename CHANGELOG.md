@@ -7,8 +7,10 @@ Make icons smoother and make corners round:
   - `japan_forest_service`,
   - `japan_koban`,
   - `japan_post`,
+  - `japan_public_health_center`,
   - `japan_shinto_shrine`,
   - `japan_tv_tower`,
+  - `japan_weather_station`,
   - `japan_well`.
 
 
