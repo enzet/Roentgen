@@ -151,9 +151,9 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="549.69122"
-     inkscape:cx="659.95281"
-     inkscape:zoom="9.2779361"
+     inkscape:cy="730.24025"
+     inkscape:cx="61.966003"
+     inkscape:zoom="17.525739"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -5953,9 +5953,9 @@
        inkscape:connector-curvature="0" />
     <path
        inkscape:label="#rect5205"
-       id="japan_post"
+       id="rect5205"
        d="m 3,147 v 2 h 10 v -2 z m 0,4 v 2 h 4 v 4 h 2 v -4 h 4 v -2 z"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        inkscape:connector-curvature="0">
       <title
          id="title7410">Japanese map symbol for post office</title>
@@ -12758,9 +12758,9 @@
        sodipodi:nodetypes="ccccccccccccccccc" />
     <path
        inkscape:connector-curvature="0"
-       id="japan_castle"
+       id="path11525"
        d="m 36,157 h -2 v -6 h 3 v -4 h 6 v 4 h 3 v 6 h -2 v -4 h -3 v -4 h -2 v 4 h -3 z"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        sodipodi:nodetypes="ccccccccccccccccc"
        inkscape:label="#path11525">
       <title
@@ -12797,9 +12797,9 @@
        d="m 59,139 1.5,1.5"
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#0000ff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        d="M 51.5,146.08594 50.08594,147.5 50.79297,148.20703 52,149.41406 v 5.17188 L 50.79297,155.79297 50.08594,156.5 51.5,157.91406 52.20703,157.20703 53.41406,156 h 5.17188 l 1.20703,1.20703 L 60.5,157.91406 61.91406,156.5 61.20703,155.79297 60,154.58594 v -5.17188 L 61.20703,148.20703 61.91406,147.5 60.5,146.08594 59.79297,146.79297 58.58594,148 h -5.17188 l -1.20703,-1.20703 z M 54,150 h 4 v 4 h -4 z"
-       id="japan_tv_tower"
+       id="path11568"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccc"
        inkscape:label="#path11568">
@@ -31528,8 +31528,8 @@
        y="707"
        ry="0.5" />
     <path
-       id="rect473"
-       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
+       id="japan_castle"
+       style="opacity:1;fill:#000000;fill-opacity:1.0;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
        d="M 37.5 723 C 37.223 723 37 723.223 37 723.5 L 37 724.5 L 37 727 L 35.5 727 L 34.5 727 C 34.223 727 34 727.223 34 727.5 L 34 728.5 L 34 732.5 C 34 732.777 34.223 733 34.5 733 L 35.5 733 C 35.777 733 36 732.777 36 732.5 L 36 729 L 38.5 729 C 38.777 729 39 728.777 39 728.5 L 39 727.5 L 39 725 L 41 725 L 41 727.5 L 41 728.5 C 41 728.777 41.223 729 41.5 729 L 44 729 L 44 732.5 C 44 732.777 44.223 733 44.5 733 L 45.5 733 C 45.777 733 46 732.777 46 732.5 L 46 728.5 L 46 727.5 C 46 727.223 45.777 727 45.5 727 L 43 727 L 43 724.5 L 43 723.5 C 43 723.223 42.777 723 42.5 723 L 37.5 723 z " />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
@@ -31556,8 +31556,8 @@
        y="712"
        ry="0.5" />
     <path
-       id="rect482"
-       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
+       id="japan_post"
+       style="opacity:1;fill:#000000;fill-opacity:1.0;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
        d="M 3.5 723 C 3.2230003 723 3 723.223 3 723.5 L 3 724.5 C 3 724.777 3.2230003 725 3.5 725 L 12.5 725 C 12.777 725 13 724.777 13 724.5 L 13 723.5 C 13 723.223 12.777 723 12.5 723 L 3.5 723 z M 3.5 727 C 3.2230003 727 3 727.223 3 727.5 L 3 728.5 C 3 728.777 3.2230003 729 3.5 729 L 7 729 L 7 732.5 C 7 732.777 7.2230003 733 7.5 733 L 8.5 733 C 8.7769997 733 9 732.777 9 732.5 L 9 729 L 12.5 729 C 12.777 729 13 728.777 13 728.5 L 13 727.5 C 13 727.223 12.777 727 12.5 727 L 3.5 727 z " />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
@@ -32418,10 +32418,9 @@
        ry="0.5"
        transform="matrix(0.70710678,-0.70710678,-0.70710678,-0.70710678,0,0)" />
     <path
-       id="rect114"
-       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
-       d="M -474.32226 546.86147 C -474.41263 546.77109 -474.53731 546.71508 -474.67581 546.71508 L -475.6757 546.71508 C -475.9527 546.71508 -476.17565 546.93802 -476.17565 547.21502 L -476.17565 549.71476 L -479.83272 553.37182 L -482.33245 553.37182 C -482.60945 553.37182 -482.8324 553.59477 -482.8324 553.87177 L -482.8324 554.87166 C -482.8324 555.14866 -482.60945 555.37161 -482.33245 555.37161 L -479.83272 555.37161 L -476.17565 559.02868 L -476.17565 561.52841 C -476.17565 561.80541 -475.9527 562.02836 -475.6757 562.02836 L -474.67581 562.02836 C -474.39881 562.02836 -474.17586 561.80541 -474.17586 561.52841 L -474.17586 559.02868 L -470.5188 555.37161 L -468.01906 555.37161 C -467.74206 555.37161 -467.51912 555.14866 -467.51912 554.87166 L -467.51912 553.87177 C -467.51912 553.59477 -467.74206 553.37182 -468.01906 553.37182 L -470.5188 553.37182 L -474.17586 549.71476 L -474.17586 547.21502 C -474.17586 547.07652 -474.23188 546.95184 -474.32226 546.86147 z M -475.17576 551.54329 L -472.34733 554.37172 L -475.17576 557.20014 L -478.00418 554.37172 L -475.17576 551.54329 z "
-       transform="rotate(-45)" />
+       id="japan_tv_tower"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
+       d="m 61.914059,723.29297 c 7e-6,-0.12781 -0.04855,-0.25558 -0.146484,-0.35351 l -0.707029,-0.70703 c -0.195868,-0.19587 -0.51116,-0.19588 -0.707029,-10e-6 L 58.585934,724 l -5.171871,0 -1.767576,-1.76758 c -0.195868,-0.19587 -0.511167,-0.19587 -0.707036,0 l -0.707029,0.70703 c -0.195869,0.19587 -0.195869,0.51117 0,0.70703 l 1.767576,1.76758 v 5.17188 l -1.767576,1.76757 c -0.195869,0.19587 -0.195869,0.51117 0,0.70704 l 0.707029,0.70703 c 0.195869,0.19587 0.511168,0.19587 0.707036,0 L 53.414063,732 l 5.171871,0 1.767583,1.76758 c 0.195869,0.19587 0.511161,0.19586 0.707029,-10e-6 l 0.707029,-0.70703 c 0.195869,-0.19587 0.195876,-0.51116 7e-6,-0.70703 l -1.767583,-1.76758 v -5.17186 l 1.767583,-1.76759 c 0.09793,-0.0979 0.146484,-0.2257 0.146477,-0.35351 z M 57.999997,726 v 4 L 54,729.99999 54,726 Z" />
     <path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="m 531.5,580.5 h 9"

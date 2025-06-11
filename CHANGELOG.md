@@ -1,3 +1,11 @@
+## Unreleased
+
+Make icons smoother and make corners round:
+  - `japan_castle`,
+  - `japan_post`,
+  - `japan_tv_tower`.
+
+
 ## 0.4.0
 
 Redraw icons:
