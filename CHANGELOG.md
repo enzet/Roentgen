@@ -5,6 +5,7 @@ Redraw icons:
   - `car`,
   - `caravan`,
   - `garages`,
+  - `shower_head`,
   - `slide_and_water`.
 
 Redrawing car also changes `car___bed`, `car___car`, `car___key`,
@@ -16,7 +17,10 @@ Make icons smoother and make corners round:
   - `golf_pin`,
   - `guidepost`,
   - `memorial`,
-  - `survey_point`.
+  - `survey_point`,
+  - `umbrella`.
+
+Making smoother changes `table_and_two_chairs___umbrella` combination.
 
 ## 0.3.0
 
