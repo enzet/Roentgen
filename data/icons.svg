@@ -151,9 +151,9 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="149.94487"
-     inkscape:cx="338.09226"
-     inkscape:zoom="10.470515"
+     inkscape:cy="61.90047"
+     inkscape:cx="164.77731"
+     inkscape:zoom="4.5880104"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -1788,9 +1788,9 @@
        style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:none;stroke:#000000;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker:none;enable-background:accumulate" />
     <path
        inkscape:connector-curvature="0"
-       id="cocktail_glass"
+       id="path9375"
        d="m 82,84 5,5 v 4 h -1 c -0.554,0 -1,0.446 -1,1 h 5 c 0,-0.554 -0.446,-1 -1,-1 h -1 v -4 l 5,-5 z"
-       style="fill:#000000;fill-opacity:1;stroke:none"
+       style="fill:#0000ff;fill-opacity:1;stroke:none"
        inkscape:label="#bar">
       <title
          id="title7534">cocktail glass</title>
@@ -34811,8 +34811,8 @@
        d="m 165.5,12.5 h 4"
        id="path1156" />
     <path
-       id="path1157"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="cocktail_glass"
+       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
        d="m 163.5,20 c -0.44532,1.7e-4 -0.6683,0.538517 -0.35352,0.853516 L 167,24.707031 V 28 h -1.5 c -0.27614,0 -0.5,0.223858 -0.5,0.5 0,0.276142 0.22386,0.5 0.5,0.5 h 4 c 0.27614,0 0.5,-0.223858 0.5,-0.5 0,-0.276142 -0.22386,-0.5 -0.5,-0.5 H 168 v -3.292969 l 3.85352,-3.853515 C 172.1683,20.538517 171.94532,20.00017 171.5,20 Z"
        sodipodi:nodetypes="ccccssssssccccc" />
     <circle

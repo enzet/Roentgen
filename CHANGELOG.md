@@ -11,6 +11,7 @@ Redrawing car also changes `car___bed`, `car___car`, `car___key`,
 `car___sharing`, `car___shower_head`, and `car___wrench` combinations.
 
 Make icons smoother and make corners round:
+  - `cocktail_glass`,
   - `ear_botany`,
   - `golf_pin`,
   - `guidepost`,
