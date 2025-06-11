@@ -1,4 +1,4 @@
-## Unreleased
+## 0.4.0
 
 Redraw icons:
   - `car_on_ferry`,
@@ -23,6 +23,9 @@ Make icons smoother and make corners round:
   - `umbrella`.
 
 Making smoother changes `table_and_two_chairs___umbrella` combination.
+
+Enhance script for more popular OpenStreetMap tags.
+
 
 ## 0.3.0
 
@@ -52,6 +55,7 @@ move `building_construction` and slightly change `diving_4_platform`.
 
 Add script for extracting more popular OpenStreetMap tags from Taginfo and
 create mapping between OpenStreetMap tags and Röntgen icons.
+
 
 ## 0.2.0
 
