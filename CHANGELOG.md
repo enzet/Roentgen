@@ -5,6 +5,7 @@ Redraw icons:
 
 Make icons smoother and make corners round:
   - `cupcake`,
+  - `golf_tee`,
   - `japan_castle`,
   - `japan_court`,
   - `japan_fire_station`,

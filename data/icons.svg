@@ -148,12 +148,12 @@
      inkscape:object-paths="true"
      inkscape:guide-bbox="true"
      showguides="false"
-     showgrid="true"
+     showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="213.44541"
-     inkscape:cx="39.384281"
-     inkscape:zoom="8.0488964"
+     inkscape:cy="168.09869"
+     inkscape:cx="648.38068"
+     inkscape:zoom="5.5800552"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -173,7 +173,7 @@
     <inkscape:grid
        snapvisiblegridlinesonly="true"
        enabled="true"
-       visible="true"
+       visible="false"
        empspacing="16"
        id="grid2995"
        type="xygrid"
@@ -641,7 +641,7 @@
        spacingy="1"
        spacingx="1"
        units="px"
-       visible="true"
+       visible="false"
        enabled="true" />
     <sodipodi:guide
        position="325.5,661.5"
@@ -13701,9 +13701,9 @@
        d="m 645.5,169.5 h 5 l -1.5,1.5 -0.5,3 h -1 l -0.5,-3 z"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0999999;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        d="M 648,178.02148 A 2.9789882,2.9789882 0 0 0 645.02148,181 2.9789882,2.9789882 0 0 0 648,183.97852 2.9789882,2.9789882 0 0 0 650.97852,181 2.9789882,2.9789882 0 0 0 648,178.02148 Z M 645.55078,185 c -0.277,0 -0.5,0.223 -0.5,0.5 0,0.277 0.223,0.5 0.5,0.5 H 646 l 1,1 0.5,3 h 1 l 0.5,-3 1,-1 h 0.44922 c 0.277,0 0.5,-0.223 0.5,-0.5 0,-0.277 -0.223,-0.5 -0.5,-0.5 z"
-       id="golf_tee"
+       id="circle18474"
        inkscape:label="#circle18474"
        inkscape:connector-curvature="0" />
     <circle
@@ -36044,8 +36044,8 @@
        id="circle726"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.0999999;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
-       id="path728"
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#ff0000;fill-opacity:1;stroke-linecap:round;stroke-linejoin:round;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none"
+       id="golf_tee"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke-linecap:round;stroke-linejoin:miter;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none;font-variation-settings:normal;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="m 664,178.02148 c -1.64488,2.6e-4 -2.97826,1.33364 -2.97852,2.97852 2.6e-4,1.64488 1.33364,2.97826 2.97852,2.97852 1.64488,-2.6e-4 2.97826,-1.33364 2.97852,-2.97852 -2.6e-4,-1.64488 -1.33364,-2.97826 -2.97852,-2.97852 z M 661.5,185 c -0.56791,-6.6e-4 -0.69716,0.79561 -0.1582,0.97461 l 1.45117,0.48242 v 0.002 c 0.006,0.007 0.0156,0.0164 0.0254,0.0312 0.0402,0.061 0.098,0.17731 0.15234,0.32422 0.10864,0.29382 0.2108,0.70628 0.29102,1.11524 0.16043,0.8179 0.24023,1.62109 0.24023,1.62109 0.0545,0.60716 0.94163,0.60716 0.9961,0 0,0 0.0798,-0.80319 0.24023,-1.62109 0.0802,-0.40896 0.18238,-0.82142 0.29102,-1.11524 0.0543,-0.14691 0.11212,-0.26323 0.15234,-0.32422 0.01,-0.0149 0.0192,-0.0247 0.0254,-0.0312 v -0.002 l 1.45117,-0.48242 c 0.53896,-0.179 0.40971,-0.97527 -0.1582,-0.97461 z"
        sodipodi:nodetypes="cccccccccsssccsssccccc" />
     <rect
