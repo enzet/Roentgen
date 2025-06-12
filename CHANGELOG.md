@@ -1,7 +1,8 @@
 ## Unreleased
 
 Redraw icons:
-  - `comb_and_scissors`.
+  - `comb_and_scissors`,
+  - `glasses`.
 
 Make icons smoother and make corners round:
   - `at_in_square`,
