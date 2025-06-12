@@ -1,5 +1,8 @@
 ## Unreleased
 
+Redraw icons:
+  - `comb_and_scissors`.
+
 Make icons smoother and make corners round:
   - `japan_castle`,
   - `japan_court`,
