@@ -23,6 +23,23 @@ Make icons smoother and make corners round:
   - `japan_weather_station`,
   - `japan_well`.
 
+Flip icons horizontally to make all directed icons be directed to the right.
+This changes
+  - `bicycle`,
+  - `bicycle___key`,
+  - `bicycle___p_small`,
+  - `bicycle___wrench`,
+  - `bicycle___x_4`,
+  - `car___key`,
+  - `car___wrench`,
+  - `dog`,
+  - `dog_and_cross`,
+  - `massage`,
+  - `probe`,
+  - `sauna`,
+  - `toy_horse`,
+  - `wrench`.
+
 
 ## 0.4.0
 

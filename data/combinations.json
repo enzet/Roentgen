@@ -84,10 +84,10 @@
         {"id": "pergola"}
     ], [
         {"id": "bicycle", "offset": [0, 2]},
-        {"id": "wrench", "offset": [1, -5]}
+        {"id": "wrench", "offset": [0, -4]}
     ], [
         {"id": "bicycle", "offset": [0, 2]},
-        {"id": "key", "offset": [1, -4]}
+        {"id": "key", "offset": [-1, -4], "flip_horizontally": true}
     ], [
         {"id": "car", "offset": [0, 4]},
         {"id": "car", "offset": [0, -3]}
@@ -161,7 +161,7 @@
         {"id": "dish_antenna_right", "offset": [3, -3]}
     ], [
         {"id": "bicycle", "offset": [0, 2]},
-        {"id": "p_small", "offset": [-6, -3]}
+        {"id": "p_small", "offset": [-5, -3]}
     ], [
         {"id": "p_small", "offset": [-5, -3]},
         {"id": "bicycle_parking_stand"}
@@ -230,7 +230,7 @@
         {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
     ], [
         {"id": "bicycle", "offset": [0, 2]},
-        {"id": "x_4", "offset": [-5, -4]}
+        {"id": "x_4", "offset": [-4, -4]}
     ], [
         {"id": "wlan", "offset": [0, -3]},
         {"id": "free", "offset": [0, 5]}

@@ -163,13 +163,10 @@ class IconCollection:
 
         for icon in self.icons:
             if show_boundaries:
-                svg.add(
-                    svg.rect(
-                        (point[0] - 14, point[1] - 14),
-                        (28, 28),
-                        fill="#DDFFFF",
-                    )
+                rectangle = svg.rect(
+                    (point[0] - 14, point[1] - 14), (28, 28), fill="#DDFFFF"
                 )
+                svg.add(rectangle)
             icon.draw(svg, point, scale=scale)
             point += np.array((step * scale, 0.0))
             if point[0] > width - 8.0:
