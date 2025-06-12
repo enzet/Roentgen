@@ -102,9 +102,22 @@ def main() -> None:
     parser: argparse.ArgumentParser = argparse.ArgumentParser()
     parser.add_argument("command", choices=["generate", "taginfo"])
     parser.add_argument(
-        "--id-tagging-schema-path",
+        "--id-tagging-schema",
         type=Path,
         help="Path to the id-tagging-schema directory.",
+    )
+    parser.add_argument(
+        "--id",
+        type=Path,
+        help="Path to the iD directory.",
+    )
+    parser.add_argument(
+        "--maki",
+        type=Path,
+        help="Path to the Maki directory.",
+    )
+    parser.add_argument(
+        "--temaki", type=Path, help="Path to the Temaki directory."
     )
 
     arguments: argparse.Namespace = parser.parse_args()
@@ -132,12 +145,27 @@ def main() -> None:
 
     if arguments.command == "taginfo":
         id_tagging_schema_path: Path | None = (
-            Path(arguments.id_tagging_schema_path)
-            if arguments.id_tagging_schema_path is not None
+            Path(arguments.id_tagging_schema)
+            if arguments.id_tagging_schema is not None
             else None
         )
+        id_path: Path | None = (
+            Path(arguments.id) if arguments.id is not None else None
+        )
+        maki_path: Path | None = (
+            Path(arguments.maki) if arguments.maki is not None else None
+        )
+        temaki_path: Path | None = (
+            Path(arguments.temaki) if arguments.temaki is not None else None
+        )
         logging.basicConfig(level=logging.INFO, format="%(message)s")
-        taginfo_main(Path("data") / "tags.json", id_tagging_schema_path)
+        taginfo_main(
+            Path("data") / "tags.json",
+            id_tagging_schema_path=id_tagging_schema_path,
+            id_path=id_path,
+            maki_path=maki_path,
+            temaki_path=temaki_path,
+        )
         return
 
 

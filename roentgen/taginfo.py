@@ -12,7 +12,7 @@ import hashlib
 import json
 import logging
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Final
@@ -25,20 +25,41 @@ logger = logging.getLogger(__name__)
 PER_PAGE: Final[int] = 100
 
 MIN_FREQUENCY_TO_DOWNLOAD: Final[int] = 100
-MIN_FREQUENCY_TO_DISPLAY: Final[int] = 10_000
+MIN_FREQUENCY_TO_DISPLAY: Final[int] = 1_000_000
 
 
 @dataclass
 class TagInfo:
     """Tag information."""
 
-    key: str
-    value: str | None
+    descriptor: str
     total_count: int = 0
     fraction: float = 0.0
     count_nodes: int = 0
     count_ways: int = 0
     count_relations: int = 0
+
+    def __hash__(self) -> int:
+        return hash(self.descriptor)
+
+    def __eq__(self, other: object) -> bool:
+        return (
+            isinstance(other, TagInfo) and self.descriptor == other.descriptor
+        )
+
+    def get_key(self) -> str:
+        """Get the key of the tag."""
+        if "=" in self.descriptor:
+            assert self.descriptor.count("=") == 1
+            key, value = self.descriptor.split("=")
+            return key
+        return self.descriptor
+
+    def get_value(self) -> str | None:
+        """Get the value of the tag."""
+        assert self.descriptor.count("=") == 1
+        key, value = self.descriptor.split("=")
+        return value
 
 
 class TagInfoAPI:
@@ -182,8 +203,7 @@ class TagInfoAPI:
 
             for item in data.get("data", []):
                 tag = TagInfo(
-                    key=item["key"],
-                    value=item["value"],
+                    descriptor=f"{item['key']}={item['value']}",
                     count_nodes=item["count_nodes"],
                     count_ways=item["count_ways"],
                     count_relations=item["count_relations"],
@@ -216,8 +236,7 @@ class TagInfoAPI:
         data: dict[str, Any] = self._make_request("keys/all", params)
         return [
             TagInfo(
-                key=item["key"],
-                value=None,
+                descriptor=item["key"],
                 count_nodes=item["count_nodes"],
                 count_ways=item["count_ways"],
                 count_relations=item["count_relations"],
@@ -238,7 +257,7 @@ class TagInfoAPI:
         :returns: list of TagInfo objects sorted by total usage
         """
         params: dict[str, Any] = {
-            "key": key.key,
+            "key": key.get_key(),
             "page": page,
             "rp": per_page,
             "sortname": "count_all",
@@ -249,8 +268,7 @@ class TagInfoAPI:
         data: dict[str, Any] = self._make_request("key/values", params)
         return [
             TagInfo(
-                key=key.key,
-                value=item["value"],
+                descriptor=f"{key.get_key()}={item['value']}",
                 total_count=item["count"],
                 fraction=item["fraction"],
             )
@@ -289,10 +307,9 @@ def save_tags_to_json(
 
         # Update or add new tags.
         for tag in tags:
-            tag_key: str = f"{tag.key}={tag.value}"
-            existing_tags[tag_key] = {
-                "key": tag.key,
-                "value": tag.value,
+            existing_tags[tag.descriptor] = {
+                "key": tag.get_key(),
+                "value": tag.get_value(),
                 "count_nodes": tag.count_nodes,
                 "count_ways": tag.count_ways,
                 "count_relations": tag.count_relations,
@@ -308,8 +325,8 @@ def save_tags_to_json(
             "timestamp": datetime.now(timezone.utc).isoformat(),
             "tags": [
                 {
-                    "key": tag.key,
-                    "value": tag.value,
+                    "key": tag.get_key(),
+                    "value": tag.get_value(),
                     "count_nodes": tag.count_nodes,
                     "count_ways": tag.count_ways,
                     "count_relations": tag.count_relations,
@@ -325,11 +342,13 @@ def save_tags_to_json(
 
 def check_descriptor(tag: TagInfo, descriptor: str) -> bool:
     """Check if a tag matches a descriptor."""
-    if descriptor.endswith(":"):
-        return tag.key.startswith(descriptor)
-    if "=" in descriptor:
-        return descriptor == f"{tag.key}={tag.value}"
-    return tag.key == descriptor
+
+    for pair in tag.descriptor.split(";"):
+        if descriptor.endswith(":") and pair.startswith(descriptor):
+            return True
+        if descriptor == pair:
+            return True
+    return False
 
 
 def is_ignored(tag: TagInfo, scheme: dict[str, Any]) -> bool:
@@ -345,8 +364,8 @@ def is_ignored(tag: TagInfo, scheme: dict[str, Any]) -> bool:
 
 
 def construct_table(
-    tags: list[TagInfo], scheme: dict[str, Any]
-) -> list[tuple[str, list[str], int]]:
+    tags: list[TagInfo], roentgen_scheme: RoentgenScheme, id_scheme: IdScheme
+) -> list[Element]:
     """Construct a table from tags.
 
     :param tags: list of TagInfo objects
@@ -355,19 +374,19 @@ def construct_table(
     :returns: list of tuples containing tag, shapes, and count
     """
 
-    result: list[tuple[str, list[str], int]] = []
+    result: list[Element] = []
 
     for tag in tags:
-        if is_ignored(tag, scheme):
+        if roentgen_scheme.is_ignored(tag) or id_scheme.is_ignored(tag):
             continue
 
-        id_: str = f"{tag.key}={tag.value}"
-
-        shapes: list[str] = []
-        if id_ in scheme and "shapes" in scheme[id_]:
-            shapes = scheme[id_]["shapes"]
-
-        result.append((id_, shapes, tag.total_count))
+        element: Element = Element(
+            tag=tag.descriptor,
+            roentgen_shapes=roentgen_scheme.shapes.get(tag.descriptor, []),
+            id_tagging_icon=id_scheme.icons.get(tag.descriptor, None),
+            total_count=tag.total_count,
+        )
+        result.append(element)
 
     return result
 
@@ -413,8 +432,22 @@ def write_html_document(output_path: Path, container: html.Element) -> None:
         output_file.write(html_content)
 
 
+@dataclass
+class Element:
+    """OpenStreetMap tag."""
+
+    tag: str
+    roentgen_shapes: list[str]
+    id_tagging_icon: str | None
+    total_count: int
+
+
 def add_table(
-    container: html.Element, elements: list[tuple[str, list[str], int]]
+    container: html.Element,
+    elements: list[Element],
+    id_path: Path | None,
+    maki_path: Path | None,
+    temaki_path: Path | None,
 ) -> None:
     """Save tags to an HTML file with a styled table.
 
@@ -430,7 +463,7 @@ def add_table(
     header_row = html.Element("tr")
     thead.append(header_row)
 
-    for header_text in ["Tags", "", "Count"]:
+    for header_text in ["Tags", "Rö.", "iD", "Count"]:
         th = html.Element("th")
         th.text = header_text
         header_row.append(th)
@@ -438,28 +471,37 @@ def add_table(
     tbody = html.Element("tbody")
     table.append(tbody)
 
-    for id_, imgs, count in elements:
+    for element in elements:
         row = html.Element("tr")
         tbody.append(row)
 
-        key, value = id_.split("=")
+        pairs = element.tag.split(";")
 
         tag_cell = html.Element("td")
         tag_cell.set("class", "tag")
-        a_key = html.Element("a")
-        a_key.set("href", f"https://wiki.openstreetmap.org/wiki/Key:{key}")
-        a_key.text = key
-        a_value = html.Element("a")
-        a_value.set("href", f"https://wiki.openstreetmap.org/wiki/Tag:{id_}")
-        a_value.text = value
-        tag_cell.append(a_key)
-        wbr = html.Element("wbr")
-        equal_sign = html.Element("span")
-        equal_sign.text = "="
-        tag_cell.append(wbr)
-        tag_cell.append(equal_sign)
-        tag_cell.append(wbr)
-        tag_cell.append(a_value)
+        for pair in pairs:
+            if "=" not in pair or pair.count("=") > 1:
+                continue
+
+            key, value = pair.split("=")
+            a_key = html.Element("a")
+            a_key.set("href", f"https://wiki.openstreetmap.org/wiki/Key:{key}")
+            a_key.text = key
+            a_value = html.Element("a")
+            a_value.set(
+                "href", f"https://wiki.openstreetmap.org/wiki/Tag:{pair}"
+            )
+            a_value.text = value
+            tag_cell.append(a_key)
+            wbr = html.Element("wbr")
+            equal_sign = html.Element("span")
+            equal_sign.text = "="
+            br = html.Element("br")
+            tag_cell.append(wbr)
+            tag_cell.append(equal_sign)
+            tag_cell.append(wbr)
+            tag_cell.append(a_value)
+            tag_cell.append(br)
 
         row.append(tag_cell)
 
@@ -467,14 +509,81 @@ def add_table(
         imgs_cell.set("class", "imgs")
         row.append(imgs_cell)
 
-        for img in imgs:
+        for img in element.roentgen_shapes:
             img_element = html.Element("img")
             img_element.set("src", f"../icons/{img}.svg")
             imgs_cell.append(img_element)
 
+        id_imgs_cell = html.Element("td")
+        id_imgs_cell.set("class", "imgs")
+        row.append(id_imgs_cell)
+        if (
+            element.id_tagging_icon is not None
+            and element.id_tagging_icon.startswith("roentgen-")
+        ):
+            img_element = html.Element("img")
+            img_element.set(
+                "src",
+                f"../icons/{element.id_tagging_icon.removeprefix('roentgen-')}.svg",
+            )
+            id_imgs_cell.append(img_element)
+        elif (
+            element.id_tagging_icon is not None
+            and temaki_path is not None
+            and element.id_tagging_icon.startswith("temaki-")
+        ):
+            img_element = html.Element("img")
+            img_element.set(
+                "src",
+                str(
+                    temaki_path
+                    / "icons"
+                    / f"{element.id_tagging_icon.removeprefix('temaki-')}.svg"
+                ),
+            )
+            id_imgs_cell.append(img_element)
+        elif (
+            element.id_tagging_icon is not None
+            and id_path is not None
+            and (
+                element.id_tagging_icon.startswith("far-")
+                or element.id_tagging_icon.startswith("fas-")
+            )
+        ):
+            img_element = html.Element("img")
+            img_element.set(
+                "src",
+                str(
+                    id_path
+                    / "svg"
+                    / "fontawesome"
+                    / f"{element.id_tagging_icon}.svg"
+                ),
+            )
+            id_imgs_cell.append(img_element)
+        elif (
+            element.id_tagging_icon is not None
+            and maki_path is not None
+            and element.id_tagging_icon.startswith("maki-")
+        ):
+            img_element = html.Element("img")
+            img_element.set(
+                "src",
+                str(
+                    maki_path
+                    / "icons"
+                    / f"{element.id_tagging_icon.removeprefix('maki-')}.svg"
+                ),
+            )
+            id_imgs_cell.append(img_element)
+        else:
+            id_span = html.Element("span")
+            id_span.text = element.id_tagging_icon
+            id_imgs_cell.append(id_span)
+
         count_cell = html.Element("td")
         count_cell.set("class", "count")
-        count_cell.text = f"{count / 1000:.0f} K"
+        count_cell.text = f"{element.total_count / 1000:.0f} K"
         row.append(count_cell)
 
 
@@ -490,8 +599,7 @@ def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
         with cache_json.open(encoding="utf-8") as input_file:
             return [
                 TagInfo(
-                    key=item["key"],
-                    value=item["value"],
+                    descriptor=f"{item['key']}={item['value']}",
                     count_nodes=item["count_nodes"],
                     count_ways=item["count_ways"],
                     count_relations=item["count_relations"],
@@ -536,8 +644,7 @@ def load_all_keys(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
         with cache_json.open(encoding="utf-8") as input_file:
             return [
                 TagInfo(
-                    key=item["key"],
-                    value=None,
+                    descriptor=item["key"],
                     count_nodes=item["count_nodes"],
                     count_ways=item["count_ways"],
                     count_relations=item["count_relations"],
@@ -583,8 +690,7 @@ def load_key_values(
         with cache_json.open(encoding="utf-8") as input_file:
             return [
                 TagInfo(
-                    key=item["key"],
-                    value=item["value"],
+                    descriptor=f"{item['key']}={item['value']}",
                     count_nodes=item["count_nodes"],
                     count_ways=item["count_ways"],
                     count_relations=item["count_relations"],
@@ -620,7 +726,95 @@ def load_key_values(
     return all_key_values
 
 
-def main(scheme_path: Path, id_tagging_schema_path: Path | None) -> None:
+@dataclass
+class RoentgenScheme:
+    """Roentgen scheme."""
+
+    shapes: dict[str, list[str]]
+    ignored: list[str]
+    only_ways: list[str]
+
+    @classmethod
+    def from_dict(cls, scheme: dict[str, Any]) -> RoentgenScheme:
+        """Create a RoentgenScheme from a dictionary."""
+        return cls(
+            shapes={
+                key: value["shapes"]
+                for key, value in scheme.items()
+                if key not in ("__ignore", "__only_ways")
+            },
+            ignored=scheme["__ignore"],
+            only_ways=scheme["__only_ways"],
+        )
+
+    def is_ignored(self, tag: TagInfo) -> bool:
+        """Check if a tag is ignored."""
+        for descriptor in self.ignored + self.only_ways:
+            if check_descriptor(tag, descriptor):
+                return True
+        return False
+
+    def get_tags(self) -> list[TagInfo]:
+        """Get all tags."""
+        return [TagInfo(descriptor=key, total_count=0) for key in self.shapes]
+
+
+@dataclass
+class IdScheme:
+    """iD scheme."""
+
+    discarded: list[str] = field(default_factory=list)
+    icons: dict[str, str] = field(default_factory=dict)
+
+    @classmethod
+    def from_directory(cls, path: Path) -> IdScheme:
+        """Create an IdScheme from a directory."""
+        with (path / "data" / "discarded.json").open(
+            encoding="utf-8"
+        ) as input_file:
+            discarded: list[str] = list(json.load(input_file).keys())
+
+        icons: dict[str, str] = {}
+        for file in (path / "data" / "presets").rglob("*.json"):
+            with file.open(encoding="utf-8") as input_file:
+                data: dict[str, Any] = json.load(input_file)
+                if "tags" not in data or "icon" not in data:
+                    continue
+                id_ = ";".join(f"{k}={v}" for k, v in data["tags"].items())
+                icons[id_] = data["icon"]
+
+        for file in (path / "data" / "fields").rglob("*.json"):
+            with file.open(encoding="utf-8") as input_file:
+                data = json.load(input_file)
+                if "key" not in data or "icons" not in data:
+                    continue
+                for value, icon in data["icons"].items():
+                    icons[f"{data['key']}={value}"] = icon
+
+        return cls(
+            discarded=discarded,
+            icons=icons,
+        )
+
+    def is_ignored(self, tag: TagInfo) -> bool:
+        """Check if a tag is ignored."""
+        for descriptor in self.discarded:
+            if check_descriptor(tag, descriptor):
+                return True
+        return False
+
+    def get_tags(self) -> list[TagInfo]:
+        """Get all tags."""
+        return [TagInfo(descriptor=key, total_count=0) for key in self.icons]
+
+
+def main(
+    roentgen_scheme_path: Path,
+    id_tagging_schema_path: Path | None,
+    id_path: Path | None,
+    maki_path: Path | None,
+    temaki_path: Path | None,
+) -> None:
     """Get the most used tags and save them to a JSON file.
 
     :param scheme_path: how to draw the tags
@@ -632,36 +826,20 @@ def main(scheme_path: Path, id_tagging_schema_path: Path | None) -> None:
     # Initialize the API client with a 1-second rate limit.
     api: TagInfoAPI = TagInfoAPI(rate_limit=1.0)
 
-    # Load the scheme.
-    with scheme_path.open(encoding="utf-8") as input_file:
-        scheme: dict[str, Any] = json.load(input_file)
+    with roentgen_scheme_path.open(encoding="utf-8") as input_file:
+        roentgen_scheme: RoentgenScheme = RoentgenScheme.from_dict(
+            json.load(input_file)
+        )
 
+    id_scheme: IdScheme = IdScheme()
     if id_tagging_schema_path is not None:
         discarded_path: Path = (
             id_tagging_schema_path / "data" / "discarded.json"
         )
         if discarded_path.exists():
-            with discarded_path.open(encoding="utf-8") as input_file:
-                scheme["__discarded"] = list(json.load(input_file).keys())
+            id_scheme = IdScheme.from_directory(id_tagging_schema_path)
     else:
-        logger.warning("Discarded tags file not found.")
-
-    drawing: dict[str, Any] = {}
-
-    for group in scheme.get("node_icons", []):
-        for rule in group.get("tags", []):
-            tags: dict[str, str] = rule["tags"]
-            shapes: list[str | dict[str, str]] = rule.get("shapes", [])
-            add_shapes: list[str] = rule.get("add_shapes", [])
-
-            id_: str = ";".join(f"{k}={v}" for k, v in tags.items())
-            if id_ in drawing:
-                continue
-
-            drawing[id_] = {
-                "shapes": shapes,
-                "add_shapes": add_shapes,
-            }
+        logger.warning("iD scheme not found.")
 
     # Construct the HTML document.
     container: html.Element = html.Element("div")
@@ -671,38 +849,66 @@ def main(scheme_path: Path, id_tagging_schema_path: Path | None) -> None:
         output_directory / "most_used_keys.json", api
     )
     for key in all_keys:
-        if is_ignored(key, scheme):
+        if roentgen_scheme.is_ignored(key) or id_scheme.is_ignored(key):
             continue
 
         if key.total_count < MIN_FREQUENCY_TO_DISPLAY:
             break
 
-        if not (output_directory / f"{key.key}_values.json").exists():
+        if not (output_directory / f"{key.get_key()}_values.json").exists():
             logger.info("Total count: %d.", key.total_count)
-            answer: str = input(f"Continue with {key.key}? (y/N) ")
+            answer: str = input(f"Continue with {key.get_key()}=*? (y/N) ")
             if answer != "y":
                 break
 
         values: list[TagInfo] = load_key_values(
-            output_directory / f"{key.key}_values.json", key, api
+            output_directory / f"{key.get_key()}_values.json", key, api
         )
         values_to_display: list[TagInfo] = [
             value
             for value in values
             if value.total_count >= MIN_FREQUENCY_TO_DISPLAY
-            and not is_ignored(value, scheme)
+            and not roentgen_scheme.is_ignored(value)
+            and not id_scheme.is_ignored(value)
         ]
         if len(values_to_display) > 0:
-            (h1 := html.Element("h1")).text = f"{key.key}=*"
+            (h1 := html.Element("h1")).text = f"{key.get_key()}=*"
             container.append(h1)
-            add_table(container, construct_table(values_to_display, scheme))
+            add_table(
+                container,
+                construct_table(values_to_display, roentgen_scheme, id_scheme),
+                id_path,
+                maki_path,
+                temaki_path,
+            )
 
     all_tags: list[TagInfo] = load_all_tags(
         output_directory / "most_used_tags.json", api
     )
     (h1 := html.Element("h1")).text = "All tags"
     container.append(h1)
-    add_table(container, construct_table(all_tags, scheme))
+    add_table(
+        container,
+        construct_table(all_tags, roentgen_scheme, id_scheme),
+        id_path,
+        maki_path,
+        temaki_path,
+    )
+
+    defined_tags: set[TagInfo] = set(roentgen_scheme.get_tags()) | set(
+        id_scheme.get_tags()
+    )
+    defined_tags_list: list = list(defined_tags)
+    defined_tags_list.sort(key=lambda x: x.descriptor, reverse=True)
+    (h1 := html.Element("h1")).text = "Defined tags"
+    container.append(h1)
+    add_table(
+        container,
+        construct_table(defined_tags_list, roentgen_scheme, id_scheme),
+        id_path,
+        maki_path,
+        temaki_path,
+    )
 
     output_html: Path = output_directory / "output.html"
     write_html_document(output_html, container)
