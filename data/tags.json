@@ -1,11 +1,6 @@
 {
     "__ignore": [
         "FIXME",
-        "KSJ2:ODC",
-        "KSJ2:PubFacAdmin",
-        "LINZ:dataset",
-        "LINZ:layer",
-        "LINZ:source_version",
         "MCC",
         "NHD:",
         "STIF:zone",
@@ -39,8 +34,6 @@
         "colour:",
         "comment",
         "contact:",
-        "created_by",
-        "created_by",
         "cuisine",
         "curve_geometry",
         "cyclestreets_id",
@@ -88,7 +81,6 @@
         "image",
         "import",
         "import_ref",
-        "import_uuid",
         "indoor",
         "information",
         "inscription",
@@ -219,8 +211,7 @@
         "width",
         "wikidata",
         "wikipedia",
-        "wikipedia:",
-        "yh:"
+        "wikipedia:"
     ],
     "__only_ways": [
         "barrier=ditch",
@@ -677,4 +668,3 @@
     "wheelchair=no": {"shapes": ["no_wheelchair"]},
     "wheelchair=yes": {"shapes": ["wheelchair"]}
 }
-

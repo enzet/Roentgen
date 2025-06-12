@@ -101,6 +101,11 @@ def main() -> None:
 
     parser: argparse.ArgumentParser = argparse.ArgumentParser()
     parser.add_argument("command", choices=["generate", "taginfo"])
+    parser.add_argument(
+        "--id-tagging-schema-path",
+        type=Path,
+        help="Path to the id-tagging-schema directory.",
+    )
 
     arguments: argparse.Namespace = parser.parse_args()
 
@@ -126,8 +131,13 @@ def main() -> None:
         return
 
     if arguments.command == "taginfo":
+        id_tagging_schema_path: Path | None = (
+            Path(arguments.id_tagging_schema_path)
+            if arguments.id_tagging_schema_path is not None
+            else None
+        )
         logging.basicConfig(level=logging.INFO, format="%(message)s")
-        taginfo_main(Path("data") / "tags.json")
+        taginfo_main(Path("data") / "tags.json", id_tagging_schema_path)
         return
 
 

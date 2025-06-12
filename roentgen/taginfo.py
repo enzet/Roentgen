@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
 PER_PAGE: Final[int] = 100
 
 MIN_FREQUENCY_TO_DOWNLOAD: Final[int] = 100
-MIN_FREQUENCY_TO_DISPLAY: Final[int] = 4_000_000
+MIN_FREQUENCY_TO_DISPLAY: Final[int] = 10_000
 
 
 @dataclass
@@ -334,8 +334,10 @@ def check_descriptor(tag: TagInfo, descriptor: str) -> bool:
 
 def is_ignored(tag: TagInfo, scheme: dict[str, Any]) -> bool:
     """Check if a tag is ignored."""
-    for descriptor in scheme.get("__ignore", []) + scheme.get(
-        "__only_ways", []
+    for descriptor in (
+        scheme.get("__ignore", [])
+        + scheme.get("__only_ways", [])
+        + scheme.get("__discarded", [])
     ):
         if check_descriptor(tag, descriptor):
             return True
@@ -618,7 +620,7 @@ def load_key_values(
     return all_key_values
 
 
-def main(scheme_path: Path) -> None:
+def main(scheme_path: Path, id_tagging_schema_path: Path | None) -> None:
     """Get the most used tags and save them to a JSON file.
 
     :param scheme_path: how to draw the tags
@@ -633,6 +635,16 @@ def main(scheme_path: Path) -> None:
     # Load the scheme.
     with scheme_path.open(encoding="utf-8") as input_file:
         scheme: dict[str, Any] = json.load(input_file)
+
+    if id_tagging_schema_path is not None:
+        discarded_path: Path = (
+            id_tagging_schema_path / "data" / "discarded.json"
+        )
+        if discarded_path.exists():
+            with discarded_path.open(encoding="utf-8") as input_file:
+                scheme["__discarded"] = list(json.load(input_file).keys())
+    else:
+        logger.warning("Discarded tags file not found.")
 
     drawing: dict[str, Any] = {}
 
@@ -666,6 +678,7 @@ def main(scheme_path: Path) -> None:
             break
 
         if not (output_directory / f"{key.key}_values.json").exists():
+            logger.info("Total count: %d.", key.total_count)
             answer: str = input(f"Continue with {key.key}? (y/N) ")
             if answer != "y":
                 break
