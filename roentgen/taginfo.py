@@ -517,15 +517,18 @@ def add_table(
         id_imgs_cell = html.Element("td")
         id_imgs_cell.set("class", "imgs")
         row.append(id_imgs_cell)
+
+        file_name: str
+
         if (
             element.id_tagging_icon is not None
             and element.id_tagging_icon.startswith("roentgen-")
         ):
             img_element = html.Element("img")
-            img_element.set(
-                "src",
-                f"../icons/{element.id_tagging_icon.removeprefix('roentgen-')}.svg",
+            file_name = (
+                f"{element.id_tagging_icon.removeprefix('roentgen-')}.svg"
             )
+            img_element.set("src", f"../icons/{file_name}")
             id_imgs_cell.append(img_element)
         elif (
             element.id_tagging_icon is not None
@@ -533,14 +536,8 @@ def add_table(
             and element.id_tagging_icon.startswith("temaki-")
         ):
             img_element = html.Element("img")
-            img_element.set(
-                "src",
-                str(
-                    temaki_path
-                    / "icons"
-                    / f"{element.id_tagging_icon.removeprefix('temaki-')}.svg"
-                ),
-            )
+            file_name = f"{element.id_tagging_icon.removeprefix('temaki-')}.svg"
+            img_element.set("src", str(temaki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
         elif (
             element.id_tagging_icon is not None
@@ -551,14 +548,9 @@ def add_table(
             )
         ):
             img_element = html.Element("img")
+            file_name = f"{element.id_tagging_icon}.svg"
             img_element.set(
-                "src",
-                str(
-                    id_path
-                    / "svg"
-                    / "fontawesome"
-                    / f"{element.id_tagging_icon}.svg"
-                ),
+                "src", str(id_path / "svg" / "fontawesome" / file_name)
             )
             id_imgs_cell.append(img_element)
         elif (
@@ -567,14 +559,8 @@ def add_table(
             and element.id_tagging_icon.startswith("maki-")
         ):
             img_element = html.Element("img")
-            img_element.set(
-                "src",
-                str(
-                    maki_path
-                    / "icons"
-                    / f"{element.id_tagging_icon.removeprefix('maki-')}.svg"
-                ),
-            )
+            file_name = f"{element.id_tagging_icon.removeprefix('maki-')}.svg"
+            img_element.set("src", str(maki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
         else:
             id_span = html.Element("span")
@@ -791,10 +777,7 @@ class IdScheme:
                 for value, icon in data["icons"].items():
                     icons[f"{data['key']}={value}"] = icon
 
-        return cls(
-            discarded=discarded,
-            icons=icons,
-        )
+        return cls(discarded=discarded, icons=icons)
 
     def is_ignored(self, tag: TagInfo) -> bool:
         """Check if a tag is ignored."""
