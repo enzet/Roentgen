@@ -5,6 +5,8 @@ Redraw icons:
 
 Make icons smoother and make corners round:
   - `at_in_square`,
+  - `clockwise`,
+  - `counterclockwise`,
   - `cupcake`,
   - `fireplace`,
   - `golf_tee`,
