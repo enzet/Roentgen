@@ -4,6 +4,7 @@ Redraw icons:
   - `comb_and_scissors`.
 
 Make icons smoother and make corners round:
+  - `cupcake`,
   - `japan_castle`,
   - `japan_court`,
   - `japan_fire_station`,
