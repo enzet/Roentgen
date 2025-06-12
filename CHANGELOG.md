@@ -4,6 +4,7 @@ Redraw icons:
   - `comb_and_scissors`.
 
 Make icons smoother and make corners round:
+  - `at_in_square`,
   - `cupcake`,
   - `fireplace`,
   - `golf_tee`,
