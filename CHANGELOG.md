@@ -2,6 +2,7 @@
 
 Redraw icons:
   - `comb_and_scissors`,
+  - `digital_clock`,
   - `glasses`.
 
 Make icons smoother and make corners round:
