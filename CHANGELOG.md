@@ -27,6 +27,7 @@ Make icons smoother and make corners round:
 
 Adjust icon size:
   - `bowling_ball`,
+  - `gavel`,
   - `knives`,
   - `watches`.
 

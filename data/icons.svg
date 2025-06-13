@@ -151,9 +151,9 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="28.718994"
-     inkscape:cx="209.03661"
-     inkscape:zoom="6.3720896"
+     inkscape:cy="476.55178"
+     inkscape:cx="285.08091"
+     inkscape:zoom="10.821489"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -1048,8 +1048,8 @@
        d="m 455,167.36603 -2,3.4641 0.63397,-3.09808 0.933,-0.61604 z"
        id="path68690" />
     <path
-       id="path44051"
-       style="color:#000000;opacity:1;fill:#0000ff;stroke:none;stroke-linecap:round;stroke-linejoin:round;-inkscape-stroke:none;fill-opacity:0.99361825"
+       id="gavel"
+       style="color:#000000;opacity:1;fill:#000000;stroke:none;stroke-linecap:butt;stroke-linejoin:miter;-inkscape-stroke:none;fill-opacity:1;font-variation-settings:normal;vector-effect:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        d="m 281.5,466 c -0.1326,2e-5 -0.25976,0.0527 -0.35352,0.14648 l -4,4 c -0.19519,0.19527 -0.19519,0.51177 0,0.70704 l 2,2 c 0.19527,0.19519 0.51177,0.19519 0.70704,0 l 1.64648,-1.64649 3.64648,3.64649 c 0.19525,0.19522 0.51179,0.19522 0.70704,0 0.19522,-0.19525 0.19522,-0.51179 0,-0.70704 l -3.64649,-3.64648 1.64649,-1.64648 c 0.19519,-0.19527 0.19519,-0.51177 0,-0.70704 l -2,-2 C 281.75976,466.05271 281.6326,466.00002 281.5,466 Z m -6.5,9 c -0.554,0 -1,0.446 -1,1 v 1 h 1 5 1 v -1 c 0,-0.554 -0.446,-1 -1,-1 z"
        sodipodi:nodetypes="scccccccscccccsssccccsss" />
     <path
@@ -4042,9 +4042,9 @@
     <path
        inkscape:connector-curvature="0"
        inkscape:label="#rect3825"
-       id="gavel"
+       id="gavel_v0"
        d="m 266.46875,466 c -0.12781,0 -0.24582,0.0583 -0.34375,0.15625 l -4.25,4.25 c -0.19587,0.19587 -0.19587,0.52288 0,0.71875 l 1.40625,1.40625 c 0.19587,0.19587 0.52288,0.19587 0.71875,0 l 1.75,-1.78125 3.90625,3.90625 c 0.19587,0.19587 0.49163,0.19587 0.6875,0 0.19587,-0.19587 0.19587,-0.52288 0,-0.71875 l -3.875,-3.875 1.75,-1.78125 c 0.19587,-0.19587 0.19587,-0.52288 0,-0.71875 l -1.40625,-1.40625 C 266.71457,466.05832 266.59656,466 266.46875,466 Z M 259,475 c -0.554,0 -1,0.446 -1,1 v 1 h 7 v -1 c 0,-0.554 -0.446,-1 -1,-1 z"
-       style="fill:#000000;fill-opacity:1;stroke:none" />
+       style="fill:#0000ff;fill-opacity:0.993618;stroke:none;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1" />
     <circle
        r="1"
        cy="393.5"
