@@ -25,7 +25,8 @@ Make icons smoother and make corners round:
   - `japan_well`.
 
 Adjust icon size:
-  - `bowling_ball`.
+  - `bowling_ball`,
+  - `knives`.
 
 Flip icons horizontally to make all directed icons be directed to the right.
 This changes

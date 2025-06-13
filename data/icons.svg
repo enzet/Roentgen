@@ -151,8 +151,8 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="40.02461"
-     inkscape:cx="46.206422"
+     inkscape:cy="32.899811"
+     inkscape:cx="63.389763"
      inkscape:zoom="9.5441279"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -31433,8 +31433,8 @@
        rx="0.70710677"
        ry="0.70710832" />
     <path
-       id="knives"
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;fill:#000000;fill-opacity:1;stroke:none"
+       id="knives_v0"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;font-variation-settings:normal;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="M 57.5 18 C 57.083333 18 56.725052 18.192917 56.458984 18.458984 C 56.192917 18.725052 56 19.083333 56 19.5 L 56 24.5 C 56.000028 24.776131 56.223869 24.999972 56.5 25 L 58.859375 25 L 58.015625 28.378906 C 58.00549 28.418481 58.000242 28.459149 58 28.5 L 58 29.5 C 58.000028 29.776131 58.223869 29.999972 58.5 30 L 59.5 30 C 59.776131 29.999972 59.999972 29.776131 60 29.5 L 60 18.5 C 59.999972 18.223869 59.776131 18.000028 59.5 18 L 57.5 18 z M 51.458984 18.001953 C 51.199735 18.023269 51.000163 18.239873 51 18.5 L 51 29.5 C 51.000028 29.776131 51.223869 29.999972 51.5 30 L 52.5 30 C 52.776131 29.999972 52.999972 29.776131 53 29.5 L 53 28.5 C 52.999758 28.45915 52.994505 28.41848 52.984375 28.378906 L 52.140625 25 L 53.5 25 C 53.776131 24.999972 53.999972 24.776131 54 24.5 C 54 22.458333 53.748995 21.02483 53.339844 20.001953 C 52.930693 18.979076 52.341913 18.362363 51.722656 18.052734 C 51.641036 18.012084 51.549861 17.994523 51.458984 18.001953 z M 58.5 18.792969 A 0.70710832 0.70710677 45 0 1 59 19 A 0.70710832 0.70710677 45 0 1 59 20 A 0.70710832 0.70710677 45 0 1 58 20 A 0.70710832 0.70710677 45 0 1 58 19 A 0.70710832 0.70710677 45 0 1 58.5 18.792969 z " />
     <path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
@@ -35612,8 +35612,8 @@
        rx="0.70710677"
        ry="0.70710832" />
     <path
-       id="knives_v1"
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="knives"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="M 67.523438 18 C 67.433148 17.9957 67.343373 18.015944 67.263672 18.058594 C 67.101075 18.145819 66.999722 18.315487 67 18.5 L 67 30.5 C 67.000028 30.776131 67.223869 30.999972 67.5 31 L 68.5 31 C 68.776131 30.999972 68.999972 30.776131 69 30.5 L 69 29.5 C 69 27.756496 68.604336 26.686126 68.283203 26 L 70.5 26 C 70.776131 25.999972 70.999972 25.776131 71 25.5 C 71 23.194444 70.61446 21.606392 70.003906 20.453125 C 69.393353 19.299858 68.559346 18.605319 67.777344 18.083984 C 67.701903 18.033457 67.614129 18.004424 67.523438 18 z M 74.5 18 C 74.083333 18 73.725052 18.192917 73.458984 18.458984 C 73.192917 18.725052 73 19.083333 73 19.5 L 73 25.5 C 73.000028 25.776131 73.223869 25.999972 73.5 26 L 75.716797 26 C 75.395664 26.686126 75 27.756496 75 29.5 L 75 30.5 C 75.000028 30.776131 75.223869 30.999972 75.5 31 L 76.5 31 C 76.776131 30.999972 76.999972 30.776131 77 30.5 L 77 18.5 C 76.999972 18.223869 76.776131 18.000028 76.5 18 L 74.5 18 z M 75.5 18.792969 A 0.70710832 0.70710677 45 0 1 76 19 A 0.70710832 0.70710677 45 0 1 76 20 A 0.70710832 0.70710677 45 0 1 75 20 A 0.70710832 0.70710677 45 0 1 75 19 A 0.70710832 0.70710677 45 0 1 75.5 18.792969 z " />
     <circle
        cy="7.5"
