@@ -24,6 +24,9 @@ Make icons smoother and make corners round:
   - `japan_weather_station`,
   - `japan_well`.
 
+Adjust icon size:
+  - `bowling_ball`.
+
 Flip icons horizontally to make all directed icons be directed to the right.
 This changes
   - `bicycle`,
