@@ -1,9 +1,11 @@
 ## Unreleased
 
 Redraw icons:
+  - `apple`,
   - `comb_and_scissors`,
   - `digital_clock`,
-  - `glasses`.
+  - `glasses`,
+  - `pear`.
 
 Make icons smoother and make corners round:
   - `at_in_square`,
