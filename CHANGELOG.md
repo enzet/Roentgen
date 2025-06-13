@@ -27,7 +27,8 @@ Make icons smoother and make corners round:
 
 Adjust icon size:
   - `bowling_ball`,
-  - `knives`.
+  - `knives`,
+  - `watches`.
 
 Flip icons horizontally to make all directed icons be directed to the right.
 This changes
