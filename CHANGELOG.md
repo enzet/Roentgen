@@ -12,6 +12,7 @@ Make icons smoother and make corners round:
   - `clockwise`,
   - `counterclockwise`,
   - `cupcake`,
+  - `defibrillator`,
   - `fireplace`,
   - `golf_tee`,
   - `japan_castle`,
