@@ -22,7 +22,8 @@ Make icons smoother and make corners round:
   - `japan_shinto_shrine`,
   - `japan_tv_tower`,
   - `japan_weather_station`,
-  - `japan_well`.
+  - `japan_well`,
+  - `money`.
 
 Adjust icon size:
   - `bowling_ball`,
