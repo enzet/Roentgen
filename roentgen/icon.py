@@ -35,6 +35,8 @@ STANDARD_INKSCAPE_ID_MATCHER: re.Pattern = re.compile(
     "^((circle|defs|ellipse|grid|guide|marker|metadata|namedview|path|rect|use)"
     "[\\d-]+|base)$"
 )
+VERSION_MATCHER: re.Pattern = re.compile("^[a-z0-9_]+_v[0-9]+$")
+
 PATH_MATCHER: re.Pattern = re.compile("[Mm] ([0-9.e-]*)[, ]([0-9.e-]*)")
 
 GRID_STEP: int = 16
@@ -217,6 +219,45 @@ def parse_length(text: str) -> float:
     return float(text)
 
 
+def check_sketch_stroke_element(style: dict[str, str]) -> bool:
+    """Check whether style is black 0.1 px stroke, no fill."""
+    return (
+        "fill" in style
+        and style["fill"] == "none"
+        and style["stroke"] == "#000000"
+        and "stroke-width" in style
+        and np.allclose(parse_length(style["stroke-width"]), 0.1)
+    )
+
+
+def check_sketch_stroke_element_2(style: dict[str, str]) -> bool:
+    """Check whether style is black 1 px stroke, no fill, 20% opacity."""
+    return (
+        "fill" in style
+        and style["fill"] == "none"
+        and style["stroke"] == "#000000"
+        and "opacity" in style
+        and np.allclose(float(style["opacity"]), 0.2)
+        and (
+            "stroke-width" not in style
+            or np.allclose(parse_length(style["stroke-width"]), 0.7)
+            or np.allclose(parse_length(style["stroke-width"]), 1)
+            or np.allclose(parse_length(style["stroke-width"]), 2)
+            or np.allclose(parse_length(style["stroke-width"]), 3)
+        )
+    )
+
+
+def check_experimental_shape(style: dict[str, str]) -> bool:
+    """Check whether style is blue or red fill, no stroke."""
+    return (
+        "fill" in style
+        and style["fill"] in UNUSED_ICON_COLORS
+        and "stroke" in style
+        and style["stroke"] == "none"
+    )
+
+
 def verify_sketch_element(element: Element, id_: str) -> bool:
     """Verify sketch SVG element from icon file.
 
@@ -233,43 +274,14 @@ def verify_sketch_element(element: Element, id_: str) -> bool:
         for x in element.attrib["style"].split(";")
     }
 
-    # Sketch element (black 0.1 px stroke, no fill).
-
-    if (
-        "fill" in style
-        and style["fill"] == "none"
-        and style["stroke"] == "#000000"
-        and "stroke-width" in style
-        and np.allclose(parse_length(style["stroke-width"]), 0.1)
-    ):
+    if check_sketch_stroke_element(style):
         return True
 
-    # Sketch element (black 1 px stroke, no fill, 20% opacity).
-
-    if (
-        "fill" in style
-        and style["fill"] == "none"
-        and style["stroke"] == "#000000"
-        and "opacity" in style
-        and np.allclose(float(style["opacity"]), 0.2)
-        and (
-            "stroke-width" not in style
-            or np.allclose(parse_length(style["stroke-width"]), 0.7)
-            or np.allclose(parse_length(style["stroke-width"]), 1)
-            or np.allclose(parse_length(style["stroke-width"]), 2)
-            or np.allclose(parse_length(style["stroke-width"]), 3)
-        )
-    ):
+    if check_sketch_stroke_element_2(style):
         return True
 
-    # Experimental shape (blue or red fill, no stroke).
-
-    if (
-        "fill" in style
-        and style["fill"] in UNUSED_ICON_COLORS
-        and "stroke" in style
-        and style["stroke"] == "none"
-    ):
+    # TODO(enzet): remove this after all icon ids are updated.
+    if check_experimental_shape(style):
         return True
 
     return not (style and not id_.startswith("use"))
@@ -361,6 +373,16 @@ class ShapeExtractor:
                 with contextlib.suppress(KeyError, ValueError):
                     path_part = f", {node.attrib['d'].split(' ')[:3]}."
                 message: str = f"Not verified SVG element `{id_}`{path_part}"
+                raise ValueError(message)
+            return
+
+        if VERSION_MATCHER.match(id_) is not None:
+            style: dict[str, str] = {
+                x.split(":")[0]: x.split(":")[1]
+                for x in node.attrib["style"].split(";")
+            }
+            if not check_experimental_shape(style):
+                message = f"Not verified experimental SVG element `{id_}`"
                 raise ValueError(message)
             return
 
