@@ -378,3 +378,12 @@ input[type="range"]:focus {
     cursor: pointer;
     user-select: none;
 } 
+
+.grid-line {
+    stroke: #000000;
+    stroke-opacity: 0.5;
+}
+
+.grid-elements {
+    pointer-events: none;
+}

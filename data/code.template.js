@@ -1,6 +1,7 @@
 // State management.
 let selectedIcon = null;
 let showControlPoints = false;
+let showGrid = false;
 let iconSize = 512;
 
 // Icon data.
@@ -188,6 +189,38 @@ function drawControlPoints(points) {
     }
 }
 
+// Function to draw grid.
+function drawGrid(svg, scale) {
+    const gridGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    gridGroup.setAttribute("class", "grid-elements");
+    
+    // Draw vertical lines.
+    for (let x = 1; x <= 15; x++) {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("class", "grid-line");
+        line.setAttribute("x1", x);
+        line.setAttribute("y1", 0);
+        line.setAttribute("x2", x);
+        line.setAttribute("y2", 16);
+        line.setAttribute("stroke-width", 0.02 / scale);
+        gridGroup.appendChild(line);
+    }
+    
+    // Draw horizontal lines.
+    for (let y = 1; y <= 15; y++) {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("class", "grid-line");
+        line.setAttribute("x1", 0);
+        line.setAttribute("y1", y);
+        line.setAttribute("x2", 16);
+        line.setAttribute("y2", y);
+        line.setAttribute("stroke-width", 0.02 / scale);
+        gridGroup.appendChild(line);
+    }
+    
+    return gridGroup;
+}
+
 // Update icon style.
 function updateIconStyle() {
     const svg = document.getElementById("previewSvg");
@@ -216,6 +249,12 @@ function updateIconStyle() {
     }
     
     svg.appendChild(path);
+
+    // If showing grid, add it first (so it's behind the icon).
+    if (showGrid) {
+        const gridGroup = drawGrid(svg, scale);
+        svg.insertBefore(gridGroup, svg.firstChild);
+    }
 
     // If showing control points, add them to the same SVG.
     if (showControlPoints) {
@@ -375,6 +414,12 @@ document.addEventListener('DOMContentLoaded', () => {
     sizeSlider.addEventListener("input", (e) => {
         iconSize = parseInt(e.target.value);
         document.querySelector(".size-value").textContent = `${iconSize}px`;
+        updateIconStyle();
+    });
+
+    // Add click handler to grid toggle.
+    document.getElementById("toggleGrid").addEventListener("change", (e) => {
+        showGrid = e.target.checked;
         updateIconStyle();
     });
 
