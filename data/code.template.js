@@ -199,9 +199,9 @@ function drawGrid(svg, scale) {
         const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
         line.setAttribute("class", "grid-line");
         line.setAttribute("x1", x);
-        line.setAttribute("y1", 0);
+        line.setAttribute("y1", 1 - 0.2);
         line.setAttribute("x2", x);
-        line.setAttribute("y2", 16);
+        line.setAttribute("y2", 15 + 0.2);
         line.setAttribute("stroke-width", 0.02 / scale);
         gridGroup.appendChild(line);
     }
@@ -210,9 +210,9 @@ function drawGrid(svg, scale) {
     for (let y = 1; y <= 15; y++) {
         const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
         line.setAttribute("class", "grid-line");
-        line.setAttribute("x1", 0);
+        line.setAttribute("x1", 1 - 0.2);
         line.setAttribute("y1", y);
-        line.setAttribute("x2", 16);
+        line.setAttribute("x2", 15 + 0.2);
         line.setAttribute("y2", y);
         line.setAttribute("stroke-width", 0.02 / scale);
         gridGroup.appendChild(line);
@@ -344,9 +344,8 @@ function selectIcon(name) {
     });
 
     // Update metadata.
-    document.getElementById("iconName").textContent = selectedIcon.name;
+    document.getElementById("iconName").textContent = selectedIcon.capitalized_name;
     document.getElementById("iconIdentifier").textContent = selectedIcon.identifier;
-    document.getElementById("iconDescription").textContent = selectedIcon.description;
     
     // Update tags.
     const tagsContainer = document.getElementById("iconTags");
