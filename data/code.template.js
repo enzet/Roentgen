@@ -93,16 +93,16 @@ function extractControlPoints(pathData) {
                     const sweepFlag = parseFloat(commands[++i]);
                     x = parseFloat(commands[++i]);
                     y = parseFloat(commands[++i]);
-                    
+
                     // For arcs, we'll only add the start and end points.
                     const startX = prevX;
                     const startY = prevY;
-                    
+
                     // Add the start point if it's not already added.
                     if (points.length === 0 || points[points.length - 1].type !== "move") {
                         points.push({ x: startX, y: startY, type: "arc-start" });
                     }
-                    
+
                     // Add the end point.
                     points.push({ x, y, type: "arc-end" });
                     break;
@@ -124,7 +124,7 @@ function extractControlPoints(pathData) {
 function drawControlPoints(points) {
     const layer = document.getElementById("controlPointsLayer");
     layer.innerHTML = "";
-    
+
     if (!showControlPoints) return;
 
     // Draw all points first.
@@ -193,7 +193,7 @@ function drawControlPoints(points) {
 function drawGrid(svg, scale) {
     const gridGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
     gridGroup.setAttribute("class", "grid-elements");
-    
+
     // Draw vertical lines.
     for (let x = 1; x <= 15; x++) {
         const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -205,7 +205,7 @@ function drawGrid(svg, scale) {
         line.setAttribute("stroke-width", 0.02 / scale);
         gridGroup.appendChild(line);
     }
-    
+
     // Draw horizontal lines.
     for (let y = 1; y <= 15; y++) {
         const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -217,7 +217,7 @@ function drawGrid(svg, scale) {
         line.setAttribute("stroke-width", 0.02 / scale);
         gridGroup.appendChild(line);
     }
-    
+
     return gridGroup;
 }
 
@@ -239,31 +239,31 @@ function updateIconStyle() {
     path.setAttribute("d", selectedIcon.path);
     path.style.fill = "currentColor";
     path.style.stroke = "currentColor";
-    
-    if (showControlPoints) {
+
+    if (showControlPoints && iconSize > 64) {
         path.style.fillOpacity = "0.05";
         path.style.strokeWidth = `${0.05 / scale}px`;
     } else {
         path.style.fillOpacity = "1";
         path.style.strokeWidth = "0px";
     }
-    
+
     svg.appendChild(path);
 
     // If showing grid, add it first (so it's behind the icon).
-    if (showGrid) {
+    if (showGrid && iconSize > 64) {
         const gridGroup = drawGrid(svg, scale);
         svg.insertBefore(gridGroup, svg.firstChild);
     }
 
     // If showing control points, add them to the same SVG.
-    if (showControlPoints) {
+    if (showControlPoints && iconSize > 64) {
         const points = extractControlPoints(selectedIcon.path);
-        
+
         // Create a group for control elements to ensure they're drawn on top.
         const controlGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
         controlGroup.setAttribute("class", "control-elements");
-        
+
         // Draw all points.
         points.forEach(point => {
             const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
@@ -328,7 +328,6 @@ function updateIconStyle() {
                 }
             }
         }
-
         svg.appendChild(controlGroup);
     }
 }
@@ -346,7 +345,7 @@ function selectIcon(name) {
     // Update metadata.
     document.getElementById("iconName").textContent = selectedIcon.capitalized_name;
     document.getElementById("iconIdentifier").textContent = selectedIcon.identifier;
-    
+
     // Update tags.
     const tagsContainer = document.getElementById("iconTags");
     tagsContainer.innerHTML = "";
@@ -392,6 +391,45 @@ function downloadSVG() {
     URL.revokeObjectURL(url);
 }
 
+// Function to get current icon index and navigate to next/previous icon.
+function navigateIcons(direction) {
+    console.log("navigateIcons", direction);
+    if (!selectedIcon) return;
+
+    // Get all icon items and current index
+    const iconItems = Array.from(document.querySelectorAll(".icon-item"));
+    const currentIndex = iconItems.findIndex(item => item.dataset.name === selectedIcon.identifier);
+
+    if (currentIndex === -1) return;
+
+    // Calculate new index based on direction
+    let newIndex;
+    if (direction === "next") {
+        newIndex = (currentIndex + 1) % iconItems.length;
+    } else {
+        newIndex = (currentIndex - 1 + iconItems.length) % iconItems.length;
+    }
+
+    // Select the new icon
+    selectIcon(iconItems[newIndex].dataset.name);
+}
+
+// Function to toggle grid visibility.
+function toggleGrid() {
+    const gridCheckbox = document.getElementById("toggleGrid");
+    gridCheckbox.checked = !gridCheckbox.checked;
+    showGrid = gridCheckbox.checked;
+    updateIconStyle();
+}
+
+// Function to toggle control points visibility.
+function toggleControlPoints() {
+    const controlPointsCheckbox = document.getElementById("toggleControlPoints");
+    controlPointsCheckbox.checked = !controlPointsCheckbox.checked;
+    showControlPoints = controlPointsCheckbox.checked;
+    updateIconStyle();
+}
+
 // Initialize event listeners.
 document.addEventListener('DOMContentLoaded', () => {
     // Add click handlers to icon items.
@@ -420,6 +458,27 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("toggleGrid").addEventListener("change", (e) => {
         showGrid = e.target.checked;
         updateIconStyle();
+    });
+
+    // Add keyboard event listener for arrow keys and other shortcuts.
+    document.addEventListener('keydown', (e) => {
+        // Only handle shortcuts if no input element is focused
+        if (document.activeElement.tagName === 'INPUT') return;
+
+        switch (e.key.toLowerCase()) {
+            case 'arrowleft':
+                navigateIcons('prev');
+                break;
+            case 'arrowright':
+                navigateIcons('next');
+                break;
+            case 'g':
+                toggleGrid();
+                break;
+            case 'p':
+                toggleControlPoints();
+                break;
+        }
     });
 
     // Select first icon by default.

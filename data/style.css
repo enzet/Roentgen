@@ -250,6 +250,10 @@ input[type="range"]:focus {
     gap: 1.5rem;
 }
 
+.icon-info {
+    min-height: 10rem;
+}
+
 .icon-info h2 {
     font-size: 1.75rem;
     font-weight: 900;

@@ -161,6 +161,14 @@ def process_icons(
             "path": path_data,
         }
 
+        if "emoji" in metadata:
+            if isinstance(metadata["emoji"], str):
+                icons_data[identifier]["emoji"] = [metadata["emoji"]]
+            else:
+                icons_data[identifier]["emoji"] = metadata["emoji"]
+        else:
+            icons_data[identifier]["emoji"] = []
+
         icon_grid_items.append(generate_icon_grid_item(identifier, path_data))
 
     return icons_data, "\n".join(icon_grid_items)
