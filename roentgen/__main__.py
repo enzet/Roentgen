@@ -9,6 +9,7 @@ from typing import TYPE_CHECKING, Any
 from colour import Color
 
 from roentgen.icon_collection import IconCollection, ShapeExtractor
+from roentgen.site import main as site_main
 from roentgen.taginfo import main as taginfo_main
 
 if TYPE_CHECKING:
@@ -100,7 +101,7 @@ def main() -> None:
     """Run the main function."""
 
     parser: argparse.ArgumentParser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["generate", "taginfo"])
+    parser.add_argument("command", choices=["icons", "taginfo", "site"])
     parser.add_argument(
         "--id-tagging-schema",
         type=Path,
@@ -125,7 +126,7 @@ def main() -> None:
     with (Path("data") / "combinations.json").open() as input_file:
         combinations: list[list[dict[str, Any]]] = json.load(input_file)
 
-    if arguments.command == "generate":
+    if arguments.command == "icons":
         logging.basicConfig(level=logging.INFO)
         main_collection: IconCollection = get_main_collection(
             icon_paths=[
@@ -166,6 +167,11 @@ def main() -> None:
             maki_path=maki_path,
             temaki_path=temaki_path,
         )
+        return
+
+    if arguments.command == "site":
+        logging.basicConfig(level=logging.INFO, format="%(message)s")
+        site_main()
         return
 
 

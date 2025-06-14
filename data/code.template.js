@@ -1,0 +1,385 @@
+// State management.
+let selectedIcon = null;
+let showControlPoints = false;
+let iconSize = 512;
+
+// Icon data.
+const icons = %ICONS_DATA%;
+
+// Function to extract control points.
+function extractControlPoints(pathData) {
+    const points = [];
+    const commands = pathData.match(/[MLHVCSQTAZmlhvcsqtaz]|[+-]?\d*\.?\d+/g) || [];
+
+    let x = 0, y = 0;
+    let prevX = 0, prevY = 0;
+    let controlX = 0, controlY = 0;
+
+    for (let i = 0; i < commands.length; i++) {
+        const cmd = commands[i];
+
+        if (cmd.match(/[MLHVCSQTAZmlhvcsqtaz]/)) {
+            const command = cmd.toUpperCase();
+
+            // Handle different commands
+            switch (command) {
+                case "M":
+                    x = parseFloat(commands[++i]);
+                    y = parseFloat(commands[++i]);
+                    points.push({ x, y, type: "move" });
+                    break;
+                case "L":
+                    x = parseFloat(commands[++i]);
+                    y = parseFloat(commands[++i]);
+                    points.push({ x, y, type: "line" });
+                    break;
+                case "C":
+                    const x1 = parseFloat(commands[++i]);
+                    const y1 = parseFloat(commands[++i]);
+                    const x2 = parseFloat(commands[++i]);
+                    const y2 = parseFloat(commands[++i]);
+                    x = parseFloat(commands[++i]);
+                    y = parseFloat(commands[++i]);
+                    points.push(
+                        { x: x1, y: y1, type: "control", connectsTo: "start" },
+                        { x: x2, y: y2, type: "control", connectsTo: "end" },
+                        { x, y, type: "curve" }
+                    );
+                    break;
+                case "S":
+                    const x2s = parseFloat(commands[++i]);
+                    const y2s = parseFloat(commands[++i]);
+                    x = parseFloat(commands[++i]);
+                    y = parseFloat(commands[++i]);
+                    // Calculate reflection of previous control point.
+                    const prevControlX = 2 * x - controlX;
+                    const prevControlY = 2 * y - controlY;
+                    points.push(
+                        { x: prevControlX, y: prevControlY, type: "control", connectsTo: "start" },
+                        { x: x2s, y: y2s, type: "control", connectsTo: "end" },
+                        { x, y, type: "curve" }
+                    );
+                    break;
+                case "Q":
+                    const qx1 = parseFloat(commands[++i]);
+                    const qy1 = parseFloat(commands[++i]);
+                    x = parseFloat(commands[++i]);
+                    y = parseFloat(commands[++i]);
+                    points.push(
+                        { x: qx1, y: qy1, type: "control", connectsTo: "both" },
+                        { x, y, type: "quadratic" }
+                    );
+                    break;
+                case "T":
+                    x = parseFloat(commands[++i]);
+                    y = parseFloat(commands[++i]);
+                    // Calculate reflection of previous control point.
+                    const qPrevControlX = 2 * x - controlX;
+                    const qPrevControlY = 2 * y - controlY;
+                    points.push(
+                        { x: qPrevControlX, y: qPrevControlY, type: "control", connectsTo: "both" },
+                        { x, y, type: "quadratic" }
+                    );
+                    break;
+                case "Z":
+                    points.push({ x, y, type: "close" });
+                    break;
+                case "A":
+                    const rx = parseFloat(commands[++i]);
+                    const ry = parseFloat(commands[++i]);
+                    const xAxisRotation = parseFloat(commands[++i]);
+                    const largeArcFlag = parseFloat(commands[++i]);
+                    const sweepFlag = parseFloat(commands[++i]);
+                    x = parseFloat(commands[++i]);
+                    y = parseFloat(commands[++i]);
+                    
+                    // For arcs, we'll only add the start and end points.
+                    const startX = prevX;
+                    const startY = prevY;
+                    
+                    // Add the start point if it's not already added.
+                    if (points.length === 0 || points[points.length - 1].type !== "move") {
+                        points.push({ x: startX, y: startY, type: "arc-start" });
+                    }
+                    
+                    // Add the end point.
+                    points.push({ x, y, type: "arc-end" });
+                    break;
+            }
+
+            prevX = x;
+            prevY = y;
+            if (command === "C" || command === "S" || command === "Q" || command === "T") {
+                controlX = x;
+                controlY = y;
+            }
+        }
+    }
+
+    return points;
+}
+
+// Function to draw control points.
+function drawControlPoints(points) {
+    const layer = document.getElementById("controlPointsLayer");
+    layer.innerHTML = "";
+    
+    if (!showControlPoints) return;
+
+    // Draw all points first.
+    points.forEach(point => {
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        if (point.type === "control") {
+            circle.setAttribute("class", "control-point");
+        } else if (point.type === "arc-start" || point.type === "arc-end") {
+            circle.setAttribute("class", "curve-point");
+        } else {
+            circle.setAttribute("class", point.type === "control" ? "control-point" : "curve-point");
+        }
+        circle.setAttribute("cx", point.x);
+        circle.setAttribute("cy", point.y);
+        layer.appendChild(circle);
+    });
+
+    // Draw control lines for Bezier curves.
+    for (let i = 0; i < points.length; i++) {
+        const point = points[i];
+        if (point.type === "control") {
+            if (point.connectsTo === "both") {
+                // For quadratic curves, connect to both previous and next points.
+                const prevPoint = points[i - 1];
+                const nextPoint = points[i + 1];
+                if (prevPoint && prevPoint.type !== "control") {
+                    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                    line.setAttribute("class", "control-line");
+                    line.setAttribute("x1", point.x);
+                    line.setAttribute("y1", point.y);
+                    line.setAttribute("x2", prevPoint.x);
+                    line.setAttribute("y2", prevPoint.y);
+                    layer.appendChild(line);
+                }
+                if (nextPoint && nextPoint.type !== "control") {
+                    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                    line.setAttribute("class", "control-line");
+                    line.setAttribute("x1", point.x);
+                    line.setAttribute("y1", point.y);
+                    line.setAttribute("x2", nextPoint.x);
+                    line.setAttribute("y2", nextPoint.y);
+                    layer.appendChild(line);
+                }
+            } else if (point.connectsTo === "arc-start" || point.connectsTo === "arc-end") {
+                // Skip control lines for arcs.
+                continue;
+            } else {
+                // For cubic curves, connect to either start or end point.
+                const targetIndex = point.connectsTo === "start" ? i - 1 : i + 1;
+                const targetPoint = points[targetIndex];
+                if (targetPoint && targetPoint.type !== "control") {
+                    const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                    line.setAttribute("class", "control-line");
+                    line.setAttribute("x1", point.x);
+                    line.setAttribute("y1", point.y);
+                    line.setAttribute("x2", targetPoint.x);
+                    line.setAttribute("y2", targetPoint.y);
+                    layer.appendChild(line);
+                }
+            }
+        }
+    }
+}
+
+// Update icon style.
+function updateIconStyle() {
+    const svg = document.getElementById("previewSvg");
+    if (!svg) return;
+
+    // Update SVG size.
+    svg.style.width = `${iconSize}px`;
+    svg.style.height = `${iconSize}px`;
+    const scale = iconSize / 512;
+
+    // Clear the SVG.
+    svg.innerHTML = "";
+
+    // Add the path.
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", selectedIcon.path);
+    path.style.fill = "currentColor";
+    path.style.stroke = "currentColor";
+    
+    if (showControlPoints) {
+        path.style.fillOpacity = "0.05";
+        path.style.strokeWidth = `${0.05 / scale}px`;
+    } else {
+        path.style.fillOpacity = "1";
+        path.style.strokeWidth = "0px";
+    }
+    
+    svg.appendChild(path);
+
+    // If showing control points, add them to the same SVG.
+    if (showControlPoints) {
+        const points = extractControlPoints(selectedIcon.path);
+        
+        // Create a group for control elements to ensure they're drawn on top.
+        const controlGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        controlGroup.setAttribute("class", "control-elements");
+        
+        // Draw all points.
+        points.forEach(point => {
+            const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            if (point.type === "control") {
+                circle.setAttribute("class", "control-point");
+            } else if (point.type === "arc-start" || point.type === "arc-end") {
+                circle.setAttribute("class", "curve-point");
+            } else {
+                circle.setAttribute("class", point.type === "control" ? "control-point" : "curve-point");
+            }
+            circle.setAttribute("cx", point.x);
+            circle.setAttribute("cy", point.y);
+            circle.setAttribute("r", 0.08 / scale);
+            controlGroup.appendChild(circle);
+        });
+
+        // Draw control lines for Bezier curves.
+        for (let i = 0; i < points.length; i++) {
+            const point = points[i];
+            if (point.type === "control") {
+                if (point.connectsTo === "both") {
+                    // For quadratic curves, connect to both previous and next points.
+                    const prevPoint = points[i - 1];
+                    const nextPoint = points[i + 1];
+                    if (prevPoint && prevPoint.type !== "control") {
+                        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                        line.setAttribute("class", "control-line");
+                        line.setAttribute("x1", point.x);
+                        line.setAttribute("y1", point.y);
+                        line.setAttribute("x2", prevPoint.x);
+                        line.setAttribute("y2", prevPoint.y);
+                        line.setAttribute("stroke-width", 0.02 / scale);
+                        controlGroup.appendChild(line);
+                    }
+                    if (nextPoint && nextPoint.type !== "control") {
+                        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                        line.setAttribute("class", "control-line");
+                        line.setAttribute("x1", point.x);
+                        line.setAttribute("y1", point.y);
+                        line.setAttribute("x2", nextPoint.x);
+                        line.setAttribute("y2", nextPoint.y);
+                        line.setAttribute("stroke-width", 0.02 / scale);
+                        controlGroup.appendChild(line);
+                    }
+                } else if (point.connectsTo === "arc-start" || point.connectsTo === "arc-end") {
+                    // Skip control lines for arcs.
+                    continue;
+                } else {
+                    // For cubic curves, connect to either start or end point.
+                    const targetIndex = point.connectsTo === "start" ? i - 1 : i + 1;
+                    const targetPoint = points[targetIndex];
+                    if (targetPoint && targetPoint.type !== "control") {
+                        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                        line.setAttribute("class", "control-line");
+                        line.setAttribute("x1", point.x);
+                        line.setAttribute("y1", point.y);
+                        line.setAttribute("x2", targetPoint.x);
+                        line.setAttribute("y2", targetPoint.y);
+                        line.setAttribute("stroke-width", 0.02 / scale);
+                        controlGroup.appendChild(line);
+                    }
+                }
+            }
+        }
+
+        svg.appendChild(controlGroup);
+    }
+}
+
+// Select and display icon.
+function selectIcon(name) {
+    selectedIcon = icons[name];
+    if (!selectedIcon) return;
+
+    // Update UI.
+    document.querySelectorAll(".icon-item").forEach((item) => {
+        item.classList.toggle("selected", item.dataset.name === name);
+    });
+
+    // Update metadata.
+    document.getElementById("iconName").textContent = selectedIcon.name;
+    document.getElementById("iconIdentifier").textContent = selectedIcon.identifier;
+    document.getElementById("iconDescription").textContent = selectedIcon.description;
+    
+    // Update tags.
+    const tagsContainer = document.getElementById("iconTags");
+    tagsContainer.innerHTML = "";
+    selectedIcon.tags.forEach((tag) => {
+        const tagElement = document.createElement("span");
+        tagElement.className = "tag";
+        tagElement.textContent = tag;
+        tagsContainer.appendChild(tagElement);
+    });
+
+    updateIconStyle();
+}
+
+// Function to create downloadable SVG.
+function createDownloadableSVG() {
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    svg.setAttribute("width", "16");
+    svg.setAttribute("height", "16");
+    svg.setAttribute("viewBox", "0 0 16 16");
+
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", selectedIcon.path);
+    path.setAttribute("fill", "currentColor");
+    svg.appendChild(path);
+
+    return new XMLSerializer().serializeToString(svg);
+}
+
+// Function to download SVG.
+function downloadSVG() {
+    if (!selectedIcon) return;
+
+    const svgContent = createDownloadableSVG();
+    const blob = new Blob([svgContent], { type: "image/svg+xml" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${selectedIcon.identifier}.svg`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+}
+
+// Initialize event listeners.
+document.addEventListener('DOMContentLoaded', () => {
+    // Add click handlers to icon items.
+    document.querySelectorAll(".icon-item").forEach((item) => {
+        item.addEventListener("click", () => selectIcon(item.dataset.name));
+    });
+
+    // Add click handler to control points toggle.
+    document.getElementById("toggleControlPoints").addEventListener("change", (e) => {
+        showControlPoints = e.target.checked;
+        updateIconStyle();
+    });
+
+    // Add click handler to download button.
+    document.getElementById("downloadIcon").addEventListener("click", downloadSVG);
+
+    // Add input handler to size slider.
+    const sizeSlider = document.getElementById("sizeSlider");
+    sizeSlider.addEventListener("input", (e) => {
+        iconSize = parseInt(e.target.value);
+        document.querySelector(".size-value").textContent = `${iconSize}px`;
+        updateIconStyle();
+    });
+
+    // Select first icon by default.
+    selectIcon("camp");
+    // Set initial size value.
+    document.querySelector(".size-value").textContent = `${iconSize}px`;
+}); 

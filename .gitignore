@@ -8,5 +8,6 @@ icons_by_name/
 osm/
 out/
 roentgen.egg-info/
+site/
 uv.lock
 work/

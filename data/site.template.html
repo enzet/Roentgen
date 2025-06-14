@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Icon Set</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Icon Set</h1>
+    </header>
+    <main class="main">
+        <div class="content">
+            <section class="icon-grid-section">
+                <div class="icon-list">
+                    %ICONS_GRID%
+                </div>
+            </section>
+            <section class="icon-preview-section">
+                <div class="icon-preview">
+                    <svg id="previewSvg" viewBox="0 0 16 16"></svg>
+                </div>
+            </section>
+            <section class="icon-info-section">
+                <div class="icon-info">
+                    <div class="icon-controls">
+                        <button id="downloadIcon" class="control-button">Download SVG</button>
+                        <div class="control-group">
+                            <div class="checkbox-control">
+                                <input type="checkbox" id="toggleControlPoints" class="checkbox-input">
+                                <label for="toggleControlPoints" class="checkbox-label">Show control points</label>
+                            </div>
+                        </div>
+                        <div class="size-control">
+                            <div class="size-header">
+                                <span class="size-value">512px</span>
+                            </div>
+                            <input type="range" id="sizeSlider" min="16" max="512" value="512" step="1">
+                        </div>
+                    </div>
+                    <h2 id="iconName"></h2>
+                    <div class="info-group">
+                        <code id="iconIdentifier"></code>
+                    </div>
+                    <div class="info-group">
+                        <p id="iconDescription"></p>
+                    </div>
+                    <div class="info-group">
+                        <div id="iconTags" class="tags"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="code.js"></script>
+</body>
+</html> 
