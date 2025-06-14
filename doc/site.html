@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Röntgen Icon Set</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #ffffff;
+            --text-color: #1f2937;
+            --sidebar-width: 300px;
+            --header-height: 60px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .header {
+            height: var(--header-height);
+            border-bottom: 1px solid #e5e7eb;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-color);
+            z-index: 100;
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .main {
+            display: flex;
+            margin-top: var(--header-height);
+            height: calc(100vh - var(--header-height));
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            border-right: 1px solid #e5e7eb;
+            overflow-y: auto;
+            padding: 1rem;
+            background: #f9fafb;
+        }
+
+        .icon-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .icon-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .icon-item:hover {
+            background-color: #e5e7eb;
+        }
+
+        .icon-item.selected {
+            background-color: #dbeafe;
+        }
+
+        .icon-item svg {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 0.25rem;
+        }
+
+        .icon-item span {
+            font-size: 0.75rem;
+            text-align: center;
+            word-break: break-word;
+        }
+
+        .content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .icon-detail {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .icon-preview {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .icon-preview svg {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 1rem;
+        }
+
+        .icon-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .icon-controls button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.375rem;
+            background: white;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .icon-controls button:hover {
+            background: #f3f4f6;
+        }
+
+        .icon-controls button.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .icon-info {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .icon-info h2 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .icon-info pre {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            overflow-x: auto;
+            font-family: ui-monospace, monospace;
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .main {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: 300px;
+                border-right: none;
+                border-bottom: 1px solid #e5e7eb;
+            }
+
+            .content {
+                height: calc(100vh - var(--header-height) - 300px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Röntgen Icon Set</h1>
+    </header>
+
+    <main class="main">
+        <aside class="sidebar">
+            <div class="icon-list" id="iconList">
+                <div class="icon-item" data-name="camp">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M 6.4863,1.9941 C 6.1295,2.0021 5.896,2.3711 6.041,2.6973 C 6.2956,3.2913 6.6013,3.8975 6.9277,4.5059 C 5.341,7.3151 3.0844,10.2086 1.1465,12.1465 C 0.7934,12.4868 1.0903,13.0791 1.5742,13.0 L 6.0,13.0 L 6.0,11.5 C 6.0,10.6716 6.6716,10.0 7.5,10.0 C 8.3284,10.0 9.0,10.6716 9.0,11.5 L 9.0,13.0 L 13.4297,13.0 C 13.9114,13.0741 14.2037,12.4855 13.8535,12.1465 C 11.9156,10.2086 9.659,7.3151 8.0723,4.5059 C 8.3987,3.8975 8.7044,3.2913 8.959,2.6973 C 9.1067,2.365 8.8616,1.9912 8.4981,1.9941 C 8.2976,1.9961 8.1178,2.1176 8.041,2.3027 C 7.8805,2.6772 7.6946,3.0616 7.5,3.4473 C 7.3054,3.0616 7.1195,2.6772 6.959,2.3027 C 6.8801,2.1123 6.6924,1.9898 6.4863,1.9941" fill="currentColor"/>
+                    </svg>
+                    <span>camp</span>
+                </div>
+                <div class="icon-item" data-name="binoculars">
+                    <svg viewBox="0 0 16 16">
+                        <path d="M 5.5,3.0 A 1.5,1.5 0.0 0,0 4.1426,3.8652 L 1.4375,8.4375 L 1.4475,8.4315 A 3.0,3.0 0.0 0,0 1.0,10.0001 A 3.0,3.0 0.0 0,0 4.0,13.0001 A 3.0,3.0 0.0 0,0 7.0,10.0001 A 0.5,0.5 0.0 0,1 7.5,9.5001 A 0.5,0.5 0.0 0,1 8.0,10.0001 A 3.0,3.0 0.0 0,0 11.0,13.0001 A 3.0,3.0 0.0 0,0 14.0,10.0001 A 3.0,3.0 0.0 0,0 13.5567,8.4337 L 13.5627,8.4377 L 10.8576,3.8654 A 1.5,1.5 0.0 0,0 9.5,3.0001 A 1.5,1.5 0.0 0,0 8.0,4.5001 A 0.5,0.5 0.0 0,1 7.5,5.0001 A 0.5,0.5 0.0 0,1 7.0,4.5001 A 1.5,1.5 0.0 0,0 5.5,3.0001 L 5.5,3.0 M 4.0,8.0 A 2.0,2.0 0.0 0,1 6.0,10.0 A 2.0,2.0 0.0 0,1 4.0,12.0 A 2.0,2.0 0.0 0,1 2.0,10.0 A 2.0,2.0 0.0 0,1 4.0,8.0 M 11.0,8.0 A 2.0,2.0 0.0 0,1 13.0,10.0 A 2.0,2.0 0.0 0,1 11.0,12.0 A 2.0,2.0 0.0 0,1 9.0,10.0 A 2.0,2.0 0.0 0,1 11.0,8.0" fill="currentColor"/>
+                    </svg>
+                    <span>binoculars</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="content">
+            <div class="icon-detail" id="iconDetail">
+                <div class="icon-preview">
+                    <svg id="previewSvg" viewBox="0 0 16 16"></svg>
+                </div>
+                <div class="icon-controls">
+                    <button class="active" data-style="filled">Filled</button>
+                    <button data-style="outlined">Outlined</button>
+                </div>
+                <div class="icon-info">
+                    <h2 id="iconName">Select an icon</h2>
+                    <pre id="iconCode"></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // State management
+        let selectedIcon = null;
+        let currentStyle = 'filled';
+
+        // Icon data
+        const icons = {
+            camp: {
+                name: 'camp',
+                path: 'M 6.4863,1.9941 C 6.1295,2.0021 5.896,2.3711 6.041,2.6973 C 6.2956,3.2913 6.6013,3.8975 6.9277,4.5059 C 5.341,7.3151 3.0844,10.2086 1.1465,12.1465 C 0.7934,12.4868 1.0903,13.0791 1.5742,13.0 L 6.0,13.0 L 6.0,11.5 C 6.0,10.6716 6.6716,10.0 7.5,10.0 C 8.3284,10.0 9.0,10.6716 9.0,11.5 L 9.0,13.0 L 13.4297,13.0 C 13.9114,13.0741 14.2037,12.4855 13.8535,12.1465 C 11.9156,10.2086 9.659,7.3151 8.0723,4.5059 C 8.3987,3.8975 8.7044,3.2913 8.959,2.6973 C 9.1067,2.365 8.8616,1.9912 8.4981,1.9941 C 8.2976,1.9961 8.1178,2.1176 8.041,2.3027 C 7.8805,2.6772 7.6946,3.0616 7.5,3.4473 C 7.3054,3.0616 7.1195,2.6772 6.959,2.3027 C 6.8801,2.1123 6.6924,1.9898 6.4863,1.9941'
+            },
+            binoculars: {
+                name: 'binoculars',
+                path: 'M 5.5,3.0 A 1.5,1.5 0.0 0,0 4.1426,3.8652 L 1.4375,8.4375 L 1.4475,8.4315 A 3.0,3.0 0.0 0,0 1.0,10.0001 A 3.0,3.0 0.0 0,0 4.0,13.0001 A 3.0,3.0 0.0 0,0 7.0,10.0001 A 0.5,0.5 0.0 0,1 7.5,9.5001 A 0.5,0.5 0.0 0,1 8.0,10.0001 A 3.0,3.0 0.0 0,0 11.0,13.0001 A 3.0,3.0 0.0 0,0 14.0,10.0001 A 3.0,3.0 0.0 0,0 13.5567,8.4337 L 13.5627,8.4377 L 10.8576,3.8654 A 1.5,1.5 0.0 0,0 9.5,3.0001 A 1.5,1.5 0.0 0,0 8.0,4.5001 A 0.5,0.5 0.0 0,1 7.5,5.0001 A 0.5,0.5 0.0 0,1 7.0,4.5001 A 1.5,1.5 0.0 0,0 5.5,3.0001 L 5.5,3.0 M 4.0,8.0 A 2.0,2.0 0.0 0,1 6.0,10.0 A 2.0,2.0 0.0 0,1 4.0,12.0 A 2.0,2.0 0.0 0,1 2.0,10.0 A 2.0,2.0 0.0 0,1 4.0,8.0 M 11.0,8.0 A 2.0,2.0 0.0 0,1 13.0,10.0 A 2.0,2.0 0.0 0,1 11.0,12.0 A 2.0,2.0 0.0 0,1 9.0,10.0 A 2.0,2.0 0.0 0,1 11.0,8.0'
+            }
+        };
+
+        // Select and display icon
+        function selectIcon(name) {
+            selectedIcon = icons[name];
+            if (!selectedIcon) return;
+
+            // Update UI
+            document.querySelectorAll('.icon-item').forEach(item => {
+                item.classList.toggle('selected', item.dataset.name === name);
+            });
+
+            document.getElementById('iconName').textContent = name;
+            
+            // Update preview SVG
+            const previewSvg = document.getElementById('previewSvg');
+            previewSvg.innerHTML = `<path d="${selectedIcon.path}" fill="currentColor"/>`;
+            
+            // Update code display
+            document.getElementById('iconCode').textContent = 
+                `<svg viewBox="0 0 16 16">\n  <path d="${selectedIcon.path}" fill="currentColor"/>\n</svg>`;
+
+            updateIconStyle();
+        }
+
+        // Update icon style (filled/outlined)
+        function updateIconStyle() {
+            const svg = document.getElementById('previewSvg');
+            if (!svg) return;
+
+            const path = svg.querySelector('path');
+            if (!path) return;
+
+            if (currentStyle === 'outlined') {
+                path.style.fill = 'none';
+                path.style.stroke = 'currentColor';
+                path.style.strokeWidth = '1.5';
+            } else {
+                path.style.fill = 'currentColor';
+                path.style.stroke = 'none';
+            }
+        }
+
+        // Event listeners
+        document.querySelectorAll('.icon-item').forEach(item => {
+            item.addEventListener('click', () => selectIcon(item.dataset.name));
+        });
+
+        document.querySelectorAll('.icon-controls button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.icon-controls button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                button.classList.add('active');
+                currentStyle = button.dataset.style;
+                updateIconStyle();
+            });
+        });
+
+        // Select first icon by default
+        selectIcon('camp');
+    </script>
+</body>
+</html> 
