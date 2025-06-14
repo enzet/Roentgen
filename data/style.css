@@ -367,18 +367,6 @@ input[type="range"]:focus {
     background: #000000;
 }
 
-.checkbox-input:checked::after {
-    content: "";
-    position: absolute;
-    left: 3px;
-    top: 1px;
-    width: 4px;
-    height: 8px;
-    border: solid #FFFFFF;
-    border-width: 0 1px 1px 0;
-    transform: rotate(45deg);
-}
-
 .checkbox-input:hover {
     background: #F3F4F6;
 }
