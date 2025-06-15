@@ -562,10 +562,10 @@ def add_table(
             file_name = f"{element.id_tagging_icon.removeprefix('maki-')}.svg"
             img_element.set("src", str(maki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
-        else:
-            id_span = html.Element("span")
-            id_span.text = element.id_tagging_icon
-            id_imgs_cell.append(id_span)
+
+        id_span = html.Element("span")
+        id_span.text = element.id_tagging_icon
+        id_imgs_cell.append(id_span)
 
         count_cell = html.Element("td")
         count_cell.set("class", "count")
