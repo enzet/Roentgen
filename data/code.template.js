@@ -116,7 +116,6 @@ function extractControlPoints(pathData) {
             }
         }
     }
-
     return points;
 }
 
@@ -217,12 +216,12 @@ function drawGrid(svg, scale) {
         line.setAttribute("stroke-width", 0.02 / scale);
         gridGroup.appendChild(line);
     }
-
     return gridGroup;
 }
 
 // Update icon style.
 function updateIconStyle() {
+
     const svg = document.getElementById("previewSvg");
     if (!svg) return;
 
@@ -247,7 +246,6 @@ function updateIconStyle() {
         path.style.fillOpacity = "1";
         path.style.strokeWidth = "0px";
     }
-
     svg.appendChild(path);
 
     // If showing grid, add it first (so it's behind the icon).
@@ -374,11 +372,10 @@ function createDownloadableSVG() {
     svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     svg.setAttribute("width", "16");
     svg.setAttribute("height", "16");
-    svg.setAttribute("viewBox", "0 0 16 16");
 
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", selectedIcon.path);
-    path.setAttribute("fill", "currentColor");
+    path.setAttribute("fill", "#000000");
     svg.appendChild(path);
 
     return new XMLSerializer().serializeToString(svg);
