@@ -19,14 +19,14 @@
       "building": {"name": "house", "categories": ["building"]},
       "building_construction": {"name": "building construction", "categories": ["building"]},
       "building_container": {"name": "container building", "categories": ["building"]},
-      "houseboat": {"name": "houseboat", "categories": ["building"]},
-      "fort": {"name": "fort", "categories": ["building"]},
+      "houseboat": {"name": "houseboat", "categories": ["building"], "keywords": ["water"]},
+      "fort": {"name": "fort", "categories": ["building"], "keywords": ["military"]},
       "mausoleum": {"name": "mausoleum", "categories": ["building"]},
       "minaret": {"name": "minaret", "categories": ["building"]},
-      "pagoda": {"name": "pagoda", "categories": ["building"]},
-      "pyramid": {"name": "pyramid", "categories": ["building"]},
+      "pagoda": {"name": "pagoda", "categories": ["building"], "keywords": ["japan"]},
+      "pyramid": {"name": "pyramid", "categories": ["building"], "keywords": ["egypt"]},
       "townhall": {"name": "town hall", "categories": ["building"]},
-      "food_court": {"name": "food court"}
+      "food_court": {"name": "food court", "keywords": ["food"]}
     },
     "__building_part": {
       "main_entrance": {"name": "main entrance"},
@@ -94,13 +94,13 @@
       "glider": {"name": "glider"},
       "light_left": {"is_part": true, "name": "leftward light"},
       "light_right": {"is_part": true, "name": "rightward light"},
-      "sharing": {"name": "clockwise arrows"},
+      "sharing": {"name": "sharing symbol"},
       "rectangle_vertical_rounded": {"name": "vertical rounded rectangle"},
       "rectangle_vertical_rounded_crossed": {"name": "crossed vertical rounded rectangle"},
-      "triangle_small": {"emoji": "⛰️", "name": "small triangle"},
+      "triangle_small": {"name": "small triangle"},
       "wave_left": {"is_part": true, "name": "leftward waves"},
       "wave_right": {"is_part": true, "name": "rightward waves"},
-      "wlan": {"name": "wireless LAN"}
+      "wlan": {"name": "wireless LAN symbol"}
     },
     "__japan": {
       "japan_castle": {"name": "Japanese map symbol for castle"},
