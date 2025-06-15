@@ -251,7 +251,7 @@ input[type="range"]:focus {
 }
 
 .icon-info {
-    min-height: 10rem;
+    min-height: 16rem;
     padding: 2rem;
 }
 
