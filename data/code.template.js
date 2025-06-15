@@ -393,7 +393,7 @@ function downloadSVG() {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = `${selectedIcon.identifier}.svg`;
+    link.download = `roentgen_${selectedIcon.identifier}.svg`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
