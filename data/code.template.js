@@ -267,16 +267,22 @@ function updateIconStyle() {
         // Draw all points.
         points.forEach(point => {
             const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            var class_name;
             if (point.type === "control") {
-                circle.setAttribute("class", "control-point");
+                class_name = "control-point";
             } else if (point.type === "arc-start" || point.type === "arc-end") {
-                circle.setAttribute("class", "curve-point");
+                class_name = "curve-point";
             } else {
-                circle.setAttribute("class", point.type === "control" ? "control-point" : "curve-point");
+                class_name = point.type === "control" ? "control-point" : "curve-point";
+            }
+            circle.setAttribute("class", class_name);
+            if (class_name === "control-point") {
+                circle.setAttribute("r", 0.00 / scale);
+            } else if (class_name === "curve-point") {
+                circle.setAttribute("r", 0.08 / scale);
             }
             circle.setAttribute("cx", point.x);
             circle.setAttribute("cy", point.y);
-            circle.setAttribute("r", 0.08 / scale);
             controlGroup.appendChild(circle);
         });
 
@@ -433,8 +439,44 @@ function toggleControlPoints() {
     updateIconStyle();
 }
 
+// Function to filter icons based on search query.
+function filterIcons(query) {
+    query = query.toLowerCase();
+    const iconItems = document.querySelectorAll(".icon-item");
+    
+    iconItems.forEach(item => {
+        const icon = icons[item.dataset.name];
+        if (!icon) return;
+
+        // Search in name, identifier, and tags
+        const searchText = [
+            icon.name,
+            icon.identifier,
+            ...icon.tags
+        ].join(" ").toLowerCase();
+
+        const isVisible = searchText.includes(query);
+        item.style.display = isVisible ? "" : "none";
+    });
+
+    // If current icon is hidden, select the first visible icon
+    const selectedItem = document.querySelector(".icon-item.selected");
+    if (selectedItem && selectedItem.style.display === "none") {
+        const firstVisible = document.querySelector(".icon-item:not([style*='display: none'])");
+        if (firstVisible) {
+            selectIcon(firstVisible.dataset.name);
+        }
+    }
+}
+
 // Initialize event listeners.
 document.addEventListener('DOMContentLoaded', () => {
+    // Add search input handler
+    const searchInput = document.getElementById("iconSearch");
+    searchInput.addEventListener("input", (e) => {
+        filterIcons(e.target.value);
+    });
+
     // Add click handlers to icon items.
     document.querySelectorAll(".icon-item").forEach((item) => {
         item.addEventListener("click", () => selectIcon(item.dataset.name));
@@ -466,8 +508,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add keyboard event listener for arrow keys and other shortcuts.
     document.addEventListener('keydown', (e) => {
         // Only handle shortcuts if no input element is focused
-        if (document.activeElement.tagName === 'INPUT') return;
-
+        if (document.activeElement.tagName === 'INPUT' && document.activeElement.id !== 'iconSearch') return;
+        
         switch (e.key.toLowerCase()) {
             case 'arrowleft':
                 navigateIcons('prev');

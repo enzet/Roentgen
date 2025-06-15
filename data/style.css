@@ -110,7 +110,6 @@ body {
     width: var(--info-width);
     min-width: var(--info-width);
     max-width: var(--info-width);
-    padding: 2rem;
     overflow-y: auto;
     background: #FFFFFF;
     flex: 0 0 var(--info-width);
@@ -140,6 +139,7 @@ body {
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
+    padding: 2rem;
 }
 
 .icon-controls button {
@@ -252,6 +252,7 @@ input[type="range"]:focus {
 
 .icon-info {
     min-height: 10rem;
+    padding: 2rem;
 }
 
 .icon-info h2 {
@@ -389,4 +390,29 @@ input[type="range"]:focus {
 
 .grid-elements {
     pointer-events: none;
+}
+
+.search-container {
+    padding: 1rem;
+    border-bottom: 1px solid #000000;
+}
+
+.search-input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    border: 1px solid #000000;
+    border-radius: 0.25rem;
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #000000;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.search-input::placeholder {
+    color: #666666;
 }

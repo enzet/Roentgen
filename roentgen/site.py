@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import re
+import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
@@ -208,14 +209,10 @@ def generate_site_files(
             dst.write(content)
 
     style_css_path: Path = template_dir / "style.css"
-    output_style_css_path: Path = output_dir / "style.css"
+    favicon_svg_path: Path = template_dir / "favicon.svg"
 
-    if style_css_path.exists():
-        with (
-            style_css_path.open() as src,
-            output_style_css_path.open("w") as dst,
-        ):
-            dst.write(src.read())
+    shutil.copy(favicon_svg_path, output_dir / "favicon.svg")
+    shutil.copy(style_css_path, output_dir / "style.css")
 
 
 def main() -> None:
