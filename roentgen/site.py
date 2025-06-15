@@ -186,6 +186,7 @@ def generate_site_files(
     icon_grid_html: str,
     template_dir: Path,
     output_dir: Path,
+    version: str,
 ) -> None:
     """Generate site files from templates with icon data."""
 
@@ -202,6 +203,7 @@ def generate_site_files(
 
         if template_file == "site.template.html":
             content = content.replace("%ICONS_GRID%", icon_grid_html)
+            content = content.replace("%VERSION%", version)
         else:
             content = content.replace("%ICONS_DATA%", icons_js)
 
@@ -222,9 +224,15 @@ def main() -> None:
     template_dir: Path = Path("data")
     output_dir: Path = Path("site")
     config_path: Path = Path("data/config.json")
+    version_path: Path = Path("VERSION")
 
-    # Process icons
+    with version_path.open() as version_file:
+        version: str = version_file.read().strip()
+
+    # Process icons.
     icons_data, icon_grid_html = process_icons(icons_dir, config_path)
 
-    # Generate site files
-    generate_site_files(icons_data, icon_grid_html, template_dir, output_dir)
+    # Generate site files.
+    generate_site_files(
+        icons_data, icon_grid_html, template_dir, output_dir, version
+    )
