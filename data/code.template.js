@@ -337,6 +337,9 @@ function selectIcon(name) {
     selectedIcon = icons[name];
     if (!selectedIcon) return;
 
+    // Update URL hash.
+    window.location.hash = name;
+
     // Update UI.
     document.querySelectorAll(".icon-item").forEach((item) => {
         item.classList.toggle("selected", item.dataset.name === name);
@@ -481,8 +484,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Select first icon by default.
-    selectIcon("camp");
+    // Handle hash changes
+    window.addEventListener('hashchange', () => {
+        const iconName = window.location.hash.slice(1); // Remove the # symbol
+        if (iconName && icons[iconName]) {
+            selectIcon(iconName);
+        }
+    });
+
+    // Select icon from URL hash or default to first icon
+    const iconName = window.location.hash.slice(1);
+    if (iconName && icons[iconName]) {
+        selectIcon(iconName);
+    } else {
+        selectIcon("camp");
+    }
+
     // Set initial size value.
     document.querySelector(".size-value").textContent = `${iconSize}px`;
 }); 

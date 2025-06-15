@@ -256,6 +256,7 @@ input[type="range"]:focus {
 
 .icon-info h2 {
     font-size: 1.75rem;
+    line-height: 1.2;
     font-weight: 900;
     margin: 0;
 }
