@@ -401,5 +401,5 @@ input[type="range"]:focus {
 }
 
 .search-input::placeholder {
-    color: #666666;
+    color: rgba(var(--fg-color), 0.5);
 }
