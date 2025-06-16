@@ -351,7 +351,9 @@ function selectIcon(name) {
 
     // Update metadata.
     document.getElementById("iconName").textContent = selectedIcon.capitalized_name;
-    document.getElementById("iconIdentifier").textContent = selectedIcon.identifier;
+
+    // Update identifier, add invisible break after every "_" in identifier.
+    document.getElementById("iconIdentifier").innerHTML = selectedIcon.identifier.replace(/_/g, "_<wbr>");
 
     // Update tags.
     const tagsContainer = document.getElementById("iconTags");
