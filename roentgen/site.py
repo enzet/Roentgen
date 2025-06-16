@@ -75,11 +75,6 @@ def generate_icon_grid_item(identifier: str, path_data: str) -> str:
     </div>"""
 
 
-def not_alpha_numeric(word: str) -> bool:
-    """Check if a word is not alpha-numeric."""
-    return any(not char.isalnum() and char != "-" for char in word)
-
-
 def capitalize(name: str) -> str:
     """Capitalize the first letters of the name.
 
@@ -107,9 +102,14 @@ def capitalize(name: str) -> str:
         if not word:
             continue
 
+        if "-" in word:
+            parts: list[str] = word.split("-")
+            capitalized.append("-".join(part.capitalize() for part in parts))
+            continue
+
         if word.lower() in skip_words and capitalized:
             capitalized.append(word.lower())
-        elif word.isdigit() or not_alpha_numeric(word) or word.lower() != word:
+        elif word.isdigit() or not (word.isalpha()) or word.lower() != word:
             capitalized.append(word)
         else:
             capitalized.append(word.capitalize())
