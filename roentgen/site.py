@@ -66,21 +66,6 @@ def generate_icon_identifier(file_path: Path) -> str:
     return file_path.stem
 
 
-def generate_icon_tags(file_path: Path) -> list[str]:
-    """Generate tags based on filename."""
-    name: str = file_path.stem
-    words: list[str] = [word for word in name.split("_") if word]
-    return sorted(set(words))
-
-
-def generate_icon_description(name: str, tags: list[str]) -> str:
-    """Generate a simple description based on name and tags."""
-    return (
-        f"A {name.lower()} icon, useful for {', '.join(tags)} related "
-        "interfaces."
-    )
-
-
 def generate_icon_grid_item(identifier: str, path_data: str) -> str:
     """Generate HTML for a single icon grid item."""
     return f"""<div class="icon-item" data-name="{identifier}">
@@ -164,7 +149,7 @@ def process_icons(
             "description": metadata.get(
                 "description", f"A {metadata['name'].lower()} icon."
             ),
-            "tags": metadata.get("categories", []),
+            "tags": metadata.get("keywords", []),
             "path": path_data,
         }
 
