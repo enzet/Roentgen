@@ -1,3 +1,14 @@
+## Unreleased
+
+Reorganize paths of the majority of shapes: delete redundant nodes, simplify
+curves. This may change the shape in not detectable way.
+
+Redraw icons:
+  - `beer_mug`,
+  - `hi_fi`,
+  - `side_mirror`,
+  - `slide`.
+
 ## 0.5.0
 
 Redraw icons:

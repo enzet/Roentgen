@@ -219,7 +219,7 @@ def parse_length(text: str) -> float:
     return float(text)
 
 
-def check_sketch_stroke_element(style: dict[str, str]) -> bool:
+def check_sketch_fill_element(style: dict[str, str]) -> bool:
     """Check whether style is black 0.1 px stroke, no fill."""
     return (
         "fill" in style
@@ -230,8 +230,8 @@ def check_sketch_stroke_element(style: dict[str, str]) -> bool:
     )
 
 
-def check_sketch_stroke_element_2(style: dict[str, str]) -> bool:
-    """Check whether style is black 1 px stroke, no fill, 20% opacity."""
+def check_sketch_stroke_element(style: dict[str, str]) -> bool:
+    """Check whether style is black stroke, no fill, 20% opacity."""
     return (
         "fill" in style
         and style["fill"] == "none"
@@ -258,33 +258,29 @@ def check_experimental_shape(style: dict[str, str]) -> bool:
     )
 
 
-def verify_sketch_element(element: Element, id_: str) -> bool:
-    """Verify sketch SVG element from icon file.
+def is_sketch_element(element: Element, id_: str) -> bool:
+    """Check whether SVG element is a sketch element.
+
+    Sketch element is a primitive (path, ellipse, rectangle, etc.) that is used
+    to create shapes. It may be
+      - a stroke element (has black stroke, has no fill, opacity is 20%) or
+      - a fill element (has no fill, has black stroke with 0.1 width, opacity is
+        100%).
 
     :param element: sketch SVG element (element with standard Inkscape
         identifier)
     :param id_: element `id` attribute
     :return: True iff SVG element has valid style
     """
-    if "style" not in element.attrib or not element.attrib["style"]:
-        return True
-
     style: dict[str, str] = {
         x.split(":")[0]: x.split(":")[1]
         for x in element.attrib["style"].split(";")
     }
-
-    if check_sketch_stroke_element(style):
-        return True
-
-    if check_sketch_stroke_element_2(style):
-        return True
-
-    # TODO(enzet): remove this after all icon ids are updated.
-    if check_experimental_shape(style):
-        return True
-
-    return not (style and not id_.startswith("use"))
+    return (
+        check_sketch_stroke_element(style)
+        or check_sketch_fill_element(style)
+        or not (style and not id_.startswith("use"))
+    )
 
 
 def parse_configuration(root: dict, configuration: dict, group: str) -> None:
@@ -366,9 +362,12 @@ class ShapeExtractor:
         if "id" not in node.attrib or not node.attrib["id"]:
             return
 
+        if "style" not in node.attrib or not node.attrib["style"]:
+            return
+
         id_: str = node.attrib["id"]
         if STANDARD_INKSCAPE_ID_MATCHER.match(id_) is not None:
-            if not verify_sketch_element(node, id_):
+            if not is_sketch_element(node, id_):
                 path_part = ""
                 with contextlib.suppress(KeyError, ValueError):
                     path_part = f", {node.attrib['d'].split(' ')[:3]}."
