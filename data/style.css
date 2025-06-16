@@ -261,16 +261,15 @@ input[type="range"]:focus {
 }
 
 .icon-info .tags {
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
 }
 
 .icon-info .tag {
-    background: rgba(var(--fg-color), 0.1);
-    padding: 0.25rem 0.75rem;
+    padding: 0rem 0.5rem;
     border: 1px solid rgba(var(--fg-color));
-    border-radius: 0.5rem;
     font-size: 0.875rem;
 }
 
