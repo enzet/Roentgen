@@ -449,8 +449,14 @@
             "bed_with_floor_and_ceiling": {
                 "name": "bed with floor and ceiling"
             },
-            "drawer": {"keywords": ["furniture", "storage"], "name": "drawer"},
-            "two_beds": {"keywords": ["furniture", "sleep"], "name": "two beds"}
+            "drawer": {
+                "keywords": ["furniture", "storage"],
+                "name": "drawer"
+            },
+            "two_beds": {
+                "keywords": ["furniture", "sleep"],
+                "name": "two beds"
+            }
         },
         "curtains": {
             "keywords": ["furniture", "window"],
@@ -491,34 +497,42 @@
         },
         "beer_mug": {
             "emoji": "\ud83c\udf7a",
-            "keywords": ["food", "drink", ""],
+            "keywords": ["drink", "cup"],
             "name": "beer mug"
         },
         "bottle": {
+            "keywords": ["drink", "liquid"],
             "name": "bottle"
         },
         "bottle_and_wine_glass": {
+            "keywords": ["drink", "liquid"],
             "name": "wine bottle and wine glass"
         },
         "cocktail_glass": {
             "emoji": "\ud83c\udf78",
+            "keywords": ["drink", "liquid"],
             "name": "cocktail glass"
         },
         "cocktail_glass_with_straw": {
             "emoji": "\ud83c\udf78",
+            "keywords": ["drink", "liquid", "alcohol"],
             "name": "cocktail glass with straw"
         },
         "coffee_cup": {
             "emoji": "\u2615",
+            "keywords": ["drink", "liquid"],
             "name": "coffee cup"
         },
         "knives": {
+            "keywords": ["tool", "kitchen"],
             "name": "knives"
         },
         "pan": {
+            "keywords": ["tool", "kitchen"],
             "name": "pan"
         },
         "steak_and_fork": {
+            "keywords": ["food", "tool", "kitchen"],
             "name": "steak and fork"
         }
     },
@@ -526,176 +540,142 @@
         "__animal": {
             "dog": {
                 "emoji": "\ud83d\udc15",
+                "keywords": ["animal", "pet"],
                 "name": "dog"
             },
             "dog_and_cross": {
+                "keywords": ["animal", "pet", "veterinary"],
                 "name": "dog and cross"
             }
         },
         "__plant": {
             "__fruit": {
                 "apple": {
-                    "categories": [
-                        "natural"
-                    ],
-                    "emoji": [
-                        "\ud83c\udf4e",
-                        "\ud83c\udf4f"
-                    ],
-                    "keywords": [
-                        "food",
-                        "fruit"
-                    ],
+                    "categories": ["natural"],
+                    "emoji": ["\ud83c\udf4e", "\ud83c\udf4f"],
+                    "keywords": ["food", "fruit", "natural"],
                     "name": "apple"
                 },
                 "peach": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
                     "emoji": "\ud83c\udf51",
-                    "keywords": [
-                        "food",
-                        "fruit"
-                    ],
+                    "keywords": ["food", "fruit", "natural"],
                     "name": "peach"
                 },
                 "pear": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
                     "emoji": "\ud83c\udf50",
-                    "keywords": [
-                        "food",
-                        "fruit"
-                    ],
+                    "keywords": ["food", "fruit", "natural"],
                     "name": "pear"
                 }
             },
             "__leaf": {
                 "leaf_maple": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
                     "emoji": "\ud83c\udf41",
+                    "keywords": ["natural", "tree", "Canada"],
                     "name": "maple leaf"
                 }
             },
             "__tree": {
                 "betula": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
+                    "keywords": ["natural", "tree"],
                     "name": "birch"
                 },
                 "christmas_tree": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
+                    "keywords": ["natural", "tree", "Christmas"],
                     "emoji": "\ud83c\udf84",
                     "name": "Christmas tree"
                 },
                 "needleleaved_tree": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
+                    "keywords": ["natural", "tree"],
                     "emoji": "\ud83c\udf32",
                     "name": "needleleaved tree"
                 },
                 "palm": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
+                    "keywords": ["natural", "tree"],
                     "emoji": "\ud83c\udf34",
                     "name": "palm"
                 },
                 "tree": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
+                    "keywords": ["natural"],
                     "emoji": "\ud83c\udf33",
                     "name": "tree"
                 },
                 "tree_with_leaf": {
-                    "categories": [
-                        "natural"
-                    ],
+                    "categories": ["natural"],
+                    "keywords": ["natural"],
                     "name": "tree with leaf"
                 }
             },
             "bush": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "scrub", "shrub"],
                 "name": "bush"
             },
             "cactus": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant", "desert"],
                 "emoji": "\ud83c\udf35",
                 "name": "cactus"
             },
             "ear_botany": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "ear (botany)"
             },
             "ear_botany_2": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "ear (botany, 2)"
             },
             "flower_in_pot": {
+                "keywords": ["natural", "plant"],
                 "name": "flower in pot"
             },
             "grapes": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "three grapes"
             },
             "grapes_2": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "eight grapes"
             },
             "grapes_3": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "six grapes"
             },
             "oat": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "oat"
             },
             "oat_2": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "oat (2)"
             },
             "rape": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "rape"
             },
             "rape_2": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "rape (2)"
             },
             "sunflower": {
-                "categories": [
-                    "natural"
-                ],
+                "categories": ["natural"],
+                "keywords": ["natural", "plant"],
                 "name": "sunflower"
             }
         }
@@ -711,97 +691,91 @@
     },
     "__natural": {
         "cave": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural"],
             "name": "cave"
         },
         "cliff": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "rock"],
             "name": "cliff"
         },
         "crater": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "astronomy"],
             "name": "crater"
         },
         "ford": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "water"],
             "name": "ford"
         },
         "lava": {
             "is_part": true,
+            "keywords": ["natural", "fire"],
             "name": "lava"
         },
         "saddle": {
             "name": "saddle"
         },
         "shield_volcano": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "mountain"],
             "emoji": "\ud83c\udf0b",
             "name": "shield volcano"
         },
         "smoke": {
             "is_part": true,
+            "keywords": ["natural", "fire"],
             "name": "smoke"
         },
         "smoke_2": {
             "is_part": true,
+            "keywords": ["natural", "water"],
             "name": "clouds"
         },
         "spring": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "water"],
             "name": "spring"
         },
         "stone": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "rock"],
             "emoji": "\ud83e\udea8",
             "name": "stone"
         },
         "stone_with_inscription": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "rock"],
             "name": "stone with inscription"
         },
         "stratovolcano": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "mountain"],
             "emoji": "\ud83c\udf0b",
             "name": "stratovolcano"
         },
         "volcanic_cone": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "mountain"],
             "name": "volcanic cone"
         },
         "waterfall": {
-            "categories": [
-                "natural"
-            ],
+            "categories": ["natural"],
+            "keywords": ["natural", "water"],
             "directed": "right",
             "name": "waterfall"
         }
     },
     "__other": {
         "amusement_ride": {
+            "keywords": ["attraction", "recreation"],
             "emoji": "\ud83c\udfa0",
             "name": "amusement ride"
         },
         "atm": {
+            "keywords": ["bank", "money", "finance", "cash"],
             "name": "bill acceptor"
         },
         "awning": {
@@ -809,9 +783,11 @@
             "name": "awning"
         },
         "binoculars": {
+            "keywords": ["tool", "outdoor"],
             "name": "binocular"
         },
         "binoculars_on_pole": {
+            "keywords": ["tool"],
             "name": "binoculars on pole"
         },
         "bleachers": {
@@ -822,6 +798,7 @@
             "name": "bottom right horizontal line"
         },
         "briefcase": {
+            "keywords": ["office"],
             "name": "briefcase"
         },
         "buffer_stop": {
