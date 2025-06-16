@@ -1,47 +1,122 @@
 {
-  "__architecture": {
-    "__building_size": {
-      "apartments_1_story": {"name": "one-story apartments building", "categories": ["building"]},
-      "apartments_1_story_gabled_roof": {"name": "one-story apartments building with gabled roof", "categories": ["building"]},
-      "apartments_1_story_skillion_roof": {"name": "one-story apartments building with skillion roof", "categories": ["building"]},
-      "apartments_2_story": {"name": "two-story apartments building", "categories": ["building"]},
-      "apartments_2_story_gabled_roof": {"name": "two-story apartments building with gabled roof", "categories": ["building"]},
-      "apartments_2_story_skillion_roof": {"name": "two-story apartments building with skillion roof", "categories": ["building"]},
-      "apartments_3_story": {"name": "three-story apartments building", "categories": ["building"]},
-      "apartments_3_story_gabled_roof": {"name": "three-story apartments building with gabled roof", "categories": ["building"]},
-      "apartments_3_story_skillion_roof": {"name": "three-story apartments building with skillion roof", "categories": ["building"]},
-      "apartments_4_story": {"name": "four-story apartments building", "categories": ["building"]},
-      "apartments_4_story_gabled_roof": {"name": "four-story apartments building with gabled roof", "categories": ["building"]},
-      "apartments_4_story_skillion_roof": {"name": "four-story apartments building with skillion roof", "categories": ["building"]},
-      "apartments_5_story": {"name": "five-story apartments building", "categories": ["building"]},
-      "apartments_5_story_gabled_roof": {"name": "five-story apartments building with gabled roof", "categories": ["building"]},
-      "apartments_5_story_skillion_roof": {"name": "five-story apartments building with skillion roof", "categories": ["building"]},
-      "building": {"name": "house", "categories": ["building"]},
-      "building_construction": {"name": "building construction", "categories": ["building"]},
-      "building_container": {"name": "container building", "categories": ["building"]},
-      "houseboat": {"name": "houseboat", "categories": ["building"], "keywords": ["water"]},
-      "fort": {"name": "fort", "categories": ["building"], "keywords": ["military"]},
-      "mausoleum": {"name": "mausoleum", "categories": ["building"]},
-      "minaret": {"name": "minaret", "categories": ["building"]},
-      "pagoda": {"name": "pagoda", "categories": ["building"], "keywords": ["japan"]},
-      "pyramid": {"name": "pyramid", "categories": ["building"], "keywords": ["egypt"]},
-      "townhall": {"name": "town hall", "categories": ["building"]},
-      "food_court": {"name": "food court", "keywords": ["food"]}
+    "__architecture": {
+        "__building_size": {
+            "apartments_1_story": {
+                "name": "one-story apartments building",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_1_story_gabled_roof": {
+                "name": "one-story apartments building with gabled roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_1_story_skillion_roof": {
+                "name": "one-story apartments building with skillion roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_2_story": {
+                "name": "two-story apartments building",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_2_story_gabled_roof": {
+                "name": "two-story apartments building with gabled roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_2_story_skillion_roof": {
+                "name": "two-story apartments building with skillion roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_3_story": {
+                "name": "three-story apartments building",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_3_story_gabled_roof": {
+                "name": "three-story apartments building with gabled roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_3_story_skillion_roof": {
+                "name": "three-story apartments building with skillion roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_4_story": {
+                "name": "four-story apartments building",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_4_story_gabled_roof": {
+                "name": "four-story apartments building with gabled roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_4_story_skillion_roof": {
+                "name": "four-story apartments building with skillion roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_5_story": {
+                "name": "five-story apartments building",
+                "categories": ["building"]
+            },
+            "apartments_5_story_gabled_roof": {
+                "name": "five-story apartments building with gabled roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "apartments_5_story_skillion_roof": {
+                "name": "five-story apartments building with skillion roof",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "building": {
+                "name": "house",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "building_construction": {
+                "name": "building construction",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "building_container": {
+                "name": "container building",
+                "categories": ["building"],
+                "keywords": ["architecture", "building"]
+            },
+            "houseboat": {
+                "name": "houseboat",
+                "categories": ["building"],
+                "keywords": ["water", "building", "architecture"]
+            },
+            "fort": {"name": "fort", "categories": ["building"], "keywords": ["military", "building"]},
+            "mausoleum": {"name": "mausoleum", "categories": ["building"]},
+            "minaret": {"name": "minaret", "categories": ["building"], "keywords": ["islam", "mosque", "religion"]},
+            "pagoda": {"name": "pagoda", "categories": ["building"], "keywords": ["japan"]},
+            "pyramid": {"name": "pyramid", "categories": ["building"], "keywords": ["egypt"]},
+            "townhall": {"name": "town hall", "categories": ["building"]},
+            "food_court": {"name": "food court", "keywords": ["food"]}
     },
     "__building_part": {
-      "main_entrance": {"name": "main entrance"},
-      "pillar": {"name": "pillar"},
-      "roof": {"is_part": true, "name": "roof"},
-      "roof_and_walls": {"is_part": true, "name": "roof and wall"},
-      "wayside_shrine": {"name": "wayside shrine"}
+      "main_entrance": {"name": "main entrance", "keywords": ["access"]},
+      "pillar": {"name": "pillar", "keywords": ["architecture"]},
+      "roof": {"is_part": true, "name": "roof", "keywords": ["architecture"]},
+      "roof_and_walls": {"is_part": true, "name": "roof and wall", "keywords": ["architecture"]},
+      "wayside_shrine": {"name": "wayside shrine", "keywords": ["religion"]}
     }
   },
   "__life": {
     "__plant": {
       "__fruit": {
-        "apple": {"emoji": ["🍎", "🍏"], "name": "apple", "categories": ["natural"]},
-        "peach": {"categories": ["natural"], "name": "peach", "emoji": "🍑"},
-        "pear": {"emoji": "🍐", "name": "pear", "categories": ["natural"]}
+        "apple": {"emoji": ["🍎", "🍏"], "name": "apple", "categories": ["natural"], "keywords": ["food", "fruit"]},
+        "peach": {"categories": ["natural"], "name": "peach", "emoji": "🍑", "keywords": ["food", "fruit"]},
+        "pear": {"emoji": "🍐", "name": "pear", "categories": ["natural"], "keywords": ["food", "fruit"]}
       },
       "__tree": {
         "betula": {"name": "birch", "categories": ["natural"]},
@@ -543,9 +618,9 @@
   },
   "__transport": {
     "__small": {
-      "bicycle": {"emoji": "🚲", "name": "bicycle"},
-      "skateboard": {"emoji": "🛹", "name": "skateboard"},
-      "wheelchair": {"emoji": "🦽", "name": "wheelchair"}
+      "bicycle": {"emoji": "🚲", "name": "bicycle", "keywords": ["transport"]},
+      "skateboard": {"emoji": "🛹", "name": "skateboard", "keywords": ["transport"]},
+      "wheelchair": {"emoji": "🦽", "name": "wheelchair", "keywords": ["transport"]}
     },
     "bus": {"emoji": "🚌", "name": "bus", "categories": ["public transport"]},
     "buses": {"name": "two buses", "categories": ["public transport"]},
@@ -572,16 +647,16 @@
     "vending_tickets": {"name": "ticket vending machine"}
   },
   "__historic": {
-    "memorial": {"categories": ["historic"], "name": "memorial"},
-    "monument": {"name": "monument"},
-    "obelisk": {"name": "obelisk", "categories": ["historic"]},
-    "plaque": {"name": "plaque with inscription", "categories": ["historic"]},
-    "statue": {"name": "statue", "categories": ["historic"]}
+    "memorial": {"categories": ["historic"], "name": "memorial", "keywords": ["art", "historic"]},
+    "monument": {"name": "monument", "keywords": ["art", "historic"]},
+    "obelisk": {"name": "obelisk", "categories": ["historic"], "keywords": ["art", "historic"]},
+    "plaque": {"name": "plaque with inscription", "categories": ["historic"], "keywords": ["art", "historic"]},
+    "statue": {"name": "statue", "categories": ["historic"], "keywords": ["art", "historic"]}
   },
   "__parts": {
-    "dish_antenna_left": {"is_part": true, "name": "leftward dish antenna"},
-    "dish_antenna_right": {"is_part": true, "name": "rightward dish antenna"},
-    "siren_left": {"is_part": true, "name": "leftward siren"},
-    "siren_right": {"is_part": true, "name": "rightward siren"}
+    "dish_antenna_left": {"is_part": true, "name": "leftward dish antenna", "keywords": ["communication"]},
+    "dish_antenna_right": {"is_part": true, "name": "rightward dish antenna", "keywords": ["communication"]},
+    "siren_left": {"is_part": true, "name": "leftward siren", "keywords": ["emergency", "emergency"]},
+    "siren_right": {"is_part": true, "name": "rightward siren", "keywords": ["emergency", "emergency"]}
   }
 }
