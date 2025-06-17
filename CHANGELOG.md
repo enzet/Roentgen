@@ -10,7 +10,11 @@ Redraw icons:
   - `slide`.
 
 Make icons smoother and make corners round:
-  - `no_traffic_signals`.
+  - `no_traffic_signals`,
+  - `stop`.
+
+Adjust icon size:
+  - `stop`.
 
 ## 0.5.0
 
