@@ -7,14 +7,15 @@ Redraw icons:
   - `beer_mug`,
   - `hi_fi`,
   - `side_mirror`,
-  - `slide`.
+  - `slide`,
 
 Make icons smoother and make corners round:
   - `no_traffic_signals`,
   - `stop`.
 
 Adjust icon size:
-  - `stop`.
+  - `stop`,
+  - `supermarket_cart`.
 
 ## 0.5.0
 
