@@ -476,10 +476,22 @@ function getRandomColor() {
     return [r, g, b];
 }
 
+function isColorDark(color) {
+    const [r, g, b] = color;
+    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    return brightness < 128;
+}
+
 // Function to update colors randomly.
 function updateRandomColors() {
-    const bgColor = getRandomColor();
-    const fgColor = getRandomColor();
+    let bgColor = getRandomColor();
+    while (isColorDark(bgColor)) {
+        bgColor = getRandomColor();
+    }
+    let fgColor = getRandomColor();
+    while (!isColorDark(fgColor)) {
+        fgColor = getRandomColor();
+    }
     
     // Update CSS variables.
     document.documentElement.style.setProperty('--bg-color', bgColor);
