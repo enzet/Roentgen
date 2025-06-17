@@ -97,6 +97,7 @@ class IconCollection:
         color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
+        only_sketch: bool = False,
     ) -> None:
         """Draw individual icons.
 
@@ -127,6 +128,7 @@ class IconCollection:
                 color=color,
                 outline=outline,
                 outline_opacity=outline_opacity,
+                only_sketch=only_sketch,
             )
 
         shutil.copy(license_path, output_directory / "LICENSE")
@@ -141,6 +143,7 @@ class IconCollection:
         background_color: Color | None = None,
         scale: float = 1.0,
         show_boundaries: bool = False,
+        only_sketch: bool = False,
     ) -> None:
         """Draw icons in the form of a table.
 
@@ -150,6 +153,7 @@ class IconCollection:
         :param background_color: background color
         :param scale: scale icon by the magnitude
         :param show_boundaries: if true, draw boundaries around icons
+        :param only_sketch: if true, draw only sketch icons
         """
         point: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
         width: float = step * columns * scale
@@ -162,6 +166,9 @@ class IconCollection:
             )
 
         for icon in self.icons:
+            if only_sketch != icon.is_sketch():
+                continue
+
             if show_boundaries:
                 rectangle = svg.rect(
                     (point[0] - 14, point[1] - 14), (28, 28), fill="#DDFFFF"

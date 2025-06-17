@@ -118,7 +118,7 @@ def capitalize(name: str) -> str:
 
 
 def process_icons(
-    icons_dir: Path, config_path: Path
+    icons_dirs: list[Path], config_path: Path
 ) -> tuple[dict[str, dict], str]:
     """Process all SVG files.
 
@@ -133,11 +133,17 @@ def process_icons(
 
     # Process icons in config order.
     for identifier, metadata in icon_configs:
-        svg_file = icons_dir / f"{identifier}.svg"
-        if not svg_file.exists():
+        found: bool = False
+        for icons_dir in icons_dirs:
+            svg_file = icons_dir / f"{identifier}.svg"
+            if svg_file.exists():
+                found = True
+                break
+
+        if not found:
             continue
 
-        path_data = extract_path_from_svg(svg_file)
+        path_data: str | None = extract_path_from_svg(svg_file)
         if not path_data:
             continue
 
@@ -205,7 +211,10 @@ def generate_site_files(
 def main() -> None:
     """Generate site files from templates with icon data."""
 
-    icons_dir: Path = Path("icons")
+    icons_dirs: list[Path] = [
+        Path("icons"),
+        Path("icons_sketches"),
+    ]
     template_dir: Path = Path("data")
     output_dir: Path = Path("site")
     config_path: Path = Path("data/config.json")
@@ -215,7 +224,7 @@ def main() -> None:
         version: str = version_file.read().strip()
 
     # Process icons.
-    icons_data, icon_grid_html = process_icons(icons_dir, config_path)
+    icons_data, icon_grid_html = process_icons(icons_dirs, config_path)
 
     # Generate site files.
     generate_site_files(

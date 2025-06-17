@@ -35,7 +35,9 @@ STANDARD_INKSCAPE_ID_MATCHER: re.Pattern = re.compile(
     "^((circle|defs|ellipse|grid|guide|marker|metadata|namedview|path|rect|use)"
     "[\\d-]+|base)$"
 )
-VERSION_MATCHER: re.Pattern = re.compile("^[a-z0-9_]+_v[0-9]+$")
+VERSION_MATCHER: re.Pattern = re.compile(
+    "^(?P<id>[a-z0-9_]+)_(?P<version>v[0-9]+)$"
+)
 
 PATH_MATCHER: re.Pattern = re.compile("[Mm] ([0-9.e-]*)[, ]([0-9.e-]*)")
 
@@ -63,14 +65,22 @@ def round_complex(value: complex, precision: int) -> complex:
 
 
 @dataclass
+class PathOnCanvas:
+    """Path on canvas."""
+
+    path: str
+    """SVG path commands."""
+
+    offset: NDArray
+    """Offset of the path on the canvas."""
+
+
+@dataclass
 class Shape:
     """SVG icon path description."""
 
-    path: str
-    """String representation of SVG path commands."""
-
-    offset: NDArray
-    """Shape place in the monolith SVG file."""
+    paths: dict[str, PathOnCanvas]
+    """Paths and their offsets for different versions."""
 
     id_: str
     """Shape unique string identifier, e.g. `tree`."""
@@ -89,6 +99,9 @@ class Shape:
     follow surveillance direction, whereas car shape has direction but
     flipping icon doesn't make any sense.
     """
+
+    sketch: str | None = None
+    """If shape is a sketch, this field contains the sketch version."""
 
     emojis: set[str] = field(default_factory=set)
     """Set of emojis that represent the same entity.
@@ -113,8 +126,7 @@ class Shape:
     def from_structure(
         cls,
         structure: dict[str, Any],
-        path: str,
-        offset: NDArray,
+        paths: dict[str, PathOnCanvas],
         id_: str,
         name: str | None = None,
     ) -> Shape:
@@ -126,7 +138,7 @@ class Shape:
         :param id_: shape unique identifier
         :param name: shape text description
         """
-        shape: Shape = cls(path, offset, id_, name)
+        shape: Shape = cls(paths, id_, name)
 
         if "name" in structure:
             shape.name = structure["name"]
@@ -140,6 +152,9 @@ class Shape:
         if "emoji" in structure:
             emojis: str | list[str] = structure["emoji"]
             shape.emojis = {emojis} if isinstance(emojis, str) else set(emojis)
+
+        if "sketch" in structure:
+            shape.sketch = structure["sketch"]
 
         shape.is_part = structure.get("is_part", False)
         shape.group = structure.get("group", "")
@@ -161,7 +176,7 @@ class Shape:
         scale: NDArray,
         use_transform: bool = False,
     ) -> SVGPath:
-        """Draw icon into SVG file.
+        """Get SVG path for the shape.
 
         :param point: icon position
         :param offset: additional offset
@@ -171,19 +186,25 @@ class Shape:
         """
         shift: NDArray = point + offset
 
+        version: str = self.sketch or "main"
+
         if use_transform:
-            path = svgwrite.path.Path(d=self.path)
+            path_on_canvas: PathOnCanvas = self.paths[version]
+            path: SVGPath = svgwrite.path.Path(d=path_on_canvas.path)
             if not np.allclose(shift, np.array((0.0, 0.0))):
                 path.translate(shift[0], shift[1])
             if not np.allclose(scale, np.array((1.0, 1.0))):
                 path.scale(scale[0], scale[1])
-            if not np.allclose(self.offset, np.array((0.0, 0.0))):
-                path.translate(self.offset[0], self.offset[1])
+            if not np.allclose(path_on_canvas.offset, np.array((0.0, 0.0))):
+                path.translate(
+                    path_on_canvas.offset[0], path_on_canvas.offset[1]
+                )
         else:
-            parsed_path: ToolsPath = parse_path(self.path)
-            if not np.allclose(self.offset, np.array((0.0, 0.0))):
+            path_on_canvas = self.paths[version]
+            parsed_path: ToolsPath = parse_path(path_on_canvas.path)
+            if not np.allclose(path_on_canvas.offset, np.array((0.0, 0.0))):
                 parsed_path = parsed_path.translated(
-                    self.offset[0] + self.offset[1] * 1j
+                    path_on_canvas.offset[0] + path_on_canvas.offset[1] * 1j
                 )
             if not np.allclose(scale, np.array((1.0, 1.0))):
                 parsed_path = parsed_path.scaled(scale[0], scale[1])
@@ -375,15 +396,18 @@ class ShapeExtractor:
                 raise ValueError(message)
             return
 
-        if VERSION_MATCHER.match(id_) is not None:
+        version: str = "main"
+
+        if match := VERSION_MATCHER.match(id_):
             style: dict[str, str] = {
                 x.split(":")[0]: x.split(":")[1]
                 for x in node.attrib["style"].split(";")
             }
+            version = match.group("version")
+            id_ = match.group("id")
             if not check_experimental_shape(style):
                 message = f"Not verified experimental SVG element `{id_}`"
                 raise ValueError(message)
-            return
 
         if node.attrib.get("d"):
             path: str = node.attrib["d"]
@@ -414,13 +438,20 @@ class ShapeExtractor:
                 if "name" not in configuration:
                     message = f"Shape `{id_}` doesn't have name."
                     raise ValueError(message)
-            else:
+            elif version == "main":
                 message = f"Shape `{id_}` doesn't have configuration."
                 raise ValueError(message)
 
-            self.shapes[id_] = Shape.from_structure(
-                configuration, path, offset, id_, name
-            )
+            if id_ in self.shapes:
+                shape = self.shapes[id_]
+                shape.paths[version] = PathOnCanvas(path, offset)
+            else:
+                self.shapes[id_] = Shape.from_structure(
+                    configuration,
+                    {version: PathOnCanvas(path, offset)},
+                    id_,
+                    name,
+                )
         else:
             message = f"Not standard ID `{id_}`."
             raise ValueError(message)
@@ -618,6 +649,13 @@ class Icon:
         else:
             self.shape_specifications[0].draw(svg, point, tags, scale=scale)
 
+    def is_sketch(self) -> bool:
+        """Check whether icon has sketch shapes."""
+        return any(
+            shape_specification.shape.sketch
+            for shape_specification in self.shape_specifications
+        )
+
     def draw_to_file(
         self,
         file_name: Path,
@@ -625,6 +663,7 @@ class Icon:
         color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
+        only_sketch: bool = False,
     ) -> None:
         """Draw icon to the SVG file.
 
@@ -633,6 +672,9 @@ class Icon:
         :param outline: if true, draw outline beneath the icon
         :param outline_opacity: opacity of the outline
         """
+        if only_sketch != self.is_sketch():
+            return
+
         if not outline:
             # If we don't need outline, we draw the icon the simplest way
             # possible.

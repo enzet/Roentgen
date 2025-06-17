@@ -69,13 +69,13 @@ def draw_icons(
         version_path=version_path,
     )
 
-    icons_by_name_path: Path = output_path / "icons_by_name"
+    icons_by_name_path: Path = output_path / "icons_sketches"
     icons_by_name_path.mkdir(exist_ok=True)
     collection.draw_icons(
         output_directory=icons_by_name_path,
         license_path=license_path,
         version_path=version_path,
-        by_name=True,
+        only_sketch=True,
     )
 
     logger.info(
