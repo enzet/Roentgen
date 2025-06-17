@@ -166,17 +166,17 @@
         },
         "door_with_keyhole": {
             "categories": ["barrier"],
-            "keywords": ["access"],
+            "keywords": ["access", "interior", "exterior"],
             "name": "door with keyhole"
         },
         "entrance": {
             "categories": ["barrier"],
-            "keywords": ["access"],
+            "keywords": ["access", "interior", "exterior"],
             "name": "door"
         },
         "exit": {
             "categories": ["barrier"],
-            "keywords": ["access"],
+            "keywords": ["access", "interior", "exterior"],
             "name": "door with arrow"
         },
         "garage_door": {
@@ -631,73 +631,75 @@
             },
             "ear_botany": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "ear (botany)"
             },
             "ear_botany_2": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "ear (botany, 2)"
             },
             "flower_in_pot": {
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "flower in pot"
             },
             "grapes": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "three grapes"
             },
             "grapes_2": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "eight grapes"
             },
             "grapes_3": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "six grapes"
             },
             "oat": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "oat"
             },
             "oat_2": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "oat (2)"
             },
             "rape": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "rape"
             },
             "rape_2": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "rape (2)"
             },
             "sunflower": {
                 "categories": ["natural"],
-                "keywords": ["natural", "plant"],
+                "keywords": ["natural", "plant", "botany"],
                 "name": "sunflower"
             }
         }
     },
     "__material": {
         "bricks": {
+            "keywords": ["material"],
             "name": "brick wall"
         },
         "wood": {
             "emoji": "\ud83e\udeb5",
+            "keywords": ["material", "wood"],
             "name": "log"
         }
     },
     "__natural": {
         "cave": {
             "categories": ["natural"],
-            "keywords": ["natural"],
+            "keywords": ["natural", "entrance"],
             "name": "cave"
         },
         "cliff": {
@@ -796,6 +798,7 @@
             "name": "binoculars on pole"
         },
         "bleachers": {
+            "keywords": ["stadium", "sports", "sitting"],
             "name": "bleachers"
         },
         "bottom_right_horizontal_line": {
@@ -803,108 +806,132 @@
             "name": "bottom right horizontal line"
         },
         "briefcase": {
-            "keywords": ["office"],
+            "keywords": ["office", "business"],
             "name": "briefcase"
         },
         "buffer_stop": {
+            "keywords": ["railway", "transport"],
             "name": "buffer stop"
         },
         "camp": {
+            "keywords": ["outdoor", "recreation"],
             "name": "camp"
         },
         "card_and_dice": {
+            "keywords": ["game", "gambling"],
             "name": "card and dice"
         },
         "chimney": {
+            "keywords": ["smoke", "fire"],
             "name": "chimney"
         },
         "clock": {
             "emoji": "\u231a",
+            "keywords": ["time"],
             "name": "clock"
         },
         "comb_and_scissors": {
+            "keywords": ["grooming", "barber", "haircut", "beauty"],
             "name": "comb and scissors"
         },
         "credit_card": {
             "emoji": "\ud83d\udcb3",
+            "keywords": ["payment", "finance", "money"],
             "name": "payment card"
         },
         "diamond": {
             "emoji": "\ud83d\udc8e",
+            "keywords": ["jewelry", "gem"],
             "name": "diamond"
         },
         "drinking_water": {
             "emoji": "\ud83d\udeb0",
+            "keywords": ["water", "drink"],
             "name": "tap and glass"
         },
         "dumbbell": {
+            "keywords": ["sports", "fitness", "weightlifting"],
             "name": "dumbbell"
         },
         "envelope": {
             "emoji": "\u2709\ufe0f",
+            "keywords": ["mail", "post", "letter"],
             "name": "envelope"
         },
         "exchange": {
+            "keywords": ["money", "finance"],
             "name": "exchange"
         },
         "film": {
             "emoji": "\ud83c\udf9e\ufe0f",
+            "keywords": ["movie", "cinema", "motion picture"],
             "name": "film"
         },
         "fire_extinguisher": {
-            "categories": [
-                "emergency"
-            ],
+            "categories": ["emergency"],
             "emoji": "\ud83e\uddef",
+            "keywords": ["emergency", "safety"],
             "name": "fire extinguisher"
         },
         "fire_hydrant": {
-            "categories": [
-                "emergency"
-            ],
+            "categories": ["emergency"],
+            "keywords": ["emergency", "safety"],
             "name": "fire hydrant"
         },
         "fire_pit": {
+            "keywords": ["outdoor", "recreation", "camping"],
             "name": "fire pit"
         },
         "fishing_angle": {
+            "keywords": ["outdoor", "recreation"],
             "name": "fishing angle"
         },
         "flagpole": {
             "emoji": "\ud83c\udff4",
+            "keywords": ["country", "national"],
             "name": "flagpole"
         },
         "fork_and_knife": {
             "emoji": "\ud83c\udf74",
+            "keywords": ["food", "meal", "dining"],
             "name": "fork and knife"
         },
         "frame": {
+            "keywords": ["picture", "art", "painting"],
             "name": "picture frame"
         },
         "fuel_station": {
             "emoji": "\u26fd\ufe0f",
+            "keywords": ["gasoline", "petrol"],
             "name": "fuel station"
         },
         "garages": {
+            "keywords": ["car", "vehicle", "transport"],
             "name": "car under roof"
         },
         "gavel": {
+            "keywords": ["law", "justice", "court"],
             "name": "gavel"
         },
         "gazette": {
+            "keywords": ["news", "publication", "magazine", "newspaper"],
             "name": "gazette"
         },
         "gift": {
             "emoji": "\ud83c\udf81",
+            "keywords": ["present", "presenting", "wrap"],
             "name": "gift box"
         },
         "globe": {
+            "keywords": ["world", "earth", "planet"],
             "name": "globe"
         },
         "government": {
+            "keywords": ["building", "politics", "administration"],
             "name": "building with dome and flag"
         },
         "guidepost": {
+            "keywords": ["road", "transport"],
             "directed": "right",
             "name": "guidepost"
         },
@@ -913,9 +940,11 @@
             "name": "guys"
         },
         "human": {
+            "keywords": ["person"],
             "name": "human"
         },
         "human_on_ferry": {
+            "keywords": ["person", "water", "boat"],
             "name": "human over water"
         },
         "hunting_stand": {
@@ -929,9 +958,7 @@
             "name": "kiosk"
         },
         "life_ring": {
-            "categories": [
-                "emergency"
-            ],
+            "categories": ["emergency"],
             "emoji": "\ud83d\udedf",
             "name": "life ring"
         },
@@ -1027,15 +1054,14 @@
             "name": "solar panel"
         },
         "sos_phone": {
-            "categories": [
-                "emergency"
-            ],
+            "categories": ["emergency"],
             "name": "phone with SOS"
         },
         "stained_glass": {
             "name": "stained glass"
         },
         "staircase": {
+            "keywords": ["door", "stairs"],
             "name": "door with stairs"
         },
         "statue_exhibit": {
@@ -1188,9 +1214,7 @@
     },
     "__space": {
         "booster_landing": {
-            "categories": [
-                "aeroway"
-            ],
+            "categories": ["aeroway"],
             "name": "landing booster"
         },
         "descent_stage": {
@@ -1210,16 +1234,12 @@
             "name": "probe"
         },
         "rocket_flying": {
-            "categories": [
-                "aeroway"
-            ],
+            "categories": ["aeroway"],
             "emoji": "\ud83d\ude80",
             "name": "flying rocket"
         },
         "rocket_on_launch_pad": {
-            "categories": [
-                "aeroway"
-            ],
+            "categories": ["aeroway"],
             "name": "rocket on launch pad"
         },
         "third_stage": {
@@ -1228,64 +1248,44 @@
     },
     "__sport": {
         "bowling_ball": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "emoji": "\ud83c\udfb3",
             "name": "bowling ball"
         },
         "golf_club_and_ball": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "golf club and ball"
         },
         "golf_pin": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "golf pin"
         },
         "golf_tee": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "golf tee"
         },
         "horizontal_bar": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "high horizontal bar"
         },
         "horizontal_ladder": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "horizontal ladder"
         },
         "low_horizontal_bars": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "low horizontal bars"
         },
         "rings": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "gymnastic rings"
         },
         "sit_up": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "incline bench"
         },
         "wall_bars": {
-            "categories": [
-                "sport"
-            ],
+            "categories": ["sport"],
             "name": "wall bars"
         }
     },
@@ -1298,29 +1298,21 @@
                 "name": "roundabout"
             },
             "sandpit": {
-                "categories": [
-                    "amenity"
-                ],
+                "categories": ["amenity"],
                 "name": "sandpit"
             },
             "seesaw": {
-                "categories": [
-                    "amenity"
-                ],
+                "categories": ["amenity"],
                 "name": "seesaw"
             },
             "slide": {
-                "categories": [
-                    "amenity"
-                ],
+                "categories": ["amenity"],
                 "directed": "right",
                 "emoji": "\ud83d\udedd",
                 "name": "slide"
             },
             "slide_and_water": {
-                "categories": [
-                    "amenity"
-                ],
+                "categories": ["amenity"],
                 "name": "water slide"
             },
             "street_cabinet": {
@@ -1334,45 +1326,31 @@
             }
         },
         "advertising_column": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "advertising column"
         },
         "bench": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "bench"
         },
         "bench_backrest": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "bench with backrest"
         },
         "bench_no_backrest": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "bench without backrest"
         },
         "bench_with_inscription": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "bench with inscription"
         },
         "bench_with_shelter": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "bench with shelter"
         },
         "bench_with_statue": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "bench with statue"
         },
         "bicycle_parking_rack": {
@@ -1385,40 +1363,28 @@
             "name": "bicycle parking wall loops"
         },
         "billboard": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "billboard"
         },
         "fountain": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "emoji": "\u26f2",
             "name": "fountain"
         },
         "fountain_bubbler": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "bubbler fountain"
         },
         "fountain_cascade": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "cascade fountain"
         },
         "fountain_roman_wolf": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "Roman wolf fountain"
         },
         "fountain_toret": {
-            "categories": [
-                "amenity"
-            ],
+            "categories": ["amenity"],
             "name": "toret fountain"
         },
         "table": {
@@ -1456,9 +1422,7 @@
                 "name": "upwards arrow"
             },
             "at_in_square": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "emoji": "@",
                 "name": "@ in square"
             },
@@ -1575,72 +1539,52 @@
         },
         "__letter": {
             "digit_0": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 0"
             },
             "digit_1": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 1"
             },
             "digit_2": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 2"
             },
             "digit_3": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 3"
             },
             "digit_4": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 4"
             },
             "digit_5": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 5"
             },
             "digit_6": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 6"
             },
             "digit_7": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 7"
             },
             "digit_8": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 8"
             },
             "digit_9": {
-                "categories": [
-                    "number"
-                ],
+                "categories": ["number"],
                 "is_part": true,
                 "name": "digit 9"
             },
@@ -1651,9 +1595,7 @@
                 "name": "free"
             },
             "h": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "emoji": "H",
                 "name": "letter H"
             },
@@ -1661,61 +1603,45 @@
                 "name": "looped square"
             },
             "i": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "name": "letter i"
             },
             "i_in_square": {
                 "name": "letter i in square"
             },
             "p": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "emoji": "P",
                 "name": "letter P"
             },
             "p_small": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "name": "small letter P"
             },
             "pound": {
                 "name": "pound sign"
             },
             "t": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "name": "letter T"
             },
             "x": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "emoji": "\u274c",
                 "name": "letter X"
             },
             "x_4": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "emoji": "\u274c",
                 "name": "X sign 4 px"
             },
             "x_5": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "emoji": "\u274c",
                 "name": "X sign 5 px"
             },
             "y": {
-                "categories": [
-                    "letter"
-                ],
+                "categories": ["letter"],
                 "name": "letter Y"
             }
         },
@@ -1801,189 +1727,127 @@
             "name": "pole lamp"
         },
         "power_pole_1_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "one-level transmission pole"
         },
         "power_pole_2_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "two-level transmission pole"
         },
         "power_pole_3_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "three-level transmission pole"
         },
         "power_pole_4_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "four-level transmission pole"
         },
         "power_pole_asymmetric": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "asymmetric transmission pole"
         },
         "power_pole_asymmetric_armless": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "asymmetric armless transmission pole"
         },
         "power_pole_delta": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "delta transmission pole"
         },
         "power_pole_flag": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "flag transmission pole"
         },
         "power_pole_triangle": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "triangle transmission pole"
         },
         "power_pole_triangle_armless": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "armless triangle transmission pole"
         },
         "power_tower_1_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "one-level transmission tower"
         },
         "power_tower_2_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "two-level transmission tower"
         },
         "power_tower_3_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "three-level transmission tower"
         },
         "power_tower_4_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "four-level transmission tower"
         },
         "power_tower_asymmetric": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "asymmetric transmission tower"
         },
         "power_tower_barrel": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "barrel transmission tower"
         },
         "power_tower_delta": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "delta transmission tower"
         },
         "power_tower_delta_2_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "delta two-level transmission tower"
         },
         "power_tower_delta_3_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "delta three-level transmission tower"
         },
         "power_tower_donau": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "donau transmission tower"
         },
         "power_tower_donau_inverse": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "inverse donau transmission tower"
         },
         "power_tower_flag": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "flag transmission tower"
         },
         "power_tower_guyed_h_frame": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "guyed h-frame transmission tower"
         },
         "power_tower_h_frame": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "h-frame transmission tower"
         },
         "power_tower_h_frame_2_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "h-frame two-level transmission tower"
         },
         "power_tower_portal": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "portal transmission tower"
         },
         "power_tower_portal_2_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "portal two-level transmission tower"
         },
         "power_tower_portal_3_level": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "portal three-level transmission tower"
         },
         "power_tower_triangle": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "triangle transmission tower"
         },
         "power_tower_x_frame": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "x-frame transmission tower"
         },
         "power_tower_y_frame": {
-            "categories": [
-                "power"
-            ],
+            "categories": ["power"],
             "name": "y-frame transmission tower"
         },
         "stupa": {
@@ -2024,37 +1888,27 @@
         "__small": {
             "bicycle": {
                 "emoji": "\ud83d\udeb2",
-                "keywords": [
-                    "transport"
-                ],
+                "keywords": ["transport", "sport"],
                 "name": "bicycle"
             },
             "skateboard": {
                 "emoji": "\ud83d\udef9",
-                "keywords": [
-                    "transport"
-                ],
+                "keywords": ["transport", "sport"],
                 "name": "skateboard"
             },
             "wheelchair": {
                 "emoji": "\ud83e\uddbd",
-                "keywords": [
-                    "transport"
-                ],
+                "keywords": ["transport", "accessibility"],
                 "name": "wheelchair"
             }
         },
         "bus": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
             "emoji": "\ud83d\ude8c",
             "name": "bus"
         },
         "buses": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
             "name": "two buses"
         },
         "car": {
@@ -2067,139 +1921,100 @@
             "name": "caravan"
         },
         "maglev": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
+            "keywords": ["transport", "magnetic", "levitation"],
             "name": "maglev"
         },
         "monorail": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
+            "keywords": ["transport", "railway"],
             "name": "monorail"
         },
         "plane": {
-            "categories": [
-                "aeroway",
-                "public transport"
-            ],
+            "categories": ["aeroway", "public transport"],
             "emoji": "\u2708\ufe0f",
+            "keywords": ["transport", "aeroway", "airplane"],
             "name": "plane"
         },
         "taxi": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
+            "keywords": ["transport", "car"],
             "name": "taxi sign"
         },
         "train": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
             "emoji": "\ud83d\ude86",
             "name": "train"
         },
         "tram": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
             "emoji": "\ud83d\ude8a",
             "name": "tram"
         },
         "trolleybus": {
-            "categories": [
-                "public transport"
-            ],
+            "categories": ["public transport"],
             "name": "trolleybus"
         }
     },
     "__transport_items": {
         "__traffic_barrier": {
             "block": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "block"
             },
             "bollard": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "bollard"
             },
             "bump": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "speed bump"
             },
             "czech_hedgehog": {
-                "categories": [
-                    "barrier"
-                ],
+                "categories": ["barrier"],
                 "name": "Czech hedgehog"
             },
             "dip": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "dip"
             },
             "double_dip": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "double dip"
             },
             "dragons_teeth": {
-                "categories": [
-                    "barrier"
-                ],
+                "categories": ["barrier"],
                 "name": "dragon's teeth"
             },
             "hump": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "speed hump"
             },
             "mini_bumps": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "speed bumps"
             },
             "rumble_strip": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "rumble strips"
             },
             "traffic_cushion": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "speed cushion"
             },
             "traffic_table": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "name": "speed table"
             }
         },
         "__traffic_sigh": {
             "bus_stop": {
-                "categories": [
-                    "public transport"
-                ],
+                "categories": ["public transport"],
                 "emoji": "\ud83d\ude8f",
                 "name": "big bus stop sign"
             },
             "bus_stop_sign": {
-                "categories": [
-                    "public transport",
-                    "highway"
+                "categories": ["public transport","highway"
                 ],
                 "name": "small bus stop sign"
             },
@@ -2214,9 +2029,7 @@
                 "name": "speed limit box for mph"
             },
             "stop": {
-                "categories": [
-                    "highway"
-                ],
+                "categories": ["highway"],
                 "emoji": [
                     "\ud83d\uded1",
                     "\u26d4\ufe0f"
