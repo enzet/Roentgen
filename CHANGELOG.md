@@ -10,6 +10,7 @@ Redraw icons:
   - `slide`,
 
 Make icons smoother and make corners round:
+  - `cactus`,
   - `no_traffic_signals`,
   - `stop`.
 
