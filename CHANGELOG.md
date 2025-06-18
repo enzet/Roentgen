@@ -13,7 +13,8 @@ Make icons smoother and make corners round:
   - `cactus`,
   - `fort`,
   - `no_traffic_signals`,
-  - `stop`.
+  - `stop`,
+  - `townhall`.
 
 Adjust icon size:
   - `stop`,
