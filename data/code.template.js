@@ -219,23 +219,9 @@ function drawGrid(svg, scale) {
     return gridGroup;
 }
 
-// Update icon style.
-function updateIconStyle() {
-
-    const svg = document.getElementById("previewSvg");
-    if (!svg) return;
-
-    // Update SVG size.
-    svg.style.width = `${iconSize}px`;
-    svg.style.height = `${iconSize}px`;
-    const scale = iconSize / 512;
-
-    // Clear the SVG.
-    svg.innerHTML = "";
-
-    // Add the path.
+function drawPath(svg, scale, iconPath) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", selectedIcon.path);
+    path.setAttribute("d", iconPath);
     path.style.fill = "currentColor";
     path.style.stroke = "currentColor";
 
@@ -248,15 +234,9 @@ function updateIconStyle() {
     }
     svg.appendChild(path);
 
-    // If showing grid, add it first (so it's behind the icon).
-    if (showGrid && iconSize > 64) {
-        const gridGroup = drawGrid(svg, scale);
-        svg.insertBefore(gridGroup, svg.firstChild);
-    }
-
     // If showing control points, add them to the same SVG.
     if (showControlPoints && iconSize > 64) {
-        const points = extractControlPoints(selectedIcon.path);
+        const points = extractControlPoints(iconPath);
 
         // Create a group for control elements to ensure they're drawn on top.
         const controlGroup = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -334,6 +314,33 @@ function updateIconStyle() {
         }
         svg.appendChild(controlGroup);
     }
+
+}
+
+// Update icon style.
+function updateIconStyle() {
+
+    const svg = document.getElementById("previewSvg");
+    if (!svg) return;
+
+    // Update SVG size.
+    svg.style.width = `${iconSize}px`;
+    svg.style.height = `${iconSize}px`;
+    const scale = iconSize / 512;
+
+    // Clear the SVG.
+    svg.innerHTML = "";
+
+    // If showing grid, add it first (so it's behind the icon).
+    if (showGrid && iconSize > 64) {
+        const gridGroup = drawGrid(svg, scale);
+        svg.appendChild(gridGroup);
+    }
+
+    // Add the paths.
+    selectedIcon.paths.forEach(path => {
+        drawPath(svg, scale, path);
+    });
 }
 
 // Select and display icon.

@@ -37,18 +37,24 @@ def flatten_config(
     return result
 
 
-def extract_path_from_svg(svg_file: Path) -> str | None:
+def extract_path_from_svg(svg_file: Path) -> list[str]:
     """Extract path data from SVG file."""
 
     tree: ET.ElementTree = ET.parse(svg_file)  # noqa: S314
     root: ET.Element = tree.getroot()
 
-    # Find the first path element.
-    path: ET.Element | None = root.find(".//{http://www.w3.org/2000/svg}path")
-    if path is not None:
-        return path.get("d")
+    result: list[str] = []
 
-    return None
+    # Find all path elements.
+    paths: list[ET.Element] = root.findall(
+        ".//{http://www.w3.org/2000/svg}path"
+    )
+    if paths:
+        for path in paths:
+            if d := path.get("d"):
+                result.append(d)  # noqa: PERF401
+
+    return result
 
 
 def generate_icon_name(file_path: Path) -> str:
@@ -66,13 +72,17 @@ def generate_icon_identifier(file_path: Path) -> str:
     return file_path.stem
 
 
-def generate_icon_grid_item(identifier: str, path_data: str) -> str:
+def generate_icon_grid_item(identifier: str, path_data: list[str]) -> str:
     """Generate HTML for a single icon grid item."""
-    return f"""<div class="icon-item" data-name="{identifier}">
-        <svg viewBox="0 0 16 16" width="40" height="40">
-            <path d="{path_data}"/>
-        </svg>
-    </div>"""
+    result = (
+        f'<div class="icon-item" data-name="{identifier}">'
+        '<svg viewBox="0 0 16 16" width="40" height="40">'
+    )
+    for path in path_data:
+        assert len(path) > 1
+        result += f'<path d="{path}"/>'
+    result += "</svg></div>"
+    return result
 
 
 def capitalize(name: str) -> str:
@@ -143,7 +153,7 @@ def process_icons(
         if not found:
             continue
 
-        path_data: str | None = extract_path_from_svg(svg_file)
+        path_data: list[str] = extract_path_from_svg(svg_file)
         if not path_data:
             continue
 
@@ -156,7 +166,7 @@ def process_icons(
                 "description", f"A {metadata['name'].lower()} icon."
             ),
             "tags": metadata.get("keywords", []),
-            "path": path_data,
+            "paths": path_data,
         }
 
         if "emoji" in metadata:

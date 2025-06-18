@@ -193,6 +193,13 @@
             "categories": ["barrier"],
             "keywords": ["access", "labyrinth"],
             "name": "maze"
+        },
+        "maze___arrow_right_short": {
+            "name": "maze with arrow pointing outward",
+            "shapes": [
+                {"id": "maze", "offset": [-2,  0]},
+                {"id": "arrow_right_short", "offset": [5, -1]}
+            ]
         }
     },
     "__body_part": {
@@ -666,6 +673,76 @@
                     "categories": ["natural"],
                     "keywords": ["natural"],
                     "name": "tree with leaf"
+                },
+                "tree___urban_tree_pot": {
+                    "name": "tree in urban tree pot",
+                    "shapes": [
+                        {"id": "tree"},
+                        {"id": "urban_tree_pot"}
+                    ]
+                },
+                "tree_with_leaf___urban_tree_pot": {
+                    "name": "tree with leaf in urban tree pot",
+                    "shapes": [
+                        {"id": "tree_with_leaf"},
+                        {"id": "urban_tree_pot"}
+                    ]
+                },
+                "needleleaved_tree___urban_tree_pot": {
+                    "name": "needleleaved tree in urban tree pot",
+                    "shapes": [
+                        {"id": "needleleaved_tree"},
+                        {"id": "urban_tree_pot", "offset": [-0.5, 0]}
+                    ]
+                },
+                "betula___urban_tree_pot": {
+                    "name": "birch in urban tree pot",
+                    "shapes": [
+                        {"id": "betula"},
+                        {"id": "urban_tree_pot"}
+                    ]
+                },
+                "palm___urban_tree_pot": {
+                    "name": "palm in urban tree pot",
+                    "shapes": [
+                        {"id": "palm"},
+                        {"id": "urban_tree_pot"}
+                    ]
+                },
+                "tree___bottom_right_horizontal_line": {
+                    "name": "tree on bottom right horizontal line",
+                    "shapes": [
+                        {"id": "tree"},
+                        {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
+                    ]
+                },
+                "tree_with_leaf___bottom_right_horizontal_line": {
+                    "name": "tree with leaf on bottom right horizontal line",
+                    "shapes": [
+                        {"id": "tree_with_leaf"},
+                        {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
+                    ]
+                },
+                "needleleaved_tree___bottom_right_horizontal_line": {
+                    "name": "needleleaved tree on bottom right horizontal line",
+                    "shapes": [
+                        {"id": "needleleaved_tree"},
+                        {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
+                    ]
+                },
+                "betula___bottom_right_horizontal_line": {
+                    "name": "birch on bottom right horizontal line",
+                    "shapes": [
+                        {"id": "betula"},
+                        {"id": "bottom_right_horizontal_line"}
+                    ]
+                },
+                "palm___bottom_right_horizontal_line": {
+                    "name": "palm on bottom right horizontal line",
+                    "shapes": [
+                        {"id": "palm"},
+                        {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
+                    ]
                 }
             },
             "bush": {
@@ -813,6 +890,69 @@
             "emoji": "\ud83c\udf0b",
             "name": "stratovolcano"
         },
+        "stratovolcano___smoke_2": {
+            "name": "stratovolcano with smoke",
+            "shapes": [
+                {"id": "stratovolcano"},
+                {"id": "smoke_2", "offset": [0, -3]}
+            ]
+        },
+        "shield_volcano___smoke_2": {
+            "name": "shield volcano with smoke",
+            "shapes": [
+                {"id": "shield_volcano"},
+                {"id": "smoke_2", "offset": [0, -1]}
+            ]
+        },
+        "volcanic_cone___smoke_2": {
+            "name": "volcanic cone with smoke",
+            "shapes": [
+                {"id": "volcanic_cone"},
+                {"id": "smoke_2", "offset": [0, -2]}
+            ]
+        },
+        "stratovolcano___lava": {
+            "name": "stratovolcano with lava",
+            "shapes": [
+                {"id": "stratovolcano"},
+                {"id": "lava", "offset": [0, -3]}
+            ]
+        },
+        "stratovolcano___smoke": {
+            "name": "stratovolcano with smoke",
+            "shapes": [
+                {"id": "stratovolcano"},
+                {"id": "smoke", "offset": [1, -3]}
+            ]
+        },
+        "shield_volcano___lava": {
+            "name": "shield volcano with lava",
+            "shapes": [
+                {"id": "shield_volcano"},
+                {"id": "lava", "offset": [0, -1]}
+            ]
+        },
+        "volcanic_cone___lava": {
+            "name": "volcanic cone with lava",
+            "shapes": [
+                {"id": "volcanic_cone"},
+                {"id": "lava", "offset": [0, -2]}
+            ]
+        },
+        "shield_volcano___smoke": {
+            "name": "shield volcano with smoke",
+            "shapes": [
+                {"id": "shield_volcano"},
+                {"id": "smoke", "offset": [1, -1]}
+            ]
+        },
+        "volcanic_cone___smoke": {
+            "name": "volcanic cone with smoke",
+            "shapes": [
+                {"id": "volcanic_cone"},
+                {"id": "smoke", "offset": [1, -2]}
+            ]
+        },
         "volcanic_cone": {
             "categories": ["natural"],
             "keywords": ["natural", "mountain"],
@@ -881,6 +1021,48 @@
             "emoji": "\u231a",
             "keywords": ["time"],
             "name": "clock"
+        },
+        "clock___support_pole": {
+            "name": "clock on support pole",
+            "shapes": [
+                {"id": "clock"},
+                {"id": "support_pole"}
+            ]
+        },
+        "i_in_square___support_pole": {
+            "name": "letter i in square on support pole",
+            "shapes": [
+                {"id": "i_in_square"},
+                {"id": "support_pole"}
+            ]
+        },
+        "clock___support_wall": {
+            "name": "clock on support wall",
+            "shapes": [
+                {"id": "clock"},
+                {"id": "support_wall"}
+            ]
+        },
+        "i_in_square___support_wall": {
+            "name": "letter i in square on support wall",
+            "shapes": [
+                {"id": "i_in_square"},
+                {"id": "support_wall"}
+            ]
+        },
+        "clock___support_column": {
+            "name": "clock on support column",
+            "shapes": [
+                {"id": "clock"},
+                {"id": "support_column"}
+            ]
+        },
+        "i_in_square___support_column": {
+            "name": "letter i in square on support column",
+            "shapes": [
+                {"id": "i_in_square"},
+                {"id": "support_column"}
+            ]
         },
         "comb_and_scissors": {
             "keywords": ["grooming", "barber", "haircut", "beauty"],
@@ -1190,6 +1372,13 @@
             "name": "tactile paving",
             "keywords": ["blind", "accessibility", "surface", "guidance"]
         },
+        "tactile_paving___x_5": {
+            "name": "tactile paving with X sign",
+            "shapes": [
+                {"id": "tactile_paving", "offset": [0, 2]},
+                {"id": "x_5", "offset": [0, -3]}
+            ]
+        },
         "ticket": {
             "emoji": [
                 "\ud83c\udfab",
@@ -1256,6 +1445,14 @@
         },
         "wretch_and_hammer": {
             "name": "wretch and hammer"
+        },
+        "exchange___dollar_pound": {
+            "name": "exchange rate",
+            "shapes": [
+                {"id": "exchange"},
+                {"id": "dollar", "offset": [-4,  3]},
+                {"id": "pound", "offset": [5, -2]}
+            ]
         }
     },
     "__parts": {
@@ -1477,6 +1674,34 @@
             "categories": ["amenity"],
             "name": "bench with statue"
         },
+        "bicycle___p_small": {
+            "name": "bicycle with small letter P",
+            "shapes": [
+                {"id": "bicycle", "offset": [0, 2]},
+                {"id": "p_small", "offset": [-5, -3]}
+            ]
+        },
+        "p_small___bicycle_parking_stand": {
+            "name": "small letter P with bicycle parking stand",
+            "shapes": [
+                {"id": "p_small", "offset": [-5, -3]},
+                {"id": "bicycle_parking_stand"}
+            ]
+        },
+        "p_small___bicycle_parking_wall_loops": {
+            "name": "small letter P with bicycle parking wall loops",
+            "shapes": [
+                {"id": "p_small", "offset": [-5, -3]},
+                {"id": "bicycle_parking_wall_loops"}
+            ]
+        },
+        "p_small___bicycle_parking_rack": {
+            "name": "small letter P with bicycle parking rack",
+            "shapes": [
+                {"id": "p_small", "offset": [-5, -3]},
+                {"id": "bicycle_parking_rack"}
+            ]
+        },
         "bicycle_parking_rack": {
             "name": "bicycle parking rack"
         },
@@ -1516,6 +1741,62 @@
         },
         "table_and_two_chairs": {
             "name": "table and two chairs"
+        },
+        "table_and_two_chairs___umbrella": {
+            "name": "table and two chairs with umbrella",
+            "shapes": [
+                {"id": "table_and_two_chairs"},
+                {"id": "umbrella"}
+            ]
+        },
+        "table_and_two_chairs___roof": {
+            "name": "table and two chairs with roof",
+            "shapes": [
+                {"id": "table_and_two_chairs"},
+                {"id": "roof"}
+            ]
+        },
+        "table_and_two_chairs___awning": {
+            "name": "table and two chairs with awning",
+            "shapes": [
+                {"id": "table_and_two_chairs"},
+                {"id": "awning"}
+            ]
+        },
+        "table_and_two_chairs___roof_and_walls": {
+            "name": "table and two chairs with roof and walls",
+            "shapes": [
+                {"id": "table_and_two_chairs"},
+                {"id": "roof_and_walls"}
+            ]
+        },
+        "table_and_two_chairs___pergola": {
+            "name": "table and two chairs with pergola",
+            "shapes": [
+                {"id": "table_and_two_chairs"},
+                {"id": "pergola"}
+            ]
+        },
+        "p___arrow_right": {
+            "name": "letter P with arrow pointing right",
+            "shapes": [
+                {"id": "p", "offset": [1, 0]},
+                {"id": "arrow_right", "offset": [4, 5]}
+            ]
+        },
+        "p___arrow_down": {
+            "name": "letter P with arrow pointing down",
+            "shapes": [
+                {"id": "p", "offset": [1, 0]},
+                {"id": "arrow_down", "offset": [4, 5]}
+            ]
+        },
+        "p___arrow_up": {
+            "name": "letter P with arrow pointing up",
+            "shapes": [
+                {"id": "p", "offset": [1, 0]},
+                {"id": "arrow_up", "offset": [4, 5]}
+            ]
         }
     },
     "__surface": {
@@ -1615,6 +1896,13 @@
             },
             "wlan": {
                 "name": "wireless LAN symbol"
+            },
+            "wlan___free": {
+                "name": "wireless LAN symbol with word \"FREE\"",
+                "shapes": [
+                    {"id": "wlan", "offset": [0, -3]},
+                    {"id": "free", "offset": [0, 5]}
+                ]
             }
         },
         "__japan": {
@@ -1841,8 +2129,72 @@
         "lattice": {
             "name": "lattice mast"
         },
+        "lattice___light_left___light_right": {
+            "name": "lattice mast with two lights",
+            "shapes": [
+                {"id": "lattice"},
+                {"id": "light_left", "offset": [-4, -3]},
+                {"id": "light_right", "offset": [3, -3]}
+            ]
+        },
+        "lattice___wave_left___wave_right": {
+            "name": "lattice mast with two waves",
+            "shapes": [
+                {"id": "lattice"},
+                {"id": "wave_left", "offset": [-4, -3]},
+                {"id": "wave_right", "offset": [3, -3]}
+            ]
+        },
+        "lattice___siren_left___siren_right": {
+            "name": "lattice mast with two sirens",
+            "shapes": [
+                {"id": "lattice"},
+                {"id": "siren_left", "offset": [-4, -3]},
+                {"id": "siren_right", "offset": [3, -3]}
+            ]
+        },
+        "lattice___dish_antenna_left___dish_antenna_right": {
+            "name": "lattice mast with two dish antennas",
+            "shapes": [
+                {"id": "lattice"},
+                {"id": "dish_antenna_left", "offset": [-4, -3]},
+                {"id": "dish_antenna_right", "offset": [3, -3]}
+            ]
+        },
         "lattice_guyed": {
             "name": "guyed lattice mast"
+        },
+        "lattice_guyed___light_left___light_right": {
+            "name": "guyed lattice mast with two lights",
+            "shapes": [
+                {"id": "lattice_guyed"},
+                {"id": "light_left", "offset": [-4, -3]},
+                {"id": "light_right", "offset": [3, -3]}
+            ]
+        },
+        "lattice_guyed___wave_left___wave_right": {
+            "name": "guyed lattice mast with two waves",
+            "shapes": [
+                {"id": "lattice_guyed"},
+                {"id": "wave_left", "offset": [-4, -3]},
+                {"id": "wave_right", "offset": [3, -3]}
+            ]
+        },
+        "lattice_guyed___siren_left___siren_right": {
+            "name": "guyed lattice mast with two sirens",
+            "shapes": [
+                {"id": "lattice_guyed"},
+                {"id": "siren_left", "offset": [-4, -3]},
+                {"id": "siren_right", "offset": [3, -3]}
+            ]
+        },
+        "lattice_guyed___dish_antenna_left___dish_antenna_right": {
+            "name": "guyed lattice mast with two dish antennas",
+            "shapes": [
+                {"id": "lattice_guyed"},
+                {"id": "dish_antenna_left", "offset": [-4, -3]},
+                {"id": "dish_antenna_right", "offset": [3, -3]}
+            ]
         },
         "observatory": {
             "name": "observatory"
@@ -2002,8 +2354,72 @@
         "tube": {
             "name": "mast"
         },
+        "tube___light_left___light_right": {
+            "name": "mast with two lights",
+            "shapes": [
+                {"id": "tube"},
+                {"id": "light_left", "offset": [-3, -3]},
+                {"id": "light_right", "offset": [3, -3]}
+            ]
+        },
+        "tube___wave_left___wave_right": {
+            "name": "mast with two waves",
+            "shapes": [
+                {"id": "tube"},
+                {"id": "wave_left", "offset": [-3, -3]},
+                {"id": "wave_right", "offset": [3, -3]}
+            ]
+        },
+        "tube___siren_left___siren_right": {
+            "name": "mast with two sirens",
+            "shapes": [
+                {"id": "tube"},
+                {"id": "siren_left", "offset": [-3, -3]},
+                {"id": "siren_right", "offset": [3, -3]}
+            ]
+        },
+        "tube___dish_antenna_left___dish_antenna_right": {
+            "name": "mast with two dish antennas",
+            "shapes": [
+                {"id": "tube"},
+                {"id": "dish_antenna_left", "offset": [-3, -3]},
+                {"id": "dish_antenna_right", "offset": [3, -3]}
+            ]
+        },
         "tube_guyed": {
             "name": "guyed mast"
+        },
+        "tube_guyed___light_left___light_right": {
+            "name": "guyed mast with two lights",
+            "shapes": [
+                {"id": "tube_guyed"},
+                {"id": "light_left", "offset": [-3, -3]},
+                {"id": "light_right", "offset": [3, -3]}
+            ]
+        },
+        "tube_guyed___wave_left___wave_right": {
+            "name": "guyed mast with two waves",
+            "shapes": [
+                {"id": "tube_guyed"},
+                {"id": "wave_left", "offset": [-3, -3]},
+                {"id": "wave_right", "offset": [3, -3]}
+            ]
+        },
+        "tube_guyed___siren_left___siren_right": {
+            "name": "guyed mast with two sirens",
+            "shapes": [
+                {"id": "tube_guyed"},
+                {"id": "siren_left", "offset": [-3, -3]},
+                {"id": "siren_right", "offset": [3, -3]}
+            ]
+        },
+        "tube_guyed___dish_antenna_left___dish_antenna_right": {
+            "name": "guyed mast with two dish antennas",
+            "shapes": [
+                {"id": "tube_guyed"},
+                {"id": "dish_antenna_left", "offset": [-3, -3]},
+                {"id": "dish_antenna_right", "offset": [3, -3]}
+            ]
         },
         "wind_turbine": {
             "name": "wind turbine",
@@ -2016,6 +2432,27 @@
                 "emoji": "\ud83d\udeb2",
                 "keywords": ["transport", "sport"],
                 "name": "bicycle"
+            },
+            "bicycle___x_4": {
+                "name": "bicycle with X",
+                "shapes": [
+                    {"id": "bicycle", "offset": [0, 2]},
+                    {"id": "x_4", "offset": [-4, -4]}
+                ]
+            },
+            "bicycle___wrench": {
+                "name": "bicycle with wrench",
+                "shapes": [
+                    {"id": "bicycle", "offset": [0, 2]},
+                    {"id": "wrench", "offset": [0, -4]}
+                ]
+            },
+            "bicycle___key": {
+                "name": "bicycle with key",
+                "shapes": [
+                    {"id": "bicycle", "offset": [0, 2]},
+                    {"id": "key", "offset": [-1, -4], "flip_horizontally": true}
+                ]
             },
             "skateboard": {
                 "emoji": "\ud83d\udef9",
@@ -2039,6 +2476,48 @@
         },
         "car": {
             "name": "car"
+        },
+        "car___car": {
+            "name": "car over car",
+            "shapes": [
+                {"id": "car", "offset": [0, 4]},
+                {"id": "car", "offset": [0, -3]}
+            ]
+        },
+        "car___bed": {
+            "name": "car with bed",
+            "shapes": [
+                {"id": "car", "offset": [0, 4]},
+                {"id": "bed", "offset": [0, -3]}
+            ]
+        },
+        "car___wrench": {
+            "name": "car with wrench",
+            "shapes": [
+                {"id": "car", "offset": [0, 3]},
+                {"id": "wrench", "offset": [0, -4]}
+            ]
+        },
+        "car___key": {
+            "name": "car with key",
+            "shapes": [
+                {"id": "car", "offset": [0, 3]},
+                {"id": "key", "offset": [1, -4]}
+            ]
+        },
+        "car___sharing": {
+            "name": "car with sharing",
+            "shapes": [
+                {"id": "car", "offset": [0, 3]},
+                {"id": "sharing", "offset": [2, -4]}
+            ]
+        },
+        "car___shower_head": {
+            "name": "car with shower head",
+            "shapes": [
+                {"id": "car", "offset": [0, 3]},
+                {"id": "shower_head", "offset": [0, -4]}
+            ]
         },
         "car_on_ferry": {
             "name": "car over water"
@@ -2133,7 +2612,7 @@
                 "name": "speed table"
             }
         },
-        "__traffic_sigh": {
+        "__traffic_sign": {
             "bus_stop": {
                 "categories": ["public transport"],
                 "emoji": "\ud83d\ude8f",
@@ -2174,6 +2653,30 @@
         "bus_stop_shelter": {
             "is_part": true,
             "name": "bus stop shelter"
+        },
+        "bus_stop_sign___bus_stop_shelter": {
+            "name": "bus stop sign with shelter",
+            "shapes": ["bus_stop_sign", "bus_stop_shelter"]
+        },
+        "bus_stop_sign___bus_stop_bench___bus_stop_shelter": {
+            "name": "bus stop sign with bench and shelter",
+            "shapes": ["bus_stop_sign", "bus_stop_bench", "bus_stop_shelter"]
+        },
+        "bus_stop_sign___platform___bus_stop_shelter": {
+            "name": "bus stop sign with platform and shelter",
+            "shapes": ["bus_stop_sign", "platform", "bus_stop_shelter"]
+        },
+        "bus_stop_sign___bus_stop_bench___platform___bus_stop_shelter": {
+            "name": "bus stop sign with bench, platform and shelter",
+            "shapes": ["bus_stop_sign", "bus_stop_bench", "platform", "bus_stop_shelter"]
+        },
+        "bus_stop_sign___bus_stop_bench": {
+            "name": "bus stop sign with bench",
+            "shapes": ["bus_stop_sign", "bus_stop_bench"]
+        },
+        "bus_stop_sign___platform___bus_stop_bench": {
+            "name": "bus stop sign with platform and bench",
+            "shapes": ["bus_stop_sign", "platform", "bus_stop_bench"]
         },
         "charging_station": {
             "name": "charging station"
