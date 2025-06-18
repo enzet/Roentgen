@@ -333,20 +333,60 @@
         }
     },
     "__flag": {
+        "flag_bend_dexter": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "flag with dexter bend"
+        },
         "flag_bend_sinister": {
-            "keywords": ["flag", "country", "nation"],
+            "keywords": ["country", "nation"],
             "name": "flag with sinister bend"
         },
+        "flag_canton": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "flag with canton"
+        },
+        "flag_horizontal_bisection": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "flag with horizontal bisection"
+        },
+        "flag_horizontal_triband": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "flag with horizontal triband"
+        },
+        "flag_saltire": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "flag with saltire"
+        },
+        "flag_symmetric_cross": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "flag with symmetric cross"
+        },
+        "flag_solid": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "solid flag"
+        },
         "flag_triangle_flanche": {
-            "keywords": ["flag", "country", "nation"],
+            "keywords": ["country", "nation"],
             "name": "flag with triangle on the left side"
         },
         "flag_usa": {
-            "keywords": ["flag", "country", "nation", "States", "America"],
+            "keywords": ["country", "nation", "States", "America"],
             "name": "flag of the USA"
         },
+        "flag_vertical_bisection": {
+            "keywords": ["country", "nation"],
+            "sketch": "v0",
+            "name": "flag with vertical bisection"
+        },
         "flag_vertical_triband": {
-            "keywords": ["flag", "country", "nation"],
+            "keywords": ["country", "nation"],
             "name": "flag with three vertical bands"
         }
     },
@@ -417,13 +457,16 @@
     },
     "__human": {
         "massage": {
+            "keywords": ["spa", "wellness", "relaxation"],
             "name": "massage"
         },
         "pole_dancer": {
+            "keywords": ["stripper", "strip club", "stripper pole dance"],
             "name": "pole dancer"
         },
         "sauna": {
             "emoji": "\ud83e\uddd6",
+            "keywords": ["spa", "wellness", "relaxation"],
             "name": "sauna"
         },
         "two_people_together": {
@@ -452,6 +495,11 @@
             "drawer": {
                 "keywords": ["furniture", "storage"],
                 "name": "drawer"
+            },
+            "sofa": {
+                "keywords": ["furniture", "sitting"],
+                "name": "sofa",
+                "sketch": "v1"
             },
             "two_beds": {
                 "keywords": ["furniture", "sleep"],
@@ -1248,20 +1296,25 @@
     },
     "__sport": {
         "bowling_ball": {
-            "categories": ["sport"],
+            "categories": ["sport", "indoor"],
             "emoji": "\ud83c\udfb3",
             "name": "bowling ball"
         },
+        "bowling_pin_and_ball": {
+            "sketch": "v0",
+            "keywords": ["skittle", "kegel", "sport", "indoor"],
+            "name": "bowling pin and ball"
+        },
         "golf_club_and_ball": {
-            "categories": ["sport"],
+            "categories": ["sport", "outdoor"],
             "name": "golf club and ball"
         },
         "golf_pin": {
-            "categories": ["sport"],
+            "categories": ["sport", "outdoor", "grass"],
             "name": "golf pin"
         },
         "golf_tee": {
-            "categories": ["sport"],
+            "categories": ["sport", "outdoor", "grass"],
             "name": "golf tee"
         },
         "horizontal_bar": {
