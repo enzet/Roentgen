@@ -471,7 +471,8 @@
         },
         "two_people_together": {
             "emoji": "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
-            "name": "two people together"
+            "name": "two people together",
+            "keywords": ["group", "friends", "community", "togetherness"]
         },
         "woman_and_man": {
             "emoji": "\ud83d\udebb",
@@ -490,7 +491,8 @@
                 "keywords": ["furniture", "sleep"], "name": "bed and roof"
             },
             "bed_with_floor_and_ceiling": {
-                "name": "bed with floor and ceiling"
+                "name": "bed with floor and ceiling",
+                "keywords": ["furniture", "sleep", "bunk", "loft", "hotel", "hostel", "room", "motel"]
             },
             "drawer": {
                 "keywords": ["furniture", "storage"],
@@ -835,7 +837,8 @@
         },
         "awning": {
             "is_part": true,
-            "name": "awning"
+            "name": "awning",
+            "keywords": ["cover", "shade", "canopy", "shelter"]
         },
         "binoculars": {
             "keywords": ["tool", "outdoor"],
@@ -851,7 +854,8 @@
         },
         "bottom_right_horizontal_line": {
             "is_part": true,
-            "name": "bottom right horizontal line"
+            "name": "bottom right horizontal line",
+            "keywords": ["border", "edge", "corner", "line"]
         },
         "briefcase": {
             "keywords": ["office", "business"],
@@ -996,14 +1000,17 @@
             "name": "human over water"
         },
         "hunting_stand": {
-            "name": "hunting stand"
+            "name": "hunting stand",
+            "keywords": ["hunt", "platform", "elevated", "wildlife"]
         },
         "key": {
             "is_part": true,
-            "name": "key"
+            "name": "key",
+            "keywords": ["lock", "access", "security", "unlock"]
         },
         "kiosk": {
-            "name": "kiosk"
+            "name": "kiosk",
+            "keywords": ["shop", "stand", "booth", "stall"]
         },
         "life_ring": {
             "categories": ["emergency"],
@@ -1011,99 +1018,129 @@
             "name": "life ring"
         },
         "lift_gate": {
-            "name": "lift gate"
+            "name": "lift gate",
+            "keywords": ["barrier", "entry", "access", "gate"]
         },
         "lock": {
             "emoji": "\ud83d\udd12",
-            "name": "closed lock"
+            "name": "closed lock",
+            "keywords": ["security", "safe", "locked", "protection"]
         },
         "lock_unlocked": {
-            "name": "opened lock"
+            "name": "opened lock",
+            "keywords": ["security", "unlocked", "open", "access"]
         },
         "lock_with_keyhole": {
             "emoji": "\ud83d\udd12",
-            "name": "closed lock with keyhole"
+            "name": "closed lock with keyhole",
+            "keywords": ["security", "locked", "key", "protection"]
         },
         "lowered_kerb": {
-            "name": "lowered kerb"
+            "name": "lowered kerb",
+            "keywords": ["sidewalk", "curb", "accessibility", "ramp"]
         },
         "manhole_drain": {
-            "name": "drain manhole cover"
+            "name": "drain manhole cover",
+            "keywords": ["sewer", "cover", "utility", "drainage"]
         },
         "marketplace": {
-            "name": "marketplace"
+            "name": "marketplace",
+            "keywords": ["market", "bazaar", "shopping", "trade"]
         },
         "medicine_bottle": {
-            "name": "medicine bottle"
+            "name": "medicine bottle",
+            "keywords": ["pharmacy", "pill", "container", "health"]
         },
         "milestone": {
-            "name": "milestone"
+            "name": "milestone",
+            "keywords": ["marker", "distance", "road", "sign"]
         },
         "money": {
-            "name": "banknotes"
+            "name": "banknotes",
+            "keywords": ["cash", "currency", "money"]
         },
         "no_door": {
-            "name": "doorway"
+            "name": "doorway",
+            "keywords": ["entry", "open", "access", "threshold"]
         },
         "no_foot": {
-            "name": "crossed out footprint"
+            "name": "crossed out footprint",
+            "keywords": ["forbidden", "no entry", "foot", "ban"]
         },
         "no_wheelchair": {
-            "name": "wheelchair with X sign"
+            "name": "wheelchair with X sign",
+            "keywords": ["forbidden", "disabled", "accessibility", "ban"]
         },
         "onion_roof_shape": {
-            "name": "onion roof shape"
+            "name": "onion roof shape",
+            "keywords": ["architecture", "roof", "dome"]
         },
         "pac_man": {
-            "name": "Pac-Man"
+            "name": "Pac-Man",
+            "keywords": ["game", "arcade", "video", "character"]
         },
         "pergola": {
             "is_part": true,
-            "name": "pergola"
+            "name": "pergola",
+            "keywords": ["garden", "structure", "shade", "outdoor"]
         },
         "picture": {
-            "name": "picture in frame"
+            "name": "picture in frame",
+            "keywords": ["art", "image", "photo"]
         },
         "pipeline": {
-            "name": "pipeline with valve"
+            "name": "pipeline with valve",
+            "keywords": ["valve", "utility", "infrastructure"]
         },
         "platform": {
             "is_part": true,
-            "name": "platform"
+            "name": "platform",
+            "keywords": ["stage", "base", "support", "structure"]
         },
         "pole": {
-            "name": "pole"
+            "name": "pole",
+            "keywords": ["post", "support", "vertical", "structure"]
         },
         "power_generator": {
-            "name": "power generator"
+            "name": "power generator",
+            "keywords": ["electricity", "energy", "backup", "machine"]
         },
         "prison": {
-            "name": "bars"
+            "name": "bars",
+            "keywords": ["jail", "cell", "prison", "security"]
         },
         "sheets": {
-            "name": "two sheets"
+            "name": "two sheets",
+            "keywords": ["paper", "documents", "pages", "stack"]
         },
         "shelter": {
-            "name": "shelter"
+            "name": "shelter",
+            "keywords": ["protection", "cover", "refuge", "safe"]
         },
         "shop_convenience": {
-            "name": "convenience store"
+            "name": "convenience store",
+            "keywords": ["shop", "store", "market", "retail"]
         },
         "shower": {
-            "name": "shower"
+            "name": "shower",
+            "keywords": ["bathroom", "water", "wash", "clean"]
         },
         "side_mirror": {
-            "name": "side mirror"
+            "name": "side mirror",
+            "keywords": ["reflection"]
         },
         "signal": {
-            "name": "railway signal"
+            "name": "railway signal",
+            "keywords": ["train", "traffic"]
         },
         "solar_panel": {
-            "name": "solar panel"
+            "name": "solar panel",
+            "keywords": ["energy", "sun", "electricity", "renewable"]
         },
         "sos_phone": {
             "categories": ["emergency"],
-            "name": "phone with SOS"
+            "name": "phone with SOS",
+            "keywords": ["emergency", "help", "call", "rescue"]
         },
         "stained_glass": {
             "name": "stained glass"
@@ -1113,86 +1150,109 @@
             "name": "door with stairs"
         },
         "statue_exhibit": {
-            "name": "indoor statue"
+            "name": "indoor statue",
+            "keywords": ["art", "sculpture", "display", "museum"]
         },
         "supermarket_cart": {
             "emoji": "\ud83d\uded2",
-            "name": "supermarket cart"
+            "name": "supermarket cart",
+            "keywords": ["shopping", "cart", "trolley", "store"]
         },
         "support_column": {
             "is_part": true,
-            "name": "support column"
+            "name": "support column",
+            "keywords": ["pillar", "structure", "support", "architecture", "vertical"]
         },
         "support_pole": {
             "is_part": true,
-            "name": "support pole"
+            "name": "support pole",
+            "keywords": ["post", "structure", "support", "vertical"]
         },
         "support_wall": {
             "is_part": true,
-            "name": "support wall"
+            "name": "support wall",
+            "keywords": ["wall", "structure", "support", "architecture", "vertical"]
         },
         "survey_point": {
-            "name": "survey point"
+            "name": "survey point",
+            "keywords": ["measurement", "land", "marker", "geodesy"]
         },
         "suspension_railway": {
             "emoji": "\ud83d\ude9f",
-            "name": "suspension railway"
+            "name": "suspension railway",
+            "keywords": ["train", "monorail", "transport", "bridge"]
         },
         "swimming_area": {
-            "name": "pool ladder"
+            "name": "pool ladder",
+            "keywords": ["swim", "water"]
         },
         "tactile_paving": {
-            "name": "tactile paving"
+            "name": "tactile paving",
+            "keywords": ["blind", "accessibility", "surface", "guidance"]
         },
         "ticket": {
             "emoji": [
                 "\ud83c\udfab",
                 "\ud83c\udf9f"
             ],
-            "name": "ticket"
+            "name": "ticket",
+            "keywords": ["admission", "event", "pass", "entry"]
         },
         "toll_booth": {
-            "name": "toll booth"
+            "name": "toll booth",
+            "keywords": ["road", "payment", "barrier", "highway"]
         },
         "tomb": {
             "emoji": "\ud83e\udea6",
-            "name": "tomb"
+            "name": "tomb",
+            "keywords": ["grave", "burial", "cemetery", "memorial"]
         },
         "torch": {
-            "name": "torch"
+            "name": "torch",
+            "keywords": ["fire", "light", "flame"]
         },
         "toucan_crossing": {
-            "name": "toucan crossing"
+            "name": "toucan crossing",
+            "keywords": ["pedestrian", "crosswalk", "road"]
         },
         "transformer": {
-            "name": "transformer"
+            "name": "transformer",
+            "keywords": ["electric", "power", "device", "utility"]
         },
         "triangle_down_hollow": {
-            "name": "hollow upside down triangle"
+            "name": "hollow upside down triangle",
+            "keywords": ["shape", "symbol"]
         },
         "turning_loop": {
-            "name": "turning loop"
+            "name": "turning loop",
+            "keywords": ["road", "circle", "turn", "traffic"]
         },
         "turnstile": {
-            "name": "turnstile"
+            "name": "turnstile",
+            "keywords": ["gate", "entry", "barrier", "access"]
         },
         "umbrella": {
             "is_part": true,
-            "name": "umbrella"
+            "name": "umbrella",
+            "keywords": ["rain", "cover", "shade", "weather"]
         },
         "urban_tree_pot": {
             "is_part": true,
-            "name": "tree pot"
+            "name": "tree pot",
+            "keywords": ["plant", "container"]
         },
         "vanity_mirror": {
-            "name": "vanity mirror"
+            "name": "vanity mirror",
+            "keywords": ["reflection", "makeup"]
         },
         "ventilation": {
-            "name": "ventilation shaft"
+            "name": "ventilation shaft",
+            "keywords": ["air", "duct", "exhaust", "system"]
         },
         "waving_flag": {
             "emoji": "\ud83c\udff3",
-            "name": "waving flag"
+            "name": "waving flag",
+            "keywords": ["flag", "banner", "country", "symbol"]
         },
         "wretch_and_hammer": {
             "name": "wretch and hammer"
@@ -1232,10 +1292,12 @@
     },
     "__recycling": {
         "recycling_container": {
-            "name": "recycling container with wheel"
+            "name": "recycling container with wheel",
+            "keywords": ["bin", "waste"]
         },
         "waste_basket": {
             "emoji": "\ud83d\uddd1",
+            "keywords": ["trash", "bin", "garbage"],
             "name": "waste basket"
         },
         "waste_disposal": {
@@ -1245,37 +1307,46 @@
     },
     "__road_part": {
         "crossing": {
+            "keywords": ["pedestrian", "crosswalk", "road"],
             "name": "zebra crossing"
         },
         "kerb": {
+            "keywords": ["curb", "edge", "sidewalk", "street"],
             "name": "kerb"
         }
     },
     "__sea": {
         "anchor": {
             "emoji": "\u2693",
+            "keywords": ["ship", "boat", "vessel", "sea", "ocean"],
             "name": "anchor"
         },
         "buoy": {
+            "keywords": ["sea", "water", "ocean", "lake"],
             "name": "buoy"
         }
     },
     "__space": {
         "booster_landing": {
             "categories": ["aeroway"],
+            "keywords": ["rocket", "space", "platform", "reusability"],
             "name": "landing booster"
         },
         "descent_stage": {
+            "keywords": ["rocket", "space"],
             "name": "descent stage"
         },
         "lander": {
+            "keywords": ["moon", "space", "exploration", "vehicle"],
             "name": "lander"
         },
         "lunokhod": {
+            "keywords": ["moon", "space", "exploration", "vehicle"],
             "name": "lunokhod"
         },
         "orbiter": {
             "emoji": "\ud83d\udef0",
+            "keywords": ["space", "orbit", "satellite", "vehicle"],
             "name": "orbiter"
         },
         "probe": {
@@ -1642,7 +1713,8 @@
                 "name": "digit 9"
             },
             "dollar": {
-                "name": "dollar sign"
+                "name": "dollar sign",
+                "keywords": ["money", "currency", "usd"]
             },
             "free": {
                 "name": "free"
@@ -1934,7 +2006,8 @@
             "name": "guyed mast"
         },
         "wind_turbine": {
-            "name": "wind turbine"
+            "name": "wind turbine",
+            "keywords": ["energy", "power", "windmill"]
         }
     },
     "__transport": {
