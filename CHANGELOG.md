@@ -8,8 +8,9 @@ Redraw icons:
   - `garage_door`,
   - `government`,
   - `hi_fi`,
+  - `rectangle_vertical_rounded_crossed`,
   - `side_mirror`,
-  - `slide`,
+  - `slide`.
 
 Make icons smoother and make corners round:
   - `cactus`,
