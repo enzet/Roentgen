@@ -11,6 +11,7 @@ Redraw icons:
 
 Make icons smoother and make corners round:
   - `cactus`,
+  - `fort`,
   - `no_traffic_signals`,
   - `stop`.
 
