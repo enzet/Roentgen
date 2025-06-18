@@ -6,6 +6,7 @@ curves. This may change the shape in not detectable way.
 Redraw icons:
   - `beer_mug`,
   - `garage_door`,
+  - `government`,
   - `hi_fi`,
   - `side_mirror`,
   - `slide`,
