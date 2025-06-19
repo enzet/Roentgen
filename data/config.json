@@ -328,6 +328,14 @@
             "keywords": ["photography"],
             "name": "photo camera"
         },
+        "server": {
+            "keywords": ["server", "computer", "technical", "data"],
+            "shapes": [
+                {"id": "server", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "server"
+        },
         "telephone": {
             "emoji": "\u260e\ufe0f",
             "keywords": ["communication", "phone", "dial"],
@@ -352,6 +360,14 @@
             "keywords": ["country", "nation"],
             "name": "flag with sinister bend"
         },
+        "flag_canada": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_canada", "version": "v2"}
+            ],
+            "sketch": true,
+            "name": "flag of Canada"
+        },
         "flag_canton": {
             "keywords": ["country", "nation"],
             "shapes": [
@@ -359,6 +375,22 @@
             ],
             "sketch": true,
             "name": "flag with canton"
+        },
+        "flag_chile": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_chile", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "flag of Chile"
+        },
+        "flag_china": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_china", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "flag of China"
         },
         "flag_europe": {
             "keywords": ["country", "nation"],
@@ -368,21 +400,56 @@
             "sketch": true,
             "name": "flag of European Union"
         },
-        "flag_horizontal_bisection": {
+        "flag_horizontal_bisection_dark_light": {
             "keywords": ["country", "nation"],
             "shapes": [
-                {"id": "flag_horizontal_bisection", "version": "v0"}
+                {"id": "flag_horizontal_bisection_dark_light", "version": "v0"}
             ],
             "sketch": true,
             "name": "flag with horizontal bisection"
         },
-        "flag_horizontal_triband": {
+        "flag_horizontal_bisection_light_dark": {
             "keywords": ["country", "nation"],
             "shapes": [
-                {"id": "flag_horizontal_triband", "version": "v0"}
+                {"id": "flag_horizontal_bisection_light_dark", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "flag with horizontal bisection"
+        },
+        "flag_horizontal_triband_light_dark_light": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {
+                    "id": "flag_horizontal_triband_light_dark_light",
+                    "version": "v0"
+                }
             ],
             "sketch": true,
             "name": "flag with horizontal triband"
+        },
+        "flag_nordic_cross_dark": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_nordic_cross_dark", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "dark flag with Nordic cross"
+        },
+        "flag_nordic_cross_dark_double": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_nordic_cross_dark_double", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "dark flag with double Nordic cross"
+        },
+        "flag_nordic_cross_light": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_nordic_cross_light", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "light flag with Nordic cross"
         },
         "flag_philippines": {
             "keywords": ["country", "nation"],
@@ -424,10 +491,10 @@
             "keywords": ["country", "nation", "States", "America"],
             "name": "flag of the USA"
         },
-        "flag_vertical_bisection": {
+        "flag_vertical_bisection_dark_light": {
             "keywords": ["country", "nation"],
             "shapes": [
-                {"id": "flag_vertical_bisection", "version": "v0"}
+                {"id": "flag_vertical_bisection_dark_light", "version": "v0"}
             ],
             "sketch": true,
             "name": "flag with vertical bisection"
