@@ -5,18 +5,19 @@ from __future__ import annotations
 import math
 import shutil
 from dataclasses import dataclass, field
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 
 import numpy as np
-from colour import Color
 from svgwrite import Drawing
 
-from roentgen.icon import Icon, Shape, ShapeExtractor, ShapeSpecification
-
 if TYPE_CHECKING:
+    from collections.abc import Callable
     from pathlib import Path
 
+    from colour import Color
     from numpy.typing import NDArray
+
+    from roentgen.icon import Icon, Shapes
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
@@ -28,73 +29,23 @@ class IconCollection:
 
     icons: list[Icon] = field(default_factory=list)
 
-    def add_from_scheme(
-        self,
-        extractor: ShapeExtractor,
-        *,
-        background_color: Color,
-        color: Color,
-        add_unused: bool = False,
-        add_all: bool = False,
+    @classmethod
+    def from_icons(
+        cls,
+        icons: list[Icon],
+        filter_: Callable[[Icon], bool] | None = None,
     ) -> IconCollection:
-        """Collect all possible icon combinations.
-
-        This collection won't contain icons for tags matched with regular
-        expressions. E.g. traffic_sign=maxspeed; maxspeed=42.
-
-        :param extractor: shape extractor for icon creation
-        :param background_color: background color
-        :param color: icon color
-        :param add_unused: create icons from shapes that have no corresponding
-            tags
-        :param add_all: create icons from all possible shapes including parts
-        """
-        for key, value in extractor.configuration.items():
-            if value.get("is_part"):
-                continue
-            if extractor.has_shape(key):
-                specifications: list[ShapeSpecification] = [
-                    ShapeSpecification(extractor.get_shape(key), color)
-                ]
-                constructed_icon: Icon = Icon(specifications)
-                constructed_icon.recolor(color, white=background_color)
-                if constructed_icon not in self.icons:
-                    self.icons.append(constructed_icon)
-
-        specified_ids: set[str] = set()
-
-        icon: Icon
-        shape: Shape
-
-        for icon in self.icons:
-            specified_ids |= set(icon.get_shape_ids())
-
-        if add_unused:
-            for shape_id in extractor.shapes.keys() - specified_ids:
-                shape = extractor.get_shape(shape_id)
-                if shape.is_part:
-                    continue
-                icon = Icon([ShapeSpecification(shape, color)])
-                icon.recolor(color, white=background_color)
-                self.icons.append(icon)
-
-        if add_all:
-            for shape_id in extractor.shapes:
-                shape = extractor.get_shape(shape_id)
-                icon = Icon([ShapeSpecification(shape, color)])
-                icon.recolor(color, white=background_color)
-                self.icons.append(icon)
-
-        return self
+        """Create icon collection from list of icons."""
+        return cls([icon for icon in icons if filter_ is None or filter_(icon)])
 
     def draw_icons(
         self,
         output_directory: Path,
+        shapes: Shapes,
         *,
         license_path: Path,
         version_path: Path,
         by_name: bool = False,
-        color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
         only_sketch: bool = False,
@@ -125,7 +76,7 @@ class IconCollection:
         for icon in self.icons:
             icon.draw_to_file(
                 output_directory / get_file_name(icon),
-                color=color,
+                shapes,
                 outline=outline,
                 outline_opacity=outline_opacity,
                 only_sketch=only_sketch,
@@ -137,6 +88,7 @@ class IconCollection:
     def draw_grid(
         self,
         file_name: Path,
+        shapes: Shapes,
         *,
         columns: int = 16,
         step: float = 24.0,
@@ -144,6 +96,7 @@ class IconCollection:
         scale: float = 1.0,
         show_boundaries: bool = False,
         only_sketch: bool = False,
+        color: Color | None = None,
     ) -> None:
         """Draw icons in the form of a table.
 
@@ -154,8 +107,9 @@ class IconCollection:
         :param scale: scale icon by the magnitude
         :param show_boundaries: if true, draw boundaries around icons
         :param only_sketch: if true, draw only sketch icons
+        :param color: fill color
         """
-        point: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
+        position: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
         width: float = step * columns * scale
 
         height: int = int(math.ceil(len(self.icons) / columns) * step * scale)
@@ -171,14 +125,16 @@ class IconCollection:
 
             if show_boundaries:
                 rectangle = svg.rect(
-                    (point[0] - 14, point[1] - 14), (28, 28), fill="#DDFFFF"
+                    (position[0] - 14, position[1] - 14),
+                    (28, 28),
+                    fill="#DDFFFF",
                 )
                 svg.add(rectangle)
-            icon.draw(svg, point, scale=scale)
-            point += np.array((step * scale, 0.0))
-            if point[0] > width - 8.0:
-                point[0] = step / 2.0 * scale
-                point += np.array((0.0, step * scale))
+            icon.draw(svg, shapes, position, scale=scale, color=color)
+            position += np.array((step * scale, 0.0))
+            if position[0] > width - 8.0:
+                position[0] = step / 2.0 * scale
+                position += np.array((0.0, step * scale))
                 height += int(step * scale)
 
         with file_name.open("w", encoding="utf-8") as output_file:
@@ -190,32 +146,3 @@ class IconCollection:
     def sort(self) -> None:
         """Sort icon list."""
         self.icons = sorted(self.icons)
-
-    def add_combinations(
-        self,
-        combinations: list[list[dict[str, Any]]],
-        shapes: dict[str, Shape],
-    ) -> None:
-        """Add combinations of shapes to the collection."""
-
-        # TODO(enzet): use color from the configuration.
-        color: Color = Color("black")
-        background_color: Color = Color("white")
-
-        for elements in combinations:
-            specifications: list[ShapeSpecification] = []
-
-            for element in elements:
-                specification = ShapeSpecification(
-                    shapes[element["id"]],
-                    offset=np.array(element.get("offset", [0, 0])),
-                    flip_horizontally=element.get("flip_horizontally", False),
-                    flip_vertically=element.get("flip_vertically", False),
-                    color=color,
-                )
-                specifications.append(specification)
-
-            constructed_icon: Icon = Icon(specifications)
-            constructed_icon.recolor(color, white=background_color)
-            if constructed_icon not in self.icons:
-                self.icons.append(constructed_icon)

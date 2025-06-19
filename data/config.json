@@ -342,7 +342,10 @@
     "__flag": {
         "flag_bend_dexter": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_bend_dexter", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "flag with dexter bend"
         },
         "flag_bend_sinister": {
@@ -351,32 +354,66 @@
         },
         "flag_canton": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_canton", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "flag with canton"
+        },
+        "flag_europe": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_europe", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "flag of European Union"
         },
         "flag_horizontal_bisection": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_horizontal_bisection", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "flag with horizontal bisection"
         },
         "flag_horizontal_triband": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_horizontal_triband", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "flag with horizontal triband"
+        },
+        "flag_philippines": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_philippines", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "flag of the Philippines"
         },
         "flag_saltire": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_saltire", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "flag with saltire"
         },
         "flag_symmetric_cross": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_symmetric_cross", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "flag with symmetric cross"
         },
         "flag_solid": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_solid", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "solid flag"
         },
         "flag_triangle_flanche": {
@@ -389,7 +426,10 @@
         },
         "flag_vertical_bisection": {
             "keywords": ["country", "nation"],
-            "sketch": "v0",
+            "shapes": [
+                {"id": "flag_vertical_bisection", "version": "v0"}
+            ],
+            "sketch": true,
             "name": "flag with vertical bisection"
         },
         "flag_vertical_triband": {
@@ -508,7 +548,10 @@
             "sofa": {
                 "keywords": ["furniture", "sitting"],
                 "name": "sofa",
-                "sketch": "v1"
+                "shapes": [
+                    {"id": "sofa", "version": "v1"}
+                ],
+                "sketch": true
             },
             "two_beds": {
                 "keywords": ["furniture", "sleep"],
@@ -567,7 +610,10 @@
         },
         "bubble_tea": {
             "keywords": ["drink", "liquid", "boba", "tapioca"],
-            "sketch": "v3",
+            "shapes": [
+                {"id": "bubble_tea", "version": "v3"}
+            ],
+            "sketch": true,
             "name": "bubble tea"
         },
         "cocktail_glass": {
@@ -1446,8 +1492,8 @@
         "wretch_and_hammer": {
             "name": "wretch and hammer"
         },
-        "exchange___dollar_pound": {
-            "name": "exchange rate",
+        "exchange___dollar___pound": {
+            "name": "arrows from dollar to pound and vice versa",
             "shapes": [
                 {"id": "exchange"},
                 {"id": "dollar", "offset": [-4,  3]},
@@ -1569,7 +1615,10 @@
             "name": "bowling ball"
         },
         "bowling_pin_and_ball": {
-            "sketch": "v0",
+            "shapes": [
+                {"id": "bowling_pin_and_ball", "version": "v0"}
+            ],
+            "sketch": true,
             "keywords": ["skittle", "kegel", "sport", "indoor"],
             "name": "bowling pin and ball"
         },
@@ -2575,10 +2624,6 @@
                 "categories": ["highway"],
                 "name": "speed bump"
             },
-            "czech_hedgehog": {
-                "categories": ["barrier"],
-                "name": "Czech hedgehog"
-            },
             "dip": {
                 "categories": ["highway"],
                 "name": "dip"
@@ -2619,8 +2664,7 @@
                 "name": "big bus stop sign"
             },
             "bus_stop_sign": {
-                "categories": ["public transport","highway"
-                ],
+                "categories": ["public transport","highway"],
                 "name": "small bus stop sign"
             },
             "city_limit_sign": {
@@ -2656,27 +2700,50 @@
         },
         "bus_stop_sign___bus_stop_shelter": {
             "name": "bus stop sign with shelter",
-            "shapes": ["bus_stop_sign", "bus_stop_shelter"]
+            "shapes": [
+                {"id": "bus_stop_sign"},
+                {"id": "bus_stop_shelter"}
+            ]
         },
         "bus_stop_sign___bus_stop_bench___bus_stop_shelter": {
             "name": "bus stop sign with bench and shelter",
-            "shapes": ["bus_stop_sign", "bus_stop_bench", "bus_stop_shelter"]
+            "shapes": [
+                {"id": "bus_stop_sign"},
+                {"id": "bus_stop_bench"},
+                {"id": "bus_stop_shelter"}
+            ]
         },
         "bus_stop_sign___platform___bus_stop_shelter": {
             "name": "bus stop sign with platform and shelter",
-            "shapes": ["bus_stop_sign", "platform", "bus_stop_shelter"]
+            "shapes": [
+                {"id": "bus_stop_sign"},
+                {"id": "platform"},
+                {"id": "bus_stop_shelter"}
+            ]
         },
         "bus_stop_sign___bus_stop_bench___platform___bus_stop_shelter": {
             "name": "bus stop sign with bench, platform and shelter",
-            "shapes": ["bus_stop_sign", "bus_stop_bench", "platform", "bus_stop_shelter"]
+            "shapes": [
+                {"id": "bus_stop_sign"},
+                {"id": "bus_stop_bench"},
+                {"id": "platform"},
+                {"id": "bus_stop_shelter"}
+            ]
         },
         "bus_stop_sign___bus_stop_bench": {
             "name": "bus stop sign with bench",
-            "shapes": ["bus_stop_sign", "bus_stop_bench"]
+            "shapes": [
+                {"id": "bus_stop_sign"},
+                {"id": "bus_stop_bench"}
+            ]
         },
         "bus_stop_sign___platform___bus_stop_bench": {
             "name": "bus stop sign with platform and bench",
-            "shapes": ["bus_stop_sign", "platform", "bus_stop_bench"]
+            "shapes": [
+                {"id": "bus_stop_sign"},
+                {"id": "platform"},
+                {"id": "bus_stop_bench"}
+            ]
         },
         "charging_station": {
             "name": "charging station"
@@ -2711,10 +2778,18 @@
             "name": "ticket vending machine"
         }
     },
-    "__weapon": {
-        "cannon": {
-            "directed": "right",
-            "name": "cannon"
+    "__military": {
+        "czech_hedgehog": {
+            "categories": ["barrier"],
+            "keywords": ["military", "barrier"],
+            "name": "Czech hedgehog"
+        },
+        "__weapon": {
+            "cannon": {
+                "directed": "right",
+                "keywords": ["military", "weapon"],
+                "name": "cannon"
+            }
         }
     }
 }

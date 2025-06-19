@@ -8,7 +8,6 @@ import re
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 from xml.etree import ElementTree as ET
-from xml.etree.ElementTree import Element
 
 import numpy as np
 import svgwrite
@@ -20,6 +19,7 @@ from svgwrite.container import Group
 
 if TYPE_CHECKING:
     from pathlib import Path
+    from xml.etree.ElementTree import Element
 
     from numpy.typing import NDArray
     from svgwrite.base import BaseElement
@@ -85,91 +85,13 @@ class Shape:
     id_: str
     """Shape unique string identifier, e.g. `tree`."""
 
-    name: str | None = None
-    """Shape human-readable description."""
-
-    is_right_directed: bool | None = None
-    """If shape is directed.
-
-    If value is `None`, shape doesn't have distinct direction or its
-    direction doesn't make sense.  Shape is directed to the right if value is
-    `True` and to the left if value is `False`.
-
-    E.g. CCTV camera shape has direction and may be flipped horizontally to
-    follow surveillance direction, whereas car shape has direction but
-    flipping icon doesn't make any sense.
-    """
-
-    sketch: str | None = None
-    """If shape is a sketch, this field contains the sketch version."""
-
-    emojis: set[str] = field(default_factory=set)
-    """Set of emojis that represent the same entity.
-
-    E.g. 🍐 (pear) for `pear`; 🍏 (green apple) and 🍎 (red apple) for `apple`.
-    """
-
-    is_part: bool = False
-    """If shape is used only as a part of other icons."""
-
-    group: str = ""
-    """Hierarchical icon group.  Is used for icon sorting."""
-
-    categories: set[str] = field(default_factory=set)
-    """Icon categories that is used in OpenStreetMap wiki.
-
-    E.g. `barrier` means
-    https://wiki.openstreetmap.org/wiki/Category:Barrier_icons.
-    """
-
-    @classmethod
-    def from_structure(
-        cls,
-        structure: dict[str, Any],
-        paths: dict[str, PathOnCanvas],
-        id_: str,
-        name: str | None = None,
-    ) -> Shape:
-        """Parse shape description from structure.
-
-        :param structure: input structure
-        :param path: SVG path commands in string form
-        :param offset: shape offset in the input file
-        :param id_: shape unique identifier
-        :param name: shape text description
-        """
-        shape: Shape = cls(paths, id_, name)
-
-        if "name" in structure:
-            shape.name = structure["name"]
-
-        if "directed" in structure:
-            if structure["directed"] == "right":
-                shape.is_right_directed = True
-            if structure["directed"] == "left":
-                shape.is_right_directed = False
-
-        if "emoji" in structure:
-            emojis: str | list[str] = structure["emoji"]
-            shape.emojis = {emojis} if isinstance(emojis, str) else set(emojis)
-
-        if "sketch" in structure:
-            shape.sketch = structure["sketch"]
-
-        shape.is_part = structure.get("is_part", False)
-        shape.group = structure.get("group", "")
-
-        if "categories" in structure:
-            shape.categories = set(structure["categories"])
-
-        return shape
-
     def is_default(self) -> bool:
         """Return true if the shape doesn't represent anything."""
         return self.id_ in [DEFAULT_SHAPE_ID, DEFAULT_SMALL_SHAPE_ID]
 
     def get_path(
         self,
+        version: str,
         *,
         point: NDArray,
         offset: NDArray,
@@ -185,8 +107,6 @@ class Shape:
             path
         """
         shift: NDArray = point + offset
-
-        version: str = self.sketch or "main"
 
         if use_transform:
             path_on_canvas: PathOnCanvas = self.paths[version]
@@ -228,10 +148,6 @@ class Shape:
             path = svgwrite.path.Path(d=parsed_path.d())
 
         return path
-
-    def get_full_id(self) -> str:
-        """Compute full shape identifier with group for sorting."""
-        return self.group + "_" + self.id_
 
 
 def parse_length(text: str) -> float:
@@ -343,41 +259,44 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
             parse_configuration(value, configuration, f"{group}_{key}")
 
 
-class ShapeExtractor:
+def get_icons(configuration_path: Path) -> list[Icon]:
+    """Get icons from configuration."""
+    icons: list[Icon] = []
+    configuration: dict[str, Any] = {}
+    with configuration_path.open() as input_file:
+        parse_configuration(json.load(input_file), configuration, "")
+    for key, value in configuration.items():
+        icons.append(Icon.from_structure(key, value))
+    return icons
+
+
+@dataclass
+class Shapes:
     """Extract shapes from SVG file.
 
     Shape is a single path with "id" attribute that aligned to 16 × 16 grid.
     """
 
-    def __init__(
-        self, svg_file_name: Path, configuration_file_name: Path
-    ) -> None:
-        """Initialize shape extractor.
+    shapes: dict[str, Shape] = field(default_factory=dict)
+    """Shapes."""
+
+    def add_from_file(self, svg_file_name: Path) -> None:
+        """Add shapes from SVG file.
 
         :param svg_file_name: input SVG file name with icons.  File may contain
             any other irrelevant graphics.
-        :param configuration_file_name: JSON file with grouped shape
-            descriptions
         """
-        self.shapes: dict[str, Shape] = {}
-
-        self.configuration: dict[str, Any] = {}
-        parse_configuration(
-            json.load(configuration_file_name.open(encoding="utf-8")),
-            self.configuration,
-            "root",
-        )
         root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
-        self.parse(root)
+        self.__parse(root)
 
-    def parse(self, node: Element) -> None:
+    def __parse(self, node: Element) -> None:
         """Extract icon paths into a map.
 
         :param node: XML node that contains icon
         """
         if node.tag.endswith("}g") or node.tag.endswith("}svg"):
             for sub_node in node:
-                self.parse(sub_node)
+                self.__parse(sub_node)
             return
 
         if "id" not in node.attrib or not node.attrib["id"]:
@@ -415,8 +334,6 @@ class ShapeExtractor:
             if not matcher:
                 return
 
-            name: str | None = None
-
             def get_offset(value: str) -> float:
                 """Get negated icon offset from the origin."""
                 return (
@@ -426,31 +343,12 @@ class ShapeExtractor:
             offset: NDArray = np.array(
                 (get_offset(matcher.group(1)), get_offset(matcher.group(2)))
             )
-            for child_node in node:
-                if isinstance(child_node, Element):
-                    name = child_node.text
-                    break
-
-            configuration: dict[str, Any] = {}
-
-            if id_ in self.configuration:
-                configuration = self.configuration[id_]
-                if "name" not in configuration:
-                    message = f"Shape `{id_}` doesn't have name."
-                    raise ValueError(message)
-            elif version == "main":
-                message = f"Shape `{id_}` doesn't have configuration."
-                raise ValueError(message)
-
             if id_ in self.shapes:
                 shape = self.shapes[id_]
                 shape.paths[version] = PathOnCanvas(path, offset)
             else:
-                self.shapes[id_] = Shape.from_structure(
-                    configuration,
-                    {version: PathOnCanvas(path, offset)},
-                    id_,
-                    name,
+                self.shapes[id_] = Shape(
+                    {version: PathOnCanvas(path, offset)}, id_
                 )
         else:
             message = f"Not standard ID `{id_}`."
@@ -476,36 +374,72 @@ class ShapeExtractor:
 class ShapeSpecification:
     """Specification for shape as a part of an icon."""
 
-    shape: Shape
-    color: Color
+    shape_id: str
+    """Shape identifier."""
+
+    version: str
+    """Shape version."""
+
     offset: NDArray = field(default_factory=lambda: np.array((0.0, 0.0)))
+    """Shape offset."""
+
     flip_horizontally: bool = False
+    """Flip shape horizontally."""
+
     flip_vertically: bool = False
+    """Flip shape vertically."""
+
     use_outline: bool = True
+    """If the shape is supposed to be outlined."""
+
+    @classmethod
+    def from_structure(cls, structure: dict[str, Any]) -> ShapeSpecification:
+        """Parse shape specification from structure."""
+        return cls(
+            structure["id"],
+            structure.get("version", "main"),
+            np.array(structure.get("offset", (0.0, 0.0))),
+            structure.get("flip_horizontally", False),
+            structure.get("flip_vertically", False),
+            structure.get("use_outline", True),
+        )
 
     def is_default(self) -> bool:
         """Check whether shape is default."""
-        return self.shape.id_ == DEFAULT_SHAPE_ID
+        return self.shape_id == DEFAULT_SHAPE_ID
 
-    def get_path(self, point: NDArray, scale: float) -> str:
-        """Get string representation of the SVG path of the shape."""
-        path: SVGPath = self.shape.get_path(
-            point=point,
-            offset=self.offset * scale,
-            scale=np.array((scale, scale)),
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, ShapeSpecification):
+            return False
+
+        return (
+            self.shape_id == other.shape_id
+            and self.version == other.version
+            and np.allclose(self.offset, other.offset)
         )
-        path.update({"fill": self.color.hex})
-        return path.get_xml().attrib["d"]
+
+    def __lt__(self, other: ShapeSpecification) -> bool:
+        return self.shape_id < other.shape_id
+
+
+class Drawer:
+    """Drawer for shapes."""
+
+    def __init__(self, shapes: Shapes) -> None:
+        """Initialize drawer."""
+        self.shapes = shapes
 
     def draw(
         self,
         svg: BaseElement,
-        point: NDArray,
+        specification: ShapeSpecification,
+        position: NDArray,
         tags: dict[str, Any] | None = None,
         *,
         outline: bool = False,
         outline_opacity: float = 1.0,
         scale: float = 1.0,
+        color: Color | None = None,
     ) -> None:
         """Draw icon shape into SVG file.
 
@@ -516,28 +450,33 @@ class ShapeSpecification:
         :param outline: draw outline for the shape
         :param outline_opacity: opacity of the outline
         :param scale: scale icon by the magnitude
+        :param color: fill color
         """
         scale_vector: NDArray = np.array((scale, scale))
-        if self.flip_vertically:
+        if specification.flip_vertically:
             scale_vector = np.array((scale, -scale))
-        if self.flip_horizontally:
+        if specification.flip_horizontally:
             scale_vector = np.array((-scale, scale))
 
-        point = np.array(list(map(int, point)))
-        path: SVGPath = self.shape.get_path(
+        if not color:
+            color = Color("black")
+
+        point = np.array(list(map(int, position)))
+        path: SVGPath = self.shapes.get_shape(specification.shape_id).get_path(
+            specification.version,
             point=point,
-            offset=self.offset * scale,
+            offset=specification.offset * scale,
             scale=scale_vector,
         )
-        path.update({"fill": self.color.hex})
+        path.update({"fill": color.hex})
 
-        if outline and self.use_outline:
-            color: Color = (
-                Color("black") if is_bright(self.color) else Color("white")
+        if outline and specification.use_outline:
+            outline_color: Color = (
+                Color("black") if is_bright(color) else Color("white")
             )
             style: dict[str, Any] = {
-                "fill": color.hex,
-                "stroke": color.hex,
+                "fill": outline_color.hex,
+                "stroke": outline_color.hex,
                 "stroke-width": 2.2,
                 "stroke-linejoin": "round",
                 "opacity": outline_opacity,
@@ -549,80 +488,126 @@ class ShapeSpecification:
 
         svg.add(path)
 
-    def __eq__(self, other: object) -> bool:
-        if not isinstance(other, ShapeSpecification):
-            return False
-
-        return (
-            self.shape == other.shape
-            and self.color == other.color
-            and np.allclose(self.offset, other.offset)
-        )
-
-    def __lt__(self, other: ShapeSpecification) -> bool:
-        return self.shape.id_ < other.shape.id_
-
 
 @dataclass
 class Icon:
     """Icon that consists of (probably) multiple shapes."""
 
+    icon_id: str
+    """Icon identifier."""
+
     shape_specifications: list[ShapeSpecification]
-    opacity: float = 1.0
+    """List of shape specifications."""
+
+    name: str
+    """Human-readable icon name."""
+
+    sketch: bool = False
+    """Whether the icon is a sketch."""
+
+    emojis: set[str] = field(default_factory=set)
+    """Set of emojis that represent the same entity.
+
+    E.g. 🍐 (pear) for `pear`; 🍏 (green apple) and 🍎 (red apple) for `apple`.
+    """
+
+    is_part: bool = False
+    """If shape is used only as a part of other icons."""
+
+    group: str = ""
+    """Hierarchical icon group.  Is used for icon sorting."""
+
+    categories: set[str] = field(default_factory=set)
+    """Icon categories that is used in OpenStreetMap wiki.
+
+    E.g. `barrier` means
+    https://wiki.openstreetmap.org/wiki/Category:Barrier_icons.
+    """
+
+    keywords: set[str] = field(default_factory=set)
+    """Keywords that are used to search for the icon."""
+
+    is_right_directed: bool | None = None
+    """If shape is directed.
+
+    If value is `None`, shape doesn't have distinct direction or its
+    direction doesn't make sense.  Shape is directed to the right if value is
+    `True` and to the left if value is `False`.
+
+    E.g. CCTV camera shape has direction and may be flipped horizontally to
+    follow surveillance direction, whereas car shape has direction but
+    flipping icon doesn't make any sense.
+    """
+
+    @classmethod
+    def from_structure(cls, id_: str, structure: dict[str, Any]) -> Icon:
+        """Parse icon description from structure."""
+
+        shapes: list[ShapeSpecification]
+        if "shapes" in structure:
+            shapes = [
+                ShapeSpecification.from_structure(x)
+                for x in structure["shapes"]
+            ]
+        else:
+            shapes = [ShapeSpecification(id_, "main")]
+
+        icon: Icon = cls(
+            id_,
+            shapes,
+            name=structure["name"],
+            sketch=structure.get("sketch", False),
+            is_part=structure.get("is_part", False),
+        )
+
+        if "emoji" in structure:
+            emojis: str | list[str] = structure["emoji"]
+            icon.emojis = {emojis} if isinstance(emojis, str) else set(emojis)
+
+        if "sketch" in structure:
+            icon.sketch = structure["sketch"]
+
+        icon.is_part = structure.get("is_part", False)
+        icon.group = structure.get("group", "")
+
+        if "categories" in structure:
+            icon.categories = set(structure["categories"])
+
+        if "directed" in structure:
+            if structure["directed"] == "right":
+                icon.is_right_directed = True
+            if structure["directed"] == "left":
+                icon.is_right_directed = False
+
+        return icon
 
     def get_shape_ids(self) -> list[str]:
         """Get all shape identifiers in the icon."""
-        return [x.shape.id_ for x in self.shape_specifications]
-
-    def has_names(self) -> bool:
-        """Check whether oll shape names are known."""
-        for specification in self.shape_specifications:
-            if not specification.shape.name:
-                return False
-
-        return True
-
-    def get_names(self) -> list[str]:
-        """Get all shape names in the icon."""
-        return [
-            (x.shape.name if x.shape.name else "unknown")
-            for x in self.shape_specifications
-        ]
+        return [x.shape_id for x in self.shape_specifications]
 
     def get_name(self) -> str:
         """Get combined human-readable icon name."""
-        names: list[str] = self.get_names()
-
-        if len(names) == 1:
-            return names[0]
-
-        return ", ".join(names[:-1]) + " and " + names[-1]
+        return self.name
 
     def has_categories(self) -> bool:
         """Check whether oll shape categories are known."""
-        for specification in self.shape_specifications:
-            if specification.shape.categories:
-                return True
-
-        return False
+        return bool(self.categories)
 
     def get_categories(self) -> set[str]:
         """Get all shape names in the icon."""
-        result: set[str] = set()
-
-        for specification in self.shape_specifications:
-            result = result.union(specification.shape.categories)
-
-        return result
+        return self.categories
 
     def draw(
         self,
         svg: svgwrite.Drawing,
-        point: NDArray,
+        shapes: Shapes,
+        position: NDArray,
         tags: dict[str, Any] | None = None,
         *,
+        opacity: float = 1.0,
         outline: bool = False,
         scale: float = 1.0,
+        color: Color | None = None,
     ) -> None:
         """Draw icon to SVG.
 
@@ -631,36 +616,56 @@ class Icon:
         :param tags: tags to be displayed as a tooltip
         :param outline: draw outline for the icon
         :param scale: scale icon by the magnitude
+        :param color: fill color
         """
+        drawer: Drawer = Drawer(shapes)
+
         if outline:
-            bright: bool = is_bright(self.shape_specifications[0].color)
-            opacity: float = 0.7 if bright else 0.5
+            bright: bool = is_bright(color)
+            opacity = 0.7 if bright else 0.5
             outline_group: Group = Group(opacity=opacity)
             for shape_specification in self.shape_specifications:
-                shape_specification.draw(
-                    outline_group, point, tags, outline=True, scale=scale
+                drawer.draw(
+                    outline_group,
+                    shape_specification,
+                    position,
+                    tags,
+                    outline=True,
+                    scale=scale,
+                    color=color,
                 )
             svg.add(outline_group)
-        elif len(self.shape_specifications) > 1 or self.opacity != 1:
-            group: Group = Group(opacity=self.opacity)
+        elif len(self.shape_specifications) > 1 or opacity != 1.0:
+            group: Group = Group(opacity=opacity)
             for shape_specification in self.shape_specifications:
-                shape_specification.draw(group, point, tags, scale=scale)
+                drawer.draw(
+                    group,
+                    shape_specification,
+                    position,
+                    tags,
+                    scale=scale,
+                    color=color,
+                )
             svg.add(group)
         else:
-            self.shape_specifications[0].draw(svg, point, tags, scale=scale)
+            drawer.draw(
+                svg,
+                self.shape_specifications[0],
+                position,
+                tags,
+                scale=scale,
+                color=color,
+            )
 
     def is_sketch(self) -> bool:
         """Check whether icon has sketch shapes."""
-        return any(
-            shape_specification.shape.sketch
-            for shape_specification in self.shape_specifications
-        )
+        return self.sketch
 
     def draw_to_file(
         self,
         file_name: Path,
+        shapes: Shapes,
         *,
-        color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
         only_sketch: bool = False,
@@ -684,30 +689,34 @@ class Icon:
                     'width="16" height="16">'
                 )
                 for shape_specification in self.shape_specifications:
-                    path: str = shape_specification.get_path(
-                        np.array((8.0, 8.0)), 1.0
+                    path: str = shapes.get_shape(
+                        shape_specification.shape_id
+                    ).get_path(
+                        shape_specification.version,
+                        point=np.array((8.0, 8.0)),
+                        offset=shape_specification.offset * 1.0,
+                        scale=np.array((1.0, 1.0)),
                     )
-                    output_file.write(f'<path d="{path}" fill="#000" />')
+                    d = path.get_xml().attrib["d"]
+                    output_file.write(f'<path d="{d}" fill="#000" />')
                 output_file.write("</svg>")
             return
 
         svg: Drawing = Drawing(str(file_name), (16, 16))
+        drawer: Drawer = Drawer(shapes)
 
         if outline:
             for shape_specification in self.shape_specifications:
-                if color:
-                    shape_specification.color = color
-                shape_specification.draw(
+                drawer.draw(
                     svg,
-                    np.array((8.0, 8.0)),
+                    shape_specification,
+                    position=np.array((8.0, 8.0)),
                     outline=outline,
                     outline_opacity=outline_opacity,
                 )
 
         for shape_specification in self.shape_specifications:
-            if color:
-                shape_specification.color = color
-            shape_specification.draw(svg, np.array((8.0, 8.0)))
+            drawer.draw(svg, shape_specification, np.array((8.0, 8.0)))
 
         with file_name.open("w", encoding="utf-8") as output_file:
             svg.write(output_file)
@@ -719,19 +728,15 @@ class Icon:
             and self.shape_specifications[0].is_default()
         )
 
-    def recolor(self, color: Color, white: Color | None = None) -> None:
-        """Paint all shapes in the color."""
-        for shape_specification in self.shape_specifications:
-            if shape_specification.color == Color("white") and white:
-                shape_specification.color = white
-            else:
-                shape_specification.color = color
-
     def add_specifications(
         self, specifications: list[ShapeSpecification]
     ) -> None:
         """Add shape specifications to the icon."""
         self.shape_specifications += specifications
+
+    def get_full_id(self) -> str:
+        """Get full icon identifier for sorting."""
+        return self.group + "_" + self.icon_id
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Icon):
@@ -742,6 +747,4 @@ class Icon:
         )
 
     def __lt__(self, other: Icon) -> bool:
-        return "".join(
-            [x.shape.get_full_id() for x in self.shape_specifications]
-        ) < "".join([x.shape.get_full_id() for x in other.shape_specifications])
+        return self.get_full_id() < other.get_full_id()
