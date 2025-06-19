@@ -112,17 +112,18 @@ class IconCollection:
         position: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
         width: float = step * columns * scale
 
-        height: int = int(math.ceil(len(self.icons) / columns) * step * scale)
+        icons: list[Icon] = [
+            icon for icon in self.icons if only_sketch == icon.is_sketch()
+        ]
+
+        height: int = int(math.ceil(len(icons) / columns) * step * scale)
         svg: Drawing = Drawing(str(file_name), (width, height))
         if background_color is not None:
             svg.add(
                 svg.rect((0, 0), (width, height), fill=background_color.hex)
             )
 
-        for icon in self.icons:
-            if only_sketch != icon.is_sketch():
-                continue
-
+        for icon in icons:
             if show_boundaries:
                 rectangle = svg.rect(
                     (position[0] - 14, position[1] - 14),
