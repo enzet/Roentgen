@@ -3,11 +3,14 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
 import shutil
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
+
+logger: logging.Logger = logging.getLogger(__name__)
 
 
 def load_config(config_path: Path) -> dict[str, Any]:
@@ -98,6 +101,7 @@ def capitalize(name: str) -> str:
         "and",
         "at",
         "for",
+        "from",
         "in",
         "of",
         "on",
@@ -218,7 +222,7 @@ def generate_site_files(
     shutil.copy(style_css_path, output_dir / "style.css")
 
 
-def main() -> None:
+def main(output_path: Path) -> None:
     """Generate site files from templates with icon data."""
 
     icons_dirs: list[Path] = [
@@ -226,7 +230,6 @@ def main() -> None:
         Path("icons_sketches"),
     ]
     template_dir: Path = Path("data")
-    output_dir: Path = Path("site")
     config_path: Path = Path("data/config.json")
     version_path: Path = Path("VERSION")
 
@@ -238,5 +241,6 @@ def main() -> None:
 
     # Generate site files.
     generate_site_files(
-        icons_data, icon_grid_html, template_dir, output_dir, version
+        icons_data, icon_grid_html, template_dir, output_path, version
     )
+    logger.info("Generated site files in %s.", output_path)

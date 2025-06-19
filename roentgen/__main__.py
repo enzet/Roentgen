@@ -79,24 +79,46 @@ def main() -> None:
     """Run the main function."""
 
     parser: argparse.ArgumentParser = argparse.ArgumentParser()
-    parser.add_argument("command", choices=["icons", "taginfo", "site"])
-    parser.add_argument(
+
+    subparsers: argparse._SubParsersAction = parser.add_subparsers(
+        dest="command"
+    )
+    _: argparse.ArgumentParser = subparsers.add_parser(
+        "icons", help="Draw icons as grid and individual SVG files."
+    )
+
+    taginfo_parser: argparse.ArgumentParser = subparsers.add_parser(
+        "taginfo", help="Generate insights about OSM tag coverage."
+    )
+    taginfo_parser.add_argument(
         "--id-tagging-schema",
         type=Path,
         help="Path to the id-tagging-schema directory.",
     )
-    parser.add_argument(
+    taginfo_parser.add_argument(
         "--id",
         type=Path,
         help="Path to the iD directory.",
     )
-    parser.add_argument(
+    taginfo_parser.add_argument(
         "--maki",
         type=Path,
         help="Path to the Maki directory.",
     )
-    parser.add_argument(
+    taginfo_parser.add_argument(
         "--temaki", type=Path, help="Path to the Temaki directory."
+    )
+
+    site_parser: argparse.ArgumentParser = subparsers.add_parser(
+        "site",
+        help="Generate Röntgen website.",
+    )
+    site_parser.add_argument(
+        "-o",
+        "--output",
+        default=Path("site"),
+        type=Path,
+        help="Path to the output directory.",
     )
 
     arguments: argparse.Namespace = parser.parse_args()
@@ -152,7 +174,7 @@ def main() -> None:
 
     if arguments.command == "site":
         logging.basicConfig(level=logging.INFO, format="%(message)s")
-        site_main()
+        site_main(output_path=arguments.output)
         return
 
 
