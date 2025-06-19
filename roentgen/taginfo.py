@@ -511,7 +511,12 @@ def add_table(
 
         for img in element.roentgen_shapes:
             img_element = html.Element("img")
-            img_element.set("src", f"../icons/{img}.svg")
+            if Path("icons", f"{img}.svg").exists():
+                img_element.set("src", f"../icons/{img}.svg")
+            elif Path("icons_sketches", f"{img}.svg").exists():
+                img_element.set("src", f"../icons_sketches/{img}.svg")
+            else:
+                img_element.set("src", "../icons/unknown.svg")
             imgs_cell.append(img_element)
 
         id_imgs_cell = html.Element("td")
