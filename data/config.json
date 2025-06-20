@@ -253,6 +253,14 @@
         }
     },
     "__electric": {
+        "connector_cee_blue": {
+            "keywords": ["electric", "vehicle", "technical"],
+            "name": "CEE blue connector",
+            "shapes": [
+                {"id": "connector_cee_blue", "version": "v2"}
+            ],
+            "sketch": true
+        },
         "connector_chademo": {
             "keywords": ["electric", "vehicle", "technical"],
             "name": "CHAdeMO connector"
@@ -269,9 +277,25 @@
             "keywords": ["electric", "vehicle", "technical"],
             "name": "type 1 connector"
         },
+        "connector_type_1_combo": {
+            "keywords": ["electric", "vehicle", "technical"],
+            "name": "type 1 combo connector",
+            "shapes": [
+                {"id": "connector_type_1_combo", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "connector_type_2": {
             "keywords": ["electric", "vehicle", "technical"],
             "name": "type 2 connector"
+        },
+        "connector_type_2_combo": {
+            "keywords": ["electric", "vehicle", "technical"],
+            "name": "type 2 combo connector",
+            "shapes": [
+                {"id": "connector_type_2_combo", "version": "v0"}
+            ],
+            "sketch": true
         },
         "connector_type_e": {
             "keywords": ["electric", "vehicle", "technical"],
