@@ -23,12 +23,7 @@ body {
     display: flex;
     align-items: center;
     padding: 0 2rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     background: rgba(var(--bg-color));
-    z-index: 100;
 }
 
 .header h1 {
@@ -39,7 +34,13 @@ body {
 .main {
     display: flex;
     margin-top: 60px;
-    height: calc(100vh - 60px);
+}
+
+.icon-viewer-section {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
 }
 
 .content {
@@ -79,7 +80,7 @@ body {
 }
 
 .icon-item:hover {
-    background: rgba(var(--fg-color), 0.2);
+    background: rgba(var(--fg-color), 0.1);
 }
 
 .icon-item.selected {
@@ -93,19 +94,25 @@ body {
 }
 
 .icon-preview-section {
+    position: sticky;
+    top: 0;
     min-width: 600px;
     width: 50%;
     border-right: 1px solid rgba(var(--fg-color));
     padding: 1rem;
+    height: 100vh;
 }
 
 .icon-info-section {
+    position: sticky;
+    top: 0;
     width: 300px;
     min-width: 300px;
     max-width: 300px;
     overflow-y: auto;
     background: rgba(var(--bg-color));
     flex: 0 0 var(--info-width);
+    height: 100vh;
 }
 
 .icon-preview {
