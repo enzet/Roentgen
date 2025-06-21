@@ -503,6 +503,7 @@ function updateRandomColors() {
     // Update CSS variables.
     document.documentElement.style.setProperty('--bg-color', bgColor);
     document.documentElement.style.setProperty('--fg-color', fgColor);
+    document.documentElement.style.setProperty('--link-color', fgColor);
     
     // Update icon style.
     updateIconStyle();
