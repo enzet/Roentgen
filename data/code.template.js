@@ -477,15 +477,15 @@ function filterIcons(query) {
 
 // Function to generate a random color in [r, g, b] format.
 function getRandomColor() {
-    const r = Math.floor(Math.random() * 256);
-    const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
-    return [r, g, b];
+    const red = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    return [red, green, blue];
 }
 
 function isColorDark(color) {
-    const [r, g, b] = color;
-    const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+    const [red, green, blue] = color;
+    const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
     return brightness < 128;
 }
 
@@ -569,20 +569,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle hash changes
+    // Handle hash changes.
     window.addEventListener('hashchange', () => {
-        const iconName = window.location.hash.slice(1); // Remove the # symbol
+        const iconName = window.location.hash.slice(1); // Remove the `#`.
         if (iconName && icons[iconName]) {
             selectIcon(iconName);
         }
     });
 
-    // Select icon from URL hash or default to first icon
+    // Select icon from URL hash or default to first icon.
     const iconName = window.location.hash.slice(1);
     if (iconName && icons[iconName]) {
         selectIcon(iconName);
     } else {
-        selectIcon("camp");
+        selectIcon("binoculars");
     }
 
     // Set initial size value.
