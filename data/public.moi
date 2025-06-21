@@ -26,7 +26,7 @@ project.
             <input type="text" id="iconSearch" class="search-input" placeholder="Search icons...">
         </div>
         <div class="icon-info">
-            <h2 id="iconName"></h2>
+            <div id="iconName"></div>
             <div class="info-group">
                 <code id="iconIdentifier"></code>
             </div>
