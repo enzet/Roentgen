@@ -8,6 +8,8 @@
     min-height: 100vh;
     position: relative;
     width: 100%;
+    border-top: 1px solid rgba(var(--fg-color));
+    border-bottom: 1px solid rgba(var(--fg-color));
 }
 
 .icon-grid-section {
@@ -98,7 +100,6 @@
     background: rgba(var(--bg-color));
     color: rgba(var(--fg-color));
     cursor: pointer;
-    font-size: 0.875rem;
     transition: background-color 0.2s;
     width: 100%;
 }
@@ -117,6 +118,11 @@
     flex: 1;
 }
 
+.icon-controls button#downloadIcon {
+    background-color: rgba(var(--fg-color));
+    color: rgba(var(--bg-color));
+}
+
 .size-control {
     display: flex;
     flex-direction: column;
@@ -131,13 +137,11 @@
 }
 
 .size-control-header label {
-    font-size: 0.875rem;
     color: rgba(var(--fg-color));
 }
 
 .size-value {
     font-family: ui-monospace, monospace;
-    font-size: 0.875rem;
     color: rgba(var(--fg-color));
     min-width: 4em;
     text-align: right;
@@ -196,19 +200,14 @@ input[type="range"]:focus {
 }
 
 .icon-info #iconName {
-    font-size: 1.75rem;
-    line-height: 1.2;
-    font-weight: 900;
     margin: 0;
 }
 
 .icon-info .identifier {
     font-family: ui-monospace, monospace;
-    font-size: 0.875rem;
 }
 
 .icon-info .description {
-    font-size: 1rem;
     line-height: 1.5;
 }
 
@@ -222,7 +221,6 @@ input[type="range"]:focus {
 .icon-info .tag {
     padding: 0rem 0.5rem;
     border: 1px solid rgba(var(--fg-color));
-    font-size: 0.875rem;
 }
 
 /* Add styles for control points */
@@ -308,7 +306,6 @@ input[type="range"]:focus {
 }
 
 .checkbox-label {
-    font-size: 0.875rem;
     cursor: pointer;
     user-select: none;
 } 
@@ -330,7 +327,6 @@ input[type="range"]:focus {
 .search-input {
     width: 100%;
     padding: 0.5rem;
-    font-size: 0.875rem;
     border: 1px solid rgba(var(--fg-color));
     border-radius: 0.25rem;
     background: rgba(var(--bg-color));
