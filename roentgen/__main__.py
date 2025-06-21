@@ -116,7 +116,6 @@ def main() -> None:
     site_parser.add_argument(
         "-o",
         "--output",
-        default=Path("site"),
         type=Path,
         help="Path to the output directory.",
     )
@@ -173,6 +172,10 @@ def main() -> None:
         return
 
     if arguments.command == "site":
+        if arguments.output is None and arguments.embed is None:
+            message: str = "Output or embed must be provided."
+            raise ValueError(message)
+
         logging.basicConfig(level=logging.INFO, format="%(message)s")
         site_main(output_path=arguments.output)
         return

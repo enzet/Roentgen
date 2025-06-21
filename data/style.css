@@ -1,6 +1,4 @@
 :root {
-    --bg-color: 255, 255, 255;
-    --fg-color: 0, 0, 0;
     --preview-width: 600px;
     font-family: system-ui, -apple-system, sans-serif;
 }
@@ -9,12 +7,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    background-color: rgba(var(--bg-color));
-    color: rgba(var(--fg-color));
-    line-height: 1.5;
 }
 
 .header {

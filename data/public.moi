@@ -1,7 +1,61 @@
 \1 {Röntgen} {roentgen}
 
-Free 14 × 14 px monochrome pixel-aligned
-\ref {https://creativecommons.org/licenses/by/4.0/} {CC-BY 4.0} vector map
+\style {roentgen.css}
+
+This is version %ROENTGEN_VERSION% of Röntgen Icon Set, a collection of
+free 14 × 14 px monochrome pixel-aligned
+\ref {https://creativecommons.org/licenses/by/4.0/} {CC BY 4.0} vector map
 icons created for \ref {https://github.com/enzet/map-machine} {Map Machine}
 project.
+
+\html {
+<link rel="stylesheet" href="roentgen.css">
+<div class="icon-viewer-section">
+    <section class="icon-grid-section">
+        <div class="icon-list">
+            %ROENTGEN_ICON_GRID%
+        </div>
+    </section>
+    <section class="icon-preview-section">
+        <div class="icon-preview">
+            <svg id="previewSvg" viewBox="0 0 16 16"></svg>
+        </div>
+    </section>
+    <section class="icon-info-section">
+        <div class="search-container">
+            <input type="text" id="iconSearch" class="search-input" placeholder="Search icons...">
+        </div>
+        <div class="icon-info">
+            <h2 id="iconName"></h2>
+            <div class="info-group">
+                <code id="iconIdentifier"></code>
+            </div>
+            <div class="info-group">
+                <div id="iconTags" class="tags"></div>
+            </div>
+        </div>
+        <div class="icon-controls">
+            <button id="randomColors" class="control-button">Random Colors</button>
+            <div class="control-group">
+                <div class="checkbox-control">
+                    <input type="checkbox" id="toggleControlPoints" class="checkbox-input">
+                    <label for="toggleControlPoints" class="checkbox-label">Show control points</label>
+                </div>
+                <div class="checkbox-control">
+                    <input type="checkbox" id="toggleGrid" class="checkbox-input">
+                    <label for="toggleGrid" class="checkbox-label">Show grid</label>
+                </div>
+            </div>
+            <div class="size-control">
+                <div class="size-header">
+                    <span class="size-value">512px</span>
+                </div>
+                <input type="range" id="sizeSlider" min="16" max="512" value="512" step="1">
+            </div>
+            <button id="downloadIcon" class="control-button">Download SVG</button>
+        </div>
+    </section>
+</div>
+<script src="roentgen.js"></script>
+}
 

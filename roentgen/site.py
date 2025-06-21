@@ -195,34 +195,25 @@ def generate_site_files(
 ) -> None:
     """Generate site files from templates with icon data."""
 
-    output_dir.mkdir(parents=True, exist_ok=True)
-
     icons_js: str = json.dumps(icons_data, indent=4)
 
-    for template_file in ["site.template.html", "code.template.js"]:
-        template_path: Path = template_dir / template_file
-        output_path: Path = output_dir / template_file.replace(".template", "")
+    with (template_dir / "code.template.js").open() as src:
+        code_template: str = src.read()
+        code_template = code_template.replace("%ICONS_DATA%", icons_js)
+    with (output_dir / "roentgen.js").open("w") as dst:
+        dst.write(code_template)
 
-        with template_path.open() as src:
-            content: str = src.read()
+    with (output_dir / "index.html").open() as src:
+        content: str = src.read()
+        content = content.replace("%ROENTGEN_ICON_GRID%", icon_grid_html)
+        content = content.replace("%ROENTGEN_VERSION%", version)
+    with (output_dir / "index.html").open("w") as dst:
+        dst.write(content)
 
-        if template_file == "site.template.html":
-            content = content.replace("%ICONS_GRID%", icon_grid_html)
-            content = content.replace("%VERSION%", version)
-        else:
-            content = content.replace("%ICONS_DATA%", icons_js)
-
-        with output_path.open("w") as dst:
-            dst.write(content)
-
-    style_css_path: Path = template_dir / "style.css"
-    favicon_svg_path: Path = template_dir / "favicon.svg"
-
-    shutil.copy(favicon_svg_path, output_dir / "favicon.svg")
-    shutil.copy(style_css_path, output_dir / "style.css")
+    shutil.copy(template_dir / "style.css", output_dir / "roentgen.css")
 
 
-def main(output_path: Path) -> None:
+def main(output_path: Path | None) -> None:
     """Generate site files from templates with icon data."""
 
     icons_dirs: list[Path] = [
