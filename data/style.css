@@ -3,42 +3,11 @@
     font-family: system-ui, -apple-system, sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.header {
-    height: 60px;
-    border-bottom: 1px solid rgba(var(--fg-color));
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    background: rgba(var(--bg-color));
-}
-
-.header h1 {
-    font-size: 1.75rem;
-    font-weight: 900;
-}
-
-.main {
-    display: flex;
-    margin-top: 60px;
-}
-
 .icon-viewer-section {
     display: flex;
     min-height: 100vh;
     position: relative;
     width: 100%;
-}
-
-.content {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
 }
 
 .icon-grid-section {
@@ -69,6 +38,8 @@
 
 .icon-item svg {
     fill: rgba(var(--fg-color));
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 .icon-item:hover {
@@ -78,11 +49,6 @@
 .icon-item.selected {
     background: rgba(var(--fg-color), 0.1);
     border-color: rgba(var(--fg-color));
-}
-
-.icon-item svg {
-    width: 2.5rem;
-    height: 2.5rem;
 }
 
 .icon-preview-section {
@@ -117,12 +83,6 @@
 .icon-preview svg {
     width: 400px;
     height: 400px;
-}
-
-.icon-info-panel {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
 }
 
 .icon-controls {
@@ -184,7 +144,7 @@
     text-align: right;
 }
 
-/* Custom slider styles */
+/* Custom slider styles. */
 input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
@@ -229,12 +189,6 @@ input[type="range"]::-moz-range-track {
 
 input[type="range"]:focus {
     outline: none;
-}
-
-.icon-metadata {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 .icon-info {
@@ -293,17 +247,8 @@ input[type="range"]:focus {
     stroke: rgba(var(--fg-color));
 }
 
+/* TODO(enzet): rewrite this, it looks wrong. */
 @media (max-width: 200px) {
-    .main {
-        flex-direction: column;
-    }
-
-    .content {
-        flex-direction: column;
-        height: calc(100vh - 60px);
-        min-width: 100%;
-    }
-
     .icon-grid-section {
         width: 100%;
         min-width: 100%;
