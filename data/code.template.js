@@ -483,20 +483,20 @@ function getRandomColor() {
     return [red, green, blue];
 }
 
-function isColorDark(color) {
+// Compute darkness: 0 is dark, 255 is light.
+function brightness(color) {
     const [red, green, blue] = color;
-    const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
-    return brightness < 128;
+    return (red * 299 + green * 587 + blue * 114) / 1000;
 }
 
 // Function to update colors randomly.
 function updateRandomColors() {
     let bgColor = getRandomColor();
-    while (isColorDark(bgColor)) {
+    while (brightness(bgColor) < 192) {
         bgColor = getRandomColor();
     }
     let fgColor = getRandomColor();
-    while (!isColorDark(fgColor)) {
+    while (brightness(fgColor) > 64) {
         fgColor = getRandomColor();
     }
     
