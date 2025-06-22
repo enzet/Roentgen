@@ -13,6 +13,7 @@ Redraw icons:
   - `slide`.
 
 Make icons smoother and make corners round:
+  - `baptist`,
   - `cactus`,
   - `fort`,
   - `no_traffic_signals`,
