@@ -2618,11 +2618,7 @@
             "name": "car"
         },
         "car___car": {
-            "name": "car over car",
-            "shapes": [
-                {"id": "car", "offset": [0, 4]},
-                {"id": "car", "offset": [0, -3]}
-            ]
+            "name": "car over car"
         },
         "car___bed": {
             "name": "car with bed",

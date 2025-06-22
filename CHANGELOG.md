@@ -25,6 +25,8 @@ Adjust icon size:
   - `stop`,
   - `supermarket_cart`.
 
+Create separate `car___car` icon instead of combination of two `car` icons.
+
 ## 0.5.0
 
 Redraw icons:
