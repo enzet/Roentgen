@@ -389,9 +389,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="389.29639"
-     inkscape:cx="537.52442"
-     inkscape:zoom="3.7914556"
+     inkscape:cy="403.41714"
+     inkscape:cx="244.48306"
+     inkscape:zoom="27.37613"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -1510,10 +1510,10 @@
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect10971"
-       width="10.95"
-       height="10.899989"
-       x="242.04999"
-       y="386.05002"
+       width="11"
+       height="11"
+       x="242"
+       y="386"
        rx="1"
        ry="1" />
     <path
@@ -1530,7 +1530,7 @@
        sodipodi:nodetypes="cc" />
     <path
        style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 243.05078,402.05078 c -0.554,0 -1,0.446 -1,1 v 8.89844 c 0,0.554 0.446,1 1,1 H 252 c 0.554,0 1,-0.446 1,-1 v -8.89844 c 0,-0.554 -0.446,-1 -1,-1 z m 4.44141,0.94141 c 0.28226,-0.004 0.51223,0.22555 0.50781,0.50781 v 8 c 0.01,0.67616 -1.00956,0.67616 -1,0 v -8 c -0.004,-0.27614 0.21605,-0.5035 0.49219,-0.50781 z M 244.5,404.5 246,407 h -1 v 2.5 c 0.01,0.67616 -1.00956,0.67616 -1,0 V 407 h -1 z m 6.5,1 v 2.5 h 1 l -1.5,2.5 -1.5,-2.5 h 1 v -2.5 c -0.0104,-0.66337 1.01038,-0.66369 1,0 z"
+       d="m 243,402 c -0.554,0 -1,0.446 -1,1 v 9 c 0,0.554 0.446,1 1,1 h 9 c 0.554,0 1,-0.446 1,-1 v -9 c 0,-0.554 -0.446,-1 -1,-1 z m 4.49219,0.99219 c 0.28226,-0.004 0.51223,0.22555 0.50781,0.50781 v 8 c 0.01,0.67616 -1.00956,0.67616 -1,0 v -8 c -0.004,-0.27614 0.21605,-0.5035 0.49219,-0.50781 z M 244.5,404.5 246,407 h -1 v 2.5 c 0.01,0.67616 -1.00956,0.67616 -1,0 V 407 h -1 z m 6.5,1 v 2.5 h 1 l -1.5,2.5 -1.5,-2.5 h 1 v -2.5 c -0.0104,-0.66337 1.01038,-0.66369 1,0 z"
        id="elevator"
        inkscape:label="#rect11018"
        inkscape:connector-curvature="0"
