@@ -26,6 +26,7 @@ Make icons smoother and make corners round:
 
 Adjust icon size:
   - `gazette`,
+  - `star_of_david`,
   - `stop`,
   - `supermarket_cart`.
 
