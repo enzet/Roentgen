@@ -15,7 +15,8 @@ Redraw icons:
   - `hi_fi`,
   - `rectangle_vertical_rounded_crossed`,
   - `side_mirror`,
-  - `slide`.
+  - `slide`,
+  - `tyre`.
 
 Make icons smoother and make corners round:
   - `baptist`,
