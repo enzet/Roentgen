@@ -7,6 +7,7 @@ Redraw icons:
   - `bag`,
   - `beer_mug`,
   - `car___car`,
+  - `cocktail_glass`,
   - `czech_hedgehog`,
   - `garage_door`,
   - `government`,
