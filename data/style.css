@@ -11,6 +11,7 @@
     width: 100%;
     border-top: 1px solid rgba(var(--fg-color), var(--border-opacity));
     border-bottom: 1px solid rgba(var(--fg-color), var(--border-opacity));
+    margin: 3rem 0;
 }
 
 .icon-grid-section {

@@ -4,9 +4,9 @@
 
 This is version %ROENTGEN_VERSION% of Röntgen Icon Set, a collection of
 free 14 × 14 px monochrome pixel-aligned
-\ref {https://creativecommons.org/licenses/by/4.0/} {CC BY 4.0} vector map
-icons created for \ref {https://github.com/enzet/map-machine} {Map Machine}
-project.
+\ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0}
+vector map icons created for
+\ref {https://github.com/enzet/map-machine} {Map Machine} project.
 
 \html {
 <link rel="stylesheet" href="roentgen.css">
@@ -58,4 +58,9 @@ project.
 </div>
 <script src="roentgen.js"></script>
 }
+
+All icons are \ref {https://github.com/enzet/Roentgen} {open source} and
+\ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0} 
+licensed. You can use them freely in commercial and non-commercial projects, but
+please give credit to the author.
 
