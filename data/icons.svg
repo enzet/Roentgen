@@ -389,9 +389,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="51.515727"
-     inkscape:cx="8.0414793"
-     inkscape:zoom="7.9587347"
+     inkscape:cy="58.259022"
+     inkscape:cx="130.58057"
+     inkscape:zoom="4.9777698"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -3924,9 +3924,9 @@
     <path
        inkscape:label="#path4864"
        inkscape:connector-curvature="0"
-       id="cocktail_glass_with_straw"
+       id="cocktail_glass_with_straw_v0"
        d="M 108.65625,80.65625 105.3125,84 h 1.375 l 2.65625,-2.65625 z M 99,85 l 4,4 v 4 h -1 c -0.554,0 -1,0.446 -1,1 h 5 c 0,-0.554 -0.446,-1 -1,-1 h -1 v -4 l 4,-4 z"
-       style="fill:#000000;fill-opacity:1;stroke:none"
+       style="fill:#0000ff;fill-opacity:1;stroke:none;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
        sodipodi:nodetypes="ccccccccsccscccc">
       <title
          id="title7536">cocktail glass with straw</title>
@@ -37895,5 +37895,36 @@
        id="atm_v0"
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
        d="M 3.5 50 C 2.669 50 2 50.669 2 51.5 C 2 52.331 2.669 53 3.5 53 L 4 53 L 4 52 L 3.5 52 C 3.223 52 3 51.777 3 51.5 C 3 51.223 3.223 51 3.5 51 L 12.5 51 C 12.777 51 13 51.223 13 51.5 C 13 51.777 12.777 52 12.5 52 L 12 52 L 12 53 L 12.5 53 C 13.331 53 14 52.331 14 51.5 C 14 50.669 13.331 50 12.5 50 L 3.5 50 z M 5 52 L 5 61 C 5 61.554 5.446 62 6 62 L 10 62 C 10.554 62 11 61.554 11 61 L 11 52 L 5 52 z M 8 54 C 9.1045695 54 10 54.895431 10 56 C 10 57.104569 9.1045695 58 8 58 C 6.8954305 58 6 57.104569 6 56 C 6 54.895431 6.8954305 54 8 54 z M 6 60 C 6.554 60 7 60.446 7 61 L 6 61 L 6 60 z M 10 60 L 10 61 L 9 61 C 9 60.446 9.446 60 10 60 z " />
+    <path
+       style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
+       d="m 129.5,3.5 h 12 l -6,6 z"
+       id="path82"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none"
+       d="m 133.5,13.5 h 4"
+       id="path113" />
+    <path
+       style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
+       d="m 136.5,8.5 c -0.5,0.5 -1,1.5 -1,2.5 v 1.5 c 0,0.5 0.5,1 1,1"
+       id="path114"
+       sodipodi:nodetypes="cssc" />
+    <path
+       style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
+       d="m 134.5,8.5 c 0.5,0.5 1,1.5 1,2.5 v 1.5 c 0,0.5 -0.5,1 -1,1"
+       id="path238"
+       sodipodi:nodetypes="cssc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
+       d="m 131,5 h 9 l -4.5,4.5 z"
+       id="path245" />
+    <path
+       id="cocktail_glass_with_straw"
+       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       d="M 140.5 17 A 0.5 0.5 0 0 0 140.14648 17.146484 L 138.29297 19 L 129.5 19 C 129.05468 19.00017 128.8317 19.538517 129.14648 19.853516 L 134.14648 24.853516 C 134.52863 25.235664 135 26.166667 135 27 L 135 28.5 C 135 28.718704 134.71879 29 134.5 29 L 133.5 29 C 133.22386 29 133 29.223858 133 29.5 C 133 29.776142 133.22386 30 133.5 30 L 134.5 30 L 137.5 30 C 137.77614 30 138 29.776142 138 29.5 C 138 29.223858 137.77614 29 137.5 29 L 136.5 29 C 136.2813 29 136 28.718794 136 28.5 L 136 27 C 136 26.166671 136.47137 25.235667 136.85352 24.853516 L 141.85352 19.853516 C 142.1683 19.538517 141.94532 19.00017 141.5 19 L 139.70703 19 L 140.85352 17.853516 A 0.5 0.5 0 0 0 140.85352 17.146484 A 0.5 0.5 0 0 0 140.5 17 z M 130.70703 20 L 137.29297 20 L 135.29297 22 L 132.70703 22 L 130.70703 20 z M 138.70703 20 L 140.29297 20 L 138.29297 22 L 136.70703 22 L 138.70703 20 z " />
+    <path
+       style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
+       d="m 140.5,1.5 -5,5"
+       id="path250" />
   </g>
 </svg>
