@@ -22,8 +22,11 @@ Make icons smoother and make corners round:
   - `baptist`,
   - `cactus`,
   - `fort`,
+  - `human`,
   - `no_traffic_signals`,
   - `power_generator`,
+  - `statue`,
+  - `statue_exhibit`,
   - `stop`,
   - `townhall`.
 
