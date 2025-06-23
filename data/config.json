@@ -1376,7 +1376,10 @@
         },
         "onion_roof_shape": {
             "name": "onion roof shape",
-            "keywords": ["architecture", "roof", "dome"]
+            "keywords": [
+                "architecture", "roof", "dome", "religion", "church",
+                "christian", "orthodox"
+            ]
         },
         "pac_man": {
             "name": "Pac-Man",
@@ -2184,16 +2187,20 @@
         },
         "__religious": {
             "baptist": {
+                "keywords": ["christian", "religion"],
                 "name": "baptist symbol"
             },
             "crescent": {
                 "emoji": "\u262a\ufe0f",
+                "keywords": ["islam", "religion"],
                 "name": "crescent"
             },
             "cross_and_horizontal_bar": {
+                "keywords": ["christian", "orthodox", "religion"],
                 "name": "cross and horizontal bar\ufe0f"
             },
             "dharmachakra": {
+                "keywords": ["hindu", "religion"],
                 "name": "dharmachakra"
             },
             "greek_cross": {
@@ -2203,18 +2210,22 @@
                 "name": "inverted Greek cross in box"
             },
             "latin_cross": {
+                "keywords": ["christian", "religion"],
                 "emoji": "\u271d\ufe0f",
                 "name": "Latin cross"
             },
             "orthodox": {
+                "keywords": ["christian", "religion"],
                 "emoji": "\u2626\ufe0f",
                 "name": "orthodox cross"
             },
             "russian_orthodox_cross": {
+                "keywords": ["christian", "religion"],
                 "emoji": "\u2626",
                 "name": "Russian Orthodox cross"
             },
             "star_of_david": {
+                "keywords": ["jewish", "religion"],
                 "emoji": "\u2721\ufe0f",
                 "name": "Star of David"
             }
