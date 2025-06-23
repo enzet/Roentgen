@@ -4,6 +4,7 @@ Reorganize paths of the majority of shapes: delete redundant nodes, simplify
 curves. This may change the shape in not detectable way.
 
 Redraw icons:
+  - `bag`,
   - `beer_mug`,
   - `garage_door`,
   - `government`,
