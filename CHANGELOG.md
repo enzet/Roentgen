@@ -26,6 +26,7 @@ Make icons smoother and make corners round:
   - `townhall`.
 
 Adjust icon size:
+  - `binoculars_on_pole`,
   - `gazette`,
   - `star_of_david`,
   - `stop`,
