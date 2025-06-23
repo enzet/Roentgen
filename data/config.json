@@ -424,56 +424,40 @@
             "sketch": true,
             "name": "flag of European Union"
         },
-        "flag_horizontal_bisection_dark_light": {
+        "flag_horizontal_bisection": {
             "keywords": ["country", "nation"],
             "shapes": [
-                {"id": "flag_horizontal_bisection_dark_light", "version": "v0"}
+                {"id": "flag_horizontal_bisection", "version": "v0"}
             ],
             "sketch": true,
             "name": "flag with horizontal bisection"
         },
-        "flag_horizontal_bisection_light_dark": {
-            "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_horizontal_bisection_light_dark", "version": "v0"}
-            ],
-            "sketch": true,
-            "name": "flag with horizontal bisection"
-        },
-        "flag_horizontal_triband_light_dark_light": {
+        "flag_horizontal_triband": {
             "keywords": ["country", "nation"],
             "shapes": [
                 {
-                    "id": "flag_horizontal_triband_light_dark_light",
+                    "id": "flag_horizontal_triband",
                     "version": "v0"
                 }
             ],
             "sketch": true,
             "name": "flag with horizontal triband"
         },
-        "flag_nordic_cross_dark": {
+        "flag_nordic_cross": {
             "keywords": ["country", "nation"],
             "shapes": [
-                {"id": "flag_nordic_cross_dark", "version": "v0"}
+                {"id": "flag_nordic_cross", "version": "v0"}
             ],
             "sketch": true,
-            "name": "dark flag with Nordic cross"
+            "name": "flag with Nordic cross"
         },
-        "flag_nordic_cross_dark_double": {
+        "flag_nordic_cross_double": {
             "keywords": ["country", "nation"],
             "shapes": [
-                {"id": "flag_nordic_cross_dark_double", "version": "v0"}
+                {"id": "flag_nordic_cross_double", "version": "v0"}
             ],
             "sketch": true,
-            "name": "dark flag with double Nordic cross"
-        },
-        "flag_nordic_cross_light": {
-            "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_nordic_cross_light", "version": "v0"}
-            ],
-            "sketch": true,
-            "name": "light flag with Nordic cross"
+            "name": "flag with double Nordic cross"
         },
         "flag_philippines": {
             "keywords": ["country", "nation"],
@@ -515,10 +499,10 @@
             "keywords": ["country", "nation", "States", "America"],
             "name": "flag of the USA"
         },
-        "flag_vertical_bisection_dark_light": {
+        "flag_vertical_bisection": {
             "keywords": ["country", "nation"],
             "shapes": [
-                {"id": "flag_vertical_bisection_dark_light", "version": "v0"}
+                {"id": "flag_vertical_bisection", "version": "v0"}
             ],
             "sketch": true,
             "name": "flag with vertical bisection"

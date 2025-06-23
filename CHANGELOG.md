@@ -22,6 +22,7 @@ Make icons smoother and make corners round:
   - `townhall`.
 
 Adjust icon size:
+  - `gazette`,
   - `stop`,
   - `supermarket_cart`.
 

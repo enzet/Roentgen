@@ -522,6 +522,8 @@
     "man_made=surveillance": {"shapes": ["cctv"]},
     "man_made=survey_point": {"shapes": ["survey_point"]},
     "man_made=tower": {"shapes": ["tower"]},
+    "man_made=tower;tower:type=cooling": {"shapes": ["tower_cooling"]},
+    "man_made=tower;tower:type=defensive": {"shapes": ["tower_defensive"]},
     "man_made=tower;tower:type=diving": {"shapes": ["diving_1_platforms"]},
     "man_made=tower;tower:type=diving;platforms=1": {"shapes": ["diving_1_platforms"]},
     "man_made=tower;tower:type=diving;platforms=2": {"shapes": ["diving_1_platforms"]},
