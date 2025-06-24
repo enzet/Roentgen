@@ -1,7 +1,9 @@
 # Contributing to Röntgen
 
-Thank you for your interest in contributing to the Röntgen icon set! This
-document provides guidelines and instructions for contributing to this project.
+Thank you for your interest in contributing to the Röntgen icon set!
+
+If you want to request a new icon, or found an error in the existing icons,
+please [open an issue on GitHub](https://github.com/enzet/Roentgen/issues).
 
 ## Creating a Release
 

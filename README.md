@@ -11,10 +11,7 @@ projects. Also, some icons can be used as emoji symbols. Version 0.1 of Röntgen
 is used in [iD editor](https://github.com/openstreetmap/iD) for OpenStreetMap.
 
 All icons can be found in the [`icons`](icons) directory, where they are stored
-as optimized SVG files. We distinguish between _shape_ and _icon_. Most icons
-are single-shaped (e.g. `tree.svg`), some are combinations of multiple shapes
-(e.g. `volcanic_cone___lava.svg`, where shape identifiers are separated by
-`___`).
+as optimized SVG files. Every icon file is less than 3 KB in size.
 
 <picture>
     <source
@@ -43,27 +40,34 @@ Feel free to request new icons via issues on GitHub.
 
 ### Recommendations
 
-- Icon parts should be __pixel-aligned__ for better rendering.
-- Icons should __avoid perspective__ when possible.
+- Icon parts should be __pixel-aligned__ for better rendering, when it is
+  possible.
 - Lines should have __rounded caps__ if it doesn't affect shape recognition.
 
-Individual icons should be in the form of a single SVG `path` element. Icon
-combinations are combinations of individual icons.
+## Icon Generation
 
-## Generation
+The `icons` directory contains generated and optimized SVG icons. They are
+generated from sketch SVG files in the [`data`](data) directory by Python
+scripts. It is hugely simplifies the process of creating new icons.
 
-Röntgen icons may be drawn by hand in a vector editor and stored as optimized
-SVG files, but the project also has one more option for icon extraction.
-
-### Extraction from the Monolith SVG File
-
-To generate icons, run
+To regenerate icons, run
 
 ```shell
-roentgen generate
+roentgen icons
 ```
 
-It may be useful to have one SVG file for a set of SVG icons along with sketches
-and components that the icons consist of.
+## OpenStreetMap Tags
 
-In the Röntgen project, these files are located in the [`data`](data) directory.
+Röntgen was created for the [Map Machine](http://github.com/enzet/map-machine),
+a rendering engine for OpenStreetMap data and it's primary purpose is to
+represent tags of objects from the OpenStreetMap database.
+
+The `data/tags.json` file contains a _possible_ mapping from OpenStreetMap tags
+to Röntgen icons.
+
+## License
+
+All Röntgen icons are licensed under the
+[CC BY 4.0](http://creativecommons.org/licenses/by/4.0/). This means, you can
+use them for any purpose, but please give the appropriate credit, e.g.:
+> Röntgen icons by Sergey Vartanov (CC BY 4.0)
