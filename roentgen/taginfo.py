@@ -887,7 +887,7 @@ def main(
         id_scheme.get_tags()
     )
     defined_tags_list: list = list(defined_tags)
-    defined_tags_list.sort(key=lambda x: x.descriptor, reverse=True)
+    defined_tags_list.sort(key=lambda x: x.descriptor)
     (h1 := html.Element("h1")).text = "Defined tags"
     container.append(h1)
     add_table(
