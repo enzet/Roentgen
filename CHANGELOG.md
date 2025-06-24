@@ -12,6 +12,7 @@ Redraw icons:
   - `cocktail_glass`,
   - `cocktail_glass_with_straw`,
   - `czech_hedgehog`,
+  - `fork_and_knife`,
   - `garage_door`,
   - `government`,
   - `hi_fi`,
