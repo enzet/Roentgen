@@ -35,6 +35,7 @@ Make icons smoother and make corners round:
 
 Adjust icon size:
   - `binoculars_on_pole`,
+  - `entrance`,
   - `gazette`,
   - `star_of_david`,
   - `stop`,
