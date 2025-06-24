@@ -21,6 +21,23 @@
      id="defs2989">
     <inkscape:path-effect
        effect="fillet_chamfer"
+       id="path-effect1"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0.5,0,1 @ F,0,0,1,0,0.5,0,1 @ F,0,0,1,0,0.5,0,1 @ F,0,0,1,0,0.5,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
+    <inkscape:path-effect
+       effect="fillet_chamfer"
        id="path-effect546"
        is_visible="true"
        lpeversion="1"
@@ -369,6 +386,23 @@
          d="M 0,0 5,-5 -12.5,0 5,5 Z"
          id="path9339" />
     </marker>
+    <inkscape:path-effect
+       effect="fillet_chamfer"
+       id="path-effect116-7"
+       is_visible="true"
+       lpeversion="1"
+       nodesatellites_param="F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1 @ F,0,0,1,0,0,0,1"
+       radius="0"
+       unit="px"
+       method="auto"
+       mode="F"
+       chamfer_steps="1"
+       flexible="false"
+       use_knot_distance="true"
+       apply_no_radius="true"
+       apply_with_radius="true"
+       only_selected="false"
+       hide_knots="false" />
   </defs>
   <sodipodi:namedview
      inkscape:document-rotation="0"
@@ -389,9 +423,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="464.65653"
-     inkscape:cx="702.56538"
-     inkscape:zoom="5.106998"
+     inkscape:cy="234.54194"
+     inkscape:cx="42.140929"
+     inkscape:zoom="9.3970401"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -2054,9 +2088,9 @@
        sodipodi:nodetypes="ccccc"
        inkscape:label="#path3953"
        inkscape:connector-curvature="0"
-       id="urban_tree_pot"
+       id="urban_tree_pot_v0"
        d="m 37,223 h 6 l 2,-2 H 35 Z"
-       style="fill:#000000;stroke:none"
+       style="fill:#0000ff;stroke:none;font-variation-settings:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        inkscape:path-effect="#path-effect116"
        inkscape:original-d="m 37,223 h 6 l 2,-2 H 35 Z" />
     <path
@@ -2102,9 +2136,11 @@
        sodipodi:nodetypes="ccccc"
        inkscape:label="#path4134"
        style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;marker:none;enable-background:accumulate"
-       d="m 26,222 v 1 h 5 v -1 z"
+       d="m 26,222.5 a 0.5,0.5 45 0 0 0.5,0.5 l 4,0 A 0.5,0.5 135 0 0 31,222.5 0.5,0.5 45 0 0 30.5,222 h -4 a 0.5,0.5 135 0 0 -0.5,0.5 z"
        id="bottom_right_horizontal_line"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:path-effect="#path-effect1"
+       inkscape:original-d="m 26,222 v 1 h 5 v -1 z" />
     <rect
        rx="1"
        ry="1"
@@ -25274,9 +25310,9 @@
        d="m 3.5,205.5 h 9 l -1,1 h -7 z"
        id="path150" />
     <path
-       style="color:#000000;fill:#0000ff;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;-inkscape-stroke:none;opacity:1;stroke:none;fill-opacity:1"
+       style="color:#000000;fill:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;-inkscape-stroke:none;opacity:1;stroke:none;fill-opacity:1;font-variation-settings:normal;vector-effect:none;stroke-width:1;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
        d="m 3.5,221 a 0.50005,0.50005 0 0 0 -0.3535156,0.85352 l 1,1 A 0.50005,0.50005 0 0 0 4.5,223 h 7 a 0.50005,0.50005 0 0 0 0.353516,-0.14648 l 1,-1 A 0.50005,0.50005 0 0 0 12.5,221 Z"
-       id="urban_tree_pot_v1" />
+       id="urban_tree_pot" />
     <path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-opacity:1"
        d="m 147.5,2.5 h 9 v 10 h -9 z"

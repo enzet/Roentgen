@@ -3,6 +3,19 @@
 Adjust icon size:
   - `card_and_dice`.
 
+Make icons smoother and make corners round:
+  - `betula___bottom_right_horizontal_line`,
+  - `betula___urban_tree_pot`,
+  - `needleleaved_tree___bottom_right_horizontal_line`,
+  - `needleleaved_tree___urban_tree_pot`,
+  - `palm___bottom_right_horizontal_line`,
+  - `palm___urban_tree_pot`,
+  - `tree___bottom_right_horizontal_line`,
+  - `tree___urban_tree_pot`,
+  - `tree_with_leaf___bottom_right_horizontal_line`,
+  - `tree_with_leaf___urban_tree_pot`.
+
+
 ## 0.6.0
 
 Reorganize paths of the majority of shapes: delete redundant nodes, simplify
@@ -48,6 +61,7 @@ Adjust icon size:
   - `supermarket_cart`.
 
 Create separate `car___car` icon instead of combination of two `car` icons.
+
 
 ## 0.5.0
 
