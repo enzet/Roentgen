@@ -6,6 +6,7 @@ curves. This may change the shape in not detectable way.
 Redraw icons:
   - `bag`,
   - `beer_mug`,
+  - `books`,
   - `cannon`,
   - `car___car`,
   - `cocktail_glass`,

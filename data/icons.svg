@@ -389,9 +389,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="439.03214"
-     inkscape:cx="663.7918"
-     inkscape:zoom="50.347112"
+     inkscape:cy="434.58308"
+     inkscape:cx="765.74421"
+     inkscape:zoom="10.432988"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -10890,15 +10890,6 @@
        width="11"
        id="rect7667"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <path
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 722.5,434 c -0.277,0 -0.5,0.223 -0.5,0.5 0,0.277 0.223,0.5 0.5,0.5 h 10 c 0.277,0 0.5,-0.223 0.5,-0.5 0,-0.277 -0.223,-0.5 -0.5,-0.5 z m 7.4473,2.00784 -0.9649,0.25781 c -0.2675,0.0717 -0.4252,0.34572 -0.3535,0.61329 l 1.8105,6.75976 c 0.072,0.26756 0.3458,0.42716 0.6133,0.35547 l 0.9649,-0.25976 c 0.2675,-0.0717 0.4252,-0.34572 0.3535,-0.61329 l -1.8105,-6.75976 c -0.0718,-0.26673 -0.34076,-0.42563 -0.6133,-0.35352 z M 723.5,436 c -0.277,0 -0.5,0.223 -0.5,0.5 v 7 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 v -7 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 z m 3,0 c -0.277,0 -0.5,0.223 -0.5,0.5 v 7 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 v -7 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 z m -4,9 c -0.277,0 -0.5,0.223 -0.5,0.5 0,0.277 0.223,0.5 0.5,0.5 h 10 c 0.277,0 0.5,-0.223 0.5,-0.5 0,-0.277 -0.223,-0.5 -0.5,-0.5 z"
-       id="books"
-       inkscape:label="#rect7669"
-       sodipodi:nodetypes="ssssssscccccccccsssssssssssssssssssssssss">
-      <title
-         id="title7680">books</title>
-    </path>
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="rect7684"
@@ -33935,8 +33926,8 @@
        rx="0.5"
        ry="0.5" />
     <path
-       id="books_v1"
-       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="books"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        d="M 708.5 434 C 708.223 434 708 434.223 708 434.5 L 708 443.5 C 708 443.777 708.223 444 708.5 444 L 709.5 444 C 709.777 444 710 443.777 710 443.5 L 710 434.5 C 710 434.223 709.777 434 709.5 434 L 708.5 434 z M 711.5 435 C 711.223 435 711 435.223 711 435.5 L 711 443.5 C 711 443.777 711.223 444 711.5 444 L 712.5 444 C 712.777 444 713 443.777 713 443.5 L 713 435.5 C 713 435.223 712.777 435 712.5 435 L 711.5 435 z M 715.04883 435.99023 C 715.01561 435.99226 714.98071 435.99885 714.94727 436.00781 L 713.98242 436.26562 C 713.71486 436.33732 713.55721 436.61134 713.62891 436.87891 L 715.43945 443.64062 C 715.51115 443.90819 715.78517 444.06583 716.05273 443.99414 L 717.01758 443.73438 C 717.28514 443.66268 717.44279 443.39061 717.37109 443.12305 L 715.56055 436.36133 C 715.49782 436.12721 715.28133 435.97605 715.04883 435.99023 z M 705.5 436 C 705.223 436 705 436.223 705 436.5 L 705 443.5 C 705 443.777 705.223 444 705.5 444 L 706.5 444 C 706.777 444 707 443.777 707 443.5 L 707 436.5 C 707 436.223 706.777 436 706.5 436 L 705.5 436 z M 705.5 445 C 705.223 445 705 445.223 705 445.5 C 705 445.777 705.223 446 705.5 446 L 717.5 446 C 717.777 446 718 445.777 718 445.5 C 718 445.223 717.777 445 717.5 445 L 705.5 445 z " />
     <rect
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -34297,9 +34288,8 @@
        id="path629" />
     <path
        id="book"
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
-       d="M 772.5 -434 C 771.669 -434 771 -434.669 771 -435.5 L 771 -444.5 C 771 -445.331 771.669 -446 772.5 -446 L 773.5 -446 L 775.5 -446 L 780.5 -446 C 780.77614 -446 781 -445.77614 781 -445.5 C 781 -445.22386 780.77614 -445 780.5 -445 L 776.91602 -445 L 772.5 -445 C 772.223 -445 772 -444.777 772 -444.5 L 772 -443.5 C 772 -443.223 772.223 -443 772.5 -443 L 777 -443 L 780.5 -443 C 780.77613 -442.99997 780.99997 -442.77613 781 -442.5 L 781 -434.5 C 780.99997 -434.22387 780.77613 -434.00003 780.5 -434 L 775.5 -434 L 772.5 -434 z M 773.5 -436 L 778.5 -436 A 0.5 0.5 0 0 0 779 -436.5 A 0.5 0.5 0 0 0 778.5 -437 L 773.5 -437 A 0.5 0.5 0 0 0 773 -436.5 A 0.5 0.5 0 0 0 773.5 -436 z M 773.5 -438 L 776.5 -438 A 0.5 0.5 0 0 0 777 -438.5 A 0.5 0.5 0 0 0 776.5 -439 L 773.5 -439 A 0.5 0.5 0 0 0 773 -438.5 A 0.5 0.5 0 0 0 773.5 -438 z M 773.5 -440 L 777.5 -440 A 0.5 0.5 0 0 0 778 -440.5 A 0.5 0.5 0 0 0 777.5 -441 L 773.5 -441 A 0.5 0.5 0 0 0 773 -440.5 A 0.5 0.5 0 0 0 773.5 -440 z "
-       transform="scale(1,-1)" />
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
+       d="m 772.5,434 c -0.831,0 -1.5,0.669 -1.5,1.5 v 9 c 0,0.831 0.669,1.5 1.5,1.5 h 1 2 5 c 0.27614,0 0.5,-0.22386 0.5,-0.5 0,-0.27614 -0.22386,-0.5 -0.5,-0.5 H 776.91602 772.5 c -0.277,0 -0.5,-0.223 -0.5,-0.5 v -1 c 0,-0.277 0.223,-0.5 0.5,-0.5 h 4.5 3.5 c 0.27613,-3e-5 0.49997,-0.22387 0.5,-0.5 v -8 c -3e-5,-0.27613 -0.22387,-0.49997 -0.5,-0.5 h -5 z m 1,2 h 5 a 0.5,0.5 0 0 1 0.5,0.5 0.5,0.5 0 0 1 -0.5,0.5 h -5 a 0.5,0.5 0 0 1 -0.5,-0.5 0.5,0.5 0 0 1 0.5,-0.5 z m 0,2 h 3 a 0.5,0.5 0 0 1 0.5,0.5 0.5,0.5 0 0 1 -0.5,0.5 h -3 a 0.5,0.5 0 0 1 -0.5,-0.5 0.5,0.5 0 0 1 0.5,-0.5 z m 0,2 h 4 a 0.5,0.5 0 0 1 0.5,0.5 0.5,0.5 0 0 1 -0.5,0.5 h -4 a 0.5,0.5 0 0 1 -0.5,-0.5 0.5,0.5 0 0 1 0.5,-0.5 z" />
     <circle
        r="3"
        cy="423"
