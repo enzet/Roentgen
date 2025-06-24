@@ -1,3 +1,8 @@
+## Unreleased
+
+Adjust icon size:
+  - `card_and_dice`.
+
 ## 0.6.0
 
 Reorganize paths of the majority of shapes: delete redundant nodes, simplify
