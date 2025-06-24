@@ -130,6 +130,7 @@ def main() -> None:
             Path("data") / "icons.svg",
             Path("data") / "connectors.svg",
             Path("data") / "power.svg",
+            Path("data") / "letters.svg",
         ]:
             shapes.add_from_file(path)
 

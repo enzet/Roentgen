@@ -22,9 +22,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="10.026848"
-     inkscape:cx="75.796501"
-     inkscape:cy="80.284452"
+     inkscape:zoom="7.546575"
+     inkscape:cx="80.69886"
+     inkscape:cy="121.64459"
      inkscape:window-width="1424"
      inkscape:window-height="831"
      inkscape:window-x="8"
@@ -1563,5 +1563,42 @@
        style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000"
        d="M 114.08398,83.77734 118,89.65234 v 0.78516 l -0.98438,3.94141 c -0.0665,0.26745 0.096,0.53825 0.36329,0.60547 0.26745,0.0665 0.53825,-0.096 0.60547,-0.36329 L 118.14062,94 h 2.71876 l 0.15624,0.62109 c 0.0672,0.26726 0.33802,0.42975 0.60547,0.36329 0.26726,-0.0672 0.42975,-0.33802 0.36329,-0.60547 L 121,90.4375 v -0.78516 l 3.91602,-5.875 c 0.31753,-0.4754 -0.28239,-1.02545 -0.72852,-0.66796 l -4.6875,3.75 -4.6875,-3.75 c -0.43017,-0.34369 -1.04909,0.18689 -0.72852,0.66796 z m 2.61914,2.12696 2.16797,1.73437 -0.43359,0.86719 z m 5.59376,0 -1.73438,2.60156 -0.43359,-0.86719 z M 119.5,88.61914 120,89.61719 V 90 h -1 V 89.61719 Z M 118.89062,91 h 1.21876 l 0.5,2 h -2.21876 z"
        sodipodi:nodetypes="cccccsccscccccccccccccccccccccccccccc" />
+    <path
+       style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 101.5,99.5 h 2"
+       id="path1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 101.5,105 v 1"
+       id="path3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 101.5,103.5 h 2"
+       id="path6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 101.5,101.5 h 2"
+       id="path7"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="display:inline;fill:none;stroke:#000000;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect7"
+       width="2"
+       height="13"
+       x="103"
+       y="98"
+       ry="0.5"
+       rx="0.5" />
+    <path
+       id="power_pole_flag_armless_v0"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       d="M 103.5 114 C 103.223 114 103 114.223 103 114.5 L 103 115 L 101.5 115 A 0.5 0.5 0 0 0 101 115.5 A 0.5 0.5 0 0 0 101.5 116 L 103 116 L 103 117 L 101.5 117 A 0.5 0.5 0 0 0 101 117.5 A 0.5 0.5 0 0 0 101.5 118 L 103 118 L 103 119 L 101.5 119 A 0.5 0.5 0 0 0 101 119.5 A 0.5 0.5 0 0 0 101.5 120 L 103 120 L 103 126.5 C 103 126.777 103.223 127 103.5 127 L 104.5 127 C 104.777 127 105 126.777 105 126.5 L 105 114.5 C 105 114.223 104.777 114 104.5 114 L 103.5 114 z M 101.5 120.5 A 0.5 0.5 0 0 0 101 121 L 101 122 A 0.5 0.5 0 0 0 101.5 122.5 A 0.5 0.5 0 0 0 102 122 L 102 121 A 0.5 0.5 0 0 0 101.5 120.5 z " />
   </g>
 </svg>
