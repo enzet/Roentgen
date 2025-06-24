@@ -169,7 +169,10 @@
         "column_key": "design",
         "column_values": [
             "one-level", "two-level", "three-level", "four-level", "asymmetric",
-            "triangle", "flag", "delta", "delta_two-level", "delta_three-level"
+            "asymmetric;one-level",
+            "triangle", "triangle;one-level", "flag", "flag;one-level", "delta",
+            "delta;one-level",
+            "monopolar"
         ]
     },
     {
@@ -179,8 +182,25 @@
         "row_values": ["tower"],
         "column_key": "design",
         "column_values": [
-            "donau", "donau_inverse", "barrel", "y-frame", "x-frame", "h-frame",
-            "guyed_h-frame", "portal", "portal_two-level", "portal_three-level"
+            "donau", "donau;one-level", "donau_inverse",
+            "delta_two-level", "delta_three-level",
+            "barrel", "barrel;one-level", "guyed_delta", "y-frame", "x-frame",
+            "h-frame", "h-frame_one-level", "h-frame_two-level", "h-frame_three-level",
+            "guyed_h-frame", "portal", "guyed_portal",
+            "portal_two-level", "portal_three-level", "guyed_v-frame",
+            "guyed_monopolar"
+        ]
+    },
+    {
+        "tags": {},
+        "name": "Power pole",
+        "row_key": "power",
+        "row_values": ["pole"],
+        "column_key": "design",
+        "column_values": [
+            "semi-horizontal_one-level", "armless_asymmetric", "bipole",
+            "armless_triangle", "armless_triangle;one-level", "semi-vertical",
+            "armless_flag"
         ]
     },
     {

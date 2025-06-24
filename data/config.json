@@ -2434,6 +2434,46 @@
             "categories": ["power"],
             "name": "guyed h-frame transmission tower"
         },
+        "power_tower_guyed_v_frame": {
+            "categories": ["power"],
+            "name": "guyed v-frame transmission tower",
+            "shapes": [
+                {"id": "power_tower_guyed_v_frame", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "power_tower_donau_1_level": {
+            "categories": ["power"],
+            "name": "donau transmission tower with one level",
+            "shapes": [
+                {"id": "power_tower_donau_1_level", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "power_tower_barrel_1_level": {
+            "categories": ["power"],
+            "name": "barrel transmission tower with one level",
+            "shapes": [
+                {"id": "power_tower_barrel_1_level", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "power_tower_monopolar": {
+            "categories": ["power"],
+            "name": "monopolar transmission tower",
+            "shapes": [
+                {"id": "power_tower_monopolar", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "power_tower_h_frame_3_level": {
+            "categories": ["power"],
+            "name": "h-frame transmission tower with three levels",
+            "shapes": [
+                {"id": "power_tower_h_frame_3_level", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "power_tower_h_frame": {
             "categories": ["power"],
             "name": "h-frame transmission tower"
