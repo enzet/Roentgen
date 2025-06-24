@@ -20,6 +20,7 @@ Redraw icons:
 
 Make icons smoother and make corners round:
   - `baptist`,
+  - `book`,
   - `cactus`,
   - `fort`,
   - `human`,
