@@ -1441,7 +1441,7 @@
         },
         "solar_panel": {
             "name": "solar panel",
-            "keywords": ["energy", "sun", "electricity", "renewable"]
+            "keywords": ["energy", "sun", "electricity", "renewable", "power"]
         },
         "sos_phone": {
             "categories": ["emergency"],
