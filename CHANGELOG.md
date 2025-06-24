@@ -1,4 +1,4 @@
-## Unreleased
+## 0.6.0
 
 Reorganize paths of the majority of shapes: delete redundant nodes, simplify
 curves. This may change the shape in not detectable way.
