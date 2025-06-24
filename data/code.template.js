@@ -360,7 +360,7 @@ function selectIcon(name) {
     document.getElementById("iconName").textContent = selectedIcon.capitalized_name;
 
     // Update identifier, add invisible break after every "_" in identifier.
-    document.getElementById("iconIdentifier").innerHTML = selectedIcon.identifier.replace(/_/g, "_<wbr>");
+    document.getElementById("iconIdentifier").innerHTML = selectedIcon.identifier.replace(/_/g, " ");
 
     // Update tags.
     const tagsContainer = document.getElementById("iconTags");

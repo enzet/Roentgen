@@ -339,3 +339,9 @@ input[type="range"]:focus {
 .search-input::placeholder {
     color: rgba(var(--fg-color), 0.5);
 }
+
+#iconIdentifier {
+    font-family: "Iosevka Custom";
+    text-transform: uppercase;
+    font-variant-numeric: tabular-nums;
+}
