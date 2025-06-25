@@ -6,6 +6,7 @@ Redraw icons:
   - `betula___urban_tree_pot`,
   - `coffee_cup`,
   - `diamond`,
+  - `drinking_water`,
   - `third_stage`,
   - `tooth`,
   - `vending_angle`,
