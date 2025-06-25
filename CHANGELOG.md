@@ -46,7 +46,8 @@ Make icons smoother and make corners round:
   - `tree_with_leaf___urban_tree_pot`,
   - `tv`,
   - `vending_bottle`,
-  - `vending_chemist`.
+  - `vending_chemist`,
+  - `woman_and_man`.
 
 
 ## 0.6.0
