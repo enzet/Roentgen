@@ -678,9 +678,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="67.406565"
-     inkscape:cx="272.70419"
-     inkscape:zoom="9.746825"
+     inkscape:cy="83.614127"
+     inkscape:cx="44.677935"
+     inkscape:zoom="11.146442"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -2314,9 +2314,9 @@
        sodipodi:nodetypes="csccccccscccsccsccccccc"
        inkscape:connector-curvature="0"
        inkscape:label="#path3101"
-       id="coffee_cup"
+       id="coffee_cup_v1"
        d="m 46,86 c 0,-1.10457 -0.89543,-2 -2,-2 h -1 v -1 h -7 v 7 h 7 v -1 h 1 c 1.10457,0 2,-0.89543 2,-2 z m -1,1 c 0,0.55228 -0.44772,1 -1,1 h -1 v -3 h 1 c 0.55228,0 1,0.44771 1,1 z m -11,4 1,1 h 9 l 1,-1 z"
-       style="fill:#000000;fill-opacity:1;stroke:none">
+       style="fill:#0000ff;fill-opacity:1;stroke:none;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1">
       <title
          id="title5996">coffee cup</title>
     </path>
@@ -32662,8 +32662,8 @@
        id="path445"
        sodipodi:nodetypes="ccccc" />
     <path
-       id="coffee_cup_v0"
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="coffee_cup"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:butt;stroke-linejoin:miter;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="m 20.5,82 c -0.276131,2.8e-5 -0.499972,0.223869 -0.5,0.5 v 8 c 2.8e-5,0.276131 0.223869,0.499972 0.5,0.5 h 7 c 0.276131,-2.8e-5 0.499972,-0.223869 0.5,-0.5 V 89 h 0.5 C 29.874789,89 31,87.874789 31,86.5 31,85.125211 29.874789,84 28.5,84 H 28 v -1.5 c -2.8e-5,-0.276131 -0.223869,-0.499972 -0.5,-0.5 z m 7.5,3 h 0.5 c 0.83435,0 1.5,0.66565 1.5,1.5 0,0.83435 -0.66565,1.5 -1.5,1.5 H 28 Z m -9.5,7 c -0.276142,0 -0.5,0.223858 -0.5,0.5 0,0.276142 0.223858,0.5 0.5,0.5 h 11 C 29.776142,93 30,92.776142 30,92.5 30,92.223858 29.776142,92 29.5,92 Z"
        sodipodi:nodetypes="cccccccssscccccsssccsssssss" />
     <path
