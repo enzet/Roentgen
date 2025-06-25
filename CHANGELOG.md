@@ -1,5 +1,8 @@
 ## Unreleased
 
+Redraw icons:
+  - `diamond`.
+
 Adjust icon size:
   - `card_and_dice`.
 
