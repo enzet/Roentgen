@@ -3,7 +3,11 @@
 Redraw icons:
   - `coffee_cup`,
   - `diamond`,
-  - `third_stage`.
+  - `third_stage`,
+  - `vending_angle`,
+  - `vending_candles`,
+  - `vending_drop`,
+  - `vending_machine`.
 
 Adjust icon size:
   - `card_and_dice`,
@@ -31,7 +35,9 @@ Make icons smoother and make corners round:
   - `tree___urban_tree_pot`,
   - `tree_with_leaf___bottom_right_horizontal_line`,
   - `tree_with_leaf___urban_tree_pot`,
-  - `tv`.
+  - `tv`,
+  - `vending_bottle`,
+  - `vending_chemist`.
 
 
 ## 0.6.0
