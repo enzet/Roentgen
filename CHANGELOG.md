@@ -4,6 +4,7 @@ Redraw icons:
   - `betula`,
   - `betula___bottom_right_horizontal_line`,
   - `betula___urban_tree_pot`,
+  - `building`,
   - `coffee_cup`,
   - `diamond`,
   - `drinking_water`,
