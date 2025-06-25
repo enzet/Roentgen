@@ -22,7 +22,8 @@ Make icons smoother and make corners round:
   - `tree___bottom_right_horizontal_line`,
   - `tree___urban_tree_pot`,
   - `tree_with_leaf___bottom_right_horizontal_line`,
-  - `tree_with_leaf___urban_tree_pot`.
+  - `tree_with_leaf___urban_tree_pot`,
+  - `tv`.
 
 
 ## 0.6.0
