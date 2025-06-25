@@ -2,7 +2,8 @@
 
 Redraw icons:
   - `coffee_cup`,
-  - `diamond`.
+  - `diamond`,
+  - `third_stage`.
 
 Adjust icon size:
   - `card_and_dice`,
