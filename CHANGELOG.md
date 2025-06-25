@@ -7,6 +7,7 @@ Redraw icons:
   - `coffee_cup`,
   - `diamond`,
   - `drinking_water`,
+  - `fountain_bubbler`,
   - `third_stage`,
   - `tooth`,
   - `vending_angle`,
