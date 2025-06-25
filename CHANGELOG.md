@@ -4,12 +4,21 @@ Adjust icon size:
   - `card_and_dice`.
 
 Make icons smoother and make corners round:
+  - `bbq`,
   - `betula___bottom_right_horizontal_line`,
   - `betula___urban_tree_pot`,
+  - `bottle_and_wine_glass`,
+  - `bottle`,
+  - `city_gate`,
+  - `ice_cream`,
   - `needleleaved_tree___bottom_right_horizontal_line`,
   - `needleleaved_tree___urban_tree_pot`,
+  - `obelisk`,
+  - `pagoda`,
   - `palm___bottom_right_horizontal_line`,
   - `palm___urban_tree_pot`,
+  - `table_and_two_chairs___roof_and_walls`,
+  - `tomb`,
   - `tree___bottom_right_horizontal_line`,
   - `tree___urban_tree_pot`,
   - `tree_with_leaf___bottom_right_horizontal_line`,
