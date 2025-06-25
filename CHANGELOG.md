@@ -5,7 +5,8 @@ Redraw icons:
   - `diamond`.
 
 Adjust icon size:
-  - `card_and_dice`.
+  - `card_and_dice`,
+  - `crane_gantry`.
 
 Make icons smoother and make corners round:
   - `bbq`,
