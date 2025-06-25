@@ -1,6 +1,9 @@
 ## Unreleased
 
 Redraw icons:
+  - `betula`,
+  - `betula___bottom_right_horizontal_line`,
+  - `betula___urban_tree_pot`,
   - `coffee_cup`,
   - `diamond`,
   - `third_stage`,

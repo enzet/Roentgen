@@ -746,9 +746,9 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="88.373273"
-     inkscape:cx="85.793031"
-     inkscape:zoom="4.6507274"
+     inkscape:cy="121.34915"
+     inkscape:cx="150.46185"
+     inkscape:zoom="10.820018"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -4265,9 +4265,9 @@
        sodipodi:nodetypes="scscsscssccsssccccsssccsscsscscss"
        inkscape:connector-curvature="0"
        inkscape:label="#rect3847"
-       id="betula"
+       id="betula_v0"
        d="m 151,209 c -0.554,0 -1,0.446 -1,1 -0.554,0 -1,0.446 -1,1 v 1 c -0.554,0 -1,0.446 -1,1 v 2 c 0,0.554 0.446,1 1,1 v 1 c 0,0.554 0.446,1 1,1 h 1 v 3 h 0.5 c 0.277,0 0.5,0.223 0.5,0.5 0,0.277 -0.223,0.5 -0.5,0.5 H 151 v 1 h 2 v -3 h -0.5 c -0.277,0 -0.5,-0.223 -0.5,-0.5 0,-0.277 0.223,-0.5 0.5,-0.5 h 0.5 v -1 h 1 c 0.554,0 1,-0.446 1,-1 v -1 c 0.554,0 1,-0.446 1,-1 v -2 c 0,-0.554 -0.446,-1 -1,-1 v -1 c 0,-0.554 -0.446,-1 -1,-1 0,-0.554 -0.446,-1 -1,-1 z"
-       style="fill:#000000;stroke:none;fill-opacity:1">
+       style="fill:#0000ff;stroke:none;fill-opacity:1;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1">
       <title
          id="title6133">betula</title>
     </path>
@@ -32975,5 +32975,13 @@
        style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:miter;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="m 231,82 c -1.10457,0 -2,0.895431 -2,2 -1.10457,0 -2,0.895431 -2,2 -1.1e-4,0.35104 0.0922,0.695926 0.26758,1 h 7.46484 c 0.17541,-0.304074 0.26769,-0.64896 0.26758,-1 0,-1.104569 -0.89543,-2 -2,-2 0,-1.104569 -0.89543,-2 -2,-2 z m -3.33008,6 2.8711,6.697266 c 0.17387,0.402117 0.74409,0.402117 0.91796,0 L 234.33008,88 Z"
        sodipodi:nodetypes="sccccccsccccc" />
+    <g
+       id="path731"
+       style="opacity:0.2" />
+    <path
+       id="betula"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#000001;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       d="m 150.0625,115.13476 c -2.1076,-0.0818 -2.71837,2.2635 -1.125,3.45899 -1.63112,2.27086 0.48755,4.2103 2.0625,3.70315 V 125 h 0.5 c 0.277,0 0.5,0.223 0.5,0.5 0,0.277 -0.223,0.5 -0.5,0.5 H 151 v 0.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 V 124 h -0.5 c -0.277,0 -0.5,-0.223 -0.5,-0.5 0,-0.277 0.223,-0.5 0.5,-0.5 h 0.5 v -1.67773 c 1.46412,0.85143 3.5643,-1.47463 2.06609,-3.22055 1.53969,-1.72977 -0.002,-3.26079 -1.06609,-3.10172 -0.39774,-2.52853 -3.97193,-2.46683 -3.9375,0.13476 z"
+       sodipodi:nodetypes="ccccssscsssscsssccccc" />
   </g>
 </svg>
