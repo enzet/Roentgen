@@ -8,6 +8,7 @@ Redraw icons:
   - `diamond`,
   - `drinking_water`,
   - `fountain_bubbler`,
+  - `golf_club_and_ball`,
   - `third_stage`,
   - `tooth`,
   - `vending_angle`,
