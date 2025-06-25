@@ -9,6 +9,7 @@ Adjust icon size:
 
 Make icons smoother and make corners round:
   - `bbq`,
+  - `beer_mug`,
   - `betula___bottom_right_horizontal_line`,
   - `betula___urban_tree_pot`,
   - `bottle_and_wine_glass`,
