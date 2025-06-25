@@ -22,6 +22,7 @@ Make icons smoother and make corners round:
   - `pagoda`,
   - `palm___bottom_right_horizontal_line`,
   - `palm___urban_tree_pot`,
+  - `t_shirt_and_scissors`,
   - `table_and_two_chairs___roof_and_walls`,
   - `tomb`,
   - `tree___bottom_right_horizontal_line`,
