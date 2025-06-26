@@ -1,3 +1,9 @@
+## Unreleased
+
+Redraw icons:
+  - `wretch_and_hammer`.
+
+
 ## 0.7.0
 
 Redraw icons:
