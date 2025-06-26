@@ -14,6 +14,7 @@ Redraw icons:
   - `fire_pit`,
   - `fountain_bubbler`,
   - `golf_club_and_ball`,
+  - `monument`,
   - `third_stage`,
   - `tooth`,
   - `vending_angle`,
