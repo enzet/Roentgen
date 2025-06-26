@@ -7,6 +7,7 @@ Redraw icons:
   - `betula`,
   - `bicycle___wrench`,
   - `building`,
+  - `bush`,
   - `car___wrench`,
   - `coffee_cup`,
   - `diamond`,
