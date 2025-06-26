@@ -4,6 +4,9 @@ Redraw icons:
   - `shoe`,
   - `wretch_and_hammer`.
 
+Make icons smoother and make corners round:
+  - `atm`.
+
 
 ## 0.7.0
 
