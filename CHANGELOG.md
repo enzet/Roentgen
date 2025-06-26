@@ -1,10 +1,12 @@
 ## Unreleased
 
 Redraw icons:
-  - `betula`,
   - `betula___bottom_right_horizontal_line`,
   - `betula___urban_tree_pot`,
+  - `betula`,
+  - `bicycle___wrench`,
   - `building`,
+  - `car___wrench`,
   - `coffee_cup`,
   - `diamond`,
   - `drinking_water`,
@@ -15,7 +17,8 @@ Redraw icons:
   - `vending_angle`,
   - `vending_candles`,
   - `vending_drop`,
-  - `vending_machine`.
+  - `vending_machine`,
+  - `wrench`.
 
 Adjust icon size:
   - `card_and_dice`,
@@ -37,6 +40,7 @@ Make icons smoother and make corners round:
   - `pagoda`,
   - `palm___bottom_right_horizontal_line`,
   - `palm___urban_tree_pot`,
+  - `sunflower`,
   - `t_shirt_and_scissors`,
   - `table_and_two_chairs___roof_and_walls`,
   - `tomb`,

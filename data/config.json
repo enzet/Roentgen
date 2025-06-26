@@ -2670,7 +2670,7 @@
             "name": "car with wrench",
             "shapes": [
                 {"id": "car", "offset": [0, 3]},
-                {"id": "wrench", "offset": [0, -4]}
+                {"id": "wrench", "offset": [0, -4], "flip_horizontally": true}
             ]
         },
         "car___key": {
