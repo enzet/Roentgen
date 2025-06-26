@@ -638,7 +638,7 @@
             "name": "curtains"
         },
         "elevator": {
-            "keywords": ["transport", "building", "arrows"],
+            "keywords": ["transport", "building", "arrows", "lift"],
             "name": "elevator"
         },
         "fireplace": {
