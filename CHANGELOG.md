@@ -17,6 +17,7 @@ Redraw icons:
   - `fireplace`,
   - `fountain_bubbler`,
   - `golf_club_and_ball`,
+  - `microphone`,
   - `monument`,
   - `third_stage`,
   - `tooth`,
