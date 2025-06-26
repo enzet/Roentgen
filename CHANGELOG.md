@@ -1,6 +1,7 @@
 ## Unreleased
 
 Redraw icons:
+  - `bbq`,
   - `betula___bottom_right_horizontal_line`,
   - `betula___urban_tree_pot`,
   - `betula`,
@@ -10,6 +11,7 @@ Redraw icons:
   - `coffee_cup`,
   - `diamond`,
   - `drinking_water`,
+  - `fire_pit`,
   - `fountain_bubbler`,
   - `golf_club_and_ball`,
   - `third_stage`,
