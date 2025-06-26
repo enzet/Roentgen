@@ -12,6 +12,7 @@ Redraw icons:
   - `diamond`,
   - `drinking_water`,
   - `fire_pit`,
+  - `fireplace`,
   - `fountain_bubbler`,
   - `golf_club_and_ball`,
   - `monument`,
