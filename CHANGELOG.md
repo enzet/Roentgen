@@ -12,6 +12,7 @@ Redraw icons:
   - `coffee_cup`,
   - `diamond`,
   - `drinking_water`,
+  - `ear_botany_2`,
   - `fire_pit`,
   - `fireplace`,
   - `fountain_bubbler`,
