@@ -1,6 +1,7 @@
 ## Unreleased
 
 Redraw icons:
+  - `shoe`,
   - `wretch_and_hammer`.
 
 
