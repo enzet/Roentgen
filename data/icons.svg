@@ -865,9 +865,9 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="721.29128"
-     inkscape:cx="503.46206"
-     inkscape:zoom="8.0452934"
+     inkscape:cy="244.77495"
+     inkscape:cx="617.37046"
+     inkscape:zoom="3.4970899"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -30699,8 +30699,8 @@
        style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="M 167.5 181 A 0.5 0.5 0 0 0 167.14648 181.14648 A 0.5 0.5 0 0 0 167.14648 181.85352 L 168.29297 183 L 166.5 183 A 0.5 0.5 0 0 0 166 183.5 A 0.5 0.5 0 0 0 166.5 184 L 168.29297 184 L 167.14648 185.14648 A 0.5 0.5 0 0 0 167.14648 185.85352 A 0.5 0.5 0 0 0 167.85352 185.85352 L 169.85352 183.85352 A 0.50005 0.50005 0 0 0 169.85352 183.14648 L 167.85352 181.14648 A 0.5 0.5 0 0 0 167.5 181 z " />
     <path
-       id="horizontal_ladder"
-       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="horizontal_ladder_v1"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:square;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="M 564.5 180 C 563.83333 180 563.22505 180.31792 562.77148 180.77148 C 562.31792 181.22505 562 181.83333 562 182.5 A 0.5 0.5 0 0 0 562.5 183 A 0.5 0.5 0 0 0 563 182.5 C 563 182.16667 563.18208 181.77495 563.47852 181.47852 C 563.6336 181.32343 563.81476 181.19998 564 181.11719 L 564 184.06055 C 563.53137 184.17291 563.10868 184.4343 562.77148 184.77148 C 562.31792 185.22505 562 185.83333 562 186.5 A 0.5 0.5 0 0 0 562.5 187 A 0.5 0.5 0 0 0 563 186.5 C 563 186.16667 563.18208 185.77495 563.47852 185.47852 C 563.77495 185.18208 564.16667 185 564.5 185 L 570.5 185 C 570.83333 185 571.22505 185.18208 571.52148 185.47852 C 571.81792 185.77495 572 186.16667 572 186.5 A 0.5 0.5 0 0 0 572.5 187 A 0.5 0.5 0 0 0 573 186.5 C 573 185.83333 572.68208 185.22505 572.22852 184.77148 C 571.89132 184.4343 571.46863 184.17291 571 184.06055 L 571 181.11719 C 571.18524 181.19998 571.3664 181.32343 571.52148 181.47852 C 571.81792 181.77495 572 182.16667 572 182.5 A 0.5 0.5 0 0 0 572.5 183 A 0.5 0.5 0 0 0 573 182.5 C 573 181.83333 572.68208 181.22505 572.22852 180.77148 C 571.77495 180.31792 571.16667 180 570.5 180 L 564.5 180 z M 565 181 L 567 181 L 567 184 L 565 184 L 565 181 z M 568 181 L 570 181 L 570 184 L 568 184 L 568 181 z " />
     <path
        style="font-variation-settings:normal;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
@@ -33668,8 +33668,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc" />
     <path
-       id="horizontal_ladder_v0"
-       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:square;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="horizontal_ladder"
+       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="M 563.5 212 C 562.83333 212 562.22505 212.31792 561.77148 212.77148 C 561.31792 213.22505 561 213.83333 561 214.5 A 0.5 0.5 0 0 0 561.5 215 A 0.5 0.5 0 0 0 562 214.5 C 562 214.16667 562.18208 213.77495 562.47852 213.47852 C 562.77495 213.18208 563.16667 213 563.5 213 L 564 213 L 564 217 L 563.5 217 C 562.83333 217 562.22505 217.31792 561.77148 217.77148 C 561.31792 218.22505 561 218.83333 561 219.5 A 0.5 0.5 0 0 0 561.5 220 A 0.5 0.5 0 0 0 562 219.5 C 562 219.16667 562.18208 218.77495 562.47852 218.47852 C 562.77495 218.18208 563.16667 218 563.5 218 L 571.5 218 C 571.83333 218 572.22505 218.18208 572.52148 218.47852 C 572.81792 218.77495 573 219.16667 573 219.5 A 0.5 0.5 0 0 0 573.5 220 A 0.5 0.5 0 0 0 574 219.5 C 574 218.83333 573.68208 218.22505 573.22852 217.77148 C 572.77495 217.31792 572.16667 217 571.5 217 L 571 217 L 571 213 L 571.5 213 C 571.83333 213 572.22505 213.18208 572.52148 213.47852 C 572.81792 213.77495 573 214.16667 573 214.5 A 0.5 0.5 0 0 0 573.5 215 A 0.5 0.5 0 0 0 574 214.5 C 574 213.83333 573.68208 213.22505 573.22852 212.77148 C 572.77495 212.31792 572.16667 212 571.5 212 L 563.5 212 z M 565 213 L 567 213 L 567 217 L 565 217 L 565 213 z M 568 213 L 570 213 L 570 217 L 568 217 L 568 213 z " />
     <path
        style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"

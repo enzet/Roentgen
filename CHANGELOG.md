@@ -8,6 +8,9 @@ Redraw icons:
   - `shoe`,
   - `wretch_and_hammer`.
 
+Adjust icon size:
+  - `horizontal_ladder`.
+
 Make icons smoother and make corners round:
   - `atm`.
 
