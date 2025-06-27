@@ -1,7 +1,10 @@
 ## Unreleased
 
 Redraw icons:
+  - `booster_landing`,
   - `elevator`,
+  - `rocket_flying`,
+  - `rocket_on_launch_pad`,
   - `shoe`,
   - `wretch_and_hammer`.
 
