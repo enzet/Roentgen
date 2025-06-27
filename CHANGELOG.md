@@ -4,6 +4,7 @@ Redraw icons:
   - `booster_landing`,
   - `ear_botany`,
   - `elevator`,
+  - `pillar`,
   - `rocket_flying`,
   - `rocket_on_launch_pad`,
   - `shoe`,
