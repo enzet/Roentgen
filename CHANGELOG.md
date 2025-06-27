@@ -12,7 +12,8 @@ Adjust icon size:
   - `horizontal_ladder`.
 
 Make icons smoother and make corners round:
-  - `atm`.
+  - `atm`,
+  - `japan_elementary_school`.
 
 
 ## 0.7.0

@@ -865,8 +865,8 @@
      showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="244.77495"
-     inkscape:cx="617.37046"
+     inkscape:cy="716.02392"
+     inkscape:cx="68.914442"
      inkscape:zoom="3.4970899"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -6155,9 +6155,9 @@
        transform="rotate(90)" />
     <path
        inkscape:label="#path5203"
-       id="japan_elementary_school"
+       id="japan_elementary_school_v1"
        d="m 23,690 v 2 h -5 v 2 h 1.31836 c 0.65136,1.45812 1.78192,2.79481 3.08203,4.00195 -0.99185,0.79392 -2.01566,1.53974 -2.95508,2.16602 l 1.10938,1.66406 c 1.06983,-0.71322 2.27655,-1.54204 3.44531,-2.46484 1.16876,0.9228 2.37548,1.75162 3.44531,2.46484 l 1.10938,-1.66406 c -0.93942,-0.62628 -1.96323,-1.3721 -2.95508,-2.16602 1.30011,-1.20714 2.43067,-2.54383 3.08203,-4.00195 H 30 v -2 h -5 v -2 z m -1.35156,4 h 4.70312 C 25.77198,694.86634 24.95617,695.76645 24,696.64453 23.04383,695.76645 22.22802,694.86634 21.64844,694 Z"
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#0000ff;fill-opacity:0.993618;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        inkscape:connector-curvature="0" />
     <path
        sodipodi:nodetypes="ccccc"
@@ -32363,8 +32363,8 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       id="japan_elementary_school_v0"
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linejoin:miter;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:0.993618;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       id="japan_elementary_school"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="m 20.603284,722.72441 c -0.239889,0.1385 -0.321513,0.44312 -0.183013,0.68301 l 0.75,1.29904 -3.897114,2.25 c -0.239889,0.1385 -0.321513,0.44312 -0.183013,0.68301 l 0.5,0.86603 c 0.1385,0.23989 0.443124,0.32151 0.683013,0.18301 l 0.796676,-0.45996 c 1.5229,0.86118 3.070945,1.52255 4.728738,1.98338 -0.356254,0.92662 -0.800351,1.87009 -1.345772,2.85428 -0.133854,0.24154 -0.05232,0.54702 0.186879,0.685 l 0.866225,0.49965 c 0.238543,0.1376 0.543969,0.056 0.677528,-0.18479 0.644207,-1.16158 1.164422,-2.29264 1.574546,-3.41347 1.175317,0.20517 2.414496,0.32016 3.742037,0.34311 0.276103,0.005 0.500075,-0.21957 0.500185,-0.49571 l 3.98e-4,-0.99785 c 1.1e-4,-0.27657 -0.224024,-0.50026 -0.500545,-0.50512 -1.124748,-0.0198 -2.163618,-0.10686 -3.144,-0.26166 0.429803,-1.66611 0.631058,-3.33744 0.646708,-5.0869 l 0.796676,-0.45996 c 0.239889,-0.1385 0.321513,-0.44312 0.183013,-0.68301 l -0.5,-0.86603 c -0.1385,-0.23989 -0.443124,-0.32151 -0.683013,-0.18301 l -3.897114,2.25 -0.75,-1.29904 c -0.1385,-0.23989 -0.443124,-0.32151 -0.683013,-0.18301 z m 0.508136,4.32543 3.849753,-2.22266 c -0.0734,1.19744 -0.248358,2.34491 -0.549876,3.4929 -1.144949,-0.31287 -2.226163,-0.73509 -3.299877,-1.27024 z"
        inkscape:path-effect="#path-effect484"
        inkscape:original-d="m 20.603284,722.72441 c -0.239889,0.1385 -0.321513,0.44312 -0.183013,0.68301 l 0.75,1.29904 -3.897114,2.25 c -0.239889,0.1385 -0.321513,0.44312 -0.183013,0.68301 l 0.5,0.86603 c 0.1385,0.23989 0.443124,0.32151 0.683013,0.18301 l 0.796676,-0.45996 c 1.5229,0.86118 3.070945,1.52255 4.728738,1.98338 -0.408435,1.06235 -0.932332,2.14684 -1.592004,3.28945 L 23.937823,734.5 c 0.758995,-1.31461 1.359131,-2.58747 1.820154,-3.8474 C 27.079619,730.88331 28.482015,731 30,731 l 7.96e-4,-1.99862 c -1.319362,-1e-5 -2.520509,-0.0885 -3.644744,-0.26601 0.429803,-1.66611 0.631058,-3.33744 0.646708,-5.0869 l 0.796676,-0.45996 c 0.239889,-0.1385 0.321513,-0.44312 0.183013,-0.68301 l -0.5,-0.86603 c -0.1385,-0.23989 -0.443124,-0.32151 -0.683013,-0.18301 l -3.897114,2.25 -0.75,-1.29904 c -0.1385,-0.23989 -0.443124,-0.32151 -0.683013,-0.18301 z m 0.508136,4.32543 3.849753,-2.22266 c -0.0734,1.19744 -0.248358,2.34491 -0.549876,3.4929 -1.144949,-0.31287 -2.226163,-0.73509 -3.299877,-1.27024 z"
