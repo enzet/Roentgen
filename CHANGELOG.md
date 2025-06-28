@@ -1,6 +1,7 @@
 ## Unreleased
 
 Redraw icons:
+  - `bollard`,
   - `booster_landing`,
   - `ear_botany`,
   - `elevator`,
