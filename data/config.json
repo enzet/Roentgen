@@ -151,10 +151,28 @@
                 "keywords": ["egypt", "architecture", "building", "historic"],
                 "name": "pyramid"
             },
+            "static_caravan": {
+                "categories": ["building"],
+                "keywords": ["transport", "architecture", "building"],
+                "name": "static caravan",
+                "shapes": [
+                    {"id": "static_caravan", "version": "v0"}
+                ],
+                "sketch": true
+            },
             "townhall": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "historic"],
                 "name": "town hall"
+            },
+            "yurt": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "ger", "nomad"],
+                "name": "yurt or ger",
+                "shapes": [
+                    {"id": "yurt", "version": "v1"}
+                ],
+                "sketch": true
             }
         }
     },
@@ -706,6 +724,22 @@
             "keywords": ["drink", "liquid"],
             "name": "coffee cup"
         },
+        "coffee_cup_to_go": {
+            "keywords": ["drink", "liquid", "coffee"],
+            "name": "coffee cup to go",
+            "shapes": [
+                {"id": "coffee_cup_to_go", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "cup_with_tea_bag": {
+            "keywords": ["drink", "liquid", "tea"],
+            "name": "cup with tea bag",
+            "shapes": [
+                {"id": "cup_with_tea_bag", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "knives": {
             "keywords": ["tool", "kitchen"],
             "name": "knives"
@@ -789,6 +823,15 @@
                     "keywords": ["natural"],
                     "emoji": "\ud83c\udf33",
                     "name": "tree"
+                },
+                "tree_with_fruit": {
+                    "categories": ["natural"],
+                    "keywords": ["natural"],
+                    "name": "tree with fruit",
+                    "shapes": [
+                        {"id": "tree_with_fruit", "version": "v1"}
+                    ],
+                    "sketch": true
                 },
                 "tree_with_leaf": {
                     "categories": ["natural"],
@@ -1690,6 +1733,7 @@
         "bowling_ball": {
             "categories": ["sport", "indoor"],
             "emoji": "\ud83c\udfb3",
+            "keywords": ["sport", "indoor"],
             "name": "bowling ball"
         },
         "bowling_pin_and_ball": {
@@ -2214,6 +2258,14 @@
                 "emoji": "\u271d\ufe0f",
                 "name": "Latin cross"
             },
+            "om_ligature": {
+                "keywords": ["devanagari", "religion", "hinduism"],
+                "name": "Om ligature in Devanagari script",
+                "shapes": [
+                    {"id": "om_ligature", "version": "v0"}
+                ],
+                "sketch": true
+            },
             "orthodox": {
                 "keywords": ["christian", "religion"],
                 "emoji": "\u2626\ufe0f",
@@ -2228,7 +2280,23 @@
                 "keywords": ["jewish", "religion"],
                 "emoji": "\u2721\ufe0f",
                 "name": "Star of David"
+            },
+            "yin_and_yang": {
+                "keywords": ["religion", "chinese", "taoism"],
+                "name": "yin and yang",
+                "shapes": [
+                    {"id": "yin_and_yang", "version": "v2"}
+                ],
+                "sketch": true
             }
+        },
+        "venus_and_mars_symbols": {
+            "keywords": ["male", "female", "romantic"],
+            "name": "interconnected Venus and Mars symbols",
+            "shapes": [
+                {"id": "venus_and_mars_symbols", "version": "v0"}
+            ],
+            "sketch": true
         }
     },
     "__technique": {
@@ -2612,6 +2680,22 @@
                 "keywords": ["transport", "sport"],
                 "name": "bicycle"
             },
+            "bicycle_small": {
+                "keywords": ["transport"],
+                "name": "small bicycle",
+                "shapes": [
+                    {"id": "bicycle_small", "version": "v0"}
+                ],
+                "sketch": true
+            },
+            "bicycle_sport": {
+                "keywords": ["transport", "sport"],
+                "name": "sport bicycle",
+                "shapes": [
+                    {"id": "bicycle_sport", "version": "v0"}
+                ],
+                "sketch": true
+            },
             "bicycle___x_4": {
                 "name": "bicycle with X",
                 "shapes": [
@@ -2637,6 +2721,14 @@
                 "emoji": "\ud83d\udef9",
                 "keywords": ["transport", "sport"],
                 "name": "skateboard"
+            },
+            "scooter": {
+                "keywords": ["transport", "sport"],
+                "name": "scooter",
+                "shapes": [
+                    {"id": "scooter", "version": "v1"}
+                ],
+                "sketch": true
             },
             "wheelchair": {
                 "emoji": "\ud83e\uddbd",
