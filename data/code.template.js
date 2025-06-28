@@ -501,7 +501,7 @@ function updateRandomColors() {
     document.documentElement.style.setProperty('--fg-color', fgColor);
     document.documentElement.style.setProperty('--link-color', fgColor);
 
-    // Save colors to localStorage
+    // Save colors to `localStorage`.
     localStorage.setItem('roentgen_bg_color', JSON.stringify(bgColor));
     localStorage.setItem('roentgen_fg_color', JSON.stringify(fgColor));
 
@@ -509,28 +509,11 @@ function updateRandomColors() {
     updateIconStyle();
 }
 
-// Function to restore saved colors from localStorage
-function restoreSavedColors() {
-    const savedBg = localStorage.getItem('roentgen_bg_color');
-    const savedFg = localStorage.getItem('roentgen_fg_color');
-
-    if (savedBg && savedFg) {
-        const bgColor = JSON.parse(savedBg);
-        const fgColor = JSON.parse(savedFg);
-
-        document.documentElement.style.setProperty('--bg-color', bgColor);
-        document.documentElement.style.setProperty('--fg-color', fgColor);
-        document.documentElement.style.setProperty('--link-color', fgColor);
-    }
-}
-
 // Add event listener for random colors button.
 document.getElementById('randomColors').addEventListener('click', updateRandomColors);
 
 // Initialize event listeners.
 document.addEventListener('DOMContentLoaded', () => {
-    // Restore saved colors if available
-    restoreSavedColors();
 
     // Add search input handler
     const searchInput = document.getElementById("iconSearch");
