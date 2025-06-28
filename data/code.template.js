@@ -445,7 +445,7 @@ function toggleControlPoints() {
 function filterIcons(query) {
     query = query.toLowerCase();
     const iconItems = document.querySelectorAll(".icon-item");
-    
+
     iconItems.forEach(item => {
         const icon = icons[item.dataset.name];
         if (!icon) return;
@@ -495,14 +495,33 @@ function updateRandomColors() {
     while (brightness(fgColor) > 64) {
         fgColor = getRandomColor();
     }
-    
+
     // Update CSS variables.
     document.documentElement.style.setProperty('--bg-color', bgColor);
     document.documentElement.style.setProperty('--fg-color', fgColor);
     document.documentElement.style.setProperty('--link-color', fgColor);
-    
+
+    // Save colors to localStorage
+    localStorage.setItem('roentgen_bg_color', JSON.stringify(bgColor));
+    localStorage.setItem('roentgen_fg_color', JSON.stringify(fgColor));
+
     // Update icon style.
     updateIconStyle();
+}
+
+// Function to restore saved colors from localStorage
+function restoreSavedColors() {
+    const savedBg = localStorage.getItem('roentgen_bg_color');
+    const savedFg = localStorage.getItem('roentgen_fg_color');
+
+    if (savedBg && savedFg) {
+        const bgColor = JSON.parse(savedBg);
+        const fgColor = JSON.parse(savedFg);
+
+        document.documentElement.style.setProperty('--bg-color', bgColor);
+        document.documentElement.style.setProperty('--fg-color', fgColor);
+        document.documentElement.style.setProperty('--link-color', fgColor);
+    }
 }
 
 // Add event listener for random colors button.
@@ -510,6 +529,9 @@ document.getElementById('randomColors').addEventListener('click', updateRandomCo
 
 // Initialize event listeners.
 document.addEventListener('DOMContentLoaded', () => {
+    // Restore saved colors if available
+    restoreSavedColors();
+
     // Add search input handler
     const searchInput = document.getElementById("iconSearch");
     searchInput.addEventListener("input", (e) => {
@@ -548,7 +570,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         // Only handle shortcuts if no input element is focused
         if (document.activeElement.tagName === 'INPUT' && document.activeElement.id !== 'iconSearch') return;
-        
+
         switch (e.key.toLowerCase()) {
             case 'arrowleft':
                 navigateIcons('prev');
