@@ -120,6 +120,12 @@ class Shape:
                     path_on_canvas.offset[0], path_on_canvas.offset[1]
                 )
         else:
+            if version not in self.paths:
+                message = (
+                    f"No version {version} for shape `{self.id_}`, available "
+                    f"versions: {', '.join(self.paths.keys())}"
+                )
+                raise ValueError(message)
             path_on_canvas = self.paths[version]
             parsed_path: ToolsPath = parse_path(path_on_canvas.path)
             if not np.allclose(path_on_canvas.offset, np.array((0.0, 0.0))):
