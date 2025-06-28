@@ -1,3 +1,7 @@
+body {
+    transition: background-color 0.2s;
+}
+
 :root {
     --preview-width: 600px;
     --border-opacity: 0.1;
@@ -69,6 +73,7 @@
     background: rgba(var(--bg-color));
     flex: 0 0 var(--info-width);
     height: 100vh;
+    transition: background-color 0.2s;
 }
 
 .icon-preview {
@@ -93,8 +98,9 @@
 
 .icon-controls button {
     padding: 0.5rem 1rem;
-    border: 1px solid rgba(var(--fg-color));
-    background: rgba(var(--bg-color));
+    border: none;
+    border-radius: 0.25rem;
+    background: rgba(var(--fg-color), 0.05);
     color: rgba(var(--fg-color));
     cursor: pointer;
     transition: background-color 0.2s;
@@ -117,7 +123,12 @@
 
 .icon-controls button#downloadIcon {
     background-color: rgba(var(--fg-color));
+    border-radius: 0.25rem;
     color: rgba(var(--bg-color));
+}
+
+.icon-controls button#downloadIcon:hover {
+    background-color: rgba(var(--fg-color), 0.8);
 }
 
 .size-control {
@@ -159,14 +170,14 @@ input[type="range"]::-webkit-slider-thumb {
     appearance: none;
     width: 12px;
     height: 12px;
-    background: rgba(var(--bg-color));
-    border: 1px solid rgba(var(--fg-color));
+    background: rgba(var(--fg-color));
+    border-radius: 0.25rem;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
-    background: rgba(var(--fg-color), 0.1);
+    background: rgba(var(--fg-color), 0.8);
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -283,11 +294,11 @@ input[type="range"]:focus {
     -webkit-appearance: none;
     width: 1rem;
     height: 1rem;
-    border: 1px solid rgba(var(--fg-color));
-    background: rgba(var(--bg-color));
+    background: rgba(var(--fg-color), 0.05);
     cursor: pointer;
     position: relative;
     transition: background-color 0.2s;
+    border-radius: 0.25rem;
 }
 
 .checkbox-input:checked {
@@ -299,7 +310,7 @@ input[type="range"]:focus {
 }
 
 .checkbox-input:checked:hover {
-    background: rgba(var(--fg-color));
+    background: rgba(var(--fg-color), 0.8);
 }
 
 .checkbox-label {
@@ -322,11 +333,11 @@ input[type="range"]:focus {
 }
 
 .search-input {
-    width: 100%;
+    width: -webkit-fill-available;
     padding: 0.5rem;
-    border: 1px solid rgba(var(--fg-color));
+    border: none;
     border-radius: 0.25rem;
-    background: rgba(var(--bg-color));
+    background: rgba(var(--fg-color), 0.05);
     color: rgba(var(--fg-color));
 }
 
