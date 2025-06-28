@@ -19,7 +19,8 @@ Adjust icon size:
 
 Make icons smoother and make corners round:
   - `atm`,
-  - `japan_elementary_school`.
+  - `japan_elementary_school`,
+  - `shower`.
 
 
 ## 0.7.0

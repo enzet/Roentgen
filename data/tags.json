@@ -360,6 +360,7 @@
     "amenity=public_bookcase": {"shapes": ["books"]},
     "amenity=recycling": {"shapes": ["recycling_container"]},
     "amenity=restaurant": {"shapes": ["fork_and_knife"]},
+    "amenity=restaurant;cuisine=steak_house": {"shapes": ["steak_and_fork"]},
     "amenity=school;country=JP": {"shapes": ["japan_elementary_school"]},
     "amenity=shelter": {"shapes": ["shelter"]},
     "amenity=shower": {"shapes": ["shower"]},
