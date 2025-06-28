@@ -10,6 +10,7 @@ Redraw icons:
   - `rocket_flying`,
   - `rocket_on_launch_pad`,
   - `shoe`,
+  - `t_shirt`,
   - `torch`,
   - `wretch_and_hammer`.
 

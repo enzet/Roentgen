@@ -413,9 +413,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="68.919658"
-     inkscape:cx="376.15525"
-     inkscape:zoom="10.679101"
+     inkscape:cy="60.745546"
+     inkscape:cx="215.36507"
+     inkscape:zoom="16.511499"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -3013,9 +3013,9 @@
        sodipodi:nodetypes="ccccccccccsccc"
        inkscape:connector-curvature="0"
        inkscape:label="#path4485"
-       id="t_shirt"
+       id="t_shirt_v1"
        d="m 193.5,52 1.5,3 2,-1 v 7 h 6 v -7 l 2,1 1.5,-3 -4,-2 H 202 c 0,1.10457 -0.89543,2 -2,2 -1.10457,0 -2,-0.89543 -2,-2 h -0.5 z"
-       style="fill:#000000;stroke:none;fill-opacity:1">
+       style="fill:#0000ff;stroke:none;fill-opacity:1;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1">
       <title
          id="title7532">t-shirt</title>
     </path>
@@ -31748,9 +31748,9 @@
        id="path53"
        sodipodi:nodetypes="ccccccccccc" />
     <path
-       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linejoin:round;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
+       style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linejoin:miter;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;font-variation-settings:normal;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
        d="m 213.69141,50.371094 c -0.13379,-0.05491 -0.2848,-0.04921 -0.41407,0.01563 l -3.33398,1.666015 c -0.24683,0.123137 -0.34732,0.422886 -0.22461,0.669922 l 0.83398,1.667969 c 0.11155,0.222325 0.36956,0.328856 0.60547,0.25 L 213,54.027344 V 60 c 3e-5,0.276131 0.22387,0.499972 0.5,0.5 h 5 c 0.27613,-2.8e-5 0.49997,-0.223869 0.5,-0.5 v -5.972656 l 1.8418,0.613281 c 0.23591,0.07886 0.49392,-0.02768 0.60547,-0.25 l 0.83398,-1.667969 c 0.12271,-0.247036 0.0222,-0.546785 -0.22461,-0.669922 l -3.33398,-1.666015 c -0.27197,-0.135514 -0.60095,8.67e-4 -0.69727,0.289062 -0.35342,1.060263 -1.18372,1.533203 -2.02539,1.533203 -0.84167,0 -1.67197,-0.47294 -2.02539,-1.533203 -0.0457,-0.13787 -0.14903,-0.249071 -0.2832,-0.304687 z"
-       id="t_shirt_v0"
+       id="t_shirt"
        sodipodi:nodetypes="ccccccccccccccccccscc" />
     <path
        style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
