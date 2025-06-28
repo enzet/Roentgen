@@ -22,7 +22,7 @@ function extractControlPoints(pathData) {
         if (cmd.match(/[MLHVCSQTAZmlhvcsqtaz]/)) {
             const command = cmd.toUpperCase();
 
-            // Handle different commands
+            // Handle different commands.
             switch (command) {
                 case "M":
                     x = parseFloat(commands[++i]);
@@ -345,24 +345,20 @@ function updateIconStyle() {
 
 // Select and display icon.
 function selectIcon(name) {
+
     selectedIcon = icons[name];
     if (!selectedIcon) return;
 
-    // Update URL hash.
     window.location.hash = name;
 
-    // Update UI.
     document.querySelectorAll(".icon-item").forEach((item) => {
         item.classList.toggle("selected", item.dataset.name === name);
     });
 
-    // Update metadata.
     document.getElementById("iconName").textContent = selectedIcon.capitalized_name;
+    document.getElementById("iconIdentifier").innerHTML =
+        selectedIcon.identifier.replace(/___/g, " + ").replace(/_/g, " ");
 
-    // Update identifier, add invisible break after every "_" in identifier.
-    document.getElementById("iconIdentifier").innerHTML = selectedIcon.identifier.replace(/_/g, " ");
-
-    // Update tags.
     const tagsContainer = document.getElementById("iconTags");
     tagsContainer.innerHTML = "";
     selectedIcon.tags.forEach((tag) => {
