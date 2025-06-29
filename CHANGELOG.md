@@ -6,6 +6,8 @@ Redraw icons:
   - `ear_botany`,
   - `elevator`,
   - `leaf_maple`,
+  - `oat`,
+  - `oat_2`,
   - `pillar`,
   - `rocket_flying`,
   - `rocket_on_launch_pad`,
