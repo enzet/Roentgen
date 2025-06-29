@@ -25,6 +25,9 @@ Make icons smoother and make corners round:
   - `japan_elementary_school`,
   - `shower`.
 
+Fix icon:
+  - `microphone`.
+
 
 ## 0.7.0
 
