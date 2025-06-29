@@ -430,9 +430,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="158.47813"
-     inkscape:cx="154.19937"
-     inkscape:zoom="97.458244"
+     inkscape:cy="81.836653"
+     inkscape:cx="224.85595"
+     inkscape:zoom="15.396524"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -6666,43 +6666,6 @@
        width="3"
        id="rect9326"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <circle
-       r="2"
-       cy="70"
-       cx="214"
-       id="circle11185"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <path
-       sodipodi:nodetypes="ccccc"
-       inkscape:connector-curvature="0"
-       id="path011175"
-       d="m 213,72 3,-3 3,3 -3,7 z"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <circle
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       id="circle11191"
-       cx="218"
-       cy="70"
-       r="2" />
-    <circle
-       r="2"
-       cy="68"
-       cx="216"
-       id="circle11193"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <rect
-       y="71"
-       x="211"
-       height="1"
-       width="10"
-       id="rect11195"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <path
-       inkscape:label="#circle11197"
-       id="ice_cream_2_v0"
-       d="m 216,82 a 2,2 0 0 0 -2,2 2,2 0 0 0 -2,2 2,2 0 0 0 0.27148,1 h 7.45704 A 2,2 0 0 0 220,86 a 2,2 0 0 0 -2,-2 2,2 0 0 0 -2,-2 z m -3,6 3,7 3,-7 z"
-       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
-       inkscape:connector-curvature="0" />
     <rect
        rx="0.5"
        ry="0.5"
@@ -16143,25 +16106,6 @@
        d="m 471.5,353.5 -4,2 -2,4 2,4 4,2 4,-2 2,-4 -2,-4 z"
        id="path11933"
        inkscape:connector-curvature="0" />
-    <path
-       inkscape:connector-curvature="0"
-       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 69,35 c -1.5,0 -2,0.228135 -2,1 0,1.5 0,3 1,4 0,2 0.5,3.5 1,4.5 0.447214,0.894427 1,1 1,0 0,-1.5 0.5,-4.5 2,-4.5 1.5,0 2,3 2,4.5 0,1 0.552786,0.894427 1,0 0.5,-1 1,-2.5 1,-4.5 1,-1 1,-2.5 1,-4 0,-0.771865 -0.5,-1 -2,-1 -1.5,0 -1.5,1 -3,1 -1.5,0 -1.5,-1 -3,-1 z"
-       id="path11960"
-       sodipodi:nodetypes="sscscscscssss">
-      <title
-         id="title11962">dent</title>
-    </path>
-    <path
-       sodipodi:nodetypes="sscscscscssss"
-       id="tooth_v0"
-       d="m 69,51 c -1.5,0 -2,0.228135 -2,1 0,1.5 0,3 1,4 0,2 0.5,3.5 1,4.5 0.447214,0.894427 1,1 1,0 0,-1.5 0.5,-4.5 2,-4.5 1.5,0 2,3 2,4.5 0,1 0.552786,0.894427 1,0 0.5,-1 1,-2.5 1,-4.5 1,-1 1,-2.5 1,-4 0,-0.771865 -0.5,-1 -2,-1 -1.5,0 -1.5,1 -3,1 -1.5,0 -1.5,-1 -3,-1 z"
-       style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;font-variation-settings:normal;vector-effect:none;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
-       inkscape:connector-curvature="0"
-       inkscape:label="#path7358">
-      <title
-         id="title7360">tooth</title>
-    </path>
     <rect
        ry="0.5"
        style="fill:none;stroke:#000000;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -31457,25 +31401,25 @@
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
        style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
-       d="m 231,78.5 -3,-7 h 6 z"
+       d="m 232,78.5 -3,-7 h 6 z"
        id="path494"
        sodipodi:nodetypes="cccc" />
     <circle
        r="2"
        cy="70"
-       cx="229"
+       cx="230"
        id="circle494"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <circle
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        id="circle495"
-       cx="233"
+       cx="234"
        cy="70"
        r="2" />
     <circle
        r="2"
        cy="68"
-       cx="231"
+       cx="232"
        id="circle496"
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
@@ -31959,7 +31903,7 @@
        sodipodi:nodetypes="sssssccsssssccsssssssss" />
     <rect
        y="71"
-       x="226"
+       x="227"
        height="1"
        width="10"
        id="rect718"
@@ -31967,7 +31911,7 @@
     <path
        id="ice_cream_2"
        style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
-       d="m 231,81 c -1.10457,0 -2,0.895431 -2,2 -1.10457,0 -2,0.895431 -2,2 -1.1e-4,0.35104 0.0922,0.695926 0.26758,1 h 7.46484 c 0.17541,-0.304074 0.26769,-0.64896 0.26758,-1 0,-1.104569 -0.89543,-2 -2,-2 0,-1.104569 -0.89543,-2 -2,-2 z m -3.33008,6 2.8711,6.697266 c 0.17387,0.402117 0.74409,0.402117 0.91796,0 L 234.33008,87 Z"
+       d="m 232,81 c -1.10457,0 -2,0.895431 -2,2 -1.10457,0 -2,0.895431 -2,2 -1.1e-4,0.35104 0.0922,0.695926 0.26758,1 h 7.46484 c 0.17541,-0.304074 0.26769,-0.64896 0.26758,-1 0,-1.104569 -0.89543,-2 -2,-2 0,-1.104569 -0.89543,-2 -2,-2 z m -3.33008,6 2.8711,6.697266 c 0.17387,0.402117 0.74409,0.402117 0.91796,0 L 235.33008,87 Z"
        sodipodi:nodetypes="sccccccsccccc" />
     <g
        id="path731"
