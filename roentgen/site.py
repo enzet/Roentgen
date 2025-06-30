@@ -10,13 +10,9 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
+from roentgen.icon import Icon, get_icons
+
 logger: logging.Logger = logging.getLogger(__name__)
-
-
-def load_config(config_path: Path) -> dict[str, Any]:
-    """Load icon configuration from JSON file."""
-    with config_path.open() as input_file:
-        return json.load(input_file)
 
 
 def flatten_config(
@@ -52,10 +48,12 @@ def extract_path_from_svg(svg_file: Path) -> list[str]:
     paths: list[ET.Element] = root.findall(
         ".//{http://www.w3.org/2000/svg}path"
     )
-    if paths:
-        for path in paths:
-            if d := path.get("d"):
-                result.append(d)  # noqa: PERF401
+    if not paths:
+        return []
+
+    for path in paths:
+        if d := path.get("d"):
+            result.append(d)  # noqa: PERF401
 
     return result
 
@@ -142,14 +140,16 @@ def process_icons(
     icon_grid_items: list[str] = []
 
     # Load and flatten config.
-    config: dict[str, Any] = load_config(config_path)
-    icon_configs: list[tuple[str, dict[str, Any]]] = flatten_config(config)
+    icons: list[Icon] = get_icons(config_path)
 
     # Process icons in config order.
-    for identifier, metadata in icon_configs:
+    for icon in icons:
+        if icon.is_sketch():
+            continue
+
         found: bool = False
         for icons_dir in icons_dirs:
-            svg_file = icons_dir / f"{identifier}.svg"
+            svg_file = icons_dir / f"{icon.icon_id}.svg"
             if svg_file.exists():
                 found = True
                 break
@@ -162,26 +162,16 @@ def process_icons(
             continue
 
         # Use metadata from config.
-        icons_data[identifier] = {
-            "name": metadata["name"],
-            "capitalized_name": capitalize(metadata["name"]),
-            "identifier": identifier,
-            "description": metadata.get(
-                "description", f"A {metadata['name'].lower()} icon."
-            ),
-            "tags": metadata.get("keywords", []),
+        icons_data[icon.icon_id] = {
+            "name": icon.name,
+            "capitalized_name": capitalize(icon.name),
+            "identifier": icon.icon_id,
+            "tags": list(icon.keywords),
             "paths": path_data,
         }
+        icons_data[icon.icon_id]["emoji"] = list(icon.emojis)
 
-        if "emoji" in metadata:
-            if isinstance(metadata["emoji"], str):
-                icons_data[identifier]["emoji"] = [metadata["emoji"]]
-            else:
-                icons_data[identifier]["emoji"] = metadata["emoji"]
-        else:
-            icons_data[identifier]["emoji"] = []
-
-        icon_grid_items.append(generate_icon_grid_item(identifier, path_data))
+        icon_grid_items.append(generate_icon_grid_item(icon.icon_id, path_data))
 
     return icons_data, "\n".join(icon_grid_items)
 
@@ -197,23 +187,23 @@ def generate_site_files(
 
     icons_js: str = json.dumps(icons_data, indent=4)
 
-    with (template_dir / "code.template.js").open() as src:
-        code_template: str = src.read()
+    with (template_dir / "code.template.js").open() as input_file:
+        code_template: str = input_file.read()
         code_template = code_template.replace("%ICONS_DATA%", icons_js)
-    with (output_dir / "roentgen.js").open("w") as dst:
-        dst.write(code_template)
+    with (output_dir / "roentgen.js").open("w") as output_file:
+        output_file.write(code_template)
 
-    with (output_dir / "index.html").open() as src:
-        content: str = src.read()
+    with (output_dir / "index.html").open() as input_file:
+        content: str = input_file.read()
         content = content.replace("%ROENTGEN_ICON_GRID%", icon_grid_html)
         content = content.replace("%ROENTGEN_VERSION%", version)
-    with (output_dir / "index.html").open("w") as dst:
-        dst.write(content)
+    with (output_dir / "index.html").open("w") as output_file:
+        output_file.write(content)
 
     shutil.copy(template_dir / "style.css", output_dir / "roentgen.css")
 
 
-def main(output_path: Path | None) -> None:
+def main(output_path: Path) -> None:
     """Generate site files from templates with icon data."""
 
     icons_dirs: list[Path] = [
