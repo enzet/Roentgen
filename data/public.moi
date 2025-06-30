@@ -8,6 +8,12 @@ free 14 × 14 px monochrome pixel-aligned
 vector map icons created for
 \ref {https://github.com/enzet/map-machine} {Map Machine} project.
 
+\button
+    {https://github.com/enzet/Roentgen/archive/refs/heads/main.zip}
+    {Download %ICONS_COUNT% icons}
+    {\abbr {ZIP}, %ICONS_FILE_SIZE%}
+    {main}
+
 \html {
 <link rel="stylesheet" href="roentgen.css">
 <div class="icon-viewer-section">
@@ -52,7 +58,7 @@ vector map icons created for
                 </div>
                 <input type="range" id="sizeSlider" min="16" max="512" value="512" step="1">
             </div>
-            <button id="downloadIcon" class="control-button">Download <span class="abbr">SVG</span></button>
+            <button id="downloadIcon" class="main control-button">Download <span class="abbr">SVG</span></button>
         </div>
     </section>
 </div>

@@ -197,6 +197,11 @@ def generate_site_files(
         content: str = input_file.read()
         content = content.replace("%ROENTGEN_ICON_GRID%", icon_grid_html)
         content = content.replace("%ROENTGEN_VERSION%", version)
+        content = content.replace("%ICONS_COUNT%", str(len(icons_data)))
+        content = content.replace(
+            "%ICONS_FILE_SIZE%",
+            str(sum(len(icon["paths"]) for icon in icons_data.values())),
+        )
     with (output_dir / "index.html").open("w") as output_file:
         output_file.write(content)
 
