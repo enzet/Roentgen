@@ -2000,7 +2000,8 @@
             "at_in_square": {
                 "categories": ["letter"],
                 "emoji": "@",
-                "name": "@ in square"
+                "name": "@ in square",
+                "keywords": ["internet", "email"]
             },
             "circle_11": {
                 "name": "circle 11 px"
