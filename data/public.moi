@@ -52,7 +52,7 @@ vector map icons created for
                 </div>
                 <input type="range" id="sizeSlider" min="16" max="512" value="512" step="1">
             </div>
-            <button id="downloadIcon" class="control-button">Download SVG</button>
+            <button id="downloadIcon" class="control-button">Download <span class="abbr">SVG</span></button>
         </div>
     </section>
 </div>
