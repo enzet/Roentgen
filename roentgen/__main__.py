@@ -2,6 +2,7 @@
 
 import argparse
 import logging
+import shutil
 from pathlib import Path
 
 from colour import Color
@@ -17,6 +18,7 @@ logger: logging.Logger = logging.getLogger(__name__)
 def draw_icons(
     collection: IconCollection,
     shapes: Shapes,
+    version: str,
     *,
     root_path: Path,
     doc_path: Path,
@@ -34,18 +36,29 @@ def draw_icons(
 
     # Draw individual icons.
 
-    icons_by_id_path: Path = output_path / "icons"
+    icons_path: Path = root_path / "icons"
     collection.draw_icons(
-        output_directory=icons_by_id_path,
+        output_directory=icons_path,
         shapes=shapes,
         license_path=license_path,
         version_path=version_path,
     )
+    to_zip_path: Path = output_path / f"roentgen-{version}"
+    if to_zip_path.exists():
+        shutil.rmtree(to_zip_path)
+    shutil.copytree(icons_path, to_zip_path)
+    # Zip `roentgen-<version>` directory to `roentgen-<version>.zip`.
+    shutil.make_archive(
+        str(output_path / f"roentgen-{version}"),
+        "zip",
+        to_zip_path,
+    )
+    shutil.rmtree(to_zip_path)
 
-    icons_by_name_path: Path = output_path / "icons_sketches"
-    icons_by_name_path.mkdir(exist_ok=True)
+    icons_sketches_path: Path = root_path / "icons_sketches"
+    icons_sketches_path.mkdir(exist_ok=True)
     collection.draw_icons(
-        output_directory=icons_by_name_path,
+        output_directory=icons_sketches_path,
         shapes=shapes,
         license_path=license_path,
         version_path=version_path,
@@ -53,7 +66,9 @@ def draw_icons(
     )
 
     logger.info(
-        "Icons are written to %s and %s.", icons_by_name_path, icons_by_id_path
+        "Icons are written to `%s`, sketch icons to `%s`.",
+        icons_path,
+        icons_sketches_path,
     )
 
     # Draw grids.
@@ -135,6 +150,8 @@ def main() -> None:
         ]:
             shapes.add_from_file(path)
 
+        version: str = Path("VERSION").read_text().strip()
+
         icons: list[Icon] = get_icons(Path("data") / "config.json")
         main_collection: IconCollection = IconCollection.from_icons(
             icons,
@@ -143,9 +160,10 @@ def main() -> None:
         draw_icons(
             main_collection,
             shapes,
+            version=version,
             root_path=Path(),
             doc_path=Path("doc"),
-            output_path=Path(),
+            output_path=Path("out"),
         )
         return
 
@@ -175,12 +193,8 @@ def main() -> None:
         return
 
     if arguments.command == "site":
-        if arguments.output is None and arguments.embed is None:
-            message: str = "Output or embed must be provided."
-            raise ValueError(message)
-
         logging.basicConfig(level=logging.INFO, format="%(message)s")
-        site_main(output_path=arguments.output)
+        site_main(site_path=arguments.output)
         return
 
 

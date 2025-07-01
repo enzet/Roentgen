@@ -180,8 +180,9 @@ def generate_site_files(
     icons_data: dict[str, dict],
     icon_grid_html: str,
     template_dir: Path,
-    output_dir: Path,
+    site_path: Path,
     version: str,
+    zip_path: Path,
 ) -> None:
     """Generate site files from templates with icon data."""
 
@@ -190,25 +191,25 @@ def generate_site_files(
     with (template_dir / "code.template.js").open() as input_file:
         code_template: str = input_file.read()
         code_template = code_template.replace("%ICONS_DATA%", icons_js)
-    with (output_dir / "roentgen.js").open("w") as output_file:
+    with (site_path / "roentgen.js").open("w") as output_file:
         output_file.write(code_template)
 
-    with (output_dir / "index.html").open() as input_file:
+    with (site_path / "index.html").open() as input_file:
         content: str = input_file.read()
         content = content.replace("%ROENTGEN_ICON_GRID%", icon_grid_html)
         content = content.replace("%ROENTGEN_VERSION%", version)
         content = content.replace("%ICONS_COUNT%", str(len(icons_data)))
         content = content.replace(
             "%ICONS_FILE_SIZE%",
-            str(sum(len(icon["paths"]) for icon in icons_data.values())),
+            str(zip_path.stat().st_size // 1024),
         )
-    with (output_dir / "index.html").open("w") as output_file:
+    with (site_path / "index.html").open("w") as output_file:
         output_file.write(content)
 
-    shutil.copy(template_dir / "style.css", output_dir / "roentgen.css")
+    shutil.copy(template_dir / "style.css", site_path / "roentgen.css")
 
 
-def main(output_path: Path) -> None:
+def main(site_path: Path) -> None:
     """Generate site files from templates with icon data."""
 
     icons_dirs: list[Path] = [
@@ -222,11 +223,13 @@ def main(output_path: Path) -> None:
     with version_path.open() as version_file:
         version: str = version_file.read().strip()
 
+    zip_path: Path = Path("out") / f"roentgen-{version}.zip"
+
     # Process icons.
     icons_data, icon_grid_html = process_icons(icons_dirs, config_path)
 
     # Generate site files.
     generate_site_files(
-        icons_data, icon_grid_html, template_dir, output_path, version
+        icons_data, icon_grid_html, template_dir, site_path, version, zip_path
     )
-    logger.info("Generated site files in %s.", output_path)
+    logger.info("Generated site files in %s.", site_path)

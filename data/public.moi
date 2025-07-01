@@ -9,9 +9,9 @@ vector map icons created for
 \ref {https://github.com/enzet/map-machine} {Map Machine} project.
 
 \button
-    {https://github.com/enzet/Roentgen/archive/refs/heads/main.zip}
+    {../roentgen-%ROENTGEN_VERSION%.zip}
     {Download %ICONS_COUNT% icons}
-    {\abbr {ZIP}, %ICONS_FILE_SIZE%}
+    {\c {roentgen-%ROENTGEN_VERSION%.zip} — %ICONS_FILE_SIZE% KiB}
     {main}
 
 \html {
