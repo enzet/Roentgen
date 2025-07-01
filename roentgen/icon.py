@@ -45,6 +45,7 @@ GRID_STEP: int = 16
 
 USED_ICON_COLOR: str = "#000000"
 UNUSED_ICON_COLORS: list[str] = ["#0000ff", "#ff0000"]
+FUTURE_ICON_COLOR: str = "880000"
 
 
 def is_bright(color: Color) -> bool:
@@ -191,11 +192,21 @@ def check_sketch_stroke_element(style: dict[str, str]) -> bool:
     )
 
 
+def check_future_shape(style: dict[str, str]) -> bool:
+    """Check whether style is future icon."""
+    return (
+        "fill" in style
+        and style["fill"] == FUTURE_ICON_COLOR
+        and "stroke" in style
+        and style["stroke"] == "none"
+    )
+
+
 def check_experimental_shape(style: dict[str, str]) -> bool:
     """Check whether style is blue or red fill, no stroke."""
     return (
         "fill" in style
-        and style["fill"] in UNUSED_ICON_COLORS
+        and style["fill"] in [*UNUSED_ICON_COLORS, FUTURE_ICON_COLOR]
         and "stroke" in style
         and style["stroke"] == "none"
     )
