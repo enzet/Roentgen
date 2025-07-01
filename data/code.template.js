@@ -471,47 +471,6 @@ function filterIcons(query) {
     }
 }
 
-// Function to generate a random color in [r, g, b] format.
-function getRandomColor() {
-    const red = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-    return [red, green, blue];
-}
-
-// Compute darkness: 0 is dark, 255 is light.
-function brightness(color) {
-    const [red, green, blue] = color;
-    return (red * 299 + green * 587 + blue * 114) / 1000;
-}
-
-// Function to update colors randomly.
-function updateRandomColors() {
-    let bgColor = getRandomColor();
-    while (brightness(bgColor) < 192) {
-        bgColor = getRandomColor();
-    }
-    let fgColor = getRandomColor();
-    while (brightness(fgColor) > 64) {
-        fgColor = getRandomColor();
-    }
-
-    // Update CSS variables.
-    document.documentElement.style.setProperty('--bg-color', bgColor);
-    document.documentElement.style.setProperty('--fg-color', fgColor);
-    document.documentElement.style.setProperty('--link-color', fgColor);
-
-    // Save colors to `localStorage`.
-    localStorage.setItem('roentgen_bg_color', JSON.stringify(bgColor));
-    localStorage.setItem('roentgen_fg_color', JSON.stringify(fgColor));
-
-    // Update icon style.
-    updateIconStyle();
-}
-
-// Add event listener for random colors button.
-document.getElementById('randomColors').addEventListener('click', updateRandomColors);
-
 // Initialize event listeners.
 document.addEventListener('DOMContentLoaded', () => {
 

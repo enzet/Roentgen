@@ -41,7 +41,6 @@ vector map icons created for
             </div>
         </div>
         <div class="icon-controls">
-            <button id="randomColors" class="control-button">Random Colors</button>
             <div class="control-group">
                 <div class="checkbox-control">
                     <input type="checkbox" id="toggleControlPoints" class="checkbox-input">
