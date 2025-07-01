@@ -15,6 +15,7 @@ Redraw icons:
   - `t_shirt`,
   - `torch`,
   - `tyre`,
+  - `wood`,
   - `wretch_and_hammer`.
 
 Adjust icon size:
