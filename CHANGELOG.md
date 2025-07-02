@@ -10,6 +10,7 @@ Redraw icons:
   - `ear_botany`,
   - `elevator`,
   - `leaf_maple`,
+  - `no_wheelchair`,
   - `oat_2`,
   - `oat`,
   - `pillar`,
@@ -21,6 +22,7 @@ Redraw icons:
   - `torch`,
   - `two_beds`,
   - `tyre`,
+  - `wheelchair`,
   - `wood`,
   - `wretch_and_hammer`.
 
