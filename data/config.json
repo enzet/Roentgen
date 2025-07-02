@@ -840,6 +840,7 @@
                 },
                 "tree___urban_tree_pot": {
                     "name": "tree in urban tree pot",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "tree"},
                         {"id": "urban_tree_pot"}
@@ -847,6 +848,7 @@
                 },
                 "tree_with_leaf___urban_tree_pot": {
                     "name": "tree with leaf in urban tree pot",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "tree_with_leaf"},
                         {"id": "urban_tree_pot"}
@@ -854,6 +856,7 @@
                 },
                 "needleleaved_tree___urban_tree_pot": {
                     "name": "needleleaved tree in urban tree pot",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "needleleaved_tree"},
                         {"id": "urban_tree_pot", "offset": [-0.5, 0]}
@@ -861,6 +864,7 @@
                 },
                 "betula___urban_tree_pot": {
                     "name": "birch in urban tree pot",
+                    "keywords": ["natural", "birch"],
                     "shapes": [
                         {"id": "betula"},
                         {"id": "urban_tree_pot"}
@@ -868,6 +872,7 @@
                 },
                 "palm___urban_tree_pot": {
                     "name": "palm in urban tree pot",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "palm"},
                         {"id": "urban_tree_pot"}
@@ -875,6 +880,7 @@
                 },
                 "tree___bottom_right_horizontal_line": {
                     "name": "tree on bottom right horizontal line",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "tree"},
                         {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
@@ -882,6 +888,7 @@
                 },
                 "tree_with_leaf___bottom_right_horizontal_line": {
                     "name": "tree with leaf on bottom right horizontal line",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "tree_with_leaf"},
                         {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
@@ -889,6 +896,7 @@
                 },
                 "needleleaved_tree___bottom_right_horizontal_line": {
                     "name": "needleleaved tree on bottom right horizontal line",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "needleleaved_tree"},
                         {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
@@ -896,6 +904,7 @@
                 },
                 "betula___bottom_right_horizontal_line": {
                     "name": "birch on bottom right horizontal line",
+                    "keywords": ["natural", "birch"],
                     "shapes": [
                         {"id": "betula"},
                         {"id": "bottom_right_horizontal_line"}
@@ -903,6 +912,7 @@
                 },
                 "palm___bottom_right_horizontal_line": {
                     "name": "palm on bottom right horizontal line",
+                    "keywords": ["natural"],
                     "shapes": [
                         {"id": "palm"},
                         {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
@@ -1014,7 +1024,8 @@
             "name": "lava"
         },
         "saddle": {
-            "name": "saddle"
+            "name": "saddle (landform)",
+            "keywords": ["natural"]
         },
         "shield_volcano": {
             "categories": ["natural"],
@@ -1056,6 +1067,7 @@
         },
         "stratovolcano___smoke_2": {
             "name": "stratovolcano with smoke",
+            "keywords": ["natural", "mountain"],
             "shapes": [
                 {"id": "stratovolcano"},
                 {"id": "smoke_2", "offset": [0, -3]}
@@ -1063,6 +1075,7 @@
         },
         "shield_volcano___smoke_2": {
             "name": "shield volcano with smoke",
+            "keywords": ["natural", "mountain"],
             "shapes": [
                 {"id": "shield_volcano"},
                 {"id": "smoke_2", "offset": [0, -1]}
@@ -1070,6 +1083,7 @@
         },
         "volcanic_cone___smoke_2": {
             "name": "volcanic cone with smoke",
+            "keywords": ["natural", "mountain"],
             "shapes": [
                 {"id": "volcanic_cone"},
                 {"id": "smoke_2", "offset": [0, -2]}
@@ -1077,6 +1091,7 @@
         },
         "stratovolcano___lava": {
             "name": "stratovolcano with lava",
+            "keywords": ["natural", "mountain", "eruption"],
             "shapes": [
                 {"id": "stratovolcano"},
                 {"id": "lava", "offset": [0, -3]}
@@ -1084,6 +1099,7 @@
         },
         "stratovolcano___smoke": {
             "name": "stratovolcano with smoke",
+            "keywords": ["natural", "mountain"],
             "shapes": [
                 {"id": "stratovolcano"},
                 {"id": "smoke", "offset": [1, -3]}
@@ -1091,6 +1107,7 @@
         },
         "shield_volcano___lava": {
             "name": "shield volcano with lava",
+            "keywords": ["natural", "mountain", "eruption"],
             "shapes": [
                 {"id": "shield_volcano"},
                 {"id": "lava", "offset": [0, -1]}
@@ -1098,6 +1115,7 @@
         },
         "volcanic_cone___lava": {
             "name": "volcanic cone with lava",
+            "keywords": ["natural", "mountain", "eruption"],
             "shapes": [
                 {"id": "volcanic_cone"},
                 {"id": "lava", "offset": [0, -2]}
@@ -1105,6 +1123,7 @@
         },
         "shield_volcano___smoke": {
             "name": "shield volcano with smoke",
+            "keywords": ["natural", "mountain"],
             "shapes": [
                 {"id": "shield_volcano"},
                 {"id": "smoke", "offset": [1, -1]}
@@ -1112,6 +1131,7 @@
         },
         "volcanic_cone___smoke": {
             "name": "volcanic cone with smoke",
+            "keywords": ["natural", "mountain"],
             "shapes": [
                 {"id": "volcanic_cone"},
                 {"id": "smoke", "offset": [1, -2]}
@@ -1188,6 +1208,7 @@
         },
         "clock___support_pole": {
             "name": "clock on support pole",
+            "keywords": ["time"],
             "shapes": [
                 {"id": "clock"},
                 {"id": "support_pole"}
@@ -1195,6 +1216,7 @@
         },
         "i_in_square___support_pole": {
             "name": "letter i in square on support pole",
+            "keywords": ["information"],
             "shapes": [
                 {"id": "i_in_square"},
                 {"id": "support_pole"}
@@ -1202,6 +1224,7 @@
         },
         "clock___support_wall": {
             "name": "clock on support wall",
+            "keywords": ["time"],
             "shapes": [
                 {"id": "clock"},
                 {"id": "support_wall"}
@@ -1209,6 +1232,7 @@
         },
         "i_in_square___support_wall": {
             "name": "letter i in square on support wall",
+            "keywords": ["information"],
             "shapes": [
                 {"id": "i_in_square"},
                 {"id": "support_wall"}
@@ -1216,6 +1240,7 @@
         },
         "clock___support_column": {
             "name": "clock on support column",
+            "keywords": ["time"],
             "shapes": [
                 {"id": "clock"},
                 {"id": "support_column"}
@@ -1223,6 +1248,7 @@
         },
         "i_in_square___support_column": {
             "name": "letter i in square on support column",
+            "keywords": ["information"],
             "shapes": [
                 {"id": "i_in_square"},
                 {"id": "support_column"}
@@ -1335,7 +1361,8 @@
         },
         "guys": {
             "is_part": true,
-            "name": "guys"
+            "name": "guys",
+            "keywords": ["support", "structure"]
         },
         "human": {
             "keywords": ["person"],
@@ -1611,10 +1638,12 @@
             "keywords": ["flag", "banner", "country", "symbol"]
         },
         "wretch_and_hammer": {
-            "name": "wretch and hammer"
+            "name": "wretch and hammer",
+            "keywords": ["tool"]
         },
         "exchange___dollar___pound": {
             "name": "arrows from dollar to pound and vice versa",
+            "keywords": ["currency", "money", "conversion"],
             "shapes": [
                 {"id": "exchange"},
                 {"id": "dollar", "offset": [-4,  3]},
@@ -1625,33 +1654,23 @@
     "__parts": {
         "dish_antenna_left": {
             "is_part": true,
-            "keywords": [
-                "communication"
-            ],
-            "name": "leftward dish antenna"
+            "name": "leftward dish antenna",
+            "keywords": ["communication"]
         },
         "dish_antenna_right": {
             "is_part": true,
-            "keywords": [
-                "communication"
-            ],
-            "name": "rightward dish antenna"
+            "name": "rightward dish antenna",
+            "keywords": ["communication"]
         },
         "siren_left": {
             "is_part": true,
-            "keywords": [
-                "emergency",
-                "emergency"
-            ],
-            "name": "leftward siren"
+            "name": "leftward siren",
+            "keywords": ["emergency", "sound"]
         },
         "siren_right": {
             "is_part": true,
-            "keywords": [
-                "emergency",
-                "emergency"
-            ],
-            "name": "rightward siren"
+            "name": "rightward siren",
+            "keywords": ["emergency", "sound"]
         }
     },
     "__recycling": {
@@ -1666,7 +1685,8 @@
         },
         "waste_disposal": {
             "emoji": "\u267b\ufe0f",
-            "name": "recycling container"
+            "name": "recycling container",
+            "keywords": ["recycling"]
         }
     },
     "__road_part": {
@@ -1697,7 +1717,7 @@
             "name": "landing booster"
         },
         "descent_stage": {
-            "keywords": ["rocket", "space"],
+            "keywords": ["rocket", "space", "booster"],
             "name": "descent stage"
         },
         "lander": {
@@ -1714,19 +1734,23 @@
             "name": "orbiter"
         },
         "probe": {
-            "name": "probe"
+            "name": "probe",
+            "keywords": ["space", "exploration", "vehicle"]
         },
         "rocket_flying": {
             "categories": ["aeroway"],
             "emoji": "\ud83d\ude80",
+            "keywords": ["space", "exploration", "vehicle", "fire", "booster"],
             "name": "flying rocket"
         },
         "rocket_on_launch_pad": {
             "categories": ["aeroway"],
+            "keywords": ["space", "exploration", "vehicle", "booster"],
             "name": "rocket on launch pad"
         },
         "third_stage": {
-            "name": "rocket third stage"
+            "name": "rocket third stage",
+            "keywords": ["space", "exploration", "engine", "booster"]
         }
     },
     "__sport": {
