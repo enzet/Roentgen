@@ -1,4 +1,4 @@
-## Unreleased
+## 0.8.0
 
 Redraw icons:
   - `bed_and_roof`,
