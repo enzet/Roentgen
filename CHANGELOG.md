@@ -1,19 +1,25 @@
 ## Unreleased
 
 Redraw icons:
+  - `bed_and_roof`,
+  - `bed_with_floor_and_ceiling`,
+  - `bed`,
   - `bollard`,
   - `booster_landing`,
+  - `car___bed`,
   - `ear_botany`,
   - `elevator`,
   - `leaf_maple`,
-  - `oat`,
   - `oat_2`,
+  - `oat`,
   - `pillar`,
+  - `pole_dancer`,
   - `rocket_flying`,
   - `rocket_on_launch_pad`,
   - `shoe`,
   - `t_shirt`,
   - `torch`,
+  - `two_beds`,
   - `tyre`,
   - `wood`,
   - `wretch_and_hammer`.
