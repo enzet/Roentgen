@@ -68,3 +68,10 @@ All icons are \ref {https://github.com/enzet/Roentgen} {open source} and
 \ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0} 
 licensed. You can use them freely in commercial and non-commercial projects, but
 please give credit to the author.
+
+\3 {Usage} {roentgen_usage}
+
+Röntgen icons are used in
+\list
+    {\ref {https://github.com/openstreetmap/iD} {iD editor}, standard web editor for OpenStreetMap project,}
+    {\ref {https://github.com/enzet/map-machine} {Map Machine} project.}

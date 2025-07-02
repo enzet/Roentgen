@@ -1,30 +1,6 @@
 {
     "__architecture": {
-        "__building_part": {
-            "main_entrance": {
-                "keywords": ["access", "architecture", "door"],
-                "name": "main entrance"
-            },
-            "pillar": {
-                "keywords": ["architecture", "building", "column"],
-                "name": "pillar"
-            },
-            "roof": {
-                "is_part": true,
-                "keywords": ["architecture", "building"],
-                "name": "roof"
-            },
-            "roof_and_walls": {
-                "is_part": true,
-                "keywords": ["architecture", "building"],
-                "name": "roof and wall"
-            },
-            "wayside_shrine": {
-                "keywords": ["religion", "building"],
-                "name": "wayside shrine"
-            }
-        },
-        "__building_size": {
+        "__building": {
             "apartments_1_story": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "house"],
@@ -173,6 +149,72 @@
                     {"id": "yurt", "version": "v1"}
                 ],
                 "sketch": true
+            }
+        },
+        "__building_part": {
+            "main_entrance": {
+                "keywords": ["access", "architecture", "door"],
+                "name": "main entrance"
+            },
+            "pillar": {
+                "keywords": ["architecture", "building", "column"],
+                "name": "pillar"
+            },
+            "roof": {
+                "is_part": true,
+                "keywords": ["architecture", "building"],
+                "name": "roof"
+            },
+            "roof_and_walls": {
+                "is_part": true,
+                "keywords": ["architecture", "building"],
+                "name": "roof and wall"
+            },
+            "wayside_shrine": {
+                "keywords": ["religion", "building"],
+                "name": "wayside shrine"
+            }
+        }
+    },
+    "__art": {
+        "film": {
+            "emoji": "\ud83c\udf9e\ufe0f",
+            "keywords": ["movie", "cinema", "motion picture", "art"],
+            "name": "film"
+        },
+        "frame": {
+            "keywords": ["picture", "art", "painting"],
+            "name": "picture frame"
+        },
+        "picture": {
+            "name": "picture in frame",
+            "keywords": ["art", "image", "photo"]
+        },
+        "statue": {
+            "categories": ["historic"],
+            "keywords": ["art", "historic", "sculpture"],
+            "name": "statue"
+        },
+        "statue_exhibit": {
+            "name": "indoor statue",
+            "keywords": ["art", "sculpture", "display", "museum"]
+        },
+        "__historic": {
+            "memorial": {
+                "categories": ["historic"],
+                "keywords": ["art", "historic"],
+                "name": "memorial"
+            },
+            "monument": {"keywords": ["art", "historic"], "name": "monument"},
+            "obelisk": {
+                "categories": ["historic"],
+                "keywords": ["art", "historic"],
+                "name": "obelisk"
+            },
+            "plaque": {
+                "categories": ["historic"],
+                "keywords": ["art", "historic"],
+                "name": "plaque with inscription"
             }
         }
     },
@@ -572,29 +614,6 @@
             "name": "books"
         }
     },
-    "__historic": {
-        "memorial": {
-            "categories": ["historic"],
-            "keywords": ["art", "historic"],
-            "name": "memorial"
-        },
-        "monument": {"keywords": ["art", "historic"], "name": "monument"},
-        "obelisk": {
-            "categories": ["historic"],
-            "keywords": ["art", "historic"],
-            "name": "obelisk"
-        },
-        "plaque": {
-            "categories": ["historic"],
-            "keywords": ["art", "historic"],
-            "name": "plaque with inscription"
-        },
-        "statue": {
-            "categories": ["historic"],
-            "keywords": ["art", "historic"],
-            "name": "statue"
-        }
-    },
     "__human": {
         "massage": {
             "keywords": ["spa", "wellness", "relaxation"],
@@ -662,6 +681,10 @@
         "fireplace": {
             "keywords": ["fire", "heat", "warm"],
             "name": "fireplace"
+        },
+        "no_door": {
+            "name": "doorway",
+            "keywords": ["entry", "open", "access", "threshold"]
         },
         "shower_head": {
             "is_part": true,
@@ -1286,11 +1309,6 @@
             "keywords": ["money", "finance"],
             "name": "exchange"
         },
-        "film": {
-            "emoji": "\ud83c\udf9e\ufe0f",
-            "keywords": ["movie", "cinema", "motion picture"],
-            "name": "film"
-        },
         "fire_extinguisher": {
             "categories": ["emergency"],
             "emoji": "\ud83e\uddef",
@@ -1319,10 +1337,6 @@
             "emoji": "\ud83c\udf74",
             "keywords": ["food", "meal", "dining"],
             "name": "fork and knife"
-        },
-        "frame": {
-            "keywords": ["picture", "art", "painting"],
-            "name": "picture frame"
         },
         "fuel_station": {
             "emoji": "\u26fd\ufe0f",
@@ -1432,10 +1446,6 @@
             "name": "banknotes",
             "keywords": ["cash", "currency", "money"]
         },
-        "no_door": {
-            "name": "doorway",
-            "keywords": ["entry", "open", "access", "threshold"]
-        },
         "no_foot": {
             "name": "crossed out footprint",
             "keywords": ["forbidden", "no entry", "foot", "ban"]
@@ -1459,10 +1469,6 @@
             "is_part": true,
             "name": "pergola",
             "keywords": ["garden", "structure", "shade", "outdoor"]
-        },
-        "picture": {
-            "name": "picture in frame",
-            "keywords": ["art", "image", "photo"]
         },
         "pipeline": {
             "name": "pipeline with valve",
@@ -1525,10 +1531,6 @@
             "keywords": ["door", "stairs"],
             "name": "door with stairs"
         },
-        "statue_exhibit": {
-            "name": "indoor statue",
-            "keywords": ["art", "sculpture", "display", "museum"]
-        },
         "supermarket_cart": {
             "emoji": "\ud83d\uded2",
             "name": "supermarket cart",
@@ -1552,11 +1554,6 @@
         "survey_point": {
             "name": "survey point",
             "keywords": ["measurement", "land", "marker", "geodesy"]
-        },
-        "suspension_railway": {
-            "emoji": "\ud83d\ude9f",
-            "name": "suspension railway",
-            "keywords": ["train", "monorail", "transport", "bridge"]
         },
         "swimming_area": {
             "name": "pool ladder",
@@ -1605,10 +1602,6 @@
         "triangle_down_hollow": {
             "name": "hollow upside down triangle",
             "keywords": ["shape", "symbol"]
-        },
-        "turning_loop": {
-            "name": "turning loop",
-            "keywords": ["road", "circle", "turn", "traffic"]
         },
         "turnstile": {
             "name": "turnstile",
@@ -1689,14 +1682,18 @@
             "keywords": ["recycling"]
         }
     },
-    "__road_part": {
+    "__road": {
         "crossing": {
             "keywords": ["pedestrian", "crosswalk", "road"],
             "name": "zebra crossing"
         },
         "kerb": {
-            "keywords": ["curb", "edge", "sidewalk", "street"],
+            "keywords": ["curb", "edge", "sidewalk", "street", "road"],
             "name": "kerb"
+        },
+        "turning_loop": {
+            "name": "turning loop",
+            "keywords": ["road", "circle", "turn", "traffic"]
         }
     },
     "__sea": {
@@ -2832,6 +2829,11 @@
             "emoji": "\u2708\ufe0f",
             "keywords": ["transport", "aeroway", "airplane"],
             "name": "plane"
+        },
+        "suspension_railway": {
+            "emoji": "\ud83d\ude9f",
+            "name": "suspension railway",
+            "keywords": ["train", "monorail", "transport", "bridge"]
         },
         "taxi": {
             "categories": ["public transport"],
