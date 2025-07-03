@@ -1767,106 +1767,134 @@
         },
         "golf_club_and_ball": {
             "categories": ["sport", "outdoor"],
+            "keywords": ["sport", "outdoor", "grass"],
             "name": "golf club and ball"
         },
         "golf_pin": {
             "categories": ["sport", "outdoor", "grass"],
+            "keywords": ["sport", "outdoor", "grass"],
             "name": "golf pin"
         },
         "golf_tee": {
             "categories": ["sport", "outdoor", "grass"],
+            "keywords": ["sport", "outdoor", "grass"],
             "name": "golf tee"
         },
         "horizontal_bar": {
             "categories": ["sport"],
+            "keywords": ["sport", "athletics"],
             "name": "high horizontal bar"
         },
         "horizontal_ladder": {
             "categories": ["sport"],
+            "keywords": ["sport", "athletics"],
             "name": "horizontal ladder"
         },
         "low_horizontal_bars": {
             "categories": ["sport"],
+            "keywords": ["sport", "athletics"],
             "name": "low horizontal bars"
         },
         "rings": {
             "categories": ["sport"],
+            "keywords": ["sport", "athletics"],
             "name": "gymnastic rings"
         },
         "sit_up": {
             "categories": ["sport"],
+            "keywords": ["sport", "bench"],
             "name": "incline bench"
         },
         "wall_bars": {
             "categories": ["sport"],
+            "keywords": ["sport", "athletics"],
             "name": "wall bars"
         }
     },
     "__street": {
         "__playground": {
             "hopscotch": {
+                "keywords": ["game", "outdoor", "play"],
                 "name": "hopscotch"
             },
             "roundabout": {
+                "keywords": ["road", "outdoor", "intersection", "traffic"],
                 "name": "roundabout"
             },
             "sandpit": {
                 "categories": ["amenity"],
+                "keywords": ["outdoor", "play", "sand"],
                 "name": "sandpit"
             },
             "seesaw": {
                 "categories": ["amenity"],
+                "keywords": ["outdoor", "play"],
                 "name": "seesaw"
             },
             "slide": {
                 "categories": ["amenity"],
                 "directed": "right",
                 "emoji": "\ud83d\udedd",
+                "keywords": ["outdoor", "play"],
                 "name": "slide"
             },
             "slide_and_water": {
                 "categories": ["amenity"],
+                "keywords": ["outdoor", "play", "park"],
                 "name": "water slide"
             },
             "street_cabinet": {
+                "keywords": [
+                    "outdoor", "equipment", "electricity", "technical"
+                ],
                 "name": "street cabinet"
             },
             "street_lamp": {
+                "keywords": ["outdoor", "road", "light", "illumination"],
                 "name": "street lamp"
             },
             "toy_horse": {
+                "keywords": ["play", "game"],
                 "name": "rocking horse"
             }
         },
         "advertising_column": {
             "categories": ["amenity"],
+            "keywords": ["sign", "billboard"],
             "name": "advertising column"
         },
         "bench": {
             "categories": ["amenity"],
+            "keywords": ["sitting", "outdoor"],
             "name": "bench"
         },
         "bench_backrest": {
             "categories": ["amenity"],
+            "keywords": ["sitting", "outdoor"],
             "name": "bench with backrest"
         },
         "bench_no_backrest": {
             "categories": ["amenity"],
+            "keywords": ["sitting", "outdoor"],
             "name": "bench without backrest"
         },
         "bench_with_inscription": {
             "categories": ["amenity"],
+            "keywords": ["sitting", "outdoor", "memorial"],
             "name": "bench with inscription"
         },
         "bench_with_shelter": {
             "categories": ["amenity"],
+            "keywords": ["sitting", "outdoor"],
             "name": "bench with shelter"
         },
         "bench_with_statue": {
             "categories": ["amenity"],
+            "keywords": ["sitting", "outdoor", "memorial"],
             "name": "bench with statue"
         },
         "bicycle___p_small": {
+            "keywords": ["road", "parking"],
             "name": "bicycle with small letter P",
             "shapes": [
                 {"id": "bicycle", "offset": [0, 2]},
@@ -1874,6 +1902,7 @@
             ]
         },
         "p_small___bicycle_parking_stand": {
+            "keywords": ["road"],
             "name": "small letter P with bicycle parking stand",
             "shapes": [
                 {"id": "p_small", "offset": [-5, -3]},
@@ -1881,6 +1910,7 @@
             ]
         },
         "p_small___bicycle_parking_wall_loops": {
+            "keywords": ["road"],
             "name": "small letter P with bicycle parking wall loops",
             "shapes": [
                 {"id": "p_small", "offset": [-5, -3]},
@@ -1888,6 +1918,7 @@
             ]
         },
         "p_small___bicycle_parking_rack": {
+            "keywords": ["road"],
             "name": "small letter P with bicycle parking rack",
             "shapes": [
                 {"id": "p_small", "offset": [-5, -3]},
@@ -1895,46 +1926,58 @@
             ]
         },
         "bicycle_parking_rack": {
+            "keywords": ["road"],
             "name": "bicycle parking rack"
         },
         "bicycle_parking_stand": {
+            "keywords": ["road"],
             "name": "bicycle parking stand"
         },
         "bicycle_parking_wall_loops": {
+            "keywords": ["road"],
             "name": "bicycle parking wall loops"
         },
         "billboard": {
             "categories": ["amenity"],
+            "keywords": ["sign", "advertising"],
             "name": "billboard"
         },
         "fountain": {
             "categories": ["amenity"],
             "emoji": "\u26f2",
+            "keywords": ["water"],
             "name": "fountain"
         },
         "fountain_bubbler": {
             "categories": ["amenity"],
+            "keywords": ["water", "drinking"],
             "name": "bubbler fountain"
         },
         "fountain_cascade": {
             "categories": ["amenity"],
+            "keywords": ["water"],
             "name": "cascade fountain"
         },
         "fountain_roman_wolf": {
             "categories": ["amenity"],
+            "keywords": ["water"],
             "name": "Roman wolf fountain"
         },
         "fountain_toret": {
             "categories": ["amenity"],
+            "keywords": ["water"],
             "name": "toret fountain"
         },
         "table": {
+            "keywords": ["outdoor", "furniture", "sitting"],
             "name": "street table"
         },
         "table_and_two_chairs": {
+            "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs"
         },
         "table_and_two_chairs___umbrella": {
+            "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with umbrella",
             "shapes": [
                 {"id": "table_and_two_chairs"},
@@ -1942,6 +1985,7 @@
             ]
         },
         "table_and_two_chairs___roof": {
+            "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with roof",
             "shapes": [
                 {"id": "table_and_two_chairs"},
@@ -1949,6 +1993,7 @@
             ]
         },
         "table_and_two_chairs___awning": {
+            "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with awning",
             "shapes": [
                 {"id": "table_and_two_chairs"},
@@ -1956,6 +2001,7 @@
             ]
         },
         "table_and_two_chairs___roof_and_walls": {
+            "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with roof and walls",
             "shapes": [
                 {"id": "table_and_two_chairs"},
@@ -1963,6 +2009,7 @@
             ]
         },
         "table_and_two_chairs___pergola": {
+            "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with pergola",
             "shapes": [
                 {"id": "table_and_two_chairs"},
@@ -1970,6 +2017,7 @@
             ]
         },
         "p___arrow_right": {
+            "keywords": ["road", "parking", "entrance", "direction"],
             "name": "letter P with arrow pointing right",
             "shapes": [
                 {"id": "p", "offset": [1, 0]},
@@ -1977,6 +2025,9 @@
             ]
         },
         "p___arrow_down": {
+            "keywords": [
+                "road", "parking", "entrance", "underground", "direction"
+            ],
             "name": "letter P with arrow pointing down",
             "shapes": [
                 {"id": "p", "offset": [1, 0]},
@@ -1984,6 +2035,9 @@
             ]
         },
         "p___arrow_up": {
+            "keywords": [
+                "road", "parking", "entrance", "overground", "direction"
+            ],
             "name": "letter P with arrow pointing up",
             "shapes": [
                 {"id": "p", "offset": [1, 0]},
@@ -1993,6 +2047,7 @@
     },
     "__surface": {
         "beach": {
+            "keywords": ["sea", "water", "ocean", "lake"],
             "name": "umbrella and water"
         }
     },
@@ -2000,22 +2055,27 @@
         "__abstract": {
             "arrow_down": {
                 "is_part": true,
+                "keywords": ["direction"],
                 "name": "downwards arrow"
             },
             "arrow_left": {
                 "is_part": true,
+                "keywords": ["direction"],
                 "name": "leftwards arrow"
             },
             "arrow_right": {
                 "is_part": true,
+                "keywords": ["direction"],
                 "name": "rightwards arrow"
             },
             "arrow_right_short": {
                 "is_part": true,
+                "keywords": ["direction"],
                 "name": "short rightwards arrow"
             },
             "arrow_up": {
                 "is_part": true,
+                "keywords": ["direction"],
                 "name": "upwards arrow"
             },
             "at_in_square": {
@@ -2025,72 +2085,93 @@
                 "keywords": ["internet", "email"]
             },
             "circle_11": {
+                "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 11 px"
             },
             "circle_3": {
+                "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 3 px"
             },
             "circle_4": {
+                "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 4 px"
             },
             "circle_9": {
                 "emoji": "\ud83d\udd73",
+                "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 9 px"
             },
             "circle_empty": {
+                "keywords": ["ellipse", "figure", "geometry"],
                 "name": "empty circle"
             },
             "clockwise": {
+                "keywords": ["direction", "circle", "rotation"],
                 "name": "clockwise arrow"
             },
             "counterclockwise": {
+                "keywords": ["direction", "circle", "rotation"],
                 "name": "counterclockwise arrow"
             },
             "default": {
+                "keywords": ["point"],
                 "name": "small square"
             },
             "default_small": {
+                "keywords": ["point"],
                 "name": "tiny square"
             },
             "electricity": {
                 "emoji": "\u26a1",
+                "keywords": ["thunder"],
                 "name": "lightning"
             },
             "glider": {
+                "keywords": ["game", "life", "automata", "programming"],
                 "name": "glider"
             },
             "light_left": {
                 "is_part": true,
+                "keywords": ["direction", "illumination"],
                 "name": "leftward light"
             },
             "light_right": {
                 "is_part": true,
+                "keywords": ["direction", "illumination"],
                 "name": "rightward light"
             },
             "rectangle_vertical_rounded": {
+                "keywords": ["figure", "geometry"],
                 "name": "vertical rounded rectangle"
             },
             "rectangle_vertical_rounded_crossed": {
+                "keywords": ["figure", "geometry"],
                 "name": "crossed vertical rounded rectangle"
             },
             "sharing": {
+                "keywords": ["social", "exchange"],
                 "name": "sharing symbol"
             },
             "triangle_small": {
+                "keywords": ["figure", "geometry"],
                 "name": "small triangle"
             },
             "wave_left": {
                 "is_part": true,
+                "keywords": ["sound", "radiation"],
                 "name": "leftward waves"
             },
             "wave_right": {
                 "is_part": true,
+                "keywords": ["sound", "radiation"],
                 "name": "rightward waves"
             },
             "wlan": {
+                "keywords": ["wireless", "network", "internet"],
                 "name": "wireless LAN symbol"
             },
             "wlan___free": {
+                "keywords": ["wireless", "network", "internet", "costless"],
                 "name": "wireless LAN symbol with word \"FREE\"",
                 "shapes": [
                     {"id": "wlan", "offset": [0, -3]},
@@ -2100,21 +2181,27 @@
         },
         "__japan": {
             "japan_castle": {
+                "keywords": ["building", "architecture"],
                 "name": "Japanese map symbol for castle"
             },
             "japan_court": {
+                "keywords": ["building", "architecture"],
                 "name": "Japanese map symbol for court house or building"
             },
             "japan_elementary_school": {
+                "keywords": ["building", "architecture", "children"],
                 "name": "Japanese map symbol for elementary school"
             },
             "japan_fire_station": {
+                "keywords": ["building", "architecture", "emergency"],
                 "name": "Japanese map symbol for fire station"
             },
             "japan_forest_service": {
+                "keywords": ["building", "architecture"],
                 "name": "Japanese map symbol for forest service office"
             },
             "japan_historic": {
+                "keywords": ["building", "architecture", "historic"],
                 "name": "Japanese map symbol for place of historic, cultural, or scenic interest"
             },
             "japan_koban": {
