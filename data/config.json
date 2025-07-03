@@ -178,7 +178,7 @@
     },
     "__art": {
         "film": {
-            "emoji": "\ud83c\udf9e\ufe0f",
+            "emoji": "🎞️",
             "keywords": ["movie", "cinema", "motion picture", "art"],
             "name": "film"
         },
@@ -264,12 +264,12 @@
     },
     "__body_part": {
         "foot": {
-            "emoji": "\ud83d\udc63",
+            "emoji": "👣",
             "keywords": ["body", "leg", "toe"],
             "name": "footprint"
         },
         "tooth": {
-            "emoji": "\ud83e\uddb7",
+            "emoji": "🦷",
             "keywords": ["body", "mouth"],
             "name": "tooth"
         }
@@ -298,7 +298,7 @@
             "name": "shoe"
         },
         "t_shirt": {
-            "emoji": "\ud83d\udc55",
+            "emoji": "👕",
             "keywords": ["clothes", "fashion"],
             "name": "T-shirt"
         },
@@ -307,7 +307,7 @@
             "name": "T-shirt and scissors"
         },
         "watches": {
-            "emoji": "\u231a\ufe0f",
+            "emoji": "⌚️",
             "keywords": ["fashion", "time"],
             "name": "hand watch"
         }
@@ -392,12 +392,12 @@
             "name": "Hi-Fi"
         },
         "microphone": {
-            "emoji": "\ud83c\udfa4",
+            "emoji": "🎤",
             "keywords": ["music", "audio", "sound"],
             "name": "microphone"
         },
         "phone": {
-            "emoji": "\ud83d\udcf1",
+            "emoji": "📱",
             "keywords": [
                 "communication",
                 "telephone",
@@ -408,7 +408,7 @@
             "name": "mobile phone"
         },
         "photo_camera": {
-            "emoji": "\ud83d\udcf7",
+            "emoji": "📷",
             "keywords": ["photography"],
             "name": "photo camera"
         },
@@ -421,12 +421,12 @@
             "name": "server"
         },
         "telephone": {
-            "emoji": "\u260e\ufe0f",
+            "emoji": "☎️",
             "keywords": ["communication", "phone", "dial"],
             "name": "telephone"
         },
         "tv": {
-            "emoji": "\ud83d\udda5",
+            "emoji": "🖥",
             "keywords": ["screen", "television"],
             "name": "monitor"
         }
@@ -578,17 +578,17 @@
             "name": "aseptic carton"
         },
         "burger": {
-            "emoji": "\ud83c\udf54",
+            "emoji": "🍔",
             "keywords": ["food", "fast food"],
             "name": "burger"
         },
         "cupcake": {
-            "emoji": "\ud83e\uddc1",
+            "emoji": "🧁",
             "keywords": ["food", "dessert"],
             "name": "cupcake"
         },
         "ice_cream": {
-            "emoji": "\ud83c\udf68",
+            "emoji": "🍨",
             "keywords": ["food", "dessert"],
             "name": "ice cream"
         },
@@ -604,12 +604,12 @@
             "name": "bag with percent"
         },
         "book": {
-            "emoji": "\ud83d\udcd5",
+            "emoji": "📕",
             "keywords": ["reading", "literature"],
             "name": "book"
         },
         "books": {
-            "emoji": "\ud83d\udcda",
+            "emoji": "📚",
             "keywords": ["reading", "literature"],
             "name": "books"
         }
@@ -624,17 +624,17 @@
             "name": "pole dancer"
         },
         "sauna": {
-            "emoji": "\ud83e\uddd6",
+            "emoji": "🧖",
             "keywords": ["spa", "wellness", "relaxation"],
             "name": "sauna"
         },
         "two_people_together": {
-            "emoji": "\ud83e\uddd1\u200d\ud83e\udd1d\u200d\ud83e\uddd1",
+            "emoji": "🧑‍🤝‍🧑",
             "name": "two people together",
             "keywords": ["group", "friends", "community", "togetherness"]
         },
         "woman_and_man": {
-            "emoji": "\ud83d\udebb",
+            "emoji": "🚻",
             "keywords": ["human", "male", "female"],
             "name": "woman and man"
         }
@@ -642,7 +642,7 @@
     "__indoor": {
         "__furniture": {
             "bed": {
-                "emoji": "\ud83d\udecc",
+                "emoji": "🛌",
                 "keywords": ["furniture", "sleep"],
                 "name": "bed"
             },
@@ -712,7 +712,7 @@
             "name": "BBQ"
         },
         "beer_mug": {
-            "emoji": "\ud83c\udf7a",
+            "emoji": "🍺",
             "keywords": ["drink", "cup"],
             "name": "beer mug"
         },
@@ -733,17 +733,17 @@
             "name": "bubble tea"
         },
         "cocktail_glass": {
-            "emoji": "\ud83c\udf78",
+            "emoji": "🍸",
             "keywords": ["drink", "liquid"],
             "name": "cocktail glass"
         },
         "cocktail_glass_with_straw": {
-            "emoji": "\ud83c\udf78",
+            "emoji": "🍸",
             "keywords": ["drink", "liquid", "alcohol"],
             "name": "cocktail glass with straw"
         },
         "coffee_cup": {
-            "emoji": "\u2615",
+            "emoji": "☕",
             "keywords": ["drink", "liquid"],
             "name": "coffee cup"
         },
@@ -779,7 +779,7 @@
     "__life": {
         "__animal": {
             "dog": {
-                "emoji": "\ud83d\udc15",
+                "emoji": "🐕",
                 "keywords": ["animal", "pet"],
                 "name": "dog"
             },
@@ -792,19 +792,19 @@
             "__fruit": {
                 "apple": {
                     "categories": ["natural"],
-                    "emoji": ["\ud83c\udf4e", "\ud83c\udf4f"],
+                    "emoji": ["🍎", "🍏"],
                     "keywords": ["food", "fruit", "natural"],
                     "name": "apple"
                 },
                 "peach": {
                     "categories": ["natural"],
-                    "emoji": "\ud83c\udf51",
+                    "emoji": "🍑",
                     "keywords": ["food", "fruit", "natural"],
                     "name": "peach"
                 },
                 "pear": {
                     "categories": ["natural"],
-                    "emoji": "\ud83c\udf50",
+                    "emoji": "🍐",
                     "keywords": ["food", "fruit", "natural"],
                     "name": "pear"
                 }
@@ -812,7 +812,7 @@
             "__leaf": {
                 "leaf_maple": {
                     "categories": ["natural"],
-                    "emoji": "\ud83c\udf41",
+                    "emoji": "🍁",
                     "keywords": ["natural", "tree", "Canada"],
                     "name": "maple leaf"
                 }
@@ -826,25 +826,25 @@
                 "christmas_tree": {
                     "categories": ["natural"],
                     "keywords": ["natural", "tree", "Christmas"],
-                    "emoji": "\ud83c\udf84",
+                    "emoji": "🎄",
                     "name": "Christmas tree"
                 },
                 "needleleaved_tree": {
                     "categories": ["natural"],
                     "keywords": ["natural", "tree"],
-                    "emoji": "\ud83c\udf32",
+                    "emoji": "🌲",
                     "name": "needleleaved tree"
                 },
                 "palm": {
                     "categories": ["natural"],
                     "keywords": ["natural", "tree"],
-                    "emoji": "\ud83c\udf34",
+                    "emoji": "🌴",
                     "name": "palm"
                 },
                 "tree": {
                     "categories": ["natural"],
                     "keywords": ["natural"],
-                    "emoji": "\ud83c\udf33",
+                    "emoji": "🌳",
                     "name": "tree"
                 },
                 "tree_with_fruit": {
@@ -950,7 +950,7 @@
             "cactus": {
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "desert"],
-                "emoji": "\ud83c\udf35",
+                "emoji": "🌵",
                 "name": "cactus"
             },
             "ear_botany": {
@@ -1015,7 +1015,7 @@
             "name": "brick wall"
         },
         "wood": {
-            "emoji": "\ud83e\udeb5",
+            "emoji": "🪵",
             "keywords": ["material", "wood"],
             "name": "log"
         }
@@ -1053,7 +1053,7 @@
         "shield_volcano": {
             "categories": ["natural"],
             "keywords": ["natural", "mountain"],
-            "emoji": "\ud83c\udf0b",
+            "emoji": "🌋",
             "name": "shield volcano"
         },
         "smoke": {
@@ -1074,7 +1074,7 @@
         "stone": {
             "categories": ["natural"],
             "keywords": ["natural", "rock"],
-            "emoji": "\ud83e\udea8",
+            "emoji": "🪨",
             "name": "stone"
         },
         "stone_with_inscription": {
@@ -1085,7 +1085,7 @@
         "stratovolcano": {
             "categories": ["natural"],
             "keywords": ["natural", "mountain"],
-            "emoji": "\ud83c\udf0b",
+            "emoji": "🌋",
             "name": "stratovolcano"
         },
         "stratovolcano___smoke_2": {
@@ -1175,7 +1175,7 @@
     "__other": {
         "amusement_ride": {
             "keywords": ["attraction", "recreation"],
-            "emoji": "\ud83c\udfa0",
+            "emoji": "🎠",
             "name": "amusement ride"
         },
         "atm": {
@@ -1225,7 +1225,7 @@
             "name": "chimney"
         },
         "clock": {
-            "emoji": "\u231a",
+            "emoji": "⌚",
             "keywords": ["time"],
             "name": "clock"
         },
@@ -1282,17 +1282,17 @@
             "name": "comb and scissors"
         },
         "credit_card": {
-            "emoji": "\ud83d\udcb3",
+            "emoji": "💳",
             "keywords": ["payment", "finance", "money"],
             "name": "payment card"
         },
         "diamond": {
-            "emoji": "\ud83d\udc8e",
+            "emoji": "💎",
             "keywords": ["jewelry", "gem"],
             "name": "diamond"
         },
         "drinking_water": {
-            "emoji": "\ud83d\udeb0",
+            "emoji": "🚰",
             "keywords": ["water", "drink"],
             "name": "tap and glass"
         },
@@ -1311,7 +1311,7 @@
         },
         "fire_extinguisher": {
             "categories": ["emergency"],
-            "emoji": "\ud83e\uddef",
+            "emoji": "🧯",
             "keywords": ["emergency", "safety"],
             "name": "fire extinguisher"
         },
@@ -1329,17 +1329,17 @@
             "name": "fishing angle"
         },
         "flagpole": {
-            "emoji": "\ud83c\udff4",
+            "emoji": "🏴",
             "keywords": ["country", "national"],
             "name": "flagpole"
         },
         "fork_and_knife": {
-            "emoji": "\ud83c\udf74",
+            "emoji": "🍴",
             "keywords": ["food", "meal", "dining"],
             "name": "fork and knife"
         },
         "fuel_station": {
-            "emoji": "\u26fd\ufe0f",
+            "emoji": "⛽️",
             "keywords": ["gasoline", "petrol"],
             "name": "fuel station"
         },
@@ -1356,7 +1356,7 @@
             "name": "gazette"
         },
         "gift": {
-            "emoji": "\ud83c\udf81",
+            "emoji": "🎁",
             "keywords": ["present", "presenting", "wrap"],
             "name": "gift box"
         },
@@ -1401,7 +1401,7 @@
         },
         "life_ring": {
             "categories": ["emergency"],
-            "emoji": "\ud83d\udedf",
+            "emoji": "🛟",
             "name": "life ring"
         },
         "lift_gate": {
@@ -1409,7 +1409,7 @@
             "keywords": ["barrier", "entry", "access", "gate"]
         },
         "lock": {
-            "emoji": "\ud83d\udd12",
+            "emoji": "🔒",
             "name": "closed lock",
             "keywords": ["security", "safe", "locked", "protection"]
         },
@@ -1418,7 +1418,7 @@
             "keywords": ["security", "unlocked", "open", "access"]
         },
         "lock_with_keyhole": {
-            "emoji": "\ud83d\udd12",
+            "emoji": "🔒",
             "name": "closed lock with keyhole",
             "keywords": ["security", "locked", "key", "protection"]
         },
@@ -1532,7 +1532,7 @@
             "name": "door with stairs"
         },
         "supermarket_cart": {
-            "emoji": "\ud83d\uded2",
+            "emoji": "🛒",
             "name": "supermarket cart",
             "keywords": ["shopping", "cart", "trolley", "store"]
         },
@@ -1572,8 +1572,8 @@
         },
         "ticket": {
             "emoji": [
-                "\ud83c\udfab",
-                "\ud83c\udf9f"
+                "🎫",
+                "🎟"
             ],
             "name": "ticket",
             "keywords": ["admission", "event", "pass", "entry"]
@@ -1583,7 +1583,7 @@
             "keywords": ["road", "payment", "barrier", "highway"]
         },
         "tomb": {
-            "emoji": "\ud83e\udea6",
+            "emoji": "🪦",
             "name": "tomb",
             "keywords": ["grave", "burial", "cemetery", "memorial"]
         },
@@ -1626,7 +1626,7 @@
             "keywords": ["air", "duct", "exhaust", "system"]
         },
         "waving_flag": {
-            "emoji": "\ud83c\udff3",
+            "emoji": "🏳",
             "name": "waving flag",
             "keywords": ["flag", "banner", "country", "symbol"]
         },
@@ -1672,12 +1672,12 @@
             "keywords": ["bin", "waste"]
         },
         "waste_basket": {
-            "emoji": "\ud83d\uddd1",
+            "emoji": "🗑",
             "keywords": ["trash", "bin", "garbage"],
             "name": "waste basket"
         },
         "waste_disposal": {
-            "emoji": "\u267b\ufe0f",
+            "emoji": "♻️",
             "name": "recycling container",
             "keywords": ["recycling"]
         }
@@ -1698,7 +1698,7 @@
     },
     "__sea": {
         "anchor": {
-            "emoji": "\u2693",
+            "emoji": "⚓",
             "keywords": ["ship", "boat", "vessel", "sea", "ocean"],
             "name": "anchor"
         },
@@ -1726,7 +1726,7 @@
             "name": "lunokhod"
         },
         "orbiter": {
-            "emoji": "\ud83d\udef0",
+            "emoji": "🛰",
             "keywords": ["space", "orbit", "satellite", "vehicle"],
             "name": "orbiter"
         },
@@ -1736,7 +1736,7 @@
         },
         "rocket_flying": {
             "categories": ["aeroway"],
-            "emoji": "\ud83d\ude80",
+            "emoji": "🚀",
             "keywords": ["space", "exploration", "vehicle", "fire", "booster"],
             "name": "flying rocket"
         },
@@ -1753,7 +1753,7 @@
     "__sport": {
         "bowling_ball": {
             "categories": ["sport", "indoor"],
-            "emoji": "\ud83c\udfb3",
+            "emoji": "🎳",
             "keywords": ["sport", "indoor"],
             "name": "bowling ball"
         },
@@ -1834,8 +1834,8 @@
             "slide": {
                 "categories": ["amenity"],
                 "directed": "right",
-                "emoji": "\ud83d\udedd",
-                "keywords": ["outdoor", "play"],
+                "emoji": "🛝",
+                "keywords": ["outdoor", "play", "children"],
                 "name": "slide"
             },
             "slide_and_water": {
@@ -1944,7 +1944,7 @@
         },
         "fountain": {
             "categories": ["amenity"],
-            "emoji": "\u26f2",
+            "emoji": "⛲",
             "keywords": ["water"],
             "name": "fountain"
         },
@@ -2097,7 +2097,7 @@
                 "name": "circle 4 px"
             },
             "circle_9": {
-                "emoji": "\ud83d\udd73",
+                "emoji": "🕳",
                 "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 9 px"
             },
@@ -2122,7 +2122,7 @@
                 "name": "tiny square"
             },
             "electricity": {
-                "emoji": "\u26a1",
+                "emoji": "⚡",
                 "keywords": ["thunder"],
                 "name": "lightning"
             },
@@ -2205,7 +2205,7 @@
                 "name": "Japanese map symbol for place of historic, cultural, or scenic interest"
             },
             "japan_koban": {
-                "name": "Japanese map symbol for k\u014dban"
+                "name": "Japanese map symbol for kōban"
             },
             "japan_police_station": {
                 "name": "Japanese map symbol for police station"
@@ -2320,17 +2320,17 @@
             },
             "x": {
                 "categories": ["letter"],
-                "emoji": "\u274c",
+                "emoji": "❌",
                 "name": "letter X"
             },
             "x_4": {
                 "categories": ["letter"],
-                "emoji": "\u274c",
+                "emoji": "❌",
                 "name": "X sign 4 px"
             },
             "x_5": {
                 "categories": ["letter"],
-                "emoji": "\u274c",
+                "emoji": "❌",
                 "name": "X sign 5 px"
             },
             "y": {
@@ -2344,13 +2344,13 @@
                 "name": "baptist symbol"
             },
             "crescent": {
-                "emoji": "\u262a\ufe0f",
+                "emoji": "☪️",
                 "keywords": ["islam", "religion"],
                 "name": "crescent"
             },
             "cross_and_horizontal_bar": {
                 "keywords": ["christian", "orthodox", "religion"],
-                "name": "cross and horizontal bar\ufe0f"
+                "name": "cross and horizontal bar"
             },
             "dharmachakra": {
                 "keywords": ["hindu", "religion"],
@@ -2364,7 +2364,7 @@
             },
             "latin_cross": {
                 "keywords": ["christian", "religion"],
-                "emoji": "\u271d\ufe0f",
+                "emoji": "✝️",
                 "name": "Latin cross"
             },
             "om_ligature": {
@@ -2377,17 +2377,17 @@
             },
             "orthodox": {
                 "keywords": ["christian", "religion"],
-                "emoji": "\u2626\ufe0f",
+                "emoji": "☦️",
                 "name": "orthodox cross"
             },
             "russian_orthodox_cross": {
                 "keywords": ["christian", "religion"],
-                "emoji": "\u2626",
+                "emoji": "☦",
                 "name": "Russian Orthodox cross"
             },
             "star_of_david": {
                 "keywords": ["jewish", "religion"],
-                "emoji": "\u2721\ufe0f",
+                "emoji": "✡️",
                 "name": "Star of David"
             },
             "yin_and_yang": {
@@ -2785,7 +2785,7 @@
     "__transport": {
         "__small": {
             "bicycle": {
-                "emoji": "\ud83d\udeb2",
+                "emoji": "🚲",
                 "keywords": ["transport", "sport"],
                 "name": "bicycle"
             },
@@ -2827,7 +2827,7 @@
                 ]
             },
             "skateboard": {
-                "emoji": "\ud83d\udef9",
+                "emoji": "🛹",
                 "keywords": ["transport", "sport"],
                 "name": "skateboard"
             },
@@ -2840,14 +2840,14 @@
                 "sketch": true
             },
             "wheelchair": {
-                "emoji": "\ud83e\uddbd",
+                "emoji": "🦽",
                 "keywords": ["transport", "accessibility"],
                 "name": "wheelchair"
             }
         },
         "bus": {
             "categories": ["public transport"],
-            "emoji": "\ud83d\ude8c",
+            "emoji": "🚌",
             "name": "bus"
         },
         "buses": {
@@ -2913,12 +2913,12 @@
         },
         "plane": {
             "categories": ["aeroway", "public transport"],
-            "emoji": "\u2708\ufe0f",
+            "emoji": "✈️",
             "keywords": ["transport", "aeroway", "airplane"],
             "name": "plane"
         },
         "suspension_railway": {
-            "emoji": "\ud83d\ude9f",
+            "emoji": "🚟",
             "name": "suspension railway",
             "keywords": ["train", "monorail", "transport", "bridge"]
         },
@@ -2929,12 +2929,12 @@
         },
         "train": {
             "categories": ["public transport"],
-            "emoji": "\ud83d\ude86",
+            "emoji": "🚆",
             "name": "train"
         },
         "tram": {
             "categories": ["public transport"],
-            "emoji": "\ud83d\ude8a",
+            "emoji": "🚊",
             "name": "tram"
         },
         "trolleybus": {
@@ -2992,7 +2992,7 @@
         "__traffic_sign": {
             "bus_stop": {
                 "categories": ["public transport"],
-                "emoji": "\ud83d\ude8f",
+                "emoji": "🚏",
                 "name": "big bus stop sign"
             },
             "bus_stop_sign": {
@@ -3011,14 +3011,11 @@
             },
             "stop": {
                 "categories": ["highway"],
-                "emoji": [
-                    "\ud83d\uded1",
-                    "\u26d4\ufe0f"
-                ],
+                "emoji": ["🛑", "⛔️"],
                 "name": "stop sign"
             },
             "traffic_signals": {
-                "emoji": "\ud83d\udea6",
+                "emoji": "🚦",
                 "name": "traffic signals"
             }
         },
