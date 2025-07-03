@@ -13,6 +13,7 @@ Redraw icons:
   - `no_wheelchair`,
   - `oat_2`,
   - `oat`,
+  - `orbiter`,
   - `pillar`,
   - `pole_dancer`,
   - `rocket_flying`,
