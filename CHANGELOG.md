@@ -1,3 +1,10 @@
+## Unreleased
+
+Redraw icons:
+  - `orbiter`,
+  - `peach`.
+
+
 ## 0.8.0
 
 Redraw icons:
@@ -13,7 +20,6 @@ Redraw icons:
   - `no_wheelchair`,
   - `oat_2`,
   - `oat`,
-  - `orbiter`,
   - `pillar`,
   - `pole_dancer`,
   - `rocket_flying`,
