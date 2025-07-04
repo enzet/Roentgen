@@ -169,7 +169,7 @@ def process_icons(
             "tags": list(icon.keywords),
             "paths": path_data,
         }
-        icons_data[icon.icon_id]["emoji"] = list(icon.emojis)
+        icons_data[icon.icon_id]["unicode"] = list(icon.unicode)
 
         icon_grid_items.append(generate_icon_grid_item(icon.icon_id, path_data))
 

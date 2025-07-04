@@ -241,20 +241,21 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
     """Parse shape configuration.
 
     Shape description is a probably empty dictionary with optional fields
-    `name`, `emoji`, `is_part`, `directed`, and `categories`.  Shape
-    configuration is a dictionary that contains shape descriptions.  Shape
-    descriptions may be grouped and the nesting level may be arbitrary:
+    `name`, `unicode`, `is_part`, `directed`, `keywords`, and `categories`.
+    Shape configuration is a dictionary that contains shape descriptions.
+    Shape descriptions may be grouped and the nesting level may be arbitrary.
+    Group identifier should be started with `__`, e.g. `__buildings`.
 
     ```json
     {
         <shape id>: {<shape description>},
         <shape id>: {<shape description>},
-        <group>: {
+        <group id>: {
             <shape id>: {<shape description>},
             <shape id>: {<shape description>}
         },
-        <group>: {
-            <subgroup>: {
+        <group id>: {
+            <subgroup id>: {
                 <shape id>: {<shape description>},
                 <shape id>: {<shape description>}
             }
@@ -263,17 +264,10 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
     ```
     """
     for key, value in root.items():
-        if (
-            not value
-            or "name" in value
-            or "emoji" in value
-            or "is_part" in value
-            or "directed" in value
-            or "categories" in value
-        ):
-            configuration[key] = value | {"group": group}
-        else:
+        if key.startswith("__"):
             parse_configuration(value, configuration, f"{group}_{key}")
+        else:
+            configuration[key] = value | {"group": group}
 
 
 def get_icons(configuration_path: Path) -> list[Icon]:
@@ -522,8 +516,8 @@ class Icon:
     sketch: bool = False
     """Whether the icon is a sketch."""
 
-    emojis: set[str] = field(default_factory=set)
-    """Set of emojis that represent the same entity.
+    unicode: set[str] = field(default_factory=set)
+    """Set of Unicode characters that represent the same entity.
 
     E.g. 🍐 (pear) for `pear`; 🍏 (green apple) and 🍎 (red apple) for `apple`.
     """
@@ -577,9 +571,8 @@ class Icon:
             is_part=structure.get("is_part", False),
         )
 
-        if "emoji" in structure:
-            emojis: str | list[str] = structure["emoji"]
-            icon.emojis = {emojis} if isinstance(emojis, str) else set(emojis)
+        if "unicode" in structure:
+            icon.unicode = set(structure["unicode"])
 
         if "sketch" in structure:
             icon.sketch = structure["sketch"]
