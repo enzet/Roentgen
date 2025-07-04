@@ -577,6 +577,9 @@ class Icon:
         if "sketch" in structure:
             icon.sketch = structure["sketch"]
 
+        if "keywords" in structure:
+            icon.keywords = set(structure["keywords"])
+
         icon.is_part = structure.get("is_part", False)
         icon.group = structure.get("group", "")
 
