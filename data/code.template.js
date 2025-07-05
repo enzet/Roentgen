@@ -520,12 +520,6 @@ document.addEventListener('DOMContentLoaded', () => {
             case 'arrowright':
                 navigateIcons('next');
                 break;
-            case 'g':
-                toggleGrid();
-                break;
-            case 'p':
-                toggleControlPoints();
-                break;
         }
     });
 
