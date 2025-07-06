@@ -763,6 +763,14 @@
             ],
             "sketch": true
         },
+        "glass_with_straw_and_slice": {
+            "keywords": ["drink", "liquid", "juice"],
+            "name": "glass with straw and slice",
+            "shapes": [
+                {"id": "glass_with_straw_and_slice", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "knives": {
             "keywords": ["tool", "kitchen"],
             "name": "knives"
