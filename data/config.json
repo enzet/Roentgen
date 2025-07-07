@@ -1599,10 +1599,6 @@
             "name": "torch",
             "keywords": ["fire", "light", "flame"]
         },
-        "toucan_crossing": {
-            "name": "toucan crossing",
-            "keywords": ["pedestrian", "crosswalk", "road"]
-        },
         "transformer": {
             "name": "transformer",
             "keywords": ["electric", "power", "device", "utility"]
@@ -1695,9 +1691,37 @@
             "keywords": ["pedestrian", "crosswalk", "road"],
             "name": "zebra crossing"
         },
+        "crossing_ladder": {
+            "keywords": ["pedestrian", "crosswalk", "road"],
+            "name": "ladder crossing",
+            "shapes": [
+                {"id": "crossing_ladder", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "crossing_ladder_skewed": {
+            "keywords": ["pedestrian", "crosswalk", "road"],
+            "name": "skewed ladder crossing",
+            "shapes": [
+                {"id": "crossing_ladder_skewed", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "crossing_zebra_double": {
+            "keywords": ["pedestrian", "crosswalk", "road"],
+            "name": "double zebra crossing",
+            "shapes": [
+                {"id": "crossing_zebra_double", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "kerb": {
             "keywords": ["curb", "edge", "sidewalk", "street", "road"],
             "name": "kerb"
+        },
+        "toucan_crossing": {
+            "name": "toucan crossing",
+            "keywords": ["pedestrian", "crosswalk", "road"]
         },
         "turning_loop": {
             "name": "turning loop",
@@ -2163,6 +2187,30 @@
             "triangle_small": {
                 "keywords": ["figure", "geometry"],
                 "name": "small triangle"
+            },
+            "two_double_horizontal_lines": {
+                "keywords": ["figure", "geometry"],
+                "name": "two double horizontal lines",
+                "shapes": [
+                    {"id": "two_double_horizontal_lines", "version": "v0"}
+                ],
+                "sketch": true
+            },
+            "two_horizontal_dashed_lines": {
+                "keywords": ["figure", "geometry"],
+                "name": "two horizontal dashed lines",
+                "shapes": [
+                    {"id": "two_horizontal_dashed_lines", "version": "v0"}
+                ],
+                "sketch": true
+            },
+            "two_horizontal_lines": {
+                "keywords": ["figure", "geometry"],
+                "name": "two horizontal lines",
+                "shapes": [
+                    {"id": "two_horizontal_lines", "version": "v0"}
+                ],
+                "sketch": true
             },
             "wave_left": {
                 "is_part": true,
@@ -2908,6 +2956,14 @@
         },
         "caravan": {
             "name": "caravan"
+        },
+        "golf_cart": {
+            "name": "golf cart",
+            "keywords": ["transport", "sport"],
+            "shapes": [
+                {"id": "golf_cart", "version": "v0"}
+            ],
+            "sketch": true
         },
         "maglev": {
             "categories": ["public transport"],
