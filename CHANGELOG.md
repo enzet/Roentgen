@@ -1,6 +1,7 @@
 ## Unreleased
 
 Redraw icons:
+  - `coffee_cup`,
   - `orbiter`,
   - `peach`.
 
