@@ -745,10 +745,10 @@
         "coffee_cup": {
             "unicode": ["☕"],
             "keywords": ["drink", "liquid"],
-            "name": "coffee cup"
+            "name": "cup"
         },
         "coffee_cup_to_go": {
-            "keywords": ["drink", "liquid", "coffee"],
+            "keywords": ["drink", "liquid"],
             "name": "coffee cup to go",
             "shapes": [
                 {"id": "coffee_cup_to_go", "version": "v0"}
