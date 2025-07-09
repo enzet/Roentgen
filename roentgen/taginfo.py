@@ -473,6 +473,20 @@ def add_table(
 
     for element in elements:
         row = html.Element("tr")
+
+        is_placeholder = False
+        for other_element in elements:
+            if other_element == element:
+                continue
+            if (
+                element.id_tagging_icon == other_element.id_tagging_icon
+                and element.tag.startswith(other_element.tag)
+            ):
+                is_placeholder = True
+
+        if is_placeholder:
+            row.set("style", "background-color: #FFEEFF;")
+
         tbody.append(row)
 
         pairs = element.tag.split(";")
@@ -524,12 +538,12 @@ def add_table(
         row.append(id_imgs_cell)
 
         file_name: str
+        img_element = html.Element("img")
 
         if (
             element.id_tagging_icon is not None
             and element.id_tagging_icon.startswith("roentgen-")
         ):
-            img_element = html.Element("img")
             file_name = (
                 f"{element.id_tagging_icon.removeprefix('roentgen-')}.svg"
             )
@@ -540,7 +554,6 @@ def add_table(
             and temaki_path is not None
             and element.id_tagging_icon.startswith("temaki-")
         ):
-            img_element = html.Element("img")
             file_name = f"{element.id_tagging_icon.removeprefix('temaki-')}.svg"
             img_element.set("src", str(temaki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
@@ -552,7 +565,6 @@ def add_table(
                 or element.id_tagging_icon.startswith("fas-")
             )
         ):
-            img_element = html.Element("img")
             file_name = f"{element.id_tagging_icon}.svg"
             img_element.set(
                 "src", str(id_path / "svg" / "fontawesome" / file_name)
@@ -563,7 +575,6 @@ def add_table(
             and maki_path is not None
             and element.id_tagging_icon.startswith("maki-")
         ):
-            img_element = html.Element("img")
             file_name = f"{element.id_tagging_icon.removeprefix('maki-')}.svg"
             img_element.set("src", str(maki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
