@@ -653,6 +653,14 @@
                 "name": "bed with floor and ceiling",
                 "keywords": ["furniture", "sleep", "bunk", "loft", "hotel", "hostel", "room", "motel"]
             },
+            "carpet": {
+                "keywords": ["furniture", "floor", "carpet"],
+                "name": "carpet",
+                "shapes": [
+                    {"id": "carpet", "version": "v1"}
+                ],
+                "sketch": true
+            },
             "drawer": {
                 "keywords": ["furniture", "storage"],
                 "name": "drawer"
@@ -1180,6 +1188,23 @@
             "name": "waterfall"
         }
     },
+    "__navigation": {
+        "compass_rose": {
+            "keywords": ["navigation", "direction"],
+            "name": "compass rose",
+            "shapes": [
+                {"id": "compass_rose", "version": "v1"}
+            ],
+            "sketch": true
+        },
+        "guidepost": {
+            "keywords": [
+                "road", "transport", "navigation", "direction", "sign"
+            ],
+            "directed": "right",
+            "name": "guidepost"
+        }
+    },
     "__other": {
         "amusement_ride": {
             "keywords": ["attraction", "recreation"],
@@ -1375,11 +1400,6 @@
         "government": {
             "keywords": ["building", "politics", "administration"],
             "name": "building with dome and flag"
-        },
-        "guidepost": {
-            "keywords": ["road", "transport"],
-            "directed": "right",
-            "name": "guidepost"
         },
         "guys": {
             "is_part": true,
@@ -1646,6 +1666,14 @@
                 {"id": "dollar", "offset": [-4,  3]},
                 {"id": "pound", "offset": [5, -2]}
             ]
+        },
+        "windsock": {
+            "name": "windsock",
+            "keywords": ["weather", "wind", "direction"],
+            "shapes": [
+                {"id": "windsock", "version": "v1"}
+            ],
+            "sketch": true
         }
     },
     "__parts": {
