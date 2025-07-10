@@ -5,6 +5,9 @@ Redraw icons:
   - `orbiter`,
   - `peach`.
 
+Adjust icon size:
+  - `cave`.
+
 Make icons smoother and make corners round:
   - `torch`.
 
