@@ -189,6 +189,7 @@ def main() -> None:
             id_path=id_path,
             maki_path=maki_path,
             temaki_path=temaki_path,
+            show_defined_tags=True,
         )
         return
 

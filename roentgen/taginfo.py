@@ -480,7 +480,7 @@ def add_table(
                 continue
             if (
                 element.id_tagging_icon == other_element.id_tagging_icon
-                and element.tag.startswith(other_element.tag)
+                and element.tag.startswith(other_element.tag.replace("*", ""))
             ):
                 is_placeholder = True
 
@@ -493,6 +493,7 @@ def add_table(
 
         tag_cell = html.Element("td")
         tag_cell.set("class", "tag")
+
         for pair in pairs:
             if "=" not in pair or pair.count("=") > 1:
                 continue
@@ -813,6 +814,10 @@ def main(
     id_path: Path | None,
     maki_path: Path | None,
     temaki_path: Path | None,
+    *,
+    show_grouped_tags: bool = False,
+    show_all_tags: bool = False,
+    show_defined_tags: bool = False,
 ) -> None:
     """Get the most used tags and save them to a JSON file.
 
@@ -844,70 +849,75 @@ def main(
     container: html.Element = html.Element("div")
     container.set("class", "container")
 
-    all_keys: list[TagInfo] = load_all_keys(
-        output_directory / "most_used_keys.json", api
-    )
-    for key in all_keys:
-        if roentgen_scheme.is_ignored(key) or id_scheme.is_ignored(key):
-            continue
+    if show_grouped_tags:
+        all_keys: list[TagInfo] = load_all_keys(
+            output_directory / "most_used_keys.json", api
+        )
+        for key in all_keys:
+            if roentgen_scheme.is_ignored(key) or id_scheme.is_ignored(key):
+                continue
 
-        if key.total_count < MIN_FREQUENCY_TO_DISPLAY:
-            break
-
-        if not (output_directory / f"{key.get_key()}_values.json").exists():
-            logger.info("Total count: %d.", key.total_count)
-            answer: str = input(f"Continue with {key.get_key()}=*? (y/N) ")
-            if answer != "y":
+            if key.total_count < MIN_FREQUENCY_TO_DISPLAY:
                 break
 
-        values: list[TagInfo] = load_key_values(
-            output_directory / f"{key.get_key()}_values.json", key, api
-        )
-        values_to_display: list[TagInfo] = [
-            value
-            for value in values
-            if value.total_count >= MIN_FREQUENCY_TO_DISPLAY
-            and not roentgen_scheme.is_ignored(value)
-            and not id_scheme.is_ignored(value)
-        ]
-        if len(values_to_display) > 0:
-            (h1 := html.Element("h1")).text = f"{key.get_key()}=*"
-            container.append(h1)
-            add_table(
-                container,
-                construct_table(values_to_display, roentgen_scheme, id_scheme),
-                id_path,
-                maki_path,
-                temaki_path,
+            if not (output_directory / f"{key.get_key()}_values.json").exists():
+                logger.info("Total count: %d.", key.total_count)
+                answer: str = input(f"Continue with {key.get_key()}=*? (y/N) ")
+                if answer != "y":
+                    break
+
+            values: list[TagInfo] = load_key_values(
+                output_directory / f"{key.get_key()}_values.json", key, api
             )
+            values_to_display: list[TagInfo] = [
+                value
+                for value in values
+                if value.total_count >= MIN_FREQUENCY_TO_DISPLAY
+                and not roentgen_scheme.is_ignored(value)
+                and not id_scheme.is_ignored(value)
+            ]
+            if len(values_to_display) > 0:
+                (h1 := html.Element("h1")).text = f"{key.get_key()}=*"
+                container.append(h1)
+                add_table(
+                    container,
+                    construct_table(
+                        values_to_display, roentgen_scheme, id_scheme
+                    ),
+                    id_path,
+                    maki_path,
+                    temaki_path,
+                )
 
-    all_tags: list[TagInfo] = load_all_tags(
-        output_directory / "most_used_tags.json", api
-    )
-    (h1 := html.Element("h1")).text = "All tags"
-    container.append(h1)
-    add_table(
-        container,
-        construct_table(all_tags, roentgen_scheme, id_scheme),
-        id_path,
-        maki_path,
-        temaki_path,
-    )
+    if show_all_tags:
+        all_tags: list[TagInfo] = load_all_tags(
+            output_directory / "most_used_tags.json", api
+        )
+        (h1 := html.Element("h1")).text = "All tags"
+        container.append(h1)
+        add_table(
+            container,
+            construct_table(all_tags, roentgen_scheme, id_scheme),
+            id_path,
+            maki_path,
+            temaki_path,
+        )
 
-    defined_tags: set[TagInfo] = set(roentgen_scheme.get_tags()) | set(
-        id_scheme.get_tags()
-    )
-    defined_tags_list: list = list(defined_tags)
-    defined_tags_list.sort(key=lambda x: x.descriptor)
-    (h1 := html.Element("h1")).text = "Defined tags"
-    container.append(h1)
-    add_table(
-        container,
-        construct_table(defined_tags_list, roentgen_scheme, id_scheme),
-        id_path,
-        maki_path,
-        temaki_path,
-    )
+    if show_defined_tags:
+        defined_tags: set[TagInfo] = set(roentgen_scheme.get_tags()) | set(
+            id_scheme.get_tags()
+        )
+        defined_tags_list: list = list(defined_tags)
+        defined_tags_list.sort(key=lambda x: x.descriptor)
+        (h1 := html.Element("h1")).text = "Defined tags"
+        container.append(h1)
+        add_table(
+            container,
+            construct_table(defined_tags_list, roentgen_scheme, id_scheme),
+            id_path,
+            maki_path,
+            temaki_path,
+        )
 
     output_html: Path = output_directory / "output.html"
     write_html_document(output_html, container)
