@@ -80,7 +80,6 @@ def draw_icons(
         scale=2.0,
         color=Color("#444"),
     )
-
     collection.draw_grid(
         doc_path / "grid_white.svg",
         shapes,
@@ -88,10 +87,17 @@ def draw_icons(
         scale=2.0,
         color=Color("#BBB"),
     )
+    logger.info(
+        "Grids are written to `%s` and `%s`.",
+        doc_path / "grid_black.svg",
+        doc_path / "grid_white.svg",
+    )
 
 
 def main() -> None:
     """Run the main function."""
+
+    logging.basicConfig(level=logging.INFO, format="%(message)s")
 
     parser: argparse.ArgumentParser = argparse.ArgumentParser()
 
@@ -138,8 +144,6 @@ def main() -> None:
     arguments: argparse.Namespace = parser.parse_args()
 
     if arguments.command == "icons":
-        logging.basicConfig(level=logging.INFO)
-
         shapes: Shapes = Shapes()
         for path in [
             Path("data") / "icons.svg",
@@ -182,7 +186,6 @@ def main() -> None:
         temaki_path: Path | None = (
             Path(arguments.temaki) if arguments.temaki is not None else None
         )
-        logging.basicConfig(level=logging.INFO, format="%(message)s")
         taginfo_main(
             Path("data") / "tags.json",
             id_tagging_schema_path=id_tagging_schema_path,
@@ -194,7 +197,6 @@ def main() -> None:
         return
 
     if arguments.command == "site":
-        logging.basicConfig(level=logging.INFO, format="%(message)s")
         site_main(site_path=arguments.output)
         return
 
