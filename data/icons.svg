@@ -565,9 +565,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="184.13603"
-     inkscape:cx="233.68787"
-     inkscape:zoom="11.583827"
+     inkscape:cy="478.71911"
+     inkscape:cx="272.26184"
+     inkscape:zoom="13.600878"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -5232,9 +5232,10 @@
        style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" /><path
        inkscape:label="#rect5412"
        id="prison"
-       d="m 242.5,467 c -0.277,0 -0.5,0.223 -0.5,0.5 0,0.277 0.223,0.5 0.5,0.5 h 0.5 v 2 h -0.5 c -0.277,0 -0.5,0.223 -0.5,0.5 v 4 c 0,0.277 0.223,0.5 0.5,0.5 h 0.5 v 2 h -0.5 c -0.277,0 -0.5,0.223 -0.5,0.5 0,0.277 0.223,0.5 0.5,0.5 h 4 7 c 0.277,0 0.5,-0.223 0.5,-0.5 0,-0.277 -0.223,-0.5 -0.5,-0.5 H 253 v -9 h 0.5 c 0.277,0 0.5,-0.223 0.5,-0.5 0,-0.277 -0.223,-0.5 -0.5,-0.5 h -7 z m 1.5,1 h 2 v 2 h -2 z m 3,0 h 2 v 9 h -2 v -2 h 0.5 c 0.277,0 0.5,-0.223 0.5,-0.5 v -4 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 H 247 Z m 3,0 h 2 v 9 h -2 z m -5,3 a 1,1 0 0 1 1,1 1,1 0 0 1 -0.52344,0.87891 c 0.0101,0.0397 0.0234,0.0782 0.0234,0.12109 v 1 c 0,0.277 -0.223,0.5 -0.5,0.5 -0.277,0 -0.5,-0.223 -0.5,-0.5 v -1 c 0,-0.0429 0.0134,-0.0814 0.0234,-0.12109 A 1,1 0 0 1 244,472 a 1,1 0 0 1 1,-1 z m -1,4 h 2 v 2 h -2 z"
-       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate;fill-opacity:1"
-       inkscape:connector-curvature="0" /><rect
+       d="m 242.5,465 c -0.277,0 -0.5,0.223 -0.5,0.5 0,0.277 0.223,0.5 0.5,0.5 h 0.5 v 3 h -0.5 c -0.277,0 -0.5,0.223 -0.5,0.5 v 4 c 0,0.277 0.223,0.5 0.5,0.5 h 0.5 v 3 h -0.5 c -0.277,0 -0.5,0.223 -0.5,0.5 0,0.277 0.223,0.5 0.5,0.5 h 4 7 c 0.277,0 0.5,-0.223 0.5,-0.5 0,-0.277 -0.223,-0.5 -0.5,-0.5 H 253 v -11 h 0.5 c 0.277,0 0.5,-0.223 0.5,-0.5 0,-0.277 -0.223,-0.5 -0.5,-0.5 h -7 z m 1.5,1 h 2 v 3 h -2 z m 3,0 h 2 v 11 h -2 v -3 h 0.5 c 0.277,0 0.5,-0.223 0.5,-0.5 v -4 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 H 247 Z m 3,0 h 2 v 11 h -2 z m -5,4 c 0.55228,0 1,0.44772 1,1 -9e-5,0.3668 -0.20097,0.70411 -0.52344,0.87891 0.0101,0.0397 0.0234,0.0782 0.0234,0.12109 v 1 c 0,0.277 -0.223,0.5 -0.5,0.5 -0.277,0 -0.5,-0.223 -0.5,-0.5 v -1 c 0,-0.0429 0.0134,-0.0814 0.0234,-0.12109 C 244.20092,471.70409 244.00007,471.36678 244,471 c 0,-0.55228 0.44772,-1 1,-1 z m -1,4 h 2 v 3 h -2 z"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sssccssssccssscsssccssscsccccccccccsssscccccccsscssssscssccccc" /><rect
        ry="0.5"
        rx="0.5"
        y="34"

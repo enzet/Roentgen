@@ -8,7 +8,8 @@ Redraw icons:
   - `peach`.
 
 Adjust icon size:
-  - `cave`.
+  - `cave`,
+  - `prison`.
 
 Make icons smoother and make corners round:
   - `torch`.
