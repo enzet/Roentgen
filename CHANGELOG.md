@@ -1,6 +1,8 @@
 ## Unreleased
 
 Redraw icons:
+  - `bicycle___wrench`,
+  - `car___wrench`,
   - `coffee_cup`,
   - `orbiter`,
   - `peach`.
@@ -10,6 +12,9 @@ Adjust icon size:
 
 Make icons smoother and make corners round:
   - `torch`.
+
+Change direction of icons:
+  - `wrench`.
 
 
 ## 0.8.0

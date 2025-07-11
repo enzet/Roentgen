@@ -2900,7 +2900,7 @@
                 "name": "bicycle with wrench",
                 "shapes": [
                     {"id": "bicycle", "offset": [0, 2]},
-                    {"id": "wrench", "offset": [0, -4]}
+                    {"id": "wrench", "offset": [-1, -4], "flip_horizontally": true}
                 ]
             },
             "bicycle___key": {
@@ -2955,7 +2955,7 @@
             "name": "car with wrench",
             "shapes": [
                 {"id": "car", "offset": [0, 3]},
-                {"id": "wrench", "offset": [0, -4], "flip_horizontally": true}
+                {"id": "wrench", "offset": [0, -4]}
             ]
         },
         "car___key": {
