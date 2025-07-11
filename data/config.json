@@ -792,6 +792,16 @@
             "name": "steak and fork"
         }
     },
+    "__leisure": {
+        "hookah": {
+            "keywords": ["hookah", "shisha", "water pipe", "smoking"],
+            "name": "hookah",
+            "shapes": [
+                {"id": "hookah", "version": "v1"}
+            ],
+            "sketch": true
+        }
+    },
     "__life": {
         "__animal": {
             "dog": {
