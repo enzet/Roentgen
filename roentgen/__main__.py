@@ -161,6 +161,16 @@ def main() -> None:
             icons,
             filter_=lambda icon: not icon.is_part,
         )
+
+        for shape_id in shapes.shapes:
+            found: bool = False
+            for icon in icons:
+                if shape_id in icon.get_shape_ids():
+                    found = True
+                    break
+            if not found:
+                logger.warning("No configuration for `%s` found.", shape_id)
+
         draw_icons(
             main_collection,
             shapes,
