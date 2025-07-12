@@ -11,6 +11,7 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import shutil
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
@@ -416,6 +417,10 @@ def write_html_document(output_path: Path, container: html.Element) -> None:
     link.set("href", "style.css")
     head.append(link)
 
+    script = html.Element("script")
+    script.set("src", "script.js")
+    head.append(script)
+
     body = html.Element("body")
     doc.append(body)
 
@@ -526,12 +531,13 @@ def add_table(
 
         for img in element.roentgen_shapes:
             img_element = html.Element("img")
+            img_element.set("class", "lazy-svg")
             if Path("icons", f"{img}.svg").exists():
-                img_element.set("src", f"../icons/{img}.svg")
+                img_element.set("data-src", f"../icons/{img}.svg")
             elif Path("icons_sketches", f"{img}.svg").exists():
-                img_element.set("src", f"../icons_sketches/{img}.svg")
+                img_element.set("data-src", f"../icons_sketches/{img}.svg")
             else:
-                img_element.set("src", "../icons/unknown.svg")
+                img_element.set("data-src", "../icons/unknown.svg")
             imgs_cell.append(img_element)
 
         id_imgs_cell = html.Element("td")
@@ -540,6 +546,7 @@ def add_table(
 
         file_name: str
         img_element = html.Element("img")
+        img_element.set("class", "lazy-svg")
 
         if (
             element.id_tagging_icon is not None
@@ -548,7 +555,7 @@ def add_table(
             file_name = (
                 f"{element.id_tagging_icon.removeprefix('roentgen-')}.svg"
             )
-            img_element.set("src", f"../icons/{file_name}")
+            img_element.set("data-src", f"../icons/{file_name}")
             id_imgs_cell.append(img_element)
         elif (
             element.id_tagging_icon is not None
@@ -556,7 +563,7 @@ def add_table(
             and element.id_tagging_icon.startswith("temaki-")
         ):
             file_name = f"{element.id_tagging_icon.removeprefix('temaki-')}.svg"
-            img_element.set("src", str(temaki_path / "icons" / file_name))
+            img_element.set("data-src", str(temaki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
         elif (
             element.id_tagging_icon is not None
@@ -568,7 +575,7 @@ def add_table(
         ):
             file_name = f"{element.id_tagging_icon}.svg"
             img_element.set(
-                "src", str(id_path / "svg" / "fontawesome" / file_name)
+                "data-src", str(id_path / "svg" / "fontawesome" / file_name)
             )
             id_imgs_cell.append(img_element)
         elif (
@@ -577,7 +584,7 @@ def add_table(
             and element.id_tagging_icon.startswith("maki-")
         ):
             file_name = f"{element.id_tagging_icon.removeprefix('maki-')}.svg"
-            img_element.set("src", str(maki_path / "icons" / file_name))
+            img_element.set("data-src", str(maki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
 
         id_span = html.Element("span")
@@ -918,6 +925,9 @@ def main(
             maki_path,
             temaki_path,
         )
+
+    shutil.copy(Path("data") / "tags.css", output_directory / "style.css")
+    shutil.copy(Path("data") / "tags.js", output_directory / "script.js")
 
     output_html: Path = output_directory / "output.html"
     write_html_document(output_html, container)

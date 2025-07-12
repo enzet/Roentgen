@@ -1,0 +1,44 @@
+body {
+    font-variant-numeric: tabular-nums;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td.count {
+    text-align: right;
+}
+
+th {
+    font-family: monospace;
+    text-align: left;
+}
+
+td, th {
+    border: inset;
+    border-width: 2px;
+    padding: 5px;
+}
+
+th.vertical {
+    -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+}
+
+td.tag {
+    font-family: monospace;
+}
+
+img {
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+img.sketch {
+    opacity: 0.3;
+}
