@@ -22,9 +22,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="17.216575"
-     inkscape:cx="336.12957"
-     inkscape:cy="53.669211"
+     inkscape:zoom="5.0711177"
+     inkscape:cx="276.46765"
+     inkscape:cy="53.045506"
      inkscape:window-width="1424"
      inkscape:window-height="831"
      inkscape:window-x="8"
@@ -1030,7 +1030,7 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       id="flag_turkmenistan"
+       id="flag_turkmenistan_v0"
        style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000"
        d="m 257.5,83 a 0.50005,0.50005 0 0 0 -0.5,0.5 v 8 2 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 V 92 h 11.5 a 0.50005,0.50005 0 0 0 0.5,-0.5 v -8 A 0.50005,0.50005 0 0 0 269.5,83 Z m 0.5,1 h 2 v 7 h -2 z m 4,0 h 7 v 7 h -7 z m 1.5,0.79297 A 0.7070905,0.7070905 0 0 0 263,85 a 0.7070905,0.7070905 0 0 0 0,1 0.7070905,0.7070905 0 0 0 1,0 0.7070905,0.7070905 0 0 0 0,-1 0.7070905,0.7070905 0 0 0 -0.5,-0.20703 z" />
     <circle

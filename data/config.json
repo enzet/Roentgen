@@ -432,6 +432,14 @@
         }
     },
     "__flag": {
+        "flag_australia": {
+            "keywords": ["country", "nation"],
+            "name": "flag of Australia",
+            "shapes": [
+                {"id": "flag_australia", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "flag_bend_dexter": {
             "keywords": ["country", "nation"],
             "shapes": [
@@ -460,6 +468,14 @@
             "sketch": true,
             "name": "flag with canton"
         },
+        "flag_chicago": {
+            "keywords": ["country", "nation"],
+            "name": "flag of Chicago",
+            "shapes": [
+                {"id": "flag_chicago", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "flag_chile": {
             "keywords": ["country", "nation"],
             "shapes": [
@@ -476,6 +492,30 @@
             "sketch": true,
             "name": "flag of China"
         },
+        "flag_circle": {
+            "keywords": ["country", "nation"],
+            "name": "flag with circle",
+            "shapes": [
+                {"id": "flag_circle", "version": "v1"}
+            ],
+            "sketch": true
+        },
+        "flag_diagonal_bisection": {
+            "keywords": ["country", "nation"],
+            "name": "flag with diagonal bisection",
+            "shapes": [
+                {"id": "flag_diagonal_bisection", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "flag_diagonal_bisection_sinister": {
+            "keywords": ["country", "nation"],
+            "name": "flag with diagonal bisection sinister",
+            "shapes": [
+                {"id": "flag_diagonal_bisection_sinister", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "flag_europe": {
             "keywords": ["country", "nation"],
             "shapes": [
@@ -483,6 +523,22 @@
             ],
             "sketch": true,
             "name": "flag of European Union"
+        },
+        "flag_gusset": {
+            "keywords": ["country", "nation"],
+            "name": "flag with gusset",
+            "shapes": [
+                {"id": "flag_gusset", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "flag_gyronee": {
+            "keywords": ["country", "nation"],
+            "name": "flag with gyronee",
+            "shapes": [
+                {"id": "flag_gyronee", "version": "v0"}
+            ],
+            "sketch": true
         },
         "flag_horizontal_bisection": {
             "keywords": ["country", "nation"],
@@ -502,6 +558,14 @@
             ],
             "sketch": true,
             "name": "flag with horizontal triband"
+        },
+        "flag_horizontal_triband_light_dark_light_dot": {
+            "keywords": ["country", "nation"],
+            "name": "flag with horizontal triband light dark light dot",
+            "shapes": [
+                {"id": "flag_horizontal_triband_light_dark_light_dot", "version": "v0"}
+            ],
+            "sketch": true
         },
         "flag_nordic_cross": {
             "keywords": ["country", "nation"],
@@ -527,6 +591,14 @@
             "sketch": true,
             "name": "flag of the Philippines"
         },
+        "flag_pirate": {
+            "keywords": ["country", "nation"],
+            "name": "flag of the pirates",
+            "shapes": [
+                {"id": "flag_pirate", "version": "v3"}
+            ],
+            "sketch": true
+        },
         "flag_saltire": {
             "keywords": ["country", "nation"],
             "shapes": [
@@ -535,13 +607,13 @@
             "sketch": true,
             "name": "flag with saltire"
         },
-        "flag_symmetric_cross": {
+        "flag_saltire_symmetric_cross": {
             "keywords": ["country", "nation"],
+            "name": "flag with saltire and symmetric cross",
             "shapes": [
-                {"id": "flag_symmetric_cross", "version": "v0"}
+                {"id": "flag_saltire_symmetric_cross", "version": "v0"}
             ],
-            "sketch": true,
-            "name": "flag with symmetric cross"
+            "sketch": true
         },
         "flag_solid": {
             "keywords": ["country", "nation"],
@@ -551,9 +623,41 @@
             "sketch": true,
             "name": "solid flag"
         },
+        "flag_spain": {
+            "keywords": ["country", "nation"],
+            "name": "flag of Spain",
+            "shapes": [
+                {"id": "flag_spain", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "flag_stripes": {
+            "keywords": ["country", "nation"],
+            "name": "flag with stripes",
+            "shapes": [
+                {"id": "flag_stripes", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "flag_symmetric_cross": {
+            "keywords": ["country", "nation"],
+            "shapes": [
+                {"id": "flag_symmetric_cross", "version": "v0"}
+            ],
+            "sketch": true,
+            "name": "flag with symmetric cross"
+        },
         "flag_triangle_flanche": {
             "keywords": ["country", "nation"],
             "name": "flag with triangle on the left side"
+        },
+        "flag_turkmenistan": {
+            "keywords": ["country", "nation"],
+            "name": "flag of Turkmenistan",
+            "shapes": [
+                {"id": "flag_turkmenistan", "version": "v0"}
+            ],
+            "sketch": true
         },
         "flag_usa": {
             "keywords": ["country", "nation", "States", "America"],
@@ -570,6 +674,14 @@
         "flag_vertical_triband": {
             "keywords": ["country", "nation"],
             "name": "flag with three vertical bands"
+        },
+        "flag_quadrisection": {
+            "keywords": ["country", "nation"],
+            "name": "flag with quadrisection",
+            "shapes": [
+                {"id": "flag_quadrisection", "version": "v0"}
+            ],
+            "sketch": true
         }
     },
     "__food": {
@@ -781,11 +893,17 @@
         },
         "knives": {
             "keywords": ["tool", "kitchen"],
-            "name": "knives"
+            "name": "knives",
+            "unicode": ["🔪"]
+        },
+        "mug": {
+            "keywords": ["drink", "liquid", "cup"],
+            "name": "mug"
         },
         "pan": {
             "keywords": ["tool", "kitchen"],
-            "name": "pan"
+            "name": "pan",
+            "unicode": ["🍳"]
         },
         "steak_and_fork": {
             "keywords": ["food", "tool", "kitchen"],
@@ -2324,55 +2442,438 @@
             }
         },
         "__letter": {
-            "digit_0": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 0"
+            "__cyrillic": {
+                "cyrillic_a": {
+                    "name": "Cyrillic letter A",
+                    "unicode": ["А"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_a", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_b": {
+                    "name": "Cyrillic letter B",
+                    "unicode": ["Б"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_b", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_v": {
+                    "name": "Cyrillic letter V",
+                    "unicode": ["В"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_v", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_g": {
+                    "name": "Cyrillic letter G",
+                    "unicode": ["Г"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_g", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_d": {
+                    "name": "Cyrillic letter D",
+                    "unicode": ["Д"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_d", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_ye": {
+                    "name": "Cyrillic letter Ye",
+                    "unicode": ["Е"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_ye", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_yo": {
+                    "name": "Cyrillic letter Yo",
+                    "unicode": ["Ё"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_yo", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_zh": {
+                    "name": "Cyrillic letter Zh",
+                    "unicode": ["Ж"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_zh", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_z": {
+                    "name": "Cyrillic letter Z",
+                    "unicode": ["З"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_z", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_i": {
+                    "name": "Cyrillic letter I",
+                    "unicode": ["И"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_i", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_short_i": {
+                    "name": "Cyrillic letter Short I",
+                    "unicode": ["Й"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_short_i", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_k": {
+                    "name": "Cyrillic letter K",
+                    "unicode": ["К"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_k", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_l": {
+                    "name": "Cyrillic letter L",
+                    "unicode": ["Л"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_l", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_m": {
+                    "name": "Cyrillic letter M",
+                    "unicode": ["М"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_m", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_n": {
+                    "name": "Cyrillic letter N",
+                    "unicode": ["Н"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_n", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_o": {
+                    "name": "Cyrillic letter O",
+                    "unicode": ["О"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_o", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_p": {
+                    "name": "Cyrillic letter P",
+                    "unicode": ["П"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_p", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_r": {
+                    "name": "Cyrillic letter R",
+                    "unicode": ["Р"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_r", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_s": {
+                    "name": "Cyrillic letter S",
+                    "unicode": ["С"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_s", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_t": {
+                    "name": "Cyrillic letter T",
+                    "unicode": ["Т"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_t", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_u": {
+                    "name": "Cyrillic letter U",
+                    "unicode": ["У"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_u", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_f": {
+                    "name": "Cyrillic letter F",
+                    "unicode": ["Ф"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_f", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_h": {
+                    "name": "Cyrillic letter H",
+                    "unicode": ["Х"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_h", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_ts": {
+                    "name": "Cyrillic letter Ts",
+                    "unicode": ["Ц"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_ts", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_ch": {
+                    "name": "Cyrillic letter Ch",
+                    "unicode": ["Ч"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_ch", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_sh": {
+                    "name": "Cyrillic letter Sh",
+                    "unicode": ["Ш"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_sh", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_sch": {
+                    "name": "Cyrillic letter Sch",
+                    "unicode": ["Щ"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_sch", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_hard_sign": {
+                    "name": "Cyrillic letter Hard Sign",
+                    "unicode": ["Ъ"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_hard_sign", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_soft_sign": {
+                    "name": "Cyrillic letter Soft Sign",
+                    "unicode": ["Ь"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_soft_sign", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_y": {
+                    "name": "Cyrillic letter Y",
+                    "unicode": ["Ы"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_y", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_e": {
+                    "name": "Cyrillic letter E",
+                    "unicode": ["Э"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_e", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_yu": {
+                    "name": "Cyrillic letter Yu",
+                    "unicode": ["Ю"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_yu", "version": "v0"}
+                    ],
+                    "sketch": true
+                },
+                "cyrillic_ya": {
+                    "name": "Cyrillic letter Ya",
+                    "unicode": ["Я"],
+                    "keywords": ["russian", "alphabet"],
+                    "is_part": true,
+                    "shapes": [
+                        {"id": "cyrillic_ya", "version": "v0"}
+                    ],
+                    "sketch": true
+                }
             },
-            "digit_1": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 1"
+            "__digit": {
+                "digit_0": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 0"
+                },
+                "digit_1": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 1"
+                },
+                "digit_2": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 2"
+                },
+                "digit_3": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 3"
+                },
+                "digit_4": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 4"
+                },
+                "digit_5": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 5"
+                },
+                "digit_6": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 6"
+                },
+                "digit_7": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 7"
+                },
+                "digit_8": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 8"
+                },
+                "digit_9": {
+                    "categories": ["number"],
+                    "is_part": true,
+                    "name": "digit 9"
+                }
             },
-            "digit_2": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 2"
-            },
-            "digit_3": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 3"
-            },
-            "digit_4": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 4"
-            },
-            "digit_5": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 5"
-            },
-            "digit_6": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 6"
-            },
-            "digit_7": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 7"
-            },
-            "digit_8": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 8"
-            },
-            "digit_9": {
-                "categories": ["number"],
-                "is_part": true,
-                "name": "digit 9"
+            "__latin": {
+                "h": {
+                    "categories": ["letter"],
+                    "name": "letter H",
+                    "unicode": ["H"]
+                },
+                "i": {
+                    "categories": ["letter"],
+                    "name": "letter i",
+                    "unicode": ["i"]
+                },
+                "i_in_square": {
+                    "name": "letter i in square"
+                },
+                "p": {
+                    "categories": ["letter"],
+                    "name": "letter P",
+                    "unicode": ["P"]
+                },
+                "p_small": {
+                    "categories": ["letter"],
+                    "name": "small letter P"
+                },
+                "t": {
+                    "categories": ["letter"],
+                    "name": "letter T",
+                    "unicode": ["T"]
+                },
+                "x": {
+                    "categories": ["letter"],
+                    "name": "letter X",
+                    "unicode": ["X", "❌"]
+                },
+                "x_4": {
+                    "categories": ["letter"],
+                    "name": "X sign 4 px",
+                    "unicode": ["X", "❌"]
+                },
+                "x_5": {
+                    "categories": ["letter"],
+                    "name": "X sign 5 px",
+                    "unicode": ["X", "❌"]
+                },
+                "y": {
+                    "categories": ["letter"],
+                    "name": "letter Y",
+                    "unicode": ["Y"]
+                }
             },
             "dollar": {
                 "name": "dollar sign",
@@ -2381,55 +2882,11 @@
             "free": {
                 "name": "free"
             },
-            "h": {
-                "categories": ["letter"],
-                "unicode": ["H"],
-                "name": "letter H"
-            },
             "historic": {
                 "name": "looped square"
             },
-            "i": {
-                "categories": ["letter"],
-                "name": "letter i"
-            },
-            "i_in_square": {
-                "name": "letter i in square"
-            },
-            "p": {
-                "categories": ["letter"],
-                "unicode": ["P"],
-                "name": "letter P"
-            },
-            "p_small": {
-                "categories": ["letter"],
-                "name": "small letter P"
-            },
             "pound": {
                 "name": "pound sign"
-            },
-            "t": {
-                "categories": ["letter"],
-                "name": "letter T"
-            },
-            "x": {
-                "categories": ["letter"],
-                "unicode": ["❌"],
-                "name": "letter X"
-            },
-            "x_4": {
-                "categories": ["letter"],
-                "unicode": ["❌"],
-                "name": "X sign 4 px"
-            },
-            "x_5": {
-                "categories": ["letter"],
-                "unicode": ["❌"],
-                "name": "X sign 5 px"
-            },
-            "y": {
-                "categories": ["letter"],
-                "name": "letter Y"
             }
         },
         "__religious": {
