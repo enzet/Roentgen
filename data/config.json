@@ -79,7 +79,8 @@
             "building": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "house"],
-                "name": "house"
+                "name": "house",
+                "unicode": ["🏠"]
             },
             "building_construction": {
                 "categories": ["building"],
@@ -98,7 +99,8 @@
             "fort": {
                 "categories": ["building"],
                 "keywords": ["military", "building"],
-                "name": "fort"
+                "name": "fort",
+                "unicode": ["🏰"]
             },
             "houseboat": {
                 "categories": ["building"],
@@ -714,16 +716,6 @@
         "bag_with_percent": {
             "keywords": ["storage", "sale"],
             "name": "bag with percent"
-        },
-        "book": {
-            "unicode": ["📕"],
-            "keywords": ["reading", "literature"],
-            "name": "book"
-        },
-        "books": {
-            "unicode": ["📚"],
-            "keywords": ["reading", "literature"],
-            "name": "books"
         }
     },
     "__human": {
@@ -816,6 +808,26 @@
             "name": "washing machine"
         }
     },
+    "__information": {
+        "book": {
+            "unicode": ["📕"],
+            "keywords": ["reading", "literature"],
+            "name": "book"
+        },
+        "books": {
+            "unicode": ["📚"],
+            "keywords": ["reading", "literature"],
+            "name": "books"
+        },
+        "tear_off_ad": {
+            "keywords": ["advertisement", "paper", "board", "bulletin"],
+            "name": "tear-off advertisement",
+            "shapes": [
+                {"id": "tear_off_ad", "version": "v0"}
+            ],
+            "sketch": true
+        }
+    },
     "__instrument": {
         "wrench": {
             "keywords": ["technical", "tool"],
@@ -898,7 +910,11 @@
         },
         "mug": {
             "keywords": ["drink", "liquid", "cup"],
-            "name": "mug"
+            "name": "mug",
+            "shapes": [
+                {"id": "mug", "version": "v0"}
+            ],
+            "sketch": true
         },
         "pan": {
             "keywords": ["tool", "kitchen"],
@@ -1125,6 +1141,15 @@
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "six grapes"
+            },
+            "grass": {
+                "categories": ["natural"],
+                "keywords": ["natural", "plant", "botany"],
+                "name": "grass",
+                "shapes": [
+                    {"id": "grass", "version": "v0"}
+                ],
+                "sketch": true
             },
             "oat": {
                 "categories": ["natural"],
@@ -2088,6 +2113,14 @@
                 {"id": "bicycle", "offset": [0, 2]},
                 {"id": "p_small", "offset": [-5, -3]}
             ]
+        },
+        "bicycle_locker": {
+            "keywords": ["road", "parking"],
+            "name": "bicycle locker",
+            "shapes": [
+                {"id": "bicycle_locker", "version": "v0"}
+            ],
+            "sketch": true
         },
         "p_small___bicycle_parking_stand": {
             "keywords": ["road"],

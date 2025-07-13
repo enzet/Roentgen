@@ -381,7 +381,9 @@ def construct_table(
         if roentgen_scheme.is_ignored(tag) or id_scheme.is_ignored(tag):
             continue
 
-        roentgen_shapes: list[str] = roentgen_scheme.shapes.get(tag.descriptor, [])
+        roentgen_shapes: list[str] = roentgen_scheme.shapes.get(
+            tag.descriptor, []
+        )
         id_tagging_icon: str | None = id_scheme.icons.get(tag.descriptor, None)
 
         element: Element = Element(
