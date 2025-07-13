@@ -381,10 +381,13 @@ def construct_table(
         if roentgen_scheme.is_ignored(tag) or id_scheme.is_ignored(tag):
             continue
 
+        roentgen_shapes: list[str] = roentgen_scheme.shapes.get(tag.descriptor, [])
+        id_tagging_icon: str | None = id_scheme.icons.get(tag.descriptor, None)
+
         element: Element = Element(
             tag=tag.descriptor,
-            roentgen_shapes=roentgen_scheme.shapes.get(tag.descriptor, []),
-            id_tagging_icon=id_scheme.icons.get(tag.descriptor, None),
+            roentgen_shapes=roentgen_shapes,
+            id_tagging_icon=id_tagging_icon,
             total_count=tag.total_count,
         )
         result.append(element)
@@ -476,6 +479,9 @@ def add_table(
     tbody = html.Element("tbody")
     table.append(tbody)
 
+    roentgen_usages: int = 0
+    id_usages: int = 0
+
     for element in elements:
         row = html.Element("tr")
 
@@ -489,8 +495,11 @@ def add_table(
             ):
                 is_placeholder = True
 
+        roentgen_usages += int(bool(element.roentgen_shapes))
         if is_placeholder:
             row.set("style", "background-color: #FFEEFF;")
+        else:
+            id_usages += int(bool(element.id_tagging_icon))
 
         tbody.append(row)
 
@@ -595,6 +604,8 @@ def add_table(
         count_cell.set("class", "count")
         count_cell.text = f"{element.total_count / 1000:.0f} K"
         row.append(count_cell)
+
+    logger.debug("Difference: %s.", id_usages - roentgen_usages)
 
 
 def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
