@@ -2796,7 +2796,7 @@
                     "name": "Venezuelan bolivar sign",
                     "keywords": ["venezuela", "currency"],
                     "shapes": [{"id": "bolivar", "version": "v0"}],
-                    "is_sketch": true
+                    "sketch": true
                 },
                 "dollar": {
                     "name": "US dollar sign",
@@ -2806,13 +2806,13 @@
                     "name": "Malaysian ringgit sign",
                     "keywords": ["malaysia", "currency"],
                     "shapes": [{"id": "rm", "version": "v0"}],
-                    "is_sketch": true
+                    "sketch": true
                 },
                 "ruble": {
                     "name": "Russian ruble sign",
                     "keywords": ["russia", "currency"],
                     "shapes": [{"id": "ruble", "version": "v0"}],
-                    "is_sketch": true
+                    "sketch": true
                 }
             },
             "__cyrillic": {
@@ -3205,7 +3205,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter B",
                     "shapes": [{"id": "b", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["B"]
                 },
                 "c": {
@@ -3213,7 +3213,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter C",
                     "shapes": [{"id": "c", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["C"]
                 },
                 "d": {
@@ -3221,7 +3221,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter D",
                     "shapes": [{"id": "d", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["D"]
                 },
                 "e": {
@@ -3229,7 +3229,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter E",
                     "shapes": [{"id": "e", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["E"]
                 },
                 "f": {
@@ -3237,7 +3237,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter F",
                     "shapes": [{"id": "f", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["F"]
                 },
                 "g": {
@@ -3245,7 +3245,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter G",
                     "shapes": [{"id": "g", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["G"]
                 },
                 "h": {
@@ -3266,7 +3266,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter J",
                     "shapes": [{"id": "j", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["J"]
                 },
                 "k": {
@@ -3274,7 +3274,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter K",
                     "shapes": [{"id": "k", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["K"]
                 },
                 "l": {
@@ -3282,7 +3282,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter L",
                     "shapes": [{"id": "l", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["L"]
                 },
                 "m": {
@@ -3290,7 +3290,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter M",
                     "shapes": [{"id": "m", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["M"]
                 },
                 "n": {
@@ -3298,7 +3298,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter N",
                     "shapes": [{"id": "n", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["N"]
                 },
                 "o": {
@@ -3306,7 +3306,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter O",
                     "shapes": [{"id": "0", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["O"]
                 },
                 "p": {
@@ -3323,7 +3323,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter Q",
                     "shapes": [{"id": "q", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["Q"]
                 },
                 "r": {
@@ -3331,7 +3331,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter R",
                     "shapes": [{"id": "r", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["R"]
                 },
                 "s": {
@@ -3339,7 +3339,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter S",
                     "shapes": [{"id": "s", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["S"]
                 },
                 "t": {
@@ -3352,7 +3352,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter U",
                     "shapes": [{"id": "u", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["U"]
                 },
                 "v": {
@@ -3360,7 +3360,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter V",
                     "shapes": [{"id": "v", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["V"]
                 },
                 "w": {
@@ -3368,7 +3368,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter W",
                     "shapes": [{"id": "w", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["W"]
                 },
                 "x": {
@@ -3396,7 +3396,7 @@
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter Z",
                     "shapes": [{"id": "z", "version": "v0"}],
-                    "is_sketch": true,
+                    "sketch": true,
                     "unicode": ["Z"]
                 }
             },
@@ -3405,7 +3405,7 @@
                     "name": "radical script",
                     "keywords": ["radical", "script"],
                     "shapes": [{"id": "radical_script", "version": "v0"}],
-                    "is_sketch": true
+                    "sketch": true
                 }
             },
             "free": {
@@ -3484,13 +3484,13 @@
                 "name": "5G",
                 "keywords": ["5G", "5th generation", "wireless"],
                 "shapes": [{"id": "5g", "version": "v0"}],
-                "is_sketch": true
+                "sketch": true
             },
             "5g_middle": {
                 "name": "medius size 5G inscription",
                 "keywords": ["5G", "5th generation", "wireless"],
                 "shapes": [{"id": "5g_middle", "version": "v1"}],
-                "is_sketch": true
+                "sketch": true
             }
         },
         "venus_and_mars_symbols": {
