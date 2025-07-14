@@ -344,23 +344,14 @@ def save_tags_to_json(
 def check_descriptor(tag: TagInfo, descriptor: str) -> bool:
     """Check if a tag matches a descriptor."""
 
-    for pair in tag.descriptor.split(";"):
-        if descriptor.endswith(":") and pair.startswith(descriptor):
+    for part in tag.descriptor.split(";"):
+        if part == descriptor:
             return True
-        if descriptor == pair:
-            return True
-    return False
-
-
-def is_ignored(tag: TagInfo, scheme: dict[str, Any]) -> bool:
-    """Check if a tag is ignored."""
-    for descriptor in (
-        scheme.get("__ignore", [])
-        + scheme.get("__only_ways", [])
-        + scheme.get("__discarded", [])
-    ):
-        if check_descriptor(tag, descriptor):
-            return True
+        for pair in tag.descriptor.split("="):
+            if descriptor.endswith(":") and pair.startswith(descriptor):
+                return True
+            if descriptor == pair:
+                return True
     return False
 
 
