@@ -594,6 +594,10 @@ class Icon:
 
         return icon
 
+    def get_id(self) -> str:
+        """Get icon identifier."""
+        return self.icon_id
+
     def get_shape_ids(self) -> list[str]:
         """Get all shape identifiers in the icon."""
         return [x.shape_id for x in self.shape_specifications]
