@@ -2902,7 +2902,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_z", "version": "v0"}
+                        {"id": "3", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -3062,7 +3062,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_ch", "version": "v0"}
+                        {"id": "4", "version": "v0"}
                     ],
                     "sketch": true
                 },
