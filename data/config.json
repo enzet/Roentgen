@@ -1,4 +1,13 @@
 {
+    "__archeology": {
+        "tumulus": {
+            "todo": "check version",
+            "keywords": ["archeology", "historic"],
+            "name": "tumulus",
+            "shapes": [{"id": "tumulus", "version": "v0"}],
+            "sketch": true
+        }
+    },
     "__architecture": {
         "__building": {
             "apartments_1_story": {
@@ -76,6 +85,28 @@
                 "keywords": ["architecture", "building", "house"],
                 "name": "five-story apartments building with skillion roof"
             },
+            "apartments_6_story": {
+                "categories": ["building"],
+                "check_version": "true",
+                "keywords": ["architecture", "building", "house"],
+                "name": "five-story apartments building",
+                "shapes": [{"id": "apartments_6_story", "version": "v0"}],
+                "sketch": "true"
+            },
+            "barn": {
+                "todo": "check version",
+                "keywords": ["building", "architecture"],
+                "name": "barn",
+                "shapes": [{"id": "barn", "version": "v0"}],
+                "sketch": true
+            },
+            "barn_and_pitchfork": {
+                "todo": "check version",
+                "keywords": ["building", "architecture"],
+                "name": "barn and pitchfork",
+                "shapes": [{"id": "barn_and_pitchfork", "version": "v0"}],
+                "sketch": true
+            },
             "building": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "house"],
@@ -129,6 +160,20 @@
                 "keywords": ["egypt", "architecture", "building", "historic"],
                 "name": "pyramid"
             },
+            "semidetached_house": {
+                "todo": "check version",
+                "keywords": ["building", "architecture"],
+                "name": "semidetached house",
+                "shapes": [{"id": "semidetached_house", "version": "v0"}],
+                "sketch": true
+            },
+            "stadium": {
+                "todo": "check version",
+                "keywords": ["building", "sport"],
+                "name": "stadium",
+                "shapes": [{"id": "stadium", "version": "v0"}],
+                "sketch": true
+            },
             "static_caravan": {
                 "categories": ["building"],
                 "keywords": ["transport", "architecture", "building"],
@@ -137,6 +182,13 @@
                     {"id": "static_caravan", "version": "v0"}
                 ],
                 "sketch": true
+            },
+            "stilt_house": {
+                "keywords": ["building", "architecture"],
+                "name": "stilt house",
+                "shapes": [{"id": "stilt_house", "version": "v1"}],
+                "sketch": true,
+                "todo": "check name and version"
             },
             "townhall": {
                 "categories": ["building"],
@@ -178,6 +230,15 @@
             }
         }
     },
+    "__astronomy": {
+        "sun": {
+            "todo": "check version",
+            "keywords": ["star", "light"],
+            "name": "Sun",
+            "shapes": [{"id": "sun", "version": "v0"}],
+            "sketch": true
+        }
+    },
     "__art": {
         "film": {
             "unicode": ["🎞️"],
@@ -191,6 +252,13 @@
         "picture": {
             "name": "picture in frame",
             "keywords": ["art", "image", "photo"]
+        },
+        "sculpture": {
+            "todo": "check version",
+            "keywords": ["art"],
+            "name": "sculpture",
+            "shapes": [{"id": "sculpture", "version": "v0"}],
+            "sketch": true
         },
         "statue": {
             "categories": ["historic"],
@@ -220,6 +288,34 @@
             }
         }
     },
+    "__attraction": {
+        "amusement_ride": {
+            "keywords": ["attraction"],
+            "unicode": ["🎠"],
+            "name": "amusement ride"
+        },
+        "big_wheel": {
+            "keywords": ["attraction"],
+            "name": "big wheel",
+            "shapes": [{"id": "big_wheel", "version": "v0"}],
+            "sketch": true,
+            "todo": "check id, name and version"
+        },
+        "carousel": {
+            "todo": "check version",
+            "keywords": ["attraction"],
+            "name": "carousel",
+            "shapes": [{"id": "carousel", "version": "v0"}],
+            "sketch": true
+        },
+        "circus": {
+            "todo": "check version",
+            "keywords": ["attraction"],
+            "name": "circus",
+            "shapes": [{"id": "circus", "version": "v0"}],
+            "sketch": true
+        }
+    },
     "__barrier": {
         "chain_barrier": {
             "categories": ["barrier"],
@@ -240,6 +336,13 @@
             "categories": ["barrier"],
             "keywords": ["access", "interior", "exterior"],
             "name": "door with arrow"
+        },
+        "fence": {
+            "todo": "check version",
+            "keywords": ["barrier", "access"],
+            "name": "fence",
+            "shapes": [{"id": "fence", "version": "v0"}],
+            "sketch": true
         },
         "garage_door": {
             "categories": ["barrier"],
@@ -262,6 +365,13 @@
                 {"id": "maze", "offset": [-2,  0]},
                 {"id": "arrow_right_short", "offset": [5, -1]}
             ]
+        },
+        "rope_barrier": {
+            "keywords": ["access"],
+            "name": "rope between two sticks",
+            "shapes": [{"id": "rope_barrier", "version": "v0"}],
+            "sketch": true,
+            "todo": "check name and version"
         }
     },
     "__body_part": {
@@ -276,6 +386,23 @@
             "name": "tooth"
         }
     },
+    "__burial": {
+        "sarcophagus": {
+            "todo": "check version",
+            "keywords": [
+                "grame", "burial", "cemetery", "underground", "memorial",
+                "archeology"
+            ],
+            "name": "sarcophagus",
+            "shapes": [{"id": "sarcophagus", "version": "v0"}],
+            "sketch": true
+        },
+        "tomb": {
+            "unicode": ["🪦"],
+            "name": "tomb",
+            "keywords": ["grave", "burial", "cemetery", "memorial"]
+        }
+    },
     "__car_part": {
         "engine": {
             "keywords": ["car", "vehicle", "technical"],
@@ -284,6 +411,15 @@
         "tyre": {
             "keywords": ["car", "vehicle", "wheel"],
             "name": "tyre"
+        }
+    },
+    "__city": {
+        "residential": {
+            "todo": "check version",
+            "keywords": ["city", "town"],
+            "name": "residential",
+            "shapes": [{"id": "residential", "version": "v0"}],
+            "sketch": true
         }
     },
     "__clothes": {
@@ -362,6 +498,20 @@
         "connector_type_e": {
             "keywords": ["electric", "vehicle", "technical"],
             "name": "type E connector"
+        },
+        "light_bulb": {
+            "todo": "check version",
+            "keywords": ["electric"],
+            "name": "light bulb",
+            "shapes": [{"id": "light_bulb", "version": "v0"}],
+            "sketch": true
+        },
+        "no_light_bulb": {
+            "keywords": ["electric"],
+            "name": "light bulb striked out",
+            "shapes": [{"id": "no_light_bulb", "version": "v0"}],
+            "sketch": true,
+            "todo": "check name and version"
         }
     },
     "__electronic_device": {
@@ -701,6 +851,13 @@
             "keywords": ["food", "dessert"],
             "name": "cupcake"
         },
+        "hot_dog": {
+            "keywords": ["food", "street", "meat", "bread", "saussage"],
+            "name": "hot dog",
+            "shapes": [{"id": "hot_dog", "version": "v0"}],
+            "sketch": true,
+            "todo": "check keywords, name and version"
+        },
         "ice_cream": {
             "unicode": ["🍨"],
             "keywords": ["food", "dessert"],
@@ -709,16 +866,41 @@
         "ice_cream_2": {
             "keywords": ["food", "dessert"],
             "name": "ice cream cone"
-        }
-    },
-    "__hand_items": {
-        "bag": {"keywords": ["storage"], "name": "bag"},
-        "bag_with_percent": {
-            "keywords": ["storage", "sale"],
-            "name": "bag with percent"
+        },
+        "noodles": {
+            "keywords": ["food", "asian"],
+            "name": "boul with noodles",
+            "shapes": [{"id": "noodles", "version": "v0"}],
+            "sketch": true,
+            "todo": "check name and version"
+        },
+        "roll_and_sticks": {
+            "keywords": [""],
+            "name": "asian sticks holding sushi roll",
+            "shapes": [{"id": "roll_and_sticks", "version": "v0"}],
+            "sketch": true,
+            "todo": "check name and version"
+        },
+        "steak_and_fork": {
+            "keywords": ["food", "tool", "kitchen"],
+            "name": "steak and fork"
         }
     },
     "__human": {
+        "female": {
+            "todo": "check version",
+            "keywords": ["person", "human", "woman"],
+            "name": "female",
+            "shapes": [{"id": "female", "version": "v0"}],
+            "sketch": true
+        },
+        "male": {
+            "todo": "check version",
+            "keywords": ["person", "human", "man"],
+            "name": "male",
+            "shapes": [{"id": "male", "version": "v0"}],
+            "sketch": true
+        },
         "massage": {
             "keywords": ["spa", "wellness", "relaxation"],
             "name": "massage"
@@ -743,12 +925,37 @@
             "name": "woman and man"
         }
     },
+    "__hyg": {
+        "toothbrush": {
+            "todo": "check version",
+            "keywords": ["hyg", "teeth"],
+            "name": "toothbrush",
+            "shapes": [{"id": "toothbrush", "version": "v0"}],
+            "sketch": true,
+            "todo": "check keywords"
+        },
+        "toothbrush_and_toothpaste": {
+            "todo": "check version",
+            "keywords": ["hyg", "teeth"],
+            "name": "toothbrush and toothpaste",
+            "shapes": [{"id": "toothbrush_and_toothpaste", "version": "v0"}],
+            "sketch": true,
+            "todo": "check keywords"
+        }
+    },
     "__indoor": {
         "__furniture": {
             "bed": {
                 "unicode": ["🛌"],
                 "keywords": ["furniture", "sleep"],
                 "name": "bed"
+            },
+            "bed_and_house": {
+                "todo": "check version",
+                "keywords": ["apartments", "hotel", "hostel"],
+                "name": "bed and house",
+                "shapes": [{"id": "bed_and_house", "version": "v0"}],
+                "sketch": true
             },
             "bed_and_roof": {
                 "keywords": ["furniture", "sleep"], "name": "bed and roof"
@@ -836,7 +1043,7 @@
     },
     "__kitchen": {
         "amphora": {
-            "keywords": ["storage", "historic"],
+            "keywords": ["storage", "historic", "archeology"],
             "name": "amphora"
         },
         "bbq": {
@@ -895,6 +1102,15 @@
             ],
             "sketch": true
         },
+        "glass": {
+            "keywords": ["drink", "liquid", "juice"],
+            "name": "glass",
+            "shapes": [
+                {"id": "glass", "version": "v0"}
+            ],
+            "sketch": true,
+            "todo": "check version"
+        },
         "glass_with_straw_and_slice": {
             "keywords": ["drink", "liquid", "juice"],
             "name": "glass with straw and slice",
@@ -920,10 +1136,6 @@
             "keywords": ["tool", "kitchen"],
             "name": "pan",
             "unicode": ["🍳"]
-        },
-        "steak_and_fork": {
-            "keywords": ["food", "tool", "kitchen"],
-            "name": "steak and fork"
         }
     },
     "__leisure": {
@@ -946,6 +1158,12 @@
             "dog_and_cross": {
                 "keywords": ["animal", "pet", "veterinary"],
                 "name": "dog and cross"
+            },
+            "horse": {
+                "keywords": ["animal"],
+                "name": "horse",
+                "shapes": [{"id": "horse", "version": "v1"}],
+                "sketch": true
             }
         },
         "__plant": {
@@ -1151,6 +1369,26 @@
                 ],
                 "sketch": true
             },
+            "grass_and_water": {
+                "categories": ["natural"],
+                "keywords": ["natural", "plant", "botany"],
+                "name": "grass and water",
+                "shapes": [
+                    {"id": "grass_and_water", "version": "v0"}
+                ],
+                "sketch": true,
+                "todo": "check version"
+            },
+            "grass_and_flower": {
+                "categories": ["natural"],
+                "keywords": ["natural", "plant", "botany"],
+                "name": "grass and flower",
+                "shapes": [
+                    {"id": "grass_and_flower", "version": "v0"}
+                ],
+                "sketch": true,
+                "todo": "check version"
+            },
             "oat": {
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
@@ -1178,10 +1416,26 @@
             }
         }
     },
+    "__marking": {
+        "label_with_99": {
+            "todo": "check version",
+            "keywords": ["marking", "sale"],
+            "name": "label with \".99\" inscription",
+            "shapes": [{"id": "label_with_99", "version": "v0"}],
+            "sketch": true
+        }
+    },
     "__material": {
         "bricks": {
             "keywords": ["material"],
             "name": "brick wall"
+        },
+        "log_lying": {
+            "keywords": ["material", "wood"],
+            "name": "lying log",
+            "shapes": [{"id": "log_lying", "version": "v0"}],
+            "sketch": true,
+            "todo": "check version"
         },
         "wood": {
             "unicode": ["🪵"],
@@ -1359,11 +1613,6 @@
         }
     },
     "__other": {
-        "amusement_ride": {
-            "keywords": ["attraction", "recreation"],
-            "unicode": ["🎠"],
-            "name": "amusement ride"
-        },
         "atm": {
             "keywords": ["bank", "money", "finance", "cash"],
             "name": "bill acceptor"
@@ -1700,6 +1949,13 @@
             "name": "solar panel",
             "keywords": ["energy", "sun", "electricity", "renewable", "power"]
         },
+        "solar_panel_on_roof": {
+            "keywords": ["energy", "sun", "electricity", "renewable", "power"],
+            "name": "solar panel on roof",
+            "shapes": [{"id": "solar_panel_on_roof", "version": "v0"}],
+            "sketch": true,
+            "todo": "check version"
+        },
         "sos_phone": {
             "categories": ["emergency"],
             "name": "phone with SOS",
@@ -1762,11 +2018,6 @@
         "toll_booth": {
             "name": "toll booth",
             "keywords": ["road", "payment", "barrier", "highway"]
-        },
-        "tomb": {
-            "unicode": ["🪦"],
-            "name": "tomb",
-            "keywords": ["grave", "burial", "cemetery", "memorial"]
         },
         "torch": {
             "name": "torch",
@@ -1900,6 +2151,14 @@
             "keywords": ["curb", "edge", "sidewalk", "street", "road"],
             "name": "kerb"
         },
+        "no_crossing": {
+            "keywords": ["pedestrian", "crosswalk", "road"],
+            "name": "no crossing",
+            "shapes": [
+                {"id": "no_crossing", "version": "v0"}
+            ],
+            "sketch": true
+        },
         "toucan_crossing": {
             "name": "toucan crossing",
             "keywords": ["pedestrian", "crosswalk", "road"]
@@ -2018,10 +2277,31 @@
             "keywords": ["sport", "bench"],
             "name": "incline bench"
         },
+        "tower_climbing": {
+            "todo": "check version",
+            "keywords": ["sport"],
+            "name": "climbing tower",
+            "shapes": [{"id": "tower_climbing", "version": "v0"}],
+            "sketch": true
+        },
         "wall_bars": {
             "categories": ["sport"],
             "keywords": ["sport", "athletics"],
             "name": "wall bars"
+        }
+    },
+    "__storage": {
+        "bag": {"keywords": ["storage"], "name": "bag"},
+        "bag_with_99": {
+            "todo": "check version",
+            "keywords": ["storage", "sale"],
+            "name": "bag with \".99\" label",
+            "shapes": [{"id": "bag_with_99", "version": "v0"}],
+            "sketch": true
+        },
+        "bag_with_percent": {
+            "keywords": ["storage", "sale"],
+            "name": "bag with percent"
         }
     },
     "__street": {
@@ -2266,6 +2546,22 @@
             ]
         }
     },
+    "__supply": {
+        "well": {
+            "todo": "check version",
+            "keywords": ["water"],
+            "name": "well",
+            "shapes": [{"id": "well", "version": "v0"}],
+            "sketch": true
+        },
+        "pitcher_pump": {
+            "todo": "check version",
+            "keywords": ["water"],
+            "name": "pitcher pump",
+            "shapes": [{"id": "pitcher_pump", "version": "v0"}],
+            "sketch": true
+        }
+    },
     "__surface": {
         "beach": {
             "keywords": ["sea", "water", "ocean", "lake"],
@@ -2305,6 +2601,13 @@
                 "name": "@ in square",
                 "keywords": ["internet", "email"]
             },
+            "backward": {
+                "todo": "check version",
+                "keywords": ["direction", "arrow"],
+                "name": "backward",
+                "shapes": [{"id": "backward", "version": "v0"}],
+                "sketch": true
+            },
             "circle_11": {
                 "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 11 px"
@@ -2326,6 +2629,12 @@
                 "keywords": ["ellipse", "figure", "geometry"],
                 "name": "empty circle"
             },
+            "circle_with_dashes": {
+                "keywords": ["ellipse", "figure", "geometry"],
+                "name": "circle with dashes",
+                "shapes": [{"id": "circle_with_dashes", "version": "v0"}],
+                "sketch": true
+            },
             "clockwise": {
                 "keywords": ["direction", "circle", "rotation"],
                 "name": "clockwise arrow"
@@ -2346,6 +2655,13 @@
                 "unicode": ["⚡"],
                 "keywords": ["thunder"],
                 "name": "lightning"
+            },
+            "forward": {
+                "todo": "check version",
+                "keywords": ["direction", "arrow"],
+                "name": "forward",
+                "shapes": [{"id": "forward", "version": "v0"}],
+                "sketch": true
             },
             "glider": {
                 "keywords": ["game", "life", "automata", "programming"],
@@ -2475,6 +2791,30 @@
             }
         },
         "__letter": {
+            "__currency": {
+                "bolivar": {
+                    "name": "Venezuelan bolivar sign",
+                    "keywords": ["venezuela", "currency"],
+                    "shapes": [{"id": "bolivar", "version": "v0"}],
+                    "is_sketch": true
+                },
+                "dollar": {
+                    "name": "US dollar sign",
+                    "keywords": ["money", "currency", "usd"]
+                },
+                "ringgit": {
+                    "name": "Malaysian ringgit sign",
+                    "keywords": ["malaysia", "currency"],
+                    "shapes": [{"id": "rm", "version": "v0"}],
+                    "is_sketch": true
+                },
+                "ruble": {
+                    "name": "Russian ruble sign",
+                    "keywords": ["russia", "currency"],
+                    "shapes": [{"id": "ruble", "version": "v0"}],
+                    "is_sketch": true
+                }
+            },
             "__cyrillic": {
                 "cyrillic_a": {
                     "name": "Cyrillic letter A",
@@ -2482,7 +2822,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_a", "version": "v0"}
+                        {"id": "a", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2502,7 +2842,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_v", "version": "v0"}
+                        {"id": "b", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2532,7 +2872,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_ye", "version": "v0"}
+                        {"id": "e", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2592,7 +2932,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_k", "version": "v0"}
+                        {"id": "k", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2612,7 +2952,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_m", "version": "v0"}
+                        {"id": "m", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2622,7 +2962,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_n", "version": "v0"}
+                        {"id": "h", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2632,7 +2972,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_o", "version": "v0"}
+                        {"id": "0", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2652,7 +2992,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_r", "version": "v0"}
+                        {"id": "p", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2662,7 +3002,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_s", "version": "v0"}
+                        {"id": "c", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2672,7 +3012,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_t", "version": "v0"}
+                        {"id": "t", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2702,7 +3042,7 @@
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
                     "shapes": [
-                        {"id": "cyrillic_h", "version": "v0"}
+                        {"id": "x", "version": "v0"}
                     ],
                     "sketch": true
                 },
@@ -2860,32 +3200,176 @@
                 }
             },
             "__latin": {
+                "b": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter B",
+                    "shapes": [{"id": "b", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["B"]
+                },
+                "c": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter C",
+                    "shapes": [{"id": "c", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["C"]
+                },
+                "d": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter D",
+                    "shapes": [{"id": "d", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["D"]
+                },
+                "e": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter E",
+                    "shapes": [{"id": "e", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["E"]
+                },
+                "f": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter F",
+                    "shapes": [{"id": "f", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["F"]
+                },
+                "g": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter G",
+                    "shapes": [{"id": "g", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["G"]
+                },
                 "h": {
                     "categories": ["letter"],
-                    "name": "letter H",
+                    "name": "Latin letter H",
                     "unicode": ["H"]
                 },
                 "i": {
                     "categories": ["letter"],
-                    "name": "letter i",
+                    "name": "Latin letter i",
                     "unicode": ["i"]
                 },
                 "i_in_square": {
-                    "name": "letter i in square"
+                    "name": "Latin letter i in square"
+                },
+                "j": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter J",
+                    "shapes": [{"id": "j", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["J"]
+                },
+                "k": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter K",
+                    "shapes": [{"id": "k", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["K"]
+                },
+                "l": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter L",
+                    "shapes": [{"id": "l", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["L"]
+                },
+                "m": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter M",
+                    "shapes": [{"id": "m", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["M"]
+                },
+                "n": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter N",
+                    "shapes": [{"id": "n", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["N"]
+                },
+                "o": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter O",
+                    "shapes": [{"id": "0", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["O"]
                 },
                 "p": {
                     "categories": ["letter"],
-                    "name": "letter P",
+                    "name": "Latin letter P",
                     "unicode": ["P"]
                 },
                 "p_small": {
                     "categories": ["letter"],
                     "name": "small letter P"
                 },
+                "q": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter Q",
+                    "shapes": [{"id": "q", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["Q"]
+                },
+                "r": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter R",
+                    "shapes": [{"id": "r", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["R"]
+                },
+                "s": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter S",
+                    "shapes": [{"id": "s", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["S"]
+                },
                 "t": {
                     "categories": ["letter"],
                     "name": "letter T",
                     "unicode": ["T"]
+                },
+                "u": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter U",
+                    "shapes": [{"id": "u", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["U"]
+                },
+                "v": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter V",
+                    "shapes": [{"id": "v", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["V"]
+                },
+                "w": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter W",
+                    "shapes": [{"id": "w", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["W"]
                 },
                 "x": {
                     "categories": ["letter"],
@@ -2906,11 +3390,23 @@
                     "categories": ["letter"],
                     "name": "letter Y",
                     "unicode": ["Y"]
+                },
+                "z": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter Z",
+                    "shapes": [{"id": "z", "version": "v0"}],
+                    "is_sketch": true,
+                    "unicode": ["Z"]
                 }
             },
-            "dollar": {
-                "name": "dollar sign",
-                "keywords": ["money", "currency", "usd"]
+            "__radical": {
+                "radical_script": {
+                    "name": "radical script",
+                    "keywords": ["radical", "script"],
+                    "shapes": [{"id": "radical_script", "version": "v0"}],
+                    "is_sketch": true
+                }
             },
             "free": {
                 "name": "free"
@@ -2981,6 +3477,20 @@
                     {"id": "yin_and_yang", "version": "v2"}
                 ],
                 "sketch": true
+            }
+        },
+        "__text": {
+            "5g": {
+                "name": "5G",
+                "keywords": ["5G", "5th generation", "wireless"],
+                "shapes": [{"id": "5g", "version": "v0"}],
+                "is_sketch": true
+            },
+            "5g_middle": {
+                "name": "medius size 5G inscription",
+                "keywords": ["5G", "5th generation", "wireless"],
+                "shapes": [{"id": "5g_middle", "version": "v1"}],
+                "is_sketch": true
             }
         },
         "venus_and_mars_symbols": {
@@ -3134,6 +3644,14 @@
         "power_pole_flag": {
             "categories": ["power"],
             "name": "flag transmission pole"
+        },
+        "power_pole_flag_armless": {
+            "categories": ["power"],
+            "keywords": ["power", "electricity"],
+            "name": "armless flag transmission pole",
+            "shapes": [{"id": "power_pole_flag_armless", "version": "v0"}],
+            "sketch": true,
+            "todo": "check version"
         },
         "power_pole_triangle": {
             "categories": ["power"],
@@ -3373,6 +3891,48 @@
                 "keywords": ["transport", "sport"],
                 "name": "bicycle"
             },
+            "bicycle_1": {
+                "todo": "check version",
+                "keywords": ["transport", "sport"],
+                "name": "bicycle (1)",
+                "shapes": [{"id": "bicycle_1", "version": "v0"}],
+                "sketch": true
+            },
+            "bicycle_old_2": {
+                "todo": "check version",
+                "keywords": ["transport", "sport"],
+                "name": "bicycle (old, 2)",
+                "shapes": [{"id": "bicycle_old_2", "version": "v0"}],
+                "sketch": true
+            },
+            "bicycle_3": {
+                "todo": "check version",
+                "keywords": ["transport", "sport"],
+                "name": "bicycle (3)",
+                "shapes": [{"id": "bicycle_3", "version": "v0"}],
+                "sketch": true
+            },
+            "bicycle_4": {
+                "todo": "check version",
+                "keywords": ["transport", "sport"],
+                "name": "bicycle (4)",
+                "shapes": [{"id": "bicycle_4", "version": "v0"}],
+                "sketch": true
+            },
+            "bicycle_5": {
+                "todo": "check version",
+                "keywords": ["transport", "sport"],
+                "name": "bicycle 5",
+                "shapes": [{"id": "bicycle_5", "version": "v0"}],
+                "sketch": true
+            },
+            "bicycle_6": {
+                "todo": "check version",
+                "keywords": ["transport", "sport"],
+                "name": "bicycle (6)",
+                "shapes": [{"id": "bicycle_6", "version": "v0"}],
+                "sketch": true
+            },
             "bicycle_small": {
                 "keywords": ["transport"],
                 "name": "small bicycle",
@@ -3410,6 +3970,13 @@
                     {"id": "key", "offset": [-1, -4], "flip_horizontally": true}
                 ]
             },
+            "motorcycle": {
+                "keywords": ["transport", "bike"],
+                "name": "motorcycle",
+                "shapes": [{"id": "motorcycle", "version": "v0"}],
+                "sketch": true,
+                "todo": "check version"
+            },
             "skateboard": {
                 "unicode": ["🛹"],
                 "keywords": ["transport", "sport"],
@@ -3428,6 +3995,13 @@
                 "keywords": ["transport", "accessibility"],
                 "name": "wheelchair"
             }
+        },
+        "boat": {
+            "todo": "check version",
+            "keywords": ["transport", "water", "ship"],
+            "name": "boat",
+            "shapes": [{"id": "boat", "version": "v0"}],
+            "sketch": true
         },
         "bus": {
             "categories": ["public transport"],
@@ -3672,30 +4246,53 @@
     },
     "__vending": {
         "vending_angle": {
+            "keywords": ["sell", "automat"],
             "name": "vending machine with angle"
         },
         "vending_bottle": {
+            "keywords": ["sell", "automat"],
             "name": "vending machine with bottle"
         },
+        "vending_bottle_upside_down": {
+            "keywords": ["sell", "automat"],
+            "name": "vending machine with upside down bottle",
+            "shapes": [{"id": "vending_bottle_upside_down", "version": "v0"}],
+            "sketch": true,
+            "todo": "check name and version"
+        },
         "vending_candles": {
+            "keywords": ["sell", "automat"],
             "name": "vending machine with candle"
         },
         "vending_chemist": {
+            "keywords": ["sell", "automat"],
             "name": "vending machine with Greek cross"
         },
+        "vending_condoms": {
+            "todo": "check version",
+            "keywords": ["sell", "automat"],
+            "name": "vending machine with condoms",
+            "shapes": [{"id": "vending_condoms", "version": "v0"}],
+            "sketch": true
+        },
         "vending_drop": {
+            "keywords": ["sell", "automat"],
             "name": "vending machine with drop"
         },
         "vending_excrement_bag": {
+            "keywords": ["sell", "automat"],
             "name": "excrement bag vending"
         },
         "vending_machine": {
+            "keywords": ["sell", "automat"],
             "name": "vending machine"
         },
         "vending_p": {
+            "keywords": ["sell", "automat"],
             "name": "vending machine with letter P"
         },
         "vending_tickets": {
+            "keywords": ["sell", "automat"],
             "name": "ticket vending machine"
         }
     },
