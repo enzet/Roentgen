@@ -1,7 +1,6 @@
 {
     "__archeology": {
         "tumulus": {
-            "todo": "check version",
             "keywords": ["archeology", "historic"],
             "name": "tumulus",
             "shapes": [{"id": "tumulus", "version": "v0"}],
@@ -94,14 +93,12 @@
                 "sketch": "true"
             },
             "barn": {
-                "todo": "check version",
                 "keywords": ["building", "architecture"],
                 "name": "barn",
-                "shapes": [{"id": "barn", "version": "v0"}],
+                "shapes": [{"id": "barn", "version": "v3"}],
                 "sketch": true
             },
             "barn_and_pitchfork": {
-                "todo": "check version",
                 "keywords": ["building", "architecture"],
                 "name": "barn and pitchfork",
                 "shapes": [{"id": "barn_and_pitchfork", "version": "v0"}],
@@ -161,14 +158,12 @@
                 "name": "pyramid"
             },
             "semidetached_house": {
-                "todo": "check version",
                 "keywords": ["building", "architecture"],
                 "name": "semidetached house",
                 "shapes": [{"id": "semidetached_house", "version": "v0"}],
                 "sketch": true
             },
             "stadium": {
-                "todo": "check version",
                 "keywords": ["building", "sport"],
                 "name": "stadium",
                 "shapes": [{"id": "stadium", "version": "v0"}],
@@ -184,11 +179,13 @@
                 "sketch": true
             },
             "stilt_house": {
-                "keywords": ["building", "architecture"],
+                "keywords": [
+                    "building", "architecture", "pile", "lake", "dwelling",
+                    "water", "flood"
+                ],
                 "name": "stilt house",
-                "shapes": [{"id": "stilt_house", "version": "v1"}],
-                "sketch": true,
-                "todo": "check name and version"
+                "shapes": [{"id": "stilt_house", "version": "v2"}],
+                "sketch": true
             },
             "townhall": {
                 "categories": ["building"],
@@ -232,7 +229,6 @@
     },
     "__astronomy": {
         "sun": {
-            "todo": "check version",
             "keywords": ["star", "light"],
             "name": "Sun",
             "shapes": [{"id": "sun", "version": "v0"}],
@@ -254,7 +250,6 @@
             "keywords": ["art", "image", "photo"]
         },
         "sculpture": {
-            "todo": "check version",
             "keywords": ["art"],
             "name": "sculpture",
             "shapes": [{"id": "sculpture", "version": "v0"}],
@@ -294,12 +289,11 @@
             "unicode": ["🎠"],
             "name": "amusement ride"
         },
-        "big_wheel": {
+        "ferris_wheel": {
             "keywords": ["attraction"],
-            "name": "big wheel",
-            "shapes": [{"id": "big_wheel", "version": "v0"}],
-            "sketch": true,
-            "todo": "check id, name and version"
+            "name": "Ferris wheel",
+            "shapes": [{"id": "ferris_wheel", "version": "v0"}],
+            "sketch": true
         },
         "carousel": {
             "todo": "check version",
@@ -1157,12 +1151,30 @@
             },
             "dog_and_cross": {
                 "keywords": ["animal", "pet", "veterinary"],
-                "name": "dog and cross"
+                "name": "dog with cross sign"
             },
             "horse": {
                 "keywords": ["animal"],
                 "name": "horse",
                 "shapes": [{"id": "horse", "version": "v1"}],
+                "sketch": true
+            },
+            "horse_and_cross": {
+                "keywords": ["animal"],
+                "name": "horse with cross sign",
+                "shapes": [
+                    {"id": "horse", "version": "v1"},
+                    {"id": "x_4", "offset": [-4, -5]}
+                ],
+                "sketch": true
+            },
+            "horse_and_check_mark": {
+                "keywords": ["animal"],
+                "name": "horse with check mark",
+                "shapes": [
+                    {"id": "horse", "version": "v1"},
+                    {"id": "check_mark_4", "version": "v0", "offset": [-4, -5]}
+                ],
                 "sketch": true
             }
         },
@@ -3493,6 +3505,17 @@
                 "sketch": true
             }
         },
+        "check_mark_4": {
+            "categories": ["letter"],
+            "keywords": [
+                "symbol", "checkmark", "tick", "tickmark", "yes",
+                "correct", "complete"
+            ],
+            "name": "check mark 4 px",
+            "shapes": [{"id": "check_mark_4", "version": "v0"}],
+            "sketch": true,
+            "unicode": ["✓"]
+        },
         "venus_and_mars_symbols": {
             "keywords": ["male", "female", "romantic"],
             "name": "interconnected Venus and Mars symbols",
@@ -3931,6 +3954,12 @@
                 "keywords": ["transport", "sport"],
                 "name": "bicycle (6)",
                 "shapes": [{"id": "bicycle_6", "version": "v0"}],
+                "sketch": true
+            },
+            "bicycle_on_sign": {
+                "name": "bicycle on sign",
+                "keywords": ["transport", "sport"],
+                "shapes": [{"id": "bicycle_on_sign", "version": "v0"}],
                 "sketch": true
             },
             "bicycle_small": {
