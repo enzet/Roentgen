@@ -2485,7 +2485,7 @@
             "keywords": ["water"],
             "name": "toret fountain"
         },
-        "lamp_mast": {
+        "lamp_gas_mast": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp on mast",
             "shapes": [
@@ -2493,7 +2493,7 @@
             ],
             "sketch": true
         },
-        "lamp_mast_angled_2": {
+        "lamp_gas_mast_angled_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps on mast, angled",
             "shapes": [
@@ -2501,11 +2501,19 @@
             ],
             "sketch": true
         },
-        "lamp_mast_bended": {
+        "lamp_gas_mast_bended": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp on bent mast",
             "shapes": [
                 {"id": "lamp_mast_bended", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "lamp_gas_mast_bended_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two lamps on bent mast",
+            "shapes": [
+                {"id": "lamp_mast_bended_2", "version": "v0"}
             ],
             "sketch": true
         },
@@ -2517,7 +2525,7 @@
             ],
             "sketch": true
         },
-        "lamp_rope": {
+        "lamp_gas_rope": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp suspended on rope",
             "shapes": [
@@ -2525,7 +2533,7 @@
             ],
             "sketch": true
         },
-        "lamp_rope_2": {
+        "lamp_gas_rope_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps suspended on rope",
             "shapes": [

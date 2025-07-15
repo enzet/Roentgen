@@ -99,7 +99,14 @@ def main() -> None:
 
     logging.basicConfig(level=logging.INFO, format="%(message)s")
 
-    parser: argparse.ArgumentParser = argparse.ArgumentParser()
+    parser: argparse.ArgumentParser = argparse.ArgumentParser(
+        fromfile_prefix_chars="@",
+        description=(
+            "Röntgen CLI. You can also provide arguments in a file and use "
+            "`@<filename>` on the command line. Each argument should be on a "
+            "separate line in the file."
+        ),
+    )
 
     subparsers: argparse._SubParsersAction = parser.add_subparsers(
         dest="command"
