@@ -2489,7 +2489,7 @@
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp on mast",
             "shapes": [
-                {"id": "lamp_mast", "version": "v0"}
+                {"id": "lamp_gas_mast", "version": "v0"}
             ],
             "sketch": true
         },
@@ -2497,7 +2497,7 @@
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps on mast, angled",
             "shapes": [
-                {"id": "lamp_mast_angled_2", "version": "v0"}
+                {"id": "lamp_gas_mast_angled_2", "version": "v0"}
             ],
             "sketch": true
         },
@@ -2505,7 +2505,7 @@
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp on bent mast",
             "shapes": [
-                {"id": "lamp_mast_bended", "version": "v0"}
+                {"id": "lamp_gas_mast_bended", "version": "v0"}
             ],
             "sketch": true
         },
@@ -2513,7 +2513,7 @@
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps on bent mast",
             "shapes": [
-                {"id": "lamp_mast_bended_2", "version": "v0"}
+                {"id": "lamp_gas_mast_bended_2", "version": "v0"}
             ],
             "sketch": true
         },
@@ -2521,7 +2521,7 @@
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps on bent mast",
             "shapes": [
-                {"id": "lamp_mast_bended_2", "version": "v0"}
+                {"id": "lamp_mast_bended_2", "version": "v1"}
             ],
             "sketch": true
         },
@@ -2529,7 +2529,7 @@
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp suspended on rope",
             "shapes": [
-                {"id": "lamp_rope", "version": "v0"}
+                {"id": "lamp_gas_rope", "version": "v0"}
             ],
             "sketch": true
         },
@@ -2537,7 +2537,7 @@
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps suspended on rope",
             "shapes": [
-                {"id": "lamp_rope_2", "version": "v0"}
+                {"id": "lamp_gas_rope_2", "version": "v0"}
             ],
             "sketch": true
         },
