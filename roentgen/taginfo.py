@@ -26,7 +26,6 @@ logger = logging.getLogger(__name__)
 PER_PAGE: Final[int] = 100
 
 MIN_FREQUENCY_TO_DOWNLOAD: Final[int] = 100
-MIN_FREQUENCY_TO_DISPLAY: Final[int] = 1_000_000
 
 
 @dataclass
@@ -601,7 +600,9 @@ def add_table(
     logger.debug("Difference: %s.", id_usages - roentgen_usages)
 
 
-def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
+def load_all_tags(
+    cache_json: Path, api: TagInfoAPI, min_frequency: int
+) -> list[TagInfo]:
     """Load most popular tags.
 
     :param cache_json: path to the JSON file
@@ -620,7 +621,7 @@ def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
                     total_count=item["total_count"],
                 )
                 for item in json.load(input_file)["tags"]
-                if item["total_count"] >= MIN_FREQUENCY_TO_DISPLAY
+                if item["total_count"] >= min_frequency
             ]
 
     all_tags: list[TagInfo] = []
@@ -641,9 +642,7 @@ def load_all_tags(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
     logger.info("Total tags collected: %d.", len(all_tags))
     logger.info("Results saved to %s.", cache_json)
 
-    return [
-        tag for tag in all_tags if tag.total_count >= MIN_FREQUENCY_TO_DISPLAY
-    ]
+    return [tag for tag in all_tags if tag.total_count >= min_frequency]
 
 
 def load_all_keys(cache_json: Path, api: TagInfoAPI) -> list[TagInfo]:
@@ -825,6 +824,7 @@ def main(
     id_path: Path | None,
     maki_path: Path | None,
     temaki_path: Path | None,
+    min_frequency: int,
     *,
     show_grouped_tags: bool = False,
     show_all_tags: bool = False,
@@ -868,7 +868,7 @@ def main(
             if roentgen_scheme.is_ignored(key) or id_scheme.is_ignored(key):
                 continue
 
-            if key.total_count < MIN_FREQUENCY_TO_DISPLAY:
+            if key.total_count < min_frequency:
                 break
 
             if not (output_directory / f"{key.get_key()}_values.json").exists():
@@ -883,7 +883,7 @@ def main(
             values_to_display: list[TagInfo] = [
                 value
                 for value in values
-                if value.total_count >= MIN_FREQUENCY_TO_DISPLAY
+                if value.total_count >= min_frequency
                 and not roentgen_scheme.is_ignored(value)
                 and not id_scheme.is_ignored(value)
             ]
@@ -902,7 +902,7 @@ def main(
 
     if show_all_tags:
         all_tags: list[TagInfo] = load_all_tags(
-            output_directory / "most_used_tags.json", api
+            output_directory / "most_used_tags.json", api, min_frequency
         )
         (h1 := html.Element("h1")).text = "All tags"
         container.append(h1)

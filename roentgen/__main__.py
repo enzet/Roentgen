@@ -154,6 +154,12 @@ def main() -> None:
         default=False,
         help="Show all tags sorted by tag frequency.",
     )
+    taginfo_parser.add_argument(
+        "--min-frequency",
+        type=int,
+        default=1_000_000,
+        help="Minimum frequency to display a tag.",
+    )
 
     site_parser: argparse.ArgumentParser = subparsers.add_parser(
         "site",
@@ -227,6 +233,7 @@ def main() -> None:
             id_path=id_path,
             maki_path=maki_path,
             temaki_path=temaki_path,
+            min_frequency=arguments.min_frequency,
             show_defined_tags=arguments.defined_tags,
             show_grouped_tags=arguments.grouped_tags,
             show_all_tags=arguments.all_tags,
