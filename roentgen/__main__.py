@@ -136,6 +136,24 @@ def main() -> None:
     taginfo_parser.add_argument(
         "--temaki", type=Path, help="Path to the Temaki directory."
     )
+    taginfo_parser.add_argument(
+        "--defined-tags",
+        action="store_true",
+        default=False,
+        help="Show tags defined in Röntgen or iD schema.",
+    )
+    taginfo_parser.add_argument(
+        "--grouped-tags",
+        action="store_true",
+        default=False,
+        help="Show tags grouped by key sorted by key frequency.",
+    )
+    taginfo_parser.add_argument(
+        "--all-tags",
+        action="store_true",
+        default=False,
+        help="Show all tags sorted by tag frequency.",
+    )
 
     site_parser: argparse.ArgumentParser = subparsers.add_parser(
         "site",
@@ -209,7 +227,9 @@ def main() -> None:
             id_path=id_path,
             maki_path=maki_path,
             temaki_path=temaki_path,
-            show_defined_tags=True,
+            show_defined_tags=arguments.defined_tags,
+            show_grouped_tags=arguments.grouped_tags,
+            show_all_tags=arguments.all_tags,
         )
         return
 
