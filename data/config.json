@@ -1608,6 +1608,14 @@
         }
     },
     "__navigation": {
+        "compass": {
+            "keywords": ["navigation", "direction"],
+            "name": "compass",
+            "shapes": [
+                {"id": "compass", "version": "v1"}
+            ],
+            "sketch": true
+        },
         "compass_rose": {
             "keywords": ["navigation", "direction"],
             "name": "compass rose",
@@ -2354,10 +2362,6 @@
                 ],
                 "name": "street cabinet"
             },
-            "street_lamp": {
-                "keywords": ["outdoor", "road", "light", "illumination"],
-                "name": "street lamp"
-            },
             "toy_horse": {
                 "keywords": ["play", "game"],
                 "name": "rocking horse"
@@ -2480,6 +2484,58 @@
             "categories": ["amenity"],
             "keywords": ["water"],
             "name": "toret fountain"
+        },
+        "lamp_mast": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "lamp on mast",
+            "shapes": [
+                {"id": "lamp_mast", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "lamp_mast_angled_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two lamps on mast, angled",
+            "shapes": [
+                {"id": "lamp_mast_angled_2", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "lamp_mast_bended": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "lamp on bent mast",
+            "shapes": [
+                {"id": "lamp_mast_bended", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "lamp_mast_bended_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two lamps on bent mast",
+            "shapes": [
+                {"id": "lamp_mast_bended_2", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "lamp_rope": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "lamp suspended on rope",
+            "shapes": [
+                {"id": "lamp_rope", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "lamp_rope_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two lamps suspended on rope",
+            "shapes": [
+                {"id": "lamp_rope_2", "version": "v0"}
+            ],
+            "sketch": true
+        },
+        "street_lamp": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "street lamp"
         },
         "table": {
             "keywords": ["outdoor", "furniture", "sitting"],
