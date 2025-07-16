@@ -1,11 +1,16 @@
 ## Unreleased
 
 Redraw icons:
+  - `bed`,
+  - `bed_and_roof`,
+  - `bed_with_floor_and_ceiling`,
   - `bicycle___wrench`,
+  - `car___bed`,
   - `car___wrench`,
   - `coffee_cup`,
   - `orbiter`,
-  - `peach`.
+  - `peach`,
+  - `two_beds`.
 
 Adjust icon size:
   - `cave`,
