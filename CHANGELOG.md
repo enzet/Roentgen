@@ -17,6 +17,9 @@ Make icons smoother and make corners round:
 Change direction of icons:
   - `wrench`.
 
+Fix icon:
+  - `film`.
+
 
 ## 0.8.0
 
