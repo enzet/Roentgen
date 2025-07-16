@@ -7,6 +7,7 @@ from pathlib import Path
 
 from colour import Color
 
+from roentgen.collection import main as collections_main
 from roentgen.icon import Icon, Shapes, get_icons
 from roentgen.icon_collection import IconCollection
 from roentgen.site import main as site_main
@@ -172,6 +173,17 @@ def main() -> None:
         help="Path to the output directory.",
     )
 
+    collections_parser: argparse.ArgumentParser = subparsers.add_parser(
+        "collections",
+        help="Generate collections HTML page.",
+    )
+    collections_parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        help="Path to the output directory.",
+    )
+
     arguments: argparse.Namespace = parser.parse_args()
 
     if arguments.command == "icons":
@@ -238,6 +250,10 @@ def main() -> None:
             show_grouped_tags=arguments.grouped_tags,
             show_all_tags=arguments.all_tags,
         )
+        return
+
+    if arguments.command == "collections":
+        collections_main(output_directory=arguments.output)
         return
 
     if arguments.command == "site":
