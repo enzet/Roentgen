@@ -341,6 +341,44 @@ function updateIconStyle() {
     selectedIcon.paths.forEach(path => {
         drawPath(svg, scale, path);
     });
+    renderSmallPreviews();
+}
+
+// Function to render small pixelated previews.
+function renderSmallPreviews() {
+
+    if (!selectedIcon) return;
+
+    const sizes = [16, 32];
+    const canvases = [
+        document.getElementById("preview16"),
+        document.getElementById("preview32")
+    ];
+    sizes.forEach((size, idx) => {
+        const canvas = canvases[idx];
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        ctx.imageSmoothingEnabled = false;
+        ctx.clearRect(0, 0, size, size);
+        let svgString;
+        svgString = `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 16 16'>`;
+        selectedIcon.paths.forEach(path => {
+            svgString += `<path d='${path}' fill='black'/>`;
+        });
+        svgString += `</svg>`;
+        const blob = new Blob([svgString], {type: 'image/svg+xml'});
+        const url = URL.createObjectURL(blob);
+        const img = new window.Image();
+        img.onload = function() {
+            ctx.clearRect(0, 0, size, size);
+            // Draw white rectangle underneath the icon.
+            ctx.fillStyle = "white";
+            ctx.fillRect(0, 0, size, size);
+            ctx.drawImage(img, 0, 0, size, size);
+            URL.revokeObjectURL(url);
+        };
+        img.src = url;
+    });
 }
 
 // Select and display icon.
