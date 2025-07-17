@@ -38,8 +38,11 @@ def draw_icons(
     # Draw individual icons.
 
     icons_path: Path = root_path / "icons"
+    raster_path: Path = root_path / "raster"
+
     collection.draw_icons(
         output_directory=icons_path,
+        raster_directory=raster_path,
         shapes=shapes,
         license_path=license_path,
         version_path=version_path,
@@ -60,6 +63,7 @@ def draw_icons(
     icons_sketches_path.mkdir(exist_ok=True)
     collection.draw_icons(
         output_directory=icons_sketches_path,
+        raster_directory=raster_path,
         shapes=shapes,
         license_path=license_path,
         version_path=version_path,

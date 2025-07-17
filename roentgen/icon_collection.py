@@ -41,6 +41,7 @@ class IconCollection:
     def draw_icons(
         self,
         output_directory: Path,
+        raster_directory: Path,
         shapes: Shapes,
         *,
         license_path: Path,
@@ -74,12 +75,17 @@ class IconCollection:
                 return f"{x.get_id()}.svg"
 
         for icon in self.icons:
+            if only_sketch != icon.is_sketch():
+                continue
             icon.draw_to_file(
                 output_directory / get_file_name(icon),
                 shapes,
                 outline=outline,
                 outline_opacity=outline_opacity,
-                only_sketch=only_sketch,
+            )
+            icon.rasterize(
+                output_directory / get_file_name(icon),
+                raster_directory,
             )
 
         shutil.copy(license_path, output_directory / "LICENSE")

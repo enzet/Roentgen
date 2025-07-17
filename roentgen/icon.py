@@ -9,6 +9,11 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 from xml.etree import ElementTree as ET
 
+try:
+    import cairosvg
+except ImportError:
+    cairosvg = None
+
 import numpy as np
 import svgwrite
 from colour import Color
@@ -685,7 +690,6 @@ class Icon:
         *,
         outline: bool = False,
         outline_opacity: float = 1.0,
-        only_sketch: bool = False,
     ) -> None:
         """Draw icon to the SVG file.
 
@@ -694,9 +698,6 @@ class Icon:
         :param outline: if true, draw outline beneath the icon
         :param outline_opacity: opacity of the outline
         """
-        if only_sketch != self.is_sketch():
-            return
-
         if not outline:
             # If we don't need outline, we draw the icon the simplest way
             # possible.
@@ -737,6 +738,24 @@ class Icon:
 
         with file_name.open("w", encoding="utf-8") as output_file:
             svg.write(output_file)
+
+    def rasterize(self, svg_file: Path, output_base: Path) -> None:
+        """Rasterize icon to PNG."""
+        if cairosvg is None:
+            return
+
+        sizes = [16, 32]
+
+        for size in sizes:
+            output_directory = output_base / str(size)
+            output_directory.mkdir(parents=True, exist_ok=True)
+            output_file = output_directory / (self.icon_id + ".png")
+            cairosvg.svg2png(
+                url=str(svg_file),
+                write_to=str(output_file),
+                output_width=size,
+                output_height=size,
+            )
 
     def is_default(self) -> bool:
         """Check whether first shape is default."""
