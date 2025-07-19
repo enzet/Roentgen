@@ -363,7 +363,7 @@ function renderSmallPreviews() {
         let svgString;
         svgString = `<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 16 16'>`;
         selectedIcon.paths.forEach(path => {
-            svgString += `<path d='${path}' fill='black'/>`;
+            svgString += `<path d='${path}' fill='${fgColor}'/>`;
         });
         svgString += `</svg>`;
         const blob = new Blob([svgString], {type: 'image/svg+xml'});
@@ -371,9 +371,6 @@ function renderSmallPreviews() {
         const img = new window.Image();
         img.onload = function() {
             ctx.clearRect(0, 0, size, size);
-            // Draw white rectangle underneath the icon.
-            ctx.fillStyle = "white";
-            ctx.fillRect(0, 0, size, size);
             ctx.drawImage(img, 0, 0, size, size);
             URL.revokeObjectURL(url);
         };
