@@ -23,7 +23,8 @@ Change direction of icons:
   - `wrench`.
 
 Fix icon:
-  - `film`.
+  - `film`,
+  - `vending_excrement_bag`.
 
 
 ## 0.8.0

@@ -24,14 +24,14 @@ vector map icons created for
     </section>
     <section class="icon-preview-section">
         <div class="icon-preview">
-            <div class="icon-preview-small-row">
-                <canvas id="preview16" width="16" height="16" style="width:64px;height:64px;image-rendering:pixelated;image-rendering:crisp-edges;border:1px solid #eee;margin-right:8px;vertical-align:middle;"></canvas>
-                <canvas id="preview32" width="32" height="32" style="width:64px;height:64px;image-rendering:pixelated;image-rendering:crisp-edges;border:1px solid #eee;vertical-align:middle;"></canvas>
-            </div>
             <svg id="previewSvg" viewBox="0 0 16 16"></svg>
         </div>
     </section>
     <section class="icon-info-section">
+        <div class="icon-preview-small-row">
+            <canvas id="preview16" width="16" height="16" style="width:64px;height:64px;image-rendering:pixelated;image-rendering:crisp-edges;margin-right:8px;vertical-align:middle;"></canvas>
+            <canvas id="preview32" width="32" height="32" style="width:64px;height:64px;image-rendering:pixelated;image-rendering:crisp-edges;vertical-align:middle;"></canvas>
+        </div>
         <div class="search-container">
             <input type="text" id="iconSearch" class="search-input" placeholder="Search icons...">
         </div>
