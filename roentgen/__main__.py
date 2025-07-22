@@ -195,9 +195,10 @@ def main() -> None:
         for path in [
             Path("data") / "icons.svg",
             Path("data") / "connectors.svg",
-            Path("data") / "power.svg",
-            Path("data") / "letters.svg",
             Path("data") / "flag.svg",
+            Path("data") / "lamp.svg",
+            Path("data") / "letters.svg",
+            Path("data") / "power.svg",
         ]:
             shapes.add_from_file(path)
 
