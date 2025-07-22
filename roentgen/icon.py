@@ -303,16 +303,16 @@ class Shapes:
             any other irrelevant graphics.
         """
         root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
-        self.__parse(root)
+        self.__parse(root, svg_file_name)
 
-    def __parse(self, node: Element) -> None:
+    def __parse(self, node: Element, svg_file_name: Path) -> None:
         """Extract icon paths into a map.
 
         :param node: XML node that contains icon
         """
         if node.tag.endswith("}g") or node.tag.endswith("}svg"):
             for sub_node in node:
-                self.__parse(sub_node)
+                self.__parse(sub_node, svg_file_name)
             return
 
         if "id" not in node.attrib or not node.attrib["id"]:
@@ -326,8 +326,11 @@ class Shapes:
             if not is_sketch_element(node, id_):
                 path_part = ""
                 with contextlib.suppress(KeyError, ValueError):
-                    path_part = f", {node.attrib['d'].split(' ')[:3]}."
-                message: str = f"Not verified SVG element `{id_}`{path_part}"
+                    path_part = f", {node.attrib['d'].split(' ')[:3]}"
+                message: str = (
+                    f"Not verified SVG element `{id_}`{path_part} in "
+                    f"`{svg_file_name}`"
+                )
                 raise ValueError(message)
             return
 
@@ -341,7 +344,10 @@ class Shapes:
             version = match.group("version")
             id_ = match.group("id")
             if not check_experimental_shape(style):
-                message = f"Not verified experimental SVG element `{id_}`"
+                message = (
+                    f"Not verified experimental SVG element `{id_}` in "
+                    f"`{svg_file_name}`"
+                )
                 raise ValueError(message)
 
         if node.attrib.get("d"):
@@ -367,7 +373,7 @@ class Shapes:
                     {version: PathOnCanvas(path, offset)}, id_
                 )
         else:
-            message = f"Not standard ID `{id_}`."
+            message = f"Not standard ID `{id_}` in `{svg_file_name}`."
             raise ValueError(message)
 
     def has_shape(self, id_: str) -> bool:
