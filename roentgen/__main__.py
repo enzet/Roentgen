@@ -99,6 +99,47 @@ def draw_icons(
     )
 
 
+def draw() -> None:
+    """Draw all icons as grid and individual SVG files."""
+
+    shapes: Shapes = Shapes()
+    for path in [
+        Path("data") / "icons.svg",
+        Path("data") / "connectors.svg",
+        Path("data") / "flag.svg",
+        Path("data") / "lamp.svg",
+        Path("data") / "letters.svg",
+        Path("data") / "power.svg",
+    ]:
+        shapes.add_from_file(path)
+
+    version: str = Path("VERSION").read_text().strip()
+
+    icons: list[Icon] = get_icons(Path("data") / "config.json")
+    main_collection: IconCollection = IconCollection.from_icons(
+        icons,
+        filter_=lambda icon: not icon.is_part,
+    )
+
+    for shape_id in shapes.shapes:
+        found: bool = False
+        for icon in icons:
+            if shape_id in icon.get_shape_ids():
+                found = True
+                break
+        if not found:
+            logger.warning("No configuration for `%s` found.", shape_id)
+
+    draw_icons(
+        main_collection,
+        shapes,
+        version=version,
+        root_path=Path(),
+        doc_path=Path("doc"),
+        output_path=Path("out"),
+    )
+
+
 def main() -> None:
     """Run the main function."""
 
@@ -191,42 +232,7 @@ def main() -> None:
     arguments: argparse.Namespace = parser.parse_args()
 
     if arguments.command == "icons":
-        shapes: Shapes = Shapes()
-        for path in [
-            Path("data") / "icons.svg",
-            Path("data") / "connectors.svg",
-            Path("data") / "flag.svg",
-            Path("data") / "lamp.svg",
-            Path("data") / "letters.svg",
-            Path("data") / "power.svg",
-        ]:
-            shapes.add_from_file(path)
-
-        version: str = Path("VERSION").read_text().strip()
-
-        icons: list[Icon] = get_icons(Path("data") / "config.json")
-        main_collection: IconCollection = IconCollection.from_icons(
-            icons,
-            filter_=lambda icon: not icon.is_part,
-        )
-
-        for shape_id in shapes.shapes:
-            found: bool = False
-            for icon in icons:
-                if shape_id in icon.get_shape_ids():
-                    found = True
-                    break
-            if not found:
-                logger.warning("No configuration for `%s` found.", shape_id)
-
-        draw_icons(
-            main_collection,
-            shapes,
-            version=version,
-            root_path=Path(),
-            doc_path=Path("doc"),
-            output_path=Path("out"),
-        )
+        draw()
         return
 
     if arguments.command == "taginfo":
