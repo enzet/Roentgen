@@ -17,12 +17,13 @@ Adjust icon size:
   - `prison`.
 
 Make icons smoother and make corners round:
+  - `charging_station`,
   - `torch`.
 
 Change direction of icons:
   - `wrench`.
 
-Fix icon:
+Fix icons:
   - `film`,
   - `vending_excrement_bag`.
 
