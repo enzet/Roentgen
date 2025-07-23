@@ -8,6 +8,7 @@ Redraw icons:
   - `car___bed`,
   - `car___wrench`,
   - `coffee_cup`,
+  - `fuel_station`,
   - `orbiter`,
   - `peach`,
   - `two_beds`.
