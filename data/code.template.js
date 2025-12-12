@@ -7,10 +7,12 @@ let iconSize = 512;
 // Icon data.
 const icons = %ICONS_DATA%;
 
-// Function to extract control points.
 function extractControlPoints(pathData) {
     const points = [];
+    if (!pathData) return points;
+
     const commands = pathData.match(/[MLHVCSQTAZmlhvcsqtaz]|[+-]?\d*\.?\d+/g) || [];
+    if (commands.length === 0) return points;
 
     let x = 0, y = 0;
     let prevX = 0, prevY = 0;
@@ -27,12 +29,12 @@ function extractControlPoints(pathData) {
                 case "M":
                     x = parseFloat(commands[++i]);
                     y = parseFloat(commands[++i]);
-                    points.push({ x, y, type: "move" });
+                    points.push({x, y, type: "move"});
                     break;
                 case "L":
                     x = parseFloat(commands[++i]);
                     y = parseFloat(commands[++i]);
-                    points.push({ x, y, type: "line" });
+                    points.push({x, y, type: "line"});
                     break;
                 case "C":
                     const x1 = parseFloat(commands[++i]);
@@ -42,9 +44,9 @@ function extractControlPoints(pathData) {
                     x = parseFloat(commands[++i]);
                     y = parseFloat(commands[++i]);
                     points.push(
-                        { x: x1, y: y1, type: "control", connectsTo: "start" },
-                        { x: x2, y: y2, type: "control", connectsTo: "end" },
-                        { x, y, type: "curve" }
+                        {x: x1, y: y1, type: "control", connectsTo: "start"},
+                        {x: x2, y: y2, type: "control", connectsTo: "end"},
+                        {x, y, type: "curve"}
                     );
                     break;
                 case "S":
@@ -56,9 +58,9 @@ function extractControlPoints(pathData) {
                     const prevControlX = 2 * x - controlX;
                     const prevControlY = 2 * y - controlY;
                     points.push(
-                        { x: prevControlX, y: prevControlY, type: "control", connectsTo: "start" },
-                        { x: x2s, y: y2s, type: "control", connectsTo: "end" },
-                        { x, y, type: "curve" }
+                        {x: prevControlX, y: prevControlY, type: "control", connectsTo: "start"},
+                        {x: x2s, y: y2s, type: "control", connectsTo: "end"},
+                        {x, y, type: "curve"}
                     );
                     break;
                 case "Q":
@@ -67,8 +69,8 @@ function extractControlPoints(pathData) {
                     x = parseFloat(commands[++i]);
                     y = parseFloat(commands[++i]);
                     points.push(
-                        { x: qx1, y: qy1, type: "control", connectsTo: "both" },
-                        { x, y, type: "quadratic" }
+                        {x: qx1, y: qy1, type: "control", connectsTo: "both"},
+                        {x, y, type: "quadratic"},
                     );
                     break;
                 case "T":
@@ -78,12 +80,12 @@ function extractControlPoints(pathData) {
                     const qPrevControlX = 2 * x - controlX;
                     const qPrevControlY = 2 * y - controlY;
                     points.push(
-                        { x: qPrevControlX, y: qPrevControlY, type: "control", connectsTo: "both" },
-                        { x, y, type: "quadratic" }
+                        {x: qPrevControlX, y: qPrevControlY, type: "control", connectsTo: "both"},
+                        {x, y, type: "quadratic"},
                     );
                     break;
                 case "Z":
-                    points.push({ x, y, type: "close" });
+                    points.push({x, y, type: "close"});
                     break;
                 case "A":
                     const rx = parseFloat(commands[++i]);
@@ -100,11 +102,11 @@ function extractControlPoints(pathData) {
 
                     // Add the start point if it's not already added.
                     if (points.length === 0 || points[points.length - 1].type !== "move") {
-                        points.push({ x: startX, y: startY, type: "arc-start" });
+                        points.push({x: startX, y: startY, type: "arc-start"});
                     }
 
                     // Add the end point.
-                    points.push({ x, y, type: "arc-end" });
+                    points.push({x, y, type: "arc-end"});
                     break;
             }
 
@@ -255,9 +257,9 @@ function drawPath(svg, scale, iconPath) {
             }
             circle.setAttribute("class", class_name);
             if (class_name === "control-point") {
-                circle.setAttribute("r", 0.00 / scale);
+                circle.setAttribute("r", 0);
             } else if (class_name === "curve-point") {
-                circle.setAttribute("r", 0.08 / scale);
+                circle.setAttribute("r", `${0.08 / scale}px`);
             }
             circle.setAttribute("cx", point.x);
             circle.setAttribute("cy", point.y);
@@ -426,7 +428,7 @@ function downloadSVG() {
     if (!selectedIcon) return;
 
     const svgContent = createDownloadableSVG();
-    const blob = new Blob([svgContent], { type: "image/svg+xml" });
+    const blob = new Blob([svgContent], {type: "image/svg+xml"});
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;

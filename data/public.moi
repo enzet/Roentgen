@@ -1,12 +1,15 @@
 \1 {The Röntgen Icon Set} {roentgen}
 
 \style {roentgen.css}
+\javascript {roentgen.js}
 
 This is version %ROENTGEN_VERSION% of Röntgen Icon Set, a collection of
 free 14 × 14 px monochrome pixel-aligned
 \ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0}
 vector map icons created for
 \ref {https://github.com/enzet/map-machine} {Map Machine} project.
+Icons are drawn by hand and generated using \ref {#iconscript} {iconscript}
+language.
 
 \button
     {../roentgen-%ROENTGEN_VERSION%.zip}
@@ -28,10 +31,6 @@ vector map icons created for
         </div>
     </section>
     <section class="icon-info-section">
-        <div class="icon-preview-small-row">
-            <canvas id="preview16" width="16" height="16" style="width:64px;height:64px;image-rendering:pixelated;image-rendering:crisp-edges;margin-right:8px;vertical-align:middle;"></canvas>
-            <canvas id="preview32" width="32" height="32" style="width:64px;height:64px;image-rendering:pixelated;image-rendering:crisp-edges;vertical-align:middle;"></canvas>
-        </div>
         <div class="search-container">
             <input type="text" id="iconSearch" class="search-input" placeholder="Search icons...">
         </div>
@@ -55,11 +54,9 @@ vector map icons created for
                     <label for="toggleGrid" class="checkbox-label">Show grid</label>
                 </div>
             </div>
-            <div class="size-control">
-                <div class="size-header">
-                    <span class="size-value">512px</span>
-                </div>
+            <div class="slider-container size-control">
                 <input type="range" id="sizeSlider" min="16" max="512" value="512" step="1">
+                <span class="size-value">512px</span>
             </div>
             <button id="downloadIcon" class="main control-button">Download <span class="abbr">SVG</span></button>
         </div>
