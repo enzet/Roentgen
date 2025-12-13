@@ -21,4 +21,10 @@ if ! ruff check; then
     exit 1
 fi
 
+echo "Checking icon generation..."
+if ! roentgen icons; then
+    echo "FAIL"
+    exit 1
+fi
+
 echo "OK"
