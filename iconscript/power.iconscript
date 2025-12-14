@@ -1,0 +1,119 @@
+# iconscript 0.1
+
+line_bottom = l 4.5,13 9.5,13
+tower = l 4,14 +2,-4 +0,-8 +2,0 +0,8 +2,4 @line_bottom
+tower_1 = l 4,14 +2,-4 +0,-9 +2,0 +0,9 +2,4 @line_bottom
+tower_2 = l 4,14 +2,-4 +0,-6 +1,-3 +1,3 +0,6 +2,4 @line_bottom
+
+tower_y = l 7,9 +-1,2 +0,3 l 7,9 +1,2 +0,3 l 7,9 +-4,-3 +3,5 l 7,9 +4,-3 +-3,5 l 6,13 +2,0
+
+arm = l +0,0 +2,0 +3.5,3 +-9,0 +3.5,-3
+arm_r = l +2,0 +3.5,3 +-5,0
+arm_l = l +0,0 +-3.5,3 +5,0
+arm_s = l +0,0 +2,0 +3,3 +-8,0 +3,-3
+arm_w = l +0,0 +2,0 +4,3 +-10,0 +4,-3
+
+pole = l 7,2 8,2 l 7,14 8,14 l 7,2 7,14 l 8,2 8,14
+conductors = l +-11,1.5 +0,1 l +11,-1 +0,1
+line = p +-11,2 l +0,0 +11,0
+
+icon power_tower_1_level = {@tower_2 l 6,10 +2,0 p 6,4 @arm}
+icon power_tower_2_level = {@tower p 6,2 @arm p 6,7 @arm}
+icon power_tower_3_level = {@tower_1 p 6,1 @arm p 6,4 @arm p 6,7 @arm}
+icon power_tower_4_level = {
+    @tower_2 l 6,10 +2,0 l 11,4 +-8,0 l 11,6 +-8,0 l 11,8 +-8,0 l 11,10 +-8,0
+}
+icon power_tower_asymmetric = {@tower p 6,2 @arm_l p 6,7 @arm}
+icon power_tower_triangle = {@tower_1 p 6,1 @arm_l p 6,4 @arm_r p 6,7 @arm_l}
+icon power_tower_flag = {
+    @tower_2 l 6,10 +2,0 l 8,4 +-5,0 l 8,7 +-5,0 l 8,10 +-5,0
+}
+icon power_tower_delta = {@tower_y l 3,6 +0,-3 l 11,6 +0,-3 l 1.5,4 +11,0}
+icon power_tower_monopolar = {
+    l 4,14 +2,-4 +0,-7 +1,-2 +1,2 +0,7 +2,4 @line_bottom
+    l 6,7 +2,0 l 6,10 +2,0 l 4,4 +6,0 l 4,5.5 +0,1 l 10,5.5 +0,1
+}
+icon power_pole_1_level = {@pole p 13,1 @line @conductors}
+icon power_pole_2_level = {@pole p 13,1 @line @line @conductors}
+icon power_pole_3_level = {@pole p 13,1 @line @line @line @conductors}
+icon power_pole_4_level = {@pole p 13,1 @line @line @line @line @conductors}
+icon power_pole_5_level = {
+    @pole p 13,0 @line @line @line @line @line @conductors
+}
+icon power_pole_asymmetric = {@pole l 2,3 +5,0 p 13,3 @line @conductors}
+icon power_pole_triangle = {
+    @pole l 2,3 +5,0 l 8,5 +5,0 l 2,7 +5,0 l 2,8.5 +0,1 l 13,6.5 +0,1
+}
+icon power_pole_flag = {
+    @pole l 2,3 +5,0 l 2,5 +5,0 l 2,7 +5,0 l 2,8.5 +0,1
+}
+icon power_pole_delta = {
+    s 7,4 +1,10 l 2,5 +11,0 l 2,2.5 +0,1 l 13,2.5 +0,1 l 7.5,1.5 +0,1
+}
+icon power_tower_donau = {@tower p 6,2 @arm_s p 6,7 @arm_w}
+icon power_tower_donau_1_level = {
+    @tower_1 p 6,1 @arm_s p 6,4 @arm_w p 6,7 @arm_w
+}
+icon power_tower_donau_inverse = {@tower p 6,2 @arm_w p 6,7 @arm_s}
+icon power_tower_delta_2_level = {
+    @tower_y l 3,6 +0,-4 l 11,6 +0,-4 l 1.5,3 +11,0 l 1.5,5 +11,0
+} 
+icon power_tower_delta_3_level = {
+    @tower_y l 3,6 +0,-5 l 11,6 +0,-5 l 1.5,2 +11,0 l 1.5,4 +11,0 l 1.5,6 +11,0
+}
+icon power_tower_barrel = {@tower_1 p 6,1 @arm_s p 6,4 @arm_w p 6,7 @arm_s}
+icon power_tower_barrel_1_level = {
+    @tower_2 l 6,10 +2,0 l 10,4 +-6,0 l 11,6 +-8,0 l 10,8 +-6,0 l 11,10 +-8,0
+}
+icon power_tower_y_frame = {
+    l 5,14 +1,-4 +0,-1 +-4,-6 +5,4 +1,2
+    l 9,14 +-1,-4 +0,-1 +4,-6 +-5,4 +-1,2
+    l 6,10 +2,0 l 5.5,13 +3,0
+}
+icon power_tower_x_frame = {
+    l 4,14 +2,-5 +0,-1 +-4,-5 +5,3 +1,2
+    l 10,14 +-2,-5 +0,-1 +4,-5 +-5,3 +-1,2
+    l 6,9 +2,0 l 4,14 +4.5,-3.5 l 10,14 +-4.5,-3.5
+}
+
+cond = l +0,0 +0,1 l +5,-1 +0,1 l +5,-1 +0,1
+cond_i = l +3,0 +0,1 l +4,-1 +0,1
+poles = l 4,2 +0,12 l 10,2 +0,12
+poles_1 = l 4,2 +-1,12 l 10,2 +1,12
+poles_2 = l 3,2 +-1,12 l 11,2 +1,12
+arm = l +0,0 +10,0
+
+icon power_tower_h_frame = {@poles p 2,3 @arm p 2,4.5 @cond l 4.5,11 9.5,11}
+icon power_tower_h_frame_2_level = {
+    @poles p 2,3 @arm p 2,5 @arm p 2,6.5 @cond l 4.5,11 9.5,11
+}
+icon power_tower_h_frame_3_level = {
+    @poles p 2,3 @arm p 2,5 @arm p 2,7 @arm p 2,8.5 @cond l 4.5,12 9.5,12
+}
+icon power_tower_guyed_h_frame = {@poles_1 p 2,3 @arm p 2,4.5 @cond}
+icon power_tower_guyed_h_frame_2_level = {
+    @poles_1 p 2,3 @arm p 2,5 @arm p 2,6.5 @cond
+}
+icon power_tower_guyed_h_frame_3_level = {
+    @poles_1 p 2,3 @arm p 2,5 @arm p 2,7 @arm p 2,8.5 @cond
+}
+icon power_tower_portal = {@poles_2 p 2,3 @arm p 2,4.5 @cond_i}
+icon power_tower_portal_2_level = {
+    @poles_2 p 2,3 @arm p 2,5 @arm p 2,6.5 @cond_i
+}
+icon power_tower_portal_3_level = {
+    @poles_2 p 2,3 @arm p 2,5 @arm p 2,7 @arm p 2,8.5 @cond_i
+}
+icon power_tower_guyed_v_frame = {
+    l 2,3 +10,0 l 3,2 +3,12 l 11,2 +-3,12
+    l 2,4.5 +0,1 l 7,4.5 +0,1 l 12,4.5 +0,1
+}
+icon power_pole_asymmetric_armless = {
+    @pole l 5,3 +2,0 l 5,5 +5,0 l 5,6.5 +0,1 l 10,6.5 +0,1
+}
+icon power_pole_triangle_armless = {
+    @pole l 5,3 +2,0 l 5,7 +2,0 l 8,5 +2,0 l 5,8.5 +0,1 l 10,6.5 +0,1
+}
+icon power_pole_flag_armless = {
+    @pole l 5,3 +2,0 l 5,5 +2,0 l 5,7 +2,0 l 5,8.5 +0,1
+}
