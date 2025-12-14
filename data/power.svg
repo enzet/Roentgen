@@ -21,14 +21,14 @@
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
-     showgrid="true"
-     inkscape:zoom="7.546575"
-     inkscape:cx="80.69886"
-     inkscape:cy="121.64459"
+     showgrid="false"
+     inkscape:zoom="1.3037018"
+     inkscape:cx="144.20476"
+     inkscape:cy="34.517096"
      inkscape:window-width="1424"
      inkscape:window-height="831"
      inkscape:window-x="8"
-     inkscape:window-y="33"
+     inkscape:window-y="25"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      units="px"
@@ -44,7 +44,7 @@
        spacingy="1"
        spacingx="1"
        units="px"
-       visible="true" />
+       visible="false" />
     <inkscape:grid
        id="grid1"
        units="px"
@@ -58,7 +58,7 @@
        opacity="0.15294118"
        empspacing="8"
        enabled="true"
-       visible="true"
+       visible="false"
        dotted="true"
        snapvisiblegridlinesonly="true" />
   </sodipodi:namedview>
@@ -134,10 +134,6 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       id="power_tower_donau_1_level_v0"
-       style="color:#000000;font-variation-settings:normal;display:inline;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
-       d="m 22.5,81 a 0.50005,0.50005 0 0 0 -0.353516,0.14648 l -2.999999,3 A 0.50005,0.50005 0 0 0 19.5,85 h 1.498047 l -2.798828,2.09961 A 0.50005,0.50005 0 0 0 18.5,88 H 21 l -2.800781,2.09961 A 0.50005,0.50005 0 0 0 18.5,91 h 3.191406 l -1.638671,3.27734 a 0.5,0.5 0 0 0 0.224609,0.66993 0.5,0.5 0 0 0 0.669922,-0.22461 L 21.308594,94 h 4.382812 l 0.361328,0.72266 a 0.5,0.5 0 0 0 0.669922,0.22461 0.5,0.5 0 0 0 0.22461,-0.66993 L 25.308594,91 H 28.5 a 0.50005,0.50005 0 0 0 0.300781,-0.90039 L 26,88 h 2.5 a 0.50005,0.50005 0 0 0 0.300781,-0.90039 L 26.001953,85 H 27.5 a 0.50005,0.50005 0 0 0 0.353516,-0.85352 l -3,-3 A 0.50005,0.50005 0 0 0 24.5,81 Z m 0.5,1 h 1 v 2 h -1 z m -1,0.70703 V 84 h -1.292969 z m 3,0 L 26.292969,84 H 25 Z M 23,85 h 1 v 2 h -1 z m 2,0.5 2,1.5 h -2 z m -3,0.002 V 87 H 20.001953 Z M 23,88 h 1 v 2 h -1 z m 2,0.5 2,1.5 h -2 z m -3,0.002 V 90 H 20.001953 Z M 22.808594,91 h 1.382812 l 1,2 h -3.382812 z" />
-    <path
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 100.5,78.5 2,-4 v -7 l 1,-2 1,2 v 7 l 2,4"
        id="path22"
@@ -207,14 +203,6 @@
        id="path39"
        inkscape:connector-curvature="0" />
     <path
-       id="power_tower_barrel_1_level_v0"
-       style="color:#000000;font-variation-settings:normal;display:inline;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
-       d="m 103.5,81 a 0.50005,0.50005 0 0 0 -0.44727,0.27734 l -1,2 A 0.50005,0.50005 0 0 0 102,83.5 V 84 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 1.5 v 1 H 99.5 A 0.5,0.5 0 0 0 99,86.5 0.5,0.5 0 0 0 99.5,87 h 2.5 v 1 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 1.5 v 1 H 99.5 A 0.5,0.5 0 0 0 99,90.5 0.5,0.5 0 0 0 99.5,91 h 2.19141 l -1.63867,3.27734 a 0.5,0.5 0 0 0 0.22461,0.66993 0.5,0.5 0 0 0 0.66992,-0.22461 L 101.3086,94 h 4.38281 l 0.36133,0.72266 a 0.5,0.5 0 0 0 0.66992,0.22461 0.5,0.5 0 0 0 0.22461,-0.66993 L 105.3086,91 H 107.5 A 0.5,0.5 0 0 0 108,90.5 0.5,0.5 0 0 0 107.5,90 H 105 v -1 h 1.5 A 0.5,0.5 0 0 0 107,88.5 0.5,0.5 0 0 0 106.5,88 H 105 v -1 h 2.5 A 0.5,0.5 0 0 0 108,86.5 0.5,0.5 0 0 0 107.5,86 H 105 v -1 h 1.5 A 0.5,0.5 0 0 0 107,84.5 0.5,0.5 0 0 0 106.5,84 H 105 v -0.5 a 0.50005,0.50005 0 0 0 -0.0527,-0.22266 l -1,-2 A 0.50005,0.50005 0 0 0 103.5,81 Z m 0,1.61719 0.5,1 V 84 h -1 V 83.61719 Z M 103,85 h 1 v 1 h -1 z m 0,2 h 1 v 1 h -1 z m 0,2 h 1 v 1 h -1 z m -0.19141,2 h 1.38282 l 1,2 h -3.38282 z" />
-    <path
-       id="power_tower_guyed_v_frame_v0"
-       style="color:#000000;font-variation-settings:normal;display:inline;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
-       d="m 291.57422,82.00586 a 0.5,0.5 0 0 0 -0.19531,0.01 0.5,0.5 0 0 0 -0.36328,0.60547 L 291.10938,83 H 290.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 0.85938 l 2.65625,10.62109 a 0.5,0.5 0 0 0 0.60546,0.36329 0.5,0.5 0 0 0 0.36329,-0.60547 L 292.39063,84 h 6.21875 l -2.59375,10.37891 a 0.5,0.5 0 0 0 0.36328,0.60547 0.5,0.5 0 0 0 0.60547,-0.36329 L 299.64063,84 H 300.5 A 0.5,0.5 0 0 0 301,83.5 0.5,0.5 0 0 0 300.5,83 h -0.60937 l 0.0937,-0.37891 a 0.5,0.5 0 0 0 -0.36329,-0.60547 0.5,0.5 0 0 0 -0.60546,0.36329 L 298.85938,83 h -6.71875 l -0.15625,-0.62109 a 0.5,0.5 0 0 0 -0.41016,-0.37305 z M 290.5,84.5 A 0.5,0.5 0 0 0 290,85 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 5,0 A 0.5,0.5 0 0 0 295,85 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 5,0 A 0.5,0.5 0 0 0 300,85 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z" />
-    <path
        sodipodi:nodetypes="ccccccc"
        inkscape:connector-curvature="0"
        id="path52"
@@ -254,10 +242,6 @@
        id="path5"
        d="M 202.5,6 V 7"
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <path
-       id="power_tower_monopolar_v0"
-       style="color:#000000;font-variation-settings:normal;display:inline;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000"
-       d="m 199.5,17 a 0.50005,0.50005 0 0 0 -0.44727,0.27734 l -1,2 A 0.50005,0.50005 0 0 0 198,19.5 V 20 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 1.5 v 5.38281 l -1.94726,3.89453 a 0.5,0.5 0 0 0 0.22461,0.66993 0.5,0.5 0 0 0 0.66992,-0.22461 L 197.3086,30 h 4.38281 l 0.36133,0.72266 a 0.5,0.5 0 0 0 0.66992,0.22461 0.5,0.5 0 0 0 0.22461,-0.66993 L 201,26.38281 V 21 h 1.5 A 0.5,0.5 0 0 0 203,20.5 0.5,0.5 0 0 0 202.5,20 H 201 v -0.5 a 0.50005,0.50005 0 0 0 -0.0527,-0.22266 l -1,-2 A 0.50005,0.50005 0 0 0 199.5,17 Z m 0,1.61719 0.5,1 V 20 h -1 V 19.61719 Z M 199,21 h 1 v 2 h -1 z m -2.5,0.5 A 0.5,0.5 0 0 0 196,22 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 6,0 A 0.5,0.5 0 0 0 202,22 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z M 199,24 h 1 v 2 h -1 z m -0.17578,2.9668 A 0.5,0.5 0 0 0 199,27 h 1.19141 l 1,2 h -3.38282 z" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -312,10 +296,6 @@
        id="path545"
        d="m 194.5,71.5 h 10"
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <path
-       id="power_tower_h_frame_3_level_v0"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000"
-       d="M 196.5,82 A 0.5,0.5 0 0 0 196,82.5 V 83 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 1.5 v 1 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 1.5 v 1 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 1.5 v 6.5 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 V 93 h 5 v 1.5 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 V 88 h 1.5 A 0.5,0.5 0 0 0 205,87.5 0.5,0.5 0 0 0 204.5,87 H 203 v -1 h 1.5 A 0.5,0.5 0 0 0 205,85.5 0.5,0.5 0 0 0 204.5,85 H 203 v -1 h 1.5 A 0.5,0.5 0 0 0 205,83.5 0.5,0.5 0 0 0 204.5,83 H 203 V 82.5 A 0.5,0.5 0 0 0 202.5,82 0.5,0.5 0 0 0 202,82.5 V 83 h -5 V 82.5 A 0.5,0.5 0 0 0 196.5,82 Z m 0.5,2 h 5 v 1 h -5 z m 0,2 h 5 v 1 h -5 z m 0,2 h 5 v 4 h -5 z m -2.5,0.5 A 0.5,0.5 0 0 0 194,89 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 5,0 A 0.5,0.5 0 0 0 199,89 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 5,0 A 0.5,0.5 0 0 0 204,89 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z" />
     <path
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 2.5,35.5 h 11"
@@ -669,70 +649,6 @@
        y="98"
        ry="0.5"
        rx="0.5" />
-    <path
-       id="power_pole_1_level"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="M 7.5,50 C 7.223,50 7,50.223 7,50.5 V 51 H 2.5 A 0.5,0.5 0 0 0 2,51.5 0.5,0.5 0 0 0 2.5,52 H 7 V 62.5 C 7,62.777 7.223,63 7.5,63 h 1 C 8.777,63 9,62.777 9,62.5 V 52 h 4.5 A 0.5,0.5 0 0 0 14,51.5 0.5,0.5 0 0 0 13.5,51 H 9 V 50.5 C 9,50.223 8.777,50 8.5,50 Z m -5,2.5 A 0.5,0.5 0 0 0 2,53 v 1 A 0.5,0.5 0 0 0 2.5,54.5 0.5,0.5 0 0 0 3,54 V 53 A 0.5,0.5 0 0 0 2.5,52.5 Z m 11,0 A 0.5,0.5 0 0 0 13,53 v 1 A 0.5,0.5 0 0 0 13.5,54.5 0.5,0.5 0 0 0 14,54 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z"
-       inkscape:connector-curvature="0">
-      <title
-         id="title33612">one-level transmission pole</title>
-    </path>
-    <path
-       id="power_pole_2_level"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="M 23.5,50 C 23.223,50 23,50.223 23,50.5 V 51 H 18.5 A 0.5,0.5 0 0 0 18,51.5 0.5,0.5 0 0 0 18.5,52 H 23 v 1 H 18.5 A 0.5,0.5 0 0 0 18,53.5 0.5,0.5 0 0 0 18.5,54 H 23 v 8.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 C 24.777,63 25,62.777 25,62.5 V 54 h 4.5 A 0.5,0.5 0 0 0 30,53.5 0.5,0.5 0 0 0 29.5,53 H 25 v -1 h 4.5 A 0.5,0.5 0 0 0 30,51.5 0.5,0.5 0 0 0 29.5,51 H 25 V 50.5 C 25,50.223 24.777,50 24.5,50 Z m -5,4.5 A 0.5,0.5 0 0 0 18,55 v 1 A 0.5,0.5 0 0 0 18.5,56.5 0.5,0.5 0 0 0 19,56 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 11,0 A 0.5,0.5 0 0 0 29,55 v 1 A 0.5,0.5 0 0 0 29.5,56.5 0.5,0.5 0 0 0 30,56 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z"
-       inkscape:connector-curvature="0">
-      <title
-         id="title37129">two-level transmission pole</title>
-    </path>
-    <path
-       id="power_pole_3_level"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="m 34.5,50 c -0.276142,0 -0.5,0.22386 -0.5,0.5 0,0.27614 0.223858,0.5 0.5,0.5 H 39 v 1 h -4.5 c -0.276142,0 -0.5,0.22386 -0.5,0.5 0,0.27614 0.223858,0.5 0.5,0.5 H 39 v 1 h -4.5 c -0.276142,0 -0.5,0.22386 -0.5,0.5 0,0.27614 0.223858,0.5 0.5,0.5 H 39 v 7.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 C 40.777,63 41,62.777 41,62.5 V 55 h 4.5 C 45.776142,55 46,54.77614 46,54.5 46,54.22386 45.776142,54 45.5,54 H 41 v -1 h 4.5 C 45.776142,53 46,52.77614 46,52.5 46,52.22386 45.776142,52 45.5,52 H 41 v -1 h 4.5 C 45.776142,51 46,50.77614 46,50.5 46,50.22386 45.776142,50 45.5,50 Z m 0,5.5 C 34.223858,55.5 34,55.72386 34,56 v 1 c 0,0.27614 0.223858,0.5 0.5,0.5 0.276142,0 0.5,-0.22386 0.5,-0.5 v -1 c 0,-0.27614 -0.223858,-0.5 -0.5,-0.5 z m 11,0 C 45.223858,55.5 45,55.72386 45,56 v 1 c 0,0.27614 0.223858,0.5 0.5,0.5 0.276142,0 0.5,-0.22386 0.5,-0.5 v -1 c 0,-0.27614 -0.223858,-0.5 -0.5,-0.5 z"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssccsssccssscsssscsssccsssccssssssssssssssssss">
-      <title
-         id="title40647">three-level transmission pole</title>
-    </path>
-    <path
-       id="power_pole_4_level"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="m 50.5,49 c -0.27614,0 -0.5,0.22386 -0.5,0.5 0,0.27614 0.22386,0.5 0.5,0.5 H 55 v 1 h -4.5 c -0.27614,0 -0.5,0.22386 -0.5,0.5 0,0.27614 0.22386,0.5 0.5,0.5 H 55 v 1 h -4.5 c -0.27614,0 -0.5,0.22386 -0.5,0.5 0,0.27614 0.22386,0.5 0.5,0.5 H 55 v 1 h -4.5 c -0.27614,0 -0.5,0.22386 -0.5,0.5 0,0.27614 0.22386,0.5 0.5,0.5 H 55 v 6.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 C 56.777,63 57,62.777 57,62.5 V 56 h 4.5 C 61.77614,56 62,55.77614 62,55.5 62,55.22386 61.77614,55 61.5,55 H 57 v -1 h 4.5 C 61.77614,54 62,53.77614 62,53.5 62,53.22386 61.77614,53 61.5,53 H 57 v -1 h 4.5 C 61.77614,52 62,51.77614 62,51.5 62,51.22386 61.77614,51 61.5,51 H 57 v -1 h 4.5 C 61.77614,50 62,49.77614 62,49.5 62,49.22386 61.77614,49 61.5,49 Z m 0,7.5 C 50.22386,56.5 50,56.72386 50,57 v 1 c 0,0.27614 0.22386,0.5 0.5,0.5 0.27614,0 0.5,-0.22386 0.5,-0.5 v -1 c 0,-0.27614 -0.22386,-0.5 -0.5,-0.5 z m 11,0 C 61.22386,56.5 61,56.72386 61,57 v 1 c 0,0.27614 0.22386,0.5 0.5,0.5 0.27614,0 0.5,-0.22386 0.5,-0.5 v -1 c 0,-0.27614 -0.22386,-0.5 -0.5,-0.5 z"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sssccsssccsssccssscsssscsssccsssccsssccssssssssssssssssss" />
-    <path
-       id="power_pole_asymmetric"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="M 71.5,50 C 71.223,50 71,50.223 71,50.5 V 51 H 66.5 A 0.5,0.5 0 0 0 66,51.5 0.5,0.5 0 0 0 66.5,52 H 71 v 1 H 66.5 A 0.5,0.5 0 0 0 66,53.5 0.5,0.5 0 0 0 66.5,54 H 71 v 8.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 C 72.777,63 73,62.777 73,62.5 V 54 h 4.5 A 0.5,0.5 0 0 0 78,53.5 0.5,0.5 0 0 0 77.5,53 H 73 V 50.5 C 73,50.223 72.777,50 72.5,50 Z m -5,4.5 A 0.5,0.5 0 0 0 66,55 v 1 A 0.5,0.5 0 0 0 66.5,56.5 0.5,0.5 0 0 0 67,56 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 11,0 A 0.5,0.5 0 0 0 77,55 v 1 A 0.5,0.5 0 0 0 77.5,56.5 0.5,0.5 0 0 0 78,56 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z"
-       inkscape:connector-curvature="0">
-      <title
-         id="title40649">asymmetric transmission pole</title>
-    </path>
-    <path
-       id="power_pole_triangle"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="m 103.5,50 c -0.277,0 -0.5,0.223 -0.5,0.5 V 51 H 98.5 A 0.5,0.5 0 0 0 98,51.5 0.5,0.5 0 0 0 98.5,52 h 4.5 v 3 H 98.5 A 0.5,0.5 0 0 0 98,55.5 0.5,0.5 0 0 0 98.5,56 h 4.5 v 6.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 V 54 h 4.5 A 0.5,0.5 0 0 0 110,53.5 0.5,0.5 0 0 0 109.5,53 H 105 v -2.5 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 z m 6,4.5 A 0.5,0.5 0 0 0 109,55 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m -11,2 A 0.5,0.5 0 0 0 98,57 v 1 A 0.5,0.5 0 0 0 98.5,58.5 0.5,0.5 0 0 0 99,58 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z"
-       inkscape:connector-curvature="0" />
-    <path
-       id="power_pole_triangle_armless"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="m 55.5,114 c -0.277,0 -0.5,0.223 -0.5,0.5 v 0.5 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 H 55 v 3 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 H 55 v 6.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 V 118 h 1.5 A 0.5,0.5 0 0 0 59,117.5 0.5,0.5 0 0 0 58.5,117 H 57 v -2.5 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 z m 3,4.5 A 0.5,0.5 0 0 0 58,119 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m -5,2 A 0.5,0.5 0 0 0 53,121 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z"
-       inkscape:connector-curvature="0" />
-    <path
-       id="power_pole_flag"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="m 135.5,50 c -0.277,0 -0.5,0.223 -0.5,0.5 V 51 h -4.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 4.5 v 1 h -4.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 4.5 v 1 h -4.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 4.5 v 6.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 v -12 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 z m -5,6.5 A 0.5,0.5 0 0 0 130,57 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z"
-       inkscape:connector-curvature="0" />
-    <path
-       id="power_pole_delta"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="m 168,49.5 a 0.5,0.5 0 0 0 -0.5,0.5 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 V 50 A 0.5,0.5 0 0 0 168,49.5 Z m -5.5,1 A 0.5,0.5 0 0 0 162,51 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 11,0 A 0.5,0.5 0 0 0 173,51 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m -6,1.5 c -0.277,0 -0.5,0.223 -0.5,0.5 V 53 h -4.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 h 4.5 v 8.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 V 54 h 4.5 A 0.5,0.5 0 0 0 174,53.5 0.5,0.5 0 0 0 173.5,53 H 169 v -0.5 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 z"
-       inkscape:connector-curvature="0" />
-    <path
-       id="power_pole_asymmetric_armless"
-       style="color:#000000;display:inline;fill:#000000;stroke-linecap:round;stroke-linejoin:round"
-       d="m 23.5,114 c -0.277,0 -0.5,0.223 -0.5,0.5 v 0.5 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 H 23 v 1 h -1.5 a 0.5,0.5 0 0 0 -0.5,0.5 0.5,0.5 0 0 0 0.5,0.5 H 23 v 8.5 c 0,0.277 0.223,0.5 0.5,0.5 h 1 c 0.277,0 0.5,-0.223 0.5,-0.5 V 118 h 1.5 A 0.5,0.5 0 0 0 27,117.5 0.5,0.5 0 0 0 26.5,117 H 25 v -2.5 c 0,-0.277 -0.223,-0.5 -0.5,-0.5 z m -2,4.5 A 0.5,0.5 0 0 0 21,119 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z m 5,0 A 0.5,0.5 0 0 0 26,119 v 1 a 0.5,0.5 0 0 0 0.5,0.5 0.5,0.5 0 0 0 0.5,-0.5 v -1 a 0.5,0.5 0 0 0 -0.5,-0.5 z"
-       inkscape:connector-curvature="0" />
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
@@ -1208,35 +1124,6 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cc" />
     <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="M 148.49219,81.99219 C 148.21605,81.99619 147.99568,82.22386 148,82.5 V 83 h -1.5 c -0.67616,-0.01 -0.67616,1.00956 0,1 h 1.5 v 10.5 c -0.01,0.67616 1.00956,0.67616 1,0 V 92 h 5 v 2.5 c -0.01,0.67616 1.00956,0.67616 1,0 V 84 h 1.5 c 0.67616,0.01 0.67616,-1.00956 0,-1 H 155 v -0.5 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 C 154.21605,81.99619 153.99568,82.22386 154,82.5 V 83 h -5 v -0.5 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z M 149,84 h 5 v 7 h -5 z m -2.50781,0.49219 C 146.21605,84.4965 145.99568,84.72386 146,85 v 1 c -0.01,0.67616 1.00956,0.67616 1,0 v -1 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z m 5,0 C 151.21605,84.4965 150.99568,84.72386 151,85 v 1 c -0.01,0.67616 1.00956,0.67616 1,0 v -1 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z m 5,0 C 156.21605,84.4965 155.99568,84.72386 156,85 v 1 c -0.01,0.67616 1.00956,0.67616 1,0 v -1 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z"
-       id="power_tower_h_frame"
-       inkscape:label="#path6814"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sccccccccccccccccsccccscccccsccccssccccssccccs">
-      <title
-         id="title58965">h-frame transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="M 180.49219,81.99219 C 180.21605,81.99619 179.99568,82.22386 180,82.5 V 83 h -1.5 c -0.67616,-0.01 -0.67616,1.00956 0,1 h 1.5 v 1 h -1.5 c -0.67616,-0.01 -0.67616,1.00956 0,1 h 1.5 v 8.5 c -0.01,0.67616 1.00956,0.67616 1,0 V 92 h 5 v 2.5 c -0.01,0.67616 1.00956,0.67616 1,0 V 86 h 1.5 c 0.67616,0.01 0.67616,-1.00956 0,-1 H 187 v -1 h 1.5 c 0.67616,0.01 0.67616,-1.00956 0,-1 H 187 v -0.5 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 C 186.21605,81.99619 185.99568,82.22386 186,82.5 V 83 h -5 v -0.5 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z M 181,84 h 5 v 1 h -5 z m 0,2 h 5 v 5 h -5 z m -2.50781,0.49219 C 178.21605,86.4965 177.99568,86.72386 178,87 v 1 c -0.01,0.67616 1.00956,0.67616 1,0 v -1 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z m 5,0 c -0.26277,0.004 -0.47782,0.21024 -0.49219,0.47265 -4.1e-4,0.0117 -4.1e-4,0.0235 0,0.0352 v 1 c 0,0.66307 1,0.67254 1,-4e-5 v -1 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z m 5,0 c -0.26277,0.004 -0.47782,0.21024 -0.49219,0.47265 -4.1e-4,0.0117 -4.1e-4,0.0235 0,0.0352 v 1 c 0,0.66307 1,0.66003 1,-4e-5 v -1 c 0.004,-0.28226 -0.22555,-0.51223 -0.50781,-0.50781 z"
-       id="power_tower_h_frame_2_level"
-       inkscape:label="#path6828"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="sccccccccccccccccccccccccsccccsccccccccccsccccscccccccccccccc">
-      <title
-         id="title58967">h-frame two-level transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 212.48438,81.99219 a 0.50005,0.50005 0 0 0 -0.48243,0.46679 L 211.95703,83 H 210.5 a 0.50005,0.50005 0 1 0 0,1 h 1.37305 l -0.8711,10.45898 a 0.50005,0.50005 0 1 0 0.9961,0.082 L 212.87695,84 h 5.2461 l 0.8789,10.54102 a 0.50005,0.50005 0 1 0 0.9961,-0.082 L 219.12695,84 H 220.5 a 0.50005,0.50005 0 1 0 0,-1 h -1.45703 l -0.0449,-0.54102 a 0.50005,0.50005 0 0 0 -0.49805,-0.46679 0.50005,0.50005 0 0 0 -0.49805,0.54883 L 218.04097,83 h -5.08204 l 0.0391,-0.45898 a 0.50005,0.50005 0 0 0 -0.51367,-0.54883 z m -1.99219,2.5 A 0.50005,0.50005 0 0 0 210,85 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z m 5,0 A 0.50005,0.50005 0 0 0 215,85 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z m 5,0 A 0.50005,0.50005 0 0 0 220,85 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z"
-       id="power_tower_guyed_h_frame"
-       inkscape:label="#path6842"
-       inkscape:connector-curvature="0">
-      <title
-         id="title58969">guyed h-frame transmission tower</title>
-    </path>
-    <path
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 226.5,67.5 h 10"
        id="path6489"
@@ -1339,33 +1226,6 @@
        d="m 274.5,71.5 h 10"
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
     <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 227.48438,81.99219 a 0.50005,0.50005 0 0 0 -0.48243,0.46679 L 226.95703,83 H 226.5 a 0.50005,0.50005 0 1 0 0,1 h 0.37305 l -0.8711,10.45898 a 0.50005,0.50005 0 1 0 0.9961,0.082 L 227.87695,84 h 7.2461 l 0.8789,10.54102 a 0.50005,0.50005 0 1 0 0.9961,-0.082 L 236.12695,84 H 236.5 a 0.50005,0.50005 0 1 0 0,-1 h -0.45703 l -0.0449,-0.54102 a 0.50005,0.50005 0 0 0 -0.49805,-0.46679 0.50005,0.50005 0 0 0 -0.49805,0.54883 L 235.04097,83 h -7.08204 l 0.0391,-0.45898 a 0.50005,0.50005 0 0 0 -0.51367,-0.54883 z m 2.00781,2.5 A 0.50005,0.50005 0 0 0 229,85 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z m 4,0 A 0.50005,0.50005 0 0 0 233,85 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z"
-       id="power_tower_portal"
-       inkscape:label="#path6540"
-       inkscape:connector-curvature="0">
-      <title
-         id="title58971">portal transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 259.48438,81.99219 a 0.50005,0.50005 0 0 0 -0.48243,0.46679 L 258.95703,83 H 258.5 a 0.50005,0.50005 0 1 0 0,1 h 0.37305 l -0.084,1 H 258.5 a 0.50005,0.50005 0 1 0 0,1 h 0.20703 l -0.70508,8.45898 a 0.50005,0.50005 0 1 0 0.9961,0.082 L 259.71094,86 h 7.57812 l 0.71289,8.54102 a 0.50005,0.50005 0 1 0 0.9961,-0.082 L 268.29297,86 H 268.5 a 0.50005,0.50005 0 1 0 0,-1 h -0.28906 l -0.084,-1 H 268.5 a 0.50005,0.50005 0 1 0 0,-1 h -0.45703 l -0.0449,-0.54102 a 0.50005,0.50005 0 0 0 -0.49805,-0.46679 0.50005,0.50005 0 0 0 -0.49805,0.54883 L 267.04097,83 h -7.08204 l 0.0391,-0.45898 a 0.50005,0.50005 0 0 0 -0.51367,-0.54883 z M 259.87695,84 h 7.2461 l 0.084,1 h -7.41406 z m 1.61524,2.49219 A 0.50005,0.50005 0 0 0 261,87 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z m 4,0 A 0.50005,0.50005 0 0 0 265,87 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z"
-       id="power_tower_portal_2_level"
-       inkscape:label="#path6551"
-       inkscape:connector-curvature="0">
-      <title
-         id="title58973">portal two-level transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 275.48438,81.99219 a 0.50005,0.50005 0 0 0 -0.48243,0.46679 L 274.95703,83 H 274.5 a 0.50005,0.50005 0 1 0 0,1 h 0.37305 l -0.084,1 H 274.5 a 0.50005,0.50005 0 1 0 0,1 h 0.20703 l -0.084,1 H 274.5 a 0.50005,0.50005 0 1 0 0,1 h 0.041 l -0.53907,6.45898 a 0.50005,0.50005 0 1 0 0.9961,0.082 L 275.54297,88 h 7.91406 l 0.54492,6.54102 a 0.50005,0.50005 0 1 0 0.9961,-0.082 L 284.45898,88 h 0.041 a 0.50005,0.50005 0 1 0 0,-1 h -0.12305 l -0.084,-1 H 284.5 a 0.50005,0.50005 0 1 0 0,-1 h -0.28906 l -0.084,-1 H 284.5 a 0.50005,0.50005 0 1 0 0,-1 h -0.45703 l -0.0449,-0.54102 a 0.50005,0.50005 0 0 0 -0.49805,-0.46679 0.50005,0.50005 0 0 0 -0.49805,0.54883 L 283.04097,83 h -7.08204 l 0.0391,-0.45898 a 0.50005,0.50005 0 0 0 -0.51367,-0.54883 z M 275.87695,84 h 7.2461 l 0.084,1 h -7.41406 z m -0.16601,2 h 7.57812 l 0.084,1 h -7.7461 z m 1.78125,2.49219 A 0.50005,0.50005 0 0 0 277,89 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z m 4,0 A 0.50005,0.50005 0 0 0 281,89 v 1 a 0.50005,0.50005 0 1 0 1,0 v -1 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z"
-       id="power_tower_portal_3_level"
-       inkscape:label="#path6563"
-       inkscape:connector-curvature="0">
-      <title
-         id="title58975">portal three-level transmission tower</title>
-    </path>
-    <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path6332"
@@ -1415,111 +1275,12 @@
        sodipodi:nodetypes="cc" />
     <path
        style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="M 7.47461,17 A 0.50005,0.50005 0 0 0 7.02539,17.3418 L 6.06836,20.21094 2.67383,23.12109 A 0.50005,0.50005 0 0 0 3,24 h 3 v 2.38281 l -1.94727,3.89453 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 5.30859,30 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 9,26.38281 V 24 h 3 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 L 8.93164,20.21094 7.97461,17.3418 A 0.50005,0.50005 0 0 0 7.47461,17 Z M 7.5,19.08203 7.80664,20 H 7.19336 Z M 7,21 h 1 v 2 H 7 Z M 6,21.58789 V 23 H 4.35156 Z m 3,0 L 10.64844,23 H 9 Z M 7,24 h 1 v 2 H 7 Z m -0.19141,3 h 1.38282 l 1,2 H 5.80859 Z"
-       id="power_tower_1_level"
-       inkscape:label="#path6348"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6627">one-level transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 22.5,18 a 0.50005,0.50005 0 0 0 -0.32617,0.12109 l -3.5,3 A 0.50005,0.50005 0 0 0 19,22 h 3 v 1.26953 l -3.32617,2.85156 A 0.50005,0.50005 0 0 0 19,27 h 2.69141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 21.30859,30 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 25.30859,27 H 28 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 L 25,23.26953 V 22 h 3 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 l -3.5,-3 A 0.50005,0.50005 0 0 0 24.5,18 Z m 0.5,1 h 1 v 2 h -1 z m -1,0.58789 V 21 h -1.64844 z m 3,0 L 26.64844,21 H 25 Z M 23,22 h 1 v 1 h -1 z m 0,2 h 1 v 2 h -1 z m -1,0.58789 V 26 h -1.64844 z m 3,0 L 26.64844,26 H 25 Z M 22.80859,27 h 1.38282 l 1,2 h -3.38282 z"
-       id="power_tower_2_level"
-       inkscape:label="#path6356"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6625">two-level transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
        d="m 6.5,82 a 0.50005,0.50005 0 0 0 -0.35352,0.14648 l -3,3 A 0.50005,0.50005 0 0 0 3.5,86 H 6 v 1.25 L 2.19922,90.09961 A 0.50005,0.50005 0 0 0 2.5,91 h 3.19141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 5.30859,94 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 9.30859,91 H 12.5 a 0.50005,0.50005 0 0 0 0.30078,-0.90039 L 9,87.25 V 86 h 2.5 a 0.50005,0.50005 0 0 0 0.35352,-0.85352 l -3,-3 A 0.50005,0.50005 0 0 0 8.5,82 Z M 7,83 h 1 v 2 H 7 Z M 6,83.70703 V 85 H 4.70703 Z m 3,0 L 10.29297,85 H 9 Z M 7,86 h 1 v 1 H 7 Z m 0,2 h 1 v 2 H 7 Z m 2,0.5 2,1.5 H 9 Z M 6,88.502 V 90 H 4.00195 L 6,88.50195 Z M 6.80859,91 h 1.38282 l 1,2 H 5.80859 Z"
        id="power_tower_donau"
        inkscape:label="#path6362"
        inkscape:connector-curvature="0">
       <title
          id="title6623">donau transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 38.5,17 a 0.50005,0.50005 0 0 0 -0.32617,0.12109 l -3.5,3 A 0.50005,0.50005 0 0 0 35,21 h 2.14844 l -2.47461,2.12109 A 0.50005,0.50005 0 0 0 35,24 h 2.14844 l -2.47461,2.12109 A 0.50005,0.50005 0 0 0 35,27 h 2.69141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 37.30859,30 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 41.30859,27 H 44 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 L 41.85156,24 H 44 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 L 41.85156,21 H 44 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 l -3.5,-3 A 0.50005,0.50005 0 0 0 40.5,17 Z m 0.5,1 h 1 v 2 h -1 z m -1,0.58789 V 20 h -1.64844 z m 3,0 L 42.64844,20 H 41 Z M 39,21 h 1 v 2 h -1 z m -1,0.58789 V 23 h -1.64844 z m 3,0 L 42.64844,23 H 41 Z M 39,24 h 1 v 2 h -1 z m -1,0.58789 V 26 h -1.64844 z m 3,0 L 42.64844,26 H 41 Z M 38.80859,27 h 1.38282 l 1,2 h -3.38282 z"
-       id="power_tower_3_level"
-       inkscape:label="#path6368"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6621">three-level transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 86.5,81 a 0.50005,0.50005 0 0 0 -0.35352,0.14648 l -3,3 A 0.50005,0.50005 0 0 0 83.5,85 h 1.49805 l -2.79883,2.09961 A 0.50005,0.50005 0 0 0 82.5,88 h 2.79297 l -2.14649,2.14648 A 0.50005,0.50005 0 0 0 83.5,91 h 2.19141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 85.30859,94 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 89.30859,91 H 91.5 a 0.50005,0.50005 0 0 0 0.35352,-0.85352 L 89.70703,88 H 92.5 a 0.50005,0.50005 0 0 0 0.30078,-0.90039 L 90.00195,85 H 91.5 a 0.50005,0.50005 0 0 0 0.35352,-0.85352 l -3,-3 A 0.50005,0.50005 0 0 0 88.5,81 Z m 0.5,1 h 1 v 2 h -1 z m -1,0.70703 V 84 h -1.29297 z m 3,0 L 90.29297,84 H 89 Z M 87,85 h 1 v 2 h -1 z m 2,0.5 2,1.5 h -2 z m -3,0.002 V 87 H 84.00195 L 86,85.50195 Z M 87,88 h 1 v 2 h -1 z m -1,0.70703 V 90 h -1.29297 z m 3,0 L 90.29297,90 H 89 Z M 86.80859,91 h 1.38282 l 1,2 h -3.38282 z"
-       id="power_tower_barrel"
-       inkscape:label="#path6376"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6619">barrel transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 70.5,18 a 0.50005,0.50005 0 0 0 -0.32617,0.12109 0.50005,0.50005 0 0 0 -0.002,0.002 l -3.49805,2.99804 A 0.50005,0.50005 0 0 0 67,22 h 3 v 1.26953 l -3.32617,2.85156 A 0.50005,0.50005 0 0 0 67,27 h 2.69141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 69.30859,30 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 73.30859,27 H 76 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 L 73,23.26953 V 18.58008 A 0.50005,0.50005 0 0 0 72.5,18 Z m 0.5,1 h 1 v 2 h -1 z m -1,0.58789 V 21 H 68.35156 Z M 71,22 h 1 v 1 h -1 z m 0,2 h 1 v 2 h -1 z m -1,0.58789 V 26 h -1.64844 z m 3,0 L 74.64844,26 H 73 Z M 70.80859,27 h 1.38282 l 1,2 h -3.38282 z"
-       id="power_tower_asymmetric"
-       inkscape:label="#path6384"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6617">asymmetric transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 102.5,17 a 0.50005,0.50005 0 0 0 -0.32617,0.12109 0.50005,0.50005 0 0 0 -0.002,0.002 l -3.49805,2.99804 A 0.50005,0.50005 0 0 0 99,21 h 3 v 2.26953 l -3.32617,2.85156 A 0.50005,0.50005 0 0 0 99,27 h 2.69141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 101.30859,30 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 105,26.38281 V 24 h 3 a 0.50005,0.50005 0 0 0 0.32617,-0.87891 L 105,20.26953 V 17.5 A 0.50005,0.50005 0 0 0 104.5,17 Z m 0.5,1 h 1 v 2 h -1 z m -1,0.58789 V 20 h -1.64844 z M 103,21 h 1 v 2 h -1 z m 2,0.58789 L 106.64844,23 H 105 Z M 103,24 h 1 v 2 h -1 z m -1,0.58789 V 26 h -1.64844 z M 102.80859,27 h 1.38282 l 1,2 h -3.38282 z"
-       id="power_tower_triangle"
-       inkscape:connector-curvature="0"
-       inkscape:label="#path6390">
-      <title
-         id="title6629">triangle transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 135.50391,17 a 0.50005,0.50005 0 0 0 -0.45118,0.27734 l -1,2 A 0.50005,0.50005 0 0 0 134,19.5 V 20 h -3 a 0.50005,0.50005 0 1 0 0,1 h 3 v 2 h -3 a 0.50005,0.50005 0 1 0 0,1 h 3 v 2 h -3 a 0.50005,0.50005 0 1 0 0,1 h 2.69141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 133.30859,30 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 137,26.38281 V 19.5 a 0.50005,0.50005 0 0 0 -0.0527,-0.22266 l -1,-2 A 0.50005,0.50005 0 0 0 135.50391,17 Z m -0.004,1.61719 0.5,1 V 20 h -1 V 19.61719 Z M 135,21 h 1 v 2 h -1 z m 0,3 h 1 v 2 h -1 z m -0.19141,3 h 1.38282 l 1,2 h -3.38282 z"
-       id="power_tower_flag"
-       inkscape:label="#path6398"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6615">flag transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 55.50391,17 a 0.50005,0.50005 0 0 0 -0.45118,0.27734 l -1,2 A 0.50005,0.50005 0 0 0 54,19.5 V 20 h -2.5 a 0.50005,0.50005 0 1 0 0,1 H 54 v 1 h -2.5 a 0.50005,0.50005 0 1 0 0,1 H 54 v 1 h -2.5 a 0.50005,0.50005 0 1 0 0,1 H 54 v 1 h -2.5 a 0.50005,0.50005 0 1 0 0,1 h 2.19141 l -1.63868,3.27734 a 0.50005,0.50005 0 1 0 0.89454,0.44532 L 53.30859,30 h 4.38282 l 0.36132,0.72266 a 0.50005,0.50005 0 1 0 0.89454,-0.44532 L 57.30859,27 H 59.5 a 0.50005,0.50005 0 1 0 0,-1 H 57 v -1 h 2.5 a 0.50005,0.50005 0 1 0 0,-1 H 57 v -1 h 2.5 a 0.50005,0.50005 0 1 0 0,-1 H 57 v -1 h 2.5 a 0.50005,0.50005 0 1 0 0,-1 H 57 v -0.5 a 0.50005,0.50005 0 0 0 -0.0527,-0.22266 l -1,-2 A 0.50005,0.50005 0 0 0 55.50391,17 Z m -0.004,1.61719 0.5,1 V 20 h -1 V 19.61719 Z M 55,21 h 1 v 1 h -1 z m 0,2 h 1 v 1 h -1 z m 0,2 h 1 v 1 h -1 z m -0.19141,2 h 1.38282 l 1,2 h -3.38282 z"
-       id="power_tower_4_level"
-       inkscape:label="#path6406"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6613">four-level transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="M 163.49219,18.99219 A 0.50005,0.50005 0 0 0 163,19.5 V 20 h -1 a 0.50005,0.50005 0 1 0 0,1 h 1 v 1.41797 a 0.50005,0.50005 0 0 0 0.0898,0.37109 L 166,27.63867 V 30.5 a 0.50005,0.50005 0 1 0 1,0 V 30 h 1 v 0.5 a 0.50005,0.50005 0 1 0 1,0 v -2.86133 l 2.90625,-4.84375 a 0.50005,0.50005 0 0 0 0.008,-0.01 0.50005,0.50005 0 0 0 0.0857,-0.36695 V 21 h 1 a 0.50005,0.50005 0 1 0 0,-1 h -1 V 19.5 A 0.50005,0.50005 0 0 0 171.49219,18.99219 0.50005,0.50005 0 0 0 171,19.5 V 20 h -7 v -0.5 a 0.50005,0.50005 0 0 0 -0.50781,-0.50781 z M 164,21 h 7 v 1.25 l -3.5,2.625 -3.5,-2.625 z m 1.24414,3.43555 1.62109,1.21484 -0.40429,0.81055 z m 4.51172,0 -1.2168,2.02539 -0.40429,-0.81055 z M 167.5,26.61914 168,27.61719 V 29 h -1 v -1.38281 z"
-       id="power_tower_delta"
-       inkscape:label="#path6528"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6611">delta transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="M 51.49219,81.99219 A 0.50005,0.50005 0 0 0 51,82.5 V 83 h -1 a 0.50005,0.50005 0 1 0 0,1 h 1 v 1 h -1 a 0.50005,0.50005 0 1 0 0,1 h 1 v 0.41797 a 0.50005,0.50005 0 0 0 0.0898,0.37109 L 54,91.63867 V 94.5 a 0.50005,0.50005 0 1 0 1,0 V 94 h 1 v 0.5 a 0.50005,0.50005 0 1 0 1,0 v -2.86133 l 2.90625,-4.84375 a 0.50005,0.50005 0 0 0 0.008,-0.01 0.50005,0.50005 0 0 0 0.0857,-0.36695 V 86 h 1 a 0.50005,0.50005 0 1 0 0,-1 h -1 v -1 h 1 a 0.50005,0.50005 0 1 0 0,-1 h -1 V 82.5 A 0.50005,0.50005 0 0 0 59.49219,81.99219 0.50005,0.50005 0 0 0 59,82.5 V 83 H 52 V 82.5 A 0.50005,0.50005 0 0 0 51.49219,81.99219 Z M 52,84 h 7 v 1 h -7 z m 0,2 h 7 v 0.25 L 55.5,88.875 52,86.25 Z m 1.24414,2.43555 1.62109,1.21484 -0.40429,0.81055 z m 4.51172,0 -1.2168,2.02539 -0.40429,-0.81055 z M 55.5,90.61914 56,91.61719 V 93 h -1 v -1.38281 z"
-       id="power_tower_delta_2_level"
-       inkscape:label="#path6539"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6609">delta two-level transmission tower</title>
-    </path>
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="M 67.49219,80.99219 A 0.50005,0.50005 0 0 0 67,81.5 V 82 h -1 a 0.50005,0.50005 0 1 0 0,1 h 1 v 1 h -1 a 0.50005,0.50005 0 1 0 0,1 h 1 v 1 h -1 a 0.50005,0.50005 0 1 0 0,1 h 1.21484 L 70,91.63867 V 94.5 a 0.50005,0.50005 0 1 0 1,0 V 94 h 1 v 0.5 a 0.50005,0.50005 0 1 0 1,0 V 91.63867 L 75.78516,87 H 77 a 0.50005,0.50005 0 1 0 0,-1 h -1 v -1 h 1 a 0.50005,0.50005 0 1 0 0,-1 h -1 v -1 h 1 a 0.50005,0.50005 0 1 0 0,-1 H 76 V 81.5 A 0.50005,0.50005 0 0 0 75.49219,80.99219 0.50005,0.50005 0 0 0 75,81.5 V 82 H 68 V 81.5 A 0.50005,0.50005 0 0 0 67.49219,80.99219 Z M 68,83 h 7 v 1 h -7 z m 0,2 h 7 v 1 h -7 z m 1.00195,2 h 4.9961 L 71.5,88.87305 Z m 0.24219,1.43555 1.62109,1.21484 -0.40429,0.81055 z m 4.51172,0 -1.2168,2.02539 -0.40429,-0.81055 z M 71.5,90.61914 72,91.61719 V 93 h -1 v -1.38281 z"
-       id="power_tower_delta_3_level"
-       inkscape:label="#path6553"
-       inkscape:connector-curvature="0">
-      <title
-         id="title6607">delta three-level transmission tower</title>
     </path>
     <path
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
@@ -1545,24 +1306,6 @@
        id="path7353"
        d="m 37,77.5 h 5"
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    <path
-       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:start;white-space:normal;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
-       d="m 38.5,82 a 0.50005,0.50005 0 0 0 -0.300781,0.0996 l -4,3 A 0.50005,0.50005 0 0 0 34.5,86 H 38 v 1.29297 l -2.853516,2.85351 A 0.50005,0.50005 0 0 0 35.5,91 h 2.191406 l -1.638672,3.27734 a 0.50005,0.50005 0 1 0 0.894532,0.44532 L 37.308594,94 h 4.382812 l 0.361328,0.72266 a 0.50005,0.50005 0 1 0 0.894532,-0.44532 L 41.308594,91 H 43.5 a 0.50005,0.50005 0 0 0 0.353516,-0.85352 L 41,87.29297 V 86 h 3.5 a 0.50005,0.50005 0 0 0 0.300781,-0.90039 l -4,-3 A 0.50005,0.50005 0 0 0 40.5,82 Z m 0.5,1 h 1 v 2 h -1 z m 2,0.5 2,1.5 h -2 z m -3,0.002 V 85 H 36.001953 Z M 39,86 h 1 v 1 h -1 z m 0,2 h 1 v 2 h -1 z m -1,0.70703 V 90 h -1.292969 z m 3,0 L 42.292969,90 H 41 Z M 38.808594,91 h 1.382812 l 1,2 h -3.382812 z"
-       id="power_tower_donau_inverse"
-       inkscape:label="#path7359">
-      <title
-         id="title7378">inverse donau transmission tower</title>
-    </path>
-    <path
-       id="power_tower_x_frame"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000"
-       d="M 130.10938,83.8125 134,88.67578 v 0.72852 l -1.96484,4.91015 c -0.18911,0.47364 0.36898,0.89327 0.77148,0.58008 l 2.69336,-2.0957 2.69336,2.0957 c 0.4025,0.31319 0.96059,-0.10644 0.77148,-0.58008 L 137,89.4043 v -0.72852 l 3.89062,-4.86328 c 0.35396,-0.43599 -0.16887,-1.03442 -0.64843,-0.74219 L 135.5,85.91602 130.75781,83.07031 c -0.45926,-0.27808 -1.00815,0.29737 -0.64843,0.74219 z m 2.52148,1.54883 2.21484,1.33008 -0.44336,0.88671 z m 5.73828,0 -1.77148,2.21679 -0.44336,-0.88671 z M 135.5,87.61914 136,88.61719 V 89 h -1 V 88.61719 Z M 134.83984,90 h 1.32032 l 0.31054,0.77734 -0.9707,0.75586 -0.97266,-0.75586 z m -0.69726,1.74414 0.54297,0.42188 -1.03516,0.80664 z m 2.71484,0 0.49219,1.22852 -1.03516,-0.80664 z"
-       sodipodi:nodetypes="ccccscscccccccccccccccccccccccccccccccccccc" />
-    <path
-       id="power_tower_y_frame"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000"
-       d="M 114.08398,83.77734 118,89.65234 v 0.78516 l -0.98438,3.94141 c -0.0665,0.26745 0.096,0.53825 0.36329,0.60547 0.26745,0.0665 0.53825,-0.096 0.60547,-0.36329 L 118.14062,94 h 2.71876 l 0.15624,0.62109 c 0.0672,0.26726 0.33802,0.42975 0.60547,0.36329 0.26726,-0.0672 0.42975,-0.33802 0.36329,-0.60547 L 121,90.4375 v -0.78516 l 3.91602,-5.875 c 0.31753,-0.4754 -0.28239,-1.02545 -0.72852,-0.66796 l -4.6875,3.75 -4.6875,-3.75 c -0.43017,-0.34369 -1.04909,0.18689 -0.72852,0.66796 z m 2.61914,2.12696 2.16797,1.73437 -0.43359,0.86719 z m 5.59376,0 -1.73438,2.60156 -0.43359,-0.86719 z M 119.5,88.61914 120,89.61719 V 90 h -1 V 89.61719 Z M 118.89062,91 h 1.21876 l 0.5,2 h -2.21876 z"
-       sodipodi:nodetypes="cccccsccscccccccccccccccccccccccccccc" />
     <path
        style="display:inline;opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 101.5,99.5 h 2"
@@ -1596,9 +1339,5 @@
        y="98"
        ry="0.5"
        rx="0.5" />
-    <path
-       id="power_pole_flag_armless_v0"
-       style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1;font-variation-settings:normal;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none"
-       d="M 103.5 114 C 103.223 114 103 114.223 103 114.5 L 103 115 L 101.5 115 A 0.5 0.5 0 0 0 101 115.5 A 0.5 0.5 0 0 0 101.5 116 L 103 116 L 103 117 L 101.5 117 A 0.5 0.5 0 0 0 101 117.5 A 0.5 0.5 0 0 0 101.5 118 L 103 118 L 103 119 L 101.5 119 A 0.5 0.5 0 0 0 101 119.5 A 0.5 0.5 0 0 0 101.5 120 L 103 120 L 103 126.5 C 103 126.777 103.223 127 103.5 127 L 104.5 127 C 104.777 127 105 126.777 105 126.5 L 105 114.5 C 105 114.223 104.777 114 104.5 114 L 103.5 114 z M 101.5 120.5 A 0.5 0.5 0 0 0 101 121 L 101 122 A 0.5 0.5 0 0 0 101.5 122.5 A 0.5 0.5 0 0 0 102 122 L 102 121 A 0.5 0.5 0 0 0 101.5 120.5 z " />
   </g>
 </svg>

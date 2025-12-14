@@ -5,6 +5,9 @@ from __future__ import annotations
 import contextlib
 import json
 import re
+import shutil
+import subprocess
+import tempfile
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any
 from xml.etree import ElementTree as ET
@@ -13,6 +16,8 @@ try:
     import cairosvg
 except ImportError:
     cairosvg = None
+
+from pathlib import Path
 
 import numpy as np
 import svgwrite
@@ -23,7 +28,6 @@ from svgwrite import Drawing
 from svgwrite.container import Group
 
 if TYPE_CHECKING:
-    from pathlib import Path
     from xml.etree.ElementTree import Element
 
     from numpy.typing import NDArray
@@ -77,7 +81,7 @@ class PathOnCanvas:
     path: str
     """SVG path commands."""
 
-    offset: NDArray
+    offset: NDArray = field(default_factory=lambda: np.array((0.0, 0.0)))
     """Offset of the path on the canvas."""
 
 
@@ -304,6 +308,54 @@ class Shapes:
         """
         root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
         self.__parse(root, svg_file_name)
+
+    def add_from_iconscript(self, iconscript_file_name: Path) -> None:
+        """Add shapes from iconscript file.
+
+        :param iconscript_file_name: input iconscript file name.
+        """
+        temp_output_directory: Path = Path(tempfile.mkdtemp())
+
+        message: str
+
+        iconscript_path: str | None = shutil.which("iconscript")
+        if iconscript_path is None:
+            message = "`iconscript` executable not found in `PATH`"
+            raise FileNotFoundError(message)
+
+        if not iconscript_file_name.is_file():
+            message = f"`{iconscript_file_name}` is not a valid file"
+            raise FileNotFoundError(message)
+
+        command: list[str] = [
+            iconscript_path,
+            str(iconscript_file_name),
+            str(temp_output_directory),
+        ]
+        subprocess.check_call(command, shell=False)  # noqa: S603
+
+        offset: NDArray = np.array((-8.0, -8.0))
+
+        for svg_file_name in temp_output_directory.glob("*.svg"):
+            version: str = "main"
+            id_: str = svg_file_name.stem
+            if match := VERSION_MATCHER.match(id_):
+                version = match.group("version")
+                id_ = match.group("id")
+            content: str = svg_file_name.read_text()
+            root: Element = ET.fromstring(content)  # noqa: S314
+            for node in root:
+                if node.tag == r"{http://www.w3.org/2000/svg}path":
+                    path: str = node.attrib["d"]
+                    if id_ in self.shapes:
+                        shape: Shape = self.shapes[id_]
+                        shape.paths[version] = PathOnCanvas(path, offset=offset)
+                    else:
+                        self.shapes[id_] = Shape(
+                            {version: PathOnCanvas(path, offset=offset)},
+                            id_,
+                        )
+        shutil.rmtree(str(temp_output_directory))
 
     def __parse(self, node: Element, svg_file_name: Path) -> None:
         """Extract icon paths into a map.

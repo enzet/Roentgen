@@ -113,6 +113,11 @@ def draw() -> None:
     ]:
         shapes.add_from_file(path)
 
+    for path in [
+        Path("iconscript") / "power.iconscript",
+    ]:
+        shapes.add_from_iconscript(path)
+
     version: str = Path("VERSION").read_text().strip()
 
     icons: list[Icon] = get_icons(Path("data") / "config.json")
