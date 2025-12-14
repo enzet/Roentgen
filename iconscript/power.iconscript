@@ -50,7 +50,12 @@ icon power_pole_flag = {
 icon power_pole_delta = {
     s 7,4 +1,10 l 2,5 +11,0 l 2,2.5 +0,1 l 13,2.5 +0,1 l 7.5,1.5 +0,1
 }
-icon power_tower_donau = {@tower p 6,2 @arm_s p 6,7 @arm_w}
+# icon power_tower_donau = {
+#     @tower
+#     # Here's a little hack to work around a bug in Paper.js.
+#     p 6,2 l +0,0 +2,0 +3.01,3 +-8.02,0 +3.01,-3
+#     p 6,7 @arm_w
+# }
 icon power_tower_donau_1_level = {
     @tower_1 p 6,1 @arm_s p 6,4 @arm_w p 6,7 @arm_w
 }
