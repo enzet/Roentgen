@@ -1,4 +1,4 @@
-## Unreleased
+## 0.9.0
 
 Add support for iconscript 0.1 files, use iconscript for all `power_tower_*` and
 `power_pole_*` icons except for `power_tower_donau`.
