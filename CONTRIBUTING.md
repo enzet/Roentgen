@@ -33,3 +33,20 @@ git push
 git tag -a v$VERSION_NUMBER -m "Version $VERSION_NUMBER"
 git push origin v$VERSION_NUMBER
 ```
+
+7. Create ZIP file with icons:
+
+```shell
+cp -r icons/ release/roentgen-$VERSION_NUMBER
+cd release
+zip -r roentgen-$VERSION_NUMBER.zip roentgen-$VERSION_NUMBER/
+cd ..
+```
+
+8. Create new GitHub Release:
+
+```shell
+gh release create v$VERSION_NUMBER \
+    --title "Version $VERSION_NUMBER" \
+    release/roentgen-$VERSION_NUMBER.zip
+```
