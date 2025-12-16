@@ -1,5 +1,6 @@
 .DS_Store
 .idea/
+.npmrc
 .venv/
 __pycache__
 cache/
