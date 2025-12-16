@@ -1,0 +1,27 @@
+{
+    "name": "@enzet/roentgen",
+    "version": "0.9.0",
+    "description": "Set of monochrome 14 × 14 px pixel-aligned map icons",
+    "files": [
+        "icons",
+        "README.md",
+        "LICENSE"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/enzet/Roentgen.git"
+    },
+    "keywords": [
+        "icons",
+        "svg",
+        "map-icons",
+        "openstreetmap",
+        "osm"
+    ],
+    "author": "Sergey Vartanov <me@enzet.ru>",
+    "license": "CC-BY-4.0",
+    "bugs": {
+        "url": "https://github.com/enzet/Roentgen/issues"
+    },
+    "homepage": "https://github.com/enzet/Roentgen#readme"
+}
