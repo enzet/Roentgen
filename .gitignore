@@ -1,6 +1,7 @@
 .DS_Store
 .idea/
 .npmrc
+.pypirc
 .venv/
 __pycache__
 cache/
@@ -8,6 +9,8 @@ icons/LICENSE
 icons_sketches/
 osm/
 out/
+python-package/roentgen/icons/
+python-package/dist/
 raster/
 release/
 roentgen.egg-info/

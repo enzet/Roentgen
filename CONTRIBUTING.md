@@ -50,3 +50,14 @@ gh release create v$VERSION_NUMBER \
     --title "Version $VERSION_NUMBER" \
     release/roentgen-$VERSION_NUMBER.zip
 ```
+
+9. Build and publish Python package:
+
+```shell
+cd python-package
+source .venv/bin/activate
+python -m build
+python -m twine upload dist/roentgen_icons-$VERSION_NUMBER*
+deactivate
+cd ..
+```
