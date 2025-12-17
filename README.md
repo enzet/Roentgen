@@ -13,10 +13,10 @@ is used in [iD editor](https://github.com/openstreetmap/iD) for OpenStreetMap.
 To use the icons, you can
   - browse and download them from the
     [Röntgen website](https://enzet.ru/roentgen),
-  - use the npm package
+  - [use](#npm-package) the npm package
     [@enzet/roentgen](https://www.npmjs.com/package/@enzet/roentgen):
     `npm i @enzet/roentgen`,
-  - use the PyPI package
+  - [use](#pypi-package) the PyPI package
     [roentgen-icons](https://pypi.org/project/roentgen-icons/):
     `pip install roentgen-icons`,
   - download them from the [`icons`](icons) directory,
@@ -45,6 +45,8 @@ Feel free to request new icons via issues on GitHub.
 
 ## Installation
 
+### npm Package
+
 Röntgen is available as an npm package:
 
 ```bash
@@ -61,6 +63,30 @@ Or use them in HTML:
 
 ```html
 <img src="node_modules/@enzet/roentgen/icons/tree.svg" alt="Tree icon" />
+```
+
+### PyPI Package
+
+Röntgen is available as a PyPI package:
+
+```bash
+pip install roentgen-icons
+```
+
+After installation, you can use the icons in your Python code:
+
+```python
+from roentgen import get_icons, Icons
+from pathlib import Path
+
+icons: Icons = get_icons()
+
+icon_identifiers: list[str] = icons.identifiers
+path_commands: str = icons.get_path_commands("tree")
+
+icon_path: Path = icons.get_icon_path("tree")
+with icon_path.open() as input_file:
+    svg_content: str = input_file.read()
 ```
 
 ## Design Principles
