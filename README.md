@@ -10,7 +10,18 @@ However, it can be easily used for any map project or even for non-map-related
 projects. Some icons can also be used as emoji symbols. Version 0.1 of Röntgen
 is used in [iD editor](https://github.com/openstreetmap/iD) for OpenStreetMap.
 
-All icons can be found in the [`icons`](icons) directory.
+To use the icons, you can
+  - browse and download them from the
+    [Röntgen website](https://enzet.ru/roentgen),
+  - use the npm package
+    [@enzet/roentgen](https://www.npmjs.com/package/@enzet/roentgen):
+    `npm i @enzet/roentgen`,
+  - use the PyPI package
+    [roentgen-icons](https://pypi.org/project/roentgen-icons/):
+    `pip install roentgen-icons`,
+  - download them from the [`icons`](icons) directory,
+  - download the release ZIP file from
+    [GitHub Releases](https://github.com/enzet/Roentgen/releases).
 
 All icons are stored as optimized SVG files. The majority of them contain only
 one path element with a minimal number of points. File sizes range from 207
