@@ -90,7 +90,7 @@
                 "keywords": ["architecture", "building", "house"],
                 "name": "five-story apartments building",
                 "shapes": [{"id": "apartments_6_story", "version": "v0"}],
-                "sketch": "true"
+                "sketch": true
             },
             "barn": {
                 "keywords": ["building", "architecture"],
@@ -509,6 +509,12 @@
         }
     },
     "__electronic_device": {
+        "arcade": {
+            "keywords": ["game", "entertainment", "machine"],
+            "name": "arcade",
+            "shapes": [{"id": "arcade", "version": "v0"}],
+            "sketch": true
+        },
         "cctv": {
             "directed": "right",
             "keywords": ["security", "surveillance"],
@@ -557,6 +563,12 @@
             "unicode": ["📷"],
             "keywords": ["photography"],
             "name": "photo camera"
+        },
+        "slot_machine": {
+            "keywords": ["game", "entertainment", "casino"],
+            "name": "slot machine",
+            "shapes": [{"id": "slot_machine", "version": "v0"}],
+            "sketch": true
         },
         "server": {
             "keywords": ["server", "computer", "technical", "data"],
@@ -921,20 +933,18 @@
     },
     "__hyg": {
         "toothbrush": {
-            "todo": "check version",
+            "todo": "check version and keywords",
             "keywords": ["hyg", "teeth"],
             "name": "toothbrush",
             "shapes": [{"id": "toothbrush", "version": "v0"}],
-            "sketch": true,
-            "todo": "check keywords"
+            "sketch": true
         },
         "toothbrush_and_toothpaste": {
-            "todo": "check version",
+            "todo": "check version and keywords",
             "keywords": ["hyg", "teeth"],
             "name": "toothbrush and toothpaste",
             "shapes": [{"id": "toothbrush_and_toothpaste", "version": "v0"}],
-            "sketch": true,
-            "todo": "check keywords"
+            "sketch": true
         }
     },
     "__indoor": {
@@ -1030,6 +1040,14 @@
         }
     },
     "__instrument": {
+        "sundial": {
+            "keywords": ["tool", "clock", "time", "sun"],
+            "name": "sundial",
+            "shapes": [
+                {"id": "sundial", "version": "v3"}
+            ],
+            "sketch": true
+        },
         "wrench": {
             "keywords": ["technical", "tool"],
             "name": "wrench"
@@ -3604,6 +3622,14 @@
         }
     },
     "__tower": {
+        "catenary_mast": {
+            "name": "catenary mast",
+            "keywords": ["support", "pole", "tower", "power", "electricity"],
+            "shapes": [
+                {"id": "catenary_mast", "version": "v1"}
+            ],
+            "sketch": true
+        },
         "city_gate": {
             "name": "city gate"
         },
@@ -4300,6 +4326,14 @@
                 {"id": "bus_stop_bench"},
                 {"id": "bus_stop_shelter"}
             ]
+        },
+        "bus_stop_sign___platform": {
+            "name": "bus stop sign with platform",
+            "shapes": [
+                {"id": "bus_stop_sign"},
+                {"id": "platform"}
+            ],
+            "sketch": true
         },
         "bus_stop_sign___platform___bus_stop_shelter": {
             "name": "bus stop sign with platform and shelter",
