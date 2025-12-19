@@ -270,7 +270,10 @@
                 "keywords": ["art", "historic"],
                 "name": "memorial"
             },
-            "monument": {"keywords": ["art", "historic"], "name": "monument"},
+            "monument": {
+                "keywords": ["art", "historic"],
+                "name": "monument"
+            },
             "obelisk": {
                 "categories": ["historic"],
                 "keywords": ["art", "historic"],
@@ -448,9 +451,7 @@
         "connector_cee_blue": {
             "keywords": ["electric", "vehicle", "technical"],
             "name": "CEE blue connector",
-            "shapes": [
-                {"id": "connector_cee_blue", "version": "v2"}
-            ],
+            "shapes": [{"id": "connector_cee_blue", "version": "v2"}],
             "sketch": true
         },
         "connector_chademo": {
@@ -472,9 +473,7 @@
         "connector_type_1_combo": {
             "keywords": ["electric", "vehicle", "technical"],
             "name": "type 1 combo connector",
-            "shapes": [
-                {"id": "connector_type_1_combo", "version": "v0"}
-            ],
+            "shapes": [{"id": "connector_type_1_combo", "version": "v0"}],
             "sketch": true
         },
         "connector_type_2": {
@@ -484,9 +483,7 @@
         "connector_type_2_combo": {
             "keywords": ["electric", "vehicle", "technical"],
             "name": "type 2 combo connector",
-            "shapes": [
-                {"id": "connector_type_2_combo", "version": "v0"}
-            ],
+            "shapes": [{"id": "connector_type_2_combo", "version": "v0"}],
             "sketch": true
         },
         "connector_type_e": {
@@ -551,10 +548,7 @@
         "phone": {
             "unicode": ["📱"],
             "keywords": [
-                "communication",
-                "telephone",
-                "mobile",
-                "cellphone",
+                "communication", "telephone", "mobile", "cellphone",
                 "smartphone"
             ],
             "name": "mobile phone"
@@ -572,9 +566,7 @@
         },
         "server": {
             "keywords": ["server", "computer", "technical", "data"],
-            "shapes": [
-                {"id": "server", "version": "v0"}
-            ],
+            "shapes": [{"id": "server", "version": "v0"}],
             "sketch": true,
             "name": "server"
         },
@@ -593,16 +585,12 @@
         "flag_australia": {
             "keywords": ["country", "nation"],
             "name": "flag of Australia",
-            "shapes": [
-                {"id": "flag_australia", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_australia", "version": "v0"}],
             "sketch": true
         },
         "flag_bend_dexter": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_bend_dexter", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_bend_dexter", "version": "v0"}],
             "sketch": true,
             "name": "flag with dexter bend"
         },
@@ -612,58 +600,44 @@
         },
         "flag_canada": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_canada", "version": "v2"}
-            ],
+            "shapes": [{"id": "flag_canada", "version": "v2"}],
             "sketch": true,
             "name": "flag of Canada"
         },
         "flag_canton": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_canton", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_canton", "version": "v0"}],
             "sketch": true,
             "name": "flag with canton"
         },
         "flag_chicago": {
             "keywords": ["country", "nation"],
             "name": "flag of Chicago",
-            "shapes": [
-                {"id": "flag_chicago", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_chicago", "version": "v0"}],
             "sketch": true
         },
         "flag_chile": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_chile", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_chile", "version": "v0"}],
             "sketch": true,
             "name": "flag of Chile"
         },
         "flag_china": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_china", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_china", "version": "v0"}],
             "sketch": true,
             "name": "flag of China"
         },
         "flag_circle": {
             "keywords": ["country", "nation"],
             "name": "flag with circle",
-            "shapes": [
-                {"id": "flag_circle", "version": "v1"}
-            ],
+            "shapes": [{"id": "flag_circle", "version": "v1"}],
             "sketch": true
         },
         "flag_diagonal_bisection": {
             "keywords": ["country", "nation"],
             "name": "flag with diagonal bisection",
-            "shapes": [
-                {"id": "flag_diagonal_bisection", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_diagonal_bisection", "version": "v0"}],
             "sketch": true
         },
         "flag_diagonal_bisection_sinister": {
@@ -676,44 +650,31 @@
         },
         "flag_europe": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_europe", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_europe", "version": "v0"}],
             "sketch": true,
             "name": "flag of European Union"
         },
         "flag_gusset": {
             "keywords": ["country", "nation"],
             "name": "flag with gusset",
-            "shapes": [
-                {"id": "flag_gusset", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_gusset", "version": "v0"}],
             "sketch": true
         },
         "flag_gyronee": {
             "keywords": ["country", "nation"],
             "name": "flag with gyronee",
-            "shapes": [
-                {"id": "flag_gyronee", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_gyronee", "version": "v0"}],
             "sketch": true
         },
         "flag_horizontal_bisection": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_horizontal_bisection", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_horizontal_bisection", "version": "v0"}],
             "sketch": true,
             "name": "flag with horizontal bisection"
         },
         "flag_horizontal_triband": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {
-                    "id": "flag_horizontal_triband",
-                    "version": "v0"
-                }
-            ],
+            "shapes": [{"id": "flag_horizontal_triband", "version": "v0"}],
             "sketch": true,
             "name": "flag with horizontal triband"
         },
@@ -721,87 +682,70 @@
             "keywords": ["country", "nation"],
             "name": "flag with horizontal triband light dark light dot",
             "shapes": [
-                {"id": "flag_horizontal_triband_light_dark_light_dot", "version": "v0"}
+                {
+                    "id": "flag_horizontal_triband_light_dark_light_dot",
+                    "version": "v0"
+                }
             ],
             "sketch": true
         },
         "flag_nordic_cross": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_nordic_cross", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_nordic_cross", "version": "v0"}],
             "sketch": true,
             "name": "flag with Nordic cross"
         },
         "flag_nordic_cross_double": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_nordic_cross_double", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_nordic_cross_double", "version": "v0"}],
             "sketch": true,
             "name": "flag with double Nordic cross"
         },
         "flag_philippines": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_philippines", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_philippines", "version": "v0"}],
             "sketch": true,
             "name": "flag of the Philippines"
         },
         "flag_pirate": {
             "keywords": ["country", "nation"],
             "name": "flag of the pirates",
-            "shapes": [
-                {"id": "flag_pirate", "version": "v3"}
-            ],
+            "shapes": [{"id": "flag_pirate", "version": "v3"}],
             "sketch": true
         },
         "flag_saltire": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_saltire", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_saltire", "version": "v0"}],
             "sketch": true,
             "name": "flag with saltire"
         },
         "flag_saltire_symmetric_cross": {
             "keywords": ["country", "nation"],
             "name": "flag with saltire and symmetric cross",
-            "shapes": [
-                {"id": "flag_saltire_symmetric_cross", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_saltire_symmetric_cross", "version": "v0"}],
             "sketch": true
         },
         "flag_solid": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_solid", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_solid", "version": "v0"}],
             "sketch": true,
             "name": "solid flag"
         },
         "flag_spain": {
             "keywords": ["country", "nation"],
             "name": "flag of Spain",
-            "shapes": [
-                {"id": "flag_spain", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_spain", "version": "v0"}],
             "sketch": true
         },
         "flag_stripes": {
             "keywords": ["country", "nation"],
             "name": "flag with stripes",
-            "shapes": [
-                {"id": "flag_stripes", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_stripes", "version": "v0"}],
             "sketch": true
         },
         "flag_symmetric_cross": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_symmetric_cross", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_symmetric_cross", "version": "v0"}],
             "sketch": true,
             "name": "flag with symmetric cross"
         },
@@ -812,9 +756,7 @@
         "flag_turkmenistan": {
             "keywords": ["country", "nation"],
             "name": "flag of Turkmenistan",
-            "shapes": [
-                {"id": "flag_turkmenistan", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_turkmenistan", "version": "v0"}],
             "sketch": true
         },
         "flag_usa": {
@@ -823,9 +765,7 @@
         },
         "flag_vertical_bisection": {
             "keywords": ["country", "nation"],
-            "shapes": [
-                {"id": "flag_vertical_bisection", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_vertical_bisection", "version": "v0"}],
             "sketch": true,
             "name": "flag with vertical bisection"
         },
@@ -836,9 +776,7 @@
         "flag_quadrisection": {
             "keywords": ["country", "nation"],
             "name": "flag with quadrisection",
-            "shapes": [
-                {"id": "flag_quadrisection", "version": "v0"}
-            ],
+            "shapes": [{"id": "flag_quadrisection", "version": "v0"}],
             "sketch": true
         }
     },
@@ -966,14 +904,15 @@
             },
             "bed_with_floor_and_ceiling": {
                 "name": "bed with floor and ceiling",
-                "keywords": ["furniture", "sleep", "bunk", "loft", "hotel", "hostel", "room", "motel"]
+                "keywords": [
+                    "furniture", "sleep", "bunk", "loft", "hotel", "hostel",
+                    "room", "motel"
+                ]
             },
             "carpet": {
                 "keywords": ["furniture", "floor", "carpet"],
                 "name": "carpet",
-                "shapes": [
-                    {"id": "carpet", "version": "v1"}
-                ],
+                "shapes": [{"id": "carpet", "version": "v1"}],
                 "sketch": true
             },
             "drawer": {
@@ -983,9 +922,7 @@
             "sofa": {
                 "keywords": ["furniture", "sitting"],
                 "name": "sofa",
-                "shapes": [
-                    {"id": "sofa", "version": "v1"}
-                ],
+                "shapes": [{"id": "sofa", "version": "v1"}],
                 "sketch": true
             },
             "two_beds": {
@@ -1033,9 +970,7 @@
         "tear_off_ad": {
             "keywords": ["advertisement", "paper", "board", "bulletin"],
             "name": "tear-off advertisement",
-            "shapes": [
-                {"id": "tear_off_ad", "version": "v0"}
-            ],
+            "shapes": [{"id": "tear_off_ad", "version": "v0"}],
             "sketch": true
         }
     },
@@ -1043,9 +978,7 @@
         "sundial": {
             "keywords": ["tool", "clock", "time", "sun"],
             "name": "sundial",
-            "shapes": [
-                {"id": "sundial", "version": "v3"}
-            ],
+            "shapes": [{"id": "sundial", "version": "v3"}],
             "sketch": true
         },
         "wrench": {
@@ -1077,9 +1010,7 @@
         },
         "bubble_tea": {
             "keywords": ["drink", "liquid", "boba", "tapioca"],
-            "shapes": [
-                {"id": "bubble_tea", "version": "v3"}
-            ],
+            "shapes": [{"id": "bubble_tea", "version": "v3"}],
             "sketch": true,
             "name": "bubble tea"
         },
@@ -1101,34 +1032,26 @@
         "coffee_cup_to_go": {
             "keywords": ["drink", "liquid"],
             "name": "coffee cup to go",
-            "shapes": [
-                {"id": "coffee_cup_to_go", "version": "v0"}
-            ],
+            "shapes": [{"id": "coffee_cup_to_go", "version": "v0"}],
             "sketch": true
         },
         "cup_with_tea_bag": {
             "keywords": ["drink", "liquid", "tea"],
             "name": "cup with tea bag",
-            "shapes": [
-                {"id": "cup_with_tea_bag", "version": "v0"}
-            ],
+            "shapes": [{"id": "cup_with_tea_bag", "version": "v0"}],
             "sketch": true
         },
         "glass": {
             "keywords": ["drink", "liquid", "juice"],
             "name": "glass",
-            "shapes": [
-                {"id": "glass", "version": "v0"}
-            ],
+            "shapes": [{"id": "glass", "version": "v0"}],
             "sketch": true,
             "todo": "check version"
         },
         "glass_with_straw_and_slice": {
             "keywords": ["drink", "liquid", "juice"],
             "name": "glass with straw and slice",
-            "shapes": [
-                {"id": "glass_with_straw_and_slice", "version": "v0"}
-            ],
+            "shapes": [{"id": "glass_with_straw_and_slice", "version": "v0"}],
             "sketch": true
         },
         "knives": {
@@ -1139,9 +1062,7 @@
         "mug": {
             "keywords": ["drink", "liquid", "cup"],
             "name": "mug",
-            "shapes": [
-                {"id": "mug", "version": "v0"}
-            ],
+            "shapes": [{"id": "mug", "version": "v0"}],
             "sketch": true
         },
         "pan": {
@@ -1154,9 +1075,7 @@
         "hookah": {
             "keywords": ["hookah", "shisha", "water pipe", "smoking"],
             "name": "hookah",
-            "shapes": [
-                {"id": "hookah", "version": "v1"}
-            ],
+            "shapes": [{"id": "hookah", "version": "v1"}],
             "sketch": true
         }
     },
@@ -1259,9 +1178,7 @@
                     "categories": ["natural"],
                     "keywords": ["natural"],
                     "name": "tree with fruit",
-                    "shapes": [
-                        {"id": "tree_with_fruit", "version": "v1"}
-                    ],
+                    "shapes": [{"id": "tree_with_fruit", "version": "v1"}],
                     "sketch": true
                 },
                 "tree_with_leaf": {
@@ -1272,10 +1189,7 @@
                 "tree___urban_tree_pot": {
                     "name": "tree in urban tree pot",
                     "keywords": ["natural"],
-                    "shapes": [
-                        {"id": "tree"},
-                        {"id": "urban_tree_pot"}
-                    ]
+                    "shapes": [{"id": "tree"}, {"id": "urban_tree_pot"}]
                 },
                 "tree_with_leaf___urban_tree_pot": {
                     "name": "tree with leaf in urban tree pot",
@@ -1296,25 +1210,22 @@
                 "betula___urban_tree_pot": {
                     "name": "birch in urban tree pot",
                     "keywords": ["natural", "birch"],
-                    "shapes": [
-                        {"id": "betula"},
-                        {"id": "urban_tree_pot"}
-                    ]
+                    "shapes": [{"id": "betula"}, {"id": "urban_tree_pot"}]
                 },
                 "palm___urban_tree_pot": {
                     "name": "palm in urban tree pot",
                     "keywords": ["natural"],
-                    "shapes": [
-                        {"id": "palm"},
-                        {"id": "urban_tree_pot"}
-                    ]
+                    "shapes": [{"id": "palm"}, {"id": "urban_tree_pot"}]
                 },
                 "tree___bottom_right_horizontal_line": {
                     "name": "tree on bottom right horizontal line",
                     "keywords": ["natural"],
                     "shapes": [
                         {"id": "tree"},
-                        {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
+                        {
+                            "id": "bottom_right_horizontal_line",
+                            "offset": [-1, 0]
+                        }
                     ]
                 },
                 "tree_with_leaf___bottom_right_horizontal_line": {
@@ -1322,7 +1233,10 @@
                     "keywords": ["natural"],
                     "shapes": [
                         {"id": "tree_with_leaf"},
-                        {"id": "bottom_right_horizontal_line", "offset": [-1, 0]}
+                        {
+                            "id": "bottom_right_horizontal_line",
+                            "offset": [-1, 0]
+                        }
                     ]
                 },
                 "needleleaved_tree___bottom_right_horizontal_line": {
@@ -1330,15 +1244,17 @@
                     "keywords": ["natural"],
                     "shapes": [
                         {"id": "needleleaved_tree"},
-                        {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
+                        {
+                            "id": "bottom_right_horizontal_line",
+                            "offset": [0, -1]
+                        }
                     ]
                 },
                 "betula___bottom_right_horizontal_line": {
                     "name": "birch on bottom right horizontal line",
                     "keywords": ["natural", "birch"],
                     "shapes": [
-                        {"id": "betula"},
-                        {"id": "bottom_right_horizontal_line"}
+                        {"id": "betula"}, {"id": "bottom_right_horizontal_line"}
                     ]
                 },
                 "palm___bottom_right_horizontal_line": {
@@ -1346,7 +1262,10 @@
                     "keywords": ["natural"],
                     "shapes": [
                         {"id": "palm"},
-                        {"id": "bottom_right_horizontal_line", "offset": [0, -1]}
+                        {
+                            "id": "bottom_right_horizontal_line",
+                            "offset": [0, -1]
+                        }
                     ]
                 }
             },
@@ -1394,18 +1313,14 @@
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "grass",
-                "shapes": [
-                    {"id": "grass", "version": "v0"}
-                ],
+                "shapes": [{"id": "grass", "version": "v0"}],
                 "sketch": true
             },
             "grass_and_water": {
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "grass and water",
-                "shapes": [
-                    {"id": "grass_and_water", "version": "v0"}
-                ],
+                "shapes": [{"id": "grass_and_water", "version": "v0"}],
                 "sketch": true,
                 "todo": "check version"
             },
@@ -1413,9 +1328,7 @@
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "grass and flower",
-                "shapes": [
-                    {"id": "grass_and_flower", "version": "v0"}
-                ],
+                "shapes": [{"id": "grass_and_flower", "version": "v0"}],
                 "sketch": true,
                 "todo": "check version"
             },
@@ -1545,72 +1458,63 @@
             "name": "stratovolcano with smoke",
             "keywords": ["natural", "mountain"],
             "shapes": [
-                {"id": "stratovolcano"},
-                {"id": "smoke_2", "offset": [0, -3]}
+                {"id": "stratovolcano"}, {"id": "smoke_2", "offset": [0, -3]}
             ]
         },
         "shield_volcano___smoke_2": {
             "name": "shield volcano with smoke",
             "keywords": ["natural", "mountain"],
             "shapes": [
-                {"id": "shield_volcano"},
-                {"id": "smoke_2", "offset": [0, -1]}
+                {"id": "shield_volcano"}, {"id": "smoke_2", "offset": [0, -1]}
             ]
         },
         "volcanic_cone___smoke_2": {
             "name": "volcanic cone with smoke",
             "keywords": ["natural", "mountain"],
             "shapes": [
-                {"id": "volcanic_cone"},
-                {"id": "smoke_2", "offset": [0, -2]}
+                {"id": "volcanic_cone"}, {"id": "smoke_2", "offset": [0, -2]}
             ]
         },
         "stratovolcano___lava": {
             "name": "stratovolcano with lava",
             "keywords": ["natural", "mountain", "eruption"],
             "shapes": [
-                {"id": "stratovolcano"},
-                {"id": "lava", "offset": [0, -3]}
+                {"id": "stratovolcano"}, {"id": "lava", "offset": [0, -3]}
             ]
         },
         "stratovolcano___smoke": {
             "name": "stratovolcano with smoke",
             "keywords": ["natural", "mountain"],
             "shapes": [
-                {"id": "stratovolcano"},
-                {"id": "smoke", "offset": [1, -3]}
+                {"id": "stratovolcano"}, {"id": "smoke", "offset": [1, -3]}
             ]
         },
         "shield_volcano___lava": {
             "name": "shield volcano with lava",
             "keywords": ["natural", "mountain", "eruption"],
             "shapes": [
-                {"id": "shield_volcano"},
-                {"id": "lava", "offset": [0, -1]}
+                {"id": "shield_volcano"}, {"id": "lava", "offset": [0, -1]}
             ]
         },
         "volcanic_cone___lava": {
             "name": "volcanic cone with lava",
             "keywords": ["natural", "mountain", "eruption"],
             "shapes": [
-                {"id": "volcanic_cone"},
-                {"id": "lava", "offset": [0, -2]}
+                {"id": "volcanic_cone"}, {"id": "lava", "offset": [0, -2]}
             ]
         },
         "shield_volcano___smoke": {
             "name": "shield volcano with smoke",
             "keywords": ["natural", "mountain"],
             "shapes": [
-                {"id": "shield_volcano"},
-                {"id": "smoke", "offset": [1, -1]}
+                {"id": "shield_volcano"}, {"id": "smoke", "offset": [1, -1]}
             ]
         },
         "volcanic_cone___smoke": {
             "name": "volcanic cone with smoke",
             "keywords": ["natural", "mountain"],
             "shapes": [
-                {"id": "volcanic_cone"},
-                {"id": "smoke", "offset": [1, -2]}
+                {"id": "volcanic_cone"}, {"id": "smoke", "offset": [1, -2]}
             ]
         },
         "volcanic_cone": {
@@ -1629,17 +1533,13 @@
         "compass": {
             "keywords": ["navigation", "direction"],
             "name": "compass",
-            "shapes": [
-                {"id": "compass", "version": "v1"}
-            ],
+            "shapes": [{"id": "compass", "version": "v1"}],
             "sketch": true
         },
         "compass_rose": {
             "keywords": ["navigation", "direction"],
             "name": "compass rose",
-            "shapes": [
-                {"id": "compass_rose", "version": "v1"}
-            ],
+            "shapes": [{"id": "compass_rose", "version": "v1"}],
             "sketch": true
         },
         "guidepost": {
@@ -1705,50 +1605,32 @@
         "clock___support_pole": {
             "name": "clock on support pole",
             "keywords": ["time"],
-            "shapes": [
-                {"id": "clock"},
-                {"id": "support_pole"}
-            ]
+            "shapes": [{"id": "clock"}, {"id": "support_pole"}]
         },
         "i_in_square___support_pole": {
             "name": "letter i in square on support pole",
             "keywords": ["information"],
-            "shapes": [
-                {"id": "i_in_square"},
-                {"id": "support_pole"}
-            ]
+            "shapes": [{"id": "i_in_square"}, {"id": "support_pole"}]
         },
         "clock___support_wall": {
             "name": "clock on support wall",
             "keywords": ["time"],
-            "shapes": [
-                {"id": "clock"},
-                {"id": "support_wall"}
-            ]
+            "shapes": [{"id": "clock"}, {"id": "support_wall"}]
         },
         "i_in_square___support_wall": {
             "name": "letter i in square on support wall",
             "keywords": ["information"],
-            "shapes": [
-                {"id": "i_in_square"},
-                {"id": "support_wall"}
-            ]
+            "shapes": [{"id": "i_in_square"}, {"id": "support_wall"}]
         },
         "clock___support_column": {
             "name": "clock on support column",
             "keywords": ["time"],
-            "shapes": [
-                {"id": "clock"},
-                {"id": "support_column"}
-            ]
+            "shapes": [{"id": "clock"}, {"id": "support_column"}]
         },
         "i_in_square___support_column": {
             "name": "letter i in square on support column",
             "keywords": ["information"],
-            "shapes": [
-                {"id": "i_in_square"},
-                {"id": "support_column"}
-            ]
+            "shapes": [{"id": "i_in_square"}, {"id": "support_column"}]
         },
         "comb_and_scissors": {
             "keywords": ["grooming", "barber", "haircut", "beauty"],
@@ -2014,7 +1896,9 @@
         "support_column": {
             "is_part": true,
             "name": "support column",
-            "keywords": ["pillar", "structure", "support", "architecture", "vertical"]
+            "keywords": [
+                "pillar", "structure", "support", "architecture", "vertical"
+            ]
         },
         "support_pole": {
             "is_part": true,
@@ -2024,7 +1908,9 @@
         "support_wall": {
             "is_part": true,
             "name": "support wall",
-            "keywords": ["wall", "structure", "support", "architecture", "vertical"]
+            "keywords": [
+                "wall", "structure", "support", "architecture", "vertical"
+            ]
         },
         "survey_point": {
             "name": "survey point",
@@ -2046,10 +1932,7 @@
             ]
         },
         "ticket": {
-            "unicode": [
-                "🎫",
-                "🎟"
-            ],
+            "unicode": ["🎫", "🎟"],
             "name": "ticket",
             "keywords": ["admission", "event", "pass", "entry"]
         },
@@ -2112,9 +1995,7 @@
         "windsock": {
             "name": "windsock",
             "keywords": ["weather", "wind", "direction"],
-            "shapes": [
-                {"id": "windsock", "version": "v1"}
-            ],
+            "shapes": [{"id": "windsock", "version": "v1"}],
             "sketch": true
         }
     },
@@ -2164,25 +2045,19 @@
         "crossing_ladder": {
             "keywords": ["pedestrian", "crosswalk", "road"],
             "name": "ladder crossing",
-            "shapes": [
-                {"id": "crossing_ladder", "version": "v0"}
-            ],
+            "shapes": [{"id": "crossing_ladder", "version": "v0"}],
             "sketch": true
         },
         "crossing_ladder_skewed": {
             "keywords": ["pedestrian", "crosswalk", "road"],
             "name": "skewed ladder crossing",
-            "shapes": [
-                {"id": "crossing_ladder_skewed", "version": "v0"}
-            ],
+            "shapes": [{"id": "crossing_ladder_skewed", "version": "v0"}],
             "sketch": true
         },
         "crossing_zebra_double": {
             "keywords": ["pedestrian", "crosswalk", "road"],
             "name": "double zebra crossing",
-            "shapes": [
-                {"id": "crossing_zebra_double", "version": "v0"}
-            ],
+            "shapes": [{"id": "crossing_zebra_double", "version": "v0"}],
             "sketch": true
         },
         "kerb": {
@@ -2192,9 +2067,7 @@
         "no_crossing": {
             "keywords": ["pedestrian", "crosswalk", "road"],
             "name": "no crossing",
-            "shapes": [
-                {"id": "no_crossing", "version": "v0"}
-            ],
+            "shapes": [{"id": "no_crossing", "version": "v0"}],
             "sketch": true
         },
         "toucan_crossing": {
@@ -2268,9 +2141,7 @@
             "name": "bowling ball"
         },
         "bowling_pin_and_ball": {
-            "shapes": [
-                {"id": "bowling_pin_and_ball", "version": "v0"}
-            ],
+            "shapes": [{"id": "bowling_pin_and_ball", "version": "v0"}],
             "sketch": true,
             "keywords": ["skittle", "kegel", "sport", "indoor"],
             "name": "bowling pin and ball"
@@ -2329,7 +2200,10 @@
         }
     },
     "__storage": {
-        "bag": {"keywords": ["storage"], "name": "bag"},
+        "bag": {
+            "keywords": ["storage"],
+            "name": "bag"
+        },
         "bag_with_99": {
             "todo": "check version",
             "keywords": ["storage", "sale"],
@@ -2431,9 +2305,7 @@
         "bicycle_locker": {
             "keywords": ["road", "parking"],
             "name": "bicycle locker",
-            "shapes": [
-                {"id": "bicycle_locker", "version": "v0"}
-            ],
+            "shapes": [{"id": "bicycle_locker", "version": "v0"}],
             "sketch": true
         },
         "p_small___bicycle_parking_stand": {
@@ -2506,57 +2378,115 @@
         "lamp_gas_mast": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp on mast",
-            "shapes": [
-                {"id": "lamp_gas_mast", "version": "v0"}
-            ],
+            "shapes": [{"id": "lamp_gas_mast", "version": "v0"}],
             "sketch": true
         },
         "lamp_gas_mast_angled_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps on mast, angled",
-            "shapes": [
-                {"id": "lamp_gas_mast_angled_2", "version": "v0"}
-            ],
+            "shapes": [{"id": "lamp_gas_mast_angled_2", "version": "v0"}],
             "sketch": true
         },
         "lamp_gas_mast_bended": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "lamp on bent mast",
-            "shapes": [
-                {"id": "lamp_gas_mast_bended", "version": "v0"}
-            ],
+            "shapes": [{"id": "lamp_gas_mast_bended", "version": "v0"}],
             "sketch": true
         },
         "lamp_gas_mast_bended_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps on bent mast",
-            "shapes": [
-                {"id": "lamp_gas_mast_bended_2", "version": "v0"}
-            ],
+            "shapes": [{"id": "lamp_gas_mast_bended_2", "version": "v0"}],
             "sketch": true
         },
         "lamp_mast_bended_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two lamps on bent mast",
-            "shapes": [
-                {"id": "lamp_mast_bended_2", "version": "v1"}
-            ],
+            "shapes": [{"id": "lamp_mast_bended_2", "version": "v1"}],
             "sketch": true
         },
         "lamp_gas_rope": {
             "keywords": ["outdoor", "road", "light", "illumination"],
-            "name": "lamp suspended on rope",
-            "shapes": [
-                {"id": "lamp_gas_rope", "version": "v0"}
-            ],
+            "name": "gas lamp suspended on rope",
+            "shapes": [{"id": "lamp_gas_rope", "version": "v0"}],
             "sketch": true
         },
         "lamp_gas_rope_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
-            "name": "two lamps suspended on rope",
-            "shapes": [
-                {"id": "lamp_gas_rope_2", "version": "v0"}
-            ],
+            "name": "two gas lamps suspended on rope",
+            "shapes": [{"id": "lamp_gas_rope_2", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_incandescent_rope": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "incandescent lamp suspended on rope",
+            "shapes": [{"id": "lamp_incandescent_rope", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_incandescent_rope_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two incandescent lamps suspended on rope",
+            "shapes": [{"id": "lamp_incandescent_rope_2", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_incandescent_mast": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "incandescent lamp on mast",
+            "shapes": [{"id": "lamp_incandescent_mast", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_incandescent_mast_angled_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two incandescent lamps on mast, angled",
+            "shapes": [{"id": "lamp_incandescent_mast_angled_2", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_incandescent_mast_bended": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "incandescent lamp on bent mast",
+            "shapes": [{"id": "lamp_incandescent_mast_bended", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_incandescent_mast_bended_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two incandescent lamps on bent mast",
+            "shapes": [{"id": "lamp_incandescent_mast_bended_2", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_fluorescent_rope": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "fluorescent lamp suspended on rope",
+            "shapes": [{"id": "lamp_fluorescent_rope", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_fluorescent_rope_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two fluorescent lamps suspended on rope",
+            "shapes": [{"id": "lamp_fluorescent_rope_2", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_fluorescent_mast": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "fluorescent lamp on mast",
+            "shapes": [{"id": "lamp_fluorescent_mast", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_fluorescent_mast_angled_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two fluorescent lamps on mast, angled",
+            "shapes": [{"id": "lamp_fluorescent_mast_angled_2", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_fluorescent_mast_bended": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "fluorescent lamp on bent mast",
+            "shapes": [{"id": "lamp_fluorescent_mast_bended", "version": "v0"}],
+            "sketch": true
+        },
+        "lamp_fluorescent_mast_bended_2": {
+            "keywords": ["outdoor", "road", "light", "illumination"],
+            "name": "two fluorescent lamps on bent mast",
+            "shapes": [{"id": "lamp_fluorescent_mast_bended_2", "version": "v0"}],
             "sketch": true
         },
         "street_lamp": {
@@ -2574,42 +2504,27 @@
         "table_and_two_chairs___umbrella": {
             "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with umbrella",
-            "shapes": [
-                {"id": "table_and_two_chairs"},
-                {"id": "umbrella"}
-            ]
+            "shapes": [{"id": "table_and_two_chairs"}, {"id": "umbrella"}]
         },
         "table_and_two_chairs___roof": {
             "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with roof",
-            "shapes": [
-                {"id": "table_and_two_chairs"},
-                {"id": "roof"}
-            ]
+            "shapes": [{"id": "table_and_two_chairs"}, {"id": "roof"}]
         },
         "table_and_two_chairs___awning": {
             "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with awning",
-            "shapes": [
-                {"id": "table_and_two_chairs"},
-                {"id": "awning"}
-            ]
+            "shapes": [{"id": "table_and_two_chairs"}, {"id": "awning"}]
         },
         "table_and_two_chairs___roof_and_walls": {
             "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with roof and walls",
-            "shapes": [
-                {"id": "table_and_two_chairs"},
-                {"id": "roof_and_walls"}
-            ]
+            "shapes": [{"id": "table_and_two_chairs"}, {"id": "roof_and_walls"}]
         },
         "table_and_two_chairs___pergola": {
             "keywords": ["outdoor", "furniture", "sitting"],
             "name": "table and two chairs with pergola",
-            "shapes": [
-                {"id": "table_and_two_chairs"},
-                {"id": "pergola"}
-            ]
+            "shapes": [{"id": "table_and_two_chairs"}, {"id": "pergola"}]
         },
         "p___arrow_right": {
             "keywords": ["road", "parking", "entrance", "direction"],
@@ -2915,9 +2830,7 @@
                     "unicode": ["А"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "a", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "a", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_b": {
@@ -2925,9 +2838,7 @@
                     "unicode": ["Б"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_b", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_b", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_v": {
@@ -2935,9 +2846,7 @@
                     "unicode": ["В"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "b", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "b", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_g": {
@@ -2945,9 +2854,7 @@
                     "unicode": ["Г"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_g", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_g", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_d": {
@@ -2955,9 +2862,7 @@
                     "unicode": ["Д"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_d", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_d", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_ye": {
@@ -2965,9 +2870,7 @@
                     "unicode": ["Е"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "e", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "e", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_yo": {
@@ -2975,9 +2878,7 @@
                     "unicode": ["Ё"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_yo", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_yo", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_zh": {
@@ -2985,9 +2886,7 @@
                     "unicode": ["Ж"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_zh", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_zh", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_z": {
@@ -2995,9 +2894,7 @@
                     "unicode": ["З"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "3", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "3", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_i": {
@@ -3005,9 +2902,7 @@
                     "unicode": ["И"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_i", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_i", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_short_i": {
@@ -3015,9 +2910,7 @@
                     "unicode": ["Й"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_short_i", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_short_i", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_k": {
@@ -3025,9 +2918,7 @@
                     "unicode": ["К"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "k", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "k", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_l": {
@@ -3035,9 +2926,7 @@
                     "unicode": ["Л"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_l", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_l", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_m": {
@@ -3045,9 +2934,7 @@
                     "unicode": ["М"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "m", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "m", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_n": {
@@ -3055,9 +2942,7 @@
                     "unicode": ["Н"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "h", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "h", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_o": {
@@ -3065,9 +2950,7 @@
                     "unicode": ["О"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "0", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "0", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_p": {
@@ -3075,9 +2958,7 @@
                     "unicode": ["П"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_p", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_p", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_r": {
@@ -3085,9 +2966,7 @@
                     "unicode": ["Р"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "p", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "p", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_s": {
@@ -3095,9 +2974,7 @@
                     "unicode": ["С"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "c", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "c", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_t": {
@@ -3105,9 +2982,7 @@
                     "unicode": ["Т"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "t", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "t", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_u": {
@@ -3115,9 +2990,7 @@
                     "unicode": ["У"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_u", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_u", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_f": {
@@ -3125,9 +2998,7 @@
                     "unicode": ["Ф"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_f", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_f", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_h": {
@@ -3135,9 +3006,7 @@
                     "unicode": ["Х"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "x", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "x", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_ts": {
@@ -3145,9 +3014,7 @@
                     "unicode": ["Ц"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_ts", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_ts", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_ch": {
@@ -3155,9 +3022,7 @@
                     "unicode": ["Ч"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "4", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "4", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_sh": {
@@ -3165,9 +3030,7 @@
                     "unicode": ["Ш"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_sh", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_sh", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_sch": {
@@ -3175,9 +3038,7 @@
                     "unicode": ["Щ"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_sch", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_sch", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_hard_sign": {
@@ -3185,9 +3046,7 @@
                     "unicode": ["Ъ"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_hard_sign", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_hard_sign", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_soft_sign": {
@@ -3195,9 +3054,7 @@
                     "unicode": ["Ь"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_soft_sign", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_soft_sign", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_y": {
@@ -3205,9 +3062,7 @@
                     "unicode": ["Ы"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_y", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_y", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_e": {
@@ -3215,9 +3070,7 @@
                     "unicode": ["Э"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_e", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_e", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_yu": {
@@ -3225,9 +3078,7 @@
                     "unicode": ["Ю"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_yu", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_yu", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrillic_ya": {
@@ -3235,60 +3086,68 @@
                     "unicode": ["Я"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [
-                        {"id": "cyrillic_ya", "version": "v0"}
-                    ],
+                    "shapes": [{"id": "cyrillic_ya", "version": "v0"}],
                     "sketch": true
                 }
             },
             "__digit": {
                 "digit_0": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "zero"],
                     "is_part": true,
                     "name": "digit 0"
                 },
                 "digit_1": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "one"],
                     "is_part": true,
                     "name": "digit 1"
                 },
                 "digit_2": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "two"],
                     "is_part": true,
                     "name": "digit 2"
                 },
                 "digit_3": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "three"],
                     "is_part": true,
                     "name": "digit 3"
                 },
                 "digit_4": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "four"],
                     "is_part": true,
                     "name": "digit 4"
                 },
                 "digit_5": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "five"],
                     "is_part": true,
                     "name": "digit 5"
                 },
                 "digit_6": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "six"],
                     "is_part": true,
                     "name": "digit 6"
                 },
                 "digit_7": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "seven"],
                     "is_part": true,
                     "name": "digit 7"
                 },
                 "digit_8": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "eight"],
                     "is_part": true,
                     "name": "digit 8"
                 },
                 "digit_9": {
                     "categories": ["number"],
+                    "keywords": ["symbol", "nine"],
                     "is_part": true,
                     "name": "digit 9"
                 }
@@ -3503,7 +3362,7 @@
                 }
             },
             "free": {
-                "name": "free"
+                "name": "text \"free\""
             },
             "historic": {
                 "name": "looped square"
@@ -3544,9 +3403,7 @@
             "om_ligature": {
                 "keywords": ["devanagari", "religion", "hinduism"],
                 "name": "Om ligature in Devanagari script",
-                "shapes": [
-                    {"id": "om_ligature", "version": "v0"}
-                ],
+                "shapes": [{"id": "om_ligature", "version": "v0"}],
                 "sketch": true
             },
             "orthodox": {
@@ -3567,9 +3424,7 @@
             "yin_and_yang": {
                 "keywords": ["religion", "chinese", "taoism"],
                 "name": "yin and yang",
-                "shapes": [
-                    {"id": "yin_and_yang", "version": "v2"}
-                ],
+                "shapes": [{"id": "yin_and_yang", "version": "v2"}],
                 "sketch": true
             }
         },
@@ -3601,9 +3456,7 @@
         "venus_and_mars_symbols": {
             "keywords": ["male", "female", "romantic"],
             "name": "interconnected Venus and Mars symbols",
-            "shapes": [
-                {"id": "venus_and_mars_symbols", "version": "v0"}
-            ],
+            "shapes": [{"id": "venus_and_mars_symbols", "version": "v0"}],
             "sketch": true
         }
     },
@@ -3625,9 +3478,7 @@
         "catenary_mast": {
             "name": "catenary mast",
             "keywords": ["support", "pole", "tower", "power", "electricity"],
-            "shapes": [
-                {"id": "catenary_mast", "version": "v1"}
-            ],
+            "shapes": [{"id": "catenary_mast", "version": "v1"}],
             "sketch": true
         },
         "city_gate": {
@@ -3742,6 +3593,11 @@
             "categories": ["power"],
             "name": "four-level transmission pole"
         },
+        "power_pole_5_level": {
+            "categories": ["power"],
+            "name": "five-level transmission pole",
+            "sketch": true
+        },
         "power_pole_asymmetric": {
             "categories": ["power"],
             "name": "asymmetric transmission pole"
@@ -3826,44 +3682,44 @@
             "categories": ["power"],
             "name": "guyed h-frame transmission tower"
         },
+        "power_tower_guyed_h_frame_2_level": {
+            "categories": ["power"],
+            "name": "guyed h-frame transmission tower with two levels",
+            "sketch": true
+        },
+        "power_tower_guyed_h_frame_3_level": {
+            "categories": ["power"],
+            "name": "guyed h-frame transmission tower with three levels",
+            "sketch": true
+        },
         "power_tower_guyed_v_frame": {
             "categories": ["power"],
             "name": "guyed v-frame transmission tower",
-            "shapes": [
-                {"id": "power_tower_guyed_v_frame", "version": "v0"}
-            ],
+            "shapes": [{"id": "power_tower_guyed_v_frame", "version": "v0"}],
             "sketch": true
         },
         "power_tower_donau_1_level": {
             "categories": ["power"],
             "name": "donau transmission tower with one level",
-            "shapes": [
-                {"id": "power_tower_donau_1_level", "version": "v0"}
-            ],
+            "shapes": [{"id": "power_tower_donau_1_level", "version": "v0"}],
             "sketch": true
         },
         "power_tower_barrel_1_level": {
             "categories": ["power"],
             "name": "barrel transmission tower with one level",
-            "shapes": [
-                {"id": "power_tower_barrel_1_level", "version": "v0"}
-            ],
+            "shapes": [{"id": "power_tower_barrel_1_level", "version": "v0"}],
             "sketch": true
         },
         "power_tower_monopolar": {
             "categories": ["power"],
             "name": "monopolar transmission tower",
-            "shapes": [
-                {"id": "power_tower_monopolar", "version": "v0"}
-            ],
+            "shapes": [{"id": "power_tower_monopolar", "version": "v0"}],
             "sketch": true
         },
         "power_tower_h_frame_3_level": {
             "categories": ["power"],
             "name": "h-frame transmission tower with three levels",
-            "shapes": [
-                {"id": "power_tower_h_frame_3_level", "version": "v0"}
-            ],
+            "shapes": [{"id": "power_tower_h_frame_3_level", "version": "v0"}],
             "sketch": true
         },
         "power_tower_h_frame": {
@@ -4055,17 +3911,13 @@
             "bicycle_small": {
                 "keywords": ["transport"],
                 "name": "small bicycle",
-                "shapes": [
-                    {"id": "bicycle_small", "version": "v0"}
-                ],
+                "shapes": [{"id": "bicycle_small", "version": "v0"}],
                 "sketch": true
             },
             "bicycle_sport": {
                 "keywords": ["transport", "sport"],
                 "name": "sport bicycle",
-                "shapes": [
-                    {"id": "bicycle_sport", "version": "v0"}
-                ],
+                "shapes": [{"id": "bicycle_sport", "version": "v0"}],
                 "sketch": true
             },
             "bicycle___x_4": {
@@ -4079,7 +3931,11 @@
                 "name": "bicycle with wrench",
                 "shapes": [
                     {"id": "bicycle", "offset": [0, 2]},
-                    {"id": "wrench", "offset": [-1, -4], "flip_horizontally": true}
+                    {
+                        "id": "wrench",
+                        "offset": [-1, -4],
+                        "flip_horizontally": true
+                    }
                 ]
             },
             "bicycle___key": {
@@ -4104,9 +3960,7 @@
             "scooter": {
                 "keywords": ["transport", "sport"],
                 "name": "scooter",
-                "shapes": [
-                    {"id": "scooter", "version": "v1"}
-                ],
+                "shapes": [{"id": "scooter", "version": "v1"}],
                 "sketch": true
             },
             "wheelchair": {
@@ -4181,9 +4035,7 @@
         "golf_cart": {
             "name": "golf cart",
             "keywords": ["transport", "sport"],
-            "shapes": [
-                {"id": "golf_cart", "version": "v0"}
-            ],
+            "shapes": [{"id": "golf_cart", "version": "v0"}],
             "sketch": true
         },
         "maglev": {
@@ -4329,10 +4181,7 @@
         },
         "bus_stop_sign___platform": {
             "name": "bus stop sign with platform",
-            "shapes": [
-                {"id": "bus_stop_sign"},
-                {"id": "platform"}
-            ],
+            "shapes": [{"id": "bus_stop_sign"}, {"id": "platform"}],
             "sketch": true
         },
         "bus_stop_sign___platform___bus_stop_shelter": {
@@ -4354,10 +4203,7 @@
         },
         "bus_stop_sign___bus_stop_bench": {
             "name": "bus stop sign with bench",
-            "shapes": [
-                {"id": "bus_stop_sign"},
-                {"id": "bus_stop_bench"}
-            ]
+            "shapes": [{"id": "bus_stop_sign"}, {"id": "bus_stop_bench"}]
         },
         "bus_stop_sign___platform___bus_stop_bench": {
             "name": "bus stop sign with platform and bench",
