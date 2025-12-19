@@ -323,6 +323,9 @@ class Shapes:
             message = "`iconscript` executable not found in `PATH`"
             raise FileNotFoundError(message)
 
+        # TODO(enzet): run `iconscript version` and check it, when this is
+        # implemented in iconscript project.
+
         if not iconscript_file_name.is_file():
             message = f"`{iconscript_file_name}` is not a valid file"
             raise FileNotFoundError(message)
@@ -332,7 +335,12 @@ class Shapes:
             str(iconscript_file_name),
             str(temp_output_directory),
         ]
-        subprocess.check_call(command, shell=False)  # noqa: S603
+        subprocess.check_call(  # noqa: S603
+            command,
+            shell=False,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
 
         offset: NDArray = np.array((-8.0, -8.0))
 
