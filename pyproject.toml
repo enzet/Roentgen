@@ -3,22 +3,23 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "Roentgen"
+name = "roentgen-icons"
 version = "0.9.0"
-description = "Icon set"
+description = "Set of monochrome 14 × 14 px pixel-aligned map icons"
 readme = "README.md"
 requires-python = ">=3.9"
 authors = [
-    { name = "Sergey Vartanov", email = "me@enzet.ru" }
+    {name = "Sergey Vartanov", email = "me@enzet.ru"}
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Graphics",
 ]
 dependencies = [
     "colour~=0.1.5",
     "lxml~=5.4.0",
-    "numpy~=1.25.2",
+    "numpy~=1.26.0",
     "requests~=2.32.3",
     "svgpathtools~=1.6.1",
     "svgwrite~=1.4.3",
@@ -26,11 +27,13 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
+    "build~=1.0.0",
     "ruff~=0.11.12",
 ]
 
 [project.urls]
-Homepage = "https://github.com/enzet/Roentgen"
+Homepage = "https://enzet.ru/roentgen"
+Repository = "https://github.com/enzet/Roentgen"
 
 [project.scripts]
 roentgen = "roentgen.__main__:main"
