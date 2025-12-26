@@ -1,10 +1,12 @@
 """Main module."""
 
 import argparse
+import json
 import logging
 import shutil
 from pathlib import Path
 
+import numpy as np
 from colour import Color
 
 from roentgen.collection import main as collections_main
@@ -100,7 +102,14 @@ def draw_icons(
 
 
 def draw() -> None:
-    """Draw all icons as grid and individual SVG files."""
+    """Draw all icons as grid and individual SVG files.
+
+    Parse icons from SVG sketch files, iconscript files and config file.
+    Generate:
+      - individual SVG files for each icon,
+      - grid SVG files for all icons,
+      - JSON file with path for icons and part icons.
+    """
 
     shapes: Shapes = Shapes()
     for path in [
@@ -121,9 +130,8 @@ def draw() -> None:
     version: str = Path("VERSION").read_text().strip()
 
     icons: list[Icon] = get_icons(Path("data") / "config.json")
-    main_collection: IconCollection = IconCollection.from_icons(
-        icons,
-        filter_=lambda icon: not icon.is_part,
+    collection_no_parts: IconCollection = IconCollection.from_icons(
+        icons, filter_=lambda icon: not icon.is_part
     )
 
     for shape_id in shapes.shapes:
@@ -135,8 +143,23 @@ def draw() -> None:
         if not found:
             logger.warning("No configuration for `%s` found.", shape_id)
 
+    shapes_data: dict[str, str] = {
+        shape_id: shape.get_path(
+            "main",
+            point=np.array((0, 0)),
+            offset=np.array((0, 0)),
+            scale=np.array((1, 1)),
+        )
+        .get_xml()
+        .attrib["d"]
+        for shape_id, shape in sorted(shapes.shapes.items())
+        if "main" in shape.paths
+    }
+    with Path("shapes.json").open("w") as file:
+        json.dump(shapes_data, file, indent=4)
+
     draw_icons(
-        main_collection,
+        collection_no_parts,
         shapes,
         version=version,
         root_path=Path(),

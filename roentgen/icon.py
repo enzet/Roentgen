@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import contextlib
 import json
+import logging
 import re
 import shutil
 import subprocess
@@ -36,6 +37,8 @@ if TYPE_CHECKING:
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
+
+logger: logging.Logger = logging.getLogger(__name__)
 
 DEFAULT_SHAPE_ID: str = "default"
 DEFAULT_SMALL_SHAPE_ID: str = "default_small"
@@ -306,6 +309,7 @@ class Shapes:
         :param svg_file_name: input SVG file name with icons.  File may contain
             any other irrelevant graphics.
         """
+        logger.info("Importing shapes from `%s`...", svg_file_name)
         root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
         self.__parse(root, svg_file_name)
 
@@ -314,6 +318,7 @@ class Shapes:
 
         :param iconscript_file_name: input iconscript file name.
         """
+        logger.info("Importing shapes from `%s`...", iconscript_file_name)
         temp_output_directory: Path = Path(tempfile.mkdtemp())
 
         message: str
