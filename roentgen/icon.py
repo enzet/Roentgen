@@ -20,7 +20,6 @@ except ImportError:
 
 from pathlib import Path
 
-import numpy as np
 import svgwrite
 from colour import Color
 from svgpathtools import Path as ToolsPath
@@ -31,7 +30,6 @@ from svgwrite.container import Group
 if TYPE_CHECKING:
     from xml.etree.ElementTree import Element
 
-    from numpy.typing import NDArray
     from svgwrite.base import BaseElement
     from svgwrite.path import Path as SVGPath
 
@@ -59,6 +57,10 @@ USED_ICON_COLOR: str = "#000000"
 UNUSED_ICON_COLORS: list[str] = ["#0000ff", "#ff0000"]
 FUTURE_ICON_COLOR: str = "880000"
 
+RELATIVE_TOLERANCE: float = 1e-05
+ABSOLUTE_TOLERANCE: float = 1e-08
+SVG_TOLERANCE: float = 1e-05
+
 
 def is_bright(color: Color) -> bool:
     """Check whether color is bright.
@@ -70,6 +72,18 @@ def is_bright(color: Color) -> bool:
         0.2126 * color.red + 0.7152 * color.green + 0.0722 * color.blue
         > 0.78125  # noqa: PLR2004
     )
+
+
+def allclose(
+    a: tuple[float, float],
+    b: tuple[float, float],
+    rtol: float = RELATIVE_TOLERANCE,
+    atol: float = ABSOLUTE_TOLERANCE,
+) -> bool:
+    """Check if two tuples are element-wise equal within a tolerance."""
+    return abs(a[0] - b[0]) <= atol + rtol * abs(b[0]) and abs(
+        a[1] - b[1]
+    ) <= atol + rtol * abs(b[1])
 
 
 def round_complex(value: complex, precision: int) -> complex:
@@ -84,7 +98,7 @@ class PathOnCanvas:
     path: str
     """SVG path commands."""
 
-    offset: NDArray = field(default_factory=lambda: np.array((0.0, 0.0)))
+    offset: tuple[float, float] = field(default_factory=lambda: (0.0, 0.0))
     """Offset of the path on the canvas."""
 
 
@@ -106,9 +120,9 @@ class Shape:
         self,
         version: str,
         *,
-        point: NDArray,
-        offset: NDArray,
-        scale: NDArray,
+        point: tuple[float, float],
+        offset: tuple[float, float],
+        scale: tuple[float, float],
         use_transform: bool = False,
     ) -> SVGPath:
         """Get SVG path for the shape.
@@ -119,16 +133,19 @@ class Shape:
         :param use_transform: use SVG `translate` method instead of rewriting
             path
         """
-        shift: NDArray = point + offset
+        shift: tuple[float, float] = (
+            point[0] + offset[0],
+            point[1] + offset[1],
+        )
 
         if use_transform:
             path_on_canvas: PathOnCanvas = self.paths[version]
             path: SVGPath = svgwrite.path.Path(d=path_on_canvas.path)
-            if not np.allclose(shift, np.array((0.0, 0.0))):
+            if not allclose(shift, (0.0, 0.0)):
                 path.translate(shift[0], shift[1])
-            if not np.allclose(scale, np.array((1.0, 1.0))):
+            if not allclose(scale, (1.0, 1.0)):
                 path.scale(scale[0], scale[1])
-            if not np.allclose(path_on_canvas.offset, np.array((0.0, 0.0))):
+            if not allclose(path_on_canvas.offset, (0.0, 0.0)):
                 path.translate(
                     path_on_canvas.offset[0], path_on_canvas.offset[1]
                 )
@@ -141,13 +158,13 @@ class Shape:
                 raise ValueError(message)
             path_on_canvas = self.paths[version]
             parsed_path: ToolsPath = parse_path(path_on_canvas.path)
-            if not np.allclose(path_on_canvas.offset, np.array((0.0, 0.0))):
+            if not allclose(path_on_canvas.offset, (0.0, 0.0)):
                 parsed_path = parsed_path.translated(
                     path_on_canvas.offset[0] + path_on_canvas.offset[1] * 1j
                 )
-            if not np.allclose(scale, np.array((1.0, 1.0))):
+            if not allclose(scale, (1.0, 1.0)):
                 parsed_path = parsed_path.scaled(scale[0], scale[1])
-            if not np.allclose(shift, np.array((0.0, 0.0))):
+            if not allclose(shift, (0.0, 0.0)):
                 parsed_path = parsed_path.translated(shift[0] + shift[1] * 1j)
 
             for element in parsed_path:
@@ -182,7 +199,7 @@ def check_sketch_fill_element(style: dict[str, str]) -> bool:
         and style["fill"] == "none"
         and style["stroke"] == "#000000"
         and "stroke-width" in style
-        and np.allclose(parse_length(style["stroke-width"]), 0.1)
+        and abs(parse_length(style["stroke-width"]) - 0.1) < SVG_TOLERANCE
     )
 
 
@@ -193,13 +210,13 @@ def check_sketch_stroke_element(style: dict[str, str]) -> bool:
         and style["fill"] == "none"
         and style["stroke"] == "#000000"
         and "opacity" in style
-        and np.allclose(float(style["opacity"]), 0.2)
+        and abs(float(style["opacity"]) - 0.2) < SVG_TOLERANCE
         and (
             "stroke-width" not in style
-            or np.allclose(parse_length(style["stroke-width"]), 0.7)
-            or np.allclose(parse_length(style["stroke-width"]), 1)
-            or np.allclose(parse_length(style["stroke-width"]), 2)
-            or np.allclose(parse_length(style["stroke-width"]), 3)
+            or abs(parse_length(style["stroke-width"]) - 0.7) < SVG_TOLERANCE
+            or abs(parse_length(style["stroke-width"]) - 1) < SVG_TOLERANCE
+            or abs(parse_length(style["stroke-width"]) - 2) < SVG_TOLERANCE
+            or abs(parse_length(style["stroke-width"]) - 3) < SVG_TOLERANCE
         )
     )
 
@@ -349,7 +366,7 @@ class Shapes:
             stderr=subprocess.DEVNULL,
         )
 
-        offset: NDArray = np.array((-8.0, -8.0))
+        offset: tuple[float, float] = (-8.0, -8.0)
 
         for svg_file_name in temp_output_directory.glob("*.svg"):
             version: str = "main"
@@ -440,8 +457,9 @@ class Shapes:
                     -int(float(value) / GRID_STEP) * GRID_STEP - GRID_STEP / 2.0
                 )
 
-            offset: NDArray = np.array(
-                (get_offset(matcher.group(1)), get_offset(matcher.group(2)))
+            offset: tuple[float, float] = (
+                get_offset(matcher.group(1)),
+                get_offset(matcher.group(2)),
             )
             if id_ in self.shapes:
                 shape = self.shapes[id_]
@@ -476,7 +494,7 @@ class ShapeSpecification:
     version: str = "main"
     """Shape version."""
 
-    offset: NDArray = field(default_factory=lambda: np.array((0.0, 0.0)))
+    offset: tuple[float, float] = field(default_factory=lambda: (0.0, 0.0))
     """Shape offset."""
 
     flip_horizontally: bool = False
@@ -494,10 +512,16 @@ class ShapeSpecification:
     @classmethod
     def from_structure(cls, structure: dict[str, Any]) -> ShapeSpecification:
         """Parse shape specification from structure."""
+        offset_value = structure.get("offset", (0.0, 0.0))
+        offset_tuple: tuple[float, float] = (
+            tuple(offset_value)
+            if isinstance(offset_value, (list, tuple))
+            else (0.0, 0.0)
+        )
         return cls(
             structure["id"],
             structure.get("version", "main"),
-            np.array(structure.get("offset", (0.0, 0.0))),
+            offset_tuple,
             structure.get("flip_horizontally", False),
             structure.get("flip_vertically", False),
             structure.get("use_outline", True),
@@ -514,7 +538,7 @@ class ShapeSpecification:
         return (
             self.shape_id == other.shape_id
             and self.version == other.version
-            and np.allclose(self.offset, other.offset)
+            and allclose(self.offset, other.offset)
         )
 
     def __lt__(self, other: ShapeSpecification) -> bool:
@@ -524,7 +548,7 @@ class ShapeSpecification:
         self,
         svg: BaseElement,
         shapes: Shapes,
-        position: NDArray,
+        position: tuple[float, float],
         tags: dict[str, Any] | None = None,
         *,
         outline: bool = False,
@@ -543,25 +567,32 @@ class ShapeSpecification:
         :param scale: scale icon by the magnitude
         :param color: fill color
         """
-        scale_vector: NDArray = np.array((scale, scale))
+        scale_vector: tuple[float, float] = (scale, scale)
         if self.flip_vertically:
-            scale_vector = np.array((scale, -scale))
+            scale_vector = (scale, -scale)
         if self.flip_horizontally:
-            scale_vector = np.array((-scale, scale))
+            scale_vector = (-scale, scale)
 
         if not color:
             color = Color("black")
 
-        point = np.array(list(map(int, position)))
+        point: tuple[float, float] = (
+            float(int(position[0])),
+            float(int(position[1])),
+        )
 
         shape: Shape | None = shapes.get_shape(self.shape_id)
         if shape is None:
             return
 
+        offset_scaled: tuple[float, float] = (
+            self.offset[0] * scale,
+            self.offset[1] * scale,
+        )
         path: SVGPath = shape.get_path(
             self.version,
             point=point,
-            offset=self.offset * scale,
+            offset=offset_scaled,
             scale=scale_vector,
         )
         path.update({"fill": color.hex})
@@ -704,7 +735,7 @@ class IconSpecification:
         self,
         svg: svgwrite.Drawing,
         shapes: Shapes,
-        position: NDArray,
+        position: tuple[float, float],
         tags: dict[str, Any] | None = None,
         *,
         opacity: float = 1.0,
@@ -786,13 +817,17 @@ class IconSpecification:
                     'width="16" height="16">'
                 )
                 for shape_specification in self.shape_specifications:
+                    offset_value: tuple[float, float] = (
+                        shape_specification.offset[0] * 1.0,
+                        shape_specification.offset[1] * 1.0,
+                    )
                     path: str = shapes.get_shape(
                         shape_specification.shape_id
                     ).get_path(
                         shape_specification.version,
-                        point=np.array((8.0, 8.0)),
-                        offset=shape_specification.offset * 1.0,
-                        scale=np.array((1.0, 1.0)),
+                        point=(8.0, 8.0),
+                        offset=offset_value,
+                        scale=(1.0, 1.0),
                     )
                     d = path.get_xml().attrib["d"]
                     output_file.write(f'<path d="{d}" fill="#000" />')
@@ -806,13 +841,13 @@ class IconSpecification:
                 shape_specification.draw(
                     svg,
                     shapes,
-                    position=np.array((8.0, 8.0)),
+                    position=(8.0, 8.0),
                     outline=outline,
                     outline_opacity=outline_opacity,
                 )
 
         for shape_specification in self.shape_specifications:
-            shape_specification.draw(svg, shapes, np.array((8.0, 8.0)))
+            shape_specification.draw(svg, shapes, (8.0, 8.0))
 
         with file_name.open("w", encoding="utf-8") as output_file:
             svg.write(output_file)

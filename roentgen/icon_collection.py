@@ -7,7 +7,6 @@ import shutil
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
-import numpy as np
 from svgwrite import Drawing
 
 if TYPE_CHECKING:
@@ -15,7 +14,6 @@ if TYPE_CHECKING:
     from pathlib import Path
 
     from colour import Color
-    from numpy.typing import NDArray
 
     from roentgen.icon import IconSpecification, Shapes
 
@@ -121,7 +119,7 @@ class IconSpecifications:
         :param only_sketch: if true, draw only sketch icons
         :param color: fill color
         """
-        position: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
+        position: tuple[float, float] = (step / 2.0 * scale, step / 2.0 * scale)
         width: float = step * columns * scale
 
         icons: list[IconSpecification] = [
@@ -146,10 +144,9 @@ class IconSpecifications:
                 )
                 svg.add(rectangle)
             icon.draw(svg, shapes, position, scale=scale, color=color)
-            position += np.array((step * scale, 0.0))
+            position = (position[0] + step * scale, position[1])
             if position[0] > width - 8.0:
-                position[0] = step / 2.0 * scale
-                position += np.array((0.0, step * scale))
+                position = (step / 2.0 * scale, position[1] + step * scale)
                 height += int(step * scale)
 
         with file_name.open("w", encoding="utf-8") as output_file:

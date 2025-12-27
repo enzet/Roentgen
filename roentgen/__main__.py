@@ -6,7 +6,6 @@ import logging
 import shutil
 from pathlib import Path
 
-import numpy as np
 from colour import Color
 
 from roentgen.collection import main as collections_main
@@ -150,10 +149,7 @@ def draw() -> None:
 
     shapes_data: dict[str, str] = {
         shape_id: shape.get_path(
-            "main",
-            point=np.array((0, 0)),
-            offset=np.array((0, 0)),
-            scale=np.array((1, 1)),
+            "main", point=(0.0, 0.0), offset=(0.0, 0.0), scale=(1.0, 1.0)
         )
         .get_xml()
         .attrib["d"]
