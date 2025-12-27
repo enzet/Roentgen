@@ -282,15 +282,17 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
             configuration[key] = value | {"group": group}
 
 
-def get_icons(configuration_path: Path) -> list[Icon]:
+def get_icon_specifications(
+    configuration_path: Path,
+) -> list[IconSpecification]:
     """Get icons from configuration."""
-    icons: list[Icon] = []
+    icon_specifications: list[IconSpecification] = []
     configuration: dict[str, Any] = {}
     with configuration_path.open() as input_file:
         parse_configuration(json.load(input_file), configuration, "")
     for key, value in configuration.items():
-        icons.append(Icon.from_structure(key, value))
-    return icons
+        icon_specifications.append(IconSpecification.from_structure(key, value))
+    return icon_specifications
 
 
 @dataclass
@@ -370,6 +372,17 @@ class Shapes:
                         )
         shutil.rmtree(str(temp_output_directory))
 
+    def add_from_json(self, json_file_name: Path) -> None:
+        """Add shapes from JSON file.
+
+        :param json_file_name: input JSON file name with shapes.
+        """
+        logger.info("Importing shapes from `%s`...", json_file_name)
+        with json_file_name.open() as input_file:
+            shapes: dict = json.load(input_file)
+        for id_, shape in shapes.items():
+            self.shapes[id_] = Shape({"main": PathOnCanvas(shape)}, id_)
+
     def __parse(self, node: Element, svg_file_name: Path) -> None:
         """Extract icon paths into a map.
 
@@ -445,16 +458,12 @@ class Shapes:
         """Check whether shape with such identifier exists."""
         return id_ in self.shapes
 
-    def get_shape(self, id_: str) -> Shape:
+    def get_shape(self, id_: str) -> Shape | None:
         """Get shape or `None` if there is no shape with such identifier.
 
         :param id_: string icon identifier
         """
-        if id_ in self.shapes:
-            return self.shapes[id_]
-
-        message: str = f"no shape with id `{id_}` in icons file"
-        raise AssertionError(message)
+        return self.shapes.get(id_)
 
 
 @dataclass
@@ -464,7 +473,7 @@ class ShapeSpecification:
     shape_id: str
     """Shape identifier."""
 
-    version: str
+    version: str = "main"
     """Shape version."""
 
     offset: NDArray = field(default_factory=lambda: np.array((0.0, 0.0)))
@@ -478,6 +487,9 @@ class ShapeSpecification:
 
     use_outline: bool = True
     """If the shape is supposed to be outlined."""
+
+    color: Color | None = None
+    """Fill color."""
 
     @classmethod
     def from_structure(cls, structure: dict[str, Any]) -> ShapeSpecification:
@@ -508,18 +520,10 @@ class ShapeSpecification:
     def __lt__(self, other: ShapeSpecification) -> bool:
         return self.shape_id < other.shape_id
 
-
-class Drawer:
-    """Drawer for shapes."""
-
-    def __init__(self, shapes: Shapes) -> None:
-        """Initialize drawer."""
-        self.shapes = shapes
-
     def draw(
         self,
         svg: BaseElement,
-        specification: ShapeSpecification,
+        shapes: Shapes,
         position: NDArray,
         tags: dict[str, Any] | None = None,
         *,
@@ -540,24 +544,29 @@ class Drawer:
         :param color: fill color
         """
         scale_vector: NDArray = np.array((scale, scale))
-        if specification.flip_vertically:
+        if self.flip_vertically:
             scale_vector = np.array((scale, -scale))
-        if specification.flip_horizontally:
+        if self.flip_horizontally:
             scale_vector = np.array((-scale, scale))
 
         if not color:
             color = Color("black")
 
         point = np.array(list(map(int, position)))
-        path: SVGPath = self.shapes.get_shape(specification.shape_id).get_path(
-            specification.version,
+
+        shape: Shape | None = shapes.get_shape(self.shape_id)
+        if shape is None:
+            return
+
+        path: SVGPath = shape.get_path(
+            self.version,
             point=point,
-            offset=specification.offset * scale,
+            offset=self.offset * scale,
             scale=scale_vector,
         )
         path.update({"fill": color.hex})
 
-        if outline and specification.use_outline:
+        if outline and self.use_outline:
             outline_color: Color = (
                 Color("black") if is_bright(color) else Color("white")
             )
@@ -577,7 +586,7 @@ class Drawer:
 
 
 @dataclass
-class Icon:
+class IconSpecification:
     """Icon that consists of (probably) multiple shapes."""
 
     icon_id: str
@@ -627,9 +636,10 @@ class Icon:
     """
 
     @classmethod
-    def from_structure(cls, id_: str, structure: dict[str, Any]) -> Icon:
+    def from_structure(
+        cls, id_: str, structure: dict[str, Any]
+    ) -> IconSpecification:
         """Parse icon description from structure."""
-
         shapes: list[ShapeSpecification]
         if "shapes" in structure:
             shapes = [
@@ -639,7 +649,7 @@ class Icon:
         else:
             shapes = [ShapeSpecification(id_, "main")]
 
-        icon: Icon = cls(
+        icon_specification: IconSpecification = cls(
             id_,
             shapes,
             name=structure["name"],
@@ -648,27 +658,27 @@ class Icon:
         )
 
         if "unicode" in structure:
-            icon.unicode = set(structure["unicode"])
+            icon_specification.unicode = set(structure["unicode"])
 
         if "sketch" in structure:
-            icon.sketch = structure["sketch"]
+            icon_specification.sketch = structure["sketch"]
 
         if "keywords" in structure:
-            icon.keywords = set(structure["keywords"])
+            icon_specification.keywords = set(structure["keywords"])
 
-        icon.is_part = structure.get("is_part", False)
-        icon.group = structure.get("group", "")
+        icon_specification.is_part = structure.get("is_part", False)
+        icon_specification.group = structure.get("group", "")
 
         if "categories" in structure:
-            icon.categories = set(structure["categories"])
+            icon_specification.categories = set(structure["categories"])
 
         if "directed" in structure:
             if structure["directed"] == "right":
-                icon.is_right_directed = True
+                icon_specification.is_right_directed = True
             if structure["directed"] == "left":
-                icon.is_right_directed = False
+                icon_specification.is_right_directed = False
 
-        return icon
+        return icon_specification
 
     def get_id(self) -> str:
         """Get icon identifier."""
@@ -711,16 +721,14 @@ class Icon:
         :param scale: scale icon by the magnitude
         :param color: fill color
         """
-        drawer: Drawer = Drawer(shapes)
-
         if outline:
             bright: bool = is_bright(color)
             opacity = 0.7 if bright else 0.5
             outline_group: Group = Group(opacity=opacity)
             for shape_specification in self.shape_specifications:
-                drawer.draw(
+                shape_specification.draw(
                     outline_group,
-                    shape_specification,
+                    shapes,
                     position,
                     tags,
                     outline=True,
@@ -731,9 +739,9 @@ class Icon:
         elif len(self.shape_specifications) > 1 or opacity != 1.0:
             group: Group = Group(opacity=opacity)
             for shape_specification in self.shape_specifications:
-                drawer.draw(
+                shape_specification.draw(
                     group,
-                    shape_specification,
+                    shapes,
                     position,
                     tags,
                     scale=scale,
@@ -741,9 +749,9 @@ class Icon:
                 )
             svg.add(group)
         else:
-            drawer.draw(
+            self.shape_specifications[0].draw(
                 svg,
-                self.shape_specifications[0],
+                shapes,
                 position,
                 tags,
                 scale=scale,
@@ -792,20 +800,19 @@ class Icon:
             return
 
         svg: Drawing = Drawing(str(file_name), (16, 16))
-        drawer: Drawer = Drawer(shapes)
 
         if outline:
             for shape_specification in self.shape_specifications:
-                drawer.draw(
+                shape_specification.draw(
                     svg,
-                    shape_specification,
+                    shapes,
                     position=np.array((8.0, 8.0)),
                     outline=outline,
                     outline_opacity=outline_opacity,
                 )
 
         for shape_specification in self.shape_specifications:
-            drawer.draw(svg, shape_specification, np.array((8.0, 8.0)))
+            shape_specification.draw(svg, shapes, np.array((8.0, 8.0)))
 
         with file_name.open("w", encoding="utf-8") as output_file:
             svg.write(output_file)
@@ -846,12 +853,12 @@ class Icon:
         return self.group + "_" + self.icon_id
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, Icon):
+        if not isinstance(other, IconSpecification):
             return False
 
         return sorted(self.shape_specifications) == sorted(
             other.shape_specifications
         )
 
-    def __lt__(self, other: Icon) -> bool:
+    def __lt__(self, other: IconSpecification) -> bool:
         return self.get_full_id() < other.get_full_id()

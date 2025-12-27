@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 from typing import Any
 
-from roentgen.icon import Icon, get_icons
+from roentgen.icon import IconSpecification, get_icon_specifications
 
 logger: logging.Logger = logging.getLogger(__name__)
 
@@ -140,7 +140,7 @@ def process_icons(
     icon_grid_items: list[str] = []
 
     # Load and flatten config.
-    icons: list[Icon] = get_icons(config_path)
+    icons: list[IconSpecification] = get_icon_specifications(config_path)
 
     # Process icons in config order.
     for icon in icons:

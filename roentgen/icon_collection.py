@@ -17,26 +17,32 @@ if TYPE_CHECKING:
     from colour import Color
     from numpy.typing import NDArray
 
-    from roentgen.icon import Icon, Shapes
+    from roentgen.icon import IconSpecification, Shapes
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
 
 
 @dataclass
-class IconCollection:
-    """Collection of icons."""
+class IconSpecifications:
+    """Collection of icon specifications."""
 
-    icons: list[Icon] = field(default_factory=list)
+    icon_specifications: list[IconSpecification] = field(default_factory=list)
 
     @classmethod
-    def from_icons(
+    def from_icon_specifications(
         cls,
-        icons: list[Icon],
-        filter_: Callable[[Icon], bool] | None = None,
-    ) -> IconCollection:
-        """Create icon collection from list of icons."""
-        return cls([icon for icon in icons if filter_ is None or filter_(icon)])
+        icon_specifications: list[IconSpecification],
+        filter_: Callable[[IconSpecification], bool] | None = None,
+    ) -> IconSpecifications:
+        """Create icon specifications from list of icon specifications."""
+        return cls(
+            [
+                icon_specification
+                for icon_specification in icon_specifications
+                if filter_ is None or filter_(icon_specification)
+            ]
+        )
 
     def draw_icons(
         self,
@@ -64,17 +70,17 @@ class IconCollection:
         """
         if by_name:
 
-            def get_file_name(x: Icon) -> str:
+            def get_file_name(x: IconSpecification) -> str:
                 """Generate human-readable file name."""
                 return f"Röntgen {x.get_name()}.svg"
 
         else:
 
-            def get_file_name(x: Icon) -> str:
+            def get_file_name(x: IconSpecification) -> str:
                 """Generate file name with unique identifier."""
                 return f"{x.get_id()}.svg"
 
-        for icon in self.icons:
+        for icon in self.icon_specifications:
             if only_sketch != icon.is_sketch():
                 continue
             icon.draw_to_file(
@@ -118,8 +124,10 @@ class IconCollection:
         position: NDArray = np.array((step / 2.0 * scale, step / 2.0 * scale))
         width: float = step * columns * scale
 
-        icons: list[Icon] = [
-            icon for icon in self.icons if only_sketch == icon.is_sketch()
+        icons: list[IconSpecification] = [
+            icon
+            for icon in self.icon_specifications
+            if only_sketch == icon.is_sketch()
         ]
 
         height: int = int(math.ceil(len(icons) / columns) * step * scale)
@@ -148,8 +156,8 @@ class IconCollection:
             svg.write(output_file, pretty=True, indent=4)
 
     def __len__(self) -> int:
-        return len(self.icons)
+        return len(self.icon_specifications)
 
     def sort(self) -> None:
         """Sort icon list."""
-        self.icons = sorted(self.icons)
+        self.icon_specifications = sorted(self.icon_specifications)

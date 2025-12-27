@@ -76,17 +76,14 @@ pip install roentgen-icons
 After installation, you can use the icons in your Python code:
 
 ```python
-from roentgen import get_icons, Icons
-from pathlib import Path
+from roentgen import get_roentgen, Roentgen
+from svgwrite.path import Path as SVGPath
 
-icons: Icons = get_icons()
+instance: Roentgen = get_roentgen()
 
-icon_identifiers: list[str] = icons.identifiers
-path_commands: str = icons.get_path_commands("tree")
-
-icon_path: Path = icons.get_icon_path("tree")
-with icon_path.open() as input_file:
-    svg_content: str = input_file.read()
+shape: Shape | None = instance.get_shape("tree")
+if shape is not None:
+    svg_path: SVGPath = shape.get_path("main")
 ```
 
 ## Design Principles

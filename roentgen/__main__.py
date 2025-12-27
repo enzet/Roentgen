@@ -10,8 +10,8 @@ import numpy as np
 from colour import Color
 
 from roentgen.collection import main as collections_main
-from roentgen.icon import Icon, Shapes, get_icons
-from roentgen.icon_collection import IconCollection
+from roentgen.icon import IconSpecification, Shapes, get_icon_specifications
+from roentgen.icon_collection import IconSpecifications
 from roentgen.site import main as site_main
 from roentgen.taginfo import main as taginfo_main
 
@@ -19,7 +19,7 @@ logger: logging.Logger = logging.getLogger(__name__)
 
 
 def draw_icons(
-    collection: IconCollection,
+    collection: IconSpecifications,
     shapes: Shapes,
     version: str,
     *,
@@ -129,15 +129,20 @@ def draw() -> None:
 
     version: str = Path("VERSION").read_text().strip()
 
-    icons: list[Icon] = get_icons(Path("data") / "config.json")
-    collection_no_parts: IconCollection = IconCollection.from_icons(
-        icons, filter_=lambda icon: not icon.is_part
+    icon_specifications: list[IconSpecification] = get_icon_specifications(
+        Path("data") / "config.json"
+    )
+    collection_no_parts: IconSpecifications = (
+        IconSpecifications.from_icon_specifications(
+            icon_specifications,
+            filter_=lambda icon_specification: not icon_specification.is_part,
+        )
     )
 
     for shape_id in shapes.shapes:
         found: bool = False
-        for icon in icons:
-            if shape_id in icon.get_shape_ids():
+        for icon_specification in icon_specifications:
+            if shape_id in icon_specification.get_shape_ids():
                 found = True
                 break
         if not found:
