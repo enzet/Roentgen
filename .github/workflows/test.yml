@@ -29,7 +29,7 @@ jobs:
         npm install -g iconscript@0.1
     - name: Generate icons
       run: |
-        roentgen icons
+        python -m roentgen icons
 
   check:
     name: Static Analysis, Code Style, Linting

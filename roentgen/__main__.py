@@ -1,6 +1,7 @@
 """Main module."""
 
 import argparse
+import json
 import logging
 import shutil
 from pathlib import Path
@@ -8,8 +9,8 @@ from pathlib import Path
 from colour import Color
 
 from roentgen.collection import main as collections_main
-from roentgen.icon import Icon, Shapes, get_icons
-from roentgen.icon_collection import IconCollection
+from roentgen.icon import IconSpecification, Shapes, get_icon_specifications
+from roentgen.icon_collection import IconSpecifications
 from roentgen.site import main as site_main
 from roentgen.taginfo import main as taginfo_main
 
@@ -17,7 +18,7 @@ logger: logging.Logger = logging.getLogger(__name__)
 
 
 def draw_icons(
-    collection: IconCollection,
+    collection: IconSpecifications,
     shapes: Shapes,
     version: str,
     *,
@@ -100,7 +101,14 @@ def draw_icons(
 
 
 def draw() -> None:
-    """Draw all icons as grid and individual SVG files."""
+    """Draw all icons as grid and individual SVG files.
+
+    Parse icons from SVG sketch files, iconscript files and config file.
+    Generate:
+      - individual SVG files for each icon,
+      - grid SVG files for all icons,
+      - JSON file with path for icons and part icons.
+    """
 
     shapes: Shapes = Shapes()
     for path in [
@@ -120,23 +128,39 @@ def draw() -> None:
 
     version: str = Path("VERSION").read_text().strip()
 
-    icons: list[Icon] = get_icons(Path("data") / "config.json")
-    main_collection: IconCollection = IconCollection.from_icons(
-        icons,
-        filter_=lambda icon: not icon.is_part,
+    icon_specifications: list[IconSpecification] = get_icon_specifications(
+        Path("data") / "config.json"
+    )
+    collection_no_parts: IconSpecifications = (
+        IconSpecifications.from_icon_specifications(
+            icon_specifications,
+            filter_=lambda icon_specification: not icon_specification.is_part,
+        )
     )
 
     for shape_id in shapes.shapes:
         found: bool = False
-        for icon in icons:
-            if shape_id in icon.get_shape_ids():
+        for icon_specification in icon_specifications:
+            if shape_id in icon_specification.get_shape_ids():
                 found = True
                 break
         if not found:
             logger.warning("No configuration for `%s` found.", shape_id)
 
+    shapes_data: dict[str, str] = {
+        shape_id: shape.get_path(
+            "main", point=(0.0, 0.0), offset=(0.0, 0.0), scale=(1.0, 1.0)
+        )
+        .get_xml()
+        .attrib["d"]
+        for shape_id, shape in sorted(shapes.shapes.items())
+        if "main" in shape.paths
+    }
+    with Path("shapes.json").open("w") as file:
+        json.dump(shapes_data, file, indent=4)
+
     draw_icons(
-        main_collection,
+        collection_no_parts,
         shapes,
         version=version,
         root_path=Path(),

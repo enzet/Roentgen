@@ -1,10 +1,16 @@
+# Copied by `hatch_build.py`.
+roentgen/config.json
+roentgen/shapes.json
+
 .DS_Store
 .idea/
 .npmrc
 .pypirc
 .venv/
+.vscode/
 __pycache__
 cache/
+dist/
 icons/LICENSE
 icons_sketches/
 osm/
