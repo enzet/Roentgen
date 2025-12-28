@@ -5,6 +5,7 @@ from __future__ import annotations
 import tempfile
 from pathlib import Path
 
+import pytest
 from colour import Color
 from svgwrite import Drawing
 from svgwrite.path import Path as SVGPath
@@ -86,10 +87,10 @@ class TestPathCommandsRoentgen:
 class TestDrawingRoentgen:
     """Test the drawing of Roentgen icons."""
 
-    def test_drawing(self) -> None:
-        """Test drawing a Roentgen icon."""
-        roentgen = Roentgen()
-        shape_specification: ShapeSpecification = ShapeSpecification(
+    @pytest.fixture
+    def shape_specification(self) -> ShapeSpecification:
+        """Create a ShapeSpecification fixture for testing."""
+        return ShapeSpecification(
             shape_id="tree",
             version="main",
             offset=(0.0, 0.0),
@@ -98,6 +99,10 @@ class TestDrawingRoentgen:
             use_outline=True,
             color=Color("red"),
         )
+
+    def test_drawing(self, shape_specification: ShapeSpecification) -> None:
+        """Test drawing a Roentgen icon."""
+        roentgen = Roentgen()
         temp_file_name: Path = Path(tempfile.mkdtemp()) / "test.svg"
         drawing: Drawing = Drawing(str(temp_file_name), (16, 16))
         shape_specification.draw(drawing, roentgen.shapes, (0.0, 0.0))
@@ -107,6 +112,25 @@ class TestDrawingRoentgen:
             content: str = file.read()
 
         assert content.find("<path d=") != -1
+        assert 'fill="#f00"' in content
+
+    def test_drawing_with_outline(
+        self, shape_specification: ShapeSpecification
+    ) -> None:
+        """Test drawing a Roentgen icon."""
+        roentgen = Roentgen()
+        temp_file_name: Path = Path(tempfile.mkdtemp()) / "test.svg"
+        drawing: Drawing = Drawing(str(temp_file_name), (16, 16))
+        shape_specification.draw(
+            drawing, roentgen.shapes, (0.0, 0.0), outline=True
+        )
+        drawing.save(str(temp_file_name))
+
+        with temp_file_name.open("r", encoding="utf-8") as file:
+            content: str = file.read()
+
+        assert content.find("<path d=") != -1
+        assert 'fill="#fff"' in content
 
 
 class TestGetRoentgen:

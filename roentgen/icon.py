@@ -594,8 +594,9 @@ class ShapeSpecification:
         if self.flip_horizontally:
             scale_vector = (-scale, scale)
 
-        if not color:
-            color = Color("black")
+        color_to_use: Color = self.color
+        if color:
+            color_to_use = color
 
         point: tuple[float, float] = (
             float(int(position[0])),
@@ -616,11 +617,11 @@ class ShapeSpecification:
             offset=offset_scaled,
             scale=scale_vector,
         )
-        path.update({"fill": color.hex})
+        path.update({"fill": color_to_use.hex})
 
         if outline and self.use_outline:
             outline_color: Color = (
-                Color("black") if is_bright(color) else Color("white")
+                Color("black") if is_bright(color_to_use) else Color("white")
             )
             style: dict[str, Any] = {
                 "fill": outline_color.hex,
