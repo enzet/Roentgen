@@ -77,14 +77,14 @@ After installation, you can use the icons in your Python code:
 
 ```python
 from roentgen import get_roentgen, Roentgen
-from svgwrite.path import Path as SVGPath
+from svgwrite.path import Path
 
 instance: Roentgen = get_roentgen()
 
 shape: Shape | None = instance.get_shape("tree")
 if shape is not None:
-    svg_path: SVGPath = shape.get_svg_path("main")
-    path_commands: str = shape.get_path_commands("main")
+    svg_path: Path = shape.get_svg_path()
+    path_commands: str = shape.get_path_commands()
 ```
 
 ## Design Principles
