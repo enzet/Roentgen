@@ -30,12 +30,12 @@ Homepage = "https://enzet.ru/roentgen"
 Repository = "https://github.com/enzet/Roentgen"
 
 [tool.hatch.build.targets.wheel]
-packages = ["roentgen"]
-exclude = [
-    "roentgen/__main__.py",
-    "roentgen/collection.py",
-    "roentgen/site.py",
-    "roentgen/taginfo.py",
+only-include = [
+    "roentgen/__init__.py",
+    "roentgen/icon.py",
+    "roentgen/icon_collection.py",
+    "roentgen/shapes.json",
+    "roentgen/config.json",
 ]
 
 [tool.hatch.build.hooks.custom]
