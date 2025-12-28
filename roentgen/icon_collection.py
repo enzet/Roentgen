@@ -122,20 +122,22 @@ class IconSpecifications:
         position: tuple[float, float] = (step / 2.0 * scale, step / 2.0 * scale)
         width: float = step * columns * scale
 
-        icons: list[IconSpecification] = [
-            icon
-            for icon in self.icon_specifications
-            if only_sketch == icon.is_sketch()
+        icon_specifications: list[IconSpecification] = [
+            icon_specification
+            for icon_specification in self.icon_specifications
+            if only_sketch == icon_specification.is_sketch()
         ]
 
-        height: int = int(math.ceil(len(icons) / columns) * step * scale)
+        height: int = int(
+            math.ceil(len(icon_specifications) / columns) * step * scale
+        )
         svg: Drawing = Drawing(str(file_name), (width, height))
         if background_color is not None:
             svg.add(
                 svg.rect((0, 0), (width, height), fill=background_color.hex)
             )
 
-        for icon in icons:
+        for icon_specification in icon_specifications:
             if show_boundaries:
                 rectangle = svg.rect(
                     (position[0] - 14, position[1] - 14),
@@ -143,7 +145,9 @@ class IconSpecifications:
                     fill="#DDFFFF",
                 )
                 svg.add(rectangle)
-            icon.draw(svg, shapes, position, scale=scale, color=color)
+            icon_specification.draw(
+                svg, shapes, position, scale=scale, color=color
+            )
             position = (position[0] + step * scale, position[1])
             if position[0] > width - 8.0:
                 position = (step / 2.0 * scale, position[1] + step * scale)

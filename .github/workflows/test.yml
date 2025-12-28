@@ -50,3 +50,6 @@ jobs:
     - name: Lint with Ruff
       run: |
         ruff check roentgen/
+    - name: Run tests
+      run: |
+        pytest tests/ -v

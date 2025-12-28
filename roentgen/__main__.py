@@ -148,11 +148,7 @@ def draw() -> None:
             logger.warning("No configuration for `%s` found.", shape_id)
 
     shapes_data: dict[str, str] = {
-        shape_id: shape.get_path(
-            "main", point=(0.0, 0.0), offset=(0.0, 0.0), scale=(1.0, 1.0)
-        )
-        .get_xml()
-        .attrib["d"]
+        shape_id: shape.get_path_commands()
         for shape_id, shape in sorted(shapes.shapes.items())
         if "main" in shape.paths
     }
