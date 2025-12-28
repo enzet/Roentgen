@@ -83,7 +83,8 @@ instance: Roentgen = get_roentgen()
 
 shape: Shape | None = instance.get_shape("tree")
 if shape is not None:
-    svg_path: SVGPath = shape.get_path("main")
+    svg_path: SVGPath = shape.get_svg_path("main")
+    path_commands: str = shape.get_path_commands("main")
 ```
 
 ## Design Principles

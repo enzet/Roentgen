@@ -116,13 +116,34 @@ class Shape:
         """Return true if the shape doesn't represent anything."""
         return self.id_ in [DEFAULT_SHAPE_ID, DEFAULT_SMALL_SHAPE_ID]
 
-    def get_path(
+    def get_path_commands(
         self,
-        version: str,
+        version: str = "main",
         *,
-        point: tuple[float, float],
-        offset: tuple[float, float],
-        scale: tuple[float, float],
+        point: tuple[float, float] = (0.0, 0.0),
+        offset: tuple[float, float] = (0.0, 0.0),
+        scale: tuple[float, float] = (1.0, 1.0),
+    ) -> str:
+        """Get path commands for the shape."""
+        return (
+            self.get_svg_path(
+                version,
+                point=point,
+                offset=offset,
+                scale=scale,
+                use_transform=False,
+            )
+            .get_xml()
+            .attrib["d"]
+        )
+
+    def get_svg_path(
+        self,
+        version: str = "main",
+        *,
+        point: tuple[float, float] = (0.0, 0.0),
+        offset: tuple[float, float] = (0.0, 0.0),
+        scale: tuple[float, float] = (1.0, 1.0),
         use_transform: bool = False,
     ) -> SVGPath:
         """Get SVG path for the shape.
@@ -130,8 +151,8 @@ class Shape:
         :param point: icon position
         :param offset: additional offset
         :param scale: scale resulting image
-        :param use_transform: use SVG `translate` method instead of rewriting
-            path
+        :param use_transform: if true, SVG `translate` method will be used,
+            otherwise the path will be rewritten to match offset and scale
         """
         shift: tuple[float, float] = (
             point[0] + offset[0],
@@ -589,7 +610,7 @@ class ShapeSpecification:
             self.offset[0] * scale,
             self.offset[1] * scale,
         )
-        path: SVGPath = shape.get_path(
+        path: SVGPath = shape.get_svg_path(
             self.version,
             point=point,
             offset=offset_scaled,
@@ -821,16 +842,17 @@ class IconSpecification:
                         shape_specification.offset[0] * 1.0,
                         shape_specification.offset[1] * 1.0,
                     )
-                    path: str = shapes.get_shape(
+                    path_commands: str = shapes.get_shape(
                         shape_specification.shape_id
-                    ).get_path(
+                    ).get_path_commands(
                         shape_specification.version,
                         point=(8.0, 8.0),
                         offset=offset_value,
                         scale=(1.0, 1.0),
                     )
-                    d = path.get_xml().attrib["d"]
-                    output_file.write(f'<path d="{d}" fill="#000" />')
+                    output_file.write(
+                        f'<path d="{path_commands}" fill="#000" />'
+                    )
                 output_file.write("</svg>")
             return
 

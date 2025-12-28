@@ -22,7 +22,13 @@ if ! ruff check; then
 fi
 
 echo "Checking icon generation..."
-if ! roentgen icons; then
+if ! python -m roentgen icons; then
+    echo "FAIL"
+    exit 1
+fi
+
+echo "Running tests..."
+if ! pytest tests/ -v; then
     echo "FAIL"
     exit 1
 fi
