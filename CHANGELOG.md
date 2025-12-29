@@ -1,4 +1,4 @@
-## Unreleased
+## 0.10.0
 
 Add API for Python package roentgen-icons.
 
