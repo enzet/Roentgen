@@ -349,7 +349,6 @@ class Shapes:
         :param svg_file_name: input SVG file name with icons.  File may contain
             any other irrelevant graphics.
         """
-        logger.info("Importing shapes from `%s`...", svg_file_name)
         root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
         self.__parse(root, svg_file_name)
 
@@ -358,7 +357,6 @@ class Shapes:
 
         :param iconscript_file_name: input iconscript file name.
         """
-        logger.info("Importing shapes from `%s`...", iconscript_file_name)
         temp_output_directory: Path = Path(tempfile.mkdtemp())
 
         message: str
@@ -415,7 +413,6 @@ class Shapes:
 
         :param json_file_name: input JSON file name with shapes.
         """
-        logger.info("Importing shapes from `%s`...", json_file_name)
         with json_file_name.open() as input_file:
             shapes: dict = json.load(input_file)
         for id_, shape in shapes.items():
