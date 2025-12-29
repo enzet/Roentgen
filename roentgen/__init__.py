@@ -23,6 +23,14 @@ if TYPE_CHECKING:
 
 logger: logging.Logger = logging.getLogger(__name__)
 
+ICON_LICENSE: str = """Röntgen icons (c) by Sergey Vartanov
+
+Röntgen icons are licensed under a Creative Commons Attribution 4.0
+International License.
+
+You should have received a copy of the license along with this work.  If not,
+see <http://creativecommons.org/licenses/by/4.0/>."""
+
 
 class Roentgen:
     """Container for all Röntgen icons.
@@ -59,6 +67,14 @@ class Roentgen:
     def get_shape(self, shape_id: str) -> Shape | None:
         """Get shape by identifier."""
         return self.shapes.shapes.get(shape_id)
+
+    def get_ids(self) -> list[str]:
+        """Get all shape identifiers."""
+        return list(self.shapes.shapes.keys())
+
+    def get_license(self) -> str:
+        """Get license text."""
+        return ICON_LICENSE
 
 
 _roentgen_instance: Roentgen | None = None
