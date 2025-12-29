@@ -771,6 +771,14 @@ class IconSpecification:
         :param scale: scale icon by the magnitude
         :param color: fill color
         """
+        if len(self.shape_specifications) == 0:
+            return
+
+        if color is None:
+            color = self.shape_specifications[0].color
+        if color is None:
+            color = Color("black")
+
         if outline:
             bright: bool = is_bright(color)
             opacity = 0.7 if bright else 0.5
@@ -817,6 +825,7 @@ class IconSpecification:
         file_name: Path,
         shapes: Shapes,
         *,
+        color: Color | None = None,
         outline: bool = False,
         outline_opacity: float = 1.0,
     ) -> None:
@@ -827,6 +836,11 @@ class IconSpecification:
         :param outline: if true, draw outline beneath the icon
         :param outline_opacity: opacity of the outline
         """
+        for shape_specification in self.shape_specifications:
+            if shape_specification.shape_id not in shapes.shapes:
+                return
+        if color is None:
+            color = Color("black")
         if not outline:
             # If we don't need outline, we draw the icon the simplest way
             # possible.
@@ -849,7 +863,7 @@ class IconSpecification:
                         scale=(1.0, 1.0),
                     )
                     output_file.write(
-                        f'<path d="{path_commands}" fill="#000" />'
+                        f'<path d="{path_commands}" fill="{color.hex}" />'
                     )
                 output_file.write("</svg>")
             return
@@ -906,6 +920,14 @@ class IconSpecification:
     def get_full_id(self) -> str:
         """Get full icon identifier for sorting."""
         return self.group + "_" + self.icon_id
+
+    def recolor(self, color: Color, white: Color | None = None) -> None:
+        """Paint all shapes in the color."""
+        for shape_specification in self.shape_specifications:
+            if shape_specification.color == Color("white") and white:
+                shape_specification.color = white
+            else:
+                shape_specification.color = color
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, IconSpecification):
