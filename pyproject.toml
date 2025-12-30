@@ -7,7 +7,7 @@ name = "roentgen-icons"
 version = "0.10.0"
 description = "Set of monochrome 14 × 14 px pixel-aligned map icons"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 authors = [{ name = "Sergey Vartanov", email = "me@enzet.ru" }]
 classifiers = [
     "Programming Language :: Python :: 3",
