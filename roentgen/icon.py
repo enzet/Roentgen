@@ -10,15 +10,9 @@ import shutil
 import subprocess
 import tempfile
 from dataclasses import dataclass, field
+from pathlib import Path
 from typing import TYPE_CHECKING, Any
 from xml.etree import ElementTree as ET
-
-try:
-    import cairosvg
-except ImportError:
-    cairosvg = None
-
-from pathlib import Path
 
 import svgwrite
 from colour import Color
@@ -26,6 +20,14 @@ from svgpathtools import Path as ToolsPath
 from svgpathtools import parse_path
 from svgwrite import Drawing
 from svgwrite.container import Group
+
+logger: logging.Logger = logging.getLogger(__name__)
+
+try:
+    import cairosvg
+except Exception:
+    logger.exception("Failed to import `cairosvg`.")
+    cairosvg: Any = None
 
 if TYPE_CHECKING:
     from xml.etree.ElementTree import Element
