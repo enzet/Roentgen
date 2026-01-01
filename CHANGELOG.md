@@ -7,6 +7,11 @@ Python package:
 
 Redraw `cctv` icon.
 
+Flip icons:
+  - `buffer_stop`,
+  - `fountain_roman_wolf`,
+  - `supermarket_cart`.
+
 ## 0.10.0
 
 Add API for Python package roentgen-icons
