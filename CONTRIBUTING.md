@@ -14,7 +14,7 @@ echo "$VERSION_NUMBER" > VERSION
 echo "$VERSION_NUMBER" > icons/VERSION
 ```
 
-2. Change version in `pyproject.toml`.
+2. Change version in `pyproject.toml`, and `package.json`.
 3. Update `CHANGELOG.md`.
 
 4. Commit and push.
@@ -54,10 +54,15 @@ gh release create v$VERSION_NUMBER \
 9. Build and publish Python package:
 
 ```shell
-cd python-package
 source .venv/bin/activate
 python -m build
 python -m twine upload dist/roentgen_icons-$VERSION_NUMBER*
 deactivate
 cd ..
+```
+
+10. Publish npm package:
+
+```shell
+npm publish --access public
 ```
