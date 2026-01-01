@@ -1,6 +1,16 @@
+## Unreleased
+
+Python package:
+  - Migrate minimum Python version from 3.9 to 3.10
+    ([#8](https://github.com/enzet/Roentgen/issues/8)).
+  - Fix `cairosvg` import error on Windows.
+
+Redraw `cctv` icon.
+
 ## 0.10.0
 
-Add API for Python package roentgen-icons.
+Add API for Python package roentgen-icons
+([#6](https://github.com/enzet/Roentgen/issues/6)).
 
 ## 0.9.0
 
