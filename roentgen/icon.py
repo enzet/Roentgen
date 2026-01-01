@@ -676,15 +676,15 @@ class IconSpecification:
     """Keywords that are used to search for the icon."""
 
     is_right_directed: bool | None = None
-    """If shape is directed.
+    """If icon is directed.
 
-    If value is `None`, shape doesn't have distinct direction or its
-    direction doesn't make sense.  Shape is directed to the right if value is
-    `True` and to the left if value is `False`.
+    If value is `None`, icon doesn't have distinct direction or its direction
+    doesn't make sense.  Icon is directed to the right if value is `True` and to
+    the left if value is `False`.
 
-    E.g. CCTV camera shape has direction and may be flipped horizontally to
-    follow surveillance direction, whereas car shape has direction but
-    flipping icon doesn't make any sense.
+    E.g. CCTV camera icon has direction and may be flipped horizontally to
+    follow surveillance direction, whereas car icon has direction but flipping
+    icon doesn't make any sense.
     """
 
     @classmethod

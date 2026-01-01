@@ -8,7 +8,7 @@ from __future__ import annotations
 import json
 import logging
 from importlib import resources
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, cast
 
 from roentgen.icon import (
     IconSpecification,
@@ -42,7 +42,7 @@ class Roentgen:
     def __init__(self) -> None:
         """Initialize and load all icons."""
         try:
-            directory: Path = resources.files("roentgen")
+            directory: Path = cast("Path", resources.files("roentgen"))
             with (directory / "config.json").open() as input_file:
                 self.config: dict[str, Any] = json.load(input_file)
             self.shapes: Shapes = Shapes()
