@@ -5,7 +5,9 @@ Python package:
     ([#8](https://github.com/enzet/Roentgen/issues/8)).
   - Fix `cairosvg` import error on Windows.
 
-Redraw `cctv` icon.
+Redraw icons:
+  - `amusement_ride`,
+  - `cctv`.
 
 Flip icons:
   - `buffer_stop`,
