@@ -7,7 +7,8 @@ Python package:
 
 Redraw icons:
   - `amusement_ride`,
-  - `cctv`.
+  - `cctv`,
+  - `vending_excrement_bag`.
 
 Flip icons:
   - `buffer_stop`,
