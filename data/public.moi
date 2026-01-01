@@ -8,8 +8,8 @@ free 14 × 14 px monochrome pixel-aligned
 \ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0}
 vector map icons created for
 \ref {https://github.com/enzet/map-machine} {Map Machine} project.
-Icons are drawn by hand and generated using \ref {#iconscript} {iconscript}
-language.
+Icons are drawn using vector graphics editor and generated using
+\ref {#iconscript} {iconscript} language.
 
 \button
     {../roentgen-%ROENTGEN_VERSION%.zip}
@@ -66,7 +66,7 @@ language.
 }
 
 All icons are \ref {https://github.com/enzet/Roentgen} {open source} and
-\ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0} 
+\ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0}
 licensed. You can use them freely in commercial and non-commercial projects, but
 please give credit to the author.
 

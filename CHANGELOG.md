@@ -7,7 +7,13 @@ Python package:
 
 Redraw icons:
   - `amusement_ride`,
+  - `bicycle_parking_rack.svg`,
+  - `bicycle_parking_stand.svg`,
+  - `bicycle_parking_wall_loops.svg`,
   - `cctv`,
+  - `p_small___bicycle_parking_rack.svg`,
+  - `p_small___bicycle_parking_stand.svg`,
+  - `p_small___bicycle_parking_wall_loops.svg`,
   - `vending_excrement_bag`.
 
 Flip icons:

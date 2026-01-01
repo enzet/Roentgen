@@ -2313,15 +2313,15 @@
             "name": "small letter P with bicycle parking stand",
             "shapes": [
                 {"id": "p_small", "offset": [-5, -3]},
-                {"id": "bicycle_parking_stand"}
+                {"id": "bicycle_parking_stand", "offset": [1, 2]}
             ]
         },
         "p_small___bicycle_parking_wall_loops": {
             "keywords": ["road"],
             "name": "small letter P with bicycle parking wall loops",
             "shapes": [
-                {"id": "p_small", "offset": [-5, -3]},
-                {"id": "bicycle_parking_wall_loops"}
+                {"id": "p_small", "offset": [-4, -3]},
+                {"id": "bicycle_parking_wall_loops", "offset": [2, 0]}
             ]
         },
         "p_small___bicycle_parking_rack": {
@@ -2329,8 +2329,14 @@
             "name": "small letter P with bicycle parking rack",
             "shapes": [
                 {"id": "p_small", "offset": [-5, -3]},
-                {"id": "bicycle_parking_rack"}
+                {"id": "bicycle_parking_rack", "offset": [2, 1]}
             ]
+        },
+        "bicycle_parking_bollard": {
+            "keywords": ["road"],
+            "name": "bicycle parking bollard",
+            "shapes": [{"id": "bicycle_parking_bollard", "version": "v0"}],
+            "sketch": true
         },
         "bicycle_parking_rack": {
             "keywords": ["road"],
@@ -2343,6 +2349,12 @@
         "bicycle_parking_wall_loops": {
             "keywords": ["road"],
             "name": "bicycle parking wall loops"
+        },
+        "bicycle_parking_wave": {
+            "keywords": ["road"],
+            "name": "bicycle parking wave",
+            "shapes": [{"id": "bicycle_parking_wave", "version": "v0"}],
+            "sketch": true
         },
         "billboard": {
             "categories": ["amenity"],
