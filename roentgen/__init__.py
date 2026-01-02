@@ -43,7 +43,9 @@ class Roentgen:
         """Initialize and load all icons."""
         try:
             directory: Path = cast("Path", resources.files("roentgen"))
-            with (directory / "config.json").open() as input_file:
+            with (directory / "config.json").open(
+                encoding="utf-8"
+            ) as input_file:
                 self.config: dict[str, Any] = json.load(input_file)
             self.shapes: Shapes = Shapes()
             self.shapes.add_from_json(directory / "shapes.json")

@@ -328,7 +328,7 @@ def get_icon_specifications(
     """Get icons from configuration."""
     icon_specifications: list[IconSpecification] = []
     configuration: dict[str, Any] = {}
-    with configuration_path.open() as input_file:
+    with configuration_path.open(encoding="utf-8") as input_file:
         parse_configuration(json.load(input_file), configuration, "")
     for key, value in configuration.items():
         icon_specifications.append(IconSpecification.from_structure(key, value))
@@ -415,7 +415,7 @@ class Shapes:
 
         :param json_file_name: input JSON file name with shapes.
         """
-        with json_file_name.open() as input_file:
+        with json_file_name.open(encoding="utf-8") as input_file:
             shapes: dict = json.load(input_file)
         for id_, shape in shapes.items():
             self.shapes[id_] = Shape({"main": PathOnCanvas(shape)}, id_)

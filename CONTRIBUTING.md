@@ -54,6 +54,7 @@ gh release create v$VERSION_NUMBER \
 9. Build and publish Python package:
 
 ```shell
+rm -r dist/
 source .venv/bin/activate
 python -m build
 python -m twine upload dist/roentgen_icons-$VERSION_NUMBER*
