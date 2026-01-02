@@ -152,7 +152,7 @@ def draw() -> None:
         for shape_id, shape in sorted(shapes.shapes.items())
         if "main" in shape.paths
     }
-    with Path("shapes.json").open("w") as file:
+    with Path("shapes.json").open("w", encoding="utf-8") as file:
         json.dump(shapes_data, file, indent=4)
 
     draw_icons(

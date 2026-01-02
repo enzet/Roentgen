@@ -188,13 +188,15 @@ def generate_site_files(
 
     icons_js: str = json.dumps(icons_data, indent=4)
 
-    with (template_dir / "code.template.js").open() as input_file:
+    with (template_dir / "code.template.js").open(
+        encoding="utf-8"
+    ) as input_file:
         code_template: str = input_file.read()
         code_template = code_template.replace("%ICONS_DATA%", icons_js)
-    with (site_path / "roentgen.js").open("w") as output_file:
+    with (site_path / "roentgen.js").open("w", encoding="utf-8") as output_file:
         output_file.write(code_template)
 
-    with (site_path / "index.html").open() as input_file:
+    with (site_path / "index.html").open(encoding="utf-8") as input_file:
         content: str = input_file.read()
         content = content.replace("%ROENTGEN_ICON_GRID%", icon_grid_html)
         content = content.replace("%ROENTGEN_VERSION%", version)
@@ -203,7 +205,7 @@ def generate_site_files(
             "%ICONS_FILE_SIZE%",
             str(zip_path.stat().st_size // 1024),
         )
-    with (site_path / "index.html").open("w") as output_file:
+    with (site_path / "index.html").open("w", encoding="utf-8") as output_file:
         output_file.write(content)
 
     shutil.copy(template_dir / "style.css", site_path / "roentgen.css")
@@ -220,7 +222,7 @@ def main(site_path: Path) -> None:
     config_path: Path = Path("data/config.json")
     version_path: Path = Path("VERSION")
 
-    with version_path.open() as version_file:
+    with version_path.open(encoding="utf-8") as version_file:
         version: str = version_file.read().strip()
 
     zip_path: Path = Path("out") / f"roentgen-{version}.zip"
