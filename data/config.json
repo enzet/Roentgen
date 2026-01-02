@@ -2342,6 +2342,12 @@
             "keywords": ["road"],
             "name": "bicycle parking rack"
         },
+        "bicycle_parking_shed": {
+            "keywords": ["road"],
+            "name": "bicycle parking shed",
+            "shapes": [{"id": "bicycle_parking_shed", "version": "v0"}],
+            "sketch": true
+        },
         "bicycle_parking_stand": {
             "keywords": ["road"],
             "name": "bicycle parking stand"
