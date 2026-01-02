@@ -1,4 +1,4 @@
-## Unreleased
+## 0.11.0
 
 Python package:
   - Migrate minimum Python version from 3.9 to 3.10
