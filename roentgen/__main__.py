@@ -123,6 +123,7 @@ def draw() -> None:
 
     for path in [
         Path("iconscript") / "power.iconscript",
+        Path("iconscript") / "barcode.iconscript",
     ]:
         shapes.add_from_iconscript(path)
 

@@ -1,3 +1,8 @@
+## Unreleased
+
+Python package:
+  - Fix `cairosvg` import and encoding error on Windows.
+
 ## 0.11.0
 
 Python package:

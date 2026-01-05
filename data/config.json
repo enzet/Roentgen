@@ -313,6 +313,26 @@
             "sketch": true
         }
     },
+    "__barcode": {
+        "barcode": {
+            "keywords": ["barcode"],
+            "name": "barcode",
+            "shapes": [{"id": "barcode", "version": "v0"}],
+            "sketch": true
+        },
+        "barcode_scan": {
+            "keywords": ["barcode"],
+            "name": "scanning barcode",
+            "shapes": [{"id": "barcode_scan", "version": "v0"}],
+            "sketch": true
+        },
+        "qr_code": {
+            "keywords": ["qr code"],
+            "name": "QR code",
+            "shapes": [{"id": "qr_code", "version": "v0"}],
+            "sketch": true
+        }
+    },
     "__barrier": {
         "chain_barrier": {
             "categories": ["barrier"],
