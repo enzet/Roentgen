@@ -20,6 +20,7 @@ from svgpathtools import Path as ToolsPath
 from svgpathtools import parse_path
 from svgwrite import Drawing
 from svgwrite.container import Group
+from svgwrite.path import Path as SVGPath
 
 logger: logging.Logger = logging.getLogger(__name__)
 
@@ -36,7 +37,6 @@ if TYPE_CHECKING:
     from xml.etree.ElementTree import Element
 
     from svgwrite.base import BaseElement
-    from svgwrite.path import Path as SVGPath
 
 __author__ = "Sergey Vartanov"
 __email__ = "me@enzet.ru"
@@ -166,7 +166,7 @@ class Shape:
 
         if use_transform:
             path_on_canvas: PathOnCanvas = self.paths[version]
-            path: SVGPath = svgwrite.path.Path(d=path_on_canvas.path)
+            path: SVGPath = SVGPath(d=path_on_canvas.path)
             if not allclose(shift, (0.0, 0.0)):
                 path.translate(shift[0], shift[1])
             if not allclose(scale, (1.0, 1.0)):
@@ -207,7 +207,7 @@ class Shape:
                             attribute,
                             round_complex(getattr(element, attribute), 4),
                         )
-            path = svgwrite.path.Path(d=parsed_path.d())
+            path = SVGPath(d=parsed_path.d())
 
         return path
 
@@ -596,9 +596,13 @@ class ShapeSpecification:
         if self.flip_horizontally:
             scale_vector = (-scale, scale)
 
-        color_to_use: Color = self.color
+        color_to_use: Color
+        if self.color:
+            color_to_use = self.color
         if color:
             color_to_use = color
+        if not color_to_use:
+            color_to_use = Color("black")
 
         point: tuple[float, float] = (
             float(int(position[0])),
@@ -859,9 +863,12 @@ class IconSpecification:
                         shape_specification.offset[0] * 1.0,
                         shape_specification.offset[1] * 1.0,
                     )
-                    path_commands: str = shapes.get_shape(
+                    shape: Shape | None = shapes.get_shape(
                         shape_specification.shape_id
-                    ).get_path_commands(
+                    )
+                    if shape is None:
+                        continue
+                    path_commands: str = shape.get_path_commands(
                         shape_specification.version,
                         point=(8.0, 8.0),
                         offset=offset_value,
