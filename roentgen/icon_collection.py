@@ -7,13 +7,12 @@ import shutil
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
+from colour import Color
 from svgwrite import Drawing
 
 if TYPE_CHECKING:
     from collections.abc import Callable
     from pathlib import Path
-
-    from colour import Color
 
     from roentgen.icon import IconSpecification, Shapes
 
@@ -105,7 +104,8 @@ class IconSpecifications:
         background_color: Color | None = None,
         scale: float = 1.0,
         show_boundaries: bool = False,
-        only_sketch: bool = False,
+        draw_final: bool = True,
+        draw_sketch: bool = False,
         color: Color | None = None,
     ) -> None:
         """Draw icons in the form of a table.
@@ -125,7 +125,8 @@ class IconSpecifications:
         icon_specifications: list[IconSpecification] = [
             icon_specification
             for icon_specification in self.icon_specifications
-            if only_sketch == icon_specification.is_sketch()
+            if (icon_specification.is_sketch() and draw_sketch)
+            or (not icon_specification.is_sketch() and draw_final)
         ]
 
         height: int = int(
@@ -146,7 +147,13 @@ class IconSpecifications:
                 )
                 svg.add(rectangle)
             icon_specification.draw(
-                svg, shapes, position, scale=scale, color=color
+                svg,
+                shapes,
+                position,
+                scale=scale,
+                color=Color("#AAAAAA")
+                if icon_specification.is_sketch()
+                else color,
             )
             position = (position[0] + step * scale, position[1])
             if position[0] > width - 8.0:
