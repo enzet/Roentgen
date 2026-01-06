@@ -70,7 +70,10 @@ def generate_bus_stops(config: dict) -> Path:
         is_platform: bool = "platform" in current_parameters
         is_shelter: bool = "shelter" in current_parameters
 
-        if id_ in config["__transport_items"]:
+        if (
+            id_ in config["__transport_items"]
+            or id_ in config["__transport_items"]["__traffic_sign"]
+        ):
             continue
         if is_cover and is_shelter:
             continue
