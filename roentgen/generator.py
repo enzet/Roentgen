@@ -1,50 +1,11 @@
 """Generate iconscript code."""
 
 from pathlib import Path
-from textwrap import dedent
 
 
 def generate_bus_stops(config: dict) -> Path:
     """Generate iconscript code for bus stops."""
-    variables: str = dedent("""
-        sign =
-            {w 2 s +0,0 +5,6}  # External.
-            {w 2 r s +1,1 +3,3}  # Negative.
-            {s +1.5,1.5 +2,1}  # Internal.
-            {l +2.5,5.5 +0,5 l +-2,0 +4,0}  # Base.
-
-        sign_small =
-            {s +0,0 +4,5}  # Sign.
-            {r s +1,1 +2,1}  # Negative.
-            {l +2,4 +0,7}  # Base.
-
-        platform = l +0,0 +13,0
-        platform_center = l +0,0 +12,0
-        cover = l 1,1 +13,0
-        cover_center = l 1,1 +12,0
-        wall = l 13,1 +0,13
-        wall_short = {l 13,1 +0,9} {r l 12,10 +2,0}
-        bench =
-            {s +0,0 +9,1}  # Sit.
-            {l +1,1 +0,2}  # Left leg.
-            {l +8,1 +0,2}  # Right leg.
-        bench_narrow =
-            {s +-1,0 +5,1}
-            {r l +-1,-1 +0,3}
-            {l +3,1 +0,2}
-        bin = lf +0,0 +3,0 +-1,3 +-1,0 +-1,-3
-
-        lit =
-            c +0,0 2  # Lamp.
-            {l +0,2 +0,1.5}  # Central ray.
-            {l +-2,1.5 +-1,1}  # Left ray.
-            {l +2,1.5 +1,1}  # Right ray.
-
-        lit_narrow =
-            c +0,0 2  # Lamp.
-            {l +-1,2 +-0.5,1.5}  # Left ray.
-            {l +1,2 +0.5,1.5}  # Right ray.
-        """)
+    variables: str = Path("iconscript/stop_variables.iconscript").read_text()
 
     parameters: list[str] = [
         "bin",
