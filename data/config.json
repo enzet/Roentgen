@@ -3193,6 +3193,7 @@
             "__latin": {
                 "b": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter B",
                     "shapes": [{"id": "b", "version": "v0"}],
@@ -3201,6 +3202,7 @@
                 },
                 "c": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter C",
                     "shapes": [{"id": "c", "version": "v0"}],
@@ -3209,6 +3211,7 @@
                 },
                 "d": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter D",
                     "shapes": [{"id": "d", "version": "v0"}],
@@ -3217,6 +3220,7 @@
                 },
                 "e": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter E",
                     "shapes": [{"id": "e", "version": "v0"}],
@@ -3225,6 +3229,7 @@
                 },
                 "f": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter F",
                     "shapes": [{"id": "f", "version": "v0"}],
@@ -3234,6 +3239,7 @@
                 "g": {
                     "categories": ["letter"],
                     "keywords": ["symbol", "alphabet"],
+                    "is_part": true,
                     "name": "Latin letter G",
                     "shapes": [{"id": "g", "version": "v0"}],
                     "sketch": true,
@@ -3254,6 +3260,7 @@
                 },
                 "j": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter J",
                     "shapes": [{"id": "j", "version": "v0"}],
@@ -3262,6 +3269,7 @@
                 },
                 "k": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter K",
                     "shapes": [{"id": "k", "version": "v0"}],
@@ -3270,6 +3278,7 @@
                 },
                 "l": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter L",
                     "shapes": [{"id": "l", "version": "v0"}],
@@ -3278,6 +3287,7 @@
                 },
                 "m": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter M",
                     "shapes": [{"id": "m", "version": "v0"}],
@@ -3286,6 +3296,7 @@
                 },
                 "n": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter N",
                     "shapes": [{"id": "n", "version": "v0"}],
@@ -3294,6 +3305,7 @@
                 },
                 "o": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter O",
                     "shapes": [{"id": "0", "version": "v0"}],
@@ -3311,6 +3323,7 @@
                 },
                 "q": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter Q",
                     "shapes": [{"id": "q", "version": "v0"}],
@@ -3319,6 +3332,7 @@
                 },
                 "r": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter R",
                     "shapes": [{"id": "r", "version": "v0"}],
@@ -3327,6 +3341,7 @@
                 },
                 "s": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter S",
                     "shapes": [{"id": "s", "version": "v0"}],
@@ -3340,6 +3355,7 @@
                 },
                 "u": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter U",
                     "shapes": [{"id": "u", "version": "v0"}],
@@ -3348,6 +3364,7 @@
                 },
                 "v": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter V",
                     "shapes": [{"id": "v", "version": "v0"}],
@@ -3356,6 +3373,7 @@
                 },
                 "w": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter W",
                     "shapes": [{"id": "w", "version": "v0"}],
@@ -3384,6 +3402,7 @@
                 },
                 "z": {
                     "categories": ["letter"],
+                    "is_part": true,
                     "keywords": ["symbol", "alphabet"],
                     "name": "Latin letter Z",
                     "shapes": [{"id": "z", "version": "v0"}],
@@ -4171,7 +4190,7 @@
                 "name": "big bus stop sign"
             },
             "bus_stop_sign": {
-                "categories": ["public transport","highway"],
+                "categories": ["public transport", "highway"],
                 "name": "small bus stop sign"
             },
             "city_limit_sign": {
