@@ -39,7 +39,7 @@ def flatten_config(
 def extract_path_from_svg(svg_file: Path) -> list[str]:
     """Extract path data from SVG file."""
 
-    tree: ET.ElementTree = ET.parse(svg_file)  # noqa: S314
+    tree = ET.parse(svg_file)  # noqa: S314
     root: ET.Element = tree.getroot()
 
     result: list[str] = []
