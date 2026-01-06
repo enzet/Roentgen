@@ -78,17 +78,17 @@ class IconSpecifications:
                 """Generate file name with unique identifier."""
                 return f"{x.get_id()}.svg"
 
-        for icon in self.icon_specifications:
-            if only_sketch != icon.is_sketch():
+        for icon_specification in self.icon_specifications:
+            if only_sketch != icon_specification.is_sketch():
                 continue
-            icon.draw_to_file(
-                output_directory / get_file_name(icon),
+            icon_specification.draw_to_file(
+                output_directory / get_file_name(icon_specification),
                 shapes,
                 outline=outline,
                 outline_opacity=outline_opacity,
             )
-            icon.rasterize(
-                output_directory / get_file_name(icon),
+            icon_specification.rasterize(
+                output_directory / get_file_name(icon_specification),
                 raster_directory,
             )
 

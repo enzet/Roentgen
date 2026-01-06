@@ -140,7 +140,10 @@ def process_icons(
     icon_grid_items: list[str] = []
 
     # Load and flatten config.
-    icons: list[IconSpecification] = get_icon_specifications(config_path)
+    with config_path.open(encoding="utf-8") as input_file:
+        icons: list[IconSpecification] = get_icon_specifications(
+            json.load(input_file)
+        )
 
     # Process icons in config order.
     for icon in icons:

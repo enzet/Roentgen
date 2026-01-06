@@ -325,14 +325,11 @@ def parse_configuration(root: dict, configuration: dict, group: str) -> None:
             configuration[key] = value | {"group": group}
 
 
-def get_icon_specifications(
-    configuration_path: Path,
-) -> list[IconSpecification]:
+def get_icon_specifications(config: dict) -> list[IconSpecification]:
     """Get icons from configuration."""
     icon_specifications: list[IconSpecification] = []
     configuration: dict[str, Any] = {}
-    with configuration_path.open(encoding="utf-8") as input_file:
-        parse_configuration(json.load(input_file), configuration, "")
+    parse_configuration(config, configuration, "")
     for key, value in configuration.items():
         icon_specifications.append(IconSpecification.from_structure(key, value))
     return icon_specifications

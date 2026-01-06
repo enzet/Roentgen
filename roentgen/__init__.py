@@ -53,9 +53,10 @@ class Roentgen:
             logger.fatal("Failed to load Röntgen files: %s", exception)
             return
 
-        icon_specification_list: list[IconSpecification] = (
-            get_icon_specifications(directory / "config.json")
-        )
+        with (directory / "config.json").open(encoding="utf-8") as input_file:
+            icon_specification_list: list[IconSpecification] = (
+                get_icon_specifications(json.load(input_file))
+            )
         self.icon_specifications: IconSpecifications
         self.icon_specifications = IconSpecifications.from_icon_specifications(
             icon_specification_list,

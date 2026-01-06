@@ -9,6 +9,7 @@ from pathlib import Path
 from colour import Color
 
 from roentgen.collection import main as collections_main
+from roentgen.generator import generate
 from roentgen.icon import IconSpecification, Shapes, get_icon_specifications
 from roentgen.icon_collection import IconSpecifications
 from roentgen.site import main as site_main
@@ -110,6 +111,9 @@ def draw() -> None:
       - JSON file with path for icons and part icons.
     """
 
+    with (Path("data") / "config.json").open(encoding="utf-8") as input_file:
+        config: dict = json.load(input_file)
+
     shapes: Shapes = Shapes()
     for path in [
         Path("data") / "icons.svg",
@@ -121,16 +125,19 @@ def draw() -> None:
     ]:
         shapes.add_from_file(path)
 
+    generated_paths: list[Path] = generate(config)
+
     for path in [
         Path("iconscript") / "power.iconscript",
         Path("iconscript") / "barcode.iconscript",
+        *generated_paths,
     ]:
         shapes.add_from_iconscript(path)
 
     version: str = Path("VERSION").read_text().strip()
 
     icon_specifications: list[IconSpecification] = get_icon_specifications(
-        Path("data") / "config.json"
+        config
     )
     collection_no_parts: IconSpecifications = (
         IconSpecifications.from_icon_specifications(
