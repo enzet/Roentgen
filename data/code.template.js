@@ -415,11 +415,14 @@ function createDownloadableSVG() {
     svg.setAttribute("width", "16");
     svg.setAttribute("height", "16");
 
-    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path.setAttribute("d", selectedIcon.path);
-    path.setAttribute("fill", "#000000");
-    svg.appendChild(path);
-
+    for (const path of selectedIcon.paths) {
+        const pathElement = document.createElementNS(
+            "http://www.w3.org/2000/svg", "path"
+        );
+        pathElement.setAttribute("d", path);
+        pathElement.setAttribute("fill", "#000000");
+        svg.appendChild(pathElement);
+    }
     return new XMLSerializer().serializeToString(svg);
 }
 
