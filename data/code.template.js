@@ -5,7 +5,7 @@ let showGrid = false;
 let iconSize = 512;
 
 // Icon data.
-const icons = %ICONS_DATA%;
+const icons = ___ICONS_DATA___;
 
 function extractControlPoints(pathData) {
     const points = [];

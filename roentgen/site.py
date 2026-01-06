@@ -192,7 +192,7 @@ def generate_site_files(
         encoding="utf-8"
     ) as input_file:
         code_template: str = input_file.read()
-        code_template = code_template.replace("%ICONS_DATA%", icons_js)
+        code_template = code_template.replace("___ICONS_DATA___", icons_js)
     with (site_path / "roentgen.js").open("w", encoding="utf-8") as output_file:
         output_file.write(code_template)
 
