@@ -88,6 +88,14 @@ def draw_icons(
         color=Color("#444"),
     )
     collection.draw_grid(
+        Path("out") / "grid.svg",
+        shapes,
+        background_color=None,
+        scale=2.0,
+        color=Color("#444"),
+        draw_sketch=True,
+    )
+    collection.draw_grid(
         doc_path / "grid_white.svg",
         shapes,
         background_color=None,
@@ -128,8 +136,9 @@ def draw() -> None:
     generated_paths: list[Path] = generate(config)
 
     for path in [
-        Path("iconscript") / "power.iconscript",
         Path("iconscript") / "barcode.iconscript",
+        Path("iconscript") / "power.iconscript",
+        Path("iconscript") / "road_surface_marking.iconscript",
         *generated_paths,
     ]:
         shapes.add_from_iconscript(path)
