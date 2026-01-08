@@ -1630,7 +1630,10 @@
         "i_in_square___support_pole": {
             "name": "letter i in square on support pole",
             "keywords": ["information"],
-            "shapes": [{"id": "i_in_square"}, {"id": "support_pole"}]
+            "shapes": [
+                {"id": "i_in_square", "offset": [1, 0]},
+                {"id": "support_pole"}
+            ]
         },
         "clock___support_wall": {
             "name": "clock on support wall",
@@ -1640,7 +1643,10 @@
         "i_in_square___support_wall": {
             "name": "letter i in square on support wall",
             "keywords": ["information"],
-            "shapes": [{"id": "i_in_square"}, {"id": "support_wall"}]
+            "shapes": [
+                {"id": "i_in_square", "offset": [1, 0]},
+                {"id": "support_wall"}
+            ]
         },
         "clock___support_column": {
             "name": "clock on support column",
@@ -1650,7 +1656,10 @@
         "i_in_square___support_column": {
             "name": "letter i in square on support column",
             "keywords": ["information"],
-            "shapes": [{"id": "i_in_square"}, {"id": "support_column"}]
+            "shapes": [
+                {"id": "i_in_square", "offset": [1, 0]},
+                {"id": "support_column"}
+            ]
         },
         "comb_and_scissors": {
             "keywords": ["grooming", "barber", "haircut", "beauty"],

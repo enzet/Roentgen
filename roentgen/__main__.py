@@ -138,6 +138,8 @@ def draw() -> None:
 
     for path in [
         Path("iconscript") / "barcode.iconscript",
+        Path("iconscript") / "main.iconscript",
+        Path("iconscript") / "natural.iconscript",
         Path("iconscript") / "power.iconscript",
         Path("iconscript") / "road_surface_marking.iconscript",
         Path("iconscript") / "symbol.iconscript",
