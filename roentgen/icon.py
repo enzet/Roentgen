@@ -117,6 +117,9 @@ class Shape:
     id_: str
     """Shape unique string identifier, e.g. `tree`."""
 
+    source: str | None = None
+    """Where the shape was defined."""
+
     def is_default(self) -> bool:
         """Return true if the shape doesn't represent anything."""
         return self.id_ in [DEFAULT_SHAPE_ID, DEFAULT_SMALL_SHAPE_ID]
@@ -354,6 +357,26 @@ class Shapes:
         root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
         self.__parse(root, svg_file_name)
 
+    def _add_shape(
+        self,
+        id_: str,
+        path_on_canvas: PathOnCanvas,
+        version: str,
+        source: str | None = None,
+    ) -> None:
+        if id_ in self.shapes:
+            if version in self.shapes[id_].paths:
+                message = (
+                    f"Version `{version}` of shape `{id_}` is redefined in "
+                    f"`{source}`, when it was already defined in "
+                    f"`{self.shapes[id_].source}`."
+                )
+                raise ValueError(message)
+            shape: Shape = self.shapes[id_]
+            shape.paths[version] = path_on_canvas
+        else:
+            self.shapes[id_] = Shape({version: path_on_canvas}, id_, source)
+
     def add_from_iconscript(self, iconscript_file_name: Path) -> None:
         """Add shapes from iconscript file.
 
@@ -400,14 +423,12 @@ class Shapes:
             for node in root:
                 if node.tag == r"{http://www.w3.org/2000/svg}path":
                     path: str = node.attrib["d"]
-                    if id_ in self.shapes:
-                        shape: Shape = self.shapes[id_]
-                        shape.paths[version] = PathOnCanvas(path, offset=offset)
-                    else:
-                        self.shapes[id_] = Shape(
-                            {version: PathOnCanvas(path, offset=offset)},
-                            id_,
-                        )
+                    self._add_shape(
+                        id_,
+                        PathOnCanvas(path, offset=offset),
+                        version,
+                        str(iconscript_file_name),
+                    )
         shutil.rmtree(str(temp_output_directory))
 
     def add_from_json(self, json_file_name: Path) -> None:
@@ -418,7 +439,9 @@ class Shapes:
         with json_file_name.open(encoding="utf-8") as input_file:
             shapes: dict = json.load(input_file)
         for id_, shape in shapes.items():
-            self.shapes[id_] = Shape({"main": PathOnCanvas(shape)}, id_)
+            self._add_shape(
+                id_, PathOnCanvas(shape), "main", str(json_file_name)
+            )
 
     def __parse(self, node: Element, svg_file_name: Path) -> None:
         """Extract icon paths into a map.
@@ -481,13 +504,9 @@ class Shapes:
                 get_offset(matcher.group(1)),
                 get_offset(matcher.group(2)),
             )
-            if id_ in self.shapes:
-                shape = self.shapes[id_]
-                shape.paths[version] = PathOnCanvas(path, offset)
-            else:
-                self.shapes[id_] = Shape(
-                    {version: PathOnCanvas(path, offset)}, id_
-                )
+            self._add_shape(
+                id_, PathOnCanvas(path, offset), version, str(svg_file_name)
+            )
         else:
             message = f"Not standard ID `{id_}` in `{svg_file_name}`."
             raise ValueError(message)
