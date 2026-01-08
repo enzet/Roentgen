@@ -107,6 +107,7 @@ class IconSpecifications:
         draw_final: bool = True,
         draw_sketch: bool = False,
         color: Color | None = None,
+        color_sketch: Color | None = None,
     ) -> None:
         """Draw icons in the form of a table.
 
@@ -116,8 +117,10 @@ class IconSpecifications:
         :param background_color: background color
         :param scale: scale icon by the magnitude
         :param show_boundaries: if true, draw boundaries around icons
-        :param only_sketch: if true, draw only sketch icons
-        :param color: fill color
+        :param draw_final: if true, draw final icons
+        :param draw_sketch: if true, draw sketch icons
+        :param color: fill color for final icons
+        :param color_sketch: fill color for sketch icons
         """
         position: tuple[float, float] = (step / 2.0 * scale, step / 2.0 * scale)
         width: float = step * columns * scale
@@ -128,6 +131,11 @@ class IconSpecifications:
             if (icon_specification.is_sketch() and draw_sketch)
             or (not icon_specification.is_sketch() and draw_final)
         ]
+
+        if color is None:
+            color = Color("#000000")
+        if color_sketch is None:
+            color_sketch = Color("#AAAAAA")
 
         height: int = int(
             math.ceil(len(icon_specifications) / columns) * step * scale
@@ -151,9 +159,7 @@ class IconSpecifications:
                 shapes,
                 position,
                 scale=scale,
-                color=Color("#AAAAAA")
-                if icon_specification.is_sketch()
-                else color,
+                color=color_sketch if icon_specification.is_sketch() else color,
             )
             position = (position[0] + step * scale, position[1])
             if position[0] > width - 8.0:

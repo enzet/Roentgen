@@ -92,7 +92,8 @@ def draw_icons(
         shapes,
         background_color=None,
         scale=2.0,
-        color=Color("#444"),
+        color=Color("black"),
+        color_sketch=Color("black"),
         draw_sketch=True,
     )
     collection.draw_grid(
@@ -139,6 +140,7 @@ def draw() -> None:
         Path("iconscript") / "barcode.iconscript",
         Path("iconscript") / "power.iconscript",
         Path("iconscript") / "road_surface_marking.iconscript",
+        Path("iconscript") / "symbol.iconscript",
         *generated_paths,
     ]:
         shapes.add_from_iconscript(path)

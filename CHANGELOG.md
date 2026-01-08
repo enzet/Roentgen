@@ -3,6 +3,9 @@
 Python package:
   - Fix `cairosvg` import and encoding error on Windows.
 
+Fix icons:
+  - `greek_cross_in_box`.
+
 ## 0.11.0
 
 Python package:

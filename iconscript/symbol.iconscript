@@ -1,0 +1,14 @@
+# iconscript 0.1
+
+cross_3 = s +-3,-1 +6,2 s +-4,-4 +2,6
+cross_4 = s +-4,-1 +9,3 s +-6,-6 +3,9
+
+icon greek_cross = {p 7,7 @cross_4}
+icon greek_cross_in_box = {s 2,2 +10,10 {r p 7,7 @cross_3}}
+icon latin_cross = {s 7,1 +1,13 s 3,5 +9,1}
+icon orthodox = {
+    w 2
+    l 7.5,1.5 +0,12 l 3.5,5.5 +8,0
+    l 4.5,4.5 +0,2 l 10.5,4.5 +0,2
+    l 6.5,2.5 +2,0 l 6.5,12.5 +2,0
+}
