@@ -1,14 +1,14 @@
 # iconscript 0.1
 
+# Bench parts.
+
 bench_seat = {s +0,0 +11,1}
 bench_seat_11 = {s +0,0 +12,1}
 bench_leg = {l +0,0 +0,2}
 bench_legs = {p +1,1 @bench_leg} {p +10,1 @bench_leg}
 bench_legs_11 = {p +1,1 @bench_leg} {p +11,1 @bench_leg}
-bench_10 = {@bench_seat @bench_legs}
-bench_11 = {@bench_seat_11 @bench_legs_11}
 backrest = {
-    {l +3,1 +0,-4} {l +8,1 +0,-4}
+    {w 0 s +2.5,-3.5 +1,+2} {w 0 s l +7.5,-3.5 +1,+2}
     {s +2,-5 +7,2}
 }
 backrest_11 = {
@@ -27,12 +27,18 @@ armrest_l = {l +0,0 +0.5,-2 +-0.5,0}
 armrest_r = {l +0,0 +-0.5,-2 +0.5,0}
 armrests = {@armrest_l} {p +11,0 @armrest_r}
 armrests_11 = {@armrest_l} {p +12,0 @armrest_r}
+
+# Bench.
+
+bench_10 = {@bench_seat @bench_legs}
+bench_11 = {@bench_seat_11 @bench_legs_11}
 bench_no_backrest = {
     p 2,6 @bench_seat
     l 3,5 +0,4 l 12,5 +0,4
 }
 
 # Seat delimiters.
+
 del = l +0,0 +0,1 p +0,-1
 del_1 = p +6,0 @del
 del_2 = p +4,0 @del p +4,0 @del
@@ -44,6 +50,15 @@ del_5 = p +1,0 @del p +2.5,0 @del p +2.5,0 @del p +2.5,0 @del p +2.5,0 @del
 del_5n = p +2,0 @del p +2,0 @del p +2,0 @del p +2,0 @del p +2,0 @del
 del_6 = p +1,0 @del p +2,0 @del p +2,0 @del p +2,0 @del p +2,0 @del p +2,0 @del
 
+# Seats.
+
+seat_10 = r l +0,0 +9,0
+seat_5 = r l +0,0 +4,0 p +2,0
+seat_3 = r l +0,0 +2,0 p +2,0
+seat_2 = r l +0,0 +1,0 p +2,0
+seat_1_5 = r l +0,0 +0.5,0 p +2,0
+seat_1 = r l +0,0 +0,0 p +2,0
+
 bench = {@bench_10}
 bench_2_seats = {@bench_11 p +0,-0.5 @del_1}
 bench_3_seats = {@bench_11 p +0,-0.5 @del_2}
@@ -51,6 +66,20 @@ bench_4_seats = {@bench_11 p +0,-0.5 @del_3}
 bench_5_seats = {@bench_11 p +0,-0.5 @del_4}
 bench_6_seats = {@bench_11 p +0,-0.5 @del_5}
 bench_7_seats = {@bench_11 p +0,-0.5 @del_6}
+
+bench_1_seat = {@bench p +1,-0.5 @seat_10}
+bench_2_seats_alt = {@bench_11 p +1,-0.5 {@seat_5 @seat_5}}
+bench_3_seats_alt = {@bench_11 p +1,-0.5 {@seat_3 @seat_3 @seat_3}}
+bench_4_seats_alt = {@bench_11 p +1,-0.5 {@seat_2 @seat_2 @seat_2 @seat_2}}
+bench_5_seats_alt = {
+    @bench_11 p +2,-0.5 {@seat_1_5 @seat_1_5 @seat_1_5 @seat_1_5}
+}
+bench_6_seats_alt = {
+    @bench_11 p +2,-0.5 {@seat_1 @seat_1 @seat_1 @seat_1 @seat_1}
+}
+bench_7_seats_alt = {
+    @bench_11 p +1,-0.5 {@seat_1 @seat_1 @seat_1 @seat_1 @seat_1 @seat_1}
+}
 
 cover_10 = {l +0,0 +11,0}
 cover_11 = {l +0,0 +12,0}
@@ -65,6 +94,14 @@ icon bench_5_seats = {p 1,7 @bench_5_seats}
 icon bench_6_seats = {p 1,7 @bench_6_seats}
 icon bench_7_seats = {p 1,7 @bench_7_seats}
 
+icon bench_1_seat_v0 = {p 2,7 @bench_1_seat}
+icon bench_2_seats_v0 = {p 1,7 @bench_2_seats_alt}
+icon bench_3_seats_v0 = {p 1,7 @bench_3_seats_alt}
+icon bench_4_seats_v0 = {p 1,7 @bench_4_seats_alt}
+icon bench_5_seats_v0 = {p 1,7 @bench_5_seats_alt}
+icon bench_6_seats_v0 = {p 1,7 @bench_6_seats_alt}
+icon bench_7_seats_v0 = {p 1,7 @bench_7_seats_alt}
+
 icon bench_cover = {p 2,9 @bench p 2,3 @cover_10}
 icon bench_cover_2_seats = {p 1,9 @bench_2_seats p 1,3 @cover_11}
 icon bench_cover_3_seats = {p 1,9 @bench_3_seats p 1,3 @cover_11}
@@ -77,10 +114,10 @@ icon bench_cover_7_seats = {p 1,9 @bench_7_seats p 1,3 @cover_11}
 
 bench_armrest = {@bench_seat @bench_legs @armrests}
 bench_armrest_2_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_1}
-bench_armrest_3_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_2 }
-bench_armrest_4_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_3n }
-bench_armrest_5_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_4n }
-bench_armrest_6_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_5n }
+bench_armrest_3_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_2}
+bench_armrest_4_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_3n}
+bench_armrest_5_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_4n}
+bench_armrest_6_seats = {@bench_11 @armrests_11 p +0,-0.5 @del_5n}
 
 icon bench_armrest = {p 2,7 @bench_armrest}
 icon bench_armrest_2_seats = {p 1,7 @bench_armrest_2_seats}
@@ -89,16 +126,26 @@ icon bench_armrest_4_seats = {p 1,7 @bench_armrest_4_seats}
 icon bench_armrest_5_seats = {p 1,7 @bench_armrest_5_seats}
 icon bench_armrest_6_seats = {p 1,7 @bench_armrest_6_seats}
 
-icon bench_armrest_cover = {p 2,9 @bench_armrest p 1,3 @cover_11}
-icon bench_armrest_cover_2_seats = {p 1,9 @bench_armrest_2_seats p 1,3 @cover_11}
-icon bench_armrest_cover_3_seats = {p 1,9 @bench_armrest_3_seats p 1,3 @cover_11}
-icon bench_armrest_cover_4_seats = {p 1,9 @bench_armrest_4_seats p 1,3 @cover_11}
-icon bench_armrest_cover_5_seats = {p 1,9 @bench_armrest_5_seats p 1,3 @cover_11}
-icon bench_armrest_cover_6_seats = {p 1,9 @bench_armrest_6_seats p 1,3 @cover_11}
+icon bench_armrest_cover = {p 2,9 @bench_armrest p 2,3 @cover_10}
+icon bench_armrest_cover_2_seats = {
+    p 1,9 @bench_armrest_2_seats p 1,3 @cover_11
+}
+icon bench_armrest_cover_3_seats = {
+    p 1,9 @bench_armrest_3_seats p 1,3 @cover_11
+}
+icon bench_armrest_cover_4_seats = {
+    p 1,9 @bench_armrest_4_seats p 1,3 @cover_11
+}
+icon bench_armrest_cover_5_seats = {
+    p 1,9 @bench_armrest_5_seats p 1,3 @cover_11
+}
+icon bench_armrest_cover_6_seats = {
+    p 1,9 @bench_armrest_6_seats p 1,3 @cover_11
+}
 
 # Benches with armrest and backrest.
 
-bench_armrest_backrest = {@bench_seat @bench_legs @backrest @armrests}
+bench_armrest_backrest = {@bench @backrest @armrests}
 bench_armrest_backrest_2_seats = {
     @bench_11 @armrests_11 p +0,0 @backrest_s p +0,-0.5 @del_1
 }
@@ -122,24 +169,36 @@ icon bench_armrest_backrest_4_seats = {p 1,8 @bench_armrest_backrest_4_seats}
 icon bench_armrest_backrest_5_seats = {p 1,8 @bench_armrest_backrest_5_seats}
 icon bench_armrest_backrest_6_seats = {p 1,8 @bench_armrest_backrest_6_seats}
 
-icon bench_armrest_backrest_cover = {p 2,10 @bench_armrest_backrest p 1,2 @cover_11}
-icon bench_armrest_backrest_cover_2_seats = {p 1,10 @bench_armrest_backrest_2_seats p 1,2 @cover_11}
-icon bench_armrest_backrest_cover_3_seats = {p 1,10 @bench_armrest_backrest_3_seats p 1,2 @cover_11}
-icon bench_armrest_backrest_cover_4_seats = {p 1,10 @bench_armrest_backrest_4_seats p 1,2 @cover_11}
-icon bench_armrest_backrest_cover_5_seats = {p 1,10 @bench_armrest_backrest_5_seats p 1,2 @cover_11}
-icon bench_armrest_backrest_cover_6_seats = {p 1,10 @bench_armrest_backrest_6_seats p 1,2 @cover_11}
+icon bench_armrest_backrest_cover = {
+    p 2,10 @bench_armrest_backrest p 1,2 @cover_11
+}
+icon bench_armrest_backrest_cover_2_seats = {
+    p 1,10 @bench_armrest_backrest_2_seats p 1,2 @cover_11
+}
+icon bench_armrest_backrest_cover_3_seats = {
+    p 1,10 @bench_armrest_backrest_3_seats p 1,2 @cover_11
+}
+icon bench_armrest_backrest_cover_4_seats = {
+    p 1,10 @bench_armrest_backrest_4_seats p 1,2 @cover_11
+}
+icon bench_armrest_backrest_cover_5_seats = {
+    p 1,10 @bench_armrest_backrest_5_seats p 1,2 @cover_11
+}
+icon bench_armrest_backrest_cover_6_seats = {
+    p 1,10 @bench_armrest_backrest_6_seats p 1,2 @cover_11
+}
 
 # Benches with backrest.
 
-bench_backrest = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_1 }
-bench_backrest_2_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_1 }
-bench_backrest_3_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_2 }
-bench_backrest_4_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_3 }
-bench_backrest_5_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_4 }
-bench_backrest_6_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_5 }
-bench_backrest_7_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_6 }
+bench_backrest = {@bench_11 p +0,0 @backrest_ws}
+bench_backrest_2_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_1}
+bench_backrest_3_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_2}
+bench_backrest_4_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_3}
+bench_backrest_5_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_4}
+bench_backrest_6_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_5}
+bench_backrest_7_seats = {@bench_11 p +0,0 @backrest_ws p +0,-0.5 @del_6}
 
-icon bench_backrest =         {p 1,8 @bench_backrest}
+icon bench_backrest = {p 1,8 @bench_backrest}
 icon bench_backrest_2_seats = {p 1,8 @bench_backrest_2_seats}
 icon bench_backrest_3_seats = {p 1,8 @bench_backrest_3_seats}
 icon bench_backrest_4_seats = {p 1,8 @bench_backrest_4_seats}
@@ -148,12 +207,24 @@ icon bench_backrest_6_seats = {p 1,8 @bench_backrest_6_seats}
 icon bench_backrest_7_seats = {p 1,8 @bench_backrest_7_seats}
 
 icon bench_backrest_cover =         {p 1,10 @bench_backrest p 1,2 @cover_11}
-icon bench_backrest_cover_2_seats = {p 1,10 @bench_backrest_2_seats p 1,2 @cover_11}
-icon bench_backrest_cover_3_seats = {p 1,10 @bench_backrest_3_seats p 1,2 @cover_11}
-icon bench_backrest_cover_4_seats = {p 1,10 @bench_backrest_4_seats p 1,2 @cover_11}
-icon bench_backrest_cover_5_seats = {p 1,10 @bench_backrest_5_seats p 1,2 @cover_11}
-icon bench_backrest_cover_6_seats = {p 1,10 @bench_backrest_6_seats p 1,2 @cover_11}
-icon bench_backrest_cover_7_seats = {p 1,10 @bench_backrest_7_seats p 1,2 @cover_11}
+icon bench_backrest_cover_2_seats = {
+    p 1,10 @bench_backrest_2_seats p 1,2 @cover_11
+}
+icon bench_backrest_cover_3_seats = {
+    p 1,10 @bench_backrest_3_seats p 1,2 @cover_11
+}
+icon bench_backrest_cover_4_seats = {
+    p 1,10 @bench_backrest_4_seats p 1,2 @cover_11
+}
+icon bench_backrest_cover_5_seats = {
+    p 1,10 @bench_backrest_5_seats p 1,2 @cover_11
+}
+icon bench_backrest_cover_6_seats = {
+    p 1,10 @bench_backrest_6_seats p 1,2 @cover_11
+}
+icon bench_backrest_cover_7_seats = {
+    p 1,10 @bench_backrest_7_seats p 1,2 @cover_11
+}
 
 icon bench_no_backrest = {@bench_no_backrest}
 icon bench_statue = {
