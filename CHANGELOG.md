@@ -9,6 +9,10 @@ Redraw icons:
   - `i`,
   - `watches`.
 
+Make icons smoother and make corners round:
+  - `table_and_two_chairs___pergola`,
+  - `train`.
+
 Fix icons:
   - `greek_cross_in_box`.
 

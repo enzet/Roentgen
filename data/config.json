@@ -211,16 +211,6 @@
                 "keywords": ["architecture", "building", "column"],
                 "name": "pillar"
             },
-            "roof": {
-                "is_part": true,
-                "keywords": ["architecture", "building"],
-                "name": "roof"
-            },
-            "roof_and_walls": {
-                "is_part": true,
-                "keywords": ["architecture", "building"],
-                "name": "roof and wall"
-            },
             "wayside_shrine": {
                 "keywords": ["religion", "building"],
                 "name": "wayside shrine"
@@ -1844,11 +1834,6 @@
             "name": "Pac-Man",
             "keywords": ["game", "arcade", "video", "character"]
         },
-        "pergola": {
-            "is_part": true,
-            "name": "pergola",
-            "keywords": ["garden", "structure", "shade", "outdoor"]
-        },
         "pipeline": {
             "name": "pipeline with valve",
             "keywords": ["valve", "utility", "infrastructure"]
@@ -2555,8 +2540,7 @@
         },
         "table_and_two_chairs___roof": {
             "keywords": ["outdoor", "furniture", "sitting"],
-            "name": "table and two chairs with roof",
-            "shapes": [{"id": "table_and_two_chairs"}, {"id": "roof"}]
+            "name": "table and two chairs with roof"
         },
         "table_and_two_chairs___awning": {
             "keywords": ["outdoor", "furniture", "sitting"],
@@ -2565,13 +2549,11 @@
         },
         "table_and_two_chairs___roof_and_walls": {
             "keywords": ["outdoor", "furniture", "sitting"],
-            "name": "table and two chairs with roof and walls",
-            "shapes": [{"id": "table_and_two_chairs"}, {"id": "roof_and_walls"}]
+            "name": "table and two chairs with roof and walls"
         },
         "table_and_two_chairs___pergola": {
             "keywords": ["outdoor", "furniture", "sitting"],
-            "name": "table and two chairs with pergola",
-            "shapes": [{"id": "table_and_two_chairs"}, {"id": "pergola"}]
+            "name": "table and two chairs with pergola"
         },
         "p___arrow_right": {
             "keywords": ["road", "parking", "entrance", "direction"],

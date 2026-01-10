@@ -1,5 +1,13 @@
 # iconscript 0.1
 
+roof = lf +0,0 +6,-2 +6,2 +-12,0
+
+icon advertising_column = {
+    lf 7.5,1 +3.5,2 +-7,0 +3.5,-2
+    lf 5,3 +5,0 +0,11 +-5,0 +0,-11
+    {r l 4,13 +7,0 l 4,4 +7,0}
+    l 4,14 +7,0
+}
 icon billboard = {
     lf 2,2 13,2 13,8 2,8 2,2
     lf 7,13 8,13 8,8 7,8 7,13
@@ -22,6 +30,12 @@ icon burger = {
         l 4,8 +3.5,2 +3.5,-2 +2,0
     }
     l 2,7 +11,0
+}
+icon credit_card = {
+    {w 3 s 3,5 +9,5}
+    {r s 3,5 +9,5}
+    s 2,6 +11,1
+    l 7,9 +1,0 l +2,0 +1,0
 }
 # icon diamond = {
 #     l 4,3 +6,0 +3,3 +-6,6 +-6,-6 +3,-3  # Outer.
@@ -65,6 +79,11 @@ icon i_in_square = {
         l 6.5,10 +2,0  # Bottom serif.
     }
 }
+icon ice_cream = {
+    c 7.5,3.5 6 s 5,3.5 +5,6.5   {w 2 l 7.5,10.5 +0,3}
+    {r {w 2 l 6.5,5.5 +0,2}   l 9,7 +0,1   {w 0 s 5.5,7.5 +4,2}}
+    l 8,7 +0,1
+}
 cross_2 = s +-2,0  +5,1 s +-3,-3 +1,5
 icon medicine_bottle = {s 4,2 +7,11 {r l 3,4 +9,0 p 7,8 @cross_2}}
 icon pipeline = {
@@ -85,6 +104,10 @@ icon plaque = {
     {r l 5,5 +5,0 l 5,7 +5,0 l 5,9 +5,0}
 }
 icon pyramid = {lf 7,4 +6,6 +-12,0 +6,-6}
+icon shelter = {
+    p 1,4 @roof l 2,4 +0,9.5 l 12,4 +0,9.5
+    {r l 1,14 +12,0}
+}
 icon street_cabinet = {
     s 3,2 +8,11
     {
@@ -93,6 +116,31 @@ icon street_cabinet = {
         l 4,5 +2,0 l 8,5 +2,0
     }
 }
+
+table = l 4,8 +6,0 l +-3,0 +0,6
+seat_left =
+    l 1,8 +1,6  # Back.
+    l 1.5,11 +3.5,0 +-0.5,3
+    lf 2,13 +2,0 +0,-1.5 +-2,0 +0,1.5  # Fill.
+seat_right =
+    l 13,8 +-1,6  # Back.
+    l 12.5,11 +-3.5,0 +0.5,3
+    lf 10,13 +2,0 +0,-1.5 +-2,0 +0,1.5  # Fill.
+
+seats = @table @seat_left @seat_right
+
+pr = l +2,-1 +0,1
+
+icon table_and_two_chairs___roof = {
+    @seats p 1,3 @roof
+}
+icon table_and_two_chairs___roof_and_walls = {
+    @seats p 1,3 @roof l 1,3 +0,1 l 13,3 +0,1
+}
+icon table_and_two_chairs___pergola = {
+    @seats p -1,3 @pr @pr @pr @pr @pr @pr @pr
+}
+
 icon tv = {
     l 2,3 +11,0 +0,7 +-11,0 +0,-7
     l 7,10 +0,2 +1,0 +0,-2 l 5,12 +5,0

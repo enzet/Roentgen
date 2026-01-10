@@ -143,6 +143,7 @@ def draw() -> None:
         Path("iconscript") / "power.iconscript",
         Path("iconscript") / "road_surface_marking.iconscript",
         Path("iconscript") / "symbol.iconscript",
+        Path("iconscript") / "transport.iconscript",
         *generated_paths,
     ]:
         shapes.add_from_iconscript(path)
