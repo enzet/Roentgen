@@ -1883,13 +1883,6 @@
             "name": "solar panel",
             "keywords": ["energy", "sun", "electricity", "renewable", "power"]
         },
-        "solar_panel_on_roof": {
-            "keywords": ["energy", "sun", "electricity", "renewable", "power"],
-            "name": "solar panel on roof",
-            "shapes": [{"id": "solar_panel_on_roof", "version": "v0"}],
-            "sketch": true,
-            "todo": "check version"
-        },
         "sos_phone": {
             "categories": ["emergency"],
             "name": "phone with SOS",

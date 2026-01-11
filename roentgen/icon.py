@@ -8,6 +8,7 @@ import logging
 import re
 import shutil
 import subprocess
+import sys
 import tempfile
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -863,7 +864,11 @@ class IconSpecification:
         """
         for shape_specification in self.shape_specifications:
             if shape_specification.shape_id not in shapes.shapes:
-                return
+                logger.warning(
+                    "Shape `%s` is not defined.",
+                    shape_specification.shape_id,
+                )
+                continue
         if color is None:
             color = Color("black")
         if not outline:
@@ -918,6 +923,12 @@ class IconSpecification:
         """Rasterize icon to PNG."""
         if cairosvg is None:
             return
+
+        if not svg_file.is_file():
+            logger.fatal(
+                "Cannot rasterize SVG file `%s`: file does not exist.", svg_file
+            )
+            sys.exit(1)
 
         sizes = [16, 32]
 

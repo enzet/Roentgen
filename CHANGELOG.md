@@ -7,6 +7,8 @@ Redraw icons:
   - `envelope`,
   - `i_in_square`,
   - `i`,
+  - `pyramid`,
+  - `table`,
   - `watches`.
 
 Make icons smoother and make corners round:
