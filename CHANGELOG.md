@@ -18,6 +18,9 @@ Make icons smoother and make corners round:
 Fix icons:
   - `greek_cross_in_box`.
 
+Adjust icon size:
+  - `survey_point`.
+
 ## 0.11.0
 
 Python package:
