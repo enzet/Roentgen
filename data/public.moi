@@ -8,8 +8,11 @@ free 14 × 14 px monochrome pixel-aligned
 \ref {https://creativecommons.org/licenses/by/4.0/} {\abbr {CC} \abbr {BY} 4.0}
 vector map icons created for
 \ref {https://github.com/enzet/map-machine} {Map Machine} project.
-Icons are drawn using vector graphics editor and generated using
-\ref {#iconscript} {iconscript} language.
+You can use them through:
+\list
+    {\c {npm install \ref {https://www.npmjs.com/package/@enzet/roentgen} {@enzet/roentgen}},}
+    {\c {pip install \ref {https://pypi.org/project/roentgen-icons/} {roentgen-icons}},}
+    {\ref {https://github.com/enzet/Roentgen} {GitHub}.}
 
 \button
     {../roentgen-%ROENTGEN_VERSION%.zip}
@@ -73,6 +76,14 @@ please give credit to the author.
 \3 {Usage} {roentgen_usage}
 
 Röntgen icons are used in
-\list
-    {\ref {https://github.com/openstreetmap/iD} {iD editor}, standard web editor for OpenStreetMap project,}
-    {\ref {https://github.com/enzet/map-machine} {Map Machine} project.}
+\list {
+    \ref {https://github.com/openstreetmap/iD} {iD editor}, standard web editor
+    for OpenStreetMap project,
+} {
+    \ref {https://github.com/enzet/map-machine} {Map Machine} project.
+}
+
+\3 {Generation} {roentgen_generation}
+
+Icons are drawn using vector graphics editor and generated using
+\ref {#iconscript} {iconscript} language.
