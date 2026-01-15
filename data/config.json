@@ -3612,6 +3612,7 @@
             ]
         },
         "observatory": {
+            "keywords": ["telescope", "optical", "science", "research"],
             "name": "observatory"
         },
         "pole_lamp": {

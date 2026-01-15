@@ -1,6 +1,7 @@
 icon digit_1 = {p 6,5 {l +0,1 +1,-1 +0,4}}
 icon digit_4 = {p 6,5 {l +0,0 +0,2 +2,0} {l +2,0 +0,4}}
 icon digit_7 = {p 6,5 {l +0,0 +2,0 +-1,4}}
+
 icon digital_0 = {p 6,5 {l +0,0 +2,0 +0,4 +-2,0 +0,-4}}
 icon digital_1 = {p 5,5 {l +2,0 +0,4}}
 icon digital_2 = {p 6,5 {l +0,0 +2,0 +0,2 +-2,0 +0,2 +2,0}}
@@ -11,6 +12,7 @@ icon digital_6 = {p 6,5 {l +2,0 +-2,0 +0,4 +2,0 +0,-2 +-2,0}}
 icon digital_7 = {p 6,5 {l +0,0 +2,0 +0,4}}
 icon digital_8 = {p 6,5 {l +0,0 +2,0 +0,4 +-2,0 +0,-4} {l +0,2 +2,0}}
 icon digital_9 = {p 6,5 {l +2,2 +-2,0 +0,-2 +2,0 +0,4 +-2,0}}
+
 icon letter_e_v0 = {l 6,5 +0,4 l 6,5 +2,0 l 6,7 +2,0 l 6,9 +2,0}
 icon letter_e_short_v0 = {l 7,5 +0,4 l 7,5 +1,0 l 7,7 +1,0 l 7,9 +1,0}
 icon letter_f_v0 = {l 6,5 +0,4 l 6,5 +2,0 l 6,7 +2,0}
@@ -29,7 +31,24 @@ icon letter_x_v0 = {l 6,5 +2,4 l 6,9 +2,-4}
 icon letter_y_v0 = {l 6,5 +1,2 +1,-2 l 7,9 +0,-2}
 icon letter_z_v0 = {l 6,5 +2,0 +-2,4 +2,0}
 icon letter_z_short_v0 = {l 7,5 +1,0 +-1,4 +1,0}
+
 icon letter_cyrillic_g_v0 = {l 6,9 +0,-4 +2,0}
 icon letter_cyrillic_g_short_v0 = {l 7,9 +0,-4 l 7,5 +1,0}
 icon letter_cyrillic_sh_v0 = {l 6,5 +0,4 +4,0 +0,-4 l 8,5 +0,4}
 icon letter_cyrillic_shch_v0 = {l 6,5 +0,4 +5,0 +0,1 l 8,5 +0,4 l 10,5 +0,4}
+
+icon letter_slash = {p 6,5 l +2,0 +-2,4}
+icon letter_backslash = {p 6,5 l +0,0 +2,4}
+icon letter_slash_short = {p 7,5 l +1,0 +-1,4}
+icon letter_backslash_short = {p 7,5 l +0,0 +1,4}
+icon letter_vertical_line = {p 7,5 l +0,0 +0,4}
+icon letter_exclamation_mark = {p 7,5 {l +0,0 +0,2} {c +0,4 1}}
+icon letter_sharp = {
+    p 5,5 {l +1,0 +0,4} {l +3,0 +0,4}
+    {l +0,1 +4,0} {l +0,3 +4,0}
+}
+icon letter_asterisk = {
+    p 5,5 {l +2,0 +0,4}
+    {l +0,1 +4,2} {l +0,3 +4,-2}
+}
+
