@@ -1,8 +1,9 @@
-## Unreleased
+## 0.12.0
 
-Update iconscript version from 0.1 to 0.2.
+Update iconscript version from 0.1 to 0.2 and replace many icons with iconscript
+code, instead of SVG files.
 
-Python package:
+Code:
   - Fix `cairosvg` import and encoding error on Windows.
 
 Redraw icons:
