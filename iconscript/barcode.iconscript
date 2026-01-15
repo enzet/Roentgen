@@ -1,61 +1,61 @@
-# iconscript 0.1
+# iconscript 0.2
 
-sq_6 = {s +0,0 +5,5}
-sq_5 = {s +0,0 +4,4}
-sq_4 = {s +0,0 +3,3}
-sq_3 = {s +0,0 +2,2}
-sq_3_square = {s +0,0 +2,2}
-sq_2 = {s +0,0 +1,1}
-sq_1 = {c +0,0 1}
-sq_1_square = {w 0 s +-0.5,-0.5 +1,1}
+sq_6 = {r +0,0 +5,5}
+sq_5 = {r +0,0 +4,4}
+sq_4 = {r +0,0 +3,3}
+sq_3 = {r +0,0 +2,2}
+sq_3_square = {r +0,0 +2,2}
+sq_2 = {r +0,0 +1,1}
+sq_1 = {e +0,0 1}
+sq_1_square = {w 0 r +-0.5,-0.5 +1,1}
 
-block_5 = {{p +0,0 @sq_5} {r p +1,1 @sq_3} p +2,2 @sq_1}
-block_6 = {{p +0,0 @sq_6} {r p +1,1 @sq_4} p +2,2 @sq_2}
+block_5 = {{m +0,0 @sq_5} {subtract m +1,1 @sq_3} m +2,2 @sq_1}
+block_6 = {{m +0,0 @sq_6} {subtract m +1,1 @sq_4} m +2,2 @sq_2}
 
 icon qr_code_v0 = {
-    p 1,1 @block_6
-    p 1,8 @block_6
-    p 8,1 @block_6
-    p 8,8 @sq_4 {r p 9,9 @sq_2}
+    m 1,1 @block_6
+    m 1,8 @block_6
+    m 8,1 @block_6
+    m 8,8 @sq_4 {subtract m 9,9 @sq_2}
 }
 icon qr_code_v1 = {
-    p 2,2 @block_5
-    p 2,8 @block_5
-    p 8,2 @block_5
-    p 8,8 @sq_3 {r p 9,9 @sq_1}
+    m 2,2 @block_5
+    m 2,8 @block_5
+    m 8,2 @block_5
+    m 8,8 @sq_3 {subtract m 9,9 @sq_1}
 }
 
 icon barcode_v0 = {
     l 1,4 +0,9
     l 3,4 +0,7
-    s 5,4 +1,7
+    r 5,4 +1,7
     l 9,4 +0,7
-    s 11,4 +1,7
+    r 11,4 +1,7
     l 14,4 +0,9
 }
 icon barcode_v1 = {
     l 1,4 +0,9
     l 3,4 +0,7
-    s 5,4 +1,7
+    r 5,4 +1,7
     l 8,4 +0,9
-    s 11,4 +1,7
+    r 11,4 +1,7
     l 14,4 +0,9
 }
 icon barcode_v2 = {
     l 1,3 +0,10
     l 3,3 +0,8
-    s 5,3 +1,8
+    r 5,3 +1,8
     l 9,3 +0,8
-    s 11,3 +1,8
+    r 11,3 +1,8
     l 14,3 +0,10
 }
 icon barcode_scan_v0 = {
     l 1,4 +0,9
     l 3,4 +0,7
-    s 5,4 +1,7
+    r 5,4 +1,7
     l 9,4 +0,7
-    s 11,4 +1,7
+    r 11,4 +1,7
     l 14,4 +0,9
-    {r w 3 l -1,7 +16,0}
+    {subtract w 3 l -1,7 +16,0}
     l 1,7 +13,0
 }

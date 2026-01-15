@@ -404,12 +404,17 @@ class Shapes:
             str(iconscript_file_name),
             str(temp_output_directory),
         ]
-        subprocess.check_call(  # noqa: S603
-            command,
-            shell=False,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
+        try:
+            subprocess.check_call(  # noqa: S603
+                command,
+                shell=False,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+        except subprocess.CalledProcessError:
+            message = f"Failed to run `iconscript` with command: {command}"
+            logger.fatal(message)
+            sys.exit(1)
 
         offset: tuple[float, float] = (-8.0, -8.0)
 

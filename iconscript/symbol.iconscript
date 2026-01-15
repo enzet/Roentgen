@@ -1,16 +1,16 @@
-# iconscript 0.1
+# iconscript 0.2
 
-cross_3 = s +-3,-1 +6,2 s +-4,-4 +2,6
-cross_4 = s +-4,-1 +9,3 s +-6,-6 +3,9
+cross_3 = r +-3,-1 +6,2 r +-4,-4 +2,6
+cross_4 = r +-4,-1 +9,3 r +-6,-6 +3,9
 
 square = lf +0,0 +2,0 +0,2 +-2,0 +0,-2
 icon glider = {
-    p 6,2 @square p 10,6 @square
-    p 2,10 @square p +4,0 @square p +4,0 @square
+    m 6,2 @square m 10,6 @square
+    m 2,10 @square m +4,0 @square m +4,0 @square
 }
-icon greek_cross = {p 7,7 @cross_4}
-icon greek_cross_in_box = {s 2,2 +10,10 {r p 7,7 @cross_3}}
-icon latin_cross = {s 7,1 +1,13 s 3,5 +9,1}
+icon greek_cross = {m 7,7 @cross_4}
+icon greek_cross_in_box = {r 2,2 +10,10 {subtract m 7,7 @cross_3}}
+icon latin_cross = {r 7,1 +1,13 r 3,5 +9,1}
 icon orthodox = {
     w 2
     l 7.5,1.5 +0,12 l 3.5,5.5 +8,0
@@ -21,15 +21,15 @@ icon rectangle_vertical_rounded = {
     w 3 l 7,4 +0,7
 }
 yin_and_yang = {
-    c 7.5,7.5 12
-    {r c 7.5,7.5 10}
+    e 7.5,7.5 12
+    {subtract e 7.5,7.5 10}
     {w 0 lf 7.5,2 +0,11 +1,0 +2,-1 +2,-2 +0,-5 +-2,-2}
-    {r c 7.5,5 5}
-    c 7.5,10 5
+    {subtract e 7.5,5 5}
+    e 7.5,10 5
 }
 icon yin_and_yang_v1 = {@yin_and_yang}
 icon yin_and_yang_v2 = {
     @yin_and_yang
-    c 7.5,5 2
-    {r c 7.5,10 2}
+    e 7.5,5 2
+    {subtract e 7.5,10 2}
 }

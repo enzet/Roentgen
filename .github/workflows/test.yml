@@ -26,7 +26,7 @@ jobs:
         node-version: "20"
     - name: Install iconscript
       run: |
-        npm install -g iconscript@0.1
+        npm install -g iconscript@0.2
     - name: Generate icons
       run: |
         python -m roentgen icons
@@ -50,7 +50,7 @@ jobs:
         node-version: "20"
     - name: Install iconscript
       run: |
-        npm install -g iconscript@0.1
+        npm install -g iconscript@0.2
     - name: Generate icons
       run: |
         python -m roentgen icons
