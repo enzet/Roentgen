@@ -2,8 +2,22 @@
 
 Thank you for your interest in contributing to the Röntgen icon set!
 
-If you want to request a new icon, or found an error in the existing icons,
-please [open an issue on GitHub](https://github.com/enzet/Roentgen/issues).
+## What Contributions Are Welcome
+
+Röntgen is a personal design project, and I want to keep it that way. Icon
+design is inherently subjective, and this project reflects my personal
+preferences, so I cannot add icons drawn by someone else to the set.
+
+However, the following contributions are **highly welcome**:
+  - Request icon coverage for your preferred OpenStreetMap tags.
+  - Suggest new icons or design changes (please open an issue for discussion).
+  - Improvements and bugfixes in the Python code (pull requests are welcome).
+
+## Setup Development Environment
+
+  1. Install development dependencies: `pip install -e .[dev]`.
+  2. Install iconscript: `npm install -g iconscript@0.2`.
+  3. Enable pre-commit hooks: `git config --local core.hooksPath .githooks`.
 
 ## Creating a Release
 
