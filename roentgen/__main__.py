@@ -167,7 +167,7 @@ def draw() -> None:
                 found = True
                 break
         if not found:
-            logger.warning("No configuration for `%s` found.", shape_id)
+            logger.warning("No usage of `%s` shape found.", shape_id)
 
     shapes_data: dict[str, str] = {
         shape_id: shape.get_path_commands()

@@ -1,12 +1,12 @@
 ## Unreleased
 
 Add icons:
-	- `power_pole_flag_armless`,
-	- `power_tower_barrel_1_level`,
-	- `power_tower_donau_1_level`,
-	- `power_tower_guyed_v_frame`,
-	- `power_tower_h_frame_3_level`,
-	- `power_tower_monopolar`.
+  - `power_pole_flag_armless`,
+  - `power_tower_barrel_1_level`,
+  - `power_tower_donau_1_level`,
+  - `power_tower_guyed_v_frame`,
+  - `power_tower_h_frame_3_level`,
+  - `power_tower_monopolar`.
 
 Redraw icons:
   - `cocktail_glass`.
