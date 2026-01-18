@@ -1665,6 +1665,10 @@
             "keywords": ["jewelry", "gem"],
             "name": "diamond"
         },
+        "double_folded_paper": {
+            "keywords": ["sheet"],
+            "name": "double-folded piece of paper"
+        },
         "drinking_water": {
             "unicode": ["🚰"],
             "keywords": ["water", "drink"],

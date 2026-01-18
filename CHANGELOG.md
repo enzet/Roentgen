@@ -1,6 +1,7 @@
 ## Unreleased
 
 Add icons:
+  - `double_folded_paper`,
   - `power_pole_flag_armless`,
   - `power_tower_barrel_1_level`,
   - `power_tower_donau_1_level`,
