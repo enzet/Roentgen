@@ -3617,26 +3617,32 @@
         },
         "pole_lamp": {
             "directed": "right",
+            "keywords": ["light", "electricity"],
             "name": "pole lamp"
         },
         "power_pole_1_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "one-level transmission pole"
         },
         "power_pole_2_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "two-level transmission pole"
         },
         "power_pole_3_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "three-level transmission pole"
         },
         "power_pole_4_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "four-level transmission pole"
         },
         "power_pole_5_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "five-level transmission pole",
             "sketch": true
         },
@@ -3646,154 +3652,174 @@
         },
         "power_pole_asymmetric_armless": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "asymmetric armless transmission pole"
         },
         "power_pole_delta": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "delta transmission pole"
         },
         "power_pole_flag": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "flag transmission pole"
         },
         "power_pole_flag_armless": {
             "categories": ["power"],
-            "keywords": ["power", "electricity"],
-            "name": "armless flag transmission pole",
-            "shapes": [{"id": "power_pole_flag_armless", "version": "v0"}],
-            "sketch": true,
-            "todo": "check version"
+            "keywords": ["electricity"],
+            "name": "armless flag transmission pole"
         },
         "power_pole_triangle": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "triangle transmission pole"
         },
         "power_pole_triangle_armless": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "armless triangle transmission pole"
         },
         "power_tower_1_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "one-level transmission tower"
         },
         "power_tower_2_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "two-level transmission tower"
         },
         "power_tower_3_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "three-level transmission tower"
         },
         "power_tower_4_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "four-level transmission tower"
         },
         "power_tower_asymmetric": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "asymmetric transmission tower"
         },
         "power_tower_barrel": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "barrel transmission tower"
         },
         "power_tower_delta": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "delta transmission tower"
         },
         "power_tower_delta_2_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "delta two-level transmission tower"
         },
         "power_tower_delta_3_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "delta three-level transmission tower"
         },
         "power_tower_donau": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "donau transmission tower"
         },
         "power_tower_donau_inverse": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "inverse donau transmission tower"
         },
         "power_tower_flag": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "flag transmission tower"
         },
         "power_tower_guyed_h_frame": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "guyed h-frame transmission tower"
         },
         "power_tower_guyed_h_frame_2_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "guyed h-frame transmission tower with two levels",
             "sketch": true
         },
         "power_tower_guyed_h_frame_3_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "guyed h-frame transmission tower with three levels",
             "sketch": true
         },
         "power_tower_guyed_v_frame": {
             "categories": ["power"],
-            "name": "guyed v-frame transmission tower",
-            "shapes": [{"id": "power_tower_guyed_v_frame", "version": "v0"}],
-            "sketch": true
+            "keywords": ["electricity"],
+            "name": "guyed v-frame transmission tower"
         },
         "power_tower_donau_1_level": {
             "categories": ["power"],
-            "name": "donau transmission tower with one level",
-            "shapes": [{"id": "power_tower_donau_1_level", "version": "v0"}],
-            "sketch": true
+            "keywords": ["electricity"],
+            "name": "donau transmission tower with one level"
         },
         "power_tower_barrel_1_level": {
             "categories": ["power"],
-            "name": "barrel transmission tower with one level",
-            "shapes": [{"id": "power_tower_barrel_1_level", "version": "v0"}],
-            "sketch": true
+            "keywords": ["electricity"],
+            "name": "barrel transmission tower with one level"
         },
         "power_tower_monopolar": {
             "categories": ["power"],
-            "name": "monopolar transmission tower",
-            "shapes": [{"id": "power_tower_monopolar", "version": "v0"}],
-            "sketch": true
+            "keywords": ["electricity"],
+            "name": "monopolar transmission tower"
         },
         "power_tower_h_frame_3_level": {
             "categories": ["power"],
-            "name": "h-frame transmission tower with three levels",
-            "shapes": [{"id": "power_tower_h_frame_3_level", "version": "v0"}],
-            "sketch": true
+            "keywords": ["electricity"],
+            "name": "h-frame transmission tower with three levels"
         },
         "power_tower_h_frame": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "h-frame transmission tower"
         },
         "power_tower_h_frame_2_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "h-frame two-level transmission tower"
         },
         "power_tower_portal": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "portal transmission tower"
         },
         "power_tower_portal_2_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "portal two-level transmission tower"
         },
         "power_tower_portal_3_level": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "portal three-level transmission tower"
         },
         "power_tower_triangle": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "triangle transmission tower"
         },
         "power_tower_x_frame": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "x-frame transmission tower"
         },
         "power_tower_y_frame": {
             "categories": ["power"],
+            "keywords": ["electricity"],
             "name": "y-frame transmission tower"
         },
         "stupa": {
