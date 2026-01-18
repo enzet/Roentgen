@@ -97,6 +97,18 @@ icon digital_clock = {
         m +6,0 @digital_1 m +2,0 @digital_2
     }
 }
+icon double_folded_paper_wide = {
+    m 1,4
+    {lf +0,0 +4,-1 +5,1 +4,-1 +0,8 +-4,1 +-5,-1 +-4,1 +0,-8}
+    {subtract l +4,0 +0,6}
+    {subtract l +9,1 +0,6}
+}
+icon double_folded_paper = {
+    m 2,4
+    {lf +0,0 +3,-1 +5,1 +3,-1 +0,8 +-3,1 +-5,-1 +-3,1 +0,-8}
+    {subtract l +3,0 +0,6}
+    {subtract l +8,1 +0,6}
+}
 icon drawer = {
     lf 3,2 +9,0 +0,10 +-9,0 +0,-10
     l 4,12 +0,1

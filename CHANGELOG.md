@@ -11,6 +11,8 @@ Add icons:
 Redraw icons:
   - `cocktail_glass`.
 
+Move `triangle_small` icon.
+
 ## 0.12.0
 
 Update iconscript version from 0.1 to 0.2 and replace many icons with iconscript
