@@ -110,11 +110,28 @@ Some of the icons are described with
 in the [`data`](data) directory by Python scripts. This hugely simplifies the
 process of creating new icons.
 
-To regenerate icons, run
+To regenerate icons and preview grids, run
 
 ```shell
-roentgen icons
+python -m roentgen icons
 ```
+
+## Command-Line Interface
+
+### Grid Drawing
+
+Draw SVG file with icon grid.
+
+```shell
+python -m roentgen grid
+```
+
+| Option      | Description                            |
+| ----------- | -------------------------------------- |
+| `--columns` | Number of columns in grid              |
+| `--filter`  | Regular expression for filtering icons |
+| `--output`  | Output SVG file                        |
+| `--scale`   | Icons scale                            |
 
 ## OpenStreetMap Tags
 

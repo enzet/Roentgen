@@ -3,6 +3,7 @@
 import argparse
 import json
 import logging
+import re
 import shutil
 from pathlib import Path
 
@@ -110,18 +111,8 @@ def draw_icons(
     )
 
 
-def draw() -> None:
-    """Draw all icons as grid and individual SVG files.
-
-    Parse icons from SVG sketch files, iconscript files and config file.
-    Generate:
-      - individual SVG files for each icon,
-      - grid SVG files for all icons,
-      - JSON file with path for icons and part icons.
-    """
-
-    with (Path("data") / "config.json").open(encoding="utf-8") as input_file:
-        config: dict = json.load(input_file)
+def load_shapes(config: dict) -> Shapes:
+    """Load all defined shapes."""
 
     shapes: Shapes = Shapes()
     for path in [
@@ -147,6 +138,24 @@ def draw() -> None:
         *generated_paths,
     ]:
         shapes.add_from_iconscript(path)
+
+    return shapes
+
+
+def draw() -> None:
+    """Draw all icons as grid and individual SVG files.
+
+    Parse icons from SVG sketch files, iconscript files and config file.
+    Generate:
+      - individual SVG files for each icon,
+      - grid SVG files for all icons,
+      - JSON file with path for icons and part icons.
+    """
+
+    with (Path("data") / "config.json").open(encoding="utf-8") as input_file:
+        config: dict = json.load(input_file)
+
+    shapes: Shapes = load_shapes(config)
 
     version: str = Path("VERSION").read_text().strip()
 
@@ -184,6 +193,41 @@ def draw() -> None:
         root_path=Path(),
         doc_path=Path("doc"),
         output_path=Path("out"),
+    )
+
+
+def draw_grid(arguments: argparse.Namespace) -> None:
+    """Draw icon grid."""
+
+    with (Path("data") / "config.json").open(encoding="utf-8") as input_file:
+        config: dict = json.load(input_file)
+
+    pattern: re.Pattern | None = None
+    if arguments.filter:
+        pattern: re.Pattern = re.compile(arguments.filter)
+
+    specifications: list[IconSpecification] = [
+        specification
+        for specification in get_icon_specifications(config)
+        if bool(
+            not pattern
+            or pattern.match(specification.icon_id)
+            or pattern.match(specification.name)
+            or pattern.match(specification.group)
+            or any(
+                pattern.match(category) for category in specification.categories
+            )
+            or any(pattern.match(keyword) for keyword in specification.keywords)
+        )
+    ]
+    collection: IconSpecifications = (
+        IconSpecifications.from_icon_specifications(specifications)
+    )
+    collection.draw_grid(
+        Path(arguments.output),
+        load_shapes(config),
+        columns=arguments.columns,
+        scale=arguments.scale,
     )
 
 
@@ -255,8 +299,7 @@ def main() -> None:
     )
 
     site_parser: argparse.ArgumentParser = subparsers.add_parser(
-        "site",
-        help="Generate Röntgen website.",
+        "site", help="Generate Röntgen website."
     )
     site_parser.add_argument(
         "-o",
@@ -266,14 +309,32 @@ def main() -> None:
     )
 
     collections_parser: argparse.ArgumentParser = subparsers.add_parser(
-        "collections",
-        help="Generate collections HTML page.",
+        "collections", help="Generate collections HTML page."
     )
     collections_parser.add_argument(
         "-o",
         "--output",
         type=Path,
         help="Path to the output directory.",
+    )
+
+    grid_parser: argparse.ArgumentParser = subparsers.add_parser(
+        "grid", help="Draw icon grid."
+    )
+    grid_parser.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        help="Path to the output file for grid.",
+    )
+    grid_parser.add_argument(
+        "--filter", type=str, help="Draw only icons that matches the filter."
+    )
+    grid_parser.add_argument(
+        "--scale", type=float, default=1.0, help="Grid scale."
+    )
+    grid_parser.add_argument(
+        "--columns", type=int, default=16, help="Number of columns."
     )
 
     arguments: argparse.Namespace = parser.parse_args()
@@ -316,6 +377,10 @@ def main() -> None:
 
     if arguments.command == "site":
         site_main(site_path=arguments.output)
+        return
+
+    if arguments.command == "grid":
+        draw_grid(arguments)
         return
 
 
