@@ -180,6 +180,15 @@ icon ice_cream = {
     {subtract {w 2 l 6.5,5.5 +0,2}   l 9,7 +0,1   {w 0 r 5.5,7.5 +4,2}}
     l 8,7 +0,1
 }
+i = {l +0,0} {l +-0.5,2 +0.5,0 +0,2} {l +-0.5,4 +1,0}
+icon kiosk_i = {
+    m 1,2
+    {lf +1,0 +10,0 +1,2 +-12,0 +1,-2}
+    {r +1,2 +10,9}
+    {subtract l +0,3 +12,0}
+    {subtract r +7,5 +2,5}
+    {subtract m +4,5 @i}
+}
 icon lander = {
     lf 7,2 +1,0 +2,2 +0,1 +-5,0 +0,-1 +2,-2
     {w 2 l 7.5,4 +0,4}
@@ -317,7 +326,18 @@ icon table_and_two_chairs___roof_and_walls = {
 icon table_and_two_chairs___pergola = {
     @seats m -1,3 @pr @pr @pr @pr @pr @pr @pr
 }
-
+icon tactile_map = {
+    m 1,10
+    {lf +0,0 +13,0 +-1,-7 +-11,0 +-1,7}
+    {l +4,3 +5,0}  # Base.
+    {w 2 l +6.5,0.5 +0,2}  # Leg.
+    # Pictures on the map.
+    {
+        subtract
+        {e +2,-6 1} {e +4,-6 1} {e +1.5,-2 1}  # Dots.
+        {l +5,-2 +6,-4} {l +6,-5 +5,3}  # Lines.
+    }
+}
 icon tv = {
     l 2,3 +11,0 +0,7 +-11,0 +0,-7
     l 7,10 +0,2 +1,0 +0,-2 l 5,12 +5,0
