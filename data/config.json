@@ -4002,7 +4002,7 @@
             "bicycle___wrench": {
                 "name": "bicycle with wrench",
                 "shapes": [
-                    {"id": "bicycle", "offset": [0, 2]},
+                    {"id": "bicycle", "offset": [0, 3]},
                     {
                         "id": "wrench",
                         "offset": [-1, -4],
@@ -4011,11 +4011,7 @@
                 ]
             },
             "bicycle___key": {
-                "name": "bicycle with key",
-                "shapes": [
-                    {"id": "bicycle", "offset": [0, 2]},
-                    {"id": "key", "offset": [-1, -4], "flip_horizontally": true}
-                ]
+                "name": "bicycle with key"
             },
             "motorcycle": {
                 "keywords": ["transport", "bike"],

@@ -10,6 +10,11 @@ Add icons:
   - `power_tower_monopolar`.
 
 Redraw icons:
+  - `bicycle`,
+  - `bicycle___x_4`,
+  - `bicycle___key`,
+  - `bicycle___wrench`,
+  - `bicycle___p_small`,
   - `cocktail_glass`.
 
 Move `triangle_small` icon.
