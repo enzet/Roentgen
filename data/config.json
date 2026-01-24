@@ -2313,6 +2313,11 @@
                 {"id": "p_small", "offset": [-5, -3]}
             ]
         },
+        "bicycle___plug": {
+            "keywords": ["road", "charging", "electricity"],
+            "name": "bicycle with plug",
+            "shapes": [{"id": "bicycle_plug"}]
+        },
         "bicycle_locker": {
             "keywords": ["road", "parking"],
             "name": "bicycle locker",

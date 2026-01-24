@@ -1,6 +1,9 @@
 ## Unreleased
 
+Update iconscript version to 0.3.
+
 Add icons:
+  - `bicycle___plug`,
   - `double_folded_paper`,
   - `power_pole_flag_armless`,
   - `power_tower_barrel_1_level`,
