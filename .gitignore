@@ -2,7 +2,6 @@
 roentgen/config.json
 roentgen/shapes.json
 
-.DS_Store
 .idea/
 .npmrc
 .pypirc
@@ -12,6 +11,7 @@ __pycache__
 cache/
 dist/
 icons/LICENSE
+icons_all/
 icons_sketches/
 osm/
 out/
