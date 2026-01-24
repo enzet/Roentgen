@@ -1,13 +1,13 @@
-# iconscript 0.2
+# iconscript 0.3
 
-sq_6 = {r +0,0 +5,5}
-sq_5 = {r +0,0 +4,4}
-sq_4 = {r +0,0 +3,3}
-sq_3 = {r +0,0 +2,2}
-sq_3_square = {r +0,0 +2,2}
-sq_2 = {r +0,0 +1,1}
-sq_1 = {e +0,0 1}
-sq_1_square = {w 0 r +-0.5,-0.5 +1,1}
+sq_6 = {fill r +0,0 +5,5}
+sq_5 = {fill r +0,0 +4,4}
+sq_4 = {fill r +0,0 +3,3}
+sq_3 = {fill r +0,0 +2,2}
+sq_3_square = {fill r +0,0 +2,2}
+sq_2 = {fill r +0,0 +1,1}
+sq_1 = {fill w 0 e +0,0 0.5}
+sq_1_square = {w 0 fill r +-0.5,-0.5 +1,1}
 
 block_5 = {{m +0,0 @sq_5} {subtract m +1,1 @sq_3} m +2,2 @sq_1}
 block_6 = {{m +0,0 @sq_6} {subtract m +1,1 @sq_4} m +2,2 @sq_2}

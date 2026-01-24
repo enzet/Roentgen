@@ -1,8 +1,8 @@
-# iconscript 0.2
+# iconscript 0.3
 
 icon cliff = {
-    lf 7,6 +2,1 +1,5 +1,0 +1,-8 +-3,-1 +-7,0 +0,9 +4,0 +1,-6
+    fill l 7,6 +2,1 +1,5 +1,0 +1,-8 +-3,-1 +-7,0 +0,9 +4,0 +1,-6
 }
-stone = lf 3,4 +8,-1 +2,4.5 +-2,3.5 +-7,0 +-2,-4.5 +1,-2.5
+stone = {fill l 3,4 +8,-1 +2,4.5 +-2,3.5 +-7,0 +-2,-4.5 +1,-2.5}
 icon stone = {@stone}
 icon stone_with_inscription = {@stone {subtract l 5,6 +5,0 l 5,8 +5,0}}

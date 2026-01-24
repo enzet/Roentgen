@@ -16,7 +16,7 @@ However, the following contributions are **highly welcome**:
 ## Setup Development Environment
 
   1. Install development dependencies: `pip install -e .[dev]`.
-  2. Install iconscript: `npm install -g iconscript@0.2`.
+  2. Install Rust implementation of iconscript: `cargo install iconscript@0.3`.
   3. Enable pre-commit hooks: `git config --local core.hooksPath .githooks`.
 
 ## Creating a Release

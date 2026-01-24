@@ -1,4 +1,4 @@
-# iconscript 0.2
+# iconscript 0.3
 
 # Bench parts.
 
@@ -229,13 +229,13 @@ icon bench_backrest_cover_7_seats = {
 icon bench_no_backrest = {@bench_no_backrest}
 icon bench_statue = {
     m 2,10 @bench_seat @bench_legs
-    e 11,2.5 2
-    lf 10,5 +2.5,0 +0.5,2 +-3,1 +0,-3
+    {fill w 0 e 11,2.5 1}
+    {fill l 10,5 +2.5,0 +0.5,2 +-3,1 +0,-3}
     l 10,5 +-0.5,0 +-1.5,3
 }
 icon bench_log = {
     r 1,6 +13,2  # Seat.
-    {subtract e 3.5,9.5 4} c 3.5,9.5 2  # Left leg.
-    {subtract e 11.5,9.5 4} c 11.5,9.5 2  # Right leg.
+    {subtract fill w 0 e 3.5,9.5 2} {fill w 0 c 3.5,9.5 1}  # Left leg.
+    {subtract fill w 0 e 11.5,9.5 2} {fill w 0 c 11.5,9.5 1}  # Right leg.
     {subtract r 1,10 +13,2}
 }

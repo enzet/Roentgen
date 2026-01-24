@@ -111,7 +111,9 @@ def draw_icons(
     )
 
 
-def load_shapes(config: dict) -> Shapes:
+def load_shapes(
+    config: dict, iconscript_executable: str | None = None
+) -> Shapes:
     """Load all defined shapes."""
 
     shapes: Shapes = Shapes()
@@ -137,12 +139,12 @@ def load_shapes(config: dict) -> Shapes:
         Path("iconscript") / "transport.iconscript",
         *generated_paths,
     ]:
-        shapes.add_from_iconscript(path)
+        shapes.add_from_iconscript(path, iconscript_executable)
 
     return shapes
 
 
-def draw() -> None:
+def draw(iconscript_executable: str | None) -> None:
     """Draw all icons as grid and individual SVG files.
 
     Parse icons from SVG sketch files, iconscript files and config file.
@@ -155,7 +157,7 @@ def draw() -> None:
     with (Path("data") / "config.json").open(encoding="utf-8") as input_file:
         config: dict = json.load(input_file)
 
-    shapes: Shapes = load_shapes(config)
+    shapes: Shapes = load_shapes(config, iconscript_executable)
 
     version: str = Path("VERSION").read_text().strip()
 
@@ -248,8 +250,14 @@ def main() -> None:
     subparsers: argparse._SubParsersAction = parser.add_subparsers(
         dest="command"
     )
-    _: argparse.ArgumentParser = subparsers.add_parser(
+    icons_parser: argparse.ArgumentParser = subparsers.add_parser(
         "icons", help="Draw icons as grid and individual SVG files."
+    )
+    icons_parser.add_argument(
+        "--iconscript",
+        type=str,
+        default="iconscript",
+        help="Path to iconscript executable",
     )
 
     taginfo_parser: argparse.ArgumentParser = subparsers.add_parser(
@@ -340,7 +348,7 @@ def main() -> None:
     arguments: argparse.Namespace = parser.parse_args()
 
     if arguments.command == "icons":
-        draw()
+        draw(arguments.iconscript)
         return
 
     if arguments.command == "taginfo":

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo `which iconscript`
 if [ -d ".venv" ]; then
     source .venv/bin/activate
 else
@@ -7,6 +8,7 @@ else
     exit 1
 fi
 
+echo `which iconscript`
 python_files="roentgen/"
 
 echo "Checking Format with Ruff..."
@@ -21,6 +23,7 @@ if ! ruff check; then
     exit 1
 fi
 
+echo `which iconscript`
 echo "Checking icon generation..."
 if ! python -m roentgen icons; then
     echo "FAIL"

@@ -378,7 +378,11 @@ class Shapes:
         else:
             self.shapes[id_] = Shape({version: path_on_canvas}, id_, source)
 
-    def add_from_iconscript(self, iconscript_file_name: Path) -> None:
+    def add_from_iconscript(
+        self,
+        iconscript_file_name: Path,
+        iconscript_executable: str | None = None,
+    ) -> None:
         """Add shapes from iconscript file.
 
         :param iconscript_file_name: input iconscript file name.
@@ -387,7 +391,9 @@ class Shapes:
 
         message: str
 
-        iconscript_path: str | None = shutil.which("iconscript")
+        iconscript_path: str | None = iconscript_executable
+        if iconscript_path is None:
+            iconscript_path = shutil.which("iconscript")
         if iconscript_path is None:
             message = "`iconscript` executable not found in `PATH`"
             raise FileNotFoundError(message)
