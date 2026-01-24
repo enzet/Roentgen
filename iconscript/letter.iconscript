@@ -1,4 +1,4 @@
-# iconscript 0.2
+# iconscript 0.3
 
 icon digit_1 = {m 6,5 {l +0,1 +1,-1 +0,4}}
 icon digit_4 = {m 6,5 {l +0,0 +0,2 +2,0} {l +2,0 +0,4}}
@@ -115,7 +115,7 @@ icon letter_backslash = {m 6,5 l +0,0 +2,4}
 icon letter_slash_short = {m 7,5 l +1,0 +-1,4}
 icon letter_backslash_short = {m 7,5 l +0,0 +1,4}
 icon letter_vertical_line = {m 7,5 l +0,0 +0,4}
-icon letter_exclamation_mark = {m 7,5 {l +0,0 +0,2} {e +0,4 1}}
+icon letter_exclamation_mark = {m 7,5 {l +0,0 +0,2} {fill w 0 e +0,4 0.5}}
 icon letter_sharp = {
     m 5,5 {l +1,0 +0,4} {l +3,0 +0,4}
     {l +0,1 +4,0} {l +0,3 +4,0}
