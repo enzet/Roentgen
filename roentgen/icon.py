@@ -28,10 +28,10 @@ logger: logging.Logger = logging.getLogger(__name__)
 try:
     import cairosvg
 except (ImportError, OSError):
-    logger.exception("Failed to import `cairosvg`.")
+    logger.debug("Failed to import `cairosvg`.")
     cairosvg: Any = None
 except:  # noqa: E722
-    logger.exception("Failed to import `cairosvg`.")
+    logger.debug("Failed to import `cairosvg`.")
     cairosvg: Any = None
 
 if TYPE_CHECKING:
