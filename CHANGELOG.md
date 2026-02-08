@@ -1,4 +1,4 @@
-## Unreleased
+## 0.13.0
 
 Update iconscript version to 0.3.
 
