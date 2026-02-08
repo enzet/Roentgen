@@ -10,7 +10,8 @@ Add icons:
   - `power_tower_donau_1_level`,
   - `power_tower_guyed_v_frame`,
   - `power_tower_h_frame_3_level`,
-  - `power_tower_monopolar`.
+  - `power_tower_monopolar`,
+  - `toilet_bowl`.
 
 Redraw icons:
   - `bicycle`,

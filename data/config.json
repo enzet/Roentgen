@@ -961,6 +961,11 @@
             "keywords": ["bathroom", "water"],
             "name": "shower head"
         },
+        "toilet_bowl": {
+            "keywords": ["water", "closet", "sanitary", "wc", "flush"],
+            "name": "toilet bowl",
+            "unicode": ["🚽"]
+        },
         "washing_machine": {
             "keywords": ["laundry", "technical", "electric", "device"],
             "name": "washing machine"
