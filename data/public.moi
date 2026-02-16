@@ -28,6 +28,7 @@ You can use them through:
             %ROENTGEN_ICON_GRID%
         </div>
     </section>
+    <div class="right-side">
     <section class="icon-preview-section">
         <div class="icon-preview">
             <svg id="previewSvg" viewBox="0 0 16 16"></svg>
@@ -50,11 +51,11 @@ You can use them through:
             <div class="control-group">
                 <div class="checkbox-control">
                     <input type="checkbox" id="toggleControlPoints" class="checkbox-input">
-                    <label for="toggleControlPoints" class="checkbox-label">Show control points</label>
+                    <label for="toggleControlPoints" class="checkbox-label">Anchors</label>
                 </div>
                 <div class="checkbox-control">
                     <input type="checkbox" id="toggleGrid" class="checkbox-input">
-                    <label for="toggleGrid" class="checkbox-label">Show grid</label>
+                    <label for="toggleGrid" class="checkbox-label">Grid</label>
                 </div>
             </div>
             <div class="slider-container size-control">
@@ -64,6 +65,7 @@ You can use them through:
             <button id="downloadIcon" class="main control-button">Download <span class="abbr">SVG</span></button>
         </div>
     </section>
+    </div>
 </div>
 <script src="roentgen.js"></script>
 }

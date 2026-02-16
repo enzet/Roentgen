@@ -15,7 +15,7 @@
 }
 
 .icon-grid-section {
-    width: 50%;
+    width: 40%;
     border-right: 1px solid rgba(var(--fg-color), var(--border-opacity));
     display: flex;
     flex-direction: column;
@@ -50,11 +50,15 @@
     background: rgba(var(--fg-color), 0.1);
 }
 
+.right-side {
+    display: flex;
+    width: 60%;
+}
+
 .icon-preview-section {
     position: sticky;
     top: 0;
-    min-width: 600px;
-    width: 50%;
+    width: 65%;
     border-right: 1px solid rgba(var(--fg-color), var(--border-opacity));
     height: 100vh;
 }
@@ -62,9 +66,7 @@
 .icon-info-section {
     position: sticky;
     top: 0;
-    width: 300px;
-    min-width: 300px;
-    max-width: 300px;
+    width: 35%;
     overflow-y: auto;
     background: rgba(var(--bg-color));
     flex: 0 0 var(--info-width);
@@ -121,7 +123,6 @@
 }
 
 .icon-info {
-    min-height: 16rem;
     padding: 1rem;
 }
 
@@ -170,32 +171,34 @@
 }
 
 /* TODO(enzet): rewrite this, it looks wrong. */
-@media (max-width: 200px) {
+@media (max-width: 600px) {
+    .icon-list {
+        gap: 0;
+        padding: 1;
+    }
+
     .icon-grid-section {
-        width: 100%;
-        min-width: 100%;
-        max-width: 100%;
-        height: 200px;
-        border-right: none;
-        border-bottom: 1px solid rgba(var(--fg-color), var(--border-opacity));
+        width: 50%;
+        height: 100%;
+    }
+
+    .right-side {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        flex-direction: column;
     }
 
     .icon-preview-section {
         width: 100%;
-        min-width: 100%;
-        max-width: 100%;
         height: 50%;
         border-right: none;
         border-bottom: 1px solid rgba(var(--fg-color), var(--border-opacity));
-        flex: 0 0 50%;
     }
 
     .icon-info-section {
         width: 100%;
-        min-width: 100%;
-        max-width: 100%;
         height: 50%;
-        flex: 0 0 50%;
     }
 }
 
