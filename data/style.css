@@ -78,11 +78,12 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    overflow: hidden;
 }
 
 .icon-preview svg {
-    width: 400px;
-    height: 400px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .icon-controls {
@@ -170,11 +171,14 @@
     stroke: rgba(var(--fg-color));
 }
 
-/* TODO(enzet): rewrite this, it looks wrong. */
 @media (max-width: 600px) {
+    .search-container {
+        padding: 0rem;
+    }
+
     .icon-list {
         gap: 0;
-        padding: 1;
+        padding: 0;
     }
 
     .icon-grid-section {
@@ -191,14 +195,14 @@
 
     .icon-preview-section {
         width: 100%;
-        height: 50%;
+        height: 30%;
         border-right: none;
         border-bottom: 1px solid rgba(var(--fg-color), var(--border-opacity));
     }
 
     .icon-info-section {
         width: 100%;
-        height: 50%;
+        height: 70%;
     }
 }
 

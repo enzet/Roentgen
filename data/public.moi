@@ -21,7 +21,6 @@ You can use them through:
     {main}
 
 \html {
-<link rel="stylesheet" href="roentgen.css">
 <div class="icon-viewer-section">
     <section class="icon-grid-section">
         <div class="icon-list">
