@@ -208,18 +208,29 @@ def draw_grid(arguments: argparse.Namespace) -> None:
     if arguments.filter:
         pattern: re.Pattern = re.compile(arguments.filter)
 
+    match_in: list[str] = arguments.match_in.split(",")
+
     specifications: list[IconSpecification] = [
         specification
         for specification in get_icon_specifications(config)
         if bool(
             not pattern
-            or pattern.match(specification.icon_id)
-            or pattern.match(specification.name)
-            or pattern.match(specification.group)
-            or any(
-                pattern.match(category) for category in specification.categories
+            or ("id" in match_in and pattern.match(specification.icon_id))
+            or ("name" in match_in and pattern.match(specification.name))
+            or ("group" in match_in and pattern.match(specification.group))
+            or (
+                "category" in match_in
+                and any(
+                    pattern.match(category)
+                    for category in specification.categories
+                )
             )
-            or any(pattern.match(keyword) for keyword in specification.keywords)
+            or (
+                "keyword" in match_in
+                and any(
+                    pattern.match(keyword) for keyword in specification.keywords
+                )
+            )
         )
     ]
     collection: IconSpecifications = (
@@ -337,6 +348,12 @@ def main() -> None:
     )
     grid_parser.add_argument(
         "--filter", type=str, help="Draw only icons that matches the filter."
+    )
+    grid_parser.add_argument(
+        "--match-in",
+        type=str,
+        default="id,name,group,category,keyword",
+        help="Where apply filter to",
     )
     grid_parser.add_argument(
         "--scale", type=float, default=1.0, help="Grid scale."
