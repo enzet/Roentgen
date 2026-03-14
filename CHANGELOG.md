@@ -1,3 +1,13 @@
+## Unreleased
+
+Add icons:
+  - `building_bolt_door`,
+  - `building_door`,
+  - `building_drop_door`.
+
+To `grid` command add `--match-in` argument.
+  
+
 ## 0.13.0
 
 Update iconscript version to 0.3.
@@ -25,6 +35,7 @@ Move `triangle_small` icon.
 
 Add `grid` command for icon grid drawing.
 
+
 ## 0.12.0
 
 Update iconscript version from 0.1 to 0.2 and replace many icons with iconscript
@@ -50,6 +61,7 @@ Fix icons:
 
 Adjust icon size:
   - `survey_point`.
+
 
 ## 0.11.0
 
@@ -78,10 +90,12 @@ Flip icons:
   - `fountain_roman_wolf`,
   - `supermarket_cart`.
 
+
 ## 0.10.0
 
 Add API for Python package roentgen-icons
 ([#6](https://github.com/enzet/Roentgen/issues/6)).
+
 
 ## 0.9.0
 

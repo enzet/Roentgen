@@ -110,6 +110,27 @@
                 "name": "house",
                 "unicode": ["🏠"]
             },
+            "building_door": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "door"],
+                "name": "building with door"
+            },
+            "building_bolt_door": {
+                "categories": ["building"],
+                "keywords": [
+                    "architecture", "building", "door", "bolt", "lightning",
+                    "electricity"
+                ],
+                "name": "building with door and lightning bolt"
+            },
+            "building_drop_door": {
+                "categories": ["building"],
+                "keywords": [
+                    "architecture", "building", "door", "drop", "water",
+                    "liquid"
+                ],
+                "name": "building with door and drop"
+            },
             "building_construction": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building"],
@@ -2480,19 +2501,25 @@
         "lamp_incandescent_mast_angled_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two incandescent lamps on mast, angled",
-            "shapes": [{"id": "lamp_incandescent_mast_angled_2", "version": "v0"}],
+            "shapes": [
+                {"id": "lamp_incandescent_mast_angled_2", "version": "v0"}
+            ],
             "sketch": true
         },
         "lamp_incandescent_mast_bended": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "incandescent lamp on bent mast",
-            "shapes": [{"id": "lamp_incandescent_mast_bended", "version": "v0"}],
+            "shapes": [
+                {"id": "lamp_incandescent_mast_bended", "version": "v0"}
+            ],
             "sketch": true
         },
         "lamp_incandescent_mast_bended_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two incandescent lamps on bent mast",
-            "shapes": [{"id": "lamp_incandescent_mast_bended_2", "version": "v0"}],
+            "shapes": [
+                {"id": "lamp_incandescent_mast_bended_2", "version": "v0"}
+            ],
             "sketch": true
         },
         "lamp_fluorescent_rope": {
@@ -2516,7 +2543,9 @@
         "lamp_fluorescent_mast_angled_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two fluorescent lamps on mast, angled",
-            "shapes": [{"id": "lamp_fluorescent_mast_angled_2", "version": "v0"}],
+            "shapes": [
+                {"id": "lamp_fluorescent_mast_angled_2", "version": "v0"}
+            ],
             "sketch": true
         },
         "lamp_fluorescent_mast_bended": {
@@ -2528,7 +2557,9 @@
         "lamp_fluorescent_mast_bended_2": {
             "keywords": ["outdoor", "road", "light", "illumination"],
             "name": "two fluorescent lamps on bent mast",
-            "shapes": [{"id": "lamp_fluorescent_mast_bended_2", "version": "v0"}],
+            "shapes": [
+                {"id": "lamp_fluorescent_mast_bended_2", "version": "v0"}
+            ],
             "sketch": true
         },
         "street_lamp": {

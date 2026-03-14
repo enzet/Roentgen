@@ -131,6 +131,7 @@ def load_shapes(
 
     for path in [
         Path("iconscript") / "barcode.iconscript",
+        Path("iconscript") / "building.iconscript",
         Path("iconscript") / "main.iconscript",
         Path("iconscript") / "natural.iconscript",
         Path("iconscript") / "power.iconscript",
