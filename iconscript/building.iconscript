@@ -1,8 +1,4 @@
 door = {r +0,0 +1,4}
-icon building_service = {
-    fill l 7,1.5 +6,1.5 +-1,0 +0,9 +-10,0 +0,-9 +-1,0 +6,-1.5
-    {subtract l 1,4 13,4}
-}
 icon building_door = {
     l 1,3 +12,0 fill r 2,4 +10,8
     {subtract l 1,4 +12,0 m 9,9 @door}
@@ -37,4 +33,23 @@ icon building_drop_door = {
     l 1,2 +12,0 fill r 2,3 +10,9
     {subtract l 1,3 14,3 m 9,9 @door m 5,9 @drop}
 }
-
+icon street_cabinet = {
+    fill r 2,1 +10,12
+    subtract
+    l 3,2 +3,0 l 8,2 +3,0
+    l 3,4 +3,0 l 8,4 +3,0
+}
+icon street_cabinet_bolt = {
+    fill r 2,2 +10,11
+    subtract
+    l 3,3 +3,0 l 8,3 +3,0
+    l 3,5 +3,0 l 8,5 +3,0
+    m 7,7 @bolt_small
+}
+icon street_cabinet_drop = {
+    fill r 2,1 +10,12
+    subtract
+    l 3,2 +3,0 l 8,2 +3,0
+    l 3,4 +3,0 l 8,4 +3,0
+    m 7,10 @drop
+}

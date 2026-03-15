@@ -3,7 +3,12 @@
 Add icons:
   - `building_bolt_door`,
   - `building_door`,
-  - `building_drop_door`.
+  - `building_drop_door`,
+  - `street_cabinet_bolt`,
+  - `street_cabinet_drop`.
+
+Redraw icons:
+  - `street_cabinet`.
 
 To `grid` command add `--match-in` argument.
   
