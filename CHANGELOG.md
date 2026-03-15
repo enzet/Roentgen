@@ -8,6 +8,7 @@ Add icons:
   - `street_cabinet_drop`.
 
 Redraw icons:
+  - `dumbbell`,
   - `street_cabinet`.
 
 To `grid` command add `--match-in` argument.
