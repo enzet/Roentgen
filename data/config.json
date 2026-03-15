@@ -2294,6 +2294,20 @@
                 ],
                 "name": "street cabinet"
             },
+            "street_cabinet_bolt": {
+                "keywords": [
+                    "outdoor", "equipment", "electricity", "technical",
+                    "lightning", "bolt"
+                ],
+                "name": "street cabinet with lightning bolt"
+            },
+            "street_cabinet_drop": {
+                "keywords": [
+                    "outdoor", "equipment", "technical", "drop", "water",
+                    "liquid"
+                ],
+                "name": "street cabinet with drop"
+            },
             "toy_horse": {
                 "keywords": ["play", "game"],
                 "name": "rocking horse"
