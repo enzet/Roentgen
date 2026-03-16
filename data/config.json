@@ -2634,9 +2634,7 @@
         },
         "water_from_pipe": {
             "keywords": ["water", "pipe", "liquid"],
-            "name": "water flowing down from pipe into a water surface",
-            "shapes": [{"id": "water_from_pipe", "version": "v0"}],
-            "sketch": true
+            "name": "water flowing down from pipe into a water surface"
         },
         "pitcher_pump": {
             "todo": "check version",
