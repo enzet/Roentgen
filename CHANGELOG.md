@@ -1,9 +1,12 @@
 ## Unreleased
 
 Add icons:
+  - `acorn` ([#28](https://github.com/enzet/Roentgen/issues/28)),
   - `building_bolt_door`,
   - `building_door` ([#24](https://github.com/enzet/Roentgen/issues/24)),
   - `building_drop_door`,
+  - `hazelnut`,
+  - `hazelnut_with_leaves`,
   - `street_cabinet_bolt`,
   - `street_cabinet_drop`,
   - `vending_bottle_upside_down`,

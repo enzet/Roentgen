@@ -1144,6 +1144,10 @@
         },
         "__plant": {
             "__fruit": {
+                "acorn": {
+                    "name": "acorn",
+                    "keywords": ["nut"]
+                },
                 "apple": {
                     "categories": ["natural"],
                     "unicode": ["🍎", "🍏"],
@@ -1356,6 +1360,16 @@
                 "name": "grass and flower",
                 "shapes": [{"id": "grass_and_flower", "version": "v1"}],
                 "sketch": true
+            },
+            "hazelnut": {
+                "categories": ["natural"],
+                "keywords": ["natural", "plant", "botany"],
+                "name": "hazelnut"
+            },
+            "hazelnut_with_leaves": {
+                "categories": ["natural"],
+                "keywords": ["natural", "plant", "botany"],
+                "name": "hazelnut with leaves"
             },
             "oat": {
                 "categories": ["natural"],
