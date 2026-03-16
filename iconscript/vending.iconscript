@@ -1,0 +1,13 @@
+icon vending_ice_cream = {
+    {fill r 3,1 +9,13}
+    {subtract fill r 4,3 +5,9 l 11,3 +0,1}
+    {fill e 6.5,5.5 1.5 r 5,5.5 +3,3.5}
+    {w 2 l 6.5,6.5 +0,4}
+    {subtract fill e 6.5,5.5 0.5 w 0 r 5.5,5.5 +2,3}
+}
+icon vending_ice_cream_2 = {
+    {fill r 3,1 +9,13}
+    {subtract fill r 4,3 +5,9 l 11,3 +0,1}
+    {fill e 6.5,5.5 1.5 l 5,5.5 +1.5,5.5 +1.5,-5.5}
+    {subtract l 5,7 +3,0}
+}
