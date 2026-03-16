@@ -881,6 +881,14 @@
             "name": "two people together",
             "keywords": ["group", "friends", "community", "togetherness"]
         },
+        "wig": {
+            "name": "wig",
+            "keywords": ["hair", "beauty"]
+        },
+        "wig_on_stand": {
+            "name": "wig on stand",
+            "keywords": ["hair", "beauty"]
+        },
         "woman_and_man": {
             "unicode": ["🚻"],
             "keywords": ["human", "male", "female"],
@@ -2619,15 +2627,20 @@
     },
     "__supply": {
         "well": {
-            "todo": "check version",
-            "keywords": ["water"],
+            "keywords": ["water", "liquid", "drinking"],
             "name": "well",
             "shapes": [{"id": "well", "version": "v0"}],
             "sketch": true
         },
+        "water_from_pipe": {
+            "keywords": ["water", "pipe", "liquid"],
+            "name": "water flowing down from pipe into a water surface",
+            "shapes": [{"id": "water_from_pipe", "version": "v0"}],
+            "sketch": true
+        },
         "pitcher_pump": {
             "todo": "check version",
-            "keywords": ["water"],
+            "keywords": ["water", "liquid", "drinking"],
             "name": "pitcher pump",
             "shapes": [{"id": "pitcher_pump", "version": "v0"}],
             "sketch": true

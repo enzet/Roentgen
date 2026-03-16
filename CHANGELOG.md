@@ -2,11 +2,13 @@
 
 Add icons:
   - `building_bolt_door`,
-  - `building_door`,
+  - `building_door` ([#24](https://github.com/enzet/Roentgen/issues/24)),
   - `building_drop_door`,
   - `street_cabinet_bolt`,
   - `street_cabinet_drop`,
-  - `vending_bottle_upside_down`.
+  - `vending_bottle_upside_down`,
+  - `wig`,
+  - `wig_on_stand` ([#26](https://github.com/enzet/Roentgen/issues/26)).
 
 Redraw icons:
   - `dumbbell`,
