@@ -5,7 +5,8 @@ Add icons:
   - `building_door`,
   - `building_drop_door`,
   - `street_cabinet_bolt`,
-  - `street_cabinet_drop`.
+  - `street_cabinet_drop`,
+  - `vending_bottle_upside_down`.
 
 Redraw icons:
   - `dumbbell`,

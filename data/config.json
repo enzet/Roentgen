@@ -4419,10 +4419,7 @@
         },
         "vending_bottle_upside_down": {
             "keywords": ["sell", "automat"],
-            "name": "vending machine with upside down bottle",
-            "shapes": [{"id": "vending_bottle_upside_down", "version": "v0"}],
-            "sketch": true,
-            "todo": "check name and version"
+            "name": "vending machine with an upside-down bottle"
         },
         "vending_candles": {
             "keywords": ["sell", "automat"],
