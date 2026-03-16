@@ -86,7 +86,6 @@
             },
             "apartments_6_story": {
                 "categories": ["building"],
-                "check_version": "true",
                 "keywords": ["architecture", "building", "house"],
                 "name": "five-story apartments building",
                 "shapes": [{"id": "apartments_6_story", "version": "v0"}],
@@ -310,14 +309,12 @@
             "sketch": true
         },
         "carousel": {
-            "todo": "check version",
             "keywords": ["attraction"],
             "name": "carousel",
             "shapes": [{"id": "carousel", "version": "v0"}],
             "sketch": true
         },
         "circus": {
-            "todo": "check version",
             "keywords": ["attraction"],
             "name": "circus",
             "shapes": [{"id": "circus", "version": "v0"}],
@@ -366,10 +363,9 @@
             "name": "door with arrow"
         },
         "fence": {
-            "todo": "check version",
             "keywords": ["barrier", "access"],
             "name": "fence",
-            "shapes": [{"id": "fence", "version": "v0"}],
+            "shapes": [{"id": "fence", "version": "v2"}],
             "sketch": true
         },
         "garage_door": {
@@ -399,8 +395,7 @@
             "keywords": ["access"],
             "name": "rope between two sticks",
             "shapes": [{"id": "rope_barrier", "version": "v0"}],
-            "sketch": true,
-            "todo": "check name and version"
+            "sketch": true
         }
     },
     "__body_part": {
@@ -417,7 +412,6 @@
     },
     "__burial": {
         "sarcophagus": {
-            "todo": "check version",
             "keywords": [
                 "grame", "burial", "cemetery", "underground", "memorial",
                 "archeology"
@@ -444,7 +438,6 @@
     },
     "__city": {
         "residential": {
-            "todo": "check version",
             "keywords": ["city", "town"],
             "name": "residential",
             "shapes": [{"id": "residential", "version": "v0"}],
@@ -523,18 +516,16 @@
             "name": "type E connector"
         },
         "light_bulb": {
-            "todo": "check version",
             "keywords": ["electric"],
             "name": "light bulb",
-            "shapes": [{"id": "light_bulb", "version": "v0"}],
+            "shapes": [{"id": "light_bulb", "version": "v2"}],
             "sketch": true
         },
         "no_light_bulb": {
             "keywords": ["electric"],
             "name": "light bulb striked out",
-            "shapes": [{"id": "no_light_bulb", "version": "v0"}],
-            "sketch": true,
-            "todo": "check name and version"
+            "shapes": [{"id": "no_light_bulb", "version": "v1"}],
+            "sketch": true
         }
     },
     "__electronic_device": {
@@ -831,8 +822,7 @@
             "keywords": ["food", "street", "meat", "bread", "saussage"],
             "name": "hot dog",
             "shapes": [{"id": "hot_dog", "version": "v0"}],
-            "sketch": true,
-            "todo": "check keywords, name and version"
+            "sketch": true
         },
         "ice_cream": {
             "unicode": ["🍨"],
@@ -843,19 +833,17 @@
             "keywords": ["food", "dessert"],
             "name": "ice cream cone"
         },
+        "maki_and_sticks": {
+            "keywords": [""],
+            "name": "asian sticks holding maki",
+            "shapes": [{"id": "maki_and_sticks", "version": "v2"}],
+            "sketch": true
+        },
         "noodles": {
             "keywords": ["food", "asian"],
-            "name": "boul with noodles",
-            "shapes": [{"id": "noodles", "version": "v0"}],
-            "sketch": true,
-            "todo": "check name and version"
-        },
-        "roll_and_sticks": {
-            "keywords": [""],
-            "name": "asian sticks holding sushi roll",
-            "shapes": [{"id": "roll_and_sticks", "version": "v0"}],
-            "sketch": true,
-            "todo": "check name and version"
+            "name": "bowl with noodles",
+            "shapes": [{"id": "noodles", "version": "v1"}],
+            "sketch": true
         },
         "steak_and_fork": {
             "keywords": ["food", "tool", "kitchen"],
@@ -864,17 +852,15 @@
     },
     "__human": {
         "female": {
-            "todo": "check version",
             "keywords": ["person", "human", "woman"],
             "name": "female",
-            "shapes": [{"id": "female", "version": "v0"}],
+            "shapes": [{"id": "female", "version": "v1"}],
             "sketch": true
         },
         "male": {
-            "todo": "check version",
             "keywords": ["person", "human", "man"],
             "name": "male",
-            "shapes": [{"id": "male", "version": "v0"}],
+            "shapes": [{"id": "male", "version": "v1"}],
             "sketch": true
         },
         "massage": {
@@ -903,15 +889,13 @@
     },
     "__hyg": {
         "toothbrush": {
-            "todo": "check version and keywords",
-            "keywords": ["hyg", "teeth"],
+            "keywords": ["hygiene", "teeth"],
             "name": "toothbrush",
-            "shapes": [{"id": "toothbrush", "version": "v0"}],
+            "shapes": [{"id": "toothbrush", "version": "v1"}],
             "sketch": true
         },
         "toothbrush_and_toothpaste": {
-            "todo": "check version and keywords",
-            "keywords": ["hyg", "teeth"],
+            "keywords": ["hygiene", "teeth"],
             "name": "toothbrush and toothpaste",
             "shapes": [{"id": "toothbrush_and_toothpaste", "version": "v0"}],
             "sketch": true
@@ -925,7 +909,6 @@
                 "name": "bed"
             },
             "bed_and_house": {
-                "todo": "check version",
                 "keywords": ["apartments", "hotel", "hostel"],
                 "name": "bed and house",
                 "shapes": [{"id": "bed_and_house", "version": "v0"}],
@@ -1082,8 +1065,7 @@
             "keywords": ["drink", "liquid", "juice"],
             "name": "glass",
             "shapes": [{"id": "glass", "version": "v0"}],
-            "sketch": true,
-            "todo": "check version"
+            "sketch": true
         },
         "glass_with_straw_and_slice": {
             "keywords": ["drink", "liquid", "juice"],
@@ -1358,16 +1340,14 @@
                 "keywords": ["natural", "plant", "botany"],
                 "name": "grass and water",
                 "shapes": [{"id": "grass_and_water", "version": "v0"}],
-                "sketch": true,
-                "todo": "check version"
+                "sketch": true
             },
             "grass_and_flower": {
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "grass and flower",
-                "shapes": [{"id": "grass_and_flower", "version": "v0"}],
-                "sketch": true,
-                "todo": "check version"
+                "shapes": [{"id": "grass_and_flower", "version": "v1"}],
+                "sketch": true
             },
             "oat": {
                 "categories": ["natural"],
@@ -1398,7 +1378,6 @@
     },
     "__marking": {
         "label_with_99": {
-            "todo": "check version",
             "keywords": ["marking", "sale"],
             "name": "label with \".99\" inscription",
             "shapes": [{"id": "label_with_99", "version": "v0"}],
@@ -1414,8 +1393,7 @@
             "keywords": ["material", "wood"],
             "name": "lying log",
             "shapes": [{"id": "log_lying", "version": "v0"}],
-            "sketch": true,
-            "todo": "check version"
+            "sketch": true
         },
         "wood": {
             "unicode": ["🪵"],
@@ -1700,10 +1678,6 @@
             "unicode": ["🚰"],
             "keywords": ["water", "drink"],
             "name": "tap and glass"
-        },
-        "dumbbell": {
-            "keywords": ["sports", "fitness", "weightlifting"],
-            "name": "dumbbell"
         },
         "envelope": {
             "unicode": ["\u2709\ufe0f"],
@@ -2185,6 +2159,10 @@
             "sketch": true,
             "keywords": ["skittle", "kegel", "sport", "indoor"],
             "name": "bowling pin and ball"
+        },
+        "dumbbell": {
+            "keywords": ["sports", "fitness", "weightlifting"],
+            "name": "dumbbell"
         },
         "golf_club_and_ball": {
             "categories": ["sport", "outdoor"],
