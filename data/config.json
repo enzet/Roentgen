@@ -1413,9 +1413,7 @@
         },
         "log_lying": {
             "keywords": ["material", "wood"],
-            "name": "lying log",
-            "shapes": [{"id": "log_lying", "version": "v0"}],
-            "sketch": true
+            "name": "lying log"
         },
         "wood": {
             "unicode": ["🪵"],

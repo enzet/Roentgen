@@ -7,6 +7,7 @@ Add icons:
   - `building_drop_door`,
   - `hazelnut`,
   - `hazelnut_with_leaves`,
+  - `log_lying` ([#29](https://github.com/enzet/Roentgen/issues/29)),
   - `street_cabinet_bolt`,
   - `street_cabinet_drop`,
   - `vending_bottle_upside_down`,
