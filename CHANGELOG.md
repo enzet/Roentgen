@@ -1,4 +1,4 @@
-## Unreleased
+## 0.14.0
 
 Add icons:
   - `acorn` ([#28](https://github.com/enzet/Roentgen/issues/28)),
@@ -22,7 +22,7 @@ Redraw icons:
   - `dumbbell`,
   - `street_cabinet`.
 
-To `grid` command add `--match-in` argument.
+To `grid` command add `--match-in` and `--new-in` arguments.
   
 
 ## 0.13.0
