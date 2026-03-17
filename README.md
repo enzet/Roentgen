@@ -131,6 +131,7 @@ python -m roentgen grid
 | ----------- | -------------------------------------- |
 | `--columns` | Number of columns in grid              |
 | `--filter`  | Regular expression for filtering icons |
+| `--new-in`  | Draw only icons new in a given version (e.g. `--new-in 0.13.0` or `--new-in HEAD`) |
 | `--output`  | Output SVG file                        |
 | `--scale`   | Icons scale                            |
 

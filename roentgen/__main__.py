@@ -11,6 +11,7 @@ from colour import Color
 
 from roentgen.collection import main as collections_main
 from roentgen.generator import generate
+from roentgen.history import get_new_icon_ids
 from roentgen.icon import IconSpecification, Shapes, get_icon_specifications
 from roentgen.icon_collection import IconSpecifications
 from roentgen.site import main as site_main
@@ -138,6 +139,7 @@ def load_shapes(
         Path("iconscript") / "road_surface_marking.iconscript",
         Path("iconscript") / "symbol.iconscript",
         Path("iconscript") / "transport.iconscript",
+        Path("iconscript") / "vending.iconscript",
         *generated_paths,
     ]:
         shapes.add_from_iconscript(path, iconscript_executable)
@@ -211,10 +213,15 @@ def draw_grid(arguments: argparse.Namespace) -> None:
 
     match_in: list[str] = arguments.match_in.split(",")
 
+    new_icon_ids: set[str] | None = None
+    if arguments.new_in:
+        new_icon_ids = get_new_icon_ids(arguments.new_in)
+
     specifications: list[IconSpecification] = [
         specification
         for specification in get_icon_specifications(config)
-        if bool(
+        if (new_icon_ids is None or specification.icon_id in new_icon_ids)
+        and bool(
             not pattern
             or ("id" in match_in and pattern.match(specification.icon_id))
             or ("name" in match_in and pattern.match(specification.name))
@@ -361,6 +368,12 @@ def main() -> None:
     )
     grid_parser.add_argument(
         "--columns", type=int, default=16, help="Number of columns."
+    )
+    grid_parser.add_argument(
+        "--new-in",
+        type=str,
+        default=None,
+        help="Draw only icons new in this version (e.g. 0.13.0 or HEAD).",
     )
 
     arguments: argparse.Namespace = parser.parse_args()

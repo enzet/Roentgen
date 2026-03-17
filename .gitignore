@@ -2,6 +2,7 @@
 roentgen/config.json
 roentgen/shapes.json
 
+.cache/
 .idea/
 .npmrc
 .pypirc
