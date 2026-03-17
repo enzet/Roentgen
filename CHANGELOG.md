@@ -11,6 +11,9 @@ Add icons:
   - `street_cabinet_bolt`,
   - `street_cabinet_drop`,
   - `vending_bottle_upside_down`,
+  - `vending_ice_cream_cone`,
+  - `vending_ice_cream_stick`,
+  - `vending_bottle_upside_down`,
   - `water_from_pipe` ([#27](https://github.com/enzet/Roentgen/issues/27)),
   - `wig`,
   - `wig_on_stand` ([#26](https://github.com/enzet/Roentgen/issues/26)).

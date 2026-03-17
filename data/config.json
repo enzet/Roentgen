@@ -87,7 +87,7 @@
             "apartments_6_story": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "house"],
-                "name": "five-story apartments building",
+                "name": "six-story apartments building",
                 "shapes": [{"id": "apartments_6_story", "version": "v0"}],
                 "sketch": true
             },
@@ -523,7 +523,7 @@
         },
         "no_light_bulb": {
             "keywords": ["electric"],
-            "name": "light bulb striked out",
+            "name": "light bulb struck out",
             "shapes": [{"id": "no_light_bulb", "version": "v1"}],
             "sketch": true
         }
@@ -2014,7 +2014,7 @@
             "keywords": ["flag", "banner", "country", "symbol"]
         },
         "wretch_and_hammer": {
-            "name": "wretch and hammer",
+            "name": "wrench and hammer",
             "keywords": ["tool"]
         },
         "exchange___dollar___pound": {
@@ -3563,7 +3563,7 @@
                 "sketch": true
             },
             "5g_middle": {
-                "name": "medius size 5G inscription",
+                "name": "medium size 5G inscription",
                 "keywords": ["5G", "5th generation", "wireless"],
                 "shapes": [{"id": "5g_middle", "version": "v1"}],
                 "sketch": true
@@ -4466,6 +4466,14 @@
         "vending_excrement_bag": {
             "keywords": ["sell", "automat"],
             "name": "excrement bag vending"
+        },
+        "vending_ice_cream_stick": {
+            "keywords": ["sell", "automat", "food", "sweet"],
+            "name": "vending machine with ice cream on stick"
+        },
+        "vending_ice_cream_cone": {
+            "keywords": ["sell", "automat", "food", "sweet"],
+            "name": "vending machine with cone ice cream"
         },
         "vending_machine": {
             "keywords": ["sell", "automat"],
