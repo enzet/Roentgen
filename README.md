@@ -7,8 +7,9 @@ can use them freely, but please give the appropriate credit.
 Röntgen was created for the [Map Machine](http://github.com/enzet/map-machine)
 project to represent different map features from the OpenStreetMap database.
 However, it can be easily used for any map project or even for non-map-related
-projects. Some icons can also be used as emoji symbols. Version 0.1 of Röntgen
-is used in [iD editor](https://github.com/openstreetmap/iD) for OpenStreetMap.
+projects. Some icons can also be used as emoji symbols. Several of Röntgen icons
+are used in [iD editor](https://github.com/openstreetmap/iD) for OpenStreetMap
+and [other projects using icons from iD tagging schema](https://github.com/openstreetmap/id-tagging-schema/wiki/Projects-that-are-using-this-tagging-schema).
 
 To use the icons, you can
   - browse and download them from the
