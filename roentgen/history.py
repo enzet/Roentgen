@@ -4,8 +4,7 @@ import json
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-
-from defusedxml.ElementTree import parse as parse_xml
+from xml.etree.ElementTree import parse as parse_xml
 
 REPO = Path(__file__).parent.parent
 TAGS = [f"v0.{minor}.0" for minor in range(1, 14)]
@@ -55,7 +54,7 @@ def get_head_icons() -> dict[str, str | None]:
         return {}
     result = {}
     for svg_file in icons_dir.glob("*.svg"):
-        root = parse_xml(svg_file).getroot()
+        root = parse_xml(svg_file).getroot()  # noqa: S314
         path_el = root.find(f"{{{SVG_NS}}}path")
         icon_id = svg_file.stem.removeprefix("roentgen_")
         result[icon_id] = path_el.get("d") if path_el is not None else None
