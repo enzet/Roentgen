@@ -1,3 +1,14 @@
+## Unreleased
+
+Redraw icons:
+  - `tree`,
+  - `tree___bottom_right_horizontal_line`,
+  - `tree___urban_tree_pot`,
+  - `tree_with_leaf`,
+  - `tree_with_leaf___bottom_right_horizontal_line`,
+  - `tree_with_leaf___urban_tree_pot`.
+
+
 ## 0.14.0
 
 Add icons:
@@ -22,7 +33,7 @@ Redraw icons:
   - `street_cabinet`.
 
 To `grid` command add `--match-in` and `--new-in` arguments.
-  
+
 
 ## 0.13.0
 
