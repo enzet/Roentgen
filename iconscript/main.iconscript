@@ -10,6 +10,12 @@ icon advertising_column = {
     {subtract l 4,13 +7,0 l 4,4 +7,0}
     l 4,14 +7,0
 }
+icon advertising_totem = {
+    l 5,1 +0,13
+    l 10,1 +0,13
+    {fill r 5,1 +5,9}
+    {subtract l 6,3 +2,0 l 6,5 +1,0 l 6,7 +2,0}
+}
 icon billboard = {
     {fill l 2,2 13,2 13,8 2,8 2,2}
     {fill l 7,13 8,13 8,8 7,8 7,13}

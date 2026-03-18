@@ -1,5 +1,8 @@
 ## Unreleased
 
+Add icons:
+  - `advertising_totem`.
+
 Redraw icons:
   - `tree`,
   - `tree___bottom_right_horizontal_line`,

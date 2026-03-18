@@ -22,5 +22,6 @@ raster/
 release/
 roentgen.egg-info/
 site/
+social/
 uv.lock
 work/

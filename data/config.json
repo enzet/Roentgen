@@ -2313,8 +2313,13 @@
         },
         "advertising_column": {
             "categories": ["amenity"],
-            "keywords": ["sign", "billboard"],
+            "keywords": ["sign"],
             "name": "advertising column"
+        },
+        "advertising_totem": {
+            "categories": ["amenity"],
+            "keywords": ["sign"],
+            "name": "advertising totem"
         },
         "bench": {
             "categories": ["amenity"],
