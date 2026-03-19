@@ -1187,6 +1187,11 @@
                     "unicode": ["🎄"],
                     "name": "Christmas tree"
                 },
+                "dead_tree": {
+                    "categories": ["natural"],
+                    "keywords": ["natural"],
+                    "name": "dead tree"
+                },
                 "needleleaved_tree": {
                     "categories": ["natural"],
                     "keywords": ["natural", "tree"],

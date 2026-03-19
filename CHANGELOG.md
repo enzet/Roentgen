@@ -1,7 +1,8 @@
 ## Unreleased
 
 Add icons:
-  - `advertising_totem`.
+  - `advertising_totem` ([#32](https://github.com/enzet/Roentgen/issues/32)),
+  - `dead_tree` ([#29](https://github.com/enzet/Roentgen/issues/29)).
 
 Redraw icons:
   - `tree`,
