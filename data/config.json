@@ -2127,6 +2127,12 @@
         "buoy": {
             "keywords": ["sea", "water", "ocean", "lake"],
             "name": "buoy"
+        },
+        "sinking_ship": {
+            "keywords": [
+                "sea", "water", "ocean", "ship", "boat", "vessel", "disaster"
+            ],
+            "name": "sinking ship"
         }
     },
     "__space": {
