@@ -2121,16 +2121,16 @@
     "__sea": {
         "anchor": {
             "unicode": ["⚓"],
-            "keywords": ["ship", "boat", "vessel", "sea", "ocean"],
+            "keywords": ["ship", "boat", "vessel", "sea", "ocean", "marine"],
             "name": "anchor"
         },
         "buoy": {
-            "keywords": ["sea", "water", "ocean", "lake"],
+            "keywords": ["sea", "water", "ocean", "lake", "marine"],
             "name": "buoy"
         },
         "sinking_ship": {
             "keywords": [
-                "sea", "water", "ocean", "ship", "boat", "vessel", "disaster"
+                "sea", "water", "ocean", "ship", "boat", "vessel", "disaster", "catastrophe", "marine"
             ],
             "name": "sinking ship"
         }
