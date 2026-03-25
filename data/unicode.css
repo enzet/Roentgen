@@ -1,0 +1,9 @@
+body { font-family: sans-serif; }
+table { border-collapse: collapse; }
+th, td {border: 1px inset;padding: 4px 4px;text-align: center;/* vertical-align: middle; *//* min-width: 2em; */}
+th {/* background: #f0f0f0; */font-size: 0.8em;}
+.cell {display: flex;flex-direction: column;align-items: center;gap: 4px;}
+.symbol { font-size: 1.4em; }
+.no-icon {/* color: #aaa; */font-size: 1.8em;}
+img { width: 32px; height: 32px; }
+td:first-child {font-size: 0.8em;/* font-weight: bold; *//* background: #f0f0f0; */}

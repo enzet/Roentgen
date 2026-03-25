@@ -239,6 +239,7 @@
     },
     "__astronomy": {
         "sun": {
+            "unicode": ["☀️"],
             "keywords": ["star", "light"],
             "name": "Sun",
             "shapes": [{"id": "sun", "version": "v0"}],
@@ -363,7 +364,8 @@
         "entrance": {
             "categories": ["barrier"],
             "keywords": ["access", "interior", "exterior"],
-            "name": "door"
+            "name": "door",
+            "unicode": ["🚪"]
         },
         "exit": {
             "categories": ["barrier"],
@@ -454,6 +456,7 @@
     },
     "__clothes": {
         "glasses": {
+            "unicode": ["👓"],
             "keywords": ["lense", "optical"],
             "name": "glasses"
         },
@@ -462,6 +465,7 @@
             "name": "hanger"
         },
         "shoe": {
+            "unicode": ["👞"],
             "keywords": ["clothes", "footwear", "fashion"],
             "name": "shoe"
         },
@@ -538,6 +542,7 @@
     },
     "__electronic_device": {
         "arcade": {
+            "unicode": ["🕹️"],
             "keywords": ["game", "entertainment", "machine"],
             "name": "arcade",
             "shapes": [{"id": "arcade", "version": "v0"}],
@@ -590,6 +595,7 @@
             "name": "photo camera"
         },
         "slot_machine": {
+            "unicode": ["🎰"],
             "keywords": ["game", "entertainment", "casino"],
             "name": "slot machine",
             "shapes": [{"id": "slot_machine", "version": "v0"}],
@@ -827,6 +833,7 @@
             "name": "cupcake"
         },
         "hot_dog": {
+            "unicode": ["🌭"],
             "keywords": ["food", "street", "meat", "bread", "saussage"],
             "name": "hot dog",
             "shapes": [{"id": "hot_dog", "version": "v0"}],
@@ -838,40 +845,47 @@
             "name": "ice cream"
         },
         "ice_cream_2": {
+            "unicode": ["🍦"],
             "keywords": ["food", "dessert"],
             "name": "ice cream cone"
         },
         "maki_and_sticks": {
+            "unicode": ["🍣"],
             "keywords": [""],
             "name": "asian sticks holding maki",
             "shapes": [{"id": "maki_and_sticks", "version": "v2"}],
             "sketch": true
         },
         "noodles": {
+            "unicode": ["🍜"],
             "keywords": ["food", "asian"],
             "name": "bowl with noodles",
             "shapes": [{"id": "noodles", "version": "v1"}],
             "sketch": true
         },
         "steak_and_fork": {
+            "unicode": ["🥩"],
             "keywords": ["food", "tool", "kitchen"],
             "name": "steak and fork"
         }
     },
     "__human": {
         "female": {
+            "unicode": ["♀️"],
             "keywords": ["person", "human", "woman"],
             "name": "female",
             "shapes": [{"id": "female", "version": "v1"}],
             "sketch": true
         },
         "male": {
+            "unicode": ["♂️"],
             "keywords": ["person", "human", "man"],
             "name": "male",
             "shapes": [{"id": "male", "version": "v1"}],
             "sketch": true
         },
         "massage": {
+            "unicode": ["💆"],
             "keywords": ["spa", "wellness", "relaxation"],
             "name": "massage"
         },
@@ -951,6 +965,7 @@
                 "name": "drawer"
             },
             "sofa": {
+                "unicode": ["🛋️"],
                 "keywords": ["furniture", "sitting"],
                 "name": "sofa",
                 "shapes": [{"id": "sofa", "version": "v1"}],
@@ -966,6 +981,7 @@
             "name": "curtains"
         },
         "elevator": {
+            "unicode": ["🛗"],
             "keywords": ["transport", "building", "arrows", "lift"],
             "name": "elevator"
         },
@@ -994,7 +1010,7 @@
     },
     "__information": {
         "book": {
-            "unicode": ["📕"],
+            "unicode": ["📕", "📗", "📘", "📙"],
             "keywords": ["reading", "literature"],
             "name": "book"
         },
@@ -1024,6 +1040,7 @@
     },
     "__kitchen": {
         "amphora": {
+            "unicode": ["🏺"],
             "keywords": ["storage", "historic", "archeology"],
             "name": "amphora"
         },
@@ -1041,10 +1058,12 @@
             "name": "bottle"
         },
         "bottle_and_wine_glass": {
+            "unicode": ["🍷"],
             "keywords": ["drink", "liquid"],
             "name": "wine bottle and wine glass"
         },
         "bubble_tea": {
+            "unicode": ["🧋"],
             "keywords": ["drink", "liquid", "boba", "tapioca"],
             "shapes": [{"id": "bubble_tea", "version": "v3"}],
             "sketch": true,
@@ -1056,7 +1075,7 @@
             "name": "cocktail glass"
         },
         "cocktail_glass_with_straw": {
-            "unicode": ["🍸"],
+            "unicode": ["🍹"],
             "keywords": ["drink", "liquid", "alcohol"],
             "name": "cocktail glass with straw"
         },
@@ -1335,6 +1354,7 @@
                 "name": "cactus"
             },
             "ear_botany": {
+                "unicode": ["🌾"],
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "ear (botany)"
@@ -1345,6 +1365,7 @@
                 "name": "ear (botany, 2)"
             },
             "flower_in_pot": {
+                "unicode": ["🪴"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "flower in pot"
             },
@@ -1354,6 +1375,7 @@
                 "name": "three grapes"
             },
             "grapes_2": {
+                "unicode": ["🍇"],
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "eight grapes"
@@ -1415,6 +1437,7 @@
                 "name": "rape (2)"
             },
             "sunflower": {
+                "unicode": ["🌻"],
                 "categories": ["natural"],
                 "keywords": ["natural", "plant", "botany"],
                 "name": "sunflower"
@@ -1477,7 +1500,6 @@
         "shield_volcano": {
             "categories": ["natural"],
             "keywords": ["natural", "mountain"],
-            "unicode": ["🌋"],
             "name": "shield volcano"
         },
         "smoke": {
@@ -1509,7 +1531,6 @@
         "stratovolcano": {
             "categories": ["natural"],
             "keywords": ["natural", "mountain"],
-            "unicode": ["🌋"],
             "name": "stratovolcano"
         },
         "stratovolcano___smoke_2": {
@@ -1536,6 +1557,7 @@
         "stratovolcano___lava": {
             "name": "stratovolcano with lava",
             "keywords": ["natural", "mountain", "eruption"],
+            "unicode": ["🌋"],
             "shapes": [
                 {"id": "stratovolcano"}, {"id": "lava", "offset": [0, -3]}
             ]
@@ -1589,6 +1611,7 @@
     },
     "__navigation": {
         "compass": {
+            "unicode": ["🧭"],
             "keywords": ["navigation", "direction"],
             "name": "compass",
             "shapes": [{"id": "compass", "version": "v1"}],
@@ -1610,6 +1633,7 @@
     },
     "__other": {
         "atm": {
+            "unicode": ["🏧"],
             "keywords": ["bank", "money", "finance", "cash"],
             "name": "bill acceptor"
         },
@@ -1636,6 +1660,7 @@
             "keywords": ["border", "edge", "corner", "line"]
         },
         "briefcase": {
+            "unicode": ["💼"],
             "keywords": ["office", "business"],
             "name": "briefcase"
         },
@@ -1656,7 +1681,6 @@
             "name": "chimney"
         },
         "clock": {
-            "unicode": ["⌚"],
             "keywords": ["time"],
             "name": "clock"
         },
@@ -1747,6 +1771,7 @@
             "name": "fire pit"
         },
         "fishing_angle": {
+            "unicode": ["🎣"],
             "keywords": ["outdoor", "recreation"],
             "name": "fishing angle"
         },
@@ -1783,10 +1808,12 @@
             "name": "gift box"
         },
         "globe": {
+            "unicode": ["🌐"],
             "keywords": ["world", "earth", "planet"],
             "name": "globe"
         },
         "government": {
+            "unicode": ["🏛️"],
             "keywords": ["building", "politics", "administration"],
             "name": "building with dome and flag"
         },
@@ -1860,6 +1887,7 @@
             "keywords": ["marker", "distance", "road", "sign"]
         },
         "money": {
+            "unicode": ["💰"],
             "name": "banknotes",
             "keywords": ["cash", "currency", "money"]
         },
@@ -1916,6 +1944,7 @@
             "keywords": ["shop", "store", "market", "retail"]
         },
         "shower": {
+            "unicode": ["🚿"],
             "name": "shower",
             "keywords": ["bathroom", "water", "wash", "clean"]
         },
@@ -1998,6 +2027,7 @@
             "keywords": ["road", "payment", "barrier", "highway"]
         },
         "torch": {
+            "unicode": ["🔦"],
             "name": "torch",
             "keywords": ["fire", "light", "flame"]
         },
@@ -2037,6 +2067,7 @@
             "keywords": ["flag", "banner", "country", "symbol"]
         },
         "wretch_and_hammer": {
+            "unicode": ["🛠️"],
             "name": "wrench and hammer",
             "keywords": ["tool"]
         },
@@ -2080,6 +2111,7 @@
     },
     "__recycling": {
         "recycling_container": {
+            "unicode": ["♻️"],
             "name": "recycling container with wheel",
             "keywords": ["bin", "waste"]
         },
@@ -2223,26 +2255,29 @@
         },
         "bowling_ball": {
             "categories": ["sport", "indoor"],
-            "unicode": ["🎳"],
             "keywords": ["sport", "indoor"],
             "name": "bowling ball"
         },
         "bowling_pin_and_ball": {
+            "unicode": ["🎳"],
             "shapes": [{"id": "bowling_pin_and_ball", "version": "v0"}],
             "sketch": true,
             "keywords": ["skittle", "kegel", "sport", "indoor"],
             "name": "bowling pin and ball"
         },
         "dumbbell": {
+            "unicode": ["🏋️"],
             "keywords": ["sports", "fitness", "weightlifting"],
             "name": "dumbbell"
         },
         "golf_club_and_ball": {
+            "unicode": ["🏌️"],
             "categories": ["sport", "outdoor"],
             "keywords": ["sport", "outdoor", "grass"],
             "name": "golf club and ball"
         },
         "golf_pin": {
+            "unicode": ["⛳"],
             "categories": ["sport", "outdoor", "grass"],
             "keywords": ["sport", "outdoor", "grass"],
             "name": "golf pin"
@@ -2498,7 +2533,8 @@
         "billboard": {
             "categories": ["amenity"],
             "keywords": ["sign", "advertising"],
-            "name": "billboard"
+            "name": "billboard",
+            "unicode": ["🪧"]
         },
         "fountain": {
             "categories": ["amenity"],
@@ -2810,10 +2846,12 @@
                 "name": "circle with dot"
             },
             "clockwise": {
+                "unicode": ["🔃"],
                 "keywords": ["direction", "circle", "rotation"],
                 "name": "clockwise arrow"
             },
             "counterclockwise": {
+                "unicode": ["🔄"],
                 "keywords": ["direction", "circle", "rotation"],
                 "name": "counterclockwise arrow"
             },
@@ -2981,6 +3019,7 @@
                     "sketch": true
                 },
                 "dollar": {
+                    "unicode": ["$"],
                     "name": "US dollar sign",
                     "keywords": ["money", "currency", "usd"]
                 },
@@ -2991,6 +3030,7 @@
                     "sketch": true
                 },
                 "ruble": {
+                    "unicode": ["₽"],
                     "name": "Russian ruble sign",
                     "keywords": ["russia", "currency"],
                     "shapes": [{"id": "ruble", "version": "v0"}],
@@ -4099,6 +4139,7 @@
                 "keywords": ["historic"]
             },
             "pound": {
+                "unicode": ["£"],
                 "name": "pound sign",
                 "keywords": ["currency"]
             }
@@ -4109,7 +4150,7 @@
                 "name": "baptist symbol"
             },
             "crescent": {
-                "unicode": ["☪️"],
+                "unicode": ["☪️", "🌙"],
                 "keywords": ["islam", "religion"],
                 "name": "crescent"
             },
@@ -4118,6 +4159,7 @@
                 "name": "cross and horizontal bar"
             },
             "dharmachakra": {
+                "unicode": ["☸️"],
                 "keywords": ["hindu", "religion"],
                 "name": "dharmachakra"
             },
@@ -4135,6 +4177,7 @@
                 "name": "Latin cross"
             },
             "om_ligature": {
+                "unicode": ["🕉️"],
                 "keywords": ["devanagari", "religion", "hinduism"],
                 "name": "Om ligature in Devanagari script",
                 "shapes": [{"id": "om_ligature", "version": "v0"}],
@@ -4157,6 +4200,7 @@
                 "name": "Star of David"
             },
             "yin_and_yang": {
+                "unicode": ["☯️"],
                 "keywords": ["religion", "chinese", "taoism"],
                 "name": "yin and yang",
                 "shapes": [{"id": "yin_and_yang", "version": "v2"}],
@@ -4197,6 +4241,7 @@
     },
     "__technique": {
         "crane": {
+            "unicode": ["🏗️"],
             "name": "crane",
             "keywords": ["construction", "technical", "lifting"]
         },
@@ -4329,6 +4374,7 @@
             ]
         },
         "observatory": {
+            "unicode": ["🔭"],
             "keywords": ["telescope", "optical", "science", "research"],
             "name": "observatory"
         },
@@ -4546,6 +4592,7 @@
             "name": "gamma telescope"
         },
         "telescope_radio": {
+            "unicode": ["📡"],
             "name": "radio telescope"
         },
         "tower": {
@@ -4711,7 +4758,8 @@
                 "shapes": [
                     {"id": "bicycle", "offset": [0, 2]},
                     {"id": "x_4", "offset": [-4, -4]}
-                ]
+                ],
+                "unicode": ["🚳"]
             },
             "bicycle___wrench": {
                 "name": "bicycle with wrench",
@@ -4730,6 +4778,7 @@
                 "keywords": ["transport", "bicycle", "lock"]
             },
             "motorcycle": {
+                "unicode": ["🏍️"],
                 "keywords": ["transport", "bike"],
                 "name": "motorcycle",
                 "shapes": [{"id": "motorcycle", "version": "v0"}],
@@ -4742,6 +4791,7 @@
                 "name": "skateboard"
             },
             "scooter": {
+                "unicode": ["🛴"],
                 "keywords": ["transport", "sport"],
                 "name": "scooter",
                 "shapes": [{"id": "scooter", "version": "v1"}],
@@ -4754,6 +4804,7 @@
             }
         },
         "boat": {
+            "unicode": ["⛵"],
             "todo": "check version",
             "keywords": ["transport", "water", "ship"],
             "name": "boat",
@@ -4772,6 +4823,7 @@
             "name": "two buses"
         },
         "car": {
+            "unicode": ["🚗"],
             "name": "car",
             "keywords": ["transport", "automobile", "vehicle"]
         },
@@ -4834,11 +4886,13 @@
             "sketch": true
         },
         "maglev": {
+            "unicode": ["🚄"],
             "categories": ["public transport"],
             "keywords": ["transport", "magnetic", "levitation"],
             "name": "maglev"
         },
         "monorail": {
+            "unicode": ["🚝"],
             "categories": ["public transport"],
             "keywords": ["transport", "railway"],
             "name": "monorail"
@@ -4855,6 +4909,7 @@
             "keywords": ["train", "monorail", "transport", "bridge"]
         },
         "taxi": {
+            "unicode": ["🚕"],
             "categories": ["public transport"],
             "keywords": ["transport", "car"],
             "name": "taxi sign"
@@ -4872,6 +4927,7 @@
             "name": "tram"
         },
         "trolleybus": {
+            "unicode": ["🚎"],
             "categories": ["public transport"],
             "keywords": ["transport", "electric"],
             "name": "trolleybus"
