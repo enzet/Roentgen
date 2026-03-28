@@ -2,8 +2,10 @@
 
 Add icons:
   - `advertising_totem` ([#32](https://github.com/enzet/Roentgen/issues/32)),
+  - `breakwater` ([#39](https://github.com/enzet/Roentgen/issues/39)),
+  - `dam` ([#39](https://github.com/enzet/Roentgen/issues/39)),
   - `dead_tree` ([#29](https://github.com/enzet/Roentgen/issues/29)),
-  - `sinking_ship`([#34](https://github.com/enzet/Roentgen/issues/34)).
+  - `sinking_ship` ([#34](https://github.com/enzet/Roentgen/issues/34)).
 
 Redraw icons:
   - `cocktail_glass_with_straw`,

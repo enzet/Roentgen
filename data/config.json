@@ -1305,6 +1305,16 @@
                     ]
                 }
             },
+            "__vegetable": {
+                "carrot": {
+                    "categories": ["natural"],
+                    "unicode": ["🥕"],
+                    "keywords": ["food", "vegetable", "natural"],
+                    "name": "carrot",
+                    "shapes": [{"id": "carrot", "version": "v0"}],
+                    "sketch": true
+                }
+            },
             "bush": {
                 "categories": ["natural"],
                 "keywords": ["natural", "scrub", "shrub"],
@@ -2124,9 +2134,17 @@
             "keywords": ["ship", "boat", "vessel", "sea", "ocean", "marine"],
             "name": "anchor"
         },
+        "breakwater": {
+            "keywords": ["sea", "water", "ocean", "coast", "harbor"],
+            "name": "breakwater"
+        },
         "buoy": {
             "keywords": ["sea", "water", "ocean", "lake", "marine"],
             "name": "buoy"
+        },
+        "dam": {
+            "keywords": ["water", "river", "hydroelectric", "barrier"],
+            "name": "dam"
         },
         "sinking_ship": {
             "keywords": [
@@ -2179,6 +2197,22 @@
         }
     },
     "__sport": {
+        "baseball": {
+            "categories": ["sport"],
+            "unicode": ["⚾"],
+            "keywords": ["sport", "baseball", "ball"],
+            "name": "baseball",
+            "shapes": [{"id": "baseball", "version": "v0"}],
+            "sketch": true
+        },
+        "basketball": {
+            "categories": ["sport"],
+            "unicode": ["🏀"],
+            "keywords": ["sport", "basketball", "ball"],
+            "name": "basketball",
+            "shapes": [{"id": "basketball", "version": "v0"}],
+            "sketch": true
+        },
         "bowling_ball": {
             "categories": ["sport", "indoor"],
             "unicode": ["🎳"],
@@ -2234,6 +2268,13 @@
             "categories": ["sport"],
             "keywords": ["sport", "bench"],
             "name": "incline bench"
+        },
+        "person_throwing_spear": {
+            "categories": ["sport"],
+            "keywords": ["sport", "athletics", "javelin", "spear"],
+            "name": "person throwing spear",
+            "shapes": [{"id": "person_throwing_spear", "version": "v0"}],
+            "sketch": true
         },
         "tower_climbing": {
             "todo": "check version",
@@ -3547,7 +3588,8 @@
                 "keywords": ["devanagari", "religion", "hinduism"],
                 "name": "Om ligature in Devanagari script",
                 "shapes": [{"id": "om_ligature", "version": "v0"}],
-                "sketch": true
+                "sketch": true,
+                "unicode": ["🕉"]
             },
             "orthodox": {
                 "keywords": ["christian", "religion"],
