@@ -99,8 +99,8 @@ def match_tags(pattern: str, tags: dict[str, str]) -> bool:
     return True
 
 
-def get_shapes(tags_data: dict[str, Any], tags: dict[str, str]) -> list[str]:
-    """Get the shapes for a given set of tags."""
+def get_icon_ids(tags_data: dict[str, Any], tags: dict[str, str]) -> list[str]:
+    """Get the icon IDs for a given set of tags."""
 
     result = {}
 
@@ -108,7 +108,7 @@ def get_shapes(tags_data: dict[str, Any], tags: dict[str, str]) -> list[str]:
         if pattern.startswith("__"):
             continue
         if match_tags(pattern, tags):
-            result[pattern] = data.get("shapes", [])
+            result[pattern] = data.get("icons", [])
 
     return result[sorted(result.keys(), key=len)[-1]]
 
@@ -170,21 +170,21 @@ def draw_row(
     roentgen_cell = html.Element("td")
     roentgen_cell.set("class", "imgs")
 
-    roentgen_shapes = tags_data.get(
+    roentgen_icons = tags_data.get(
         tags_to_descriptor(collection.tags | row_tag), {}
-    ).get("shapes", [])
+    ).get("icons", [])
 
-    if not roentgen_shapes:
+    if not roentgen_icons:
         txt_element = html.Element("span")
         txt_element.text = str(tags_to_descriptor(collection.tags | row_tag))
         roentgen_cell.append(txt_element)
     else:
-        for shape in roentgen_shapes:
+        for icon_id in roentgen_icons:
             img_element = html.Element("img")
-            if Path("icons", f"{shape}.svg").exists():
-                img_element.set("src", f"../icons/{shape}.svg")
-            elif Path("icons_sketches", f"{shape}.svg").exists():
-                img_element.set("src", f"../icons_sketches/{shape}.svg")
+            if Path("icons", f"{icon_id}.svg").exists():
+                img_element.set("src", f"../icons/{icon_id}.svg")
+            elif Path("icons_sketches", f"{icon_id}.svg").exists():
+                img_element.set("src", f"../icons_sketches/{icon_id}.svg")
                 img_element.set("class", "sketch")
             roentgen_cell.append(img_element)
 
@@ -296,13 +296,13 @@ def add_2d_table(
             cell = html.Element("td")
             cell.set("class", "cell")
 
-            roentgen_shapes = get_shapes(tags_data, tags)
-            for shape in roentgen_shapes:
+            roentgen_icons = get_icon_ids(tags_data, tags)
+            for icon_id in roentgen_icons:
                 img_element = html.Element("img")
-                if Path("icons", f"{shape}.svg").exists():
-                    img_element.set("src", f"../icons/{shape}.svg")
-                elif Path("icons_sketches", f"{shape}.svg").exists():
-                    img_element.set("src", f"../icons_sketches/{shape}.svg")
+                if Path("icons", f"{icon_id}.svg").exists():
+                    img_element.set("src", f"../icons/{icon_id}.svg")
+                elif Path("icons_sketches", f"{icon_id}.svg").exists():
+                    img_element.set("src", f"../icons_sketches/{icon_id}.svg")
                     img_element.set("class", "sketch")
                 cell.append(img_element)
 

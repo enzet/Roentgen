@@ -110,7 +110,7 @@ class PathOnCanvas:
 
 @dataclass
 class Shape:
-    """SVG icon path description."""
+    """Single SVG path."""
 
     paths: dict[str, PathOnCanvas]
     """Paths and their offsets for different versions."""
@@ -695,7 +695,7 @@ class IconSpecification:
     """
 
     is_part: bool = False
-    """If shape is used only as a part of other icons."""
+    """If icon is used only as a part of other icons."""
 
     group: str = ""
     """Hierarchical icon group.  Is used for icon sorting."""
@@ -780,11 +780,11 @@ class IconSpecification:
         return self.name
 
     def has_categories(self) -> bool:
-        """Check whether oll shape categories are known."""
+        """Check whether all icon categories are known."""
         return bool(self.categories)
 
     def get_categories(self) -> set[str]:
-        """Get all shape names in the icon."""
+        """Get all icon categories."""
         return self.categories
 
     def draw(

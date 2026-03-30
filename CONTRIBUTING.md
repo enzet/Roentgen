@@ -13,6 +13,14 @@ However, the following contributions are **highly welcome**:
   - Suggest new icons or design changes (please open an issue for discussion).
   - Improvements and bugfixes in the Python code (pull requests are welcome).
 
+## Terminology
+
+- **Shape**: a single SVG path created by iconscript or extracted from an SVG
+  sketch file. It has only an `id` and the path data itself.
+- **Icon**: a visual symbol described in `data/config.json`. It has an `id`,
+  human-readable `name`, `keywords`, categories, and one or more shape
+  references.
+
 ## Setup Development Environment
 
   1. Install development dependencies: `pip install -e .[dev]`.

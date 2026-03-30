@@ -371,14 +371,14 @@ def construct_table(
         if roentgen_scheme.is_ignored(tag) or id_scheme.is_ignored(tag):
             continue
 
-        roentgen_shapes: list[str] = roentgen_scheme.shapes.get(
+        roentgen_icons: list[str] = roentgen_scheme.icons.get(
             tag.descriptor, []
         )
         id_tagging_icon: str | None = id_scheme.icons.get(tag.descriptor, None)
 
         element: Element = Element(
             tag=tag.descriptor,
-            roentgen_shapes=roentgen_shapes,
+            roentgen_icons=roentgen_icons,
             id_tagging_icon=id_tagging_icon,
             total_count=tag.total_count,
         )
@@ -437,7 +437,7 @@ class Element:
     """OpenStreetMap tag."""
 
     tag: str
-    roentgen_shapes: list[str]
+    roentgen_icons: list[str]
     id_tagging_icon: str | None
     total_count: int
 
@@ -487,7 +487,7 @@ def add_table(
             ):
                 is_placeholder = True
 
-        roentgen_usages += int(bool(element.roentgen_shapes))
+        roentgen_usages += int(bool(element.roentgen_icons))
         if is_placeholder:
             row.set("style", "background-color: #FFEEFF;")
         else:
@@ -530,7 +530,7 @@ def add_table(
         imgs_cell.set("class", "imgs")
         row.append(imgs_cell)
 
-        for img in element.roentgen_shapes:
+        for img in element.roentgen_icons:
             img_element = html.Element("img")
             img_element.set("class", "lazy-svg")
             if Path("icons", f"{img}.svg").exists():
@@ -743,7 +743,7 @@ def load_key_values(
 class RoentgenScheme:
     """Roentgen scheme."""
 
-    shapes: dict[str, list[str]]
+    icons: dict[str, list[str]]
     ignored: list[str]
     only_ways: list[str]
 
@@ -751,8 +751,8 @@ class RoentgenScheme:
     def from_dict(cls, scheme: dict[str, Any]) -> RoentgenScheme:
         """Create a RoentgenScheme from a dictionary."""
         return cls(
-            shapes={
-                key: value["shapes"]
+            icons={
+                key: value["icons"]
                 for key, value in scheme.items()
                 if key not in ("__ignore", "__only_ways")
             },
@@ -769,7 +769,7 @@ class RoentgenScheme:
 
     def get_tags(self) -> list[TagInfo]:
         """Get all tags."""
-        return [TagInfo(descriptor=key, total_count=0) for key in self.shapes]
+        return [TagInfo(descriptor=key, total_count=0) for key in self.icons]
 
 
 @dataclass
