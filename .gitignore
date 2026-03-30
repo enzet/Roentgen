@@ -21,6 +21,7 @@ python-package/dist/
 raster/
 release/
 roentgen.egg-info/
+shapes/
 site/
 social/
 uv.lock

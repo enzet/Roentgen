@@ -1,5 +1,7 @@
 ## Unreleased
 
+Create `shapes` directory with `icons` command.
+
 Add icons:
   - `advertising_totem` ([#32](https://github.com/enzet/Roentgen/issues/32)),
   - `breakwater` ([#39](https://github.com/enzet/Roentgen/issues/39)),

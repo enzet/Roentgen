@@ -7,7 +7,7 @@ from pathlib import Path
 from xml.etree.ElementTree import parse as parse_xml
 
 REPO = Path(__file__).parent.parent
-TAGS = [f"v0.{minor}.0" for minor in range(1, 14)]
+TAGS = [f"v0.{minor}.0" for minor in range(1, 15)]
 CACHE_DIR = REPO / ".cache" / "history"
 
 
