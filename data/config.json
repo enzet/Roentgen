@@ -2269,6 +2269,14 @@
             "keywords": ["sport", "bench"],
             "name": "incline bench"
         },
+        "person_playing_water_polo": {
+            "categories": ["sport"],
+            "keywords": ["sport", "ball", "water"],
+            "name": "person playing water polo",
+            "shapes": [{"id": "person_playing_water_polo", "version": "v0"}],
+            "sketch": true,
+            "unicode": ["🤽"]
+        },
         "person_throwing_spear": {
             "categories": ["sport"],
             "keywords": ["sport", "athletics", "javelin", "spear"],
