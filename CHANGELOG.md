@@ -7,7 +7,8 @@ Add icons:
   - `breakwater` ([#39](https://github.com/enzet/Roentgen/issues/39)),
   - `dam` ([#39](https://github.com/enzet/Roentgen/issues/39)),
   - `dead_tree` ([#29](https://github.com/enzet/Roentgen/issues/29)),
-  - `sinking_ship` ([#34](https://github.com/enzet/Roentgen/issues/34)).
+  - `sinking_ship` ([#34](https://github.com/enzet/Roentgen/issues/34)),
+  - `vending_pizza` ([#36](https://github.com/enzet/Roentgen/issues/36)).
 
 Redraw icons:
   - `cocktail_glass_with_straw`,
@@ -16,7 +17,15 @@ Redraw icons:
   - `tree___urban_tree_pot`,
   - `tree_with_leaf`,
   - `tree_with_leaf___bottom_right_horizontal_line`,
-  - `tree_with_leaf___urban_tree_pot`.
+  - `tree_with_leaf___urban_tree_pot`,
+  - `vending_angle`,
+  - `vending_bottle`,
+  - `vending_bottle_upside_down`,
+  - `vending_candles`,
+  - `vending_chemist`,
+  - `vending_drop`,
+  - `vending_machine`,
+  - `vending_p`.
 
 
 ## 0.14.0

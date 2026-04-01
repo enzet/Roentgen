@@ -4549,6 +4549,10 @@
             "keywords": ["sell", "automat"],
             "name": "vending machine with letter P"
         },
+        "vending_pizza": {
+            "keywords": ["sell", "automat"],
+            "name": "vending machine with pizza"
+        },
         "vending_tickets": {
             "keywords": ["sell", "automat"],
             "name": "ticket vending machine"
