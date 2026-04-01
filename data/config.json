@@ -2280,9 +2280,7 @@
         "person_throwing_spear": {
             "categories": ["sport"],
             "keywords": ["sport", "athletics", "javelin", "spear"],
-            "name": "person throwing spear",
-            "shapes": [{"id": "person_throwing_spear", "version": "v0"}],
-            "sketch": true
+            "name": "person throwing spear"
         },
         "tower_climbing": {
             "todo": "check version",
