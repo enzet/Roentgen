@@ -31,6 +31,8 @@ Redraw icons:
   - `vending_machine`,
   - `vending_p`.
 
+Other:
+  - [It is now possible to donate](https://github.com/sponsors/enzet)
 
 ## 0.14.0
 
