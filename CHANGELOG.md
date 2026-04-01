@@ -7,6 +7,8 @@ Add icons:
   - `breakwater` ([#39](https://github.com/enzet/Roentgen/issues/39)),
   - `dam` ([#39](https://github.com/enzet/Roentgen/issues/39)),
   - `dead_tree` ([#29](https://github.com/enzet/Roentgen/issues/29)),
+  - `person_bungee_jumping`
+    ([#38](https://github.com/enzet/Roentgen/issues/38)),
   - `person_throwing_spear`
     ([#35](https://github.com/enzet/Roentgen/issues/35)),
   - `sinking_ship` ([#34](https://github.com/enzet/Roentgen/issues/34)),

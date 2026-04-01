@@ -2277,6 +2277,11 @@
             "sketch": true,
             "unicode": ["🤽"]
         },
+        "person_bungee_jumping": {
+            "categories": ["sport"],
+            "keywords": ["sport", "jump", "bungee"],
+            "name": "person bungee jumping"
+        },
         "person_throwing_spear": {
             "categories": ["sport"],
             "keywords": ["sport", "athletics", "javelin", "spear"],
