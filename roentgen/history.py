@@ -32,6 +32,15 @@ def git(*args: str) -> subprocess.CompletedProcess:
     )
 
 
+def stash() -> bool:
+    """Stash all local changes including untracked files.
+
+    :return: True if changes were stashed, False if there was nothing to stash
+    """
+    result = git("stash", "--include-untracked")
+    return result.stdout.strip() != "No local changes to save"
+
+
 SVG_NS = "http://www.w3.org/2000/svg"
 
 
@@ -72,12 +81,13 @@ def get_new_icon_ids(version: str) -> set[str]:
         original = git("rev-parse", "--abbrev-ref", "HEAD").stdout.strip()
         if original == "HEAD":
             original = git("rev-parse", "HEAD").stdout.strip()
-        git("stash", "--include-untracked")
+        stashed = stash()
         try:
             previous_icons: set[str] = set(get_icons(previous_tag).keys())
         finally:
             git("checkout", original)
-            git("stash", "pop")
+            if stashed:
+                git("stash", "pop")
         return set(get_head_icons().keys()) - previous_icons
 
     tag = f"v{version}"
@@ -89,7 +99,7 @@ def get_new_icon_ids(version: str) -> set[str]:
     if original == "HEAD":
         original = git("rev-parse", "HEAD").stdout.strip()
 
-    git("stash", "--include-untracked")
+    stashed = stash()
 
     try:
         tag_index = TAGS.index(tag)
@@ -101,7 +111,8 @@ def get_new_icon_ids(version: str) -> set[str]:
         current_icons: set[str] = set(get_icons(tag).keys())
     finally:
         git("checkout", original)
-        git("stash", "pop")
+        if stashed:
+            git("stash", "pop")
 
     return current_icons - previous_icons
 
@@ -114,7 +125,7 @@ def get_versions() -> dict[str, Version]:
 
     versions: dict[str, Version] = {}
 
-    git("stash", "--include-untracked")
+    stashed = stash()
 
     try:
         previous_ids: set[str] = set()
@@ -128,7 +139,8 @@ def get_versions() -> dict[str, Version]:
             previous_ids = set(icons.keys())
     finally:
         git("checkout", original)
-        git("stash", "pop")
+        if stashed:
+            git("stash", "pop")
 
     head_icons = get_head_icons()
     new_head_icons = [
