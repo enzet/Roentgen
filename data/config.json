@@ -2797,6 +2797,10 @@
                 "shapes": [{"id": "circle_with_dashes", "version": "v0"}],
                 "sketch": true
             },
+            "circle_with_dot": {
+                "keywords": ["ellipse", "figure", "geometry"],
+                "name": "circle with dot"
+            },
             "clockwise": {
                 "keywords": ["direction", "circle", "rotation"],
                 "name": "clockwise arrow"
@@ -3672,6 +3676,10 @@
         "crane_travel_lift": {
             "name": "travel lift",
             "keywords": ["construction", "technical", "lifting"]
+        },
+        "millstone_with_furrows": {
+            "keywords": ["grind", "historic", "mill"],
+            "name": "millstone with furrows"
         }
     },
     "__tower": {
