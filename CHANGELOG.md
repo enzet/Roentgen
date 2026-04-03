@@ -19,6 +19,7 @@ Add icons:
 
 Redraw icons:
   - `cocktail_glass_with_straw`,
+  - `spring` ([#41](https://github.com/enzet/Roentgen/issues/41)),
   - `tree`,
   - `tree___bottom_right_horizontal_line`,
   - `tree___urban_tree_pot`,
