@@ -265,6 +265,14 @@
             "shapes": [{"id": "sculpture", "version": "v0"}],
             "sketch": true
         },
+        "spray_can": {
+            "keywords": ["art", "graffiti", "paint", "aerosol"],
+            "name": "spray can"
+        },
+        "spray_can_spraying": {
+            "keywords": ["art", "graffiti", "paint", "aerosol", "spray"],
+            "name": "spray can spraying"
+        },
         "statue": {
             "categories": ["historic"],
             "keywords": ["art", "historic", "sculpture"],

@@ -180,7 +180,7 @@ def get_icon_changes() -> tuple[list[str], list[str]]:
         if not path.endswith(".svg"):
             continue
         stem = Path(path).stem
-        if xy == "??":
+        if xy in ("A ", "??"):
             new_icons.append(stem)
         elif "M" in xy:
             modified_icons.append(stem)

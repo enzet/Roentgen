@@ -15,6 +15,8 @@ Add icons:
   - `person_throwing_spear`
     ([#35](https://github.com/enzet/Roentgen/issues/35)),
   - `sinking_ship` ([#34](https://github.com/enzet/Roentgen/issues/34)),
+  - `spray_can` ([#30](https://github.com/enzet/Roentgen/issues/30)),
+  - `spray_can_spraying` ([#30](https://github.com/enzet/Roentgen/issues/30)),
   - `vending_pizza` ([#36](https://github.com/enzet/Roentgen/issues/36)).
 
 Redraw icons:
