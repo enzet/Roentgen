@@ -2,26 +2,31 @@
 roentgen/config.json
 roentgen/shapes.json
 
+# Cache.
 .cache/
+cache/
+
+# Generated.
+dist/
+icons_all/
+icons_sketches/
+out/
+raster/
+release/
+shapes/
+
 .idea/
 .npmrc
 .pypirc
 .venv/
 .vscode/
 __pycache__
-cache/
-dist/
 icons/LICENSE
-icons_all/
-icons_sketches/
 osm/
-out/
 python-package/roentgen/icons/
 python-package/dist/
-raster/
-release/
+research/
 roentgen.egg-info/
-shapes/
 site/
 social/
 uv.lock
