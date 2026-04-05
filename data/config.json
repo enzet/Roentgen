@@ -2997,8 +2997,9 @@
                     "sketch": true
                 }
             },
-            "__cyrillic": {
-                "cyrillic_a": {
+            "__cyrl": {
+                "cyrl_a": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter A",
                     "unicode": ["А"],
                     "keywords": ["russian", "alphabet"],
@@ -3006,15 +3007,17 @@
                     "shapes": [{"id": "a", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_b": {
+                "cyrl_b": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter B",
                     "unicode": ["Б"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_b", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_b", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_v": {
+                "cyrl_v": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter V",
                     "unicode": ["В"],
                     "keywords": ["russian", "alphabet"],
@@ -3022,23 +3025,26 @@
                     "shapes": [{"id": "b", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_g": {
+                "cyrl_g": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter G",
                     "unicode": ["Г"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_g", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_g", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_d": {
+                "cyrl_d": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter D",
                     "unicode": ["Д"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_d", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_d", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_ye": {
+                "cyrl_ye": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Ye",
                     "unicode": ["Е"],
                     "keywords": ["russian", "alphabet"],
@@ -3046,23 +3052,26 @@
                     "shapes": [{"id": "e", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_yo": {
+                "cyrl_yo": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Yo",
                     "unicode": ["Ё"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_yo", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_yo", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_zh": {
+                "cyrl_zh": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Zh",
                     "unicode": ["Ж"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_zh", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_zh", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_z": {
+                "cyrl_z": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Z",
                     "unicode": ["З"],
                     "keywords": ["russian", "alphabet"],
@@ -3070,23 +3079,26 @@
                     "shapes": [{"id": "3", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_i": {
+                "cyrl_i": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter I",
                     "unicode": ["И"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_i", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_i", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_short_i": {
+                "cyrl_short_i": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Short I",
                     "unicode": ["Й"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_short_i", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_short_i", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_k": {
+                "cyrl_k": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter K",
                     "unicode": ["К"],
                     "keywords": ["russian", "alphabet"],
@@ -3094,15 +3106,17 @@
                     "shapes": [{"id": "k", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_l": {
+                "cyrl_l": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter L",
                     "unicode": ["Л"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_l", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_l", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_m": {
+                "cyrl_m": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter M",
                     "unicode": ["М"],
                     "keywords": ["russian", "alphabet"],
@@ -3110,7 +3124,8 @@
                     "shapes": [{"id": "m", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_n": {
+                "cyrl_n": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter N",
                     "unicode": ["Н"],
                     "keywords": ["russian", "alphabet"],
@@ -3118,7 +3133,8 @@
                     "shapes": [{"id": "h", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_o": {
+                "cyrl_o": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter O",
                     "unicode": ["О"],
                     "keywords": ["russian", "alphabet"],
@@ -3126,15 +3142,17 @@
                     "shapes": [{"id": "0", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_p": {
+                "cyrl_p": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter P",
                     "unicode": ["П"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_p", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_p", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_r": {
+                "cyrl_r": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter R",
                     "unicode": ["Р"],
                     "keywords": ["russian", "alphabet"],
@@ -3142,7 +3160,8 @@
                     "shapes": [{"id": "p", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_s": {
+                "cyrl_s": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter S",
                     "unicode": ["С"],
                     "keywords": ["russian", "alphabet"],
@@ -3150,7 +3169,8 @@
                     "shapes": [{"id": "c", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_t": {
+                "cyrl_t": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter T",
                     "unicode": ["Т"],
                     "keywords": ["russian", "alphabet"],
@@ -3158,23 +3178,26 @@
                     "shapes": [{"id": "t", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_u": {
+                "cyrl_u": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter U",
                     "unicode": ["У"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_u", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_u", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_f": {
+                "cyrl_f": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter F",
                     "unicode": ["Ф"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_f", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_f", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_h": {
+                "cyrl_h": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter H",
                     "unicode": ["Х"],
                     "keywords": ["russian", "alphabet"],
@@ -3182,15 +3205,17 @@
                     "shapes": [{"id": "x", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_ts": {
+                "cyrl_ts": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Ts",
                     "unicode": ["Ц"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_ts", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_ts", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_ch": {
+                "cyrl_ch": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Ch",
                     "unicode": ["Ч"],
                     "keywords": ["russian", "alphabet"],
@@ -3198,68 +3223,76 @@
                     "shapes": [{"id": "4", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_sh": {
+                "cyrl_sh": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Sh",
                     "unicode": ["Ш"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_sh", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_sh", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_sch": {
+                "cyrl_sch": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Sch",
                     "unicode": ["Щ"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_sch", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_sch", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_hard_sign": {
+                "cyrl_hard_sign": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Hard Sign",
                     "unicode": ["Ъ"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_hard_sign", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_hard_sign", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_soft_sign": {
+                "cyrl_soft_sign": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Soft Sign",
                     "unicode": ["Ь"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_soft_sign", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_soft_sign", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_y": {
+                "cyrl_y": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Y",
                     "unicode": ["Ы"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_y", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_y", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_e": {
+                "cyrl_e": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter E",
                     "unicode": ["Э"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_e", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_e", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_yu": {
+                "cyrl_yu": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Yu",
                     "unicode": ["Ю"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_yu", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_yu", "version": "v0"}],
                     "sketch": true
                 },
-                "cyrillic_ya": {
+                "cyrl_ya": {
+                    "iso_15924": "Cyrl",
                     "name": "Cyrillic letter Ya",
                     "unicode": ["Я"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "cyrillic_ya", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_ya", "version": "v0"}],
                     "sketch": true
                 }
             },
@@ -3325,67 +3358,7 @@
                     "name": "digit 9"
                 }
             },
-            "__latin": {
-                "b": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter B",
-                    "shapes": [{"id": "b", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["B"]
-                },
-                "c": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter C",
-                    "shapes": [{"id": "c", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["C"]
-                },
-                "d": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter D",
-                    "shapes": [{"id": "d", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["D"]
-                },
-                "e": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter E",
-                    "shapes": [{"id": "e", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["E"]
-                },
-                "f": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter F",
-                    "shapes": [{"id": "f", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["F"]
-                },
-                "g": {
-                    "categories": ["letter"],
-                    "keywords": ["symbol", "alphabet"],
-                    "is_part": true,
-                    "name": "Latin letter G",
-                    "shapes": [{"id": "g", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["G"]
-                },
-                "h": {
-                    "categories": ["letter"],
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter H",
-                    "unicode": ["H"]
-                },
+            "__latn": {
                 "i": {
                     "categories": ["letter"],
                     "keywords": ["symbol", "alphabet"],
@@ -3395,131 +3368,6 @@
                 "i_in_square": {
                     "name": "Latin letter i in square",
                     "keywords": ["symbol", "alphabet", "letter"]
-                },
-                "j": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter J",
-                    "shapes": [{"id": "j", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["J"]
-                },
-                "k": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter K",
-                    "shapes": [{"id": "k", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["K"]
-                },
-                "l": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter L",
-                    "shapes": [{"id": "l", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["L"]
-                },
-                "m": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter M",
-                    "shapes": [{"id": "m", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["M"]
-                },
-                "n": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter N",
-                    "shapes": [{"id": "n", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["N"]
-                },
-                "o": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter O",
-                    "shapes": [{"id": "0", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["O"]
-                },
-                "p": {
-                    "categories": ["letter"],
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter P",
-                    "unicode": ["P"]
-                },
-                "p_small": {
-                    "categories": ["letter"],
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "small letter P"
-                },
-                "q": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter Q",
-                    "shapes": [{"id": "q", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["Q"]
-                },
-                "r": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter R",
-                    "shapes": [{"id": "r", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["R"]
-                },
-                "s": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter S",
-                    "shapes": [{"id": "s", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["S"]
-                },
-                "t": {
-                    "categories": ["letter"],
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "letter T",
-                    "unicode": ["T"]
-                },
-                "u": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter U",
-                    "shapes": [{"id": "u", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["U"]
-                },
-                "v": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter V",
-                    "shapes": [{"id": "v", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["V"]
-                },
-                "w": {
-                    "categories": ["letter"],
-                    "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
-                    "name": "Latin letter W",
-                    "shapes": [{"id": "w", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["W"]
                 },
                 "x": {
                     "categories": ["letter"],
@@ -3545,14 +3393,230 @@
                     "name": "letter Y",
                     "unicode": ["Y"]
                 },
-                "z": {
-                    "categories": ["letter"],
+                "latn_a": {
+                    "unicode": ["A"],
                     "is_part": true,
-                    "keywords": ["symbol", "alphabet"],
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter A",
+                    "shapes": [{"id": "latn_a", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_b": {
+                    "unicode": ["B"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter B",
+                    "shapes": [{"id": "latn_b", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_c": {
+                    "unicode": ["C"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter C",
+                    "shapes": [{"id": "latn_c", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_d": {
+                    "unicode": ["D"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter D",
+                    "shapes": [{"id": "latn_d", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_e": {
+                    "unicode": ["E"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter E",
+                    "shapes": [{"id": "latn_e", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_f": {
+                    "unicode": ["F"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter F",
+                    "shapes": [{"id": "latn_f", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_g": {
+                    "unicode": ["G"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter G",
+                    "shapes": [{"id": "latn_g", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_h": {
+                    "unicode": ["H"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter H",
+                    "shapes": [{"id": "latn_h", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_i": {
+                    "unicode": ["I"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter I",
+                    "shapes": [{"id": "latn_i", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_j": {
+                    "unicode": ["J"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter J",
+                    "shapes": [{"id": "latn_j", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_k": {
+                    "unicode": ["K"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter K",
+                    "shapes": [{"id": "latn_k", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_l": {
+                    "unicode": ["L"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter L",
+                    "shapes": [{"id": "latn_l", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_m": {
+                    "unicode": ["M"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter M",
+                    "shapes": [{"id": "latn_m", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_n": {
+                    "unicode": ["N"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter N",
+                    "shapes": [{"id": "latn_n", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_p": {
+                    "unicode": ["P"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter P",
+                    "shapes": [{"id": "latn_p", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_q": {
+                    "unicode": ["Q"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter Q",
+                    "shapes": [{"id": "latn_q", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_r": {
+                    "unicode": ["R"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter R",
+                    "shapes": [{"id": "latn_r", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_s": {
+                    "unicode": ["S"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter S",
+                    "shapes": [{"id": "latn_s", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_t": {
+                    "unicode": ["T"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter T",
+                    "shapes": [{"id": "latn_t", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_u": {
+                    "unicode": ["U"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter U",
+                    "shapes": [{"id": "latn_u", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_v": {
+                    "unicode": ["V"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter V",
+                    "shapes": [{"id": "latn_v", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_w": {
+                    "unicode": ["W"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter W",
+                    "shapes": [{"id": "latn_w", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_x": {
+                    "unicode": ["X"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter X",
+                    "shapes": [{"id": "latn_x", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_y": {
+                    "unicode": ["Y"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
+                    "name": "Latin letter Y",
+                    "shapes": [{"id": "latn_y", "version": "v0"}],
+                    "sketch": true
+                },
+                "latn_z": {
+                    "unicode": ["Z"],
+                    "is_part": true,
+                    "iso_15924": "Latn",
+                    "keywords": ["latin", "letter", "alphabet"],
                     "name": "Latin letter Z",
-                    "shapes": [{"id": "z", "version": "v0"}],
-                    "sketch": true,
-                    "unicode": ["Z"]
+                    "shapes": [{"id": "latn_z", "version": "v0"}],
+                    "sketch": true
                 }
             },
             "__radical": {
@@ -3560,6 +3624,469 @@
                     "name": "radical script",
                     "keywords": ["radical", "script"],
                     "shapes": [{"id": "radical_script", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__adlm": {
+                "adlm_a": {
+                    "unicode": ["𞤀"],
+                    "is_part": true,
+                    "iso_15924": "Adlm",
+                    "keywords": ["adlam", "letter", "alphabet"],
+                    "name": "Adlam letter Alif",
+                    "shapes": [{"id": "adlm_a", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__aghb": {
+                "aghb_alt": {
+                    "unicode": ["𐔰"],
+                    "is_part": true,
+                    "iso_15924": "Aghb",
+                    "keywords": ["caucasian albanian", "letter", "alphabet"],
+                    "name": "Caucasian Albanian letter Alt",
+                    "shapes": [{"id": "aghb_alt", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__ahom": {
+                "ahom_ka": {
+                    "unicode": ["𑜀"],
+                    "is_part": true,
+                    "iso_15924": "Ahom",
+                    "keywords": ["ahom", "letter", "alphabet"],
+                    "name": "Ahom letter Ka",
+                    "shapes": [{"id": "ahom_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__arab": {
+                "arab_b": {
+                    "unicode": ["ب"],
+                    "is_part": true,
+                    "iso_15924": "Arab",
+                    "keywords": ["arabic", "letter", "alphabet"],
+                    "name": "Arabic letter Ba",
+                    "shapes": [{"id": "arab_b", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__armn": {
+                "armn_a": {
+                    "unicode": ["Ա"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Ayb",
+                    "shapes": [{"id": "armn_a", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_b": {
+                    "unicode": ["Բ"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Ben",
+                    "shapes": [{"id": "armn_b", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_g": {
+                    "unicode": ["Գ"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Gim",
+                    "shapes": [{"id": "armn_g", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_d": {
+                    "unicode": ["Դ"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Da",
+                    "shapes": [{"id": "armn_d", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_ye": {
+                    "unicode": ["Ե"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Yech",
+                    "shapes": [{"id": "armn_ye", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_z": {
+                    "unicode": ["Զ"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Za",
+                    "shapes": [{"id": "armn_z", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_e": {
+                    "unicode": ["Է"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Eh",
+                    "shapes": [{"id": "armn_e", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_e2": {
+                    "unicode": ["Ը"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Et",
+                    "shapes": [{"id": "armn_e2", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_th": {
+                    "unicode": ["Թ"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter To",
+                    "shapes": [{"id": "armn_th", "version": "v0"}],
+                    "sketch": true
+                },
+                "armn_zh": {
+                    "unicode": ["Ժ"],
+                    "is_part": true,
+                    "iso_15924": "Armn",
+                    "keywords": ["armenian", "letter", "alphabet"],
+                    "name": "Armenian letter Zhe",
+                    "shapes": [{"id": "armn_zh", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__beng": {
+                "beng_ko": {
+                    "unicode": ["ক"],
+                    "is_part": true,
+                    "iso_15924": "Beng",
+                    "keywords": ["bengali", "letter", "alphabet"],
+                    "name": "Bengali letter Ko",
+                    "shapes": [{"id": "beng_ko", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__bopo": {
+                "bopo_b": {
+                    "unicode": ["ㄅ"],
+                    "is_part": true,
+                    "iso_15924": "Bopo",
+                    "keywords": ["bopomofo", "letter", "alphabet"],
+                    "name": "Bopomofo letter B",
+                    "shapes": [{"id": "bopo_b", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__copt": {
+                "copt_gangia": {
+                    "unicode": ["Ϫ"],
+                    "is_part": true,
+                    "iso_15924": "Copt",
+                    "keywords": ["coptic", "letter", "alphabet"],
+                    "name": "Coptic letter Gangia",
+                    "shapes": [{"id": "copt_gangia", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__deva": {
+                "deva_ka": {
+                    "unicode": ["क"],
+                    "is_part": true,
+                    "iso_15924": "Deva",
+                    "keywords": ["devanagari", "letter", "alphabet"],
+                    "name": "Devanagari letter Ka",
+                    "shapes": [{"id": "deva_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__ethi": {
+                "ephi_alf": {
+                    "unicode": ["አ"],
+                    "is_part": true,
+                    "iso_15924": "Ethi",
+                    "keywords": ["ethiopic", "letter", "alphabet"],
+                    "name": "Ethiopic syllable Alf",
+                    "shapes": [{"id": "ephi_alf", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__geor": {
+                "geor_z": {
+                    "unicode": ["ზ"],
+                    "is_part": true,
+                    "iso_15924": "Geor",
+                    "keywords": ["georgian", "letter", "alphabet"],
+                    "name": "Georgian letter Zen",
+                    "shapes": [{"id": "geor_z", "version": "v0"}],
+                    "sketch": true
+                },
+                "geor_d": {
+                    "unicode": ["დ"],
+                    "is_part": true,
+                    "iso_15924": "Geor",
+                    "keywords": ["georgian", "letter", "alphabet"],
+                    "name": "Georgian letter Don",
+                    "shapes": [{"id": "geor_d", "version": "v0"}],
+                    "sketch": true
+                },
+                "geor_gh": {
+                    "unicode": ["ღ"],
+                    "is_part": true,
+                    "iso_15924": "Geor",
+                    "keywords": ["georgian", "letter", "alphabet"],
+                    "name": "Georgian letter Ghani",
+                    "shapes": [{"id": "geor_gh", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__grek": {
+                "grek_omega": {
+                    "unicode": ["Ω"],
+                    "is_part": true,
+                    "iso_15924": "Grek",
+                    "keywords": ["greek", "letter", "alphabet"],
+                    "name": "Greek letter Omega",
+                    "shapes": [{"id": "grek_omega", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__gujr": {
+                "guja_ka": {
+                    "unicode": ["ક"],
+                    "is_part": true,
+                    "iso_15924": "Gujr",
+                    "keywords": ["gujarati", "letter", "alphabet"],
+                    "name": "Gujarati letter Ka",
+                    "shapes": [{"id": "guja_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__guru": {
+                "guru_ka": {
+                    "unicode": ["ਕ"],
+                    "is_part": true,
+                    "iso_15924": "Guru",
+                    "keywords": ["gurmukhi", "punjabi", "letter", "alphabet"],
+                    "name": "Gurmukhi letter Ka",
+                    "shapes": [{"id": "guru_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__hang": {
+                "hang_ga": {
+                    "unicode": ["가"],
+                    "is_part": true,
+                    "iso_15924": "Hang",
+                    "keywords": ["hangul", "korean", "letter", "alphabet"],
+                    "name": "Hangul syllable Ga",
+                    "shapes": [{"id": "hang_ga", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__hebr": {
+                "hebr_he": {
+                    "unicode": ["ה"],
+                    "is_part": true,
+                    "iso_15924": "Hebr",
+                    "keywords": ["hebrew", "letter", "alphabet"],
+                    "name": "Hebrew letter He",
+                    "shapes": [{"id": "hebr_he", "version": "v0"}],
+                    "sketch": true
+                },
+                "hebr_alef": {
+                    "unicode": ["א"],
+                    "is_part": true,
+                    "iso_15924": "Hebr",
+                    "keywords": ["hebrew", "letter", "alphabet"],
+                    "name": "Hebrew letter Alef",
+                    "shapes": [{"id": "hebr_alef", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__hira": {
+                "hira_te": {
+                    "unicode": ["て"],
+                    "is_part": true,
+                    "iso_15924": "Hira",
+                    "keywords": ["hiragana", "japanese", "letter", "alphabet"],
+                    "name": "Hiragana letter Te",
+                    "shapes": [{"id": "hira_te", "version": "v0"}],
+                    "sketch": true
+                },
+                "hira_wa": {
+                    "unicode": ["わ"],
+                    "is_part": true,
+                    "iso_15924": "Hira",
+                    "keywords": ["hiragana", "japanese", "letter", "alphabet"],
+                    "name": "Hiragana letter Wa",
+                    "shapes": [{"id": "hira_wa", "version": "v0"}],
+                    "sketch": true
+                },
+                "hira_yo": {
+                    "unicode": ["よ"],
+                    "is_part": true,
+                    "iso_15924": "Hira",
+                    "keywords": ["hiragana", "japanese", "letter", "alphabet"],
+                    "name": "Hiragana letter Yo",
+                    "shapes": [{"id": "hira_yo", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__kana": {
+                "kata_a": {
+                    "unicode": ["ア"],
+                    "is_part": true,
+                    "iso_15924": "Kana",
+                    "keywords": ["katakana", "japanese", "letter", "alphabet"],
+                    "name": "Katakana letter A",
+                    "shapes": [{"id": "kata_a", "version": "v0"}],
+                    "sketch": true
+                },
+                "kata_su": {
+                    "unicode": ["ス"],
+                    "is_part": true,
+                    "iso_15924": "Kana",
+                    "keywords": ["katakana", "japanese", "letter", "alphabet"],
+                    "name": "Katakana letter Su",
+                    "shapes": [{"id": "kata_su", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__khmr": {
+                "khmr_ka": {
+                    "unicode": ["ក"],
+                    "is_part": true,
+                    "iso_15924": "Khmr",
+                    "keywords": ["khmer", "letter", "alphabet"],
+                    "name": "Khmer letter Ka",
+                    "shapes": [{"id": "khmr_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__knda": {
+                "knda_ka": {
+                    "unicode": ["ಕ"],
+                    "is_part": true,
+                    "iso_15924": "Knda",
+                    "keywords": ["kannada", "letter", "alphabet"],
+                    "name": "Kannada letter Ka",
+                    "shapes": [{"id": "knda_ka", "version": "v0"}],
+                    "sketch": true
+                },
+                "knda_ra": {
+                    "unicode": ["ರ"],
+                    "is_part": true,
+                    "iso_15924": "Knda",
+                    "keywords": ["kannada", "letter", "alphabet"],
+                    "name": "Kannada letter Ra",
+                    "shapes": [{"id": "knda_ra", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__laoo": {
+                "laoo_l": {
+                    "unicode": ["ລ"],
+                    "is_part": true,
+                    "iso_15924": "Laoo",
+                    "keywords": ["lao", "letter", "alphabet"],
+                    "name": "Lao letter Lo Ling",
+                    "shapes": [{"id": "laoo_l", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__mlym": {
+                "mlym_ka": {
+                    "unicode": ["ക"],
+                    "is_part": true,
+                    "iso_15924": "Mlym",
+                    "keywords": ["malayalam", "letter", "alphabet"],
+                    "name": "Malayalam letter Ka",
+                    "shapes": [{"id": "mlym_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__mymr": {
+                "mymr_k": {
+                    "unicode": ["က"],
+                    "is_part": true,
+                    "iso_15924": "Mymr",
+                    "keywords": ["myanmar", "burmese", "letter", "alphabet"],
+                    "name": "Myanmar letter Ka",
+                    "shapes": [{"id": "mymr_k", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__orya": {
+                "orya_ka": {
+                    "unicode": ["କ"],
+                    "is_part": true,
+                    "iso_15924": "Orya",
+                    "keywords": ["odia", "letter", "alphabet"],
+                    "name": "Odia letter Ka",
+                    "shapes": [{"id": "orya_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__sinh": {
+                "sinh_ta": {
+                    "unicode": ["ත"],
+                    "is_part": true,
+                    "iso_15924": "Sinh",
+                    "keywords": ["sinhala", "letter", "alphabet"],
+                    "name": "Sinhala letter Ta",
+                    "shapes": [{"id": "sinh_ta", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__taml": {
+                "taml_k": {
+                    "unicode": ["க"],
+                    "is_part": true,
+                    "iso_15924": "Taml",
+                    "keywords": ["tamil", "letter", "alphabet"],
+                    "name": "Tamil letter Ka",
+                    "shapes": [{"id": "taml_k", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__telu": {
+                "telu_ka": {
+                    "unicode": ["క"],
+                    "is_part": true,
+                    "iso_15924": "Telu",
+                    "keywords": ["telugu", "letter", "alphabet"],
+                    "name": "Telugu letter Ka",
+                    "shapes": [{"id": "telu_ka", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__thai": {
+                "thai_ko_kai": {
+                    "unicode": ["ก"],
+                    "is_part": true,
+                    "iso_15924": "Thai",
+                    "keywords": ["thai", "letter", "alphabet"],
+                    "name": "Thai letter Ko Kai",
+                    "shapes": [{"id": "thai_ko_kai", "version": "v0"}],
+                    "sketch": true
+                }
+            },
+            "__tibt": {
+                "tibt_ka": {
+                    "unicode": ["ཀ"],
+                    "is_part": true,
+                    "iso_15924": "Tibt",
+                    "keywords": ["tibetan", "letter", "alphabet"],
+                    "name": "Tibetan letter Ka",
+                    "shapes": [{"id": "tibt_ka", "version": "v0"}],
                     "sketch": true
                 }
             },
