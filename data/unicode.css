@@ -6,4 +6,5 @@ th {/* background: #f0f0f0; */font-size: 0.8em;}
 .symbol { font-size: 1.4em; }
 .no-icon {/* color: #aaa; */font-size: 1.8em;}
 img { width: 32px; height: 32px; }
+img.letter { width: 64px; height: 64px; }
 td:first-child {font-size: 0.8em;/* font-weight: bold; *//* background: #f0f0f0; */}

@@ -281,5 +281,107 @@ def generate_unicode_table(
     logger.info("Written %s.", output_path)
 
 
+def generate_writing_systems_table(
+    config_path: Path = Path("data/config.json"),
+    icons_dir: Path = Path("icons"),
+    icons_sketches_dir: Path = Path("icons_sketches"),
+    shapes_dir: Path = Path("shapes"),
+    output_path: Path = Path("out/writing_systems.html"),
+) -> None:
+    """Generate an HTML table of writing system letter icons.
+
+    Columns: writing system code (ISO 15924), character name, Unicode symbol,
+    icon image.
+    """
+    with config_path.open(encoding="utf-8") as f:
+        config = json.load(f)
+
+    letter_section: dict = config.get("__symbol", {}).get("__letter", {})
+
+    # Collect rows: (iso_15924, icon_id, name, unicode_chars)
+    rows: list[tuple[str, str, str, list[str]]] = []
+    for section_key, section in letter_section.items():
+        if not any(
+            isinstance(e, dict) and "iso_15924" in e for e in section.values()
+        ):
+            continue
+        for icon_id, entry in section.items():
+            if not isinstance(entry, dict):
+                continue
+            iso = entry.get("iso_15924", section_key.lstrip("_"))
+            name = entry.get("name", icon_id)
+            unicode_chars: list[str] = entry.get("unicode", [])
+            rows.append((iso, icon_id, name, unicode_chars))
+
+    rows.sort(key=lambda r: (r[0], r[2]))
+
+    lines: list[str] = [
+        "<!DOCTYPE html>",
+        "<html>",
+        "<head>",
+        '  <meta charset="utf-8">',
+        "  <title>Röntgen writing systems</title>",
+        '  <link rel="stylesheet" href="../data/unicode.css">',
+        "</head>",
+        "<body>",
+        "<table>",
+        "  <thead>",
+        "    <tr>",
+        "      <th>Script</th>",
+        "      <th>Character name</th>",
+        "      <th>Unicode symbol</th>",
+        "      <th>Icon</th>",
+        "    </tr>",
+        "  </thead>",
+        "  <tbody>",
+    ]
+
+    for iso, icon_id, name, unicode_chars in rows:
+        symbol_cell = ""
+        if unicode_chars:
+            char = unicode_chars[0]
+            try:
+                char_name = unicodedata.name(char[0])
+            except ValueError:
+                char_name = ""
+            symbol_cell = (
+                f'<span class="symbol" title="{char_name}">{char}</span>'
+            )
+
+        icon_cell = ""
+        svg_path = icons_dir / f"{icon_id}.svg"
+        sketch_path = icons_sketches_dir / f"{icon_id}.svg"
+        shape_path = shapes_dir / f"{icon_id}_v0.svg"
+        if svg_path.exists():
+            icon_cell = (
+                f'<img class="letter" src="../{svg_path}" '
+                f'alt="{icon_id}" title="{name}">'
+            )
+        elif sketch_path.exists():
+            icon_cell = (
+                f'<img class="letter" src="../{sketch_path}" alt="{icon_id}"'
+                f' title="{name} (sketch)">'
+            )
+        elif shape_path.exists():
+            icon_cell = (
+                f'<img class="letter" src="../{shape_path}" alt="{icon_id}"'
+                f' title="{name} (sketch)">'
+            )
+
+        lines.append("    <tr>")
+        lines.append(f"      <td>{iso}</td>")
+        lines.append(f"      <td>{name}</td>")
+        lines.append(f"      <td>{symbol_cell}</td>")
+        lines.append(f"      <td>{icon_cell}</td>")
+        lines.append("    </tr>")
+
+    lines += ["  </tbody>", "</table>", "</body>", "</html>"]
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text("\n".join(lines), encoding="utf-8")
+    logger.info("Written %s.", output_path)
+
+
 if __name__ == "__main__":
     generate_unicode_table()
+    generate_writing_systems_table()
