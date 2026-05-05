@@ -330,6 +330,7 @@ def generate_writing_systems_table(
         "      <th>Script</th>",
         "      <th>Character name</th>",
         "      <th>Unicode symbol</th>",
+        "      <th>Icon ID</th>",
         "      <th>Icon</th>",
         "    </tr>",
         "  </thead>",
@@ -372,6 +373,7 @@ def generate_writing_systems_table(
         lines.append(f"      <td>{iso}</td>")
         lines.append(f"      <td>{name}</td>")
         lines.append(f"      <td>{symbol_cell}</td>")
+        lines.append(f"      <td>{icon_id}</td>")
         lines.append(f"      <td>{icon_cell}</td>")
         lines.append("    </tr>")
 

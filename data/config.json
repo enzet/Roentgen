@@ -140,6 +140,11 @@
                 "keywords": ["architecture", "building"],
                 "name": "container building"
             },
+            "building_with_plant": {
+                "categories": ["building"],
+                "keywords": ["architecture", "agriculture", "leaf"],
+                "name": "building with plant"
+            },
             "food_court": {
                 "keywords": ["food"],
                 "name": "food court"
