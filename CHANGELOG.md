@@ -1,4 +1,4 @@
-## Unreleased
+## 0.15.0
 
 Create `shapes` directory with `icons` command.
 
