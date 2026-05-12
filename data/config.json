@@ -140,6 +140,11 @@
                 "keywords": ["architecture", "building"],
                 "name": "container building"
             },
+            "building_part": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building"],
+                "name": "building part"
+            },
             "building_with_plant": {
                 "categories": ["building"],
                 "keywords": ["architecture", "agriculture", "leaf"],

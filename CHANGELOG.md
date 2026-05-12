@@ -5,7 +5,8 @@ Create `shapes` directory with `icons` command.
 Add icons:
   - `advertising_totem` ([#32](https://github.com/enzet/Roentgen/issues/32)),
   - `breakwater` ([#39](https://github.com/enzet/Roentgen/issues/39)),
-  - `building_with_plant` ([#40](https://github.com/enzet/Roentgen/issues/40))
+  - `building_part` ([#48](https://github.com/enzet/Roentgen/issues/48)),
+  - `building_with_plant` ([#40](https://github.com/enzet/Roentgen/issues/40)),
   - `circle_with_dot` ([#46](https://github.com/enzet/Roentgen/issues/46)),
   - `dam` ([#39](https://github.com/enzet/Roentgen/issues/39)),
   - `dead_tree` ([#29](https://github.com/enzet/Roentgen/issues/29)),
