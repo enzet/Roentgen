@@ -4187,7 +4187,6 @@
                 "name": "Latin cross"
             },
             "om_ligature": {
-                "unicode": ["🕉️"],
                 "keywords": ["devanagari", "religion", "hinduism"],
                 "name": "Om ligature in Devanagari script",
                 "shapes": [{"id": "om_ligature", "version": "v0"}],
@@ -5144,6 +5143,10 @@
         "vending_excrement_bag": {
             "keywords": ["sell", "automat"],
             "name": "excrement bag vending"
+        },
+        "vending_flower": {
+            "keywords": ["sell", "automat", "flower", "plant"],
+            "name": "vending machine with flower"
         },
         "vending_ice_cream_stick": {
             "keywords": ["sell", "automat", "food", "sweet"],
