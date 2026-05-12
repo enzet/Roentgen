@@ -76,6 +76,8 @@ def draw_icons(
 
     shapes_path: Path = root_path / "shapes"
     shapes_path.mkdir(exist_ok=True)
+    (shapes_path / "x1").mkdir(exist_ok=True)
+    (shapes_path / "x4").mkdir(exist_ok=True)
     for shape_id, shape in sorted(shapes.shapes.items()):
         for shape_version in shape.paths:
             suffix: str = "" if shape_version == "main" else f"_{shape_version}"
@@ -85,14 +87,14 @@ def draw_icons(
             path_commands_64: str = shape.get_path_commands(
                 shape_version, point=(32.0, 32.0), scale=(4.0, 4.0)
             )
-            (shapes_path / f"{shape_id}{suffix}.svg").write_text(
+            (shapes_path / "x1" / f"{shape_id}{suffix}.svg").write_text(
                 '<svg xmlns="http://www.w3.org/2000/svg"'
                 ' width="16" height="16">'
                 f'<path d="{path_commands_16}" />'
                 "</svg>",
                 encoding="utf-8",
             )
-            (shapes_path / f"{shape_id}{suffix}_x4.svg").write_text(
+            (shapes_path / "x4" / f"{shape_id}{suffix}.svg").write_text(
                 '<svg xmlns="http://www.w3.org/2000/svg"'
                 ' width="64" height="64">'
                 f'<path d="{path_commands_64}" />'
