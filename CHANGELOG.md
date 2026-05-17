@@ -3,6 +3,7 @@
 Add new type of SVG sketch files supported by iconscript 0.4.0.
 
 Add icons:
+  - `bee` ([#47](https://github.com/enzet/Roentgen/issues/47)),
   - `vending_candy` ([#45](https://github.com/enzet/Roentgen/issues/45)),
   - `vending_lollipop` ([#45](https://github.com/enzet/Roentgen/issues/45)),
   - `vending_pack` ([#43](https://github.com/enzet/Roentgen/issues/43)).

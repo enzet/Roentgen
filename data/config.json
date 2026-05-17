@@ -1145,6 +1145,11 @@
     },
     "__life": {
         "__animal": {
+            "bee": {
+                "unicode": ["🐝"],
+                "keywords": ["animal", "insect", "apoidea", "apis"],
+                "name": "bee"
+            },
             "dog": {
                 "unicode": ["🐕"],
                 "keywords": ["animal", "pet"],
