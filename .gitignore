@@ -15,6 +15,7 @@ raster/
 release/
 shapes/
 
+.DS_Store
 .idea/
 .npmrc
 .pypirc
@@ -23,8 +24,8 @@ shapes/
 __pycache__
 icons/LICENSE
 osm/
-python-package/roentgen/icons/
 python-package/dist/
+python-package/roentgen/icons/
 research/
 roentgen.egg-info/
 site/
