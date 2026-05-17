@@ -24,7 +24,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
     - name: Install iconscript
       run: |
-        cargo install iconscript@^0.3
+        cargo install iconscript@^0.4
     - name: Generate icons
       run: |
         python -m roentgen icons
@@ -46,7 +46,7 @@ jobs:
       uses: dtolnay/rust-toolchain@stable
     - name: Install iconscript
       run: |
-        cargo install iconscript@^0.3
+        cargo install iconscript@^0.4
     - name: Generate icons
       run: |
         python -m roentgen icons
