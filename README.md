@@ -7,9 +7,9 @@ can use them freely, but please give the appropriate credit.
 Röntgen was created for the [Map Machine](http://github.com/enzet/map-machine)
 project to represent different map features from the OpenStreetMap database.
 However, it can be easily used for any map project or even for non-map-related
-projects. Some icons can also be used as emoji symbols. Several of Röntgen icons
+projects. Some icons can also be used as emoji symbols. Several Röntgen icons
 are used in [iD editor](https://github.com/openstreetmap/iD) for OpenStreetMap
-and [other projects using icons from iD tagging schema](https://github.com/openstreetmap/id-tagging-schema/wiki/Projects-that-are-using-this-tagging-schema).
+and [other projects using icons from the iD tagging schema](https://github.com/openstreetmap/id-tagging-schema/wiki/Projects-that-are-using-this-tagging-schema).
 
 To use the icons, you can
   - browse and download them from the
@@ -37,7 +37,7 @@ bytes to 4 KB, with mean and median sizes of about 1 KB.
         alt="Röntgen icons">
 </picture>
 
-All icons tend to follow a common design style, which is heavily inspired by
+All icons follow a common design style inspired by
 [Maki](https://github.com/mapbox/maki),
 [Osmic](https://github.com/gmgeo/osmic), and
 [Temaki](https://github.com/ideditor/temaki).
@@ -92,15 +92,23 @@ if shape is not None:
 
 ### Requirements
 
-- Icons must be __monochrome__, meaning they cannot have parts in different
-  colors. This ensures they can be recolored without losing their meaning.
-- Icons must be __14 × 14 px__ in size (equivalent to 16 × 16 px with one pixel
+- Icons must be __monochrome__ and not depend on color (they can be recolored
+  without losing their meaning).
+- Maximum icon size is __14 × 14 px__ (equivalent to 16 × 16 px with one pixel
   padding).
+- Lines must not be __thinner than 1 px__. Lines should preferably have an
+  __integer pixel width__ (1 px, 2 px, etc.) for clean rendering at target size.
 
 ### Recommendations
 
 - Icon parts should be __pixel-aligned__ for better rendering, when possible.
-- Lines should have __rounded caps__ if it doesn't affect shape recognition.
+- Lines should have __rounded caps__. Line joins and bends should also be
+  __rounded__ where possible, unless sharp corners are essential to the shape.
+- Prefer __fewer details__: omit elements that do not contribute to immediate
+  recognition at small sizes. A simpler silhouette reads better than a detailed
+  but cluttered one.
+- Use __negative space__ intentionally: cutouts and gaps inside a filled shape
+  can convey detail without adding strokes, keeping the icon clean.
 
 ## Icon Generation
 
@@ -108,7 +116,7 @@ The `icons` directory contains generated and optimized SVG icons.
 Some of the icons are described with
 [iconscript](https://github.com/enzet/iconscript) files in the
 [`iconscript`](iconscript) directory. Others are generated from sketch SVG files
-in the [`data`](data) directory by Python scripts. This hugely simplifies the
+in the [`data`](data) directory by Python scripts. This greatly simplifies the
 process of creating new icons.
 
 To regenerate icons and preview grids, run
@@ -121,7 +129,7 @@ python -m roentgen icons
 
 ### Grid Drawing
 
-Draw SVG file with icon grid.
+Draw an SVG file with an icon grid.
 
 ```shell
 python -m roentgen grid
@@ -129,7 +137,7 @@ python -m roentgen grid
 
 | Option      | Description                            |
 | ----------- | -------------------------------------- |
-| `--columns` | Number of columns in grid              |
+| `--columns` | Number of columns in the grid          |
 | `--filter`  | Regular expression for filtering icons |
 | `--new-in`  | Draw only icons new in a given version (e.g. `--new-in 0.13.0` or `--new-in HEAD`) |
 | `--output`  | Output SVG file                        |
