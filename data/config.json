@@ -5125,6 +5125,14 @@
             "keywords": ["sell", "automat"],
             "name": "vending machine with candle"
         },
+        "vending_candy": {
+            "keywords": ["sell", "automat", "sweet"],
+            "name": "vending machine with candy"
+        },
+        "vending_lollipop": {
+            "keywords": ["sell", "automat", "sweet", "candy"],
+            "name": "vending machine with lollipop"
+        },
         "vending_chemist": {
             "keywords": ["sell", "automat"],
             "name": "vending machine with Greek cross"

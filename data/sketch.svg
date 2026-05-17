@@ -35,10 +35,10 @@
      showguides="true"
      showgrid="true"
      inkscape:document-units="px"
-     inkscape:current-layer="g1"
-     inkscape:cy="8.2585623"
-     inkscape:cx="55.527965"
-     inkscape:zoom="4.6012851"
+     inkscape:current-layer="layer1"
+     inkscape:cy="8.2216624"
+     inkscape:cx="30.274159"
+     inkscape:zoom="13.0144"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -129,7 +129,7 @@
        y="-9.5"
        rx="0.12928589"
        ry="6.4942169e-06" /><g
-       id="vending_candy_v0"><rect
+       id="vending_candy_v999"><rect
          style="opacity:0.1;fill:#ff0000;fill-opacity:1;stroke-width:2;stroke-linejoin:round;-inkscape-stroke:none"
          id="rect72"
          width="15.999999"
