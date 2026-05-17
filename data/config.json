@@ -5129,10 +5129,6 @@
             "keywords": ["sell", "automat", "sweet"],
             "name": "vending machine with candy"
         },
-        "vending_lollipop": {
-            "keywords": ["sell", "automat", "sweet", "candy"],
-            "name": "vending machine with lollipop"
-        },
         "vending_chemist": {
             "keywords": ["sell", "automat"],
             "name": "vending machine with Greek cross"
@@ -5164,6 +5160,10 @@
             "keywords": ["sell", "automat", "food", "sweet"],
             "name": "vending machine with cone ice cream"
         },
+        "vending_lollipop": {
+            "keywords": ["sell", "automat", "sweet", "candy"],
+            "name": "vending machine with lollipop"
+        },
         "vending_machine": {
             "keywords": ["sell", "automat"],
             "name": "vending machine"
@@ -5171,6 +5171,10 @@
         "vending_p": {
             "keywords": ["sell", "automat"],
             "name": "vending machine with letter P"
+        },
+        "vending_pack": {
+            "keywords": ["sell", "automat", "snack"],
+            "name": "vending machine with pack of snack"
         },
         "vending_pizza": {
             "keywords": ["sell", "automat"],

@@ -285,7 +285,7 @@
          style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linejoin:miter;stroke-dasharray:none;font-variation-settings:normal;vector-effect:none;stroke-linecap:butt;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
          d="m 5.5,11 h 2 l -1,-1.5 z"
          id="path83" /></g><g
-       id="vending_food_v0"
+       id="vending_pack_v0"
        transform="translate(16)"><rect
          style="opacity:0.1;fill:#ff0000;fill-opacity:1;stroke-width:2;stroke-linejoin:round;-inkscape-stroke:none"
          id="rect21"
@@ -356,7 +356,7 @@
          y="10"
          rx="0.12928589"
          ry="6.4942169e-06" /></g><g
-       id="vending_food_v1"
+       id="vending_pack_v999"
        transform="translate(32)"><rect
          style="opacity:0.1;fill:#ff0000;fill-opacity:1;stroke-width:2;stroke-linejoin:round;-inkscape-stroke:none"
          id="rect54"
