@@ -147,19 +147,22 @@ def load_shapes(
     """Load all defined shapes."""
 
     shapes: Shapes = Shapes()
-    for path in [
+    for path in (
         Path("data") / "icons.svg",
         Path("data") / "connectors.svg",
         Path("data") / "flag.svg",
         Path("data") / "lamp.svg",
         Path("data") / "letters.svg",
         Path("data") / "power.svg",
-    ]:
-        shapes.add_from_file(path)
+    ):
+        shapes.add_from_file_v1(path)
+
+    for path in [Path("data") / "sketch.svg"]:
+        shapes.add_from_file_v2(path)
 
     generated_paths: list[Path] = generate(config)
 
-    for path in [
+    for path in (
         Path("iconscript") / "barcode.iconscript",
         Path("iconscript") / "building.iconscript",
         Path("iconscript") / "main.iconscript",
@@ -170,7 +173,7 @@ def load_shapes(
         Path("iconscript") / "transport.iconscript",
         Path("iconscript") / "vending.iconscript",
         *generated_paths,
-    ]:
+    ):
         shapes.add_from_iconscript(path, iconscript_executable)
 
     return shapes

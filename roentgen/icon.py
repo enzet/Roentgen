@@ -339,6 +339,21 @@ def get_icon_specifications(config: dict) -> list[IconSpecification]:
     return icon_specifications
 
 
+def get_iconscript_path(iconscript_executable: str | None = None) -> str:
+    """Find a valid iconscript executable path."""
+    iconscript_path: str | None = iconscript_executable
+    if iconscript_path is None:
+        iconscript_path = shutil.which("iconscript")
+    if iconscript_path is None:
+        message = "`iconscript` executable not found in `PATH`"
+        raise FileNotFoundError(message)
+
+    # TODO(enzet): run `iconscript version` and check it, when this is
+    # implemented in iconscript project.
+
+    return iconscript_path
+
+
 @dataclass
 class Shapes:
     """Extract shapes from SVG file.
@@ -349,14 +364,45 @@ class Shapes:
     shapes: dict[str, Shape] = field(default_factory=dict)
     """Shapes."""
 
-    def add_from_file(self, svg_file_name: Path) -> None:
-        """Add shapes from SVG file.
+    def add_from_file_v1(self, svg_file_path: Path) -> None:
+        """Add shapes from SVG file version 1.
 
-        :param svg_file_name: input SVG file name with icons.  File may contain
-            any other irrelevant graphics.
+        This SVG file contains already combined icon shapes that can be
+        extracted. File may contain any other irrelevant graphics.
         """
-        root: Element = ET.parse(svg_file_name).getroot()  # noqa: S314
-        self.__parse(root, svg_file_name)
+        root: Element = ET.parse(svg_file_path).getroot()  # noqa: S314
+        self.__parse(root, svg_file_path)
+
+    def add_from_file_v2(
+        self, svg_file_path: Path, iconscript_executable: str | None = None
+    ) -> None:
+        """Add shapes from SVG file version 2.
+
+        This SVG file contains not joined primitives that should be combined
+        using iconscript executable.
+        """
+        temp_output_directory: Path = Path(tempfile.mkdtemp())
+        iconscript_path: str | None = get_iconscript_path(iconscript_executable)
+
+        command: list[str] = [
+            iconscript_path,
+            "--from-svg",
+            str(svg_file_path),
+            str(temp_output_directory),
+        ]
+        try:
+            subprocess.check_call(  # noqa: S603
+                command,
+                shell=False,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+            )
+        except subprocess.CalledProcessError:
+            message = f"Failed to run `iconscript` with command: {command}"
+            logger.fatal(message)
+            sys.exit(1)
+
+        self._extract_shapes(temp_output_directory, str(svg_file_path))
 
     def _add_shape(
         self,
@@ -391,15 +437,7 @@ class Shapes:
 
         message: str
 
-        iconscript_path: str | None = iconscript_executable
-        if iconscript_path is None:
-            iconscript_path = shutil.which("iconscript")
-        if iconscript_path is None:
-            message = "`iconscript` executable not found in `PATH`"
-            raise FileNotFoundError(message)
-
-        # TODO(enzet): run `iconscript version` and check it, when this is
-        # implemented in iconscript project.
+        iconscript_path: str | None = get_iconscript_path(iconscript_executable)
 
         if not iconscript_file_name.is_file():
             message = f"`{iconscript_file_name}` is not a valid file"
@@ -422,6 +460,10 @@ class Shapes:
             logger.fatal(message)
             sys.exit(1)
 
+        self._extract_shapes(temp_output_directory, str(iconscript_file_name))
+
+    def _extract_shapes(self, temp_output_directory: Path, source: str) -> None:
+        """Extract shapes from generated SVG icon files."""
         offset: tuple[float, float] = (-8.0, -8.0)
 
         for svg_file_name in temp_output_directory.glob("*.svg"):
@@ -430,6 +472,10 @@ class Shapes:
             if match := VERSION_MATCHER.match(id_):
                 version = match.group("version")
                 id_ = match.group("id")
+            # TODO(enzet): fix this in iconscript. We should be able to treat
+            # element ids without `_v<version>` suffixes as icons.
+            if version == "v999":
+                version = "main"
             content: str = svg_file_name.read_text()
             root: Element = ET.fromstring(content)  # noqa: S314
             for node in root:
@@ -439,7 +485,7 @@ class Shapes:
                         id_,
                         PathOnCanvas(path, offset=offset),
                         version,
-                        str(iconscript_file_name),
+                        source,
                     )
         shutil.rmtree(str(temp_output_directory))
 
