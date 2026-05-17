@@ -14,9 +14,8 @@ from xml.etree.ElementTree import parse as parse_xml
 
 logger: logging.Logger = logging.getLogger(__name__)
 
-REPO = Path(__file__).parent.parent
-TAGS = [f"v0.{minor}.0" for minor in range(1, 15)]
-CACHE_DIR = REPO / ".cache" / "history"
+REPOSITORY: Path = Path(__file__).parent.parent
+CACHE_DIR: Path = REPOSITORY / ".cache" / "history"
 
 
 @dataclass
@@ -33,11 +32,16 @@ class Version:
 def git(*args: str) -> subprocess.CompletedProcess:
     """Run Git command."""
     return subprocess.run(  # noqa: S603
-        ["git", "-C", str(REPO), *args],  # noqa: S607
+        ["git", "-C", str(REPOSITORY), *args],  # noqa: S607
         capture_output=True,
         text=True,
         check=True,
     )
+
+
+TAGS: list[str] = (
+    git("tag", "--sort=version:refname").stdout.strip().splitlines()
+)
 
 
 def stash() -> bool:
@@ -49,16 +53,16 @@ def stash() -> bool:
     return result.stdout.strip() != "No local changes to save"
 
 
-SVG_NS = "http://www.w3.org/2000/svg"
+SVG_NS: str = "http://www.w3.org/2000/svg"
 
 
 def get_icons(tag: str) -> dict[str, str | None]:
     """Get icon identifiers and path commands for a given version tag."""
-    cache_file = CACHE_DIR / f"{tag}.json"
+    cache_file: Path = CACHE_DIR / f"{tag}.json"
     if cache_file.exists():
         return json.loads(cache_file.read_text(encoding="utf-8"))
     git("checkout", tag)
-    icons = get_head_icons()
+    icons: dict[str, str | None] = get_head_icons()
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     cache_file.write_text(json.dumps(icons), encoding="utf-8")
     return icons
@@ -66,10 +70,10 @@ def get_icons(tag: str) -> dict[str, str | None]:
 
 def get_head_icons() -> dict[str, str | None]:
     """Get icon identifiers and path commands from the current working tree."""
-    icons_dir = REPO / "icons"
+    icons_dir: Path = REPOSITORY / "icons"
     if not icons_dir.exists():
         return {}
-    result = {}
+    result: dict[str, str | None] = {}
     for svg_file in icons_dir.glob("*.svg"):
         root = parse_xml(svg_file).getroot()  # noqa: S314
         path_el = root.find(f"{{{SVG_NS}}}path")
@@ -98,7 +102,7 @@ def get_new_icon_ids(version: str) -> set[str]:
                 git("stash", "pop")
         return set(get_head_icons().keys()) - previous_icons
 
-    tag = f"v{version}"
+    tag: str = f"v{version}"
     if tag not in TAGS:
         message = f"Unknown version tag: {tag}. Known tags: {TAGS}"
         raise ValueError(message)
@@ -107,10 +111,10 @@ def get_new_icon_ids(version: str) -> set[str]:
     if original == "HEAD":
         original = git("rev-parse", "HEAD").stdout.strip()
 
-    stashed = stash()
+    stashed: bool = stash()
 
     try:
-        tag_index = TAGS.index(tag)
+        tag_index: int = TAGS.index(tag)
         previous_icons = (
             set(get_icons(TAGS[tag_index - 1]).keys())
             if tag_index > 0
@@ -133,7 +137,7 @@ def get_versions() -> dict[str, Version]:
 
     versions: dict[str, Version] = {}
 
-    stashed = stash()
+    stashed: bool = stash()
 
     try:
         previous_ids: set[str] = set()
@@ -160,12 +164,8 @@ def get_versions() -> dict[str, Version]:
     return versions
 
 
-# ---------------------------------------------------------------------------
-# Commit preparation
-# ---------------------------------------------------------------------------
-
-REPO_ISSUES = "https://github.com/enzet/Roentgen/issues"
-MAX_LINE = 78
+REPO_ISSUES: str = "https://github.com/enzet/Roentgen/issues"
+MAX_LINE: int = 78
 
 
 def get_icon_changes() -> tuple[list[str], list[str]]:
@@ -232,8 +232,8 @@ def _format_add_entry(name: str, issue: int | None) -> list[str]:
     """Build raw lines for a new 'Add icons' entry (comma-terminated)."""
     if issue is None:
         return [f"  - `{name}`,\n"]
-    url = f"{REPO_ISSUES}/{issue}"
-    inline = f"  - `{name}` ([#{issue}]({url})),"
+    url: str = f"{REPO_ISSUES}/{issue}"
+    inline: str = f"  - `{name}` ([#{issue}]({url})),"
     if len(inline) <= MAX_LINE:
         return [inline + "\n"]
     return [f"  - `{name}`\n", f"    ([#{issue}]({url})),\n"]
@@ -251,17 +251,17 @@ def _insert_into_section(
     make_entry: Callable[[str], list[str]],
 ) -> list[str]:
     """Insert *new_names* into a sorted CHANGELOG section."""
-    header_line = section_header + "\n"
+    header_line: str = section_header + "\n"
     try:
         start = lines.index(header_line)
     except ValueError:
         return lines
 
-    end = start + 1
+    end: int = start + 1
     while end < len(lines) and lines[end] != "\n":
         end += 1
 
-    existing = _parse_entries(lines, start, end)
+    existing: list[tuple[str, list[str]]] = _parse_entries(lines, start, end)
     existing_names = {name for name, _ in existing}
 
     all_entries = list(existing) + [
@@ -284,7 +284,7 @@ def _build_commit_message(
     new_icons: list[str], modified_icons: list[str], issue: int | None
 ) -> str:
     """Generate a one-line commit message."""
-    prefix = f"[#{issue}] " if issue is not None else ""
+    prefix: str = f"[#{issue}] " if issue is not None else ""
     parts: list[str] = []
 
     if new_icons:
@@ -302,8 +302,8 @@ def _build_commit_message(
     if not parts:
         return f"{prefix}Update icons"
 
-    msg = "; ".join(parts)
-    return prefix + msg[0].upper() + msg[1:]
+    message = "; ".join(parts)
+    return prefix + message[0].upper() + message[1:]
 
 
 def prepare_commit(*, issue: int | None = None, dry_run: bool = False) -> None:
@@ -319,8 +319,8 @@ def prepare_commit(*, issue: int | None = None, dry_run: bool = False) -> None:
     if modified_icons:
         logger.info("Modified icons: %s", ", ".join(modified_icons))
 
-    changelog = REPO / "CHANGELOG.md"
-    lines = changelog.read_text().splitlines(keepends=True)
+    changelog: Path = REPOSITORY / "CHANGELOG.md"
+    lines: list[str] = changelog.read_text().splitlines(keepends=True)
 
     if new_icons:
         lines = _insert_into_section(
@@ -336,7 +336,7 @@ def prepare_commit(*, issue: int | None = None, dry_run: bool = False) -> None:
 
     if dry_run:
         logger.info("--- CHANGELOG.md (Unreleased section) ---")
-        in_unreleased = False
+        in_unreleased: bool = False
         for line in lines:
             if line.startswith("## Unreleased"):
                 in_unreleased = True
@@ -346,10 +346,10 @@ def prepare_commit(*, issue: int | None = None, dry_run: bool = False) -> None:
                 logger.info("%s", line.rstrip())
     else:
         changelog.write_text("".join(lines))
-        logger.info("Updated %s", changelog.relative_to(REPO))
+        logger.info("Updated %s", changelog.relative_to(REPOSITORY))
 
-    message = _build_commit_message(new_icons, modified_icons, issue)
-    comments = []
+    message: str = _build_commit_message(new_icons, modified_icons, issue)
+    comments: list[str] = []
     if new_icons:
         comments.append("# New icons: " + ", ".join(new_icons))
     if modified_icons:
@@ -359,15 +359,15 @@ def prepare_commit(*, issue: int | None = None, dry_run: bool = False) -> None:
 
     with tempfile.NamedTemporaryFile(
         mode="w", suffix=".txt", prefix="commit_msg_", delete=False
-    ) as tmp:
-        tmp.write(message + "\n\n" + "\n".join(comments) + "\n")
-        tmp_path = tmp.name
+    ) as temp:
+        temp.write(message + "\n\n" + "\n".join(comments) + "\n")
+        temp_path = temp.name
 
-    editor = os.environ.get("VISUAL") or os.environ.get("EDITOR") or "vi"
-    subprocess.run([editor, tmp_path], check=False)  # noqa: S603
+    editor: str = os.environ.get("VISUAL") or os.environ.get("EDITOR") or "vi"
+    subprocess.run([editor, temp_path], check=False)  # noqa: S603
 
-    raw = Path(tmp_path).read_text()
-    Path(tmp_path).unlink()
+    raw: str = Path(temp_path).read_text()
+    Path(temp_path).unlink()
     final_message = "\n".join(
         line for line in raw.splitlines() if not line.startswith("#")
     ).strip()
@@ -383,7 +383,7 @@ def prepare_commit(*, issue: int | None = None, dry_run: bool = False) -> None:
 
 def main() -> None:
     """Entry point for commit preparation CLI."""
-    parser = argparse.ArgumentParser(
+    parser: argparse.ArgumentParser = argparse.ArgumentParser(
         description="Prepare a commit for new and modified icons."
     )
     parser.add_argument(
@@ -399,7 +399,7 @@ def main() -> None:
         action="store_true",
         help="Show what would change without writing files",
     )
-    args = parser.parse_args()
+    args: argparse.Namespace = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(message)s")
     prepare_commit(issue=args.issue, dry_run=args.dry_run)
 
