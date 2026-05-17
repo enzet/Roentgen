@@ -348,8 +348,26 @@ def get_iconscript_path(iconscript_executable: str | None = None) -> str:
         message = "`iconscript` executable not found in `PATH`"
         raise FileNotFoundError(message)
 
-    # TODO(enzet): run `iconscript version` and check it, when this is
-    # implemented in iconscript project.
+    result = subprocess.run(  # noqa: S603
+        [iconscript_path, "--version"],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if result.returncode != 0:
+        stderr = result.stderr.strip()
+        message = f"`{iconscript_path} --version` failed: {stderr}"
+        raise RuntimeError(message)
+
+    required = (0, 4, 1)
+    version_str = result.stdout.strip().split()[-1]
+    actual = tuple(int(x) for x in version_str.split("."))
+    if actual < required:
+        required_str: str = ".".join(str(x) for x in required)
+        message = (
+            f"`iconscript` {version_str} is too old, {required_str} required"
+        )
+        raise RuntimeError(message)
 
     return iconscript_path
 
