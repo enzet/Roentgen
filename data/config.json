@@ -1644,6 +1644,10 @@
             ],
             "directed": "right",
             "name": "guidepost"
+        },
+        "tactile_map": {
+            "keywords": ["braille", "blind", "impaired", "accessibility"],
+            "name": "tactile map"
         }
     },
     "__other": {
@@ -1753,7 +1757,7 @@
             "name": "diamond"
         },
         "double_folded_paper": {
-            "keywords": ["sheet"],
+            "keywords": ["sheet", "map"],
             "name": "double-folded piece of paper"
         },
         "drinking_water": {
