@@ -6,6 +6,8 @@ Add icons:
   - `barrier_jersey` ([#51](https://github.com/enzet/Roentgen/issues/51)),
   - `bee` ([#47](https://github.com/enzet/Roentgen/issues/47)),
   - `bus_over_bus_trap` ([#53](https://github.com/enzet/Roentgen/issues/53)),
+  - `compass`,
+  - `compass_rose`,
   - `tactile_map` ([#11](https://github.com/enzet/Roentgen/issues/11)),
   - `vending_candy` ([#45](https://github.com/enzet/Roentgen/issues/45)),
   - `vending_lollipop` ([#45](https://github.com/enzet/Roentgen/issues/45)),

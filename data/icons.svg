@@ -581,8 +581,8 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="754.67683"
-     inkscape:cx="200.63305"
+     inkscape:cy="751.5314"
+     inkscape:cx="220.62895"
      inkscape:zoom="8.9018236"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
@@ -1097,8 +1097,8 @@
        id="bicycle_locker_v0"
        style="fill:#0000ff;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;font-variation-settings:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        d="M 1.5 243 C 1.223 243 1 243.223 1 243.5 L 1 252.5 C 1 252.777 1.223 253 1.5 253 L 14.5 253 C 14.777 253 15 252.777 15 252.5 L 15 243.5 C 15 243.223 14.777 243 14.5 243 L 1.5 243 z M 9 244 L 10 244 A 0.50005 0.50005 0 0 1 10.464844 244.31445 L 11.464844 246.81445 A 0.50005 0.50005 0 0 1 11.109375 247.48828 L 9.3574219 247.87695 L 7.9296875 250.25781 A 0.50005 0.50005 0 0 1 7.0664062 250.24805 L 5.2109375 247 L 4.5 247 A 0.5 0.5 0 0 1 4 246.5 A 0.5 0.5 0 0 1 4.5 246 L 6.5 246 A 0.5 0.5 0 0 1 7 246.5 A 0.5 0.5 0 0 1 6.5 247 L 6.3613281 247 L 6.6230469 247.45898 L 10.316406 246.63867 L 9.6621094 245 L 9 245 A 0.5 0.5 0 0 1 8.5 244.5 A 0.5 0.5 0 0 1 9 244 z M 13.5 244 C 13.777 244 14 244.223 14 244.5 L 14 245.5 C 14 245.777 13.777 246 13.5 246 C 13.223 246 13 245.777 13 245.5 L 13 244.5 C 13 244.223 13.223 244 13.5 244 z M 4 248 C 5.0986472 248 6 248.90135 6 250 C 6 251.09865 5.0986472 252 4 252 C 2.9013528 252 2 251.09865 2 250 C 2 248.90135 2.9013528 248 4 248 z M 11 248 C 12.098647 248 13 248.90135 13 250 C 13 251.09865 12.098647 252 11 252 C 9.9013528 252 9 251.09865 9 250 C 9 248.90135 9.9013528 248 11 248 z M 8.0097656 248.17773 L 7.1445312 248.36914 L 7.5097656 249.00977 L 8.0097656 248.17773 z M 4 249 C 3.4417929 249 3 249.44179 3 250 C 3 250.55821 3.4417929 251 4 251 C 4.5582071 251 5 250.55821 5 250 C 5 249.44179 4.5582071 249 4 249 z M 11 249 C 10.441793 249 10 249.44179 10 250 C 10 250.55821 10.441793 251 11 251 C 11.558207 251 12 250.55821 12 250 C 12 249.44179 11.558207 249 11 249 z " /><path
-       id="compass_rose_v1"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="compass_rose"
+       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
        d="m 215.5,753 c -0.18961,1.7e-4 -0.36282,0.10757 -0.44727,0.27734 l -1.92578,3.84961 -3.84961,1.92578 c -0.36859,0.18427 -0.36859,0.71027 0,0.89454 l 3.84961,1.92578 1.92578,3.84961 c 0.18427,0.36859 0.71027,0.36859 0.89454,0 l 1.92578,-3.84961 3.84961,-1.92578 c 0.36859,-0.18427 0.36859,-0.71027 0,-0.89454 l -3.84961,-1.92578 -1.92578,-3.84961 C 215.86282,753.10757 215.68961,753.00017 215.5,753 Z m 0,1.61719 v 4.17578 l -1.39258,-1.39258 z m -0.70703,4.88281 -1.39258,1.39258 -2.7832,-1.39258 z m 2.80664,-1.39258 2.7832,1.39258 h -4.17578 z m -2.09961,2.09961 1.39258,1.39258 -1.39258,2.7832 z"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccc" /><path
        id="bed_with_floor_and_ceiling_v0"
@@ -28384,8 +28384,8 @@
        d="m 246,743.5 h 3"
        id="path1323"
        sodipodi:nodetypes="cc" /><path
-       id="compass_v1"
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
+       id="compass"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:5.2;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"
        d="m 247.5,753 c -3.58985,0 -6.5,2.91015 -6.5,6.5 0,3.58985 2.91015,6.5 6.5,6.5 3.58985,0 6.5,-2.91015 6.5,-6.5 0,-3.58985 -2.91015,-6.5 -6.5,-6.5 z m 0,2 c 0.18961,1.7e-4 0.36282,0.10757 0.44727,0.27734 l 2,4 c 0.0697,0.14025 0.0697,0.30507 0,0.44532 l -2,4 c -0.18427,0.36859 -0.71027,0.36859 -0.89454,0 l -2,-4 c -0.0697,-0.14025 -0.0697,-0.30507 0,-0.44532 l 2,-4 c 0.0845,-0.16977 0.25766,-0.27717 0.44727,-0.27734 z m 0,1.61719 -1.44141,2.88281 h 2.88282 z M 242.5,759 h 1 c 0.27614,0 0.5,0.22386 0.5,0.5 0,0.27614 -0.22386,0.5 -0.5,0.5 h -1 c -0.27614,0 -0.5,-0.22386 -0.5,-0.5 0,-0.27614 0.22386,-0.5 0.5,-0.5 z m 9,0 h 1 c 0.27614,0 0.5,0.22386 0.5,0.5 0,0.27614 -0.22386,0.5 -0.5,0.5 h -1 c -0.27614,0 -0.5,-0.22386 -0.5,-0.5 0,-0.27614 0.22386,-0.5 0.5,-0.5 z"
        sodipodi:nodetypes="sssssccccccccccccccssssssssssssss" /><path
        style="font-variation-settings:normal;opacity:0.2;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker:none;stop-color:#000000;stop-opacity:1"

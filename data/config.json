@@ -1628,15 +1628,11 @@
         "compass": {
             "unicode": ["🧭"],
             "keywords": ["navigation", "direction"],
-            "name": "compass",
-            "shapes": [{"id": "compass", "version": "v1"}],
-            "sketch": true
+            "name": "compass"
         },
         "compass_rose": {
             "keywords": ["navigation", "direction"],
-            "name": "compass rose",
-            "shapes": [{"id": "compass_rose", "version": "v1"}],
-            "sketch": true
+            "name": "compass rose"
         },
         "guidepost": {
             "keywords": [
