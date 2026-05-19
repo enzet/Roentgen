@@ -4969,6 +4969,11 @@
                 "keywords": ["road", "speed", "safety"],
                 "name": "speed bump"
             },
+            "bus_over_bus_trap": {
+                "categories": ["highway"],
+                "keywords": ["road", "bus", "trap"],
+                "name": "bus over bus trap"
+            },
             "dip": {
                 "categories": ["highway"],
                 "keywords": ["road", "barrier"],
