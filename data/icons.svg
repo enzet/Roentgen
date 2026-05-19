@@ -581,9 +581,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="666.75296"
-     inkscape:cx="241.11779"
-     inkscape:zoom="6.1836996"
+     inkscape:cy="342.23853"
+     inkscape:cx="652.21576"
+     inkscape:zoom="3.719628"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -20710,7 +20710,7 @@
        d="m 567,293.5 -0.5,7 h 2 l -0.5,-7 z"
        id="path43"
        sodipodi:nodetypes="ccccc" /><path
-       id="forward_v0"
+       id="arrow_forward_v0"
        style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;stroke:none"
        d="m 567.4668,307.00195 c -0.0872,0.006 -0.17132,0.0338 -0.24414,0.082 l -3,2 c -0.41141,0.27448 -0.21723,0.91584 0.27734,0.91602 h 1.96289 l -0.46094,6.46484 c -0.0203,0.28898 0.20836,0.53472 0.49805,0.53516 h 2 c 0.28969,-4.4e-4 0.51839,-0.24618 0.49805,-0.53516 L 568.53711,310 H 570.5 c 0.49457,-1.8e-4 0.68875,-0.64154 0.27734,-0.91602 l -3,-2 c -0.0917,-0.0607 -0.20082,-0.0896 -0.31054,-0.082 z"
        sodipodi:nodetypes="ccccccccccccccc" /><path
@@ -20722,7 +20722,7 @@
        d="m 583,291.5 -0.5,7 h 2 l -0.5,-7 z"
        id="path58"
        sodipodi:nodetypes="ccccc" /><path
-       id="backward_v0"
+       id="arrow_backward_v0"
        style="baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;fill:#0000ff;fill-opacity:1;stroke:none"
        d="m 583,307 c -0.26221,4e-4 -0.47959,0.20328 -0.49805,0.46484 L 582.03516,314 H 580.5 c -0.49457,1.8e-4 -0.68875,0.64154 -0.27734,0.91602 l 3,2 c 0.16795,0.11194 0.38673,0.11194 0.55468,0 l 3,-2 C 587.18875,314.64154 586.99457,314.00018 586.5,314 h -1.53516 l -0.46679,-6.53516 C 584.47959,307.20328 584.26221,307.0004 584,307 Z"
        sodipodi:nodetypes="ccccccccccccc" /><path
@@ -31937,12 +31937,12 @@
        d="m 614.5,289.5 -1,9 h 4 l -1,-9 z"
        id="path1865"
        sodipodi:nodetypes="ccccc" /><path
-       id="forward_v1"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="arrow_forward"
+       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;marker:none"
        d="m 599.5,305 c -0.11357,-8e-5 -0.22378,0.0385 -0.3125,0.10938 l -5,4 c -0.36935,0.29529 -0.16038,0.89085 0.3125,0.89062 h 3.44141 l -0.9375,8.44531 c -0.0325,0.29563 0.19867,0.55412 0.49609,0.55469 h 4 c 0.29742,-5.7e-4 0.52859,-0.25906 0.49609,-0.55469 L 601.05859,310 H 604.5 c 0.47288,2.3e-4 0.68185,-0.59533 0.3125,-0.89062 l -5,-4 C 599.72378,305.03849 599.61357,304.99992 599.5,305 Z"
        sodipodi:nodetypes="cccccccccccccc" /><path
-       id="backward_v1"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="arrow_backward"
+       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;marker:none"
        d="m 614.5,305 c -0.25462,4.9e-4 -0.46822,0.19222 -0.49609,0.44531 L 613.05273,314 H 610.5 c -0.47288,-2.3e-4 -0.68185,0.59533 -0.3125,0.89062 l 5,4 c 0.18267,0.14623 0.44233,0.14623 0.625,0 l 5,-4 C 621.18185,314.59533 620.97288,313.99977 620.5,314 h -2.55273 l -0.95118,-8.55469 C 616.96822,305.19222 616.75462,305.00049 616.5,305 Z"
        sodipodi:nodetypes="ccccccccccccc" /><path
        id="person_throwing_spear"

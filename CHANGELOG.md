@@ -3,6 +3,8 @@
 Add new type of SVG sketch files supported by iconscript 0.4.0.
 
 Add icons:
+  - `arrow_backward`,
+  - `arrow_forward`,
   - `barrier_jersey` ([#51](https://github.com/enzet/Roentgen/issues/51)),
   - `bee` ([#47](https://github.com/enzet/Roentgen/issues/47)),
   - `bus_over_bus_trap` ([#53](https://github.com/enzet/Roentgen/issues/53)),

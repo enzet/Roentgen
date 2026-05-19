@@ -2790,10 +2790,20 @@
     },
     "__symbol": {
         "__abstract": {
+            "arrow_backward": {
+                "todo": "check version",
+                "keywords": ["direction", "arrow"],
+                "name": "backward"
+            },
             "arrow_down": {
                 "is_part": true,
                 "keywords": ["direction"],
                 "name": "downwards arrow"
+            },
+            "arrow_forward": {
+                "todo": "check version",
+                "keywords": ["direction", "arrow"],
+                "name": "forward"
             },
             "arrow_left": {
                 "is_part": true,
@@ -2820,13 +2830,6 @@
                 "unicode": ["@"],
                 "name": "@ in square",
                 "keywords": ["internet", "email"]
-            },
-            "backward": {
-                "todo": "check version",
-                "keywords": ["direction", "arrow"],
-                "name": "backward",
-                "shapes": [{"id": "backward", "version": "v0"}],
-                "sketch": true
             },
             "circle_11": {
                 "keywords": ["ellipse", "figure", "geometry"],
@@ -2881,13 +2884,6 @@
                 "unicode": ["⚡"],
                 "keywords": ["thunder"],
                 "name": "lightning"
-            },
-            "forward": {
-                "todo": "check version",
-                "keywords": ["direction", "arrow"],
-                "name": "forward",
-                "shapes": [{"id": "forward", "version": "v0"}],
-                "sketch": true
             },
             "glider": {
                 "keywords": ["game", "life", "automata", "programming"],
