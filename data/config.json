@@ -4989,6 +4989,11 @@
                 "keywords": ["road", "speed", "safety"],
                 "name": "speed hump"
             },
+            "barrier_jersey": {
+                "categories": ["barrier", "highway"],
+                "keywords": ["road", "concrete", "divider"],
+                "name": "jersey barrier"
+            },
             "mini_bumps": {
                 "categories": ["highway"],
                 "keywords": ["road", "speed", "safety"],

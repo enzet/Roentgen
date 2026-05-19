@@ -3,6 +3,7 @@
 Add new type of SVG sketch files supported by iconscript 0.4.0.
 
 Add icons:
+  - `barrier_jersey` ([#51](https://github.com/enzet/Roentgen/issues/51)),
   - `bee` ([#47](https://github.com/enzet/Roentgen/issues/47)),
   - `tactile_map` ([#11](https://github.com/enzet/Roentgen/issues/11)),
   - `vending_candy` ([#45](https://github.com/enzet/Roentgen/issues/45)),
