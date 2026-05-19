@@ -581,9 +581,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="17.525806"
-     inkscape:cx="422.73655"
-     inkscape:zoom="8.5017488"
+     inkscape:cy="754.67683"
+     inkscape:cx="200.63305"
+     inkscape:zoom="8.9018236"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -18335,8 +18335,8 @@
        width="8"
        id="rect43285"
        style="fill:none;stroke:#000000;stroke-width:0.0999999;stroke-miterlimit:4;stroke-dasharray:none" /><path
-       id="bus"
-       style="fill:#000000;stroke:none;stroke-width:0.1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
+       id="bus_v3"
+       style="fill:#0000ff;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:0.993618;font-variation-settings:normal;opacity:1;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
        d="m 132,531 c -0.554,0 -1,0.446 -1,1 v 8 c 0,0.554 0.446,1 1,1 v 0.66602 c 0,0.18466 0.14932,0.33398 0.33398,0.33398 h 0.33204 C 132.85068,542 133,541.85068 133,541.66602 V 541 h 6 v 0.66602 c 0,0.18466 0.14932,0.33398 0.33398,0.33398 h 0.33204 C 139.85068,542 140,541.85068 140,541.66602 V 541 c 0.554,0 1,-0.446 1,-1 v -8 c 0,-0.554 -0.446,-1 -1,-1 z m 0.75,1 h 6.5 c 0.4155,0 0.75,0.3345 0.75,0.75 v 3.75 c 0,0.831 -0.669,1.5 -1.5,1.5 h -5 c -0.831,0 -1.5,-0.669 -1.5,-1.5 v -3.75 c 0,-0.4155 0.3345,-0.75 0.75,-0.75 z m -0.27539,7 c 0.009,-4.3e-4 0.0167,0 0.0254,0 h 1 c 0.277,0 0.5,0.223 0.5,0.5 0,0.277 -0.223,0.5 -0.5,0.5 h -1 c -0.277,0 -0.5,-0.223 -0.5,-0.5 0,-0.26834 0.2097,-0.48666 0.47461,-0.5 z m 6,0 c 0.009,-4.3e-4 0.0167,0 0.0254,0 h 1 c 0.277,0 0.5,0.223 0.5,0.5 0,0.277 -0.223,0.5 -0.5,0.5 h -1 c -0.277,0 -0.5,-0.223 -0.5,-0.5 0,-0.26834 0.2097,-0.48666 0.47461,-0.5 z"
        sodipodi:nodetypes="ssscssssccsssscsssssssssssssssssssssssssssssss" /><rect
        rx="1"
@@ -24179,8 +24179,8 @@
        d="m 339.5,334.5 v -8 l -1,-4 -1,4 v 8 l 2,-2"
        id="path111"
        sodipodi:nodetypes="cccccc" /><path
-       id="trolleybus"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="trolleybus_v0"
+       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:0.993618;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
        d="M 150.64648,529.14648 148.79297,531 H 148 c -0.554,0 -1,0.446 -1,1 v 8 c 0,0.554 0.446,1 1,1 v 0.5 c 0,0.277 0.223,0.5 0.5,0.5 0.277,0 0.5,-0.223 0.5,-0.5 V 541 h 6 v 0.5 c 0,0.277 0.223,0.5 0.5,0.5 0.277,0 0.5,-0.223 0.5,-0.5 V 541 c 0.554,0 1,-0.446 1,-1 v -8 c 0,-0.554 -0.446,-1 -1,-1 h -1.79297 l 1.14649,-1.14648 c 0.19522,-0.19525 0.19522,-0.51179 0,-0.70704 -0.19482,-0.19486 -0.5122,-0.19488 -0.70704,0 L 152.79297,531 h -2.58594 l 1.14649,-1.14648 c 0.19522,-0.19525 0.19522,-0.51179 0,-0.70704 -0.19482,-0.19486 -0.5122,-0.19488 -0.70704,0 z M 149,532 h 6 c 0.554,0 1,0.446 1,1 v 3.5 c 0,0.831 -0.669,1.5 -1.5,1.5 h -5 c -0.831,0 -1.5,-0.669 -1.5,-1.5 V 533 c 0,-0.554 0.446,-1 1,-1 z m -0.5,7 h 1 c 0.277,0 0.5,0.223 0.5,0.5 0,0.277 -0.223,0.5 -0.5,0.5 h -1 c -0.277,0 -0.5,-0.223 -0.5,-0.5 0,-0.277 0.223,-0.5 0.5,-0.5 z m 6,0 h 1 c 0.277,0 0.5,0.223 0.5,0.5 0,0.277 -0.223,0.5 -0.5,0.5 h -1 c -0.277,0 -0.5,-0.223 -0.5,-0.5 0,-0.277 0.223,-0.5 0.5,-0.5 z"
        sodipodi:nodetypes="ccssscsssccssscsssccsccccscsssssssssssssssssssssss" /><path
        sodipodi:nodetypes="cccccc"

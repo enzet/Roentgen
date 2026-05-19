@@ -12,7 +12,9 @@ Add icons:
   - `vending_pack` ([#43](https://github.com/enzet/Roentgen/issues/43)).
 
 Redraw icons:
-  - `saddle`.
+  - `bus`,
+  - `saddle`,
+  - `trolleybus`.
 
 
 ## 0.15.0
