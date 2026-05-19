@@ -9,6 +9,10 @@ Add icons:
   - `vending_lollipop` ([#45](https://github.com/enzet/Roentgen/issues/45)),
   - `vending_pack` ([#43](https://github.com/enzet/Roentgen/issues/43)).
 
+Redraw icons:
+  - `saddle`.
+
+
 ## 0.15.0
 
 Create `shapes` directory with `icons` command.
@@ -84,7 +88,7 @@ Update iconscript version to 0.3.
 
 Add icons:
   - `bicycle___plug`,
-  - `double_folded_paper`,
+  - `double_folded_paper` ([#11](https://github.com/enzet/Roentgen/issues/11)),
   - `power_pole_flag_armless`,
   - `power_tower_barrel_1_level`,
   - `power_tower_donau_1_level`,

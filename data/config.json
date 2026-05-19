@@ -1757,6 +1757,7 @@
             "name": "diamond"
         },
         "double_folded_paper": {
+            "unicode": ["🗺"],
             "keywords": ["sheet", "map"],
             "name": "double-folded piece of paper"
         },

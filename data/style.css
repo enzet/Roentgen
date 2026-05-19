@@ -4,6 +4,19 @@
     font-family: system-ui, -apple-system, sans-serif;
 }
 
+h1 {
+    font-size: 128px;
+    letter-spacing: 0;
+    font-variation-settings: 'opsz' 128, 'wght' 700;
+    font-family: system-ui, -apple-system, sans-serif;
+    margin-bottom: 25px;
+}
+h2, h3, h4 {
+    letter-spacing: 0;
+    font-variation-settings: 'opsz' 128, 'wght' 700;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
 .icon-viewer-section {
     display: flex;
     min-height: 100vh;
