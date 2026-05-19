@@ -9,6 +9,7 @@ Add icons:
   - `compass`,
   - `compass_rose`,
   - `tactile_map` ([#11](https://github.com/enzet/Roentgen/issues/11)),
+  - `tumulus`,
   - `vending_candy` ([#45](https://github.com/enzet/Roentgen/issues/45)),
   - `vending_lollipop` ([#45](https://github.com/enzet/Roentgen/issues/45)),
   - `vending_pack` ([#43](https://github.com/enzet/Roentgen/issues/43)).

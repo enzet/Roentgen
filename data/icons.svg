@@ -581,9 +581,9 @@
      showgrid="true"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="751.5314"
-     inkscape:cx="220.62895"
-     inkscape:zoom="8.9018236"
+     inkscape:cy="666.75296"
+     inkscape:cx="241.11779"
+     inkscape:zoom="6.1836996"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -20958,8 +20958,8 @@
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="m 230.5,649.5 v -1 h 3 v 1 z"
        id="path248" /><path
-       id="tumulus_v0"
-       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#0000ff;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1"
+       id="tumulus"
+       style="font-variation-settings:normal;baseline-shift:baseline;display:inline;overflow:visible;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;enable-background:accumulate;stop-color:#000000;stop-opacity:1;marker:none"
        d="m 232,661 c -0.88889,0 -1.62016,0.38925 -2.19531,0.91211 -0.57515,0.52286 -1.02735,1.17578 -1.46485,1.80078 -0.4375,0.625 -0.8603,1.22208 -1.3164,1.63672 C 226.56734,665.76425 226.11111,666 225.5,666 c -0.6573,0.009 -0.6573,0.9907 0,1 h 13 c 0.27308,-0.004 0.4922,-0.22689 0.49219,-0.5 1e-5,-0.27311 -0.21911,-0.49571 -0.49219,-0.5 -0.61111,0 -1.06734,-0.23575 -1.52344,-0.65039 -0.4561,-0.41464 -0.8789,-1.01172 -1.3164,-1.63672 -0.4375,-0.625 -0.8897,-1.27792 -1.46485,-1.80078 C 233.62016,661.38925 232.88889,661 232,661 Z m -1.5,3 h 3 a 0.50005,0.50005 0 0 1 0.5,0.5 v 1 a 0.50005,0.50005 0 0 1 -0.5,0.5 h -3 a 0.50005,0.50005 0 0 1 -0.5,-0.5 v -1 a 0.50005,0.50005 0 0 1 0.5,-0.5 z" /><path
        style="opacity:0.2;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
        d="m 150.5,454.5 h 2"
