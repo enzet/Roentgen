@@ -538,7 +538,7 @@
         "light_bulb": {
             "keywords": ["electric"],
             "name": "light bulb",
-            "shapes": [{"id": "light_bulb", "version": "v2"}],
+            "shapes": [{"id": "light_bulb", "version": "v0"}],
             "sketch": true
         },
         "no_light_bulb": {
@@ -882,14 +882,14 @@
             "unicode": ["♀️"],
             "keywords": ["person", "human", "woman"],
             "name": "female",
-            "shapes": [{"id": "female", "version": "v1"}],
+            "shapes": [{"id": "female", "version": "v0"}],
             "sketch": true
         },
         "male": {
             "unicode": ["♂️"],
             "keywords": ["person", "human", "man"],
             "name": "male",
-            "shapes": [{"id": "male", "version": "v1"}],
+            "shapes": [{"id": "male", "version": "v0"}],
             "sketch": true
         },
         "massage": {
@@ -1073,7 +1073,7 @@
         "bubble_tea": {
             "unicode": ["🧋"],
             "keywords": ["drink", "liquid", "boba", "tapioca"],
-            "shapes": [{"id": "bubble_tea", "version": "v3"}],
+            "shapes": [{"id": "bubble_tea", "version": "v0"}],
             "sketch": true,
             "name": "bubble tea"
         },
