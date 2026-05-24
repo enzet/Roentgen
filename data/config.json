@@ -386,6 +386,10 @@
             "shapes": [{"id": "fence", "version": "v2"}],
             "sketch": true
         },
+        "full_height_turnstile": {
+            "name": "full-height turnstile",
+            "keywords": ["gate", "entry", "barrier", "access"]
+        },
         "garage_door": {
             "categories": ["barrier"],
             "keywords": ["access"],
@@ -414,6 +418,10 @@
             "name": "rope between two sticks",
             "shapes": [{"id": "rope_barrier", "version": "v0"}],
             "sketch": true
+        },
+        "turnstile": {
+            "name": "turnstile",
+            "keywords": ["gate", "entry", "barrier", "access"]
         }
     },
     "__body_part": {
@@ -571,11 +579,6 @@
             "keywords": ["security", "surveillance"],
             "name": "wall dome CCTV camera"
         },
-        "defibrillator": {
-            "categories": ["emergency"],
-            "keywords": ["emergency", "medical"],
-            "name": "heart and lightning"
-        },
         "digital_clock": {
             "keywords": ["time", "clock", "numbers"],
             "name": "digital clock"
@@ -624,6 +627,34 @@
             "unicode": ["🖥"],
             "keywords": ["screen", "television"],
             "name": "monitor"
+        }
+    },
+    "__emergency": {
+        "defibrillator": {
+            "categories": ["emergency"],
+            "keywords": ["emergency", "medical"],
+            "name": "heart and lightning"
+        },
+        "fire_extinguisher": {
+            "categories": ["emergency"],
+            "unicode": ["🧯"],
+            "keywords": ["emergency", "safety"],
+            "name": "fire extinguisher"
+        },
+        "fire_hydrant": {
+            "categories": ["emergency"],
+            "keywords": ["emergency", "safety"],
+            "name": "fire hydrant"
+        },
+        "life_ring": {
+            "categories": ["emergency"],
+            "unicode": ["🛟"],
+            "name": "life ring"
+        },
+        "sos_phone": {
+            "categories": ["emergency"],
+            "name": "phone with SOS",
+            "keywords": ["emergency", "help", "call", "rescue"]
         }
     },
     "__flag": {
@@ -1769,17 +1800,6 @@
             "keywords": ["money", "finance"],
             "name": "exchange"
         },
-        "fire_extinguisher": {
-            "categories": ["emergency"],
-            "unicode": ["🧯"],
-            "keywords": ["emergency", "safety"],
-            "name": "fire extinguisher"
-        },
-        "fire_hydrant": {
-            "categories": ["emergency"],
-            "keywords": ["emergency", "safety"],
-            "name": "fire hydrant"
-        },
         "fire_pit": {
             "keywords": ["outdoor", "recreation", "camping"],
             "name": "fire pit"
@@ -1856,11 +1876,6 @@
         "kiosk": {
             "name": "kiosk",
             "keywords": ["shop", "stand", "booth", "stall"]
-        },
-        "life_ring": {
-            "categories": ["emergency"],
-            "unicode": ["🛟"],
-            "name": "life ring"
         },
         "lift_gate": {
             "name": "lift gate",
@@ -1974,11 +1989,6 @@
             "name": "solar panel",
             "keywords": ["energy", "sun", "electricity", "renewable", "power"]
         },
-        "sos_phone": {
-            "categories": ["emergency"],
-            "name": "phone with SOS",
-            "keywords": ["emergency", "help", "call", "rescue"]
-        },
         "stained_glass": {
             "name": "stained glass",
             "keywords": ["art", "window", "church", "religion"]
@@ -2052,10 +2062,6 @@
         "triangle_down_hollow": {
             "name": "hollow upside down triangle",
             "keywords": ["shape", "symbol"]
-        },
-        "turnstile": {
-            "name": "turnstile",
-            "keywords": ["gate", "entry", "barrier", "access"]
         },
         "umbrella": {
             "is_part": true,

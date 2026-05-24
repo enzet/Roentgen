@@ -33,12 +33,12 @@
      inkscape:object-paths="true"
      inkscape:guide-bbox="true"
      showguides="true"
-     showgrid="true"
+     showgrid="false"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
-     inkscape:cy="217.38957"
-     inkscape:cx="186.33392"
-     inkscape:zoom="1.25581"
+     inkscape:cy="82.353007"
+     inkscape:cx="274.99085"
+     inkscape:zoom="7.6257082"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0"
      borderopacity="1.0"
@@ -57,7 +57,7 @@
      inkscape:deskcolor="#d1d1d1"><inkscape:grid
        snapvisiblegridlinesonly="true"
        enabled="true"
-       visible="true"
+       visible="false"
        empspacing="16"
        id="grid2995"
        type="xygrid"
@@ -79,7 +79,7 @@
        spacingy="1"
        spacingx="1"
        units="px"
-       visible="true"
+       visible="false"
        enabled="true"
        color="#000000"
        opacity="0.05098039"
@@ -4647,7 +4647,7 @@
          style="font-variation-settings:normal;fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none"
          d="m 301.5,243.5 v -2"
          id="path832" /></g><g
-       id="full_height_turnstile_v0"><rect
+       id="full_height_turnstile_v999"><rect
          style="opacity:1;fill:#ff0000;fill-opacity:0.1;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
          id="rect28"
          width="16"

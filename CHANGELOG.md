@@ -10,6 +10,8 @@ Add icons:
   - `bus_over_bus_trap` ([#53](https://github.com/enzet/Roentgen/issues/53)),
   - `compass`,
   - `compass_rose`,
+  - `full_height_turnstile`
+    ([#52](https://github.com/enzet/Roentgen/issues/52)),
   - `tactile_map` ([#11](https://github.com/enzet/Roentgen/issues/11)),
   - `tumulus`,
   - `vending_candy` ([#45](https://github.com/enzet/Roentgen/issues/45)),
