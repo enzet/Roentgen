@@ -213,7 +213,7 @@ def draw(iconscript_executable: str | None) -> None:
                 found = True
                 break
         if not found:
-            logger.warning("No usage of `%s` shape found.", shape_id)
+            logger.debug("No usage of `%s` shape found.", shape_id)
 
     shapes_data: dict[str, str] = {
         shape_id: shape.get_path_commands()
