@@ -19,13 +19,17 @@ from pathlib import Path
 from typing import Any, Final
 
 import requests
+import yaml
 from lxml import etree, html
+
+from roentgen.collection import tags_to_descriptor
 
 logger = logging.getLogger(__name__)
 
-PER_PAGE: Final[int] = 100
-
 MIN_FREQUENCY_TO_DOWNLOAD: Final[int] = 100
+PER_PAGE: Final[int] = 100
+PLACEHOLDER_COLOR = "#FFEEFF"
+REPEATED_COLOR = "#FFFFDD"
 
 
 @dataclass
@@ -49,17 +53,17 @@ class TagInfo:
 
     def get_key(self) -> str:
         """Get the key of the tag."""
-        if "=" in self.descriptor:
-            assert self.descriptor.count("=") == 1
-            key, value = self.descriptor.split("=")
+        if "=" in self.descriptor and self.descriptor.count("=") == 1:
+            key, _value = self.descriptor.split("=")
             return key
         return self.descriptor
 
     def get_value(self) -> str | None:
         """Get the value of the tag."""
-        assert self.descriptor.count("=") == 1
-        key, value = self.descriptor.split("=")
-        return value
+        if self.descriptor.count("=") == 1:
+            _key, value = self.descriptor.split("=")
+            return value
+        return None
 
 
 class TagInfoAPI:
@@ -355,7 +359,10 @@ def check_descriptor(tag: TagInfo, descriptor: str) -> bool:
 
 
 def construct_table(
-    tags: list[TagInfo], roentgen_scheme: RoentgenScheme, id_scheme: IdScheme
+    tags: list[TagInfo],
+    roentgen_scheme: RoentgenScheme,
+    map_machine_scheme: MapMachineScheme,
+    id_scheme: IdScheme,
 ) -> list[Element]:
     """Construct a table from tags.
 
@@ -368,10 +375,20 @@ def construct_table(
     result: list[Element] = []
 
     for tag in tags:
-        if roentgen_scheme.is_ignored(tag) or id_scheme.is_ignored(tag):
+        if (
+            roentgen_scheme.is_ignored(tag)
+            or map_machine_scheme.is_ignored(tag)
+            or id_scheme.is_ignored(tag)
+        ):
             continue
 
         roentgen_icons: list[str] = roentgen_scheme.icons.get(
+            tag.descriptor, []
+        )
+        map_machine_icons: list[str] = map_machine_scheme.icons.get(
+            tag.descriptor, []
+        )
+        map_machine_added_icons: list[str] = map_machine_scheme.added_icons.get(
             tag.descriptor, []
         )
         id_tagging_icon: str | None = id_scheme.icons.get(tag.descriptor, None)
@@ -379,6 +396,8 @@ def construct_table(
         element: Element = Element(
             tag=tag.descriptor,
             roentgen_icons=roentgen_icons,
+            map_machine_icons=map_machine_icons,
+            map_machine_added_icons=map_machine_added_icons,
             id_tagging_icon=id_tagging_icon,
             total_count=tag.total_count,
         )
@@ -387,7 +406,7 @@ def construct_table(
     return result
 
 
-def write_html_document(output_path: Path, container: html.Element) -> None:
+def write_html_document(output_path: Path, container: etree._Element) -> None:
     """Write an HTML document with a container element.
 
     :param output_path: path to the output file
@@ -395,7 +414,7 @@ def write_html_document(output_path: Path, container: html.Element) -> None:
     """
     (doc := html.HtmlElement()).set("lang", "en")
 
-    head: html.Element = html.Element("head")
+    head = html.Element("head")
     doc.append(head)
 
     meta_charset = html.Element("meta")
@@ -438,16 +457,19 @@ class Element:
 
     tag: str
     roentgen_icons: list[str]
+    map_machine_icons: list[str]
+    map_machine_added_icons: list[str]
     id_tagging_icon: str | None
     total_count: int
 
 
 def add_table(
-    container: html.Element,
+    container: etree._Element,
     elements: list[Element],
     id_path: Path | None,
     maki_path: Path | None,
     temaki_path: Path | None,
+    statistics: dict[str, Any],
 ) -> None:
     """Save tags to an HTML file with a styled table.
 
@@ -463,7 +485,7 @@ def add_table(
     header_row = html.Element("tr")
     thead.append(header_row)
 
-    for header_text in ["Tags", "Rö.", "iD", "Count"]:
+    for header_text in ["Tags", "Rö", "MM", "iD", "Count"]:
         th = html.Element("th")
         th.text = header_text
         header_row.append(th)
@@ -471,27 +493,40 @@ def add_table(
     tbody = html.Element("tbody")
     table.append(tbody)
 
-    roentgen_usages: int = 0
-    id_usages: int = 0
-
     for element in elements:
         row = html.Element("tr")
 
-        is_placeholder = False
+        is_id_placeholder = False
+        is_id_repeated = False
+        is_map_machine_placeholder = False
+        is_map_machine_repeated = False
         for other_element in elements:
             if other_element == element:
                 continue
             if (
-                element.id_tagging_icon == other_element.id_tagging_icon
-                and element.tag.startswith(other_element.tag.replace("*", ""))
+                element.id_tagging_icon
+                and element.id_tagging_icon == other_element.id_tagging_icon
             ):
-                is_placeholder = True
+                is_id_repeated = True
+                if element.tag.startswith(other_element.tag.replace("*", "")):
+                    is_id_placeholder = True
+            if (
+                element.map_machine_icons
+                and other_element.map_machine_icons
+                and element.map_machine_icons[0]
+                == other_element.map_machine_icons[0]
+            ):
+                is_map_machine_repeated = True
+                if element.tag.startswith(other_element.tag.replace("*", "")):
+                    is_map_machine_placeholder = True
 
-        roentgen_usages += int(bool(element.roentgen_icons))
-        if is_placeholder:
-            row.set("style", "background-color: #FFEEFF;")
-        else:
-            id_usages += int(bool(element.id_tagging_icon))
+        if not is_map_machine_placeholder:
+            statistics["map_machine_usages"] += int(
+                bool(element.map_machine_icons)
+                or bool(element.map_machine_added_icons)
+            )
+        if not is_id_placeholder:
+            statistics["id_usages"] += int(bool(element.id_tagging_icon))
 
         tbody.append(row)
 
@@ -533,13 +568,52 @@ def add_table(
         for img in element.roentgen_icons:
             img_element = html.Element("img")
             img_element.set("class", "lazy-svg")
-            if Path("icons", f"{img}.svg").exists():
-                img_element.set("data-src", f"../icons/{img}.svg")
-            elif Path("icons_sketches", f"{img}.svg").exists():
-                img_element.set("data-src", f"../icons_sketches/{img}.svg")
-            else:
-                img_element.set("data-src", "../icons/unknown.svg")
+            for suffix in ("", "_v999", "_v0", "_v1", "_v2"):
+                if Path("shapes", "x1", f"{img}{suffix}.svg").exists():
+                    img_element.set(
+                        "data-src", f"../shapes/x1/{img}{suffix}.svg"
+                    )
+                    img_element.set("title", f"{img}{suffix}")
+                    break
             imgs_cell.append(img_element)
+        imgs_cell = html.Element("td")
+        imgs_cell.set("class", "imgs")
+        row.append(imgs_cell)
+
+        def add_map_machine_icon(
+            img: str, prefix: str, imgs_cell: etree._Element = imgs_cell
+        ) -> None:
+            if prefix:
+                span = html.Element("span")
+                span.text = prefix
+                imgs_cell.append(span)
+            img_element = html.Element("img")
+            img_element.set("class", "lazy-svg")
+            found: bool = False
+            for suffix in ("", "_v999", "_v0", "_v1", "_v2"):
+                if Path("shapes", "x1", f"{img}{suffix}.svg").exists():
+                    img_element.set(
+                        "data-src", f"../shapes/x1/{img}{suffix}.svg"
+                    )
+                    img_element.set("title", f"{img}{suffix}")
+                    found = True
+                    break
+            if found:
+                imgs_cell.append(img_element)
+            else:
+                span = html.Element("code")
+                span.text = img
+                imgs_cell.append(span)
+
+        for img in element.map_machine_icons:
+            add_map_machine_icon(img, "")
+        for img in element.map_machine_added_icons:
+            add_map_machine_icon(img, " + ")
+
+        if is_map_machine_repeated:
+            imgs_cell.set("style", f"background-color: {REPEATED_COLOR};")
+        if is_map_machine_placeholder:
+            imgs_cell.set("style", f"background-color: {PLACEHOLDER_COLOR};")
 
         id_imgs_cell = html.Element("td")
         id_imgs_cell.set("class", "imgs")
@@ -549,55 +623,86 @@ def add_table(
         img_element = html.Element("img")
         img_element.set("class", "lazy-svg")
 
-        if (
-            element.id_tagging_icon is not None
-            and element.id_tagging_icon.startswith("roentgen-")
+        if element.id_tagging_icon and element.id_tagging_icon[0].startswith(
+            "roentgen-"
         ):
             file_name = (
-                f"{element.id_tagging_icon.removeprefix('roentgen-')}.svg"
+                f"{element.id_tagging_icon[0].removeprefix('roentgen-')}.svg"
             )
             img_element.set("data-src", f"../icons/{file_name}")
             id_imgs_cell.append(img_element)
         elif (
-            element.id_tagging_icon is not None
+            element.id_tagging_icon
             and temaki_path is not None
-            and element.id_tagging_icon.startswith("temaki-")
+            and element.id_tagging_icon[0].startswith("temaki-")
         ):
-            file_name = f"{element.id_tagging_icon.removeprefix('temaki-')}.svg"
+            file_name = (
+                f"{element.id_tagging_icon[0].removeprefix('temaki-')}.svg"
+            )
             img_element.set("data-src", str(temaki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
         elif (
-            element.id_tagging_icon is not None
+            element.id_tagging_icon
             and id_path is not None
             and (
-                element.id_tagging_icon.startswith("far-")
-                or element.id_tagging_icon.startswith("fas-")
+                element.id_tagging_icon[0].startswith("far-")
+                or element.id_tagging_icon[0].startswith("fas-")
             )
         ):
-            file_name = f"{element.id_tagging_icon}.svg"
+            file_name = f"{element.id_tagging_icon[0]}.svg"
             img_element.set(
                 "data-src", str(id_path / "svg" / "fontawesome" / file_name)
             )
             id_imgs_cell.append(img_element)
         elif (
-            element.id_tagging_icon is not None
-            and maki_path is not None
-            and element.id_tagging_icon.startswith("maki-")
+            element.id_tagging_icon
+            and id_path is not None
+            and (element.id_tagging_icon[0].startswith("iD-"))
         ):
-            file_name = f"{element.id_tagging_icon.removeprefix('maki-')}.svg"
+            file_name = f"{element.id_tagging_icon[0][3:]}.svg"
+            img_element.set(
+                "data-src",
+                str(id_path / "svg" / "iD-sprite" / "presets" / file_name),
+            )
+            id_imgs_cell.append(img_element)
+        elif (
+            element.id_tagging_icon
+            and maki_path is not None
+            and element.id_tagging_icon[0].startswith("maki-")
+        ):
+            file_name = (
+                f"{element.id_tagging_icon[0].removeprefix('maki-')}.svg"
+            )
             img_element.set("data-src", str(maki_path / "icons" / file_name))
             id_imgs_cell.append(img_element)
 
-        id_span = html.Element("span")
-        id_span.text = element.id_tagging_icon
-        id_imgs_cell.append(id_span)
+        if is_id_repeated:
+            id_imgs_cell.set("style", f"background-color: {REPEATED_COLOR};")
+        if is_id_placeholder:
+            id_imgs_cell.set("style", f"background-color: {PLACEHOLDER_COLOR};")
+
+        id_code = html.Element("code")
+        if element.id_tagging_icon:
+            text = element.id_tagging_icon[0]
+            id_code.text = text.split("-")[0]
+        id_code.set("style", "padding-left: 10px;")
+        id_imgs_cell.append(id_code)
 
         count_cell = html.Element("td")
         count_cell.set("class", "count")
         count_cell.text = f"{element.total_count / 1000:.0f} K"
         row.append(count_cell)
 
-    logger.debug("Difference: %s.", id_usages - roentgen_usages)
+
+def json_to_taginfo(item: dict[str, Any]) -> TagInfo:
+    """Convert a JSON object from the Taginfo API to a TagInfo instance."""
+    return TagInfo(
+        descriptor=f"{item['key']}={item['value']}",
+        count_nodes=item["count_nodes"],
+        count_ways=item["count_ways"],
+        count_relations=item["count_relations"],
+        total_count=item["total_count"],
+    )
 
 
 def load_all_tags(
@@ -613,21 +718,21 @@ def load_all_tags(
     if cache_json.exists():
         with cache_json.open(encoding="utf-8") as input_file:
             return [
-                TagInfo(
-                    descriptor=f"{item['key']}={item['value']}",
-                    count_nodes=item["count_nodes"],
-                    count_ways=item["count_ways"],
-                    count_relations=item["count_relations"],
-                    total_count=item["total_count"],
-                )
-                for item in json.load(input_file)["tags"]
-                if item["total_count"] >= min_frequency
+                json_to_taginfo(item) for item in json.load(input_file)["tags"]
             ]
 
     all_tags: list[TagInfo] = []
-    for page in range(1, 100):
-        logger.info("Fetching page %d...", page)
-        page_tags = api.get_most_used_tags(page=page, per_page=PER_PAGE)
+    for page in range(1, 500):
+        cache_page_json = cache_json.parent / f"most_used_tags_p{page}.json"
+        if cache_page_json.exists():
+            with cache_page_json.open(encoding="utf-8") as input_file:
+                page_tags = [
+                    json_to_taginfo(item)
+                    for item in json.load(input_file)["tags"]
+                ]
+        else:
+            logger.info("Fetching page %d...", page)
+            page_tags = api.get_most_used_tags(page=page, per_page=PER_PAGE)
 
         if not page_tags:
             logger.error("Failed to fetch page %d.", page)
@@ -638,6 +743,7 @@ def load_all_tags(
 
         # Save after each page to preserve progress.
         save_tags_to_json(all_tags, cache_json, append=False)
+        save_tags_to_json(page_tags, cache_page_json, append=False)
 
     logger.info("Total tags collected: %d.", len(all_tags))
     logger.info("Results saved to %s.", cache_json)
@@ -740,10 +846,21 @@ def load_key_values(
 
 
 @dataclass
-class RoentgenScheme:
-    """Roentgen scheme."""
+class Scheme:
+    """Tagging scheme."""
 
     icons: dict[str, list[str]]
+    added_icons: dict[str, list[str]]
+
+    def has(self, descriptor: str) -> bool:
+        """Check if a descriptor has icon."""
+        return descriptor in self.icons or descriptor in self.added_icons
+
+
+@dataclass
+class RoentgenScheme(Scheme):
+    """Roentgen scheme."""
+
     ignored: list[str]
     only_ways: list[str]
 
@@ -751,13 +868,14 @@ class RoentgenScheme:
     def from_dict(cls, scheme: dict[str, Any]) -> RoentgenScheme:
         """Create a RoentgenScheme from a dictionary."""
         return cls(
-            icons={
+            {
                 key: value["icons"]
                 for key, value in scheme.items()
                 if key not in ("__ignore", "__only_ways")
             },
-            ignored=scheme["__ignore"],
-            only_ways=scheme["__only_ways"],
+            {},
+            scheme["__ignore"],
+            scheme["__only_ways"],
         )
 
     def is_ignored(self, tag: TagInfo) -> bool:
@@ -773,11 +891,59 @@ class RoentgenScheme:
 
 
 @dataclass
-class IdScheme:
+class MapMachineScheme(Scheme):
+    """Map Machine scheme."""
+
+    ignored: list[str]
+
+    @classmethod
+    def from_yaml(
+        cls, scheme: dict[str, Any], keys: dict[str, list[str]]
+    ) -> MapMachineScheme:
+        """Parse scheme from YAML file."""
+        icons: dict[str, list[str]] = {}
+        added_icons: dict[str, list[str]] = {}
+
+        for group in scheme["nodes"]:
+            for definition in group["tags"]:
+                descriptor = tags_to_descriptor(definition["tags"])
+                shapes = []
+                added_shapes = []
+                for shape in definition.get("shapes", []):
+                    if isinstance(shape, str):
+                        shapes.append(shape)
+                    elif "shape" in shape:
+                        shapes.append(shape["shape"])
+                for shape in definition.get("add_shapes", []):
+                    if isinstance(shape, str):
+                        added_shapes.append(shape)
+                    elif "shape" in shape:
+                        added_shapes.append(shape["shape"])
+                icons[descriptor] = shapes
+                added_icons[descriptor] = added_shapes
+
+        ignored = [*keys["keys_to_write"], *keys["keys_to_skip"]] + [
+            f"{x}:" for x in [*keys["prefix_to_write"], *keys["prefix_to_skip"]]
+        ]
+        return cls(icons, added_icons, ignored)
+
+    def is_ignored(self, tag: TagInfo) -> bool:
+        """Check if a tag is ignored."""
+        for descriptor in self.ignored:
+            if check_descriptor(tag, descriptor):
+                return True
+        return False
+
+    def get_tags(self) -> list[TagInfo]:
+        """Get all tags."""
+        return [TagInfo(descriptor=key, total_count=0) for key in self.icons]
+
+
+@dataclass
+class IdScheme(Scheme):
     """iD scheme."""
 
     discarded: list[str] = field(default_factory=list)
-    icons: dict[str, str] = field(default_factory=dict)
 
     @classmethod
     def from_directory(cls, path: Path) -> IdScheme:
@@ -787,14 +953,14 @@ class IdScheme:
         ) as input_file:
             discarded: list[str] = list(json.load(input_file).keys())
 
-        icons: dict[str, str] = {}
+        icons: dict[str, list[str]] = {}
         for file in (path / "data" / "presets").rglob("*.json"):
             with file.open(encoding="utf-8") as input_file:
                 data: dict[str, Any] = json.load(input_file)
                 if "tags" not in data or "icon" not in data:
                     continue
                 id_ = ";".join(f"{k}={v}" for k, v in data["tags"].items())
-                icons[id_] = data["icon"]
+                icons[id_] = [data["icon"]]
 
         for file in (path / "data" / "fields").rglob("*.json"):
             with file.open(encoding="utf-8") as input_file:
@@ -802,9 +968,9 @@ class IdScheme:
                 if "key" not in data or "icons" not in data:
                     continue
                 for value, icon in data["icons"].items():
-                    icons[f"{data['key']}={value}"] = icon
+                    icons[f"{data['key']}={value}"] = [icon]
 
-        return cls(discarded=discarded, icons=icons)
+        return cls(icons, {}, discarded)
 
     def is_ignored(self, tag: TagInfo) -> bool:
         """Check if a tag is ignored."""
@@ -820,6 +986,7 @@ class IdScheme:
 
 def main(
     roentgen_scheme_path: Path,
+    map_machine_scheme_path: Path | None,
     id_tagging_schema_path: Path | None,
     id_path: Path | None,
     maki_path: Path | None,
@@ -846,7 +1013,19 @@ def main(
             json.load(input_file)
         )
 
-    id_scheme: IdScheme = IdScheme()
+    map_machine_scheme: MapMachineScheme = MapMachineScheme({}, {}, [])
+    if map_machine_scheme_path is not None:
+        with (
+            (map_machine_scheme_path / "nodes.yml").open() as nodes_file,
+            (map_machine_scheme_path / "keys.yml").open() as keys_file,
+        ):
+            map_machine_scheme: MapMachineScheme = MapMachineScheme.from_yaml(
+                yaml.safe_load(nodes_file), yaml.safe_load(keys_file)
+            )
+    else:
+        logger.warning("Map Machine scheme not found.")
+
+    id_scheme: IdScheme = IdScheme({}, {})
     if id_tagging_schema_path is not None:
         discarded_path: Path = (
             id_tagging_schema_path / "data" / "discarded.json"
@@ -856,8 +1035,10 @@ def main(
     else:
         logger.warning("iD scheme not found.")
 
+    statistics = {"map_machine_usages": 0, "id_usages": 0}
+
     # Construct the HTML document.
-    container: html.Element = html.Element("div")
+    container = html.Element("div")
     container.set("class", "container")
 
     if show_grouped_tags:
@@ -883,21 +1064,34 @@ def main(
             values_to_display: list[TagInfo] = [
                 value
                 for value in values
-                if value.total_count >= min_frequency
+                if (
+                    value.total_count >= min_frequency
+                    or id_scheme.has(value.descriptor)
+                    or roentgen_scheme.has(value.descriptor)
+                    or map_machine_scheme.has(value.descriptor)
+                )
                 and not roentgen_scheme.is_ignored(value)
+                and not map_machine_scheme.is_ignored(value)
                 and not id_scheme.is_ignored(value)
             ]
             if len(values_to_display) > 0:
                 (h1 := html.Element("h1")).text = f"{key.get_key()}=*"
                 container.append(h1)
+                span = html.Element("span")
+                span.text = f"Total count: {key.total_count}."
+                container.append(span)
                 add_table(
                     container,
                     construct_table(
-                        values_to_display, roentgen_scheme, id_scheme
+                        values_to_display,
+                        roentgen_scheme,
+                        map_machine_scheme,
+                        id_scheme,
                     ),
                     id_path,
                     maki_path,
                     temaki_path,
+                    statistics,
                 )
 
     if show_all_tags:
@@ -908,28 +1102,57 @@ def main(
         container.append(h1)
         add_table(
             container,
-            construct_table(all_tags, roentgen_scheme, id_scheme),
+            construct_table(
+                all_tags, roentgen_scheme, map_machine_scheme, id_scheme
+            ),
             id_path,
             maki_path,
             temaki_path,
+            statistics,
         )
 
     if show_defined_tags:
-        defined_tags: set[TagInfo] = set(roentgen_scheme.get_tags()) | set(
-            id_scheme.get_tags()
+        all_tags: list[TagInfo] = load_all_tags(
+            output_directory / "most_used_tags.json", api, min_frequency
         )
-        defined_tags_list: list = list(defined_tags)
-        defined_tags_list.sort(key=lambda x: x.descriptor)
+        all_tags_dict = {tag.descriptor: tag for tag in all_tags}
+        defined_tags: set[TagInfo] = (
+            set(all_tags)
+            # | set(roentgen_scheme.get_tags())
+            # | set(map_machine_scheme.get_tags())
+            # | set(id_scheme.get_tags())
+        )
+        defined_tags_list: list = [
+            x for x in defined_tags if ("maxspeed" not in x.descriptor)
+        ]
+        for tag in defined_tags_list:
+            if tag.descriptor in all_tags_dict:
+                tag.total_count = all_tags_dict[tag.descriptor].total_count
+
+        defined_tags_list.sort(key=lambda x: (-x.total_count, x.descriptor))
         (h1 := html.Element("h1")).text = "Defined tags"
         container.append(h1)
+        statistics = {"map_machine_usages": 0, "id_usages": 0}
         add_table(
             container,
-            construct_table(defined_tags_list, roentgen_scheme, id_scheme),
+            construct_table(
+                defined_tags_list,
+                roentgen_scheme,
+                map_machine_scheme,
+                id_scheme,
+            ),
             id_path,
             maki_path,
             temaki_path,
+            statistics,
         )
 
+    logger.info(
+        "iD: %d, MM: %d, diff: %d",
+        statistics["id_usages"],
+        statistics["map_machine_usages"],
+        statistics["id_usages"] - statistics["map_machine_usages"],
+    )
     shutil.copy(Path("data") / "tags.css", output_directory / "style.css")
     shutil.copy(Path("data") / "tags.js", output_directory / "script.js")
 

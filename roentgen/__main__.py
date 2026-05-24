@@ -315,6 +315,11 @@ def main() -> None:
         "taginfo", help="Generate insights about OSM tag coverage."
     )
     taginfo_parser.add_argument(
+        "--map-machine-scheme",
+        type=Path,
+        help="Path to the Map Machine scheme directory.",
+    )
+    taginfo_parser.add_argument(
         "--id-tagging-schema",
         type=Path,
         help="Path to the id-tagging-schema directory.",
@@ -415,6 +420,11 @@ def main() -> None:
         return
 
     if arguments.command == "taginfo":
+        map_machine_scheme_path: Path | None = (
+            Path(arguments.map_machine_scheme)
+            if arguments.map_machine_scheme is not None
+            else None
+        )
         id_tagging_schema_path: Path | None = (
             Path(arguments.id_tagging_schema)
             if arguments.id_tagging_schema is not None
@@ -431,6 +441,7 @@ def main() -> None:
         )
         taginfo_main(
             Path("data") / "tags.json",
+            map_machine_scheme_path=map_machine_scheme_path,
             id_tagging_schema_path=id_tagging_schema_path,
             id_path=id_path,
             maki_path=maki_path,
