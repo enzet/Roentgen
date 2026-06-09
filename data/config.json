@@ -7,6 +7,12 @@
     },
     "__architecture": {
         "__building": {
+            "alpine_hut": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "mountain", "accommodation", "alpine"],
+                "name": "alpine hut",
+                "sketch": true
+            },
             "apartments_1_story": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "house"],
@@ -101,16 +107,40 @@
                 "shapes": [{"id": "barn_and_pitchfork", "version": "v0"}],
                 "sketch": true
             },
+            "chalet": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "mountain", "accommodation", "alpine"],
+                "name": "chalet",
+                "sketch": true
+            },
             "building": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "house"],
                 "name": "house",
                 "unicode": ["🏠"]
             },
+            "building_bolt": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "bolt", "lightning", "electricity"],
+                "name": "building with lightning bolt",
+                "sketch": true
+            },
             "building_door": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "door"],
                 "name": "building with door"
+            },
+            "building_door_2": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "door"],
+                "name": "building with door (2)",
+                "sketch": true
+            },
+            "building_drop": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "drop", "water", "liquid"],
+                "name": "building with drop",
+                "sketch": true
             },
             "building_bolt_door": {
                 "categories": ["building"],
@@ -143,6 +173,13 @@
                 "keywords": ["architecture", "building"],
                 "name": "building part"
             },
+            "building_with_flower": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "flower", "plant"],
+                "name": "building with flower",
+                "shapes": [{"id": "building_with_flower", "version": "v0"}],
+                "sketch": true
+            },
             "building_with_plant": {
                 "categories": ["building"],
                 "keywords": ["architecture", "agriculture", "leaf"],
@@ -162,6 +199,18 @@
                 "categories": ["building"],
                 "keywords": ["water", "building", "architecture", "floating"],
                 "name": "houseboat"
+            },
+                "hut": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "shelter", "outdoor"],
+                "name": "hut",
+                "sketch": true
+            },
+            "industrial_building": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "industry", "factory"],
+                "name": "industrial building",
+                "sketch": true
             },
             "mausoleum": {
                 "categories": ["building"],
@@ -219,6 +268,12 @@
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "historic"],
                 "name": "town hall"
+            },
+            "wilderness_hut": {
+                "categories": ["building"],
+                "keywords": ["architecture", "building", "outdoor", "shelter", "mountain", "hiking"],
+                "name": "wilderness hut",
+                "sketch": true
             },
             "yurt": {
                 "categories": ["building"],
@@ -437,6 +492,18 @@
         }
     },
     "__burial": {
+        "coffin": {
+            "keywords": ["burial", "cemetery", "death", "memorial"],
+            "name": "coffin",
+            "unicode": ["⚰️"],
+            "shapes": [{"id": "coffin", "version": "v0"}],
+            "sketch": true
+        },
+        "coffin_with_latin_cross": {
+            "keywords": ["burial", "cemetery", "death", "memorial", "christian", "religion"],
+            "name": "coffin with Latin cross",
+            "sketch": true
+        },
         "sarcophagus": {
             "keywords": [
                 "grame", "burial", "cemetery", "underground", "memorial",
@@ -460,6 +527,12 @@
         "tyre": {
             "keywords": ["car", "vehicle", "wheel"],
             "name": "tyre"
+        },
+        "steering_wheel": {
+            "keywords": ["car", "vehicle", "driving", "wheel"],
+            "name": "steering wheel",
+            "shapes": [{"id": "steering_wheel", "version": "v0"}],
+            "sketch": true
         }
     },
     "__city": {
@@ -579,9 +652,29 @@
             "keywords": ["security", "surveillance"],
             "name": "wall dome CCTV camera"
         },
+        "computer": {
+            "keywords": ["technology", "device", "screen", "desktop"],
+            "name": "computer",
+            "unicode": ["💻"],
+            "shapes": [{"id": "computer", "version": "v0"}],
+            "sketch": true
+        },
         "digital_clock": {
             "keywords": ["time", "clock", "numbers"],
             "name": "digital clock"
+        },
+        "headphones": {
+            "keywords": ["audio", "music", "sound", "listening"],
+            "name": "headphones",
+            "unicode": ["🎧"],
+            "shapes": [{"id": "headphones", "version": "v0"}],
+            "sketch": true
+        },
+        "headphones_with_letter_i": {
+            "keywords": ["audio", "information", "music", "sound"],
+            "name": "headphones with letter i",
+            "shapes": [{"id": "headphones_with_letter_i", "version": "v0"}],
+            "sketch": true
         },
         "hi_fi": {
             "keywords": ["music", "audio", "sound"],
@@ -1191,14 +1284,13 @@
             "horse": {
                 "keywords": ["animal"],
                 "name": "horse",
-                "shapes": [{"id": "horse", "version": "v1"}],
                 "sketch": true
             },
             "horse_and_cross": {
                 "keywords": ["animal"],
                 "name": "horse with cross sign",
                 "shapes": [
-                    {"id": "horse", "version": "v1"},
+                    {"id": "horse", "version": "main"},
                     {"id": "x_4", "offset": [-4, -5]}
                 ],
                 "sketch": true
@@ -1207,7 +1299,7 @@
                 "keywords": ["animal"],
                 "name": "horse with check mark",
                 "shapes": [
-                    {"id": "horse", "version": "v1"},
+                    {"id": "horse", "version": "main"},
                     {"id": "check_mark_4", "version": "v0", "offset": [-4, -5]}
                 ],
                 "sketch": true
@@ -1512,6 +1604,13 @@
         }
     },
     "__natural": {
+        "cairn": {
+            "categories": ["natural"],
+            "keywords": ["natural", "stone", "hiking", "marker", "landmark"],
+            "name": "cairn",
+            "shapes": [{"id": "cairn", "version": "v0"}],
+            "sketch": true
+        },
         "cave": {
             "categories": ["natural"],
             "keywords": ["natural", "entrance"],
@@ -1786,10 +1885,22 @@
             "keywords": ["sheet", "map"],
             "name": "double-folded piece of paper"
         },
+        "double_folded_paper_wide": {
+            "keywords": ["sheet", "paper", "document"],
+            "name": "wide double-folded piece of paper",
+            "sketch": true
+        },
         "drinking_water": {
             "unicode": ["🚰"],
             "keywords": ["water", "drink"],
             "name": "tap and glass"
+        },
+        "electric_guitar": {
+            "keywords": ["music", "instrument", "guitar", "string"],
+            "name": "electric guitar",
+            "unicode": ["🎸"],
+            "shapes": [{"id": "electric_guitar", "version": "v0"}],
+            "sketch": true
         },
         "envelope": {
             "unicode": ["\u2709\ufe0f"],
@@ -1799,6 +1910,12 @@
         "exchange": {
             "keywords": ["money", "finance"],
             "name": "exchange"
+        },
+        "filed_light": {
+            "keywords": ["light", "outdoor", "field", "illumination"],
+            "name": "field light",
+            "shapes": [{"id": "filed_light", "version": "v0"}],
+            "sketch": true
         },
         "fire_pit": {
             "keywords": ["outdoor", "recreation", "camping"],
@@ -1814,6 +1931,12 @@
             "keywords": ["country", "national"],
             "name": "flagpole"
         },
+        "flask": {
+            "keywords": ["laboratory", "chemistry", "science", "experiment"],
+            "name": "flask",
+            "unicode": ["⚗️"],
+            "sketch": true
+        },
         "fork_and_knife": {
             "unicode": ["🍴"],
             "keywords": ["food", "meal", "dining"],
@@ -1823,6 +1946,26 @@
             "unicode": ["⛽️"],
             "keywords": ["gasoline", "petrol"],
             "name": "fuel station"
+        },
+        "fuel_station_91": {
+            "keywords": ["gasoline", "petrol", "91", "fuel", "octane"],
+            "name": "fuel station with 91 octane",
+            "sketch": true
+        },
+        "fuel_station_92": {
+            "keywords": ["gasoline", "petrol", "92", "fuel", "octane"],
+            "name": "fuel station with 92 octane",
+            "sketch": true
+        },
+        "fuel_station_95": {
+            "keywords": ["gasoline", "petrol", "95", "fuel", "octane"],
+            "name": "fuel station with 95 octane",
+            "sketch": true
+        },
+        "fuel_station_98": {
+            "keywords": ["gasoline", "petrol", "98", "fuel", "octane"],
+            "name": "fuel station with 98 octane",
+            "sketch": true
         },
         "garages": {
             "keywords": ["car", "vehicle", "transport"],
@@ -1868,6 +2011,12 @@
             "name": "hunting stand",
             "keywords": ["hunt", "platform", "elevated", "wildlife"]
         },
+        "information_terminal": {
+            "keywords": ["information", "terminal", "kiosk", "display", "screen"],
+            "name": "information terminal",
+            "shapes": [{"id": "information_terminal", "version": "v0"}],
+            "sketch": true
+        },
         "key": {
             "is_part": true,
             "name": "key",
@@ -1876,6 +2025,11 @@
         "kiosk": {
             "name": "kiosk",
             "keywords": ["shop", "stand", "booth", "stall"]
+        },
+        "kiosk_i": {
+            "keywords": ["information", "kiosk", "stand", "booth"],
+            "name": "information kiosk",
+            "sketch": true
         },
         "lift_gate": {
             "name": "lift gate",
@@ -1938,6 +2092,18 @@
         "pac_man": {
             "name": "Pac-Man",
             "keywords": ["game", "arcade", "video", "character"]
+        },
+        "paint_roller": {
+            "keywords": ["paint", "tool", "decoration", "wall"],
+            "name": "paint roller",
+            "shapes": [{"id": "paint_roller", "version": "v0"}],
+            "sketch": true
+        },
+        "pencil_pen_eraser": {
+            "keywords": ["writing", "tool", "pen", "pencil", "eraser"],
+            "name": "pencil, pen and eraser",
+            "shapes": [{"id": "pencil_pen_eraser", "version": "v0"}],
+            "sketch": true
         },
         "pipeline": {
             "name": "pipeline with valve",
@@ -2025,6 +2191,18 @@
             "name": "survey point",
             "keywords": ["measurement", "land", "marker", "geodesy"]
         },
+        "survey_point_beacon": {
+            "keywords": ["measurement", "land", "marker", "geodesy", "beacon"],
+            "name": "survey point beacon",
+            "shapes": [{"id": "survey_point_beacon", "version": "v0"}],
+            "sketch": true
+        },
+        "survey_point_block": {
+            "keywords": ["measurement", "land", "marker", "geodesy", "block"],
+            "name": "survey point block",
+            "shapes": [{"id": "survey_point_block", "version": "v0"}],
+            "sketch": true
+        },
         "swimming_area": {
             "name": "pool ladder",
             "keywords": ["swim", "water"]
@@ -2067,6 +2245,12 @@
             "is_part": true,
             "name": "umbrella",
             "keywords": ["rain", "cover", "shade", "weather"]
+        },
+        "umbrella_on_ground": {
+            "keywords": ["beach", "outdoor", "shade", "sun", "rain", "umbrella"],
+            "name": "umbrella on ground",
+            "shapes": [{"id": "umbrella_on_ground", "version": "v0"}],
+            "sketch": true
         },
         "urban_tree_pot": {
             "is_part": true,
@@ -2202,6 +2386,12 @@
             "keywords": ["sea", "water", "ocean", "lake", "marine"],
             "name": "buoy"
         },
+        "coral": {
+            "keywords": ["sea", "ocean", "marine", "natural", "reef"],
+            "name": "coral",
+            "shapes": [{"id": "coral", "version": "v0"}],
+            "sketch": true
+        },
         "dam": {
             "keywords": ["water", "river", "hydroelectric", "barrier"],
             "name": "dam"
@@ -2302,6 +2492,13 @@
             "keywords": ["sport", "outdoor", "grass"],
             "name": "golf pin"
         },
+        "football": {
+            "categories": ["sport"],
+            "keywords": ["sport", "ball", "soccer", "football"],
+            "name": "football",
+            "unicode": ["⚽"],
+            "sketch": true
+        },
         "golf_tee": {
             "categories": ["sport", "outdoor", "grass"],
             "keywords": ["sport", "outdoor", "grass"],
@@ -2345,10 +2542,54 @@
             "keywords": ["sport", "jump", "bungee"],
             "name": "person bungee jumping"
         },
+        "person_climbing": {
+            "categories": ["sport"],
+            "keywords": ["sport", "climbing", "mountain", "outdoor"],
+            "name": "person climbing",
+            "unicode": ["🧗"],
+            "shapes": [{"id": "person_climbing", "version": "v0"}],
+            "sketch": true
+        },
+        "person_in_lotus_pose": {
+            "categories": ["sport"],
+            "keywords": ["sport", "yoga", "meditation", "fitness", "wellness"],
+            "name": "person in lotus pose",
+            "shapes": [{"id": "person_in_lotus_pose", "version": "v0"}],
+            "sketch": true
+        },
+        "person_in_yoga_pose": {
+            "categories": ["sport"],
+            "keywords": ["sport", "yoga", "fitness", "wellness"],
+            "name": "person in yoga pose",
+            "shapes": [{"id": "person_in_yoga_pose", "version": "v0"}],
+            "sketch": true
+        },
+        "person_running": {
+            "categories": ["sport"],
+            "keywords": ["sport", "running", "athletics", "fitness"],
+            "name": "person running",
+            "unicode": ["🏃"],
+            "shapes": [{"id": "person_running", "version": "v0"}],
+            "sketch": true
+        },
+        "person_with_ball": {
+            "categories": ["sport"],
+            "keywords": ["sport", "ball", "playing"],
+            "name": "person with ball",
+            "shapes": [{"id": "person_with_ball", "version": "v0"}],
+            "sketch": true
+        },
         "person_throwing_spear": {
             "categories": ["sport"],
             "keywords": ["sport", "athletics", "javelin", "spear"],
             "name": "person throwing spear"
+        },
+        "tennis_racket_with_ball": {
+            "categories": ["sport"],
+            "keywords": ["sport", "tennis", "racket", "ball"],
+            "name": "tennis racket with ball",
+            "unicode": ["🎾"],
+            "sketch": true
         },
         "tower_climbing": {
             "todo": "check version",
@@ -2837,6 +3078,27 @@
                 "name": "@ in square",
                 "keywords": ["internet", "email"]
             },
+            "bolt": {
+                "keywords": ["lightning", "electricity", "thunder"],
+                "name": "lightning bolt",
+                "unicode": ["⚡"],
+                "sketch": true
+            },
+            "bolt_medium": {
+                "keywords": ["lightning", "electricity", "thunder"],
+                "name": "medium lightning bolt",
+                "sketch": true
+            },
+            "bolt_small": {
+                "keywords": ["lightning", "electricity", "thunder"],
+                "name": "small lightning bolt",
+                "sketch": true
+            },
+            "bolt_tiny": {
+                "keywords": ["lightning", "electricity", "thunder"],
+                "name": "tiny lightning bolt",
+                "sketch": true
+            },
             "circle_11": {
                 "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 11 px"
@@ -2885,6 +3147,12 @@
             "default_small": {
                 "keywords": ["point"],
                 "name": "tiny square"
+            },
+            "drop": {
+                "keywords": ["water", "liquid", "rain"],
+                "name": "drop",
+                "unicode": ["💧"],
+                "sketch": true
             },
             "electricity": {
                 "unicode": ["⚡"],
@@ -3159,7 +3427,7 @@
                     "unicode": ["К"],
                     "keywords": ["russian", "alphabet"],
                     "is_part": true,
-                    "shapes": [{"id": "k", "version": "v0"}],
+                    "shapes": [{"id": "cyrl_k", "version": "v0"}],
                     "sketch": true
                 },
                 "cyrl_l": {
@@ -3415,6 +3683,12 @@
                 }
             },
             "__latn": {
+                "h": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter H",
+                    "unicode": ["H"]
+                },
                 "i": {
                     "categories": ["letter"],
                     "keywords": ["symbol", "alphabet"],
@@ -3424,6 +3698,24 @@
                 "i_in_square": {
                     "name": "Latin letter i in square",
                     "keywords": ["symbol", "alphabet", "letter"]
+                },
+                "p": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter P",
+                    "unicode": ["P"]
+                },
+                "p_small": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter P small",
+                    "unicode": ["P"]
+                },
+                "t": {
+                    "categories": ["letter"],
+                    "keywords": ["symbol", "alphabet"],
+                    "name": "Latin letter T",
+                    "unicode": ["T"]
                 },
                 "x": {
                     "categories": ["letter"],
@@ -4234,6 +4526,18 @@
                 "keywords": ["5G", "5th generation", "wireless"],
                 "shapes": [{"id": "5g_middle", "version": "v1"}],
                 "sketch": true
+            },
+            "text_5g": {
+                "name": "5G text",
+                "keywords": ["5G", "5th generation", "wireless"],
+                "shapes": [{"id": "text_5g", "version": "v0"}],
+                "sketch": true
+            },
+            "text_5g_middle": {
+                "name": "medium size 5G text",
+                "keywords": ["5G", "5th generation", "wireless"],
+                "shapes": [{"id": "text_5g_middle", "version": "v1"}],
+                "sketch": true
             }
         },
         "check_mark_4": {
@@ -4832,6 +5136,20 @@
             "keywords": ["transport", "bus", "public"],
             "name": "bus"
         },
+        "bus_on_guideway": {
+            "categories": ["public transport"],
+            "keywords": ["transport", "bus", "public", "guided", "guideway"],
+            "name": "bus on guideway",
+            "shapes": [{"id": "bus_on_guideway", "version": "v0"}],
+            "sketch": true
+        },
+        "bus_trap": {
+            "categories": ["public transport"],
+            "keywords": ["transport", "bus", "public", "barrier"],
+            "name": "bus trap",
+            "shapes": [{"id": "bus_trap", "version": "v0"}],
+            "sketch": true
+        },
         "buses": {
             "categories": ["public transport"],
             "keywords": ["transport", "bus", "public"],
@@ -4912,11 +5230,35 @@
             "keywords": ["transport", "railway"],
             "name": "monorail"
         },
+        "narrow_gauge": {
+            "categories": ["railway"],
+            "keywords": ["railway", "track", "narrow", "gauge"],
+            "name": "narrow gauge railway",
+            "sketch": true
+        },
         "plane": {
             "categories": ["aeroway", "public transport"],
             "unicode": ["✈️"],
             "keywords": ["transport", "aeroway", "airplane"],
             "name": "plane"
+        },
+        "rails": {
+            "categories": ["railway"],
+            "keywords": ["railway", "track", "rail"],
+            "name": "rails",
+            "sketch": true
+        },
+        "rails_with_derailer": {
+            "categories": ["railway"],
+            "keywords": ["railway", "track", "rail", "derailer"],
+            "name": "rails with derailer",
+            "sketch": true
+        },
+        "school_bus": {
+            "categories": ["public transport"],
+            "keywords": ["transport", "bus", "school", "children"],
+            "name": "school bus",
+            "sketch": true
         },
         "suspension_railway": {
             "unicode": ["🚟"],
@@ -5149,6 +5491,12 @@
             "keywords": ["sell", "automat"],
             "name": "vending machine with Greek cross"
         },
+        "vending_condom": {
+            "keywords": ["sell", "automat", "condom"],
+            "name": "vending machine with condom",
+            "shapes": [{"id": "vending_condom", "version": "v1"}],
+            "sketch": true
+        },
         "vending_condoms": {
             "todo": "check version",
             "keywords": ["sell", "automat"],
@@ -5159,6 +5507,12 @@
         "vending_drop": {
             "keywords": ["sell", "automat"],
             "name": "vending machine with drop"
+        },
+        "vending_egg": {
+            "keywords": ["sell", "automat", "food", "egg"],
+            "name": "vending machine with egg",
+            "shapes": [{"id": "vending_egg", "version": "v0"}],
+            "sketch": true
         },
         "vending_excrement_bag": {
             "keywords": ["sell", "automat"],
@@ -5195,6 +5549,12 @@
         "vending_pizza": {
             "keywords": ["sell", "automat"],
             "name": "vending machine with pizza"
+        },
+        "vending_plug": {
+            "keywords": ["sell", "automat", "electric", "charging", "plug"],
+            "name": "vending machine with plug",
+            "shapes": [{"id": "vending_plug", "version": "v0"}],
+            "sketch": true
         },
         "vending_tickets": {
             "keywords": ["sell", "automat"],
