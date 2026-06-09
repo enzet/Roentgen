@@ -5233,8 +5233,7 @@
         "narrow_gauge": {
             "categories": ["railway"],
             "keywords": ["railway", "track", "narrow", "gauge"],
-            "name": "narrow gauge railway",
-            "sketch": true
+            "name": "narrow gauge railway"
         },
         "plane": {
             "categories": ["aeroway", "public transport"],
@@ -5245,14 +5244,12 @@
         "rails": {
             "categories": ["railway"],
             "keywords": ["railway", "track", "rail"],
-            "name": "rails",
-            "sketch": true
+            "name": "rails"
         },
         "rails_with_derailer": {
             "categories": ["railway"],
             "keywords": ["railway", "track", "rail", "derailer"],
-            "name": "rails with derailer",
-            "sketch": true
+            "name": "rails with derailer"
         },
         "school_bus": {
             "categories": ["public transport"],

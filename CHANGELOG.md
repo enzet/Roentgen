@@ -1,6 +1,6 @@
-## Unreleased
+## Unreleased: 0.16.0
 
-Add new type of SVG sketch files supported by iconscript 0.4.0.
+Add new type of SVG sketch files supported by iconscript 0.4.
 
 Add icons:
   - `arrow_backward`,
@@ -12,11 +12,14 @@ Add icons:
   - `compass_rose`,
   - `full_height_turnstile`
     ([#52](https://github.com/enzet/Roentgen/issues/52)),
+  - `narrow_gauge`,
+  - `rails`,
+  - `rails_with_derailer` ([#56](https://github.com/enzet/Roentgen/issues/56)),
   - `tactile_map` ([#11](https://github.com/enzet/Roentgen/issues/11)),
   - `tumulus`,
   - `vending_candy` ([#45](https://github.com/enzet/Roentgen/issues/45)),
   - `vending_lollipop` ([#45](https://github.com/enzet/Roentgen/issues/45)),
-  - `vending_pack` ([#43](https://github.com/enzet/Roentgen/issues/43)).
+  - `vending_pack` ([#43](https://github.com/enzet/Roentgen/issues/43)),
 
 Redraw icons:
   - `bus`,
