@@ -67,6 +67,8 @@ RELATIVE_TOLERANCE: float = 1e-05
 ABSOLUTE_TOLERANCE: float = 1e-08
 SVG_TOLERANCE: float = 1e-05
 
+ICONSCRIPT_VERSION_REQUIRED: tuple[int, int, int] = (0, 4, 1)
+
 
 def is_bright(color: Color) -> bool:
     """Check whether color is bright.
@@ -359,11 +361,12 @@ def get_iconscript_path(iconscript_executable: str | None = None) -> str:
         message = f"`{iconscript_path} --version` failed: {stderr}"
         raise RuntimeError(message)
 
-    required = (0, 4, 1)
     version_str = result.stdout.strip().split()[-1]
     actual = tuple(int(x) for x in version_str.split("."))
-    if actual < required:
-        required_str: str = ".".join(str(x) for x in required)
+    if actual < ICONSCRIPT_VERSION_REQUIRED:
+        required_str: str = ".".join(
+            str(x) for x in ICONSCRIPT_VERSION_REQUIRED
+        )
         message = (
             f"`iconscript` {version_str} is too old, {required_str} required"
         )
@@ -538,7 +541,6 @@ class Shapes:
         id_: str = node.attrib["id"]
         if STANDARD_INKSCAPE_ID_MATCHER.match(id_) is not None:
             if not is_sketch_element(node, id_):
-                path_part = ""
                 with contextlib.suppress(KeyError, ValueError):
                     path_part = f", {node.attrib['d'].split(' ')[:3]}"
                 message: str = (
@@ -1005,7 +1007,7 @@ class IconSpecification:
             )
             sys.exit(1)
 
-        sizes = [16, 32]
+        sizes = [16, 32, 256]
 
         for size in sizes:
             output_directory = output_base / str(size)
