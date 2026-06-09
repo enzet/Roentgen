@@ -30,6 +30,7 @@ MIN_FREQUENCY_TO_DOWNLOAD: Final[int] = 100
 PER_PAGE: Final[int] = 100
 PLACEHOLDER_COLOR = "#FFEEFF"
 REPEATED_COLOR = "#FFFFDD"
+CANDIDATE_COLOR = "#DDDDFF"
 
 
 @dataclass
@@ -582,7 +583,7 @@ def add_table(
 
         def add_map_machine_icon(
             img: str, prefix: str, imgs_cell: etree._Element = imgs_cell
-        ) -> None:
+        ) -> bool:
             if prefix:
                 span = html.Element("span")
                 span.text = prefix
@@ -604,9 +605,11 @@ def add_table(
                 span = html.Element("code")
                 span.text = img
                 imgs_cell.append(span)
+            return found
 
+        has_map_machine_icon: bool = False
         for img in element.map_machine_icons:
-            add_map_machine_icon(img, "")
+            has_map_machine_icon |= add_map_machine_icon(img, "")
         for img in element.map_machine_added_icons:
             add_map_machine_icon(img, " + ")
 
@@ -680,6 +683,13 @@ def add_table(
             id_imgs_cell.set("style", f"background-color: {REPEATED_COLOR};")
         if is_id_placeholder:
             id_imgs_cell.set("style", f"background-color: {PLACEHOLDER_COLOR};")
+        if (
+            (not element.id_tagging_icon or is_id_placeholder)
+            and has_map_machine_icon
+            and not is_map_machine_placeholder
+            and not is_map_machine_repeated
+        ):
+            imgs_cell.set("style", f"background-color: {CANDIDATE_COLOR};")
 
         id_code = html.Element("code")
         if element.id_tagging_icon:
@@ -1118,9 +1128,9 @@ def main(
         all_tags_dict = {tag.descriptor: tag for tag in all_tags}
         defined_tags: set[TagInfo] = (
             set(all_tags)
-            # | set(roentgen_scheme.get_tags())
-            # | set(map_machine_scheme.get_tags())
-            # | set(id_scheme.get_tags())
+            | set(roentgen_scheme.get_tags())
+            | set(map_machine_scheme.get_tags())
+            | set(id_scheme.get_tags())
         )
         defined_tags_list: list = [
             x for x in defined_tags if ("maxspeed" not in x.descriptor)
