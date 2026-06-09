@@ -206,6 +206,7 @@ def draw(iconscript_executable: str | None) -> None:
         )
     )
 
+    not_defined: list[str] = []
     for shape_id in shapes.shapes:
         found: bool = False
         for icon_specification in icon_specifications:
@@ -213,7 +214,11 @@ def draw(iconscript_executable: str | None) -> None:
                 found = True
                 break
         if not found:
-            logger.debug("No usage of `%s` shape found.", shape_id)
+            not_defined.append(shape_id)
+    if not_defined:
+        logger.info("Not defined shapes:")
+        for shape_id in sorted(not_defined):
+            logger.info("  - `%s`", shape_id)
 
     shapes_data: dict[str, str] = {
         shape_id: shape.get_path_commands()
