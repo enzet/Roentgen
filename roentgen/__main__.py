@@ -286,6 +286,11 @@ def draw_grid(arguments: argparse.Namespace) -> None:
         load_shapes(config),
         columns=arguments.columns,
         scale=arguments.scale,
+        width=arguments.width,
+        height=arguments.height,
+        background_color=(
+            Color(arguments.background) if arguments.background else None
+        ),
     )
 
 
@@ -416,6 +421,15 @@ def main() -> None:
         type=str,
         default=None,
         help="Draw only icons new in this version (e.g. 0.13.0 or HEAD).",
+    )
+    grid_parser.add_argument(
+        "--width", type=float, default=None, help="Minimum output width."
+    )
+    grid_parser.add_argument(
+        "--height", type=float, default=None, help="Minimum output height."
+    )
+    grid_parser.add_argument(
+        "--background", type=str, default=None, help="Background color."
     )
 
     arguments: argparse.Namespace = parser.parse_args()

@@ -1,4 +1,4 @@
-## Unreleased: 0.16.0
+## Unreleased
 
 Add new type of SVG sketch files supported by iconscript 0.4.
 
@@ -25,6 +25,8 @@ Redraw icons:
   - `bus`,
   - `saddle`,
   - `trolleybus`.
+
+To `grid` command add `--width`, `--height` and `--background` arguments.
 
 
 ## 0.15.0

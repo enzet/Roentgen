@@ -108,6 +108,8 @@ class IconSpecifications:
         draw_sketch: bool = False,
         color: Color | None = None,
         color_sketch: Color | None = None,
+        width: float | None = None,
+        height: float | None = None,
     ) -> None:
         """Draw icons in the form of a table.
 
@@ -121,10 +123,11 @@ class IconSpecifications:
         :param draw_sketch: if true, draw sketch icons
         :param color: fill color for final icons
         :param color_sketch: fill color for sketch icons
+        :param width: minimum output width; adds horizontal margins when grid
+            is narrower
+        :param height: minimum output height; adds vertical margins when grid
+            is shorter
         """
-        position: tuple[float, float] = (step / 2.0 * scale, step / 2.0 * scale)
-        width: float = step * columns * scale
-
         icon_specifications: list[IconSpecification] = [
             icon_specification
             for icon_specification in self.icon_specifications
@@ -137,13 +140,34 @@ class IconSpecifications:
         if color_sketch is None:
             color_sketch = Color("#AAAAAA")
 
-        height: int = int(
+        grid_width: float = step * columns * scale
+        grid_height: float = (
             math.ceil(len(icon_specifications) / columns) * step * scale
         )
-        svg: Drawing = Drawing(str(file_name), (width, height))
+
+        svg_width: float = (
+            max(grid_width, width) if width is not None else grid_width
+        )
+        svg_height: float = (
+            max(grid_height, height) if height is not None else grid_height
+        )
+
+        margin_x: float = (svg_width - grid_width) / 2
+        margin_y: float = (svg_height - grid_height) / 2
+
+        position: tuple[float, float] = (
+            step / 2.0 * scale + margin_x,
+            step / 2.0 * scale + margin_y,
+        )
+
+        svg: Drawing = Drawing(str(file_name), (svg_width, svg_height))
         if background_color is not None:
             svg.add(
-                svg.rect((0, 0), (width, height), fill=background_color.hex)
+                svg.rect(
+                    (0, 0),
+                    (svg_width, svg_height),
+                    fill=background_color.hex,
+                )
             )
 
         for icon_specification in icon_specifications:
@@ -162,9 +186,11 @@ class IconSpecifications:
                 color=color_sketch if icon_specification.is_sketch() else color,
             )
             position = (position[0] + step * scale, position[1])
-            if position[0] > width - 8.0:
-                position = (step / 2.0 * scale, position[1] + step * scale)
-                height += int(step * scale)
+            if position[0] > svg_width - margin_x - 8.0:
+                position = (
+                    step / 2.0 * scale + margin_x,
+                    position[1] + step * scale,
+                )
 
         with file_name.open("w", encoding="utf-8") as output_file:
             svg.write(output_file, pretty=True, indent=4)
