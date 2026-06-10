@@ -200,7 +200,7 @@
                 "keywords": ["water", "building", "architecture", "floating"],
                 "name": "houseboat"
             },
-                "hut": {
+            "hut": {
                 "categories": ["building"],
                 "keywords": ["architecture", "building", "shelter", "outdoor"],
                 "name": "hut",
@@ -271,7 +271,10 @@
             },
             "wilderness_hut": {
                 "categories": ["building"],
-                "keywords": ["architecture", "building", "outdoor", "shelter", "mountain", "hiking"],
+                "keywords": [
+                    "architecture", "building", "outdoor", "shelter",
+                    "mountain", "hiking"
+                ],
                 "name": "wilderness hut",
                 "sketch": true
             },
@@ -1159,6 +1162,14 @@
         }
     },
     "__instrument": {
+        "binoculars": {
+            "keywords": ["tool", "outdoor"],
+            "name": "binocular"
+        },
+        "binoculars_on_pole": {
+            "keywords": ["tool"],
+            "name": "binoculars on pole"
+        },
         "sundial": {
             "keywords": ["tool", "clock", "time", "sun"],
             "name": "sundial",
@@ -1780,27 +1791,9 @@
             "keywords": ["bank", "money", "finance", "cash"],
             "name": "bill acceptor"
         },
-        "awning": {
-            "is_part": true,
-            "name": "awning",
-            "keywords": ["cover", "shade", "canopy", "shelter"]
-        },
-        "binoculars": {
-            "keywords": ["tool", "outdoor"],
-            "name": "binocular"
-        },
-        "binoculars_on_pole": {
-            "keywords": ["tool"],
-            "name": "binoculars on pole"
-        },
         "bleachers": {
             "keywords": ["stadium", "sports", "sitting"],
             "name": "bleachers"
-        },
-        "bottom_right_horizontal_line": {
-            "is_part": true,
-            "name": "bottom right horizontal line",
-            "keywords": ["border", "edge", "corner", "line"]
         },
         "briefcase": {
             "unicode": ["💼"],
@@ -1810,10 +1803,6 @@
         "buffer_stop": {
             "keywords": ["railway", "transport"],
             "name": "buffer stop"
-        },
-        "camp": {
-            "keywords": ["outdoor", "recreation"],
-            "name": "camp"
         },
         "card_and_dice": {
             "keywords": ["game", "gambling"],
@@ -2130,10 +2119,6 @@
             "name": "two sheets",
             "keywords": ["paper", "documents", "pages", "stack"]
         },
-        "shelter": {
-            "name": "shelter",
-            "keywords": ["protection", "cover", "refuge", "safe"]
-        },
         "shop_convenience": {
             "name": "convenience store",
             "keywords": ["shop", "store", "market", "retail"]
@@ -2274,15 +2259,6 @@
             "unicode": ["🛠️"],
             "name": "wrench and hammer",
             "keywords": ["tool"]
-        },
-        "exchange___dollar___pound": {
-            "name": "arrows from dollar to pound and vice versa",
-            "keywords": ["currency", "money", "conversion"],
-            "shapes": [
-                {"id": "exchange"},
-                {"id": "dollar", "offset": [-4,  3]},
-                {"id": "pound", "offset": [5, -2]}
-            ]
         },
         "windsock": {
             "name": "windsock",
@@ -2688,6 +2664,11 @@
             "keywords": ["sign"],
             "name": "advertising totem"
         },
+        "awning": {
+            "is_part": true,
+            "name": "awning",
+            "keywords": ["cover", "shade", "canopy", "shelter"]
+        },
         "bench": {
             "categories": ["amenity"],
             "keywords": ["sitting", "outdoor"],
@@ -2796,6 +2777,10 @@
             "keywords": ["sign", "advertising"],
             "name": "billboard",
             "unicode": ["🪧"]
+        },
+        "camp": {
+            "keywords": ["outdoor", "recreation"],
+            "name": "camp"
         },
         "fountain": {
             "categories": ["amenity"],
@@ -2946,6 +2931,10 @@
                 {"id": "lamp_fluorescent_mast_bended_2", "version": "v0"}
             ],
             "sketch": true
+        },
+        "shelter": {
+            "name": "shelter",
+            "keywords": ["protection", "cover", "refuge", "safe"]
         },
         "street_lamp": {
             "keywords": ["outdoor", "road", "light", "illumination"],
@@ -3099,6 +3088,11 @@
                 "name": "tiny lightning bolt",
                 "sketch": true
             },
+            "bottom_right_horizontal_line": {
+                "is_part": true,
+                "name": "bottom right horizontal line",
+                "keywords": ["border", "edge", "corner", "line"]
+            },
             "circle_11": {
                 "keywords": ["ellipse", "figure", "geometry"],
                 "name": "circle 11 px"
@@ -3158,6 +3152,15 @@
                 "unicode": ["⚡"],
                 "keywords": ["thunder"],
                 "name": "lightning"
+            },
+            "exchange___dollar___pound": {
+                "name": "arrows from dollar to pound and vice versa",
+                "keywords": ["currency", "money", "conversion"],
+                "shapes": [
+                    {"id": "exchange"},
+                    {"id": "dollar", "offset": [-4,  3]},
+                    {"id": "pound", "offset": [5, -2]}
+                ]
             },
             "glider": {
                 "keywords": ["game", "life", "automata", "programming"],
@@ -5005,6 +5008,23 @@
         }
     },
     "__transport": {
+        "__rail": {
+            "narrow_gauge": {
+                "categories": ["railway"],
+                "keywords": ["railway", "track", "narrow", "gauge"],
+                "name": "narrow gauge railway"
+            },
+            "rails": {
+                "categories": ["railway"],
+                "keywords": ["railway", "track", "rail"],
+                "name": "rails"
+            },
+            "rails_with_derailer": {
+                "categories": ["railway"],
+                "keywords": ["railway", "track", "rail", "derailer"],
+                "name": "rails with derailer"
+            }
+        },
         "__small": {
             "bicycle": {
                 "unicode": ["🚲"],
@@ -5230,26 +5250,11 @@
             "keywords": ["transport", "railway"],
             "name": "monorail"
         },
-        "narrow_gauge": {
-            "categories": ["railway"],
-            "keywords": ["railway", "track", "narrow", "gauge"],
-            "name": "narrow gauge railway"
-        },
         "plane": {
             "categories": ["aeroway", "public transport"],
             "unicode": ["✈️"],
             "keywords": ["transport", "aeroway", "airplane"],
             "name": "plane"
-        },
-        "rails": {
-            "categories": ["railway"],
-            "keywords": ["railway", "track", "rail"],
-            "name": "rails"
-        },
-        "rails_with_derailer": {
-            "categories": ["railway"],
-            "keywords": ["railway", "track", "rail", "derailer"],
-            "name": "rails with derailer"
         },
         "school_bus": {
             "categories": ["public transport"],
