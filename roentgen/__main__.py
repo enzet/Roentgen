@@ -288,6 +288,7 @@ def draw_grid(arguments: argparse.Namespace) -> None:
         scale=arguments.scale,
         width=arguments.width,
         height=arguments.height,
+        color=Color(arguments.color) if arguments.color else None,
         background_color=(
             Color(arguments.background) if arguments.background else None
         ),
@@ -427,6 +428,9 @@ def main() -> None:
     )
     grid_parser.add_argument(
         "--height", type=float, default=None, help="Minimum output height."
+    )
+    grid_parser.add_argument(
+        "--color", type=str, default=None, help="Icon color."
     )
     grid_parser.add_argument(
         "--background", type=str, default=None, help="Background color."

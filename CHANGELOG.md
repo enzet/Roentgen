@@ -1,3 +1,8 @@
+## Unreleased
+
+To `grid` command add `--color` argument.
+
+
 ## 0.16.0
 
 Add new type of SVG sketch files supported by iconscript 0.4.
