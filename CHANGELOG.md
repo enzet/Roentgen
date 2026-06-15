@@ -2,6 +2,10 @@
 
 To `grid` command add `--color` argument.
 
+Add icons:
+  - `planet`,
+  - `planet_with_stars`.
+
 
 ## 0.16.0
 

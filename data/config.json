@@ -304,6 +304,15 @@
         }
     },
     "__astronomy": {
+        "planet": {
+            "unicode": ["🪐"],
+            "keywords": ["space", "orbit", "ring", "saturn"],
+            "name": "planet"
+        },
+        "planet_with_stars": {
+            "keywords": ["space", "orbit", "ring", "saturn", "star"],
+            "name": "planet with stars"
+        },
         "sun": {
             "unicode": ["☀️"],
             "keywords": ["star", "light"],
