@@ -3,6 +3,7 @@
 To `grid` command add `--color` argument.
 
 Add icons:
+  - `pan_and_spoon`,
   - `planet`,
   - `planet_with_stars`.
 

@@ -1275,6 +1275,10 @@
             "keywords": ["tool", "kitchen"],
             "name": "pan",
             "unicode": ["🍳"]
+        },
+        "pan_and_spoon": {
+            "keywords": ["tool", "kitchen"],
+            "name": "pan"
         }
     },
     "__leisure": {
