@@ -281,6 +281,13 @@ def draw_grid(arguments: argparse.Namespace) -> None:
     collection: IconSpecifications = (
         IconSpecifications.from_icon_specifications(specifications)
     )
+    if arguments.print_description:
+        grid_description = (
+            f"{len(specifications)} black icons on the white background: "
+            + ", ".join(specification.name for specification in specifications)
+            + "."
+        )
+        logger.info(grid_description)
     collection.draw_grid(
         Path(arguments.output),
         load_shapes(config),
@@ -416,6 +423,12 @@ def main() -> None:
     )
     grid_parser.add_argument(
         "--columns", type=int, default=16, help="Number of columns."
+    )
+    grid_parser.add_argument(
+        "--print-description",
+        action="store_true",
+        default=False,
+        help="Print text description of the grid.",
     )
     grid_parser.add_argument(
         "--new-in",
