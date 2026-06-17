@@ -3,9 +3,14 @@
 To `grid` command add `--color` argument.
 
 Add icons:
+  - `cable_barrier` ([#57](https://github.com/enzet/Roentgen/issues/57)),
   - `pan_and_spoon`,
   - `planet`,
-  - `planet_with_stars`.
+  - `planet_with_stars`,
+  - `rope_barrier`.
+
+Redraw icons:
+  - `chain_barrier`.
 
 
 ## 0.16.0

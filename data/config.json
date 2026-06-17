@@ -426,6 +426,10 @@
         }
     },
     "__barrier": {
+        "cable_barrier": {
+            "keywords": ["access"],
+            "name": "cables between two sticks"
+        },
         "chain_barrier": {
             "categories": ["barrier"],
             "keywords": ["access"],
@@ -482,9 +486,7 @@
         },
         "rope_barrier": {
             "keywords": ["access"],
-            "name": "rope between two sticks",
-            "shapes": [{"id": "rope_barrier", "version": "v0"}],
-            "sketch": true
+            "name": "rope between two sticks"
         },
         "turnstile": {
             "name": "turnstile",
